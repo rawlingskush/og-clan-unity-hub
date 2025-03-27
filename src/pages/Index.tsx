@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import HighlightsSection from '@/components/HighlightsSection';
+import SponsorSection from '@/components/SponsorSection';
 import JoinSection from '@/components/JoinSection';
 import Footer from '@/components/Footer';
 import AnimatedContent from '@/components/AnimatedContent';
@@ -63,6 +64,7 @@ const Index = () => {
         </section>
         
         <HighlightsSection />
+        <SponsorSection />
         <JoinSection />
       </main>
       

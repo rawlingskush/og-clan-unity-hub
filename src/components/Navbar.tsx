@@ -35,6 +35,7 @@ const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#about" className="navbar-link">About</a>
             <a href="#highlights" className="navbar-link">Highlights</a>
+            <a href="#sponsors" className="navbar-link">Sponsors</a>
             <a href="#join" className="navbar-link">Join Us</a>
           </nav>
           <div>
