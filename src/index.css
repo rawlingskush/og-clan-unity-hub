@@ -5,33 +5,33 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 0%;
+    --foreground: 45 76% 52%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 4%;
+    --card-foreground: 45 76% 52%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 45 76% 52%;
 
-    --primary: 199 88% 49%; /* Ocean blue */
-    --primary-foreground: 210 40% 98%;
+    --primary: 45 76% 52%; /* Gold */
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 9%;
+    --secondary-foreground: 45 76% 52%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 45 50% 40%;
 
-    --accent: 199 88% 49%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 76% 52%;
+    --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 199 88% 49%;
+    --border: 45 30% 30%;
+    --input: 45 30% 30%;
+    --ring: 45 76% 52%;
 
     --radius: 0.75rem;
   }
@@ -54,11 +54,11 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/70 backdrop-blur-lg border border-white/30 shadow-md;
+    @apply bg-black/70 backdrop-blur-lg border border-ogclan/30 shadow-md;
   }
   
   .glass-effect {
-    @apply bg-white/50 backdrop-blur-md border border-white/20;
+    @apply bg-black/50 backdrop-blur-md border border-ogclan/20;
   }
   
   .text-balance {
@@ -66,7 +66,7 @@
   }
   
   .btn-primary {
-    @apply bg-ogclan text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-ogclan-dark hover:shadow-md active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ogclan/50 focus:ring-offset-2;
+    @apply bg-ogclan text-black font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-ogclan-dark hover:shadow-md active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ogclan/50 focus:ring-offset-2;
   }
   
   .section-container {
@@ -74,15 +74,15 @@
   }
   
   .highlight-card {
-    @apply rounded-2xl overflow-hidden bg-white/90 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px];
+    @apply rounded-2xl overflow-hidden bg-black/90 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] border border-ogclan/20;
   }
   
   .navbar-link {
-    @apply font-medium text-gray-700 hover:text-ogclan transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ogclan after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300;
+    @apply font-medium text-ogclan hover:text-ogclan-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ogclan after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300;
   }
   
   .social-icon {
-    @apply w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-gray-700 hover:bg-ogclan hover:text-white transition-all duration-300 hover:scale-110;
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-secondary text-ogclan hover:bg-ogclan hover:text-black transition-all duration-300 hover:scale-110;
   }
 }
 
@@ -102,4 +102,9 @@
   .animation-delay-1200 {
     animation-delay: 1200ms;
   }
+  
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent;
+  }
 }
+

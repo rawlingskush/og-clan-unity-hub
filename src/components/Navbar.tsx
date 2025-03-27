@@ -19,7 +19,7 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled 
-          ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' 
+          ? 'bg-black/80 backdrop-blur-md shadow-md py-4 border-b border-ogclan/20' 
           : 'bg-transparent py-6'
       )}
     >
@@ -27,9 +27,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <a 
             href="#" 
-            className="text-2xl font-bold text-gray-900 flex items-center"
+            className="text-2xl font-bold text-ogclan flex items-center"
           >
-            <div className="w-10 h-10 bg-ogclan rounded-lg flex items-center justify-center text-white mr-3">
+            <div className="w-10 h-10 bg-ogclan rounded-lg flex items-center justify-center text-black mr-3">
               OG
             </div>
             <span className="hidden sm:inline">OG Clan</span>
@@ -54,3 +54,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

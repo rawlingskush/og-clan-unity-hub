@@ -64,10 +64,10 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				ogclan: {
-					DEFAULT: '#0EA5E9', // Ocean blue as primary brand color
-					dark: '#0284C7',
-					light: '#38BDF8',
-					muted: '#BAE6FD'
+					DEFAULT: '#D4AF37', // Gold as primary brand color
+					dark: '#B8860B',   // Dark gold
+					light: '#FFD700',  // Light gold
+					muted: '#F5DEB3'   // Wheat (muted gold)
 				}
 			},
 			borderRadius: {
@@ -176,8 +176,8 @@ export default {
 				mono: ['SF Mono', 'monospace']
 			},
 			dropShadow: {
-				'blue': '0 0 10px rgba(14, 165, 233, 0.5)',
-				'blue-lg': '0 0 15px rgba(14, 165, 233, 0.7)'
+				'gold': '0 0 10px rgba(212, 175, 55, 0.5)',
+				'gold-lg': '0 0 15px rgba(212, 175, 55, 0.7)'
 			},
 			backdropBlur: {
 				xs: '2px'
@@ -186,3 +186,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
