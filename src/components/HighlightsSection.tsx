@@ -1,89 +1,155 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Calendar, Trophy, Users, Gamepad2 } from 'lucide-react';
+import { Calendar, Trophy, Users, Flame, Gamepad2 } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 const HighlightsSection = () => {
-  const highlights = [
+  const teams = [
     {
       id: 1,
-      title: "Tournament Victory",
-      description: "Our team dominated the regional championships, showcasing strategic teamwork and elite skills.",
-      imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      icon: <Trophy className="w-5 h-5" />,
-      category: "Competition"
+      title: "Fire Stars 🔥",
+      description: "Blazing through the competition with unstoppable momentum and fierce tactics.",
+      tagline: "1 pro ignites, 1 newbie flares up!",
+      imageUrl: "/lovable-uploads/45ffa98e-e5e3-4e69-aa01-40bec47f9d28.png",
+      icon: <Flame className="w-5 h-5 text-red-500" />,
+      category: "Offensive"
     },
     {
       id: 2,
-      title: "Team Building Events",
-      description: "Building stronger bonds beyond gaming through community activities and hangouts.",
-      imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      icon: <Users className="w-5 h-5" />,
-      category: "Community"
+      title: "Ice Crew ❄️",
+      description: "Freezing out the opposition with cool precision and calculated strategy.",
+      tagline: "1 pro chills, 1 newbie freezes out!",
+      imageUrl: "/lovable-uploads/868831b3-078e-4cf4-b395-e9bfb9ec5c6f.png",
+      icon: <Trophy className="w-5 h-5" />,
+      category: "Tactical"
     },
     {
       id: 3,
-      title: "Upcoming Tournament",
-      description: "Preparing for the next big challenge with intensive training and strategy sessions.",
-      imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-      icon: <Calendar className="w-5 h-5" />,
-      category: "Upcoming"
-    },
-    {
-      id: 4,
-      title: "Gaming Sessions",
-      description: "Regular gaming sessions that combine fun, strategy and skill development for all members.",
-      imageUrl: "https://images.unsplash.com/photo-1500673922987-e212871fec22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      title: "Thunder Crew ⚡",
+      description: "Shocking the battlefield with electrifying plays and lightning-fast reflexes.",
+      tagline: "1 pro roars, 1 newbie thunders up!",
+      imageUrl: "/lovable-uploads/afb763c8-53f8-4c32-92ad-20ef2c253f23.png",
       icon: <Gamepad2 className="w-5 h-5" />,
-      category: "Training"
+      category: "Speed"
     },
   ];
 
+  const features = [
+    {
+      id: 1,
+      title: "Celebrate Loyalty",
+      description: "Join us for an epic gaming event where OG Clan members honor our Cameroon roots while strengthening clan bonds."
+    },
+    {
+      id: 2,
+      title: "Everyone Belongs",
+      description: "Veterans share wisdom. Inactive members reconnect. Newcomers find their place. We grow stronger together."
+    },
+    {
+      id: 3,
+      title: "Level Up Together",
+      description: "Face thrilling challenges. Earn exclusive rewards. Sharpen your skills in friendly competition."
+    }
+  ];
+
   return (
-    <section id="highlights" className="py-20 md:py-28 bg-gray-50">
+    <section id="highlights" className="py-20 md:py-28 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedContent animation="fade-in-up">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Clan Highlights
+            <h2 className="text-3xl md:text-4xl font-bold text-ogclan mb-4">
+              Squad Highlights
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              A glimpse into our journey, achievements, and the moments that define us.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose your team and dominate the battlefield together
             </p>
           </div>
         </AnimatedContent>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {highlights.map((highlight, index) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {teams.map((team, index) => (
             <AnimatedContent 
-              key={highlight.id} 
+              key={team.id} 
               animation="fade-in-up" 
               delay={300 + index * 150}
             >
               <div className="highlight-card h-full">
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={highlight.imageUrl} 
-                    alt={highlight.title}
-                    className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/80 backdrop-blur-sm rounded-full text-sm font-medium text-gray-700 flex items-center">
-                    {highlight.icon}
-                    <span className="ml-1">{highlight.category}</span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {highlight.title}
+                <div className="p-6 border-b border-ogclan/20">
+                  <h3 className="text-2xl font-bold text-ogclan mb-2">
+                    {team.title}
                   </h3>
-                  <p className="text-gray-700">
-                    {highlight.description}
+                  <p className="text-gray-300 mb-4">
+                    {team.description}
+                  </p>
+                  <p className="text-sm text-ogclan-light font-medium">
+                    {team.tagline}
                   </p>
                 </div>
               </div>
             </AnimatedContent>
           ))}
+        </div>
+
+        <div className="relative mb-20">
+          <div className="absolute -top-10 -left-10 w-48 h-48 bg-ogclan/5 rounded-full blur-3xl"></div>
+          <div className="glass-card p-8 rounded-2xl relative">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-ogclan mb-2">
+                OG Battle Night: Unite, Fight, Ignite! 🔥
+              </h3>
+              <p className="text-gray-300">
+                Join us for an epic gaming event on March 17, 2025 at 10pm
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <div key={feature.id} className="flex">
+                  <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-ogclan/10 text-ogclan">
+                    <Check className="h-5 w-5" />
+                  </div>
+                  <div className="ml-4">
+                    <h4 className="text-lg font-semibold text-ogclan-light">{feature.title}</h4>
+                    <p className="mt-1 text-gray-400">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-2xl font-bold text-ogclan mb-4">
+                "For the OGs, by the OGs. Let's dominate together!" 💪
+              </p>
+              <p className="text-gray-400">
+                No team yet? Spectate on TikTok Live to find your squad!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <AnimatedContent animation="slide-in-left">
+            <div className="overflow-hidden rounded-2xl border border-ogclan/20">
+              <img 
+                src="/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png" 
+                alt="OG Clan Gaming Event"
+                className="w-full h-full object-cover aspect-video"
+                loading="lazy"
+              />
+            </div>
+          </AnimatedContent>
+          
+          <AnimatedContent animation="slide-in-right">
+            <div className="overflow-hidden rounded-2xl border border-ogclan/20">
+              <img 
+                src="/lovable-uploads/45ffa98e-e5e3-4e69-aa01-40bec47f9d28.png" 
+                alt="OG Clan Members"
+                className="w-full h-full object-cover aspect-video"
+                loading="lazy"
+              />
+            </div>
+          </AnimatedContent>
         </div>
       </div>
     </section>

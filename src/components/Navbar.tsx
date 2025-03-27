@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,10 +30,7 @@ const Navbar = () => {
             href="#" 
             className="text-2xl font-bold text-ogclan flex items-center"
           >
-            <div className="w-10 h-10 bg-ogclan rounded-lg flex items-center justify-center text-black mr-3">
-              OG
-            </div>
-            <span className="hidden sm:inline">OG Clan</span>
+            <Logo withText={true} />
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#about" className="navbar-link">About</a>
@@ -54,4 +52,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
