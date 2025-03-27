@@ -17,14 +17,14 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="text-center">
           <AnimatedContent animation="fade-in-up" delay={300}>
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center mb-6">
               <Logo size="lg" withText={false} />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ogclan mb-2">
               OG BATTLE NIGHT
             </h1>
             <p className="text-2xl md:text-3xl text-ogclan-light font-semibold">
-              Unite, Fight, Ignite! <Flame className="inline-block h-6 w-6 text-red-500" />
+              Where Legends are Born <Flame className="inline-block h-6 w-6 text-red-500" />
             </p>
           </AnimatedContent>
 

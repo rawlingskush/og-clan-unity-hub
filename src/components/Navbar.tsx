@@ -20,17 +20,17 @@ const Navbar = () => {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled 
-          ? 'bg-black/80 backdrop-blur-md shadow-md py-4 border-b border-ogclan/20' 
-          : 'bg-transparent py-6'
+          ? 'bg-black/80 backdrop-blur-md shadow-md py-2 border-b border-ogclan/20' 
+          : 'bg-transparent py-4'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <a 
             href="#" 
-            className="text-2xl font-bold text-ogclan flex items-center"
+            className="flex items-center"
           >
-            <Logo withText={true} />
+            <Logo withText={false} size="md" />
           </a>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#about" className="navbar-link">About</a>
