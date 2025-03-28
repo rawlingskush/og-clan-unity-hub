@@ -33,9 +33,9 @@ const Index = () => {
         
         <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <AnimatedContent animation="fade-in-up">
-                <h2 className="text-5xl md:text-6xl font-bold text-ogclan mb-4">
+                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
                   Our Vision
                 </h2>
                 <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
@@ -47,7 +47,7 @@ const Index = () => {
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <AnimatedContent animation="slide-in-left">
-                <div className="glass-card p-8 rounded-2xl border-l-4 border-ogclan">
+                <div className="glass-card p-8 rounded-2xl border-l-4 border-ogclan shadow-[0_0_15px_rgba(212,175,55,0.2)]">
                   <h3 className="text-2xl font-bold text-ogclan mb-6">
                     A Movement, Not Just a Clan
                   </h3>
@@ -68,19 +68,19 @@ const Index = () => {
               
               <AnimatedContent animation="slide-in-right" delay={300}>
                 <div className="relative">
-                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-ogclan/10 rounded-xl animate-pulse-slow"></div>
-                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-ogclan/10 rounded-xl animate-pulse-slow animation-delay-600"></div>
-                  <div className="glass-card rounded-2xl overflow-hidden relative z-10">
+                  <div className="absolute -top-4 -left-4 w-24 h-24 bg-ogclan/20 rounded-xl animate-pulse-slow"></div>
+                  <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-ogclan/20 rounded-xl animate-pulse-slow animation-delay-600"></div>
+                  <div className="glass-card rounded-2xl overflow-hidden relative z-10 shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)]">
                     <img
-                      src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                      alt="OG Clan Gaming"
+                      src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                      alt="African gamers on mobile"
                       className="w-full h-full object-cover aspect-video"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex items-end p-6">
                       <div>
                         <p className="text-ogclan font-bold text-xl mb-2">Our Commitment</p>
-                        <p className="text-white/90">Creating opportunities for gamers across Cameroon</p>
+                        <p className="text-white/90">Empowering mobile gamers across Cameroon to reach their full potential</p>
                       </div>
                     </div>
                   </div>
@@ -91,8 +91,8 @@ const Index = () => {
         </section>
         
         <HighlightsSection />
-        <SponsorSection />
         <JoinSection />
+        <SponsorSection />
       </main>
       
       <Footer />

@@ -50,8 +50,13 @@ const HighlightsSection = () => {
   ];
 
   return (
-    <section id="highlights" className="py-20 md:py-28 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="highlights" className="py-20 md:py-28 bg-gradient-to-b from-black/95 to-black relative overflow-hidden">
+      {/* Background design elements */}
+      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-ogclan/5 to-transparent opacity-30"></div>
+      <div className="absolute -top-40 right-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-40 -left-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedContent animation="fade-in-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-ogclan mb-4">
@@ -70,7 +75,7 @@ const HighlightsSection = () => {
               animation="fade-in-up" 
               delay={300 + index * 150}
             >
-              <div className="highlight-card h-full">
+              <div className="highlight-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)]">
                 <div className="p-6 flex flex-col h-full">
                   <div className="mb-4 p-3 rounded-full bg-ogclan/10 w-fit">
                     {achievement.icon}
@@ -96,9 +101,9 @@ const HighlightsSection = () => {
 
         <div className="relative mb-20">
           <div className="absolute -top-10 -left-10 w-48 h-48 bg-ogclan/5 rounded-full blur-3xl"></div>
-          <div className="glass-card p-8 rounded-2xl relative">
+          <div className="glass-card p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
             <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-ogclan mb-2">
+              <h3 className="text-2xl md:text-3xl font-bold text-gradient-gold mb-2">
                 OG Battle Night: Unite, Fight, Ignite! 🔥
               </h3>
               <p className="text-gray-300">
@@ -121,7 +126,7 @@ const HighlightsSection = () => {
             </div>
             
             <div className="mt-8 text-center">
-              <p className="text-2xl font-bold text-ogclan mb-4">
+              <p className="text-2xl font-bold text-gradient-gold mb-4">
                 "For the OGs, by the OGs. Let's dominate together!" 💪
               </p>
               <p className="text-gray-400">
@@ -133,7 +138,7 @@ const HighlightsSection = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           <AnimatedContent animation="slide-in-left">
-            <div className="overflow-hidden rounded-2xl border border-ogclan/20">
+            <div className="overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-300 hover:shadow-[0_5px_20px_rgba(212,175,55,0.2)]">
               <img 
                 src="/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png" 
                 alt="OG Clan Gaming Event"
@@ -144,7 +149,7 @@ const HighlightsSection = () => {
           </AnimatedContent>
           
           <AnimatedContent animation="slide-in-right">
-            <div className="overflow-hidden rounded-2xl border border-ogclan/20">
+            <div className="overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-300 hover:shadow-[0_5px_20px_rgba(212,175,55,0.2)]">
               <img 
                 src="/lovable-uploads/45ffa98e-e5e3-4e69-aa01-40bec47f9d28.png" 
                 alt="OG Clan Members"

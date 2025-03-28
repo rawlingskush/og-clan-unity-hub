@@ -1,17 +1,18 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { ArrowDown, Flame } from 'lucide-react';
+import { ArrowDown, Flame, Calendar } from 'lucide-react';
 import Logo from './Logo';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background effect */}
+      {/* Enhanced Background effect */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-black"></div>
-        <div className="absolute top-40 -right-40 w-96 h-96 bg-ogclan/20 opacity-40 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 -left-40 w-96 h-96 bg-ogclan/20 opacity-30 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute top-40 -right-40 w-96 h-96 bg-ogclan/30 opacity-50 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 -left-40 w-96 h-96 bg-ogclan/30 opacity-40 rounded-full blur-3xl animate-pulse-slow animation-delay-600"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -46,10 +47,11 @@ const HeroSection = () => {
                 </span>
               </a>
               <a 
-                href="#highlights" 
+                href="#about" 
                 className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors"
               >
-                View Teams
+                <Calendar className="mr-2 h-5 w-5" />
+                Upcoming Events
               </a>
             </div>
           </AnimatedContent>
