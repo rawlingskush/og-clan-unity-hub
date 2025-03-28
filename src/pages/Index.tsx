@@ -8,6 +8,7 @@ import JoinSection from '@/components/JoinSection';
 import Footer from '@/components/Footer';
 import AnimatedContent from '@/components/AnimatedContent';
 import { useToast } from '@/components/ui/use-toast';
+import { Flame, ArrowRight } from 'lucide-react';
 
 const Index = () => {
   const { toast } = useToast();
@@ -30,19 +31,39 @@ const Index = () => {
       <main>
         <HeroSection />
         
-        <section id="about" className="py-20 md:py-28">
+        <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <AnimatedContent animation="slide-in-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <div className="text-center mb-12">
+              <AnimatedContent animation="fade-in-up">
+                <h2 className="text-5xl md:text-6xl font-bold text-ogclan mb-4">
                   Our Vision
                 </h2>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  OG Clan is more than just a gaming collective—we're a movement dedicated to uniting passionate gamers in Cameroon and across Africa. Our mission is to create opportunities through gaming, foster talent, and build a supportive community.
+                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+                  Building the future of gaming in Cameroon and beyond
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Founded on principles of loyalty, excellence, and unity, we strive to elevate gaming culture while nurturing the next generation of gaming talents. Together, we're building something extraordinary.
-                </p>
+              </AnimatedContent>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <AnimatedContent animation="slide-in-left">
+                <div className="glass-card p-8 rounded-2xl border-l-4 border-ogclan">
+                  <h3 className="text-2xl font-bold text-ogclan mb-6">
+                    A Movement, Not Just a Clan
+                  </h3>
+                  <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                    OG Clan is more than just a gaming collective—we're a movement dedicated to uniting passionate gamers in Cameroon and across Africa. Our mission is to create opportunities through gaming, foster talent, and build a supportive community.
+                  </p>
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    Founded on principles of loyalty, excellence, and unity, we strive to elevate gaming culture while nurturing the next generation of gaming talents. Together, we're building something extraordinary.
+                  </p>
+                  <div className="mt-8">
+                    <a href="#join" className="inline-flex items-center group">
+                      <span className="text-ogclan group-hover:text-ogclan-light transition-colors">Join our movement</span>
+                      <ArrowRight className="ml-2 h-4 w-4 text-ogclan group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </div>
               </AnimatedContent>
               
               <AnimatedContent animation="slide-in-right" delay={300}>
@@ -56,6 +77,12 @@ const Index = () => {
                       className="w-full h-full object-cover aspect-video"
                       loading="lazy"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                      <div>
+                        <p className="text-ogclan font-bold text-xl mb-2">Our Commitment</p>
+                        <p className="text-white/90">Creating opportunities for gamers across Cameroon</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </AnimatedContent>

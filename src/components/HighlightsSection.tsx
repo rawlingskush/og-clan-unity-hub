@@ -1,41 +1,37 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Calendar, Trophy, Users, Flame, Gamepad2 } from 'lucide-react';
-import { Check } from 'lucide-react';
+import { Check, Award, TrendingUp, Users } from 'lucide-react';
 
 const HighlightsSection = () => {
-  const teams = [
+  const achievements = [
     {
       id: 1,
-      title: "Fire Stars 🔥",
-      description: "Blazing through the competition with unstoppable momentum and fierce tactics.",
-      tagline: "1 pro ignites, 1 newbie flares up!",
-      imageUrl: "/lovable-uploads/45ffa98e-e5e3-4e69-aa01-40bec47f9d28.png",
-      icon: <Flame className="w-5 h-5 text-red-500" />,
-      category: "Offensive"
+      title: "Community Growth",
+      description: "From a small group to hundreds of dedicated members across Cameroon, our clan continues to expand.",
+      icon: <Users className="w-8 h-8 text-ogclan" />,
+      stat: "500+",
+      label: "Active Members"
     },
     {
       id: 2,
-      title: "Ice Crew ❄️",
-      description: "Freezing out the opposition with cool precision and calculated strategy.",
-      tagline: "1 pro chills, 1 newbie freezes out!",
-      imageUrl: "/lovable-uploads/868831b3-078e-4cf4-b395-e9bfb9ec5c6f.png",
-      icon: <Trophy className="w-5 h-5" />,
-      category: "Tactical"
+      title: "Tournament Success",
+      description: "Consistent performance in regional and national gaming competitions, putting Cameroon on the esports map.",
+      icon: <Award className="w-8 h-8 text-ogclan" />,
+      stat: "12+",
+      label: "Tournaments Won"
     },
     {
       id: 3,
-      title: "Thunder Crew ⚡",
-      description: "Shocking the battlefield with electrifying plays and lightning-fast reflexes.",
-      tagline: "1 pro roars, 1 newbie thunders up!",
-      imageUrl: "/lovable-uploads/afb763c8-53f8-4c32-92ad-20ef2c253f23.png",
-      icon: <Gamepad2 className="w-5 h-5" />,
-      category: "Speed"
-    },
+      title: "Growing Influence",
+      description: "Our social media presence and community impact continue to rise, creating opportunities for all members.",
+      icon: <TrendingUp className="w-8 h-8 text-ogclan" />,
+      stat: "100%",
+      label: "Annual Growth"
+    }
   ];
 
-  const features = [
+  const values = [
     {
       id: 1,
       title: "Celebrate Loyalty",
@@ -59,31 +55,38 @@ const HighlightsSection = () => {
         <AnimatedContent animation="fade-in-up">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-ogclan mb-4">
-              Squad Highlights
+              Our Achievements
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose your team and dominate the battlefield together
+              Building Cameroon's gaming future, one achievement at a time
             </p>
           </div>
         </AnimatedContent>
 
         <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {teams.map((team, index) => (
+          {achievements.map((achievement, index) => (
             <AnimatedContent 
-              key={team.id} 
+              key={achievement.id} 
               animation="fade-in-up" 
               delay={300 + index * 150}
             >
               <div className="highlight-card h-full">
-                <div className="p-6 border-b border-ogclan/20">
-                  <h3 className="text-2xl font-bold text-ogclan mb-2">
-                    {team.title}
+                <div className="p-6 flex flex-col h-full">
+                  <div className="mb-4 p-3 rounded-full bg-ogclan/10 w-fit">
+                    {achievement.icon}
+                  </div>
+                  
+                  <div className="mb-6">
+                    <div className="text-4xl font-bold text-ogclan mb-1">{achievement.stat}</div>
+                    <div className="text-sm uppercase tracking-wider text-ogclan-light font-medium">{achievement.label}</div>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-ogclan mb-3">
+                    {achievement.title}
                   </h3>
-                  <p className="text-gray-300 mb-4">
-                    {team.description}
-                  </p>
-                  <p className="text-sm text-ogclan-light font-medium">
-                    {team.tagline}
+                  
+                  <p className="text-gray-300 mt-auto">
+                    {achievement.description}
                   </p>
                 </div>
               </div>
@@ -104,7 +107,7 @@ const HighlightsSection = () => {
             </div>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
+              {values.map((feature, index) => (
                 <div key={feature.id} className="flex">
                   <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-ogclan/10 text-ogclan">
                     <Check className="h-5 w-5" />
