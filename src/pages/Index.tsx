@@ -36,7 +36,7 @@ const Index = () => {
             <div className="text-center mb-16">
               <AnimatedContent animation="fade-in-up">
                 <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
-                  Our Vision
+                  OUR VISION
                 </h2>
                 <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
                 <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
@@ -90,9 +90,59 @@ const Index = () => {
           </div>
         </section>
         
-        <HighlightsSection />
-        <JoinSection />
-        <SponsorSection />
+        <section id="og-battle-night" className="py-20 md:py-28 bg-gradient-to-b from-black/95 to-black relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <AnimatedContent animation="fade-in-up">
+                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
+                  OG BATTLE NIGHT
+                </h2>
+                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+                  Join our flagship gaming event - where legends are born
+                </p>
+              </AnimatedContent>
+            </div>
+            
+            <HighlightsSection />
+          </div>
+        </section>
+        
+        <section id="join" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <AnimatedContent animation="fade-in-up">
+                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
+                  JOIN YOUR SQUAD
+                </h2>
+                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+                  Become part of something bigger than just gaming
+                </p>
+              </AnimatedContent>
+            </div>
+            
+            <JoinSection />
+          </div>
+        </section>
+
+        <section id="partners" className="py-20 md:py-28 bg-gradient-to-b from-black/95 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <AnimatedContent animation="fade-in-up">
+                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
+                  OUR PARTNERS
+                </h2>
+                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+                  The brands that support our vision and growth
+                </p>
+              </AnimatedContent>
+            </div>
+            
+            <SponsorSection />
+          </div>
+        </section>
       </main>
       
       <Footer />

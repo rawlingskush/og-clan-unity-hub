@@ -47,7 +47,7 @@ const HeroSection = () => {
                 </span>
               </a>
               <a 
-                href="#about" 
+                href="#og-battle-night" 
                 className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors"
               >
                 <Calendar className="mr-2 h-5 w-5" />

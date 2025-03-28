@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Check, Award, TrendingUp, Users } from 'lucide-react';
+import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin } from 'lucide-react';
 
 const HighlightsSection = () => {
   const achievements = [
@@ -50,24 +50,13 @@ const HighlightsSection = () => {
   ];
 
   return (
-    <section id="highlights" className="py-20 md:py-28 bg-gradient-to-b from-black/95 to-black relative overflow-hidden">
+    <div className="relative overflow-hidden">
       {/* Background design elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-ogclan/5 to-transparent opacity-30"></div>
       <div className="absolute -top-40 right-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-40 -left-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <AnimatedContent animation="fade-in-up">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-ogclan mb-4">
-              Our Achievements
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Building Cameroon's gaming future, one achievement at a time
-            </p>
-          </div>
-        </AnimatedContent>
-
+      <div className="relative z-10">
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {achievements.map((achievement, index) => (
             <AnimatedContent 
@@ -103,11 +92,27 @@ const HighlightsSection = () => {
           <div className="absolute -top-10 -left-10 w-48 h-48 bg-ogclan/5 rounded-full blur-3xl"></div>
           <div className="glass-card p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
             <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gradient-gold mb-2">
-                OG Battle Night: Unite, Fight, Ignite! 🔥
+              <h3 className="text-2xl md:text-3xl font-bold text-gradient-gold mb-4">
+                Next OG Battle Night Event
               </h3>
-              <p className="text-gray-300">
-                Join us for an epic gaming event on March 17, 2025 at 10pm
+              
+              <div className="flex flex-wrap justify-center gap-6 mb-6">
+                <div className="flex items-center">
+                  <Calendar className="h-5 w-5 text-ogclan mr-2" />
+                  <span className="text-gray-300">March 17, 2025</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-5 w-5 text-ogclan mr-2" />
+                  <span className="text-gray-300">10:00 PM WAT</span>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="h-5 w-5 text-ogclan mr-2" />
+                  <span className="text-gray-300">Douala, Cameroon & Online</span>
+                </div>
+              </div>
+              
+              <p className="text-ogclan-light text-xl">
+                Unite, Fight, Ignite! 🔥
               </p>
             </div>
             
@@ -129,9 +134,13 @@ const HighlightsSection = () => {
               <p className="text-2xl font-bold text-gradient-gold mb-4">
                 "For the OGs, by the OGs. Let's dominate together!" 💪
               </p>
-              <p className="text-gray-400">
+              <p className="text-gray-400 mb-6">
                 No team yet? Spectate on TikTok Live to find your squad!
               </p>
+              
+              <a href="#join" className="btn-primary">
+                Register for Battle Night
+              </a>
             </div>
           </div>
         </div>
@@ -160,7 +169,7 @@ const HighlightsSection = () => {
           </AnimatedContent>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
