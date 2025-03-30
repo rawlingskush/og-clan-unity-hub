@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin } from 'lucide-react';
+import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin, Youtube, TikTok } from 'lucide-react';
 
 const HighlightsSection = () => {
   const achievements = [
@@ -10,7 +10,7 @@ const HighlightsSection = () => {
       title: "Community Growth",
       description: "From a small group to hundreds of dedicated members across Cameroon, our clan continues to expand.",
       icon: <Users className="w-8 h-8 text-ogclan" />,
-      stat: "500+",
+      stat: "66+",
       label: "Active Members"
     },
     {
@@ -26,7 +26,7 @@ const HighlightsSection = () => {
       title: "Growing Influence",
       description: "Our social media presence and community impact continue to rise, creating opportunities for all members.",
       icon: <TrendingUp className="w-8 h-8 text-ogclan" />,
-      stat: "100%",
+      stat: "69%",
       label: "Annual Growth"
     }
   ];
@@ -99,7 +99,7 @@ const HighlightsSection = () => {
               <div className="flex flex-wrap justify-center gap-6 mb-6">
                 <div className="flex items-center">
                   <Calendar className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">March 17, 2025</span>
+                  <span className="text-gray-300">Every Sunday</span>
                 </div>
                 <div className="flex items-center">
                   <Clock className="h-5 w-5 text-ogclan mr-2" />
@@ -107,7 +107,7 @@ const HighlightsSection = () => {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">Douala, Cameroon & Online</span>
+                  <span className="text-gray-300">For OG Clan Members</span>
                 </div>
               </div>
               

@@ -1,14 +1,12 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Instagram, Facebook, Youtube, Twitch, MessageSquare } from 'lucide-react';
+import { TikTok, Youtube, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5" />, href: "#", label: "Instagram" },
-    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
+    { icon: <TikTok className="w-5 h-5" />, href: "#", label: "TikTok" },
     { icon: <Youtube className="w-5 h-5" />, href: "#", label: "YouTube" },
-    { icon: <Twitch className="w-5 h-5" />, href: "#", label: "Twitch" },
     { icon: <MessageSquare className="w-5 h-5" />, href: "#", label: "Discord" },
   ];
 
