@@ -1,7 +1,9 @@
+
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { ArrowDown, Flame, Calendar } from 'lucide-react';
 import Logo from './Logo';
+
 const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Enhanced Background effect */}
@@ -48,12 +50,20 @@ const HeroSection = () => {
           </AnimatedContent>
         </div>
 
-        <AnimatedContent animation="fade-in" delay={1500} className="mt-16 md:mt-24 flex justify-center">
-          <a href="#about" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/50 border border-ogclan/30 hover:border-ogclan/50 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-1" aria-label="Scroll down">
-            <ArrowDown className="w-5 h-5 text-ogclan" />
-          </a>
-        </AnimatedContent>
+        {/* Centered arrow button with improved styling */}
+        <div className="absolute bottom-12 left-0 right-0 flex justify-center">
+          <AnimatedContent animation="fade-in" delay={1500}>
+            <a 
+              href="#about" 
+              className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 border border-ogclan/40 hover:border-ogclan/70 shadow-md hover:shadow-ogclan/20 transition-all duration-300 hover:translate-y-1 group"
+              aria-label="Scroll down"
+            >
+              <ArrowDown className="w-6 h-6 text-ogclan group-hover:text-ogclan-light" />
+            </a>
+          </AnimatedContent>
+        </div>
       </div>
     </section>;
 };
+
 export default HeroSection;
