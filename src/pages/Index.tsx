@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -9,29 +8,27 @@ import Footer from '@/components/Footer';
 import AnimatedContent from '@/components/AnimatedContent';
 import { useToast } from '@/components/ui/use-toast';
 import { Flame, ArrowRight } from 'lucide-react';
-
 const Index = () => {
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   useEffect(() => {
     // Welcome toast
     setTimeout(() => {
       toast({
         title: "Welcome to OG Clan",
         description: "Explore our site and discover what makes us unique.",
-        duration: 5000,
+        duration: 5000
       });
     }, 1500);
   }, [toast]);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main>
         <HeroSection />
         
-        <section id="about" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95">
+        <section id="about" className="py-20 bg-gradient-to-b from-black to-black/95 md:py-[15px]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <AnimatedContent animation="fade-in-up">
@@ -71,12 +68,7 @@ const Index = () => {
                   <div className="absolute -top-4 -left-4 w-24 h-24 bg-ogclan/20 rounded-xl animate-pulse-slow"></div>
                   <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-ogclan/20 rounded-xl animate-pulse-slow animation-delay-600"></div>
                   <div className="glass-card rounded-2xl overflow-hidden relative z-10 shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)]">
-                    <img
-                      src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                      alt="African gamers on mobile"
-                      className="w-full h-full object-cover aspect-video"
-                      loading="lazy"
-                    />
+                    <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="African gamers on mobile" className="w-full h-full object-cover aspect-video" loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex items-end p-6">
                       <div>
                         <p className="text-ogclan font-bold text-xl mb-2">Our Commitment</p>
@@ -146,8 +138,6 @@ const Index = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

@@ -1,7 +1,5 @@
-
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
-
 interface AnimatedContentProps {
   children: ReactNode;
   animation?: 'fade-in-up' | 'fade-in' | 'scale-in' | 'slide-in-right' | 'slide-in-left';
@@ -10,7 +8,6 @@ interface AnimatedContentProps {
   className?: string;
   threshold?: number;
 }
-
 const AnimatedContent = ({
   children,
   animation = 'fade-in-up',
@@ -21,47 +18,30 @@ const AnimatedContent = ({
 }: AnimatedContentProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect();
       }
-    );
-
+    }, {
+      threshold
+    });
     const currentRef = ref.current;
     if (currentRef) {
       observer.observe(currentRef);
     }
-
     return () => {
       if (currentRef) {
         observer.unobserve(currentRef);
       }
     };
   }, [threshold]);
-
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        isVisible ? `animate-${animation}` : 'opacity-0',
-        className
-      )}
-      style={{
-        animationDelay: `${delay}ms`,
-        animationDuration: `${duration}ms`
-      }}
-    >
+  return <div ref={ref} style={{
+    animationDelay: `${delay}ms`,
+    animationDuration: `${duration}ms`
+  }} className="">
       {children}
-    </div>
-  );
+    </div>;
 };
-
 export default AnimatedContent;

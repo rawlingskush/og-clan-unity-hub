@@ -1,12 +1,9 @@
-
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { ArrowDown, Flame, Calendar } from 'lucide-react';
 import Logo from './Logo';
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Enhanced Background effect */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90"></div>
@@ -15,7 +12,7 @@ const HeroSection = () => {
         <div className="absolute bottom-20 -left-40 w-96 h-96 bg-ogclan/30 opacity-40 rounded-full blur-3xl animate-pulse-slow animation-delay-600"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:px-[34px] md:py-[19px]">
         <div className="text-center">
           <AnimatedContent animation="fade-in-up" delay={300}>
             <div className="flex justify-center mb-6">
@@ -37,19 +34,13 @@ const HeroSection = () => {
 
           <AnimatedContent animation="fade-in-up" delay={900}>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#join" 
-                className="btn-primary group"
-              >
+              <a href="#join" className="btn-primary group">
                 Join Your Squad
                 <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform">
                   →
                 </span>
               </a>
-              <a 
-                href="#og-battle-night" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors"
-              >
+              <a href="#og-battle-night" className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors">
                 <Calendar className="mr-2 h-5 w-5" />
                 Upcoming Events
               </a>
@@ -58,17 +49,11 @@ const HeroSection = () => {
         </div>
 
         <AnimatedContent animation="fade-in" delay={1500} className="mt-16 md:mt-24 flex justify-center">
-          <a
-            href="#about"
-            className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/50 border border-ogclan/30 hover:border-ogclan/50 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-1"
-            aria-label="Scroll down"
-          >
+          <a href="#about" className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-black/50 border border-ogclan/30 hover:border-ogclan/50 shadow-md hover:shadow-lg transition-all duration-300 hover:translate-y-1" aria-label="Scroll down">
             <ArrowDown className="w-5 h-5 text-ogclan" />
           </a>
         </AnimatedContent>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
