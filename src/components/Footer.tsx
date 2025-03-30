@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { TikTok, Youtube, MessageSquare } from 'lucide-react';
+import { Smartphone, Youtube, MessageSquare } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
-    { icon: <TikTok className="w-5 h-5" />, href: "#", label: "TikTok" },
+    { icon: <Smartphone className="w-5 h-5" />, href: "#", label: "TikTok" },
     { icon: <Youtube className="w-5 h-5" />, href: "#", label: "YouTube" },
     { icon: <MessageSquare className="w-5 h-5" />, href: "#", label: "Discord" },
   ];

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin, Youtube, TikTok } from 'lucide-react';
+import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin, Youtube, Smartphone } from 'lucide-react';
 
 const HighlightsSection = () => {
   const achievements = [
