@@ -107,12 +107,12 @@ const HighlightsSection = () => {
                 </div>
                 <div className="flex items-center">
                   <MapPin className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">For OG Clan Members</span>
+                  <span className="text-gray-300">Clan Challenge Event</span>
                 </div>
               </div>
               
               <p className="text-ogclan-light text-xl">
-                Unite, Fight, Ignite! 🔥
+                Clan Wars: Prove Your Worth! 🔥
               </p>
             </div>
             
@@ -135,11 +135,11 @@ const HighlightsSection = () => {
                 "For the OGs, by the OGs. Let's dominate together!" 💪
               </p>
               <p className="text-gray-400 mb-6">
-                No team yet? Spectate on TikTok Live to find your squad!
+                Calling all clan masters! Bring your best squad to battle against the OG Clan and show us what you've got. The ultimate test of skill and teamwork awaits.
               </p>
               
               <a href="#join" className="btn-primary">
-                Register for Battle Night
+                Challenge OG Clan
               </a>
             </div>
           </div>
