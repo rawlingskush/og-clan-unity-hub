@@ -31,7 +31,25 @@ const Index = () => {
       <main>
         <HeroSection />
         
-        <section id="about" className="py-24 bg-gradient-to-b from-black to-black/95 overflow-hidden">
+        <section id="og-battle-night" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <AnimatedContent animation="fade-in-up">
+                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
+                  OG BATTLE NIGHT
+                </h2>
+                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+                  Join our flagship gaming event - where legends are born
+                </p>
+              </AnimatedContent>
+            </div>
+            
+            <HighlightsSection />
+          </div>
+        </section>
+        
+        <section id="about" className="py-24 bg-gradient-to-b from-black/95 to-black overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             {/* Background elements */}
             <div className="absolute -top-40 right-0 w-96 h-96 bg-ogclan/10 rounded-full blur-3xl" />
@@ -97,13 +115,13 @@ const Index = () => {
               </AnimatedContent>
             </div>
             
-            {/* Feature highlight with image */}
+            {/* Improved Global Impact section */}
             <div className="grid md:grid-cols-5 gap-12 items-center mt-20">
               <AnimatedContent animation="slide-in-left" className="md:col-span-2">
                 <div className="glass-card p-8 rounded-2xl border-l-4 border-ogclan shadow-[0_0_25px_rgba(212,175,55,0.15)] relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-ogclan/5 rounded-bl-full"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-ogclan/10 rounded-bl-full"></div>
                   
-                  <h3 className="text-3xl font-bold text-ogclan mb-6">
+                  <h3 className="text-3xl font-bold text-gradient-gold mb-6">
                     A Movement, Not Just a Clan
                   </h3>
                   
@@ -166,6 +184,12 @@ const Index = () => {
                           <p className="text-white/90 text-lg max-w-xl">
                             From local tournaments to international recognition, OG Clan is putting Cameroon on the global gaming map and creating new opportunities for African gamers.
                           </p>
+                          <div className="mt-4">
+                            <a href="#join" className="inline-flex items-center gap-2 px-4 py-2 bg-ogclan/20 hover:bg-ogclan/30 text-ogclan-light rounded-lg transition-all duration-300 group">
+                              Learn more about our impact
+                              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -173,24 +197,6 @@ const Index = () => {
                 </div>
               </AnimatedContent>
             </div>
-          </div>
-        </section>
-        
-        <section id="og-battle-night" className="py-20 md:py-28 bg-gradient-to-b from-black/95 to-black relative overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <AnimatedContent animation="fade-in-up">
-                <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4">
-                  OG BATTLE NIGHT
-                </h2>
-                <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
-                <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
-                  Join our flagship gaming event - where legends are born
-                </p>
-              </AnimatedContent>
-            </div>
-            
-            <HighlightsSection />
           </div>
         </section>
         

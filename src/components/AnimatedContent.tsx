@@ -4,11 +4,12 @@ import { cn } from '@/lib/utils';
 
 interface AnimatedContentProps {
   children: ReactNode;
-  animation?: 'fade-in-up' | 'fade-in' | 'scale-in' | 'slide-in-right' | 'slide-in-left';
+  animation?: 'fade-in-up' | 'fade-in' | 'scale-in' | 'slide-in-right' | 'slide-in-left' | 'bounce';
   delay?: number;
   duration?: number;
   className?: string;
   threshold?: number;
+  once?: boolean;
 }
 
 const AnimatedContent = ({
@@ -17,7 +18,8 @@ const AnimatedContent = ({
   delay = 0,
   duration = 700,
   className,
-  threshold = 0.1
+  threshold = 0.1,
+  once = true
 }: AnimatedContentProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -26,7 +28,11 @@ const AnimatedContent = ({
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsVisible(true);
-        observer.disconnect();
+        if (once) {
+          observer.disconnect();
+        }
+      } else if (!once) {
+        setIsVisible(false);
       }
     }, {
       threshold
@@ -42,7 +48,7 @@ const AnimatedContent = ({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold]);
+  }, [threshold, once]);
 
   const getAnimationClass = () => {
     if (!isVisible) return 'opacity-0';
@@ -58,6 +64,8 @@ const AnimatedContent = ({
         return 'animate-[fade-in_0.7s_ease-out,slide-in-right_0.7s_ease-out]';
       case 'slide-in-left':
         return 'animate-[fade-in_0.7s_ease-out,slide-in-left_0.7s_ease-out]';
+      case 'bounce':
+        return 'animate-[fade-in_0.7s_ease-out] animate-bounce';
       default:
         return 'animate-[fade-in_0.7s_ease-out]';
     }

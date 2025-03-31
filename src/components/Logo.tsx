@@ -22,7 +22,7 @@ const Logo = ({ className, size = 'md', withText = true }: LogoProps) => {
         'rounded-lg flex items-center justify-center relative overflow-hidden'
       )}>
         <img 
-          src="/lovable-uploads/d74ad0ce-f0a8-4d1c-9a42-186b6010c9f3.png" 
+          src="/lovable-uploads/241d467c-0a24-42c2-8c5d-05228936ef6b.png" 
           alt="OG Clan Logo" 
           className="w-full h-full object-contain"
         />

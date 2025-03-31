@@ -1,7 +1,7 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { ArrowDown, Flame, Calendar } from 'lucide-react';
+import { ArrowDown, Flame, Calendar, Target } from 'lucide-react';
 import Logo from './Logo';
 
 const HeroSection = () => {
@@ -42,23 +42,29 @@ const HeroSection = () => {
                   →
                 </span>
               </a>
-              <a href="#og-battle-night" className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors">
-                <Calendar className="mr-2 h-5 w-5" />
-                Upcoming Events
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a href="#og-battle-night" className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Upcoming Events
+                </a>
+                <a href="#og-battle-night" className="inline-flex items-center justify-center px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 transition-colors">
+                  <Target className="mr-2 h-5 w-5" />
+                  Challenge Our Squad
+                </a>
+              </div>
             </div>
           </AnimatedContent>
         </div>
 
         {/* Centered arrow button with improved styling */}
-        <div className="absolute bottom-12 left-0 right-0 flex justify-center">
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
           <AnimatedContent animation="fade-in" delay={1500}>
             <a 
               href="#about" 
-              className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-black/60 border border-ogclan/40 hover:border-ogclan/70 shadow-md hover:shadow-ogclan/20 transition-all duration-300 hover:translate-y-1 group"
+              className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-black/60 border border-ogclan/40 hover:border-ogclan/70 shadow-md hover:shadow-ogclan/20 transition-all duration-300 hover:translate-y-1 group"
               aria-label="Scroll down"
             >
-              <ArrowDown className="w-6 h-6 text-ogclan group-hover:text-ogclan-light" />
+              <ArrowDown className="w-7 h-7 text-ogclan group-hover:text-ogclan-light animate-bounce animation-delay-1200" />
             </a>
           </AnimatedContent>
         </div>
