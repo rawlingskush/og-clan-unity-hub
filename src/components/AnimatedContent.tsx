@@ -55,19 +55,19 @@ const AnimatedContent = ({
     
     switch (animation) {
       case 'fade-in-up':
-        return 'animate-[fade-in_0.7s_ease-out,slide-in-up_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out,slide-in-up_0.8s_ease-out]';
       case 'fade-in':
-        return 'animate-[fade-in_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out]';
       case 'scale-in':
-        return 'animate-[fade-in_0.7s_ease-out,scale-in_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out,scale-in_0.8s_ease-out]';
       case 'slide-in-right':
-        return 'animate-[fade-in_0.7s_ease-out,slide-in-right_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out,slide-in-right_0.8s_ease-out]';
       case 'slide-in-left':
-        return 'animate-[fade-in_0.7s_ease-out,slide-in-left_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out,slide-in-left_0.8s_ease-out]';
       case 'bounce':
-        return 'animate-[fade-in_0.7s_ease-out] animate-bounce';
+        return 'animate-[fade-in_0.8s_ease-out] animate-bounce';
       default:
-        return 'animate-[fade-in_0.7s_ease-out]';
+        return 'animate-[fade-in_0.8s_ease-out]';
     }
   };
 

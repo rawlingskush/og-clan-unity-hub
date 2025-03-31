@@ -2,9 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
+import { Menu } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,21 +35,44 @@ const Navbar = () => {
           >
             <Logo withText={false} size="md" />
           </a>
+          
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#about" className="navbar-link">About</a>
             <a href="#highlights" className="navbar-link">Highlights</a>
             <a href="#sponsors" className="navbar-link">Sponsors</a>
             <a href="#join" className="navbar-link">Join Us</a>
           </nav>
-          <div>
+          
+          <div className="flex items-center">
             <a 
               href="#join" 
               className="btn-primary"
             >
               Join the Crew
             </a>
+            
+            <Button
+              variant="ghost"
+              size="icon"
+              className="ml-4 text-ogclan hover:bg-ogclan/10 md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Menu className="h-6 w-6" />
+            </Button>
           </div>
         </div>
+        
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 py-4 border-t border-ogclan/20">
+            <nav className="flex flex-col space-y-4">
+              <a href="#about" className="navbar-link">About</a>
+              <a href="#highlights" className="navbar-link">Highlights</a>
+              <a href="#sponsors" className="navbar-link">Sponsors</a>
+              <a href="#join" className="navbar-link">Join Us</a>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

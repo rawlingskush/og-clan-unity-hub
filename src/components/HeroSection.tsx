@@ -14,13 +14,13 @@ const HeroSection = () => {
         <div className="absolute bottom-20 -left-40 w-96 h-96 bg-ogclan/30 opacity-40 rounded-full blur-3xl animate-pulse-slow animation-delay-600"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:px-[34px] md:py-[19px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:px-8 md:py-20">
         <div className="text-center">
           <AnimatedContent animation="fade-in-up" delay={300}>
-            <div className="flex justify-center mb-6">
-              <Logo size="lg" withText={false} />
+            <div className="flex justify-center mb-8">
+              <Logo size="lg" withText={false} variant="primary" />
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ogclan mb-2">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ogclan mb-4">
               OG BATTLE NIGHT
             </h1>
             <p className="text-2xl md:text-3xl text-ogclan-light font-semibold">
@@ -56,15 +56,15 @@ const HeroSection = () => {
           </AnimatedContent>
         </div>
 
-        {/* Centered arrow button with improved styling */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+        {/* Enhanced arrow button with better styling and positioning */}
+        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
           <AnimatedContent animation="fade-in" delay={1500}>
             <a 
               href="#about" 
-              className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-black/60 border border-ogclan/40 hover:border-ogclan/70 shadow-md hover:shadow-ogclan/20 transition-all duration-300 hover:translate-y-1 group"
+              className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-black/60 border-2 border-ogclan/50 hover:border-ogclan shadow-lg hover:shadow-ogclan/30 transition-all duration-300 hover:translate-y-1 group"
               aria-label="Scroll down"
             >
-              <ArrowDown className="w-7 h-7 text-ogclan group-hover:text-ogclan-light animate-bounce animation-delay-1200" />
+              <ArrowDown className="w-8 h-8 text-ogclan group-hover:text-ogclan-light animate-bounce animation-delay-1200" />
             </a>
           </AnimatedContent>
         </div>

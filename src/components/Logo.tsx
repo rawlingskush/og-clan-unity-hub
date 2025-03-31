@@ -4,15 +4,22 @@ import { cn } from '@/lib/utils';
 
 interface LogoProps {
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   withText?: boolean;
+  variant?: 'primary' | 'secondary';
 }
 
-const Logo = ({ className, size = 'md', withText = true }: LogoProps) => {
+const Logo = ({ 
+  className, 
+  size = 'md', 
+  withText = true, 
+  variant = 'primary' 
+}: LogoProps) => {
   const sizeClasses = {
     sm: 'w-10 h-10',
-    md: 'w-14 h-14',
-    lg: 'w-20 h-20'
+    md: 'w-16 h-16', // Increased from w-14 h-14
+    lg: 'w-24 h-24', // Increased from w-20 h-20
+    xl: 'w-32 h-32'
   };
 
   return (
@@ -22,9 +29,11 @@ const Logo = ({ className, size = 'md', withText = true }: LogoProps) => {
         'rounded-lg flex items-center justify-center relative overflow-hidden'
       )}>
         <img 
-          src="/lovable-uploads/241d467c-0a24-42c2-8c5d-05228936ef6b.png" 
+          src={variant === 'primary' 
+            ? "/lovable-uploads/6c05815f-b567-49f6-94d3-be587bc340e9.png"
+            : "/lovable-uploads/9d40ac01-6aa4-4626-aaa9-cd051a54ca6c.png"} 
           alt="OG Clan Logo" 
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain drop-shadow-gold"
         />
       </div>
       
