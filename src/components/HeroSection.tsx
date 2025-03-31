@@ -18,7 +18,14 @@ const HeroSection = () => {
         <div className="text-center">
           <AnimatedContent animation="fade-in-up" delay={300}>
             <div className="flex justify-center mb-8">
-              <Logo size="lg" withText={false} variant="primary" />
+              {/* Replace the Logo component with the new image */}
+              <div className="w-28 h-28 md:w-36 md:h-36">
+                <img 
+                  src="/lovable-uploads/5bfd821e-f0b3-4f77-8754-6df282e60305.png" 
+                  alt="OG Clan Cameroon Logo" 
+                  className="w-full h-full object-contain drop-shadow-gold"
+                />
+              </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ogclan mb-4">
               OG BATTLE NIGHT
