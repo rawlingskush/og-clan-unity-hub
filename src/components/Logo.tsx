@@ -15,11 +15,12 @@ const Logo = ({
   withText = true, 
   variant = 'primary' 
 }: LogoProps) => {
+  // Increased size classes by ~20% for better visibility
   const sizeClasses = {
-    sm: 'w-10 h-10',
-    md: 'w-16 h-16', // Increased from w-14 h-14
-    lg: 'w-24 h-24', // Increased from w-20 h-20
-    xl: 'w-32 h-32'
+    sm: 'w-12 h-12', // Increased from w-10 h-10
+    md: 'w-20 h-20', // Increased from w-16 h-16
+    lg: 'w-28 h-28', // Increased from w-24 h-24
+    xl: 'w-36 h-36'  // Increased from w-32 h-32
   };
 
   return (
@@ -29,9 +30,7 @@ const Logo = ({
         'rounded-lg flex items-center justify-center relative overflow-hidden'
       )}>
         <img 
-          src={variant === 'primary' 
-            ? "/lovable-uploads/6c05815f-b567-49f6-94d3-be587bc340e9.png"
-            : "/lovable-uploads/9d40ac01-6aa4-4626-aaa9-cd051a54ca6c.png"} 
+          src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
           alt="OG Clan Logo" 
           className="w-full h-full object-contain drop-shadow-gold"
         />

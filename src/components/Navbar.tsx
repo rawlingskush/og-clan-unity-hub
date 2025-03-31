@@ -33,7 +33,7 @@ const Navbar = () => {
             href="#" 
             className="flex items-center"
           >
-            <Logo withText={false} size="md" />
+            <Logo withText={false} size="sm" />
           </a>
           
           <nav className="hidden md:flex items-center space-x-8">
