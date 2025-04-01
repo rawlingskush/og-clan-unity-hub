@@ -10,11 +10,9 @@ const ScrollDownButton = () => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('og-battle-night');
     if (nextSection) {
-      // Use scrollTo with specific offset for better iOS compatibility
-      window.scrollTo({
-        top: nextSection.offsetTop - 80, // Adjust for header height
-        behavior: 'smooth'
-      });
+      // Fix iOS scrolling issues by using a simpler approach
+      const topOffset = nextSection.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo(0, topOffset);
     }
   };
 

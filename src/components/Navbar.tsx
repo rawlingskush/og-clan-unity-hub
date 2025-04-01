@@ -24,18 +24,24 @@ const Navbar = () => {
   });
 
   const handleNavClick = (sectionId: string) => {
-    const success = scrollToSection(sectionId);
-    
-    if (!success) {
-      toast({
-        title: "Section not found",
-        description: `The ${sectionId} section is not available yet.`,
-        variant: "destructive",
-      });
-    }
-    
-    // Close mobile drawer if open
+    // Close mobile drawer immediately for better UX
     setIsDrawerOpen(false);
+    
+    // Allow a small delay for the drawer to close before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Fix for iOS scrolling using direct coordinate calculation
+        const topOffset = element.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo(0, topOffset);
+      } else {
+        toast({
+          title: "Section not found",
+          description: `The ${sectionId} section is not available yet.`,
+          variant: "destructive",
+        });
+      }
+    }, 10);
   };
 
   const toggleMobileSubmenu = (itemId: string) => {
@@ -61,12 +67,18 @@ const Navbar = () => {
     if (isDrawerOpen) {
       // Prevent background scrolling when drawer is open
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     }
 
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     };
   }, [isDrawerOpen]);
 

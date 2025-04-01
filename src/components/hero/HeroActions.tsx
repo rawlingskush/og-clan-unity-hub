@@ -11,11 +11,9 @@ const HeroActions = () => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      // Use scrollTo for better iOS compatibility
-      window.scrollTo({
-        top: element.offsetTop - 80, // Adjust offset for header
-        behavior: 'smooth'
-      });
+      // Fix for iOS scrolling
+      const topOffset = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo(0, topOffset);
     }
   };
 

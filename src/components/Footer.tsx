@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Smartphone, Youtube, MessageSquare, Mail } from 'lucide-react';
@@ -16,11 +15,9 @@ const Footer = () => {
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Use scrollTo for iOS compatibility
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
+      // Fix for iOS scrolling using direct coordinate calculation
+      const topOffset = element.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo(0, topOffset);
     } else {
       toast({
         title: "Section not found",
