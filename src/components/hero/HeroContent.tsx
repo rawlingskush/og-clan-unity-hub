@@ -10,24 +10,20 @@ const HeroContent = () => {
   return <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative ${isMobile ? 'px-3' : ''}`}>
-          <span className="relative inline-block">
+          <span className="relative inline-block overflow-hidden group">
             {/* Main text with enhanced styling */}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold inline-block relative">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold relative z-10">
               WELCOME TO OG CLAN
             </span>
             
             {/* Text glow effect */}
             <span className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light blur-[2px] opacity-70 animate-pulse-slow"></span>
             
-            {/* Enhanced horizontal lines for gaming aesthetic - longer and thicker */}
-            <span className="absolute -left-6 sm:-left-8 md:-left-12 top-1/2 w-5 sm:w-7 md:w-10 h-[3px] bg-ogclan"></span>
-            <span className="absolute -right-6 sm:-right-8 md:-right-12 top-1/2 w-5 sm:w-7 md:w-10 h-[3px] bg-ogclan"></span>
+            {/* Animated underline effect */}
+            <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-ogclan-dark to-ogclan-light group-hover:w-full transition-all duration-700 ease-in-out"></span>
             
-            {/* Additional decorative corner lines for a "frame" effect */}
-            <span className="absolute left-0 -top-3 h-3 w-[3px] bg-ogclan"></span>
-            <span className="absolute right-0 -top-3 h-3 w-[3px] bg-ogclan"></span>
-            <span className="absolute left-0 -bottom-3 h-3 w-[3px] bg-ogclan"></span>
-            <span className="absolute right-0 -bottom-3 h-3 w-[3px] bg-ogclan"></span>
+            {/* Animated gradient border that appears on hover */}
+            <span className="absolute inset-0 opacity-0 group-hover:opacity-100 border border-transparent bg-gradient-to-r from-ogclan-dark/0 via-ogclan/40 to-ogclan-light/0 rounded transition-all duration-700 scale-105 group-hover:scale-100 blur-sm"></span>
           </span>
           
           {/* Background glow */}
