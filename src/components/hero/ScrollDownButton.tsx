@@ -25,7 +25,7 @@ const ScrollDownButton = () => {
                   hover:after:opacity-100 after:blur-sm after:z-[-2] after:transition-opacity after:duration-500"
       >
         <span className="absolute inset-0 rounded-full bg-gradient-to-r from-ogclan/0 via-ogclan/30 to-ogclan/0 opacity-0 group-hover:opacity-100 animate-pulse-slow"></span>
-        <ChevronDown className="h-4 w-4 text-ogclan group-hover:text-ogclan-light group-hover:drop-shadow-gold transition-all duration-300 group-hover:scale-110 animate-float" />
+        <ChevronDown className="h-4 w-4 text-ogclan group-hover:text-ogclan-light group-hover:drop-shadow-gold-lg transition-all duration-300 group-hover:scale-110 animate-float" />
       </button>
     </AnimatedContent>
   );
