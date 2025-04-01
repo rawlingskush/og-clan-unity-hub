@@ -3,11 +3,13 @@ import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+
 const HeroContent = () => {
   const isMobile = useIsMobile();
+  
   return <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative">
+        <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative ${isMobile ? 'px-3' : ''}`}>
           <span className="relative inline-block">
             {/* Main text with enhanced styling */}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold inline-block relative">
@@ -41,8 +43,11 @@ const HeroContent = () => {
       </AnimatedContent>
 
       <AnimatedContent animation="fade-in-up" delay={600}>
-        <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl max-w-6xl mx-auto text-balance leading-relaxed px-2 text-gray-400">Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier gaming squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. Join Us, level up your game, and help write our epic legacy. Let's own this together!</p>
+        <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl max-w-6xl mx-auto text-balance leading-relaxed px-4 sm:px-2 text-gray-400">
+          Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier gaming squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. Join Us, level up your game, and help write our epic legacy. Let's own this together!
+        </p>
       </AnimatedContent>
     </div>;
 };
+
 export default HeroContent;

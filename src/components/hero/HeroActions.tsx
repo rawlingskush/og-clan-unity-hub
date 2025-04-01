@@ -2,14 +2,17 @@
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Calendar, ArrowRight, Target } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroActions = () => {
+  const isMobile = useIsMobile();
+
   return (
     <AnimatedContent animation="fade-in-up" delay={900}>
-      <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="#join" 
-          className="btn-primary group relative overflow-hidden"
+          className="btn-primary group relative overflow-hidden mx-auto sm:mx-0"
         >
           <span className="relative z-10 flex items-center">
             Join OG Clan
