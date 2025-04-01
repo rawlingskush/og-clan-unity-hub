@@ -8,6 +8,7 @@ import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
+import SupabaseConnectionTest from '@/components/SupabaseConnectionTest';
 import { useToast } from '@/components/ui/use-toast';
 
 const Index = () => {
@@ -29,6 +30,9 @@ const Index = () => {
       <Navbar />
       
       <main>
+        <div className="container mx-auto px-4 py-8">
+          <SupabaseConnectionTest />
+        </div>
         <HeroSection />
         <BattleNightSection />
         <ClanStatsSection />
