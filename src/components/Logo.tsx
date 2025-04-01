@@ -19,9 +19,9 @@ const Logo = ({
   // Size classes with reduced dimensions
   const sizeClasses = {
     sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-    xl: 'w-24 h-24'
+    md: 'w-10 h-10',
+    lg: 'w-14 h-14',
+    xl: 'w-20 h-20'
   };
 
   return (
@@ -40,12 +40,14 @@ const Logo = ({
         {/* Simplified border effect */}
         <div className="absolute inset-0 border border-ogclan/30 group-hover:border-ogclan/40 transition-all duration-300 z-20"></div>
         
-        {/* Main logo image with subtle animation */}
-        <img 
-          src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
-          alt="OG Clan Logo" 
-          className="w-full h-full object-contain z-10"
-        />
+        {/* Zoomed logo image with subtle animation - using object-cover instead of object-contain and adding scale */}
+        <div className="w-full h-full overflow-hidden relative">
+          <img 
+            src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
+            alt="OG Clan Logo" 
+            className="w-[120%] h-[120%] object-cover object-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
+          />
+        </div>
         
         {/* Subtle corner accents */}
         <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-ogclan/50 opacity-40 group-hover:opacity-60 transition-opacity duration-300 z-30"></div>
