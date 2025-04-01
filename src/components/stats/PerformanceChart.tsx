@@ -1,16 +1,8 @@
 
 import React from 'react';
-import { 
-  LineChart, 
-  Line, 
-  XAxis, 
-  YAxis, 
-  Tooltip,
-  CartesianGrid, 
-  Legend,
-  ResponsiveContainer 
-} from 'recharts';
-import { ChartContainer, ChartTooltip, ChartTooltipContent, ChartLegend, ChartLegendContent } from '@/components/ui/chart';
+import { LineChart, Line, YAxis, Legend } from 'recharts';
+import ChartBase from './ChartBase';
+import { ChartLegend, ChartLegendContent } from '@/components/ui/chart';
 
 const PerformanceChart = () => {
   // Sample data for the chart
@@ -36,53 +28,41 @@ const PerformanceChart = () => {
   };
 
   return (
-    <div className="w-full h-64 md:h-80">
-      <ChartContainer config={chartConfig}>
-        <LineChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#333" opacity={0.3} />
-          <XAxis 
-            dataKey="name" 
-            tick={{ fill: '#aaa' }} 
-            axisLine={{ stroke: '#333' }}
-            tickLine={{ stroke: '#333' }}
-          />
-          <YAxis 
-            yAxisId="left"
-            tick={{ fill: '#aaa' }} 
-            axisLine={{ stroke: '#333' }} 
-            tickLine={{ stroke: '#333' }}
-          />
-          <YAxis 
-            yAxisId="right"
-            orientation="right"
-            tick={{ fill: '#aaa' }} 
-            axisLine={{ stroke: '#333' }} 
-            tickLine={{ stroke: '#333' }}
-          />
-          <ChartTooltip 
-            content={<ChartTooltipContent />}
-          />
-          <Line 
-            type="monotone" 
-            dataKey="wins" 
-            name="Wins" 
-            yAxisId="left"
-            stroke="var(--color-wins, #D4AF37)" 
-            activeDot={{ r: 8, strokeWidth: 2, stroke: '#000' }} 
-            strokeWidth={3}
-          />
-          <Line 
-            type="monotone" 
-            dataKey="kills" 
-            name="Kills"
-            yAxisId="right" 
-            stroke="var(--color-kills, #B8860B)" 
-            strokeWidth={3}
-          />
-          <ChartLegend content={<ChartLegendContent />} />
-        </LineChart>
-      </ChartContainer>
-    </div>
+    <ChartBase data={data} config={chartConfig}>
+      <LineChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
+        <YAxis 
+          yAxisId="left"
+          tick={{ fill: '#aaa' }} 
+          axisLine={{ stroke: '#333' }} 
+          tickLine={{ stroke: '#333' }}
+        />
+        <YAxis 
+          yAxisId="right"
+          orientation="right"
+          tick={{ fill: '#aaa' }} 
+          axisLine={{ stroke: '#333' }} 
+          tickLine={{ stroke: '#333' }}
+        />
+        <Line 
+          type="monotone" 
+          dataKey="wins" 
+          name="Wins" 
+          yAxisId="left"
+          stroke="var(--color-wins, #D4AF37)" 
+          activeDot={{ r: 8, strokeWidth: 2, stroke: '#000' }} 
+          strokeWidth={3}
+        />
+        <Line 
+          type="monotone" 
+          dataKey="kills" 
+          name="Kills"
+          yAxisId="right" 
+          stroke="var(--color-kills, #B8860B)" 
+          strokeWidth={3}
+        />
+        <ChartLegend content={<ChartLegendContent />} />
+      </LineChart>
+    </ChartBase>
   );
 };
 
