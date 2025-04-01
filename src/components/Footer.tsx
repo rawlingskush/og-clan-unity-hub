@@ -16,6 +16,7 @@ const Footer = () => {
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      // Use scrollTo for iOS compatibility
       window.scrollTo({
         top: element.offsetTop - 80,
         behavior: 'smooth'
@@ -76,7 +77,7 @@ const Footer = () => {
               {[
                 {name: 'Home', id: 'home'}, 
                 {name: 'About', id: 'about'}, 
-                {name: 'Highlights', id: 'highlights'}, 
+                {name: 'Battle Night', id: 'og-battle-night'}, 
                 {name: 'Join Us', id: 'join'}
               ].map((item, index) => (
                 <li key={index}>

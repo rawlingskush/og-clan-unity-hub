@@ -10,7 +10,11 @@ const ScrollDownButton = () => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById('og-battle-night');
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      // Use scrollTo with specific offset for better iOS compatibility
+      window.scrollTo({
+        top: nextSection.offsetTop - 80, // Adjust for header height
+        behavior: 'smooth'
+      });
     }
   };
 

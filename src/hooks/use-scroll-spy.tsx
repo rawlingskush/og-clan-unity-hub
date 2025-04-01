@@ -34,7 +34,7 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     // Initial call to set the active section on mount
     handleScroll();
     
@@ -48,9 +48,9 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       // Set as active section immediately for better UX
       setActiveSection(sectionId);
       
-      // Smooth scroll with an offset to account for fixed header
+      // Direct scrollTo command for better cross-browser compatibility, especially iOS
       window.scrollTo({
-        top: element.offsetTop - 80, // Adjust this offset based on your header height
+        top: element.offsetTop - 80,
         behavior: 'smooth'
       });
       

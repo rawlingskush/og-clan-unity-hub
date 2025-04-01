@@ -1,17 +1,21 @@
 
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
-import { Calendar, ArrowRight, Target } from 'lucide-react';
+import { ArrowRight, Calendar, Target } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroActions = () => {
   const isMobile = useIsMobile();
   
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLButtonElement>, targetId: string) => {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Use scrollTo for better iOS compatibility
+      window.scrollTo({
+        top: element.offsetTop - 80, // Adjust offset for header
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -35,7 +39,7 @@ const HeroActions = () => {
             onClick={(e) => handleSmoothScroll(e, 'og-battle-night')}
           >
             <Calendar className="mr-2 h-5 w-5" />
-            <span className="text-sm sm:text-base">Clan Events</span>
+            <span className="text-sm sm:text-base">Battle Night</span>
           </button>
           
           <button 

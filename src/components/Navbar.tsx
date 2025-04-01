@@ -50,13 +50,7 @@ const Navbar = () => {
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { 
-      id: 'events', 
-      label: 'Events', 
-      subItems: [
-        { id: 'og-battle-night', label: 'OG Battle Night', description: 'Our flagship monthly competition' }
-      ]
-    },
+    { id: 'og-battle-night', label: 'Battle Night' },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
     { id: 'cod-points', label: 'Get CoD Points' }
