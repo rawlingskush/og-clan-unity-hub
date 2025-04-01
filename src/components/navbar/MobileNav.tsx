@@ -1,17 +1,16 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronRight, Menu } from 'lucide-react';
+import { ChevronRight, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { MenuItem } from './types';
 
 interface MobileNavProps {
@@ -33,10 +32,36 @@ const MobileNav = ({
   expandedMobileItems,
   toggleMobileSubmenu
 }: MobileNavProps) => {
+  // Lock body scroll when drawer is open (iOS fix)
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${window.scrollY}px`;
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+    }
+    
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.top = '';
+    };
+  }, [isDrawerOpen]);
+
   return (
     <div className="md:hidden ml-4">
-      <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-        <DrawerTrigger asChild>
+      <Sheet open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+        <SheetTrigger asChild>
           <Button
             variant="ghost"
             size="icon"
@@ -44,15 +69,15 @@ const MobileNav = ({
           >
             <Menu className="h-6 w-6" />
           </Button>
-        </DrawerTrigger>
-        <DrawerContent className="bg-black/95 border-t border-ogclan/20 max-h-[85vh]">
-          <div className="mx-auto w-full max-w-sm">
-            <DrawerHeader>
-              <DrawerTitle className="text-ogclan text-center text-xl font-orbitron">
+        </SheetTrigger>
+        <SheetContent className="bg-black/95 border-t border-ogclan/20 max-h-[100svh] flex flex-col">
+          <div className="mx-auto w-full max-w-sm flex-1 flex flex-col">
+            <SheetHeader>
+              <SheetTitle className="text-ogclan text-center text-xl font-orbitron">
                 OG Clan Menu
-              </DrawerTitle>
-            </DrawerHeader>
-            <div className="flex flex-col space-y-2 px-4 overflow-y-auto pb-4">
+              </SheetTitle>
+            </SheetHeader>
+            <div className="flex-1 flex flex-col space-y-2 px-4 overflow-y-auto pb-4">
               {menuItems.map(item => {
                 if (item.subItems) {
                   const isExpanded = expandedMobileItems.includes(item.id);
@@ -92,7 +117,9 @@ const MobileNav = ({
                             onClick={() => handleNavClick(subItem.id)}
                           >
                             <span className="font-medium">{subItem.label}</span>
-                            <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
+                            {subItem.description && (
+                              <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
+                            )}
                           </button>
                         ))}
                       </div>
@@ -116,22 +143,24 @@ const MobileNav = ({
                 }
               })}
             </div>
-            <DrawerFooter className="px-4 pt-2 pb-8">
+            <SheetFooter className="px-4 pt-2 pb-8 mt-auto">
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                 onClick={() => handleNavClick('join')}
               >
                 Join the Crew
               </Button>
-              <DrawerClose asChild>
-                <Button variant="outline" className="mt-2 border-ogclan/20 text-ogclan-light">
-                  Close Menu
-                </Button>
-              </DrawerClose>
-            </DrawerFooter>
+              <Button 
+                variant="outline" 
+                className="mt-2 border-ogclan/20 text-ogclan-light w-full"
+                onClick={() => setIsDrawerOpen(false)}
+              >
+                Close Menu
+              </Button>
+            </SheetFooter>
           </div>
-        </DrawerContent>
-      </Drawer>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 };
