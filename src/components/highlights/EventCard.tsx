@@ -2,6 +2,7 @@
 import React from 'react';
 import { Calendar, Clock, MapPin } from 'lucide-react';
 import FeatureItem from './FeatureItem';
+import CountdownTimer from './CountdownTimer';
 
 interface EventFeature {
   id: number;
@@ -14,6 +15,16 @@ interface EventCardProps {
 }
 
 const EventCard = ({ features }: EventCardProps) => {
+  // Calculate next Sunday at 10:00 PM WAT (UTC+1)
+  const getNextSunday = () => {
+    const now = new Date();
+    const daysUntilNextSunday = 7 - now.getDay();
+    const nextSunday = new Date(now);
+    nextSunday.setDate(now.getDate() + (daysUntilNextSunday === 0 ? 7 : daysUntilNextSunday));
+    nextSunday.setHours(22, 0, 0, 0); // 10:00 PM
+    return nextSunday;
+  };
+
   return (
     <div className="glass-card p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
       <div className="text-center mb-8">
@@ -35,6 +46,8 @@ const EventCard = ({ features }: EventCardProps) => {
             <span className="text-gray-300">Clan Challenge Event</span>
           </div>
         </div>
+        
+        <CountdownTimer targetDate={getNextSunday()} />
         
         <p className="text-ogclan-light text-xl">
           Clan Wars: Prove Your Worth! 🔥
