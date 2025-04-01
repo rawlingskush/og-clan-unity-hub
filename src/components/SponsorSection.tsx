@@ -1,12 +1,9 @@
-
 import React from 'react';
 import { ArrowRight, TrendingUp, Users, Medal, Award } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
-
 const SponsorSection = () => {
-  return (
-    <section id="sponsors" className="py-20 md:py-28 bg-black relative overflow-hidden">
+  return <section id="sponsors" className="py-20 md:py-28 bg-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-ogclan/5 opacity-30 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-ogclan/5 opacity-20 rounded-full blur-3xl"></div>
@@ -31,7 +28,7 @@ const SponsorSection = () => {
                   <Users className="w-6 h-6 text-ogclan mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-ogclan-light">Growing Community</h3>
-                    <p className="text-gray-400">With 500+ active members, 10K+ TikTok followers, and regular events like OG Battle Night pulling in 200+ participants, we're building a movement.</p>
+                    <p className="text-gray-400">With 50+ active members, 1K+ TikTok followers, and regular events like OG Battle Night pulling in 100+ participants, we're building a movement.</p>
                   </div>
                 </div>
                 
@@ -71,36 +68,18 @@ const SponsorSection = () => {
               
               <form className="space-y-5">
                 <div>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none"
-                  />
+                  <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
                 </div>
                 <div>
-                  <input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none"
-                  />
+                  <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
                 </div>
                 <div>
-                  <input 
-                    type="text" 
-                    placeholder="Company/Organization" 
-                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none"
-                  />
+                  <input type="text" placeholder="Company/Organization" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
                 </div>
                 <div>
-                  <textarea 
-                    placeholder="Tell us about your interest in sponsoring OG Clan" 
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none resize-none"
-                  ></textarea>
+                  <textarea placeholder="Tell us about your interest in sponsoring OG Clan" rows={4} className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none resize-none"></textarea>
                 </div>
-                <Button 
-                  className="w-full bg-ogclan hover:bg-ogclan-dark text-black font-medium py-3 transition-all duration-300"
-                >
+                <Button className="w-full bg-ogclan hover:bg-ogclan-dark text-black font-medium py-3 transition-all duration-300">
                   Send Request <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </form>
@@ -108,8 +87,6 @@ const SponsorSection = () => {
           </AnimatedContent>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default SponsorSection;
