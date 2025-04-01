@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -111,29 +110,21 @@
     @apply bg-ogclan/10;
   }
   
-  /* Enhanced hover effects with glows */
+  /* Enhanced hover effects with more pronounced glows */
   .hover-effect {
-    @apply relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] before:absolute before:content-[''] before:top-0 before:left-0 before:w-0 before:h-full before:bg-gradient-to-r before:from-ogclan/0 before:via-ogclan/10 before:to-ogclan/0 hover:before:w-full before:transition-all before:duration-700;
+    @apply relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.6)] before:absolute before:content-[''] before:top-0 before:left-0 before:w-0 before:h-full before:bg-gradient-to-r before:from-ogclan/0 before:via-ogclan/20 before:to-ogclan/0 hover:before:w-full before:transition-all before:duration-700;
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:text-ogclan hover:drop-shadow-[0_0_5px_rgba(212,175,55,0.7)];
-  }
-  
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
-  }
-  
-  .hover-slide-up {
-    @apply transition-transform duration-300 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:text-ogclan hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.8)];
   }
   
   .hover-border-glow {
-    @apply transition-all duration-300 hover:border-ogclan/70 hover:shadow-[0_0_10px_rgba(212,175,55,0.3)];
+    @apply transition-all duration-300 hover:border-ogclan/80 hover:shadow-[0_0_15px_rgba(212,175,55,0.5)];
   }
   
   .hover-text-glow {
-    @apply transition-all duration-300 hover:text-ogclan-light hover:drop-shadow-[0_0_3px_rgba(212,175,55,0.5)];
+    @apply transition-all duration-300 hover:text-ogclan-light hover:drop-shadow-[0_0_5px_rgba(212,175,55,0.7)];
   }
   
   /* New: Image frame styling */
@@ -194,14 +185,28 @@
   /* Glow animation for special elements */
   @keyframes pulse-glow {
     0%, 100% {
-      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
     }
     50% {
-      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
+      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9));
     }
   }
   
   .animate-glow {
     animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  /* New blink animation for stronger effects */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+  
+  .animate-blink {
+    animation: blink 1.5s ease-in-out infinite;
   }
 }
