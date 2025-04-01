@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useToast } from '@/hooks/use-toast';
@@ -62,6 +62,20 @@ const Navbar = () => {
     { id: 'cod-points', label: 'Get CoD Points' }
   ];
 
+  // Fix for iOS mobile browser scrolling issues
+  useEffect(() => {
+    if (isDrawerOpen) {
+      // Prevent background scrolling when drawer is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isDrawerOpen]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -74,16 +88,12 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <a 
-            href="#home" 
+          <button 
             className="flex items-center group relative z-10"
-            onClick={(e) => {
-              e.preventDefault();
-              handleNavClick('home');
-            }}
+            onClick={() => handleNavClick('home')}
           >
             <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />
-          </a>
+          </button>
           
           {/* Desktop Navigation */}
           <DesktopNav 
@@ -93,16 +103,12 @@ const Navbar = () => {
           />
           
           <div className="flex items-center">
-            <a 
-              href="#join" 
+            <button 
               className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98]"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavClick('join');
-              }}
+              onClick={() => handleNavClick('join')}
             >
               Join the Crew
-            </a>
+            </button>
             
             {/* Mobile Navigation */}
             <MobileNav 
