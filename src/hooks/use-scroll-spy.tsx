@@ -34,24 +34,25 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     // Initial call to set the active section on mount
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection, sectionIds, offset]);
 
-  // Function to navigate to a section with smooth scrolling
+  // Function to navigate to a section, improved for iOS compatibility
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       // Set as active section immediately for better UX
       setActiveSection(sectionId);
       
-      // Smooth scroll with an offset to account for fixed header
+      // Direct scroll with positioning calculation for consistent behavior
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: element.offsetTop - 80, // Adjust this offset based on your header height
-        behavior: 'smooth'
+        top: offsetTop - 80, // Adjust this offset based on your header height
+        behavior: 'auto' // Use 'auto' instead of 'smooth' for iOS compatibility
       });
       
       return true;

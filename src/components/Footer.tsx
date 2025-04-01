@@ -16,9 +16,10 @@ const Footer = () => {
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
+        top: offsetTop - 80,
+        behavior: 'auto'
       });
     } else {
       toast({
@@ -84,16 +85,12 @@ const Footer = () => {
                 {name: 'Join Us', id: 'join'}
               ].map((item, index) => (
                 <li key={index}>
-                  <a 
-                    href={`#${item.id}`}
-                    className="text-gray-400 hover:text-ogclan transition-colors block py-1"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(item.id);
-                    }}
+                  <button 
+                    className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full"
+                    onClick={() => handleNavClick(item.id)}
                   >
                     {item.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

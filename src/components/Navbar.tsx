@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useToast } from '@/hooks/use-toast';
@@ -22,6 +22,18 @@ const Navbar = () => {
     sectionIds,
     offset: 100
   });
+
+  // Enable scrolling when drawer is closed (for iOS fix)
+  useEffect(() => {
+    if (isDrawerOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isDrawerOpen]);
 
   const handleNavClick = (sectionId: string) => {
     const success = scrollToSection(sectionId);
@@ -50,13 +62,7 @@ const Navbar = () => {
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { 
-      id: 'events', 
-      label: 'Events', 
-      subItems: [
-        { id: 'og-battle-night', label: 'OG Battle Night', description: 'Our flagship monthly competition' }
-      ]
-    },
+    { id: 'og-battle-night', label: 'Battle Night' },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
     { id: 'cod-points', label: 'Get CoD Points' }
