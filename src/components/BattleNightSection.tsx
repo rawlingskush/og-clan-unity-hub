@@ -17,7 +17,7 @@ const BattleNightSection = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-dark mx-auto rounded-full mb-6"></div>
             <p className="text-xl md:text-2xl text-ogclan-light max-w-3xl mx-auto">
-              Join our flagship gaming event - where legends are born
+              Weekly Call of Duty Mobile tournaments where legends are born
             </p>
           </AnimatedContent>
         </div>

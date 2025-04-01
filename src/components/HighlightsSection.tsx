@@ -8,15 +8,15 @@ const HighlightsSection = () => {
   const values = [{
     id: 1,
     title: "Celebrate Loyalty",
-    description: "Join us for an epic gaming event where OG Clan members honor our Cameroon roots while strengthening clan bonds."
+    description: "Join us for epic Call of Duty Mobile tournaments where OG Clan members honor our Cameroon roots while strengthening clan bonds."
   }, {
     id: 2,
     title: "Everyone Belongs",
-    description: "Veterans share wisdom. Inactive members reconnect. Newcomers find their place. We grow stronger together."
+    description: "Veterans share COD Mobile tactics. Inactive members reconnect. Newcomers find their place. We grow stronger together."
   }, {
     id: 3,
     title: "Level Up Together",
-    description: "Face thrilling challenges. Earn exclusive rewards. Sharpen your skills in friendly competition."
+    description: "Face thrilling COD Mobile challenges. Earn exclusive rewards. Sharpen your skills in friendly competition."
   }];
   
   return (

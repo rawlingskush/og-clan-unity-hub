@@ -71,23 +71,23 @@ const JoinSection = () => {
   const benefits = [
     {
       icon: <Users className="w-5 h-5" />,
-      text: 'Be part of a supportive gaming family'
+      text: 'Be part of a supportive Call of Duty Mobile family'
     },
     {
       icon: <Award className="w-5 h-5" />,
-      text: 'Join exclusive tournaments and events'
+      text: 'Join exclusive COD Mobile tournaments and events'
     },
     {
       icon: <Gamepad2 className="w-5 h-5" />,
-      text: 'Opportunity to grow as a competitive player'
+      text: 'Opportunity to grow as a competitive COD Mobile player'
     },
     {
       icon: <Check className="w-5 h-5" />,
-      text: 'Connect with passionate gamers in Cameroon'
+      text: 'Connect with passionate Call of Duty Mobile gamers in Cameroon'
     },
     {
       icon: <Check className="w-5 h-5" />,
-      text: 'Help build the future of gaming in Africa'
+      text: 'Help build the future of mobile gaming in Africa'
     }
   ];
 
