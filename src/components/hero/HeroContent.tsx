@@ -11,11 +11,12 @@ const HeroContent = () => {
     <div className="text-center">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <div className="flex justify-center mb-4 md:mb-6">
-          <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 relative group">
+          <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 relative group">
+            <div className="absolute inset-0 bg-gradient-radial from-ogclan/20 to-transparent rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-all duration-500"></div>
             <img 
               src="/lovable-uploads/5bfd821e-f0b3-4f77-8754-6df282e60305.png" 
               alt="OG Clan Cameroon Logo" 
-              className="w-full h-full object-contain drop-shadow-gold transition-all duration-300 group-hover:scale-105"
+              className="w-full h-full object-contain drop-shadow-gold transition-all duration-300 group-hover:scale-105 animate-pulse-slow"
             />
             <div className="absolute inset-0 bg-ogclan/5 rounded-full blur-xl opacity-0 group-hover:opacity-70 transition-opacity duration-500"></div>
           </div>

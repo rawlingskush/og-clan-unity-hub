@@ -31,9 +31,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <a 
             href="#" 
-            className="flex items-center"
+            className="flex items-center group"
           >
-            <Logo withText={false} size="sm" />
+            <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />
           </a>
           
           <nav className="hidden md:flex items-center space-x-6">
