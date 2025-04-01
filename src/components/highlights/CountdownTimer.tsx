@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Clock } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -15,6 +16,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   });
   
   const [isExpired, setIsExpired] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -66,12 +68,12 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
     <div className="countdown-container w-full mb-8">
       <div className="text-center mb-2">
         <p className="text-ogclan-light text-lg font-medium flex items-center justify-center">
-          <Clock className="mr-2 h-5 w-5 animate-pulse" />
-          Next Battle Night In:
+          <Clock className={`${isMobile ? 'mr-1 h-4 w-4' : 'mr-2 h-5 w-5'} animate-pulse`} />
+          {isMobile ? "Next Battle In:" : "Next Battle Night In:"}
         </p>
       </div>
       
-      <div className="grid grid-cols-4 gap-2 text-center">
+      <div className={`grid ${isMobile ? 'grid-cols-2 gap-3' : 'grid-cols-4 gap-2'} text-center`}>
         {[
           { label: "Days", value: timeLeft.days },
           { label: "Hours", value: timeLeft.hours },
@@ -80,14 +82,14 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
         ].map((item, index) => (
           <div 
             key={item.label} 
-            className="countdown-item glass-effect p-3 rounded-lg border-ogclan/30 relative overflow-hidden"
+            className={`countdown-item glass-effect p-2 ${isMobile ? 'mb-3' : 'p-3'} rounded-lg border-ogclan/30 relative overflow-hidden`}
           >
             <div className="absolute inset-0 bg-ogclan/5 backdrop-blur-sm"></div>
             <div className="relative z-10">
-              <div className="text-2xl md:text-3xl font-bold text-ogclan">
+              <div className={`${isMobile ? 'text-xl' : 'text-2xl md:text-3xl'} font-bold text-ogclan`}>
                 {formatNumber(item.value)}
               </div>
-              <div className="text-xs uppercase tracking-wider text-ogclan-light/80">
+              <div className={`${isMobile ? 'text-[10px]' : 'text-xs'} uppercase tracking-wider text-ogclan-light/80`}>
                 {item.label}
               </div>
             </div>
