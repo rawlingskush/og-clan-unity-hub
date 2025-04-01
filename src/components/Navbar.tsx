@@ -1,80 +1,41 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Logo from './Logo';
-import { Button } from './ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useToast } from '@/hooks/use-toast';
 import DesktopNav from './navbar/DesktopNav';
 import MobileNav from './navbar/MobileNav';
 import { MenuItem } from './navbar/types';
+import { useScrollSpy } from '@/hooks/use-scroll-spy';
 
 const Navbar = () => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [activeSection, setActiveSection] = useState('home');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [expandedMobileItems, setExpandedMobileItems] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const { toast } = useToast();
 
-  // Track scroll position and update active section
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-      
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'og-battle-night', 'weekly', 'highlights', 'sponsors', 'join', 'cod-points'];
-      
-      // Get all section elements that exist in the DOM
-      const availableSections = sections.filter(id => document.getElementById(id));
-      
-      // Find the section that's currently most visible in the viewport
-      for (const section of availableSections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // Consider a section "active" when its top part is near the top of the viewport
-          if (rect.top <= 100 && rect.bottom >= 100) {
-            if (activeSection !== section) {
-              setActiveSection(section);
-            }
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    // Initial call to set the active section on mount
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection]);
-
-  // Calculate opacity based on scroll position for a smoother effect
-  const backgroundOpacity = Math.min(scrollPosition / 300, 0.7);
-  const isScrolled = scrollPosition > 10;
+  // List of all section IDs in the page
+  const sectionIds = ['home', 'about', 'og-battle-night', 'weekly', 'highlights', 'sponsors', 'join', 'cod-points'];
+  
+  // Use our custom scroll spy hook
+  const { scrollPosition, activeSection, scrollToSection, isScrolled } = useScrollSpy({
+    sectionIds,
+    offset: 100
+  });
 
   const handleNavClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      // Set as active section immediately for better UX
-      setActiveSection(sectionId);
-      
-      // Smooth scroll with a slight delay for visual transition
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-      
-      // Close mobile drawer if open
-      setIsDrawerOpen(false);
-    } else {
+    const success = scrollToSection(sectionId);
+    
+    if (!success) {
       toast({
         title: "Section not found",
         description: `The ${sectionId} section is not available yet.`,
         variant: "destructive",
       });
     }
+    
+    // Close mobile drawer if open
+    setIsDrawerOpen(false);
   };
 
   const toggleMobileSubmenu = (itemId: string) => {
@@ -82,6 +43,9 @@ const Navbar = () => {
       prev.includes(itemId) ? prev.filter(id => id !== itemId) : [...prev, itemId]
     );
   };
+
+  // Calculate opacity based on scroll position for a smoother effect
+  const backgroundOpacity = Math.min(scrollPosition / 300, 0.7);
 
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
