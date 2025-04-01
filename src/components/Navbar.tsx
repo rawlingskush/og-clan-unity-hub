@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -15,7 +14,7 @@ const Navbar = () => {
   const { toast } = useToast();
 
   // List of all section IDs in the page
-  const sectionIds = ['home', 'about', 'og-battle-night', 'weekly', 'highlights', 'sponsors', 'join', 'cod-points'];
+  const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points'];
   
   // Use our custom scroll spy hook
   const { scrollPosition, activeSection, scrollToSection, isScrolled } = useScrollSpy({
@@ -54,8 +53,7 @@ const Navbar = () => {
       id: 'events', 
       label: 'Events', 
       subItems: [
-        { id: 'og-battle-night', label: 'OG Battle Night', description: 'Our flagship monthly competition' },
-        { id: 'weekly', label: 'Weekly Meetups', description: 'Regular gaming sessions with the crew' }
+        { id: 'og-battle-night', label: 'OG Battle Night', description: 'Our flagship monthly competition' }
       ]
     },
     { id: 'sponsors', label: 'Sponsors' },
