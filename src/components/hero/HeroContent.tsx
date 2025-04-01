@@ -20,9 +20,15 @@ const HeroContent = () => {
             {/* Text glow effect */}
             <span className="absolute inset-0 bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light blur-[2px] opacity-70 animate-pulse-slow"></span>
             
-            {/* Horizontal lines for gaming aesthetic */}
-            <span className="absolute -left-4 sm:-left-6 md:-left-10 top-1/2 w-3 sm:w-5 md:w-8 h-[2px] bg-ogclan"></span>
-            <span className="absolute -right-4 sm:-right-6 md:-right-10 top-1/2 w-3 sm:w-5 md:w-8 h-[2px] bg-ogclan"></span>
+            {/* Enhanced horizontal lines for gaming aesthetic - longer and thicker */}
+            <span className="absolute -left-6 sm:-left-8 md:-left-12 top-1/2 w-5 sm:w-7 md:w-10 h-[3px] bg-ogclan"></span>
+            <span className="absolute -right-6 sm:-right-8 md:-right-12 top-1/2 w-5 sm:w-7 md:w-10 h-[3px] bg-ogclan"></span>
+            
+            {/* Additional decorative corner lines for a "frame" effect */}
+            <span className="absolute left-0 -top-3 h-3 w-[3px] bg-ogclan"></span>
+            <span className="absolute right-0 -top-3 h-3 w-[3px] bg-ogclan"></span>
+            <span className="absolute left-0 -bottom-3 h-3 w-[3px] bg-ogclan"></span>
+            <span className="absolute right-0 -bottom-3 h-3 w-[3px] bg-ogclan"></span>
           </span>
           
           {/* Background glow */}
