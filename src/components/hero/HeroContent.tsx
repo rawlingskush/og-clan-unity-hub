@@ -1,14 +1,10 @@
-
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const HeroContent = () => {
   const isMobile = useIsMobile();
-  
-  return (
-    <div className="text-center relative z-10">
+  return <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative">
           <span className="relative inline-block">
@@ -44,12 +40,8 @@ const HeroContent = () => {
       </AnimatedContent>
 
       <AnimatedContent animation="fade-in-up" delay={600}>
-        <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto text-balance leading-relaxed px-2">
-          Welcome to OG Clan—Cameroon's biggest gaming crew, uniting 35 passionate players since 2020. We're all about loyalty, growth, and crushing it in every match. Join us to level up, make memories, and become part of a legacy that's just getting started.
-        </p>
+        <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl max-w-2xl mx-auto text-balance leading-relaxed px-2 text-gray-300">Gear up, gamer! You’ve just landed at OG Clan, Cameroon’s top-tier gaming squad since 2020. We’re 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you’re here to frag out or vibe with the crew, there’s a spot for you. Join the fam, level up your game, and help write our epic legacy. Let’s own this together!</p>
       </AnimatedContent>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroContent;
