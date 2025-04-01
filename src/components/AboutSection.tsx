@@ -1,12 +1,9 @@
-
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
 import { ArrowRight, Users, Trophy, Target, Globe, Calendar, Star, Shield } from 'lucide-react';
-
 const AboutSection = () => {
-  return (
-    <section id="about" className="py-24 bg-gradient-to-b from-black/95 to-black overflow-hidden">
+  return <section id="about" className="py-24 bg-gradient-to-b from-black/95 to-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Background elements */}
         <div className="absolute -top-40 right-0 w-96 h-96 bg-ogclan/10 rounded-full blur-3xl" />
@@ -93,7 +90,7 @@ const AboutSection = () => {
                   
                   <div className="flex flex-col items-center bg-black/30 rounded-xl p-4 border border-ogclan/10 hover:border-ogclan/30 transition-all duration-300">
                     <Star className="h-8 w-8 text-red-400 mb-2" />
-                    <span className="text-2xl font-bold text-white">250+</span>
+                    <span className="text-2xl font-bold text-white">50+</span>
                     <span className="text-sm text-gray-400">Active Members</span>
                   </div>
                 </div>
@@ -131,11 +128,7 @@ const AboutSection = () => {
               <div className="glass-card p-6 rounded-2xl relative overflow-hidden hover-border-glow transition-all duration-500">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5"></div>
                 
-                <img 
-                  src="/lovable-uploads/ae69c923-ee2e-4b26-b170-ee5ca12bc30f.png" 
-                  alt="OG Clan Cameroon Logo" 
-                  className="w-full h-auto drop-shadow-xl animate-float"
-                />
+                <img src="/lovable-uploads/ae69c923-ee2e-4b26-b170-ee5ca12bc30f.png" alt="OG Clan Cameroon Logo" className="w-full h-auto drop-shadow-xl animate-float" />
                 
                 <div className="mt-6 p-4 bg-black/60 backdrop-blur-sm rounded-xl border border-white/5">
                   <p className="text-ogclan text-xl font-bold mb-1">OG CLAN CAMEROON</p>
@@ -146,8 +139,6 @@ const AboutSection = () => {
           </AnimatedContent>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
