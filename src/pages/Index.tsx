@@ -25,15 +25,20 @@ const Index = () => {
   }, [toast]);
   
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
       
       <main>
         <HeroSection />
+        <div className="py-4"></div> {/* Spacer */}
         <BattleNightSection />
+        <div className="py-2"></div> {/* Spacer */}
         <ClanStatsSection />
+        <div className="py-2"></div> {/* Spacer */}
         <AboutSection />
+        <div className="py-2"></div> {/* Spacer */}
         <JoinUsSection />
+        <div className="py-4"></div> {/* Spacer */}
         <PartnersSection />
       </main>
       
