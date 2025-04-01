@@ -1,14 +1,10 @@
-
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-
 const HeroContent = () => {
   const isMobile = useIsMobile();
-  
-  return (
-    <div className="text-center relative z-10">
+  return <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative ${isMobile ? 'px-3' : ''}`}>
           <span className="relative inline-block overflow-hidden group">
@@ -56,16 +52,12 @@ const HeroContent = () => {
         </div>
         
         <p className="mt-2 md:mt-4 text-base sm:text-lg md:text-xl max-w-6xl mx-auto leading-relaxed px-4 sm:px-6 relative">
-          <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">
-            Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier Call of Duty Mobile squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. 
-          </span>
+          <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier Call of Duty Mobile squad since 2020. We're 50+ hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you.</span>
           <span className="text-balance inline-block bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-2 drop-shadow">
             Join Us, level up your game, and help write our epic legacy. Let's own this together!
           </span>
         </p>
       </AnimatedContent>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroContent;
