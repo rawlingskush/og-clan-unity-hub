@@ -29,8 +29,7 @@ const HeroContent = () => {
             {/* Tech highlight flare with higher opacity */}
             <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-ogclan-dark/0 via-ogclan/30 to-ogclan-light/0 transition-all duration-500"></span>
             
-            {/* Digital circuit pattern overlay with reduced opacity */}
-            <span className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNEMkE4MjEiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4xNSI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIvPjxwYXRoIGQ9Ik0wIDIwaDQwTTIwIDBoMHY0MCIvPjwvZz48L3N2Zz4=')] opacity-25 mix-blend-overlay group-hover:opacity-50 transition-opacity duration-700"></span>
+            {/* Removed: Digital circuit pattern overlay */}
           </span>
           
           {/* High-tech background glow with increased intensity */}
@@ -53,8 +52,8 @@ const HeroContent = () => {
         <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl max-w-6xl mx-auto text-balance leading-relaxed px-4 sm:px-2 text-gray-300 relative">
           Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier gaming squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. Join Us, level up your game, and help write our epic legacy. Let's own this together!
           
-          {/* Tech scanline effect with increased intensity */}
-          <span className="absolute inset-0 bg-gradient-to-b from-transparent via-ogclan/10 to-transparent bg-[length:100%_4px] bg-repeat-y animate-pulse-slow opacity-40 pointer-events-none"></span>
+          {/* Tech scanline effect with reduced intensity for better readability */}
+          <span className="absolute inset-0 bg-gradient-to-b from-transparent via-ogclan/5 to-transparent bg-[length:100%_4px] bg-repeat-y animate-pulse-slow opacity-30 pointer-events-none"></span>
         </p>
       </AnimatedContent>
     </div>;
