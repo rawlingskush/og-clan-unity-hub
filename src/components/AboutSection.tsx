@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
@@ -20,6 +21,9 @@ const AboutSection = () => {
             <div className="w-24 h-1 bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light mx-auto rounded-full mb-8"></div>
             <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
               Building the future of gaming in Cameroon and beyond
+            </p>
+            <p className="text-lg text-ogclan-light max-w-3xl mx-auto mt-4">
+              We're a crew that thrives in multiplayer showdowns and Battle Royale wars, mastering maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>.
             </p>
           </AnimatedContent>
         </div>

@@ -23,6 +23,9 @@ const BattleNightSection = () => {
             <p className="text-xl md:text-2xl text-ogclan-light max-w-3xl mx-auto">
               Weekly Call of Duty Mobile tournaments where legends are born
             </p>
+            <p className="text-lg md:text-xl text-ogclan-light max-w-3xl mx-auto mt-4">
+              Our Battle Nights are all about multiplayer chaos and Battle Royale glory, dropping into maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>. Hot drops like <span className="font-semibold">Black Market</span>? We own them.
+            </p>
           </AnimatedContent>
         </div>
         

@@ -58,8 +58,11 @@ const CoDPointsSection = () => {
                 GET COD POINTS
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 md:mx-0 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-200 leading-relaxed mb-8">
+              <p className="text-xl text-gray-200 leading-relaxed mb-4">
                 Power up your Call of Duty game with CoD Points! Buy now using local payment methods in Cameroon and take your gaming experience to the next level.
+              </p>
+              <p className="text-xl text-gray-200 leading-relaxed mb-8">
+                Power up for multiplayer matches and Battle Royale drops in spots like <span className="font-semibold">Black Market</span> on maps like <span className="font-semibold">Isolated</span> and <span className="font-semibold">Krai</span>.
               </p>
               
               <button 
