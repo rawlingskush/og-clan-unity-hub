@@ -173,7 +173,8 @@ export default {
 			},
 			fontFamily: {
 				sans: ['SF Pro Display', 'Inter', 'sans-serif'],
-				mono: ['SF Mono', 'monospace']
+				mono: ['SF Mono', 'monospace'],
+				orbitron: ['Orbitron', 'sans-serif'] // Adding the Orbitron font
 			},
 			dropShadow: {
 				'gold': '0 0 10px rgba(212, 175, 55, 0.5)',
@@ -186,4 +187,3 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-

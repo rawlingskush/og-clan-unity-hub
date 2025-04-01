@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame } from 'lucide-react';
@@ -12,7 +11,7 @@ const HeroContent = () => {
         <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative ${isMobile ? 'px-3' : ''}`}>
           <span className="relative inline-block overflow-hidden group">
             {/* Main text with enhanced cyberpunk/gaming style */}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold relative z-10">
+            <span className="font-orbitron tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold relative z-10">
               WELCOME TO OG CLAN
             </span>
             
@@ -54,8 +53,6 @@ const HeroContent = () => {
           <span className="text-balance inline-block bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-2 drop-shadow">
             Join Us, level up your game, and help write our epic legacy. Let's own this together!
           </span>
-          
-          {/* Removed scanline effect that was causing readability issues on mobile */}
         </p>
       </AnimatedContent>
     </div>;
