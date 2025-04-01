@@ -15,8 +15,7 @@ const HeroSection = () => {
         <HeroActions />
       </div>
       
-      {/* Position the scroll button with more space and smaller size */}
-      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 z-10">
         <ScrollDownButton />
       </div>
     </section>
