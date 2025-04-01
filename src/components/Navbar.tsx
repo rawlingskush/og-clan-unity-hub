@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -14,7 +15,7 @@ const Navbar = () => {
   const { toast } = useToast();
 
   // List of all section IDs in the page
-  const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points'];
+  const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points', 'battle-royale'];
   
   // Use our custom scroll spy hook
   const { scrollPosition, activeSection, scrollToSection, isScrolled } = useScrollSpy({
@@ -49,6 +50,7 @@ const Navbar = () => {
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'battle-royale', label: 'Battle Royale' },
     { 
       id: 'events', 
       label: 'Events', 
