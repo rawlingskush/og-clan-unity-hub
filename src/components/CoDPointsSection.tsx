@@ -84,7 +84,7 @@ const CoDPointsSection = () => {
             <div className="relative group max-w-md mx-auto">
               <div className="overflow-hidden rounded-xl border border-ogclan/20 shadow-lg shadow-ogclan/5">
                 <img 
-                  src="/lovable-uploads/04437823-892f-480b-aaf9-a761c381fcef.png" 
+                  src="/lovable-uploads/745bd77a-e4e3-4878-be47-30917382847b.png" 
                   alt="CoD Points with OG Clan" 
                   className="w-full h-auto object-cover rounded-xl transform transition-transform duration-700 group-hover:scale-105"
                 />
