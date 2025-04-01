@@ -7,6 +7,7 @@ import ClanStatsSection from '@/components/ClanStatsSection';
 import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
+import CoDPointsSection from '@/components/CoDPointsSection';
 import Footer from '@/components/Footer';
 import { useToast } from '@/components/ui/use-toast';
 
@@ -35,6 +36,7 @@ const Index = () => {
         <AboutSection />
         <JoinUsSection />
         <PartnersSection />
+        <CoDPointsSection />
       </main>
       
       <Footer />
