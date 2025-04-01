@@ -34,24 +34,24 @@ const Logo = ({
         {/* Enhanced background effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-transparent z-0"></div>
         
-        {/* Improved animation glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ogclan-dark/30 via-transparent to-ogclan-light/30 animate-pulse-slow z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        {/* Improved animation glow effect with stronger blink */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ogclan-dark/40 via-transparent to-ogclan-light/40 animate-blink z-0 opacity-30 group-hover:opacity-100 transition-opacity duration-700"></div>
         
-        {/* Animated border effect */}
-        <div className="absolute inset-0 border-2 border-ogclan/0 group-hover:border-ogclan/70 transition-all duration-700 z-20"></div>
+        {/* Animated border effect with stronger visibility */}
+        <div className="absolute inset-0 border-2 border-ogclan/30 group-hover:border-ogclan/90 transition-all duration-700 z-20 animate-pulse-slow"></div>
         
         {/* Enhanced image with stronger pulse animation */}
         <img 
           src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
           alt="OG Clan Logo" 
-          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110 animate-[pulse_3s_ease-in-out_infinite]"
+          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110 animate-glow"
         />
         
-        {/* Corner accent effects */}
-        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ogclan/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
-        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-ogclan/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
-        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-ogclan/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
-        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ogclan/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-30"></div>
+        {/* Corner accent effects with improved visibility */}
+        <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ogclan/90 opacity-50 group-hover:opacity-100 transition-opacity duration-500 z-30 animate-blink"></div>
+        <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-ogclan/90 opacity-50 group-hover:opacity-100 transition-opacity duration-500 z-30 animate-blink animation-delay-300"></div>
+        <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-ogclan/90 opacity-50 group-hover:opacity-100 transition-opacity duration-500 z-30 animate-blink animation-delay-600"></div>
+        <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ogclan/90 opacity-50 group-hover:opacity-100 transition-opacity duration-500 z-30 animate-blink animation-delay-900"></div>
       </div>
       
       {withText && (
@@ -59,7 +59,7 @@ const Logo = ({
           <span className="font-bold text-3xl bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold group-hover:drop-shadow-gold-lg transition-all duration-300">
             OG Clan
           </span>
-          <Sparkles className="w-5 h-5 text-ogclan ml-1 animate-pulse" />
+          <Sparkles className="w-5 h-5 text-ogclan ml-1 animate-blink" />
         </div>
       )}
     </div>
