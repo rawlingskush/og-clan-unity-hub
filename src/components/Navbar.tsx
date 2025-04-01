@@ -14,10 +14,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [sheetOpen, setSheetOpen] = useState(false);
   const isMobile = useIsMobile();
 
   // Track scroll position instead of just boolean
@@ -29,10 +36,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
 
   // Calculate opacity based on scroll position for a smoother effect
   const backgroundOpacity = Math.min(scrollPosition / 300, 0.7);
@@ -125,94 +128,98 @@ const Navbar = () => {
               Join the Crew
             </a>
             
-            <Button
-              variant="ghost"
-              size="icon"
-              className="ml-4 text-ogclan hover:bg-ogclan/10 md:hidden relative z-20"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
+            {/* Replace mobile menu toggle with Sheet component */}
+            <div className="md:hidden ml-4">
+              <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="text-ogclan hover:bg-ogclan/10 relative z-20"
+                  >
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent 
+                  side="right" 
+                  className="bg-black/95 backdrop-blur-sm border-ogclan/20 w-[280px] p-0"
+                >
+                  <SheetHeader className="px-6 py-4 border-b border-ogclan/20">
+                    <SheetTitle className="text-ogclan text-lg font-bold">OG Clan Navigation</SheetTitle>
+                  </SheetHeader>
+                  <nav className="flex flex-col h-full p-4">
+                    <div className="flex-1 flex flex-col space-y-2 overflow-y-auto">
+                      <a 
+                        href="#" 
+                        className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10"
+                        onClick={() => {}} // Don't close the menu automatically
+                      >
+                        <span className="text-xl">Home</span>
+                      </a>
+                      
+                      <a 
+                        href="#about" 
+                        className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10"
+                        onClick={() => {}} // Don't close the menu automatically
+                      >
+                        <span className="text-xl">About</span>
+                      </a>
+                      
+                      <div className="py-2">
+                        <div className="flex items-center text-ogclan px-4 py-2 font-medium">
+                          <span className="text-xl">Events</span>
+                          <ChevronDown className="h-4 w-4 ml-1" />
+                        </div>
+                        <div className="ml-6 mt-1 border-l-2 border-ogclan/30 pl-4 space-y-2">
+                          <a 
+                            href="#og-battle-night" 
+                            className="flex items-center text-ogclan-light hover:text-ogclan transition-colors duration-300 font-medium px-2 py-2 rounded-md hover:bg-ogclan/5"
+                            onClick={() => {}} // Don't close the menu automatically
+                          >
+                            <span>OG Battle Night</span>
+                          </a>
+                          <a 
+                            href="#" 
+                            className="flex items-center text-ogclan-light hover:text-ogclan transition-colors duration-300 font-medium px-2 py-2 rounded-md hover:bg-ogclan/5"
+                            onClick={() => {}} // Don't close the menu automatically
+                          >
+                            <span>Weekly Meetups</span>
+                          </a>
+                        </div>
+                      </div>
+                      
+                      <a 
+                        href="#sponsors" 
+                        className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10"
+                        onClick={() => {}} // Don't close the menu automatically
+                      >
+                        <span className="text-xl">Sponsors</span>
+                      </a>
+                      
+                      <a 
+                        href="#join" 
+                        className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10"
+                        onClick={() => {}} // Don't close the menu automatically
+                      >
+                        <span className="text-xl">Join Us</span>
+                      </a>
+                    </div>
+                    
+                    <div className="mt-auto pt-4 border-t border-ogclan/20">
+                      <a 
+                        href="#join" 
+                        className="block w-full text-center bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-3 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light"
+                        onClick={() => {}} // Don't close the menu automatically
+                      >
+                        Join the Crew
+                      </a>
+                    </div>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
-        
-        {/* Improved mobile menu with better visibility and animations */}
-        {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-x-0 top-[60px] bottom-0 z-10 bg-black/95 backdrop-blur-sm animate-in slide-in-from-top">
-            <nav className="flex flex-col h-full p-4">
-              <div className="py-2 border-b border-ogclan/20 mb-4">
-                <h3 className="text-ogclan text-lg font-bold">OG Clan Navigation</h3>
-              </div>
-              
-              <div className="flex-1 flex flex-col space-y-2 overflow-y-auto">
-                <a 
-                  href="#" 
-                  className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10" 
-                  onClick={closeMobileMenu}
-                >
-                  <span className="text-xl">Home</span>
-                </a>
-                
-                <a 
-                  href="#about" 
-                  className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10" 
-                  onClick={closeMobileMenu}
-                >
-                  <span className="text-xl">About</span>
-                </a>
-                
-                <div className="py-2">
-                  <div className="flex items-center text-ogclan px-4 py-2 font-medium">
-                    <span className="text-xl">Events</span>
-                    <ChevronDown className="h-4 w-4 ml-1" />
-                  </div>
-                  <div className="ml-6 mt-1 border-l-2 border-ogclan/30 pl-4 space-y-2">
-                    <a 
-                      href="#og-battle-night" 
-                      className="flex items-center text-ogclan-light hover:text-ogclan transition-colors duration-300 font-medium px-2 py-2 rounded-md hover:bg-ogclan/5" 
-                      onClick={closeMobileMenu}
-                    >
-                      <span>OG Battle Night</span>
-                    </a>
-                    <a 
-                      href="#" 
-                      className="flex items-center text-ogclan-light hover:text-ogclan transition-colors duration-300 font-medium px-2 py-2 rounded-md hover:bg-ogclan/5"
-                      onClick={closeMobileMenu}
-                    >
-                      <span>Weekly Meetups</span>
-                    </a>
-                  </div>
-                </div>
-                
-                <a 
-                  href="#sponsors" 
-                  className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10" 
-                  onClick={closeMobileMenu}
-                >
-                  <span className="text-xl">Sponsors</span>
-                </a>
-                
-                <a 
-                  href="#join" 
-                  className="flex items-center text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-4 py-3 rounded-lg hover:bg-ogclan/10" 
-                  onClick={closeMobileMenu}
-                >
-                  <span className="text-xl">Join Us</span>
-                </a>
-              </div>
-              
-              <div className="mt-auto pt-4 border-t border-ogclan/20">
-                <a 
-                  href="#join" 
-                  className="block w-full text-center bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-3 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light"
-                  onClick={closeMobileMenu}
-                >
-                  Join the Crew
-                </a>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
     </header>
   );
