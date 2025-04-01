@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -84,7 +85,7 @@
     @apply w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-ogclan hover:bg-ogclan hover:text-black transition-all duration-300 hover:scale-110;
   }
   
-  /* New Vision Cards Styling */
+  /* Enhanced Card Styling with Glow Effects */
   .vision-card {
     @apply p-6 rounded-xl bg-black/80 border border-ogclan/20 shadow-md hover:shadow-[0_10px_25px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-1 h-full flex flex-col;
   }
@@ -97,7 +98,7 @@
     @apply w-7 h-7 text-ogclan;
   }
   
-  /* New Battle Image Card */
+  /* Enhanced Battle Image Card */
   .battle-image-card {
     @apply relative overflow-hidden cursor-pointer rounded-xl;
   }
@@ -110,7 +111,7 @@
     @apply bg-ogclan/10;
   }
   
-  /* Enhanced hover effects */
+  /* Enhanced hover effects with glows */
   .hover-effect {
     @apply relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] before:absolute before:content-[''] before:top-0 before:left-0 before:w-0 before:h-full before:bg-gradient-to-r before:from-ogclan/0 before:via-ogclan/10 before:to-ogclan/0 hover:before:w-full before:transition-all before:duration-700;
   }
@@ -133,6 +134,11 @@
   
   .hover-text-glow {
     @apply transition-all duration-300 hover:text-ogclan-light hover:drop-shadow-[0_0_3px_rgba(212,175,55,0.5)];
+  }
+  
+  /* New: Image frame styling */
+  .image-frame {
+    @apply relative overflow-hidden rounded-xl border-2 border-ogclan/30 shadow-lg shadow-ogclan/10 transition-all duration-300 hover:border-ogclan/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.2)];
   }
 }
 

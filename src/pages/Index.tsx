@@ -34,9 +34,9 @@ const Index = () => {
         <BattleNightSection />
         <ClanStatsSection />
         <AboutSection />
+        <CoDPointsSection />
         <JoinUsSection />
         <PartnersSection />
-        <CoDPointsSection />
       </main>
       
       <Footer />
