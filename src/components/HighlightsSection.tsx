@@ -1,174 +1,110 @@
 
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
-import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin, Youtube, Smartphone } from 'lucide-react';
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card';
+import { Gamepad2, Calendar, Trophy, Users } from 'lucide-react';
 
 const HighlightsSection = () => {
-  const achievements = [
-    {
-      id: 1,
-      title: "Community Growth",
-      description: "From a small group to hundreds of dedicated members across Cameroon, our clan continues to expand.",
-      icon: <Users className="w-8 h-8 text-ogclan" />,
-      stat: "66+",
-      label: "Active Members"
-    },
-    {
-      id: 2,
-      title: "Tournament Success",
-      description: "Consistent performance in regional and national gaming competitions, putting Cameroon on the esports map.",
-      icon: <Award className="w-8 h-8 text-ogclan" />,
-      stat: "12+",
-      label: "Tournaments Won"
-    },
-    {
-      id: 3,
-      title: "Growing Influence",
-      description: "Our social media presence and community impact continue to rise, creating opportunities for all members.",
-      icon: <TrendingUp className="w-8 h-8 text-ogclan" />,
-      stat: "69%",
-      label: "Annual Growth"
-    }
-  ];
-
-  const values = [
-    {
-      id: 1,
-      title: "Celebrate Loyalty",
-      description: "Join us for an epic gaming event where OG Clan members honor our Cameroon roots while strengthening clan bonds."
-    },
-    {
-      id: 2,
-      title: "Everyone Belongs",
-      description: "Veterans share wisdom. Inactive members reconnect. Newcomers find their place. We grow stronger together."
-    },
-    {
-      id: 3,
-      title: "Level Up Together",
-      description: "Face thrilling challenges. Earn exclusive rewards. Sharpen your skills in friendly competition."
-    }
-  ];
-
   return (
-    <div className="relative overflow-hidden">
-      {/* Background design elements */}
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-ogclan/5 to-transparent opacity-30"></div>
-      <div className="absolute -top-40 right-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-40 -left-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
-      
-      <div className="relative z-10">
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          {achievements.map((achievement, index) => (
-            <AnimatedContent 
-              key={achievement.id} 
-              animation="fade-in-up" 
-              delay={300 + index * 150}
-            >
-              <div className="highlight-card h-full transform transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)]">
-                <div className="p-6 flex flex-col h-full">
-                  <div className="mb-4 p-3 rounded-full bg-ogclan/10 w-fit">
-                    {achievement.icon}
+    <div className="mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* First Highlight Card */}
+        <AnimatedContent animation="fade-in-up" delay={300}>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <div className="highlight-card group relative overflow-hidden transform transition-all duration-500 hover:-translate-y-2">
+                <img 
+                  src="/lovable-uploads/38729333-9d12-4049-82a6-74bbfc1d8621.png" 
+                  alt="OG Clan Team" 
+                  className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center mb-2">
+                    <Gamepad2 className="w-5 h-5 mr-2 text-ogclan" />
+                    <span className="text-ogclan font-medium">Team Showcase</span>
                   </div>
-                  
-                  <div className="mb-6">
-                    <div className="text-4xl font-bold text-ogclan mb-1">{achievement.stat}</div>
-                    <div className="text-sm uppercase tracking-wider text-ogclan-light font-medium">{achievement.label}</div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-ogclan mb-3">
-                    {achievement.title}
-                  </h3>
-                  
-                  <p className="text-gray-300 mt-auto">
-                    {achievement.description}
-                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-ogclan transition-colors duration-300">Elite Squad Lineup</h3>
                 </div>
               </div>
-            </AnimatedContent>
-          ))}
-        </div>
+            </HoverCardTrigger>
+            <HoverCardContent className="glass-card border-ogclan/30 w-80">
+              <div className="space-y-2">
+                <h4 className="text-ogclan font-semibold">OG Clan Elite Squad</h4>
+                <p className="text-sm text-gray-300">Our top-tier players represent OG Clan in high-stakes tournaments across Cameroon and beyond.</p>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        </AnimatedContent>
 
-        <div className="relative mb-20">
-          <div className="absolute -top-10 -left-10 w-48 h-48 bg-ogclan/5 rounded-full blur-3xl"></div>
-          <div className="glass-card p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl md:text-3xl font-bold text-gradient-gold mb-4">
-                Next OG Battle Night Event
-              </h3>
-              
-              <div className="flex flex-wrap justify-center gap-6 mb-6">
-                <div className="flex items-center">
-                  <Calendar className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">Every Sunday</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">10:00 PM WAT</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="h-5 w-5 text-ogclan mr-2" />
-                  <span className="text-gray-300">Clan Challenge Event</span>
+        {/* Second Highlight Card */}
+        <AnimatedContent animation="fade-in-up" delay={500}>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <div className="highlight-card group relative overflow-hidden transform transition-all duration-500 hover:-translate-y-2">
+                <img 
+                  src="/lovable-uploads/ebe544e6-9308-4353-bcda-3f8d94e8b911.png" 
+                  alt="Battle Night Action" 
+                  className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center mb-2">
+                    <Calendar className="w-5 h-5 mr-2 text-ogclan" />
+                    <span className="text-ogclan font-medium">Weekly Battle</span>
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-ogclan transition-colors duration-300">Squad Combat</h3>
                 </div>
               </div>
-              
-              <p className="text-ogclan-light text-xl">
-                Clan Wars: Prove Your Worth! 🔥
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {values.map((feature, index) => (
-                <div key={feature.id} className="flex">
-                  <div className="flex-shrink-0 flex h-8 w-8 items-center justify-center rounded-full bg-ogclan/10 text-ogclan">
-                    <Check className="h-5 w-5" />
+            </HoverCardTrigger>
+            <HoverCardContent className="glass-card border-ogclan/30 w-80">
+              <div className="space-y-2">
+                <h4 className="text-ogclan font-semibold">Intense Squad Action</h4>
+                <p className="text-sm text-gray-300">Our teams compete in high-octane battles, showcasing superior tactics and legendary gameplay.</p>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        </AnimatedContent>
+
+        {/* Third Highlight Card */}
+        <AnimatedContent animation="fade-in-up" delay={700}>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <div className="highlight-card group relative overflow-hidden transform transition-all duration-500 hover:-translate-y-2">
+                <img 
+                  src="/lovable-uploads/7537ecf0-3a5f-4e1d-b481-520c6826c62e.png" 
+                  alt="Champion" 
+                  className="w-full h-64 object-cover object-center transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <div className="flex items-center mb-2">
+                    <Trophy className="w-5 h-5 mr-2 text-ogclan" />
+                    <span className="text-ogclan font-medium">Championships</span>
                   </div>
-                  <div className="ml-4">
-                    <h4 className="text-lg font-semibold text-ogclan-light">{feature.title}</h4>
-                    <p className="mt-1 text-gray-400">{feature.description}</p>
-                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-ogclan transition-colors duration-300">Conquest Victory</h3>
                 </div>
-              ))}
-            </div>
-            
-            <div className="mt-8 text-center">
-              <p className="text-2xl font-bold text-gradient-gold mb-4">
-                "For the OGs, by the OGs. Let's dominate together!" 💪
-              </p>
-              <p className="text-gray-400 mb-6">
-                Calling all clan masters! Bring your best squad to battle against the OG Clan and show us what you've got. The ultimate test of skill and teamwork awaits.
-              </p>
-              
-              <a href="#join" className="btn-primary">
-                Challenge OG Clan
-              </a>
-            </div>
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent className="glass-card border-ogclan/30 w-80">
+              <div className="space-y-2">
+                <h4 className="text-ogclan font-semibold">Tournament Champions</h4>
+                <p className="text-sm text-gray-300">Our elite operators dominate the field, claiming victory and establishing OG Clan's legacy.</p>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
+        </AnimatedContent>
+      </div>
+
+      {/* Additional Information */}
+      <AnimatedContent animation="fade-in" delay={900}>
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center justify-center px-6 py-3 bg-black/60 border border-ogclan/30 rounded-lg">
+            <Users className="w-5 h-5 mr-2 text-ogclan" />
+            <span className="text-ogclan">Join the next Battle Night on July 15, 2023</span>
           </div>
         </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          <AnimatedContent animation="slide-in-left">
-            <div className="overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-300 hover:shadow-[0_5px_20px_rgba(212,175,55,0.2)]">
-              <img 
-                src="/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png" 
-                alt="OG Clan Gaming Event"
-                className="w-full h-full object-cover aspect-video"
-                loading="lazy"
-              />
-            </div>
-          </AnimatedContent>
-          
-          <AnimatedContent animation="slide-in-right">
-            <div className="overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-300 hover:shadow-[0_5px_20px_rgba(212,175,55,0.2)]">
-              <img 
-                src="/lovable-uploads/45ffa98e-e5e3-4e69-aa01-40bec47f9d28.png" 
-                alt="OG Clan Members"
-                className="w-full h-full object-cover aspect-video"
-                loading="lazy"
-              />
-            </div>
-          </AnimatedContent>
-        </div>
-      </div>
+      </AnimatedContent>
     </div>
   );
 };
