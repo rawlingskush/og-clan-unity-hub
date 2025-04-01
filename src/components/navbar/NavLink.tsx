@@ -14,13 +14,21 @@ interface NavLinkProps {
 }
 
 const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // Special case for Battle Night - scroll to timer
+    if (id === 'og-battle-night') {
+      handleNavClick('battle-night-timer');
+    } else {
+      handleNavClick(id);
+    }
+  };
+  
   return (
     <NavigationMenuLink 
       href={`#${id}`}
-      onClick={(e) => {
-        e.preventDefault();
-        handleNavClick(id);
-      }}
+      onClick={handleClick}
       className={cn(
         navigationMenuTriggerStyle(),
         "relative transition-colors duration-200",

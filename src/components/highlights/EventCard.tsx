@@ -47,7 +47,9 @@ const EventCard = ({ features }: EventCardProps) => {
           </div>
         </div>
         
-        <CountdownTimer targetDate={getNextSunday()} />
+        <div id="battle-night-timer">
+          <CountdownTimer targetDate={getNextSunday()} />
+        </div>
         
         <p className="text-ogclan-light text-xl">
           Clan Wars: Prove Your Worth! 🔥

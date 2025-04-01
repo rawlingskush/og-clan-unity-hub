@@ -41,15 +41,20 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
     return () => window.removeEventListener('scroll', handleScroll);
   }, [activeSection, sectionIds, offset]);
 
-  // Function to navigate to a section, improved for iOS compatibility
+  // Function to navigate to a section, improved to support child elements
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
+    // Try to find the specific element first (for sub-sections like timers)
+    const targetElement = document.getElementById(sectionId);
+    
+    if (targetElement) {
       // Set as active section immediately for better UX
-      setActiveSection(sectionId);
+      const parentSection = findParentSection(targetElement, sectionIds);
+      if (parentSection) {
+        setActiveSection(parentSection);
+      }
       
       // Direct scroll with positioning calculation for consistent behavior
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
         top: offsetTop - 80, // Adjust this offset based on your header height
         behavior: 'auto' // Use 'auto' instead of 'smooth' for iOS compatibility
@@ -57,7 +62,22 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       
       return true;
     }
+    
     return false;
+  };
+  
+  // Helper function to find the parent section of an element
+  const findParentSection = (element: HTMLElement, sectionIds: string[]): string | null => {
+    let current: HTMLElement | null = element;
+    
+    while (current) {
+      if (sectionIds.includes(current.id)) {
+        return current.id;
+      }
+      current = current.parentElement;
+    }
+    
+    return null;
   };
 
   return {
