@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame } from 'lucide-react';
@@ -6,7 +7,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const HeroContent = () => {
   const isMobile = useIsMobile();
   
-  return <div className="text-center relative z-10">
+  return (
+    <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative ${isMobile ? 'px-3' : ''}`}>
           <span className="relative inline-block overflow-hidden group">
@@ -55,7 +57,8 @@ const HeroContent = () => {
           </span>
         </p>
       </AnimatedContent>
-    </div>;
+    </div>
+  );
 };
 
 export default HeroContent;

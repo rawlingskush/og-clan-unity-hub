@@ -15,12 +15,12 @@ const Logo = ({
   withText = true, 
   variant = 'primary' 
 }: LogoProps) => {
-  // Further increased size classes with additional visual effects
+  // Size classes with visual effects
   const sizeClasses = {
-    sm: 'w-24 h-24', // Increased size
-    md: 'w-36 h-36', // Increased size
-    lg: 'w-48 h-48', // Increased size
-    xl: 'w-64 h-64'  // Increased size
+    sm: 'w-24 h-24',
+    md: 'w-36 h-36',
+    lg: 'w-48 h-48',
+    xl: 'w-64 h-64'
   };
 
   return (
