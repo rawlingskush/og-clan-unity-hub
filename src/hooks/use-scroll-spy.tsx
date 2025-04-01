@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useIsMobile } from './use-mobile';
 
 interface UseScrollSpyOptions {
   sectionIds: string[];
@@ -9,6 +10,10 @@ interface UseScrollSpyOptions {
 export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeSection, setActiveSection] = useState(sectionIds[0] || '');
+  const isMobile = useIsMobile();
+  
+  // Adjust offset for mobile devices
+  const effectiveOffset = isMobile ? 70 : offset;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +29,7 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
         if (element) {
           const rect = element.getBoundingClientRect();
           // Consider a section "active" when its top part is near the top of the viewport
-          if (rect.top <= offset && rect.bottom >= offset) {
+          if (rect.top <= effectiveOffset && rect.bottom >= effectiveOffset) {
             if (activeSection !== section) {
               setActiveSection(section);
             }
@@ -39,7 +44,7 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
     handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [activeSection, sectionIds, offset]);
+  }, [activeSection, sectionIds, effectiveOffset, isMobile]);
 
   // Function to navigate to a section, improved to support child elements
   const scrollToSection = (sectionId: string) => {
@@ -56,7 +61,7 @@ export function useScrollSpy({ sectionIds, offset = 100 }: UseScrollSpyOptions) 
       // Direct scroll with positioning calculation for consistent behavior
       const offsetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: offsetTop - 80, // Adjust this offset based on your header height
+        top: offsetTop - (isMobile ? 70 : 80), // Adjust offset based on device and header height
         behavior: 'auto' // Use 'auto' instead of 'smooth' for iOS compatibility
       });
       

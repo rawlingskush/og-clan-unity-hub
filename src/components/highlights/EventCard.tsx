@@ -26,37 +26,37 @@ const EventCard = ({ features }: EventCardProps) => {
   };
 
   return (
-    <div className="glass-card p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
-      <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-bold text-gradient-gold mb-4">
+    <div className="glass-card p-4 sm:p-6 md:p-8 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
+      <div className="text-center mb-6 md:mb-8">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-gold mb-4">
           Next OG Battle Night Event
         </h3>
         
-        <div className="flex flex-wrap justify-center gap-6 mb-6">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-6">
           <div className="flex items-center">
-            <Calendar className="h-5 w-5 text-ogclan mr-2" />
-            <span className="text-gray-300">Every Sunday</span>
+            <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
+            <span className="text-sm sm:text-base text-gray-300">Every Sunday</span>
           </div>
           <div className="flex items-center">
-            <Clock className="h-5 w-5 text-ogclan mr-2" />
-            <span className="text-gray-300">10:00 PM WAT</span>
+            <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
+            <span className="text-sm sm:text-base text-gray-300">10:00 PM WAT</span>
           </div>
           <div className="flex items-center">
-            <MapPin className="h-5 w-5 text-ogclan mr-2" />
-            <span className="text-gray-300">Clan Challenge Event</span>
+            <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
+            <span className="text-sm sm:text-base text-gray-300">Clan Challenge Event</span>
           </div>
         </div>
         
-        <div id="battle-night-timer">
+        <div id="battle-night-timer" className="py-2">
           <CountdownTimer targetDate={getNextSunday()} />
         </div>
         
-        <p className="text-ogclan-light text-xl">
+        <p className="text-ogclan-light text-lg sm:text-xl">
           Clan Wars: Prove Your Worth! 🔥
         </p>
       </div>
       
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
         {features.map((feature) => (
           <FeatureItem
             key={feature.id}
@@ -66,11 +66,11 @@ const EventCard = ({ features }: EventCardProps) => {
         ))}
       </div>
       
-      <div className="mt-8 text-center">
-        <p className="text-2xl font-bold text-gradient-gold mb-4">
+      <div className="mt-6 md:mt-8 text-center">
+        <p className="text-xl md:text-2xl font-bold text-gradient-gold mb-3 md:mb-4">
           "For the OGs, by the OGs. Let's dominate together!" 💪
         </p>
-        <p className="text-gray-400 mb-6">
+        <p className="text-sm sm:text-base text-gray-400 mb-4 md:mb-6">
           Calling all clan masters! Bring your best squad to battle against the OG Clan and show us what you've got. The ultimate test of skill and teamwork awaits.
         </p>
         

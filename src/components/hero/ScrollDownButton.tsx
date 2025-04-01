@@ -8,13 +8,23 @@ const ScrollDownButton = () => {
   const isMobile = useIsMobile();
   
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('og-battle-night');
-    if (nextSection) {
-      // Using scrollIntoView with options that work well across devices
+    // Directly target the battle night timer for consistent scrolling on all devices
+    const timerSection = document.getElementById('battle-night-timer');
+    if (timerSection) {
+      const offsetTop = timerSection.getBoundingClientRect().top + window.pageYOffset;
       window.scrollTo({
-        top: nextSection.offsetTop - 80,
+        top: offsetTop - 80,
         behavior: 'auto'
       });
+    } else {
+      // Fallback to section if timer isn't found
+      const nextSection = document.getElementById('og-battle-night');
+      if (nextSection) {
+        window.scrollTo({
+          top: nextSection.offsetTop - 80,
+          behavior: 'auto'
+        });
+      }
     }
   };
 

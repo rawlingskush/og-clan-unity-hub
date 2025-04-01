@@ -58,6 +58,17 @@ const MobileNav = ({
     };
   }, [isDrawerOpen]);
 
+  // Custom click handler for Battle Night in mobile menu
+  const handleMobileNavClick = (sectionId: string) => {
+    // Special case for Battle Night - scroll to timer
+    if (sectionId === 'og-battle-night') {
+      handleNavClick('battle-night-timer');
+    } else {
+      handleNavClick(sectionId);
+    }
+    setIsDrawerOpen(false);
+  };
+
   return (
     <div className="md:hidden ml-4">
       <Sheet open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
@@ -70,7 +81,7 @@ const MobileNav = ({
             <Menu className="h-6 w-6" />
           </Button>
         </SheetTrigger>
-        <SheetContent className="bg-black/95 border-t border-ogclan/20 max-h-[100svh] flex flex-col">
+        <SheetContent className="bg-black/95 border-t border-ogclan/20 max-h-[100svh] flex flex-col overflow-hidden">
           <div className="mx-auto w-full max-w-sm flex-1 flex flex-col">
             <SheetHeader>
               <SheetTitle className="text-ogclan text-center text-xl font-orbitron">
@@ -114,7 +125,7 @@ const MobileNav = ({
                                 ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                                 : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                             )}
-                            onClick={() => handleNavClick(subItem.id)}
+                            onClick={() => handleMobileNavClick(subItem.id)}
                           >
                             <span className="font-medium">{subItem.label}</span>
                             {subItem.description && (
@@ -135,7 +146,7 @@ const MobileNav = ({
                           ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                           : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
-                      onClick={() => handleNavClick(item.id)}
+                      onClick={() => handleMobileNavClick(item.id)}
                     >
                       {item.label}
                     </button>
@@ -146,7 +157,7 @@ const MobileNav = ({
             <SheetFooter className="px-4 pt-2 pb-8 mt-auto">
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                onClick={() => handleNavClick('join')}
+                onClick={() => handleMobileNavClick('join')}
               >
                 Join the Crew
               </Button>
