@@ -1,8 +1,75 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { ArrowRight, TrendingUp, Users, Medal, Award } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
+import { useToast } from '@/components/ui/use-toast';
+import emailjs from 'emailjs-com';
+import { Textarea } from './ui/textarea';
+
 const SponsorSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        to_email: 'onlygreat237@gmail.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company,
+        message: formData.message,
+      };
+
+      // Replace these IDs with your EmailJS service, template, and user IDs
+      // You'll need to set these up on EmailJS.com
+      await emailjs.send(
+        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        templateParams,
+        'YOUR_USER_ID' // Replace with your EmailJS user ID
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Your sponsorship request has been received. We'll be in touch soon!",
+        variant: "default",
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly at onlygreat237@gmail.com",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return <section id="sponsors" className="py-20 md:py-28 bg-black relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-ogclan/5 opacity-30 rounded-full blur-3xl"></div>
@@ -66,21 +133,57 @@ const SponsorSection = () => {
                 Want to back the next big thing in Cameroonian gaming? Hit us up and let's create something amazing together.
               </p>
               
-              <form className="space-y-5">
+              <form className="space-y-5" onSubmit={handleSubmit}>
                 <div>
-                  <input type="text" placeholder="Your Name" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
+                  <input 
+                    type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Name" 
+                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" 
+                    required
+                  />
                 </div>
                 <div>
-                  <input type="email" placeholder="Your Email" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
+                  <input 
+                    type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your Email" 
+                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" 
+                    required
+                  />
                 </div>
                 <div>
-                  <input type="text" placeholder="Company/Organization" className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" />
+                  <input 
+                    type="text" 
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Company/Organization" 
+                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none" 
+                    required
+                  />
                 </div>
                 <div>
-                  <textarea placeholder="Tell us about your interest in sponsoring OG Clan" rows={4} className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none resize-none"></textarea>
+                  <Textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your interest in sponsoring OG Clan" 
+                    rows={4} 
+                    className="w-full px-4 py-3 rounded-lg bg-black/80 border border-ogclan/30 text-white focus:border-ogclan focus:outline-none resize-none"
+                    required
+                  />
                 </div>
-                <Button className="w-full bg-ogclan hover:bg-ogclan-dark text-black font-medium py-3 transition-all duration-300">
-                  Send Request <ArrowRight className="ml-2 h-4 w-4" />
+                <Button 
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-ogclan hover:bg-ogclan-dark text-black font-medium py-3 transition-all duration-300"
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Request'} {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
                 </Button>
               </form>
             </div>
