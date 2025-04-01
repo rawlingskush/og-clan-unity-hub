@@ -97,6 +97,36 @@
   .vision-icon {
     @apply w-8 h-8 text-ogclan;
   }
+  
+  /* New Battle Image Card */
+  .battle-image-card {
+    @apply relative overflow-hidden cursor-pointer;
+  }
+  
+  .battle-image-card::after {
+    @apply content-[''] absolute inset-0 bg-ogclan/0 transition-all duration-500;
+  }
+  
+  .battle-image-card:hover::after {
+    @apply bg-ogclan/10;
+  }
+  
+  /* Enhanced hover effects */
+  .hover-effect {
+    @apply relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] before:absolute before:content-[''] before:top-0 before:left-0 before:w-0 before:h-full before:bg-gradient-to-r before:from-ogclan/0 before:via-ogclan/10 before:to-ogclan/0 hover:before:w-full before:transition-all before:duration-700;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:text-ogclan hover:drop-shadow-[0_0_5px_rgba(212,175,55,0.7)];
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  .hover-slide-up {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
 }
 
 @layer utilities {
@@ -146,5 +176,19 @@
     100% {
       transform: scale(1);
     }
+  }
+  
+  /* New glow animation for special elements */
+  @keyframes pulse-glow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
+    }
+  }
+  
+  .animate-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
   }
 }
