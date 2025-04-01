@@ -9,6 +9,7 @@ import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
 import Footer from '@/components/Footer';
 import { useToast } from '@/components/ui/use-toast';
+import SupabaseConnectionTest from '@/components/SupabaseConnectionTest';
 
 const Index = () => {
   const { toast } = useToast();
@@ -30,6 +31,9 @@ const Index = () => {
       
       <main>
         <HeroSection />
+        <div className="container mx-auto my-8">
+          <SupabaseConnectionTest />
+        </div>
         <BattleNightSection />
         <ClanStatsSection />
         <AboutSection />
