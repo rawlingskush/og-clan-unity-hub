@@ -11,7 +11,7 @@ const HeroContent = () => {
     <div className="text-center">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <div className="flex justify-center mb-4 md:mb-6">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 relative group">
+          <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 relative group">
             <img 
               src="/lovable-uploads/5bfd821e-f0b3-4f77-8754-6df282e60305.png" 
               alt="OG Clan Cameroon Logo" 

@@ -15,12 +15,12 @@ const Logo = ({
   withText = true, 
   variant = 'primary' 
 }: LogoProps) => {
-  // Increased size classes by ~20% for better visibility
+  // Increased size classes significantly for better visibility
   const sizeClasses = {
-    sm: 'w-12 h-12', // Increased from w-10 h-10
-    md: 'w-20 h-20', // Increased from w-16 h-16
-    lg: 'w-28 h-28', // Increased from w-24 h-24
-    xl: 'w-36 h-36'  // Increased from w-32 h-32
+    sm: 'w-16 h-16', // Increased from w-12 h-12
+    md: 'w-28 h-28', // Increased from w-20 h-20
+    lg: 'w-36 h-36', // Increased from w-28 h-28
+    xl: 'w-48 h-48'  // Increased from w-36 h-36
   };
 
   return (
@@ -37,7 +37,7 @@ const Logo = ({
       </div>
       
       {withText && (
-        <span className="ml-3 font-bold text-gradient-gold">
+        <span className="ml-4 font-bold text-2xl text-gradient-gold">
           OG Clan
         </span>
       )}
