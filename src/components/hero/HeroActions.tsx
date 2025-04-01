@@ -6,6 +6,14 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroActions = () => {
   const isMobile = useIsMobile();
+  
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <AnimatedContent animation="fade-in-up" delay={900}>
@@ -13,6 +21,7 @@ const HeroActions = () => {
         <a 
           href="#join" 
           className="btn-primary group relative overflow-hidden mx-auto sm:mx-0"
+          onClick={(e) => handleSmoothScroll(e, 'join')}
         >
           <span className="relative z-10 flex items-center">
             Join OG Clan
@@ -25,6 +34,7 @@ const HeroActions = () => {
           <a 
             href="#og-battle-night" 
             className="inline-flex items-center justify-center px-4 sm:px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 hover:border-ogclan/60 transition-all duration-300 hover:shadow-[0_0_10px_rgba(212,175,55,0.2)]"
+            onClick={(e) => handleSmoothScroll(e, 'og-battle-night')}
           >
             <Calendar className="mr-2 h-5 w-5" />
             <span className="text-sm sm:text-base">Clan Events</span>
@@ -33,6 +43,7 @@ const HeroActions = () => {
           <a 
             href="#about" 
             className="inline-flex items-center justify-center px-4 sm:px-6 py-3 border border-ogclan/30 rounded-lg text-ogclan bg-black/50 hover:bg-black/70 hover:border-ogclan/60 transition-all duration-300 hover:shadow-[0_0_10px_rgba(212,175,55,0.2)]"
+            onClick={(e) => handleSmoothScroll(e, 'about')}
           >
             <Target className="mr-2 h-5 w-5" />
             <span className="text-sm sm:text-base">About OG Clan</span>

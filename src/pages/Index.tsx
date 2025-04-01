@@ -30,7 +30,9 @@ const Index = () => {
       <Navbar />
       
       <main>
-        <HeroSection />
+        <div id="home">
+          <HeroSection />
+        </div>
         <BattleNightSection />
         <ClanStatsSection />
         <AboutSection />

@@ -13,7 +13,7 @@ const Footer = () => {
     { icon: <MessageSquare className="w-4 h-4" />, href: "#", label: "Discord" },
   ];
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
@@ -29,7 +29,7 @@ const Footer = () => {
     }
   };
 
-  const handleSocialClick = (label) => {
+  const handleSocialClick = (label: string) => {
     toast({
       title: `${label} Coming Soon`,
       description: `Our ${label} channel will be available soon!`,
