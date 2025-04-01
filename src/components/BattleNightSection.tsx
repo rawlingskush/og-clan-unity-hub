@@ -5,16 +5,16 @@ import HighlightsSection from './HighlightsSection';
 
 const BattleNightSection = () => {
   return (
-    <section id="og-battle-night" className="py-20 md:py-28 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png')] opacity-5 bg-center bg-cover"></div>
+    <section id="og-battle-night" className="py-16 md:py-20 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/90 z-0"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <AnimatedContent animation="fade-in-up">
-            <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4 animate-glow">
+            <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-3 animate-glow">
               OG BATTLE NIGHT
             </h2>
-            <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-6"></div>
+            <div className="w-20 h-1 bg-ogclan mx-auto rounded-full mb-4"></div>
             <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
               Join our flagship gaming event - where legends are born
             </p>

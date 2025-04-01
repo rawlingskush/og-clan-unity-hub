@@ -54,11 +54,11 @@
 
 @layer components {
   .glass-card {
-    @apply bg-black/70 backdrop-blur-lg border border-ogclan/30 shadow-md;
+    @apply bg-black/70 backdrop-blur-lg border border-ogclan/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-ogclan/50;
   }
   
   .glass-effect {
-    @apply bg-black/50 backdrop-blur-md border border-ogclan/20;
+    @apply bg-black/50 backdrop-blur-md border border-ogclan/20 transition-all duration-300 hover:border-ogclan/40;
   }
   
   .text-balance {
@@ -66,15 +66,15 @@
   }
   
   .btn-primary {
-    @apply bg-ogclan text-black font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:bg-ogclan-dark hover:shadow-md active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ogclan/50 focus:ring-offset-2 focus:ring-offset-black;
+    @apply bg-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-ogclan-dark hover:shadow-md hover:shadow-ogclan/30 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ogclan/50 focus:ring-offset-2 focus:ring-offset-black;
   }
   
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20;
   }
   
   .highlight-card {
-    @apply rounded-2xl overflow-hidden bg-black/90 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] border border-ogclan/20;
+    @apply rounded-xl overflow-hidden bg-black/90 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] border border-ogclan/20 hover:border-ogclan/40;
   }
   
   .navbar-link {
@@ -82,25 +82,25 @@
   }
   
   .social-icon {
-    @apply w-10 h-10 flex items-center justify-center rounded-full bg-secondary text-ogclan hover:bg-ogclan hover:text-black transition-all duration-300 hover:scale-110;
+    @apply w-9 h-9 flex items-center justify-center rounded-full bg-secondary text-ogclan hover:bg-ogclan hover:text-black transition-all duration-300 hover:scale-110;
   }
   
   /* New Vision Cards Styling */
   .vision-card {
-    @apply p-8 rounded-2xl bg-black/80 border border-ogclan/20 shadow-md hover:shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-2 h-full flex flex-col;
+    @apply p-6 rounded-xl bg-black/80 border border-ogclan/20 shadow-md hover:shadow-[0_10px_25px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-1 h-full flex flex-col;
   }
   
   .icon-container {
-    @apply w-16 h-16 rounded-lg bg-gradient-to-br from-ogclan/20 to-ogclan/5 flex items-center justify-center border border-ogclan/30;
+    @apply w-14 h-14 rounded-lg bg-gradient-to-br from-ogclan/20 to-ogclan/5 flex items-center justify-center border border-ogclan/30;
   }
   
   .vision-icon {
-    @apply w-8 h-8 text-ogclan;
+    @apply w-7 h-7 text-ogclan;
   }
   
   /* New Battle Image Card */
   .battle-image-card {
-    @apply relative overflow-hidden cursor-pointer;
+    @apply relative overflow-hidden cursor-pointer rounded-xl;
   }
   
   .battle-image-card::after {
@@ -127,6 +127,14 @@
   .hover-slide-up {
     @apply transition-transform duration-300 hover:-translate-y-1;
   }
+  
+  .hover-border-glow {
+    @apply transition-all duration-300 hover:border-ogclan/70 hover:shadow-[0_0_10px_rgba(212,175,55,0.3)];
+  }
+  
+  .hover-text-glow {
+    @apply transition-all duration-300 hover:text-ogclan-light hover:drop-shadow-[0_0_3px_rgba(212,175,55,0.5)];
+  }
 }
 
 @layer utilities {
@@ -150,7 +158,7 @@
     @apply bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent;
   }
   
-  /* New Animation Classes */
+  /* Animation Classes */
   @keyframes slide-in-up {
     0% {
       transform: translateY(30px);
@@ -178,7 +186,7 @@
     }
   }
   
-  /* New glow animation for special elements */
+  /* Glow animation for special elements */
   @keyframes pulse-glow {
     0%, 100% {
       filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
@@ -192,3 +200,4 @@
     animation: pulse-glow 3s ease-in-out infinite;
   }
 }
+

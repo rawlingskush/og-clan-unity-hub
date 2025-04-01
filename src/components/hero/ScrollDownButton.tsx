@@ -9,10 +9,10 @@ const ScrollDownButton = () => {
       <AnimatedContent animation="fade-in" delay={1500}>
         <a 
           href="#about" 
-          className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-black/60 border-2 border-ogclan/50 hover:border-ogclan shadow-lg hover:shadow-ogclan/30 transition-all duration-300 hover:translate-y-1 group"
+          className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-black/60 border border-ogclan/40 hover:border-ogclan transition-all duration-300 hover:scale-105 group"
           aria-label="Scroll down"
         >
-          <ArrowDown className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-ogclan group-hover:text-ogclan-light animate-bounce animation-delay-1200" />
+          <ArrowDown className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-ogclan group-hover:text-ogclan-light transition-colors duration-300 animate-bounce animation-delay-1200" />
         </a>
       </AnimatedContent>
     </div>
