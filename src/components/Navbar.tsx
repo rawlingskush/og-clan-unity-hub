@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
@@ -17,6 +17,10 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -37,12 +41,16 @@ const Navbar = () => {
           </a>
           
           <nav className="hidden md:flex items-center space-x-6">
+            <a href="#" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
+              <span>Home</span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            </a>
             <a href="#about" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
               <span>About</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#highlights" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>Highlights</span>
+            <a href="#og-battle-night" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
+              <span>Events</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
             </a>
             <a href="#sponsors" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
@@ -69,19 +77,20 @@ const Navbar = () => {
               className="ml-4 text-ogclan hover:bg-ogclan/10 md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              <Menu className="h-6 w-6" />
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
         
-        {/* Mobile menu */}
+        {/* Mobile menu with improved styling and transitions */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-3 py-3 border-t border-ogclan/20">
+          <div className="md:hidden mt-3 py-3 border-t border-ogclan/20 animate-fade-in">
             <nav className="flex flex-col space-y-3">
-              <a href="#about" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium">About</a>
-              <a href="#highlights" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium">Highlights</a>
-              <a href="#sponsors" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium">Sponsors</a>
-              <a href="#join" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium">Join Us</a>
+              <a href="#" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-2 py-1.5 rounded-md hover:bg-ogclan/5" onClick={closeMobileMenu}>Home</a>
+              <a href="#about" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-2 py-1.5 rounded-md hover:bg-ogclan/5" onClick={closeMobileMenu}>About</a>
+              <a href="#og-battle-night" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-2 py-1.5 rounded-md hover:bg-ogclan/5" onClick={closeMobileMenu}>Events</a>
+              <a href="#sponsors" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-2 py-1.5 rounded-md hover:bg-ogclan/5" onClick={closeMobileMenu}>Sponsors</a>
+              <a href="#join" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium px-2 py-1.5 rounded-md hover:bg-ogclan/5" onClick={closeMobileMenu}>Join Us</a>
             </nav>
           </div>
         )}

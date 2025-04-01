@@ -17,10 +17,10 @@ const Logo = ({
 }: LogoProps) => {
   // Further increased size classes with additional visual effects
   const sizeClasses = {
-    sm: 'w-20 h-20', // Increased from w-16 h-16
-    md: 'w-32 h-32', // Increased from w-28 h-28
-    lg: 'w-44 h-44', // Increased from w-36 h-36
-    xl: 'w-56 h-56'  // Increased from w-48 h-48
+    sm: 'w-24 h-24', // Increased size
+    md: 'w-36 h-36', // Increased size
+    lg: 'w-48 h-48', // Increased size
+    xl: 'w-64 h-64'  // Increased size
   };
 
   return (
