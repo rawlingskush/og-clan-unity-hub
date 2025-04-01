@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { Check, Award, TrendingUp, Users, Calendar, Clock, MapPin } from 'lucide-react';
@@ -42,7 +41,6 @@ const HighlightsSection = () => {
   }];
   
   return <div className="relative overflow-hidden">
-      {/* Background design elements */}
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-ogclan/5 to-transparent opacity-30"></div>
       <div className="absolute -top-40 right-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-40 -left-20 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
@@ -130,81 +128,69 @@ const HighlightsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           <AnimatedContent animation="slide-in-left">
-            <HoverCard>
-              <HoverCardTrigger asChild>
-                <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)]">
-                  <img 
-                    src="/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png" 
-                    alt="OG Clan Members" 
-                    className="w-full h-[350px] object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                    <div className="p-4">
-                      <h3 className="text-xl font-bold text-ogclan">Elite Squad</h3>
-                      <p className="text-gray-300">The best of OG Clan, ready for action</p>
-                    </div>
-                  </div>
+            <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)] group">
+              <img 
+                src="/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png" 
+                alt="OG Clan Members" 
+                className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-ogclan">Elite Squad</h3>
+                  <p className="text-gray-300">The best of OG Clan, ready for action</p>
                 </div>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-80 backdrop-blur-md bg-black/80 border-ogclan/30 text-ogclan-light">
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-lg font-bold text-ogclan">Elite Squad: Clan Warriors</h4>
-                  <p>Our top members form the elite squad, representing OG Clan in the most competitive tournaments.</p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+              </div>
+              
+              <div className="absolute inset-0 bg-ogclan/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <h4 className="text-xl font-bold text-black mb-2">Elite Squad: Clan Warriors</h4>
+                <div className="w-12 h-1 bg-black mb-4"></div>
+                <p className="text-black/90 text-center">Our top members form the elite squad, representing OG Clan in the most competitive tournaments.</p>
+              </div>
+            </div>
           </AnimatedContent>
           
           <AnimatedContent animation="fade-in-up" delay={200}>
-            <HoverCard>
-              <HoverCardTrigger asChild>
-                <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)]">
-                  <img 
-                    src="/lovable-uploads/abd25e00-c7ac-47cf-8f29-d3a09b17097a.png" 
-                    alt="OG Clan Battle" 
-                    className="w-full h-[350px] object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                    <div className="p-4">
-                      <h3 className="text-xl font-bold text-ogclan">Battle Squad</h3>
-                      <p className="text-gray-300">Team coordination at its finest</p>
-                    </div>
-                  </div>
+            <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)] group">
+              <img 
+                src="/lovable-uploads/abd25e00-c7ac-47cf-8f29-d3a09b17097a.png" 
+                alt="OG Clan Battle" 
+                className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-ogclan">Battle Squad</h3>
+                  <p className="text-gray-300">Team coordination at its finest</p>
                 </div>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-80 backdrop-blur-md bg-black/80 border-ogclan/30 text-ogclan-light">
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-lg font-bold text-ogclan">Battle Squad: Perfect Coordination</h4>
-                  <p>When the OG Battle Squad enters the field, opponents know they're in for a real challenge.</p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+              </div>
+              
+              <div className="absolute inset-0 bg-ogclan/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <h4 className="text-xl font-bold text-black mb-2">Battle Squad: Perfect Coordination</h4>
+                <div className="w-12 h-1 bg-black mb-4"></div>
+                <p className="text-black/90 text-center">When the OG Battle Squad enters the field, opponents know they're in for a real challenge.</p>
+              </div>
+            </div>
           </AnimatedContent>
           
           <AnimatedContent animation="slide-in-right" delay={400}>
-            <HoverCard>
-              <HoverCardTrigger asChild>
-                <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)]">
-                  <img 
-                    src="/lovable-uploads/e5378274-2a94-43fe-b1fd-30596884f957.png" 
-                    alt="OG Clan Champion" 
-                    className="w-full h-[350px] object-cover transition-transform duration-700 hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
-                    <div className="p-4">
-                      <h3 className="text-xl font-bold text-ogclan">The Champion</h3>
-                      <p className="text-gray-300">Standing victorious above all</p>
-                    </div>
-                  </div>
+            <div className="battle-image-card relative overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)] group">
+              <img 
+                src="/lovable-uploads/e5378274-2a94-43fe-b1fd-30596884f957.png" 
+                alt="OG Clan Champion" 
+                className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-ogclan">The Champion</h3>
+                  <p className="text-gray-300">Standing victorious above all</p>
                 </div>
-              </HoverCardTrigger>
-              <HoverCardContent className="w-80 backdrop-blur-md bg-black/80 border-ogclan/30 text-ogclan-light">
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-lg font-bold text-ogclan">The Champion: Commander</h4>
-                  <p>Our clan leader stands among the fallen, a testament to OG Clan's dominance in every battle.</p>
-                </div>
-              </HoverCardContent>
-            </HoverCard>
+              </div>
+              
+              <div className="absolute inset-0 bg-ogclan/90 backdrop-blur-sm flex flex-col items-center justify-center p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <h4 className="text-xl font-bold text-black mb-2">The Champion: Commander</h4>
+                <div className="w-12 h-1 bg-black mb-4"></div>
+                <p className="text-black/90 text-center">Our clan leader stands among the fallen, a testament to OG Clan's dominance in every battle.</p>
+              </div>
+            </div>
           </AnimatedContent>
         </div>
       </div>
