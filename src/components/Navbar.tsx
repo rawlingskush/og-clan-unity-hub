@@ -1,29 +1,12 @@
 
 import React, { useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
 import Logo from './Logo';
-import { Menu, X, ChevronDown, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
 import { useToast } from '@/hooks/use-toast';
+import DesktopNav from './navbar/DesktopNav';
+import MobileNav from './navbar/MobileNav';
+import { MenuItem } from './navbar/types';
 
 const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -83,7 +66,7 @@ const Navbar = () => {
     );
   };
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { 
@@ -101,12 +84,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
-        isScrolled 
-          ? 'py-2 backdrop-blur-md shadow-lg' 
-          : 'py-4'
-      )}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'py-2 backdrop-blur-md shadow-lg' : 'py-4'
+      }`}
       style={{
         backgroundColor: `rgba(0, 0, 0, ${backgroundOpacity + 0.2})`,
         borderBottom: isScrolled ? '1px solid rgba(212, 175, 55, 0.15)' : 'none'
@@ -125,65 +105,12 @@ const Navbar = () => {
             <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />
           </a>
           
-          {/* Desktop Navigation using NavigationMenu for improved functionality */}
-          <NavigationMenu className="hidden md:flex">
-            <NavigationMenuList>
-              {menuItems.map(item => {
-                if (item.subItems) {
-                  return (
-                    <NavigationMenuItem key={item.id}>
-                      <NavigationMenuTrigger
-                        className={cn(
-                          activeSection === item.id && "text-ogclan"
-                        )}
-                      >
-                        {item.label}
-                      </NavigationMenuTrigger>
-                      <NavigationMenuContent>
-                        <ul className="grid gap-3 p-4 w-[240px]">
-                          {item.subItems.map(subItem => (
-                            <li key={subItem.id}>
-                              <NavigationMenuLink 
-                                href={`#${subItem.id}`}
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  handleNavClick(subItem.id);
-                                }}
-                                className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                              >
-                                <div className="text-sm font-medium leading-none">{subItem.label}</div>
-                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                  {subItem.description}
-                                </p>
-                              </NavigationMenuLink>
-                            </li>
-                          ))}
-                        </ul>
-                      </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  );
-                } else {
-                  return (
-                    <NavigationMenuItem key={item.id}>
-                      <NavigationMenuLink 
-                        href={`#${item.id}`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNavClick(item.id);
-                        }}
-                        className={cn(
-                          navigationMenuTriggerStyle(),
-                          activeSection === item.id && "text-ogclan"
-                        )}
-                      >
-                        {item.label}
-                      </NavigationMenuLink>
-                    </NavigationMenuItem>
-                  );
-                }
-              })}
-            </NavigationMenuList>
-          </NavigationMenu>
+          {/* Desktop Navigation */}
+          <DesktopNav 
+            menuItems={menuItems} 
+            activeSection={activeSection} 
+            handleNavClick={handleNavClick} 
+          />
           
           <div className="flex items-center">
             <a 
@@ -197,103 +124,16 @@ const Navbar = () => {
               Join the Crew
             </a>
             
-            {/* Mobile Navigation - Redesigned with Drawer component for better UX */}
-            <div className="md:hidden ml-4">
-              <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
-                <DrawerTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-ogclan hover:bg-ogclan/10 relative z-20"
-                  >
-                    <Menu className="h-6 w-6" />
-                  </Button>
-                </DrawerTrigger>
-                <DrawerContent className="bg-black/95 border-t border-ogclan/20 max-h-[85vh]">
-                  <div className="mx-auto w-full max-w-sm">
-                    <DrawerHeader>
-                      <DrawerTitle className="text-ogclan text-center text-xl font-orbitron">
-                        OG Clan Menu
-                      </DrawerTitle>
-                    </DrawerHeader>
-                    <div className="flex flex-col space-y-2 px-4 overflow-y-auto pb-4">
-                      {menuItems.map(item => {
-                        if (item.subItems) {
-                          const isExpanded = expandedMobileItems.includes(item.id);
-                          return (
-                            <div key={item.id} className="w-full">
-                              <button 
-                                className={cn(
-                                  "flex justify-between items-center w-full px-4 py-3.5 rounded-lg font-medium text-lg",
-                                  activeSection === item.id 
-                                    ? "bg-ogclan/20 text-ogclan" 
-                                    : "text-ogclan-light hover:bg-ogclan/10"
-                                )}
-                                onClick={() => toggleMobileSubmenu(item.id)}
-                                aria-expanded={isExpanded}
-                              >
-                                {item.label}
-                                <ChevronRight className={cn(
-                                  "h-5 w-5 text-ogclan transition-transform",
-                                  isExpanded && "transform rotate-90"
-                                )} />
-                              </button>
-                              {isExpanded && (
-                                <div className="ml-4 pl-4 border-l-2 border-ogclan/20 mt-2 mb-2 space-y-2">
-                                  {item.subItems.map(subItem => (
-                                    <button 
-                                      key={subItem.id}
-                                      className={cn(
-                                        "flex flex-col items-start w-full px-4 py-3 rounded-md transition-colors",
-                                        activeSection === subItem.id 
-                                          ? "bg-ogclan/20 text-ogclan" 
-                                          : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light"
-                                      )}
-                                      onClick={() => handleNavClick(subItem.id)}
-                                    >
-                                      <span className="font-medium">{subItem.label}</span>
-                                      <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
-                                    </button>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        } else {
-                          return (
-                            <button 
-                              key={item.id}
-                              className={cn(
-                                "w-full px-4 py-3.5 rounded-lg font-medium text-lg transition-colors",
-                                activeSection === item.id 
-                                  ? "bg-ogclan/20 text-ogclan" 
-                                  : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light"
-                              )}
-                              onClick={() => handleNavClick(item.id)}
-                            >
-                              {item.label}
-                            </button>
-                          );
-                        }
-                      })}
-                    </div>
-                    <DrawerFooter className="px-4 pt-2 pb-8">
-                      <Button 
-                        className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light"
-                        onClick={() => handleNavClick('join')}
-                      >
-                        Join the Crew
-                      </Button>
-                      <DrawerClose asChild>
-                        <Button variant="outline" className="mt-2 border-ogclan/20 text-ogclan-light">
-                          Close Menu
-                        </Button>
-                      </DrawerClose>
-                    </DrawerFooter>
-                  </div>
-                </DrawerContent>
-              </Drawer>
-            </div>
+            {/* Mobile Navigation */}
+            <MobileNav 
+              menuItems={menuItems}
+              activeSection={activeSection}
+              handleNavClick={handleNavClick}
+              isDrawerOpen={isDrawerOpen}
+              setIsDrawerOpen={setIsDrawerOpen}
+              expandedMobileItems={expandedMobileItems}
+              toggleMobileSubmenu={toggleMobileSubmenu}
+            />
           </div>
         </div>
       </div>
