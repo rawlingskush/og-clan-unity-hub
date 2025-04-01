@@ -2,7 +2,7 @@
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend } from 'recharts';
 import ChartBase from './ChartBase';
-import { ChartLegend, ChartLegendContent } from '@/components/ui/chart';
+import { ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 const PerformanceChart = () => {
   // Sample data for the chart
@@ -67,6 +67,7 @@ const PerformanceChart = () => {
           stroke="var(--color-kills, #B8860B)" 
           strokeWidth={3}
         />
+        <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
       </LineChart>
     </ChartBase>

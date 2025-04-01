@@ -2,6 +2,7 @@
 import React from 'react';
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis } from 'recharts';
 import ChartBase from './ChartBase';
+import { ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 const ActivityChart = () => {
   // Sample data for the chart
@@ -43,6 +44,7 @@ const ActivityChart = () => {
           fill="var(--color-activity, #D4AF37)" 
           radius={[4, 4, 0, 0]} 
         />
+        <ChartTooltip content={<ChartTooltipContent />} />
       </BarChart>
     </ChartBase>
   );
