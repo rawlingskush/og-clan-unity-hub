@@ -2,20 +2,54 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Smartphone, Youtube, MessageSquare, Mail } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
+  const { toast } = useToast();
+  
   const socialLinks = [
     { icon: <Smartphone className="w-4 h-4" />, href: "#", label: "TikTok" },
     { icon: <Youtube className="w-4 h-4" />, href: "#", label: "YouTube" },
     { icon: <MessageSquare className="w-4 h-4" />, href: "#", label: "Discord" },
   ];
 
+  const handleNavClick = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    } else {
+      toast({
+        title: "Section not found",
+        description: `The ${sectionId} section is not available yet.`,
+        variant: "destructive",
+      });
+    }
+  };
+
+  const handleSocialClick = (label) => {
+    toast({
+      title: `${label} Coming Soon`,
+      description: `Our ${label} channel will be available soon!`,
+      variant: "default",
+    });
+  };
+
   return (
     <footer className="bg-black/80 border-t border-ogclan/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-2">
-            <a href="#" className="flex items-center mb-3">
+            <a 
+              href="#home" 
+              className="flex items-center mb-3"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
+            >
               <div className="w-8 h-8 bg-ogclan rounded-lg flex items-center justify-center text-black mr-2">
                 OG
               </div>
@@ -26,14 +60,14 @@ const Footer = () => {
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social, index) => (
-                <a
+                <button
                   key={index}
-                  href={social.href}
-                  className="social-icon w-7 h-7"
+                  onClick={() => handleSocialClick(social.label)}
+                  className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200"
                   aria-label={social.label}
                 >
                   {social.icon}
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -43,13 +77,22 @@ const Footer = () => {
               Navigation
             </h3>
             <ul className="space-y-2 text-sm">
-              {['Home', 'About', 'Highlights', 'Join Us'].map((item, index) => (
+              {[
+                {name: 'Home', id: 'home'}, 
+                {name: 'About', id: 'about'}, 
+                {name: 'Highlights', id: 'highlights'}, 
+                {name: 'Join Us', id: 'join'}
+              ].map((item, index) => (
                 <li key={index}>
                   <a 
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-gray-400 hover:text-ogclan transition-colors"
+                    href={`#${item.id}`}
+                    className="text-gray-400 hover:text-ogclan transition-colors block py-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.id);
+                    }}
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
@@ -64,7 +107,10 @@ const Footer = () => {
               <li>Cameroon</li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-1 text-ogclan" />
-                <a href="mailto:onlygreat237@gmail.com" className="hover:text-ogclan transition-colors">
+                <a 
+                  href="mailto:onlygreat237@gmail.com" 
+                  className="hover:text-ogclan transition-colors"
+                >
                   onlygreat237@gmail.com
                 </a>
               </li>
@@ -77,12 +123,30 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} OG Clan. All rights reserved.
           </p>
           <div className="mt-2 md:mt-0 flex space-x-4">
-            <a href="#" className="text-gray-500 hover:text-ogclan text-xs">
+            <button 
+              className="text-gray-500 hover:text-ogclan text-xs"
+              onClick={() => {
+                toast({
+                  title: "Privacy Policy",
+                  description: "Our privacy policy is currently being updated.",
+                  variant: "default",
+                });
+              }}
+            >
               Privacy
-            </a>
-            <a href="#" className="text-gray-500 hover:text-ogclan text-xs">
+            </button>
+            <button 
+              className="text-gray-500 hover:text-ogclan text-xs"
+              onClick={() => {
+                toast({
+                  title: "Terms of Service",
+                  description: "Our terms of service are currently being updated.",
+                  variant: "default",
+                });
+              }}
+            >
               Terms
-            </a>
+            </button>
           </div>
         </div>
       </div>
