@@ -28,7 +28,10 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
               <NavigationMenuItem key={item.id}>
                 <NavigationMenuTrigger
                   className={cn(
-                    activeSection === item.id && "text-ogclan"
+                    "transition-colors duration-300 relative",
+                    activeSection === item.id 
+                      ? "text-ogclan after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ogclan" 
+                      : "hover:text-ogclan-light"
                   )}
                 >
                   {item.label}
@@ -43,7 +46,12 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                             e.preventDefault();
                             handleNavClick(subItem.id);
                           }}
-                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                          className={cn(
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300",
+                            activeSection === subItem.id 
+                              ? "bg-accent text-accent-foreground" 
+                              : "hover:bg-accent hover:text-accent-foreground"
+                          )}
                         >
                           <div className="text-sm font-medium leading-none">{subItem.label}</div>
                           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">

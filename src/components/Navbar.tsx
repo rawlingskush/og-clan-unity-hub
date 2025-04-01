@@ -16,19 +16,27 @@ const Navbar = () => {
   const isMobile = useIsMobile();
   const { toast } = useToast();
 
-  // Track scroll position instead of just boolean
+  // Track scroll position and update active section
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'highlights', 'sponsors', 'join', 'cod-points'];
-      for (const section of sections) {
+      const sections = ['home', 'about', 'og-battle-night', 'weekly', 'highlights', 'sponsors', 'join', 'cod-points'];
+      
+      // Get all section elements that exist in the DOM
+      const availableSections = sections.filter(id => document.getElementById(id));
+      
+      // Find the section that's currently most visible in the viewport
+      for (const section of availableSections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
+          // Consider a section "active" when its top part is near the top of the viewport
           if (rect.top <= 100 && rect.bottom >= 100) {
-            setActiveSection(section);
+            if (activeSection !== section) {
+              setActiveSection(section);
+            }
             break;
           }
         }
@@ -36,20 +44,29 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initial call to set the active section on mount
+    handleScroll();
+    
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   // Calculate opacity based on scroll position for a smoother effect
   const backgroundOpacity = Math.min(scrollPosition / 300, 0.7);
   const isScrolled = scrollPosition > 10;
 
-  const handleNavClick = (sectionId) => {
+  const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      // Set as active section immediately for better UX
+      setActiveSection(sectionId);
+      
+      // Smooth scroll with a slight delay for visual transition
       window.scrollTo({
         top: element.offsetTop - 80,
         behavior: 'smooth'
       });
+      
+      // Close mobile drawer if open
       setIsDrawerOpen(false);
     } else {
       toast({

@@ -60,39 +60,42 @@ const MobileNav = ({
                     <div key={item.id} className="w-full">
                       <button 
                         className={cn(
-                          "flex justify-between items-center w-full px-4 py-3.5 rounded-lg font-medium text-lg",
+                          "flex justify-between items-center w-full px-4 py-3.5 rounded-lg font-medium text-lg transition-all duration-300",
                           activeSection === item.id 
-                            ? "bg-ogclan/20 text-ogclan" 
-                            : "text-ogclan-light hover:bg-ogclan/10"
+                            ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
+                            : "text-ogclan-light hover:bg-ogclan/10 hover:border-l-2 hover:border-ogclan/50"
                         )}
                         onClick={() => toggleMobileSubmenu(item.id)}
                         aria-expanded={isExpanded}
                       >
                         {item.label}
                         <ChevronRight className={cn(
-                          "h-5 w-5 text-ogclan transition-transform",
+                          "h-5 w-5 text-ogclan transition-transform duration-300",
                           isExpanded && "transform rotate-90"
                         )} />
                       </button>
-                      {isExpanded && (
-                        <div className="ml-4 pl-4 border-l-2 border-ogclan/20 mt-2 mb-2 space-y-2">
-                          {item.subItems.map(subItem => (
-                            <button 
-                              key={subItem.id}
-                              className={cn(
-                                "flex flex-col items-start w-full px-4 py-3 rounded-md transition-colors",
-                                activeSection === subItem.id 
-                                  ? "bg-ogclan/20 text-ogclan" 
-                                  : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light"
-                              )}
-                              onClick={() => handleNavClick(subItem.id)}
-                            >
-                              <span className="font-medium">{subItem.label}</span>
-                              <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
-                            </button>
-                          ))}
-                        </div>
-                      )}
+                      <div 
+                        className={cn(
+                          "ml-4 pl-4 border-l-2 border-ogclan/20 mt-2 mb-2 space-y-2 overflow-hidden transition-all duration-300",
+                          isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                        )}
+                      >
+                        {item.subItems.map(subItem => (
+                          <button 
+                            key={subItem.id}
+                            className={cn(
+                              "flex flex-col items-start w-full px-4 py-3 rounded-md transition-all duration-300",
+                              activeSection === subItem.id 
+                                ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
+                                : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
+                            )}
+                            onClick={() => handleNavClick(subItem.id)}
+                          >
+                            <span className="font-medium">{subItem.label}</span>
+                            <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   );
                 } else {
@@ -100,10 +103,10 @@ const MobileNav = ({
                     <button 
                       key={item.id}
                       className={cn(
-                        "w-full px-4 py-3.5 rounded-lg font-medium text-lg transition-colors",
+                        "w-full px-4 py-3.5 rounded-lg font-medium text-lg transition-all duration-300",
                         activeSection === item.id 
-                          ? "bg-ogclan/20 text-ogclan" 
-                          : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light"
+                          ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
+                          : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
                       onClick={() => handleNavClick(item.id)}
                     >
@@ -115,7 +118,7 @@ const MobileNav = ({
             </div>
             <DrawerFooter className="px-4 pt-2 pb-8">
               <Button 
-                className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light"
+                className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                 onClick={() => handleNavClick('join')}
               >
                 Join the Crew
