@@ -28,8 +28,6 @@ const HeroContent = () => {
             
             {/* Tech highlight flare with higher opacity */}
             <span className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-ogclan-dark/0 via-ogclan/30 to-ogclan-light/0 transition-all duration-500"></span>
-            
-            {/* Removed: Digital circuit pattern overlay */}
           </span>
           
           {/* High-tech background glow with increased intensity */}
@@ -49,11 +47,15 @@ const HeroContent = () => {
       </AnimatedContent>
 
       <AnimatedContent animation="fade-in-up" delay={600}>
-        <p className="mt-3 md:mt-5 text-base sm:text-lg md:text-xl max-w-6xl mx-auto text-balance leading-relaxed px-4 sm:px-2 text-gray-300 relative">
-          Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier gaming squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. Join Us, level up your game, and help write our epic legacy. Let's own this together!
+        <p className="mt-4 md:mt-6 text-base sm:text-lg md:text-xl max-w-6xl mx-auto leading-relaxed px-4 sm:px-6 relative">
+          <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">
+            Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier gaming squad since 2020. We're 50 hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you. 
+          </span>
+          <span className="text-balance inline-block bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-2 drop-shadow">
+            Join Us, level up your game, and help write our epic legacy. Let's own this together!
+          </span>
           
-          {/* Tech scanline effect with reduced intensity for better readability */}
-          <span className="absolute inset-0 bg-gradient-to-b from-transparent via-ogclan/5 to-transparent bg-[length:100%_4px] bg-repeat-y animate-pulse-slow opacity-30 pointer-events-none"></span>
+          {/* Removed scanline effect that was causing readability issues on mobile */}
         </p>
       </AnimatedContent>
     </div>;
