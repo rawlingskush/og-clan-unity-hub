@@ -1,4 +1,6 @@
 
+@tailwind utilities;
+
 @layer utilities {
   .animation-delay-300 {
     animation-delay: 300ms;
