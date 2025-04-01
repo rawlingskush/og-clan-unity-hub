@@ -89,10 +89,7 @@ const MobileNav = ({
                                 ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                                 : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                             )}
-                            onClick={() => {
-                              handleNavClick(subItem.id);
-                              setIsDrawerOpen(false); // Close drawer after navigation
-                            }}
+                            onClick={() => handleNavClick(subItem.id)}
                           >
                             <span className="font-medium">{subItem.label}</span>
                             <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
@@ -111,10 +108,7 @@ const MobileNav = ({
                           ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                           : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
-                      onClick={() => {
-                        handleNavClick(item.id);
-                        setIsDrawerOpen(false); // Close drawer after navigation
-                      }}
+                      onClick={() => handleNavClick(item.id)}
                     >
                       {item.label}
                     </button>
@@ -125,10 +119,7 @@ const MobileNav = ({
             <DrawerFooter className="px-4 pt-2 pb-8">
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                onClick={() => {
-                  handleNavClick('join');
-                  setIsDrawerOpen(false); // Close drawer after navigation
-                }}
+                onClick={() => handleNavClick('join')}
               >
                 Join the Crew
               </Button>

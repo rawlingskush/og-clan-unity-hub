@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useToast } from '@/hooks/use-toast';
@@ -24,24 +24,18 @@ const Navbar = () => {
   });
 
   const handleNavClick = (sectionId: string) => {
-    // Close mobile drawer immediately for better UX
-    setIsDrawerOpen(false);
+    const success = scrollToSection(sectionId);
     
-    // Allow a small delay for the drawer to close before scrolling
-    setTimeout(() => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        // Fix for iOS scrolling using direct coordinate calculation
-        const topOffset = element.getBoundingClientRect().top + window.pageYOffset - 80;
-        window.scrollTo(0, topOffset);
-      } else {
-        toast({
-          title: "Section not found",
-          description: `The ${sectionId} section is not available yet.`,
-          variant: "destructive",
-        });
-      }
-    }, 10);
+    if (!success) {
+      toast({
+        title: "Section not found",
+        description: `The ${sectionId} section is not available yet.`,
+        variant: "destructive",
+      });
+    }
+    
+    // Close mobile drawer if open
+    setIsDrawerOpen(false);
   };
 
   const toggleMobileSubmenu = (itemId: string) => {
@@ -56,31 +50,17 @@ const Navbar = () => {
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'og-battle-night', label: 'Battle Night' },
+    { 
+      id: 'events', 
+      label: 'Events', 
+      subItems: [
+        { id: 'og-battle-night', label: 'OG Battle Night', description: 'Our flagship monthly competition' }
+      ]
+    },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
     { id: 'cod-points', label: 'Get CoD Points' }
   ];
-
-  // Fix for iOS mobile browser scrolling issues
-  useEffect(() => {
-    if (isDrawerOpen) {
-      // Prevent background scrolling when drawer is open
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-    } else {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-    };
-  }, [isDrawerOpen]);
 
   return (
     <header
@@ -94,12 +74,16 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <button 
+          <a 
+            href="#home" 
             className="flex items-center group relative z-10"
-            onClick={() => handleNavClick('home')}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('home');
+            }}
           >
             <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />
-          </button>
+          </a>
           
           {/* Desktop Navigation */}
           <DesktopNav 
@@ -109,12 +93,16 @@ const Navbar = () => {
           />
           
           <div className="flex items-center">
-            <button 
+            <a 
+              href="#join" 
               className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98]"
-              onClick={() => handleNavClick('join')}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('join');
+              }}
             >
               Join the Crew
-            </button>
+            </a>
             
             {/* Mobile Navigation */}
             <MobileNav 

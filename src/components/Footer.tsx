@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Smartphone, Youtube, MessageSquare, Mail } from 'lucide-react';
@@ -15,9 +16,10 @@ const Footer = () => {
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      // Fix for iOS scrolling using direct coordinate calculation
-      const topOffset = element.getBoundingClientRect().top + window.pageYOffset - 80;
-      window.scrollTo(0, topOffset);
+      window.scrollTo({
+        top: element.offsetTop - 80,
+        behavior: 'smooth'
+      });
     } else {
       toast({
         title: "Section not found",
@@ -40,15 +42,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-2">
-            <button 
+            <a 
+              href="#home" 
               className="flex items-center mb-3"
-              onClick={() => handleNavClick('home')}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
             >
               <div className="w-8 h-8 bg-ogclan rounded-lg flex items-center justify-center text-black mr-2">
                 OG
               </div>
               <span className="text-lg font-bold text-ogclan">OG Clan</span>
-            </button>
+            </a>
             <p className="text-gray-400 mb-4 max-w-md text-sm">
               Where gaming passion meets loyalty. Building a community of dedicated gamers in Cameroon and beyond.
             </p>
@@ -74,16 +80,20 @@ const Footer = () => {
               {[
                 {name: 'Home', id: 'home'}, 
                 {name: 'About', id: 'about'}, 
-                {name: 'Battle Night', id: 'og-battle-night'}, 
+                {name: 'Highlights', id: 'highlights'}, 
                 {name: 'Join Us', id: 'join'}
               ].map((item, index) => (
                 <li key={index}>
-                  <button 
-                    className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full"
-                    onClick={() => handleNavClick(item.id)}
+                  <a 
+                    href={`#${item.id}`}
+                    className="text-gray-400 hover:text-ogclan transition-colors block py-1"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.id);
+                    }}
                   >
                     {item.name}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
