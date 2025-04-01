@@ -36,13 +36,12 @@ const SponsorSection = () => {
         message: formData.message,
       };
 
-      // Replace these IDs with your EmailJS service, template, and user IDs
-      // You'll need to set these up on EmailJS.com
+      // Send email using EmailJS with the provided credentials
       await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'OgClanService', // Your EmailJS service ID
+        'template_jgdc7hr', // Your EmailJS template ID
         templateParams,
-        'YOUR_USER_ID' // Replace with your EmailJS user ID
+        '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
       );
 
       toast({
