@@ -1,6 +1,5 @@
 
 import React, { ReactNode } from 'react';
-import { CartesianGrid, XAxis, YAxis } from 'recharts';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 interface ChartBaseProps {
@@ -15,18 +14,6 @@ const ChartBase = ({ children, data, config, height = "h-64 md:h-80" }: ChartBas
     <div className={`w-full ${height}`}>
       <ChartContainer config={config}>
         {children}
-        <CartesianGrid strokeDasharray="3 3" stroke="#333" opacity={0.3} />
-        <XAxis 
-          dataKey="name" 
-          tick={{ fill: '#aaa' }} 
-          axisLine={{ stroke: '#333' }}
-          tickLine={{ stroke: '#333' }}
-        />
-        <YAxis 
-          tick={{ fill: '#aaa' }} 
-          axisLine={{ stroke: '#333' }} 
-          tickLine={{ stroke: '#333' }}
-        />
         <ChartTooltip 
           content={<ChartTooltipContent />}
         />

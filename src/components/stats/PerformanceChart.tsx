@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { LineChart, Line, YAxis, Legend } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend } from 'recharts';
 import ChartBase from './ChartBase';
 import { ChartLegend, ChartLegendContent } from '@/components/ui/chart';
 
@@ -30,6 +30,13 @@ const PerformanceChart = () => {
   return (
     <ChartBase data={data} config={chartConfig}>
       <LineChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#333" opacity={0.3} />
+        <XAxis 
+          dataKey="name" 
+          tick={{ fill: '#aaa' }} 
+          axisLine={{ stroke: '#333' }}
+          tickLine={{ stroke: '#333' }}
+        />
         <YAxis 
           yAxisId="left"
           tick={{ fill: '#aaa' }} 

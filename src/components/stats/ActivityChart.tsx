@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BarChart, Bar } from 'recharts';
+import { BarChart, Bar, CartesianGrid, XAxis, YAxis } from 'recharts';
 import ChartBase from './ChartBase';
 
 const ActivityChart = () => {
@@ -25,6 +25,18 @@ const ActivityChart = () => {
   return (
     <ChartBase data={data} config={chartConfig}>
       <BarChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 20 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#333" opacity={0.3} />
+        <XAxis 
+          dataKey="name" 
+          tick={{ fill: '#aaa' }} 
+          axisLine={{ stroke: '#333' }}
+          tickLine={{ stroke: '#333' }}
+        />
+        <YAxis 
+          tick={{ fill: '#aaa' }} 
+          axisLine={{ stroke: '#333' }} 
+          tickLine={{ stroke: '#333' }}
+        />
         <Bar 
           dataKey="activity" 
           name="Activity" 
