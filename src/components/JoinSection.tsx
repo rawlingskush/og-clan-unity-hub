@@ -31,8 +31,8 @@ const JoinSection = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Background shapes */}
-      <div className="absolute top-1/3 -right-40 w-80 h-80 bg-ogclan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 -left-40 w-80 h-80 bg-ogclan-light/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/3 -right-40 w-80 h-80 bg-ogclan-muted rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute bottom-1/4 -left-40 w-80 h-80 bg-ogclan-light rounded-full blur-3xl opacity-20"></div>
 
       <div className="glass-card rounded-3xl p-8 md:p-12 border-t border-ogclan/20">
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -41,7 +41,7 @@ const JoinSection = () => {
               <h3 className="text-3xl font-bold text-gradient-gold mb-6">
                 Become an OG Today
               </h3>
-              <p className="text-lg text-gray-300 mb-8">
+              <p className="text-lg text-gray-700 mb-8">
                 Join OG Clan and become part of something bigger. We're not just gamers—we're a movement creating opportunities through passion.
               </p>
 
@@ -52,18 +52,18 @@ const JoinSection = () => {
                     animation="slide-in-left"
                     delay={300 + index * 150}
                   >
-                    <li className="flex items-center gap-3 bg-ogclan/10 p-3 rounded-lg">
-                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ogclan/20 flex items-center justify-center text-ogclan">
+                    <li className="flex items-center gap-3 bg-ogclan/5 p-3 rounded-lg">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ogclan/10 flex items-center justify-center">
                         {benefit.icon}
                       </span>
-                      <span className="text-gray-300 font-medium">{benefit.text}</span>
+                      <span className="text-gray-700 font-medium">{benefit.text}</span>
                     </li>
                   </AnimatedContent>
                 ))}
               </ul>
               
               <div className="hidden md:block">
-                <p className="text-gray-400 italic mb-4">
+                <p className="text-gray-500 italic mb-4">
                   "Gaming is better together. Join the OG family and level up with us!"
                 </p>
                 <Button variant="outline" className="border-ogclan text-ogclan hover:bg-ogclan/10">
@@ -74,52 +74,52 @@ const JoinSection = () => {
           </div>
 
           <AnimatedContent animation="scale-in" delay={300}>
-            <div className="bg-black/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-ogclan/20">
-              <h3 className="text-2xl font-bold text-ogclan mb-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Join the OG Clan Family
               </h3>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                     Your Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    className="w-full px-4 py-3 rounded-lg border border-ogclan/30 bg-black/50 text-gray-200 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
                     placeholder="Enter your name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                     Email Address
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="w-full px-4 py-3 rounded-lg border border-ogclan/30 bg-black/50 text-gray-200 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
                     placeholder="you@example.com"
                   />
                 </div>
                 <div>
-                  <label htmlFor="gamerTag" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="gamerTag" className="block text-sm font-medium text-gray-700 mb-1">
                     Gamer Tag
                   </label>
                   <input
                     type="text"
                     id="gamerTag"
-                    className="w-full px-4 py-3 rounded-lg border border-ogclan/30 bg-black/50 text-gray-200 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
                     placeholder="Your gamer tag"
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                     Why do you want to join?
                   </label>
                   <textarea
                     id="message"
                     rows={3}
-                    className="w-full px-4 py-3 rounded-lg border border-ogclan/30 bg-black/50 text-gray-200 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
                     placeholder="Tell us a bit about yourself..."
                   ></textarea>
                 </div>
@@ -136,7 +136,7 @@ const JoinSection = () => {
             </div>
             
             <div className="md:hidden mt-8">
-              <p className="text-gray-400 italic mb-4 text-center">
+              <p className="text-gray-500 italic mb-4 text-center">
                 "Gaming is better together. Join the OG family and level up with us!"
               </p>
               <div className="flex justify-center">
