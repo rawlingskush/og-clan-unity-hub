@@ -29,6 +29,7 @@ const Navbar = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [expandedMobileItems, setExpandedMobileItems] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const { toast } = useToast();
 
@@ -74,6 +75,12 @@ const Navbar = () => {
         variant: "destructive",
       });
     }
+  };
+
+  const toggleMobileSubmenu = (itemId: string) => {
+    setExpandedMobileItems(prev => 
+      prev.includes(itemId) ? prev.filter(id => id !== itemId) : [...prev, itemId]
+    );
   };
 
   const menuItems = [
@@ -209,39 +216,47 @@ const Navbar = () => {
                         OG Clan Menu
                       </DrawerTitle>
                     </DrawerHeader>
-                    <div className="flex flex-col space-y-2 px-4">
+                    <div className="flex flex-col space-y-2 px-4 overflow-y-auto pb-4">
                       {menuItems.map(item => {
                         if (item.subItems) {
+                          const isExpanded = expandedMobileItems.includes(item.id);
                           return (
                             <div key={item.id} className="w-full">
-                              <div 
+                              <button 
                                 className={cn(
                                   "flex justify-between items-center w-full px-4 py-3.5 rounded-lg font-medium text-lg",
                                   activeSection === item.id 
                                     ? "bg-ogclan/20 text-ogclan" 
                                     : "text-ogclan-light hover:bg-ogclan/10"
                                 )}
+                                onClick={() => toggleMobileSubmenu(item.id)}
+                                aria-expanded={isExpanded}
                               >
                                 {item.label}
-                                <ChevronRight className="h-5 w-5 text-ogclan" />
-                              </div>
-                              <div className="ml-4 pl-4 border-l-2 border-ogclan/20 mt-2 mb-2 space-y-2">
-                                {item.subItems.map(subItem => (
-                                  <button 
-                                    key={subItem.id}
-                                    className={cn(
-                                      "flex flex-col items-start w-full px-4 py-3 rounded-md transition-colors",
-                                      activeSection === subItem.id 
-                                        ? "bg-ogclan/20 text-ogclan" 
-                                        : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light"
-                                    )}
-                                    onClick={() => handleNavClick(subItem.id)}
-                                  >
-                                    <span className="font-medium">{subItem.label}</span>
-                                    <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
-                                  </button>
-                                ))}
-                              </div>
+                                <ChevronRight className={cn(
+                                  "h-5 w-5 text-ogclan transition-transform",
+                                  isExpanded && "transform rotate-90"
+                                )} />
+                              </button>
+                              {isExpanded && (
+                                <div className="ml-4 pl-4 border-l-2 border-ogclan/20 mt-2 mb-2 space-y-2">
+                                  {item.subItems.map(subItem => (
+                                    <button 
+                                      key={subItem.id}
+                                      className={cn(
+                                        "flex flex-col items-start w-full px-4 py-3 rounded-md transition-colors",
+                                        activeSection === subItem.id 
+                                          ? "bg-ogclan/20 text-ogclan" 
+                                          : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light"
+                                      )}
+                                      onClick={() => handleNavClick(subItem.id)}
+                                    >
+                                      <span className="font-medium">{subItem.label}</span>
+                                      <span className="text-xs text-ogclan-light/60 mt-1">{subItem.description}</span>
+                                    </button>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           );
                         } else {
@@ -262,7 +277,7 @@ const Navbar = () => {
                         }
                       })}
                     </div>
-                    <DrawerFooter className="px-4 pt-6 pb-8">
+                    <DrawerFooter className="px-4 pt-2 pb-8">
                       <Button 
                         className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light"
                         onClick={() => handleNavClick('join')}
