@@ -6,12 +6,13 @@ import { Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Track scroll position instead of just boolean
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrollPosition(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -22,14 +23,22 @@ const Navbar = () => {
     setMobileMenuOpen(false);
   };
 
+  // Calculate opacity based on scroll position for a smoother effect
+  const backgroundOpacity = Math.min(scrollPosition / 300, 0.7);
+  const isScrolled = scrollPosition > 10;
+
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        scrolled 
-          ? 'bg-black/50 backdrop-blur-sm shadow-md py-2 border-b border-ogclan/10' 
-          : 'bg-transparent py-3'
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+        isScrolled 
+          ? 'py-2 backdrop-blur-md shadow-lg' 
+          : 'py-4'
       )}
+      style={{
+        backgroundColor: `rgba(0, 0, 0, ${backgroundOpacity})`,
+        borderBottom: isScrolled ? '1px solid rgba(212, 175, 55, 0.15)' : 'none'
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
@@ -41,32 +50,33 @@ const Navbar = () => {
           </a>
           
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>Home</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            {/* New hover effect style */}
+            <a href="#" className="text-ogclan px-4 py-2 rounded-md transition-all duration-300 hover:bg-ogclan/10 hover:text-ogclan-light relative overflow-hidden group">
+              <span className="relative z-10">Home</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-ogclan/0 via-ogclan/5 to-ogclan/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
             </a>
-            <a href="#about" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>About</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            <a href="#about" className="text-ogclan px-4 py-2 rounded-md transition-all duration-300 hover:bg-ogclan/10 hover:text-ogclan-light relative overflow-hidden group">
+              <span className="relative z-10">About</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-ogclan/0 via-ogclan/5 to-ogclan/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
             </a>
-            <a href="#og-battle-night" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>Events</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            <a href="#og-battle-night" className="text-ogclan px-4 py-2 rounded-md transition-all duration-300 hover:bg-ogclan/10 hover:text-ogclan-light relative overflow-hidden group">
+              <span className="relative z-10">Events</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-ogclan/0 via-ogclan/5 to-ogclan/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
             </a>
-            <a href="#sponsors" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>Sponsors</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            <a href="#sponsors" className="text-ogclan px-4 py-2 rounded-md transition-all duration-300 hover:bg-ogclan/10 hover:text-ogclan-light relative overflow-hidden group">
+              <span className="relative z-10">Sponsors</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-ogclan/0 via-ogclan/5 to-ogclan/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
             </a>
-            <a href="#join" className="text-ogclan hover:text-ogclan-light transition-colors duration-300 font-medium relative overflow-hidden group">
-              <span>Join Us</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan-light group-hover:w-full transition-all duration-300"></span>
+            <a href="#join" className="text-ogclan px-4 py-2 rounded-md transition-all duration-300 hover:bg-ogclan/10 hover:text-ogclan-light relative overflow-hidden group">
+              <span className="relative z-10">Join Us</span>
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-ogclan/0 via-ogclan/5 to-ogclan/0 -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></span>
             </a>
           </nav>
           
           <div className="flex items-center">
             <a 
               href="#join" 
-              className="btn-primary"
+              className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98]"
             >
               Join the Crew
             </a>
