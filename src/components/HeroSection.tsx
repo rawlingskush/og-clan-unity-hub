@@ -15,7 +15,10 @@ const HeroSection = () => {
         <HeroActions />
       </div>
       
-      <ScrollDownButton />
+      {/* Added a margin-bottom to create space */}
+      <div className="mb-24 sm:mb-36">
+        <ScrollDownButton />
+      </div>
     </section>
   );
 };
