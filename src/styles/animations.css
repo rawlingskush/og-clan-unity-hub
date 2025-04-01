@@ -22,13 +22,15 @@
     @apply bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent;
   }
   
-  /* Animation Classes */
+  /* Animation Classes - Modified to preserve element sizes */
   @keyframes slide-in-up {
     0% {
-      transform: translateY(30px);
+      transform: translateY(10px);
+      opacity: 0;
     }
     100% {
       transform: translateY(0);
+      opacity: 1;
     }
   }
   
@@ -43,20 +45,22 @@
   
   @keyframes scale-in {
     0% {
-      transform: scale(0.95);
+      transform: scale(0.98);
+      opacity: 0;
     }
     100% {
       transform: scale(1);
+      opacity: 1;
     }
   }
   
-  /* Glow animation for special elements */
+  /* Glow animation with reduced intensity to maintain visual size */
   @keyframes pulse-glow {
     0%, 100% {
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.4));
     }
     50% {
-      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.9));
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
     }
   }
   
@@ -64,13 +68,13 @@
     animation: pulse-glow 3s ease-in-out infinite;
   }
   
-  /* Blink animation for stronger effects */
+  /* Blink animation with subtle changes to preserve size perception */
   @keyframes blink {
     0%, 100% {
       opacity: 1;
     }
     50% {
-      opacity: 0.3;
+      opacity: 0.5;
     }
   }
   

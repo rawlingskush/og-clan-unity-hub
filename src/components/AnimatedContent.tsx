@@ -55,21 +55,21 @@ const AnimatedContent = ({
     
     switch (animation) {
       case 'fade-in-up':
-        return 'animate-[fade-in_0.8s_ease-out,slide-in-up_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out,slide-in-up_0.6s_ease-out]';
       case 'fade-in':
-        return 'animate-[fade-in_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out]';
       case 'scale-in':
-        return 'animate-[fade-in_0.8s_ease-out,scale-in_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out,scale-in_0.6s_ease-out]';
       case 'slide-in-right':
-        return 'animate-[fade-in_0.8s_ease-out,slide-in-right_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out,slide-in-right_0.6s_ease-out]';
       case 'slide-in-left':
-        return 'animate-[fade-in_0.8s_ease-out,slide-in-left_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out,slide-in-left_0.6s_ease-out]';
       case 'bounce':
-        return 'animate-[fade-in_0.8s_ease-out] animate-bounce';
+        return 'animate-[fade-in_0.6s_ease-out]';
       case 'glow-pulse':
-        return 'animate-[fade-in_0.8s_ease-out] animate-glow';
+        return 'animate-[fade-in_0.6s_ease-out] animate-glow';
       default:
-        return 'animate-[fade-in_0.8s_ease-out]';
+        return 'animate-[fade-in_0.6s_ease-out]';
     }
   };
 
@@ -82,7 +82,7 @@ const AnimatedContent = ({
       }} 
       className={cn(
         getAnimationClass(),
-        "transform-gpu will-change-transform",
+        "will-change-opacity",
         className
       )}
     >
