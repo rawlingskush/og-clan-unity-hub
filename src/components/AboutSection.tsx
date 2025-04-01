@@ -2,7 +2,7 @@
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
-import { ArrowRight, Users, Trophy, Target, Globe } from 'lucide-react';
+import { ArrowRight, Users, Trophy, Target, Globe, Calendar, Star, Shield } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -72,83 +72,74 @@ const AboutSection = () => {
           </AnimatedContent>
         </div>
         
-        {/* Improved Global Impact section */}
+        {/* Improved Global Impact section with the new OG Clan logo */}
         <div className="grid md:grid-cols-5 gap-12 items-center mt-20">
-          <AnimatedContent animation="slide-in-left" className="md:col-span-2">
-            <div className="glass-card p-8 rounded-2xl border-l-4 border-ogclan shadow-[0_0_25px_rgba(212,175,55,0.15)] relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-ogclan/10 rounded-bl-full"></div>
-              
-              <h3 className="text-3xl font-bold text-gradient-gold mb-6">
-                A Movement, Not Just a Clan
-              </h3>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-ogclan/20 flex items-center justify-center mt-1">
-                    <ArrowRight className="h-3.5 w-3.5 text-ogclan" />
+          <AnimatedContent animation="slide-in-right" delay={300} className="md:col-span-3 order-2 md:order-1">
+            <div className="glass-card p-8 rounded-2xl overflow-hidden relative z-10 shadow-[0_0_40px_rgba(0,130,255,0.15),0_0_20px_rgba(212,0,55,0.15)]">
+              <div className="flex flex-col h-full">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500/20 to-red-500/20 flex items-center justify-center">
+                    <Shield className="text-ogclan-light h-6 w-6" />
                   </div>
-                  <p className="ml-3 text-gray-300">
-                    <span className="text-ogclan-light font-medium">Loyalty</span> - Building a foundation of trust and support within our gaming family
-                  </p>
+                  <h3 className="text-3xl font-bold text-gradient-gold">OG Legacy Since 2020</h3>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-ogclan/20 flex items-center justify-center mt-1">
-                    <ArrowRight className="h-3.5 w-3.5 text-ogclan" />
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  <div className="flex flex-col items-center bg-black/30 rounded-xl p-4 border border-ogclan/10 hover:border-ogclan/30 transition-all duration-300">
+                    <Calendar className="h-8 w-8 text-blue-400 mb-2" />
+                    <span className="text-2xl font-bold text-white">2020</span>
+                    <span className="text-sm text-gray-400">Established</span>
                   </div>
-                  <p className="ml-3 text-gray-300">
-                    <span className="text-ogclan-light font-medium">Opportunity</span> - Creating pathways for members to grow and succeed
-                  </p>
+                  
+                  <div className="flex flex-col items-center bg-black/30 rounded-xl p-4 border border-ogclan/10 hover:border-ogclan/30 transition-all duration-300">
+                    <Star className="h-8 w-8 text-red-400 mb-2" />
+                    <span className="text-2xl font-bold text-white">250+</span>
+                    <span className="text-sm text-gray-400">Active Members</span>
+                  </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-ogclan/20 flex items-center justify-center mt-1">
-                    <ArrowRight className="h-3.5 w-3.5 text-ogclan" />
-                  </div>
-                  <p className="ml-3 text-gray-300">
-                    <span className="text-ogclan-light font-medium">Growth</span> - Constantly evolving to meet the needs of our community
-                  </p>
-                </div>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-center">
+                    <div className="h-2 w-2 rounded-full bg-blue-500 mr-3"></div>
+                    <p className="text-gray-300">First gaming clan in Cameroon with international recognition</p>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="h-2 w-2 rounded-full bg-red-500 mr-3"></div>
+                    <p className="text-gray-300">Building a bridge between African gamers and global opportunities</p>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="h-2 w-2 rounded-full bg-ogclan mr-3"></div>
+                    <p className="text-gray-300">Creating new career paths through gaming and esports in Africa</p>
+                  </li>
+                </ul>
+                
+                <Button variant="outline" className="mt-auto text-ogclan hover:text-ogclan-light border-ogclan/50 hover:border-ogclan hover:bg-ogclan/10 transition-all group self-start">
+                  Join our legacy
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </div>
-              
-              <Button variant="outline" className="text-ogclan hover:text-ogclan-light border-ogclan/50 hover:border-ogclan hover:bg-ogclan/10 transition-all group">
-                Learn our story
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
             </div>
           </AnimatedContent>
           
-          <AnimatedContent animation="slide-in-right" delay={300} className="md:col-span-3">
+          <AnimatedContent animation="slide-in-left" delay={300} className="md:col-span-2 order-1 md:order-2">
             <div className="relative group">
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -left-4 w-24 h-24 bg-ogclan/10 rounded-xl animate-pulse-slow"></div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-ogclan/10 rounded-xl animate-pulse-slow animation-delay-600"></div>
+              {/* Animated elements */}
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-blue-500/20 rounded-full animate-pulse-slow"></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-red-500/20 rounded-full animate-pulse-slow animation-delay-600"></div>
+              <div className="absolute -bottom-8 left-1/2 w-16 h-16 bg-ogclan/20 rounded-full animate-pulse-slow animation-delay-900"></div>
               
-              <div className="glass-card rounded-2xl overflow-hidden relative z-10 shadow-[0_10px_30px_-15px_rgba(212,175,55,0.3)] group-hover:shadow-[0_15px_40px_-12px_rgba(212,175,55,0.4)] transition-all duration-500">
-                <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                    alt="African gamers on mobile" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                    loading="lazy" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex items-end">
-                    <div className="p-8">
-                      <div className="flex items-center mb-4">
-                        <Globe className="text-ogclan h-5 w-5 mr-2" />
-                        <p className="text-ogclan font-bold text-lg">Our Global Impact</p>
-                      </div>
-                      <p className="text-white/90 text-lg max-w-xl">
-                        From local tournaments to international recognition, OG Clan is putting Cameroon on the global gaming map and creating new opportunities for African gamers.
-                      </p>
-                      <div className="mt-4">
-                        <a href="#join" className="inline-flex items-center gap-2 px-4 py-2 bg-ogclan/20 hover:bg-ogclan/30 text-ogclan-light rounded-lg transition-all duration-300 group">
-                          Learn more about our impact
-                          <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+              <div className="glass-card p-6 rounded-2xl relative overflow-hidden hover-border-glow transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5"></div>
+                
+                <img 
+                  src="/lovable-uploads/ae69c923-ee2e-4b26-b170-ee5ca12bc30f.png" 
+                  alt="OG Clan Cameroon Logo" 
+                  className="w-full h-auto drop-shadow-xl animate-float"
+                />
+                
+                <div className="mt-6 p-4 bg-black/60 backdrop-blur-sm rounded-xl border border-white/5">
+                  <p className="text-ogclan text-xl font-bold mb-1">OG CLAN CAMEROON</p>
+                  <p className="text-gray-300 text-sm">Pioneering esports excellence across Africa since 2020</p>
                 </div>
               </div>
             </div>
