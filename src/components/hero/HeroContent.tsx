@@ -10,11 +10,14 @@ const HeroContent = () => {
   return (
     <div className="text-center">
       <AnimatedContent animation="fade-in-up" delay={300}>
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-ogclan mb-2 md:mb-3">
-          WELCOME TO OG CLAN
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light drop-shadow-gold">
+            WELCOME TO OG CLAN
+          </span>
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold">
-          Loyalty. Unity. Victory. <Flame className="inline-block h-5 w-5 md:h-6 md:w-6 text-red-500" />
+        <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-2">
+          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ogclan/50 after:transform-gpu">Loyalty. Unity. Victory.</span> 
+          <Flame className="inline-block h-5 w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
         </p>
       </AnimatedContent>
 
