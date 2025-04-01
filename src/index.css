@@ -78,7 +78,7 @@
   }
   
   .navbar-link {
-    @apply font-medium text-ogclan hover:text-ogclan-light transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ogclan after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:duration-300;
+    @apply font-medium text-ogclan hover:text-ogclan-light transition-colors relative;
   }
   
   .social-icon {
@@ -203,5 +203,21 @@
   
   .animate-glow {
     animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  /* Add faster pulse animation */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    }
+    50% {
+      opacity: 0.8;
+      filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.3));
+    }
+  }
+  
+  .animate-pulse {
+    animation: pulse 1.5s ease-in-out infinite;
   }
 }

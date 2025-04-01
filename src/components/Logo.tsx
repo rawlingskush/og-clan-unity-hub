@@ -33,7 +33,7 @@ const Logo = ({
         <img 
           src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
           alt="OG Clan Logo" 
-          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110 animate-pulse-slow"
+          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110 animate-pulse"
         />
       </div>
       
