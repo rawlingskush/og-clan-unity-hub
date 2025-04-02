@@ -89,6 +89,10 @@ const SponsorSection = () => {
                 OG Clan is Cameroon's fastest-growing gaming community, driven by loyalty, passion, and a vision to unite gamers across the country.
               </p>
               
+              <p className="text-lg text-gray-300 leading-relaxed">
+                <span className="font-semibold">Our sponsors help us dominate Call of Duty multiplayer in Cameroon</span> and <span className="font-semibold">Battle Royale on Blackout, Alcatraz</span>, and more.
+              </p>
+              
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Users className="w-6 h-6 text-ogclan mt-1 flex-shrink-0" />

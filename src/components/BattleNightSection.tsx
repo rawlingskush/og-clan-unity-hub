@@ -26,6 +26,9 @@ const BattleNightSection = () => {
             <p className="text-lg md:text-xl text-ogclan-light max-w-3xl mx-auto mt-4">
               Our Battle Nights are all about multiplayer chaos and Battle Royale glory, dropping into maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>. Hot drops like <span className="font-semibold">Black Market</span>? We own them.
             </p>
+            <p className="text-lg md:text-xl text-ogclan-light max-w-3xl mx-auto mt-4">
+              Join <span className="font-semibold">OG Clan for Call of Duty multiplayer in Cameroon</span> and dominate <span className="font-semibold">Battle Royale on Blackout</span> with our expert <span className="font-semibold">Black Market hot drop strategies</span>.
+            </p>
           </AnimatedContent>
         </div>
         

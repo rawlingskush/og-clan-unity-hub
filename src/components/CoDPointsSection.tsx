@@ -44,7 +44,7 @@ const CoDPointsSection = () => {
                 Power up your Call of Duty game with CoD Points! Buy now using local payment methods in Cameroon and take your gaming experience to the next level.
               </p>
               <p className="text-lg text-gray-200 leading-relaxed mb-6">
-                Power up for multiplayer matches and Battle Royale drops in spots like <span className="font-semibold">Black Market</span> on maps like <span className="font-semibold">Isolated</span> and <span className="font-semibold">Krai</span>.
+                <span className="font-semibold">Buy CoD Points in Cameroon</span> easily and level up for multiplayer matches and Battle Royale drops in spots like <span className="font-semibold">Black Market</span> on maps like <span className="font-semibold">Isolated</span> and <span className="font-semibold">Krai</span>.
               </p>
               
               <div className="flex flex-wrap gap-4 justify-center md:justify-start mb-8">

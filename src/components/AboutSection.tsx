@@ -25,6 +25,9 @@ const AboutSection = () => {
             <p className="text-lg text-ogclan-light max-w-3xl mx-auto mt-4">
               We're a crew that thrives in multiplayer showdowns and Battle Royale wars, mastering maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>.
             </p>
+            <p className="text-lg text-ogclan-light max-w-3xl mx-auto mt-4">
+              <span className="font-semibold">OG Clan leads Call of Duty multiplayer in Cameroon</span>, excelling in <span className="font-semibold">Battle Royale on Alcatraz</span> with exclusive <span className="font-semibold">Black Market hot drop tips</span>.
+            </p>
           </AnimatedContent>
         </div>
         

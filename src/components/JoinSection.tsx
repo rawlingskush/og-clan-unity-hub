@@ -104,8 +104,11 @@ const JoinSection = () => {
               <h3 className="text-3xl font-bold text-gradient-gold mb-6">
                 Become an OG Today
               </h3>
-              <p className="text-lg text-gray-700 mb-8">
+              <p className="text-lg text-gray-700 mb-4">
                 Join OG Clan and become part of something bigger. We're not just gamers—we're a movement creating opportunities through passion.
+              </p>
+              <p className="text-lg text-gray-700 mb-8">
+                <span className="font-semibold">Join our squad to buy CoD Points in Cameroon</span> and play <span className="font-semibold">multiplayer or Battle Royale</span> on maps like <span className="font-semibold">Isolated</span> and <span className="font-semibold">Krai</span>.
               </p>
 
               <ul className="space-y-4 mb-8">
