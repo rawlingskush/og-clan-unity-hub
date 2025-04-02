@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronRight, Menu, X } from 'lucide-react';
@@ -58,14 +57,9 @@ const MobileNav = ({
     };
   }, [isDrawerOpen]);
 
-  // Custom click handler for Battle Night in mobile menu
+  // Custom click handler for mobile menu - no special case needed
   const handleMobileNavClick = (sectionId: string) => {
-    // Special case for Battle Night - scroll to timer
-    if (sectionId === 'og-battle-night') {
-      handleNavClick('battle-night-timer');
-    } else {
-      handleNavClick(sectionId);
-    }
+    handleNavClick(sectionId);
     setIsDrawerOpen(false);
   };
 

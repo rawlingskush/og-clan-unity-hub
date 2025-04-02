@@ -17,12 +17,8 @@ const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     
-    // Special case for Battle Night - scroll to timer
-    if (id === 'og-battle-night') {
-      handleNavClick('battle-night-timer');
-    } else {
-      handleNavClick(id);
-    }
+    // No special case needed anymore - just use the section id
+    handleNavClick(id);
   };
   
   return (
