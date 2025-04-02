@@ -28,16 +28,17 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
               <NavigationMenuItem key={item.id}>
                 <NavigationMenuTrigger
                   className={cn(
-                    "transition-colors duration-300 relative",
+                    "transition-all duration-300 group relative",
                     activeSection === item.id 
-                      ? "text-ogclan after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-ogclan" 
-                      : "hover:text-ogclan-light"
+                      ? "text-ogclan" 
+                      : "text-white hover:text-ogclan-light"
                   )}
                 >
                   {item.label}
+                  <span className="absolute inset-x-0 bottom-1 h-[2px] bg-ogclan-light/0 transform scale-x-0 group-hover:scale-x-100 group-hover:bg-ogclan-light/70 transition-all duration-300"></span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[240px]">
+                  <ul className="grid gap-3 p-4 w-[240px] bg-black/95 backdrop-blur-md border border-ogclan/20">
                     {item.subItems.map(subItem => (
                       <li key={subItem.id}>
                         <NavigationMenuLink 
@@ -47,14 +48,21 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                             handleNavClick(subItem.id);
                           }}
                           className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300",
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300 group",
                             activeSection === subItem.id 
-                              ? "bg-accent text-accent-foreground" 
-                              : "hover:bg-accent hover:text-accent-foreground"
+                              ? "bg-ogclan/20 text-ogclan" 
+                              : "hover:bg-ogclan/10"
                           )}
                         >
-                          <div className="text-sm font-medium leading-none">{subItem.label}</div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                          <div className={cn(
+                            "text-sm font-medium leading-none transition-colors duration-300", 
+                            activeSection === subItem.id 
+                              ? "text-ogclan" 
+                              : "text-white group-hover:text-ogclan-light"
+                          )}>
+                            {subItem.label}
+                          </div>
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-ogclan-light/70 transition-colors duration-300">
                             {subItem.description}
                           </p>
                         </NavigationMenuLink>

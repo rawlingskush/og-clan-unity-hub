@@ -31,13 +31,14 @@ const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => 
       onClick={handleClick}
       className={cn(
         navigationMenuTriggerStyle(),
-        "relative transition-colors duration-200",
+        "relative transition-all duration-300",
         activeSection === id 
           ? "text-ogclan" 
-          : "hover:text-ogclan-light"
+          : "text-white hover:text-ogclan-light group"
       )}
     >
       {label}
+      <span className="absolute inset-x-0 bottom-1 h-[2px] bg-ogclan-light/0 transform scale-x-0 group-hover:scale-x-100 group-hover:bg-ogclan-light/70 transition-all duration-300"></span>
     </NavigationMenuLink>
   );
 };
