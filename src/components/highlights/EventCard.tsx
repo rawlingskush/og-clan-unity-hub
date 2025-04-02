@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar, Clock, MapPin, Trophy } from 'lucide-react';
 import FeatureItem from './FeatureItem';
 import CountdownTimer from './CountdownTimer';
 
@@ -8,6 +8,7 @@ interface EventFeature {
   id: number;
   title: string;
   description: string;
+  isChallenge?: boolean;
 }
 
 interface EventCardProps {
@@ -28,7 +29,7 @@ const EventCard = ({ features }: EventCardProps) => {
   return (
     <div className="glass-card p-4 sm:p-6 md:p-6 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
       <div className="text-center mb-5 md:mb-6">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-gold mb-3">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-gold mb-3" id="battle-night-event-heading">
           Next OG Battle Night Event
         </h3>
         
@@ -62,16 +63,24 @@ const EventCard = ({ features }: EventCardProps) => {
             key={feature.id}
             title={feature.title}
             description={feature.description}
+            isChallengeItem={feature.isChallenge}
           />
         ))}
       </div>
       
       <div className="mt-5 md:mt-6 text-center">
+        <div className="p-4 bg-ogclan/10 rounded-lg border border-ogclan/30 mb-5">
+          <div className="flex items-center justify-center mb-2">
+            <Trophy className="h-5 w-5 text-ogclan mr-2" />
+            <h4 className="text-xl font-bold text-ogclan">Challenge OG Clan</h4>
+          </div>
+          <p className="text-sm sm:text-base text-gray-300 mb-4">
+            Calling all clan masters! Bring your best squad to battle against the OG Clan and show us what you've got. The ultimate test of skill and teamwork awaits.
+          </p>
+        </div>
+        
         <p className="text-xl md:text-2xl font-bold text-gradient-gold mb-3">
           "For the OGs, by the OGs. Let's dominate together!" 💪
-        </p>
-        <p className="text-sm sm:text-base text-gray-400 mb-4">
-          Calling all clan masters! Bring your best squad to battle against the OG Clan and show us what you've got. The ultimate test of skill and teamwork awaits.
         </p>
         
         <a href="#join" className="btn-primary hover-effect">

@@ -15,8 +15,9 @@ const HighlightsSection = () => {
     description: "Veterans share COD Mobile tactics. Inactive members reconnect. Newcomers find their place. We grow stronger together."
   }, {
     id: 3,
-    title: "Level Up Together",
-    description: "Face thrilling COD Mobile challenges. Earn exclusive rewards. Sharpen your skills in friendly competition."
+    title: "Challenge OG Clan",
+    description: "Think your team has what it takes? Challenge our elite squad to intense clan battles and earn recognition in the COD Mobile community.",
+    isChallenge: true
   }];
   
   return (
