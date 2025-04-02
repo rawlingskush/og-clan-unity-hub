@@ -28,17 +28,22 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
               <NavigationMenuItem key={item.id}>
                 <NavigationMenuTrigger
                   className={cn(
-                    "transition-all duration-300 group relative",
+                    "relative px-3 py-2 transition-all duration-300 font-medium",
                     activeSection === item.id 
                       ? "text-ogclan" 
-                      : "text-white hover:text-ogclan-light"
+                      : "text-white hover:text-ogclan"
                   )}
                 >
-                  {item.label}
-                  <span className="absolute inset-x-0 bottom-1 h-[2px] bg-ogclan-light/0 transform scale-x-0 group-hover:scale-x-100 group-hover:bg-ogclan-light/70 transition-all duration-300"></span>
+                  <span className="relative z-10">{item.label}</span>
+                  <span className={cn(
+                    "absolute inset-0 rounded-md -z-0 transition-all duration-300 opacity-0",
+                    activeSection === item.id 
+                      ? "bg-gradient-to-b from-ogclan/20 to-transparent opacity-100" 
+                      : "hover:opacity-100 hover:bg-gradient-to-b hover:from-ogclan/10 hover:to-transparent"
+                  )}></span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 p-4 w-[240px] bg-black/95 backdrop-blur-md border border-ogclan/20">
+                  <ul className="grid gap-2 p-4 w-[240px] bg-black/90 backdrop-blur-md border border-ogclan/30 rounded-md shadow-lg shadow-black/50">
                     {item.subItems.map(subItem => (
                       <li key={subItem.id}>
                         <NavigationMenuLink 
@@ -48,21 +53,21 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                             handleNavClick(subItem.id);
                           }}
                           className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300 group",
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300",
                             activeSection === subItem.id 
-                              ? "bg-ogclan/20 text-ogclan" 
-                              : "hover:bg-ogclan/10"
+                              ? "bg-gradient-to-r from-ogclan/20 to-transparent text-ogclan" 
+                              : "hover:bg-gradient-to-r hover:from-ogclan/10 hover:to-transparent"
                           )}
                         >
                           <div className={cn(
                             "text-sm font-medium leading-none transition-colors duration-300", 
                             activeSection === subItem.id 
                               ? "text-ogclan" 
-                              : "text-white group-hover:text-ogclan-light"
+                              : "text-white hover:text-ogclan"
                           )}>
                             {subItem.label}
                           </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-ogclan-light/70 transition-colors duration-300">
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             {subItem.description}
                           </p>
                         </NavigationMenuLink>
