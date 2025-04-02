@@ -28,7 +28,7 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
               <NavigationMenuItem key={item.id}>
                 <NavigationMenuTrigger
                   className={cn(
-                    "relative px-3 py-2 transition-all duration-300 font-medium overflow-hidden group",
+                    "relative px-3 py-2 transition-all duration-300 font-medium",
                     activeSection === item.id 
                       ? "text-black bg-ogclan" 
                       : "text-white hover:text-black"
@@ -36,23 +36,12 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                 >
                   <span className="relative z-10">{item.label}</span>
                   
-                  {/* Active background with pulse animation */}
-                  {activeSection === item.id && (
-                    <span className="absolute inset-0 bg-ogclan animate-pulse-slow z-0"></span>
-                  )}
-                  
-                  {/* Hover effect - gaming style */}
+                  {/* Simple background hover effect */}
                   <span className={cn(
-                    "absolute inset-0 transition-all duration-300 z-0 opacity-0 bg-ogclan",
-                    "group-hover:opacity-100 transform origin-bottom",
-                    "before:absolute before:content-[''] before:inset-0 before:bg-gradient-to-t before:from-ogclan-light before:to-ogclan before:opacity-30"
+                    "absolute inset-0 z-0 bg-ogclan opacity-0 transition-opacity duration-300",
+                    "hover:opacity-100",
+                    activeSection === item.id && "opacity-100"
                   )}></span>
-                  
-                  {/* Top border animation on hover */}
-                  <span className="absolute top-0 left-0 w-0 h-[2px] bg-ogclan-light group-hover:w-full transition-all duration-300 delay-75"></span>
-                  
-                  {/* Bottom border animation on hover */}
-                  <span className="absolute bottom-0 right-0 w-0 h-[2px] bg-ogclan-light group-hover:w-full transition-all duration-300 delay-75"></span>
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-2 p-4 w-[240px] bg-black/90 backdrop-blur-md border border-ogclan/30 rounded-md shadow-lg shadow-black/50">
@@ -65,28 +54,21 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                             handleNavClick(subItem.id);
                           }}
                           className={cn(
-                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-all duration-300 group relative overflow-hidden",
+                            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors duration-300",
                             activeSection === subItem.id 
                               ? "bg-ogclan text-black" 
-                              : "hover:text-black"
+                              : "hover:bg-ogclan hover:text-black"
                           )}
                         >
-                          {/* Hover background effect for submenu items */}
-                          <span className={cn(
-                            "absolute inset-0 transition-all duration-300 z-0 opacity-0 bg-ogclan",
-                            "group-hover:opacity-100",
-                            "before:absolute before:content-[''] before:inset-0 before:bg-gradient-to-r before:from-ogclan before:to-ogclan-light before:opacity-30"
-                          )}></span>
-                          
                           <div className={cn(
-                            "text-sm font-medium leading-none transition-colors duration-300 relative z-10", 
+                            "text-sm font-medium leading-none", 
                             activeSection === subItem.id 
                               ? "text-black" 
-                              : "text-white group-hover:text-black"
+                              : "text-white"
                           )}>
                             {subItem.label}
                           </div>
-                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground relative z-10 group-hover:text-black/70">
+                          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                             {subItem.description}
                           </p>
                         </NavigationMenuLink>

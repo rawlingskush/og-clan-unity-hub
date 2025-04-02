@@ -31,30 +31,23 @@ const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => 
       onClick={handleClick}
       className={cn(
         navigationMenuTriggerStyle(),
-        "relative px-3 py-2 transition-all duration-300 overflow-hidden group",
+        "relative px-3 py-2 transition-all duration-300",
         activeSection === id 
           ? "text-black font-medium bg-ogclan" 
           : "text-white font-medium hover:text-black"
       )}
     >
       <span className="relative z-10">{label}</span>
-      {/* Active background */}
-      {activeSection === id && (
-        <span className="absolute inset-0 bg-ogclan animate-pulse-slow z-0"></span>
-      )}
       
-      {/* Hover effect - gaming style */}
+      {/* Simple background hover effect */}
       <span className={cn(
-        "absolute inset-0 transition-all duration-300 z-0 opacity-0 bg-ogclan",
-        "group-hover:opacity-100 transform origin-bottom",
-        "before:absolute before:content-[''] before:inset-0 before:bg-gradient-to-t before:from-ogclan-light before:to-ogclan before:opacity-30"
+        "absolute inset-0 z-0 bg-ogclan opacity-0 transition-opacity duration-300",
+        "hover:opacity-100",
+        activeSection === id && "opacity-100"
       )}></span>
       
-      {/* Top border animation on hover */}
-      <span className="absolute top-0 left-0 w-0 h-[2px] bg-ogclan-light group-hover:w-full transition-all duration-300 delay-75"></span>
-      
-      {/* Bottom border animation on hover */}
-      <span className="absolute bottom-0 right-0 w-0 h-[2px] bg-ogclan-light group-hover:w-full transition-all duration-300 delay-75"></span>
+      {/* Simple top border */}
+      <span className="absolute top-0 left-0 right-0 h-[2px] bg-ogclan-light transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
     </NavigationMenuLink>
   );
 };
