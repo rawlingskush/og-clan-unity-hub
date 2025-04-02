@@ -34,15 +34,15 @@ const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => 
         "relative px-3 py-2 transition-all duration-300",
         activeSection === id 
           ? "text-ogclan font-medium" 
-          : "text-white font-medium hover:text-ogclan"
+          : "text-white font-medium hover:text-white"
       )}
     >
       <span className="relative z-10">{label}</span>
       <span className={cn(
-        "absolute inset-0 rounded-md -z-0 transition-all duration-300 opacity-0",
+        "absolute inset-0 rounded-md -z-0 transition-all duration-300",
         activeSection === id 
-          ? "bg-gradient-to-b from-ogclan/20 to-transparent opacity-100" 
-          : "hover:opacity-100 hover:bg-gradient-to-b hover:from-ogclan/10 hover:to-transparent"
+          ? "bg-ogclan/30 opacity-100" 
+          : "opacity-0 hover:opacity-100 hover:bg-ogclan/50"
       )}></span>
     </NavigationMenuLink>
   );
