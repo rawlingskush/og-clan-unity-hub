@@ -28,7 +28,7 @@ const HighlightsSection = () => {
       <div className="relative z-10">
         <AchievementsSection />
 
-        <div className="relative mb-20">
+        <div className="relative mb-12">
           <div className="absolute -top-10 -left-10 w-48 h-48 bg-ogclan/5 rounded-full blur-3xl"></div>
           <EventCard features={values} />
         </div>

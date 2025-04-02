@@ -34,7 +34,7 @@ const BattleImagesSection = () => {
   ];
 
   return (
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid md:grid-cols-3 gap-6">
       {battleImages.map((image) => (
         <BattleImageCard
           key={image.id}

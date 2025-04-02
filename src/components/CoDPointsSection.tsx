@@ -16,7 +16,7 @@ const CoDPointsSection = () => {
   };
 
   return (
-    <section id="cod-points" className="py-14 md:py-16 relative overflow-hidden">
+    <section id="cod-points" className="py-12 md:py-14 relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a1a] to-black">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/d2b92710-be56-475b-b330-745dae42abad.png')] bg-cover bg-center opacity-30 mix-blend-overlay"></div>
@@ -28,7 +28,7 @@ const CoDPointsSection = () => {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimatedContent animation="fade-in-up">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.25)]">
               GET COD POINTS
             </h2>

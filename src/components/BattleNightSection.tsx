@@ -5,7 +5,7 @@ import HighlightsSection from './HighlightsSection';
 
 const BattleNightSection = () => {
   return (
-    <section id="og-battle-night" className="py-20 md:py-24 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
+    <section id="og-battle-night" className="py-14 md:py-16 bg-gradient-to-b from-black to-black/95 relative overflow-hidden">
       {/* Battle Night background with blended overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[url('/lovable-uploads/868831b3-078e-4cf4-b395-e9bfb9ec5c6f.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
@@ -14,7 +14,7 @@ const BattleNightSection = () => {
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <AnimatedContent animation="fade-in-up">
             <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-4 animate-glow">
               OG BATTLE NIGHT

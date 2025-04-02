@@ -29,7 +29,7 @@ const AchievementsSection = () => {
   }];
 
   return (
-    <div className="grid md:grid-cols-3 gap-8 mb-20">
+    <div className="grid md:grid-cols-3 gap-6 mb-12">
       {achievements.map((achievement, index) => (
         <AnimatedContent 
           key={achievement.id} 

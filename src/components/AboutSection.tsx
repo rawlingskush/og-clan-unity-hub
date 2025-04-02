@@ -1,16 +1,15 @@
-
 import React from 'react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
 import { ArrowRight, Users, Trophy, Target, Globe, Calendar, Star, Shield } from 'lucide-react';
 const AboutSection = () => {
-  return <section id="about" className="py-24 bg-gradient-to-b from-black/95 to-black overflow-hidden">
+  return <section id="about" className="py-16 bg-gradient-to-b from-black/95 to-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Background elements */}
         <div className="absolute -top-40 right-0 w-96 h-96 bg-ogclan/10 rounded-full blur-3xl" />
         <div className="absolute top-60 -left-20 w-72 h-72 bg-ogclan/5 rounded-full blur-3xl" />
         
-        <div className="text-center mb-16 relative">
+        <div className="text-center mb-12 relative">
           <AnimatedContent animation="fade-in-up">
             <span className="inline-block px-4 py-1.5 bg-ogclan/10 rounded-full text-ogclan-light text-sm font-medium tracking-wider uppercase mb-4">
               Our Purpose
@@ -18,7 +17,7 @@ const AboutSection = () => {
             <h2 className="text-5xl md:text-6xl font-bold text-gradient-gold mb-6">
               OUR VISION
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light mx-auto rounded-full mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light mx-auto rounded-full mb-6"></div>
             <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
               Building the future of gaming in Cameroon and beyond
             </p>
@@ -32,7 +31,7 @@ const AboutSection = () => {
         </div>
         
         {/* Vision cards - 3 column layout with icons and improved visuals */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
           <AnimatedContent animation="fade-in-up" delay={150}>
             <div className="vision-card group">
               <div className="icon-container">
@@ -77,9 +76,9 @@ const AboutSection = () => {
         </div>
         
         {/* Improved Global Impact section with the new OG Clan logo */}
-        <div className="grid md:grid-cols-5 gap-12 items-center mt-20">
+        <div className="grid md:grid-cols-5 gap-8 items-center mt-14">
           <AnimatedContent animation="slide-in-right" delay={300} className="md:col-span-3 order-2 md:order-1">
-            <div className="glass-card p-8 rounded-2xl overflow-hidden relative z-10 shadow-[0_0_40px_rgba(0,130,255,0.15),0_0_20px_rgba(212,0,55,0.15)]">
+            <div className="glass-card p-6 rounded-2xl overflow-hidden relative z-10 shadow-[0_0_40px_rgba(0,130,255,0.15),0_0_20px_rgba(212,0,55,0.15)]">
               <div className="flex flex-col h-full">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500/20 to-red-500/20 flex items-center justify-center">
@@ -127,7 +126,6 @@ const AboutSection = () => {
           
           <AnimatedContent animation="slide-in-left" delay={300} className="md:col-span-2 order-1 md:order-2">
             <div className="relative group">
-              {/* Animated elements */}
               <div className="absolute -top-8 -left-8 w-16 h-16 bg-blue-500/20 rounded-full animate-pulse-slow"></div>
               <div className="absolute top-1/2 -right-8 w-16 h-16 bg-red-500/20 rounded-full animate-pulse-slow animation-delay-600"></div>
               <div className="absolute -bottom-8 left-1/2 w-16 h-16 bg-ogclan/20 rounded-full animate-pulse-slow animation-delay-900"></div>
