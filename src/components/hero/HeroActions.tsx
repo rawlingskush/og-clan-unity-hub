@@ -9,6 +9,21 @@ const HeroActions = () => {
   
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    
+    // Special case for og-battle-night - scroll to the timer directly
+    if (targetId === 'og-battle-night') {
+      const timerSection = document.getElementById('battle-night-timer');
+      if (timerSection) {
+        const offsetTop = timerSection.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: offsetTop - 100,
+          behavior: 'auto'
+        });
+        return;
+      }
+    }
+    
+    // For other sections, use normal scrolling
     const element = document.getElementById(targetId);
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const HeroBackground = () => {
@@ -10,16 +9,15 @@ const HeroBackground = () => {
       {/* Gaming image overlay with reduced opacity */}
       <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
       
-      {/* Tech grid overlay - REMOVED */}
-      
-      {/* Logo watermark background with increased size and opacity */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-25">
+      {/* Logo watermark background with increased size, opacity and blinging effect */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-35">
         <div className="relative w-[150%] max-w-[1200px] aspect-square animate-pulse-slow">
           <img 
             src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
             alt="" 
-            className="w-full h-full object-contain" 
+            className="w-full h-full object-contain drop-shadow-gold filter saturate-150 brightness-125" 
             aria-hidden="true"
+            style={{filter: "drop-shadow(0 0 15px rgba(212, 175, 55, 0.7))"}}
           />
         </div>
       </div>

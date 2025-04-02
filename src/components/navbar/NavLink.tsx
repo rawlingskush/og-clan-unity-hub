@@ -17,7 +17,20 @@ const NavLink = ({ id, label, activeSection, handleNavClick }: NavLinkProps) => 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     
-    // No special case needed anymore - just use the section id
+    // Special case for Battle Night - scroll to the timer section
+    if (id === 'og-battle-night') {
+      const timerSection = document.getElementById('battle-night-timer');
+      if (timerSection) {
+        const offsetTop = timerSection.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: offsetTop - 100, // Add some offset to show the header above it
+          behavior: 'auto'
+        });
+        return;
+      }
+    }
+    
+    // For all other links, use the regular handler
     handleNavClick(id);
   };
   
