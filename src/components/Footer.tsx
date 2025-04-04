@@ -1,18 +1,12 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Smartphone, Youtube, MessageSquare, Mail } from 'lucide-react';
+import { Youtube, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Footer = () => {
   const { toast } = useToast();
   
-  const socialLinks = [
-    { icon: <Smartphone className="w-4 h-4" />, href: "#", label: "TikTok" },
-    { icon: <Youtube className="w-4 h-4" />, href: "#", label: "YouTube" },
-    { icon: <MessageSquare className="w-4 h-4" />, href: "#", label: "Discord" },
-  ];
-
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -30,10 +24,10 @@ const Footer = () => {
     }
   };
 
-  const handleSocialClick = (label: string) => {
+  const handleYoutubeClick = () => {
     toast({
-      title: `${label} Coming Soon`,
-      description: `Our ${label} channel will be available soon!`,
+      title: "YouTube Coming Soon",
+      description: "Our YouTube channel will be available soon!",
       variant: "default",
     });
   };
@@ -60,16 +54,33 @@ const Footer = () => {
               Where gaming passion meets loyalty. Building a community of dedicated gamers in Cameroon and beyond.
             </p>
             <div className="flex space-x-3">
-              {socialLinks.map((social, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleSocialClick(social.label)}
-                  className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200"
-                  aria-label={social.label}
+              {/* TikTok Icon */}
+              <a
+                href="https://www.tiktok.com/@ogclancameroon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200"
+                aria-label="TikTok"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-full h-full"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlSpace="preserve"
                 >
-                  {social.icon}
-                </button>
-              ))}
+                  <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"></path>
+                </svg>
+              </a>
+              
+              {/* YouTube Icon */}
+              <button
+                onClick={handleYoutubeClick}
+                className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-full h-full" />
+              </button>
             </div>
           </div>
           
