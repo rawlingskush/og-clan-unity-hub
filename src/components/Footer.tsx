@@ -2,10 +2,10 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 import { Youtube, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
 const Footer = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+  
   const handleNavClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -22,21 +22,16 @@ const Footer = () => {
       });
     }
   };
-  const handleYoutubeClick = () => {
-    toast({
-      title: "YouTube Coming Soon",
-      description: "Our YouTube channel will be available soon!",
-      variant: "default"
-    });
-  };
-  return <footer className="bg-black/80 border-t border-ogclan/20">
+
+  return (
+    <footer className="bg-black/80 border-t border-ogclan/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid md:grid-cols-4 gap-6">
           <div className="md:col-span-2">
             <a href="#home" className="flex items-center mb-3" onClick={e => {
-            e.preventDefault();
-            handleNavClick('home');
-          }}>
+              e.preventDefault();
+              handleNavClick('home');
+            }}>
               <div className="w-8 h-8 bg-ogclan rounded-lg flex items-center justify-center text-black mr-2">
                 OG
               </div>
@@ -53,10 +48,10 @@ const Footer = () => {
                 </svg>
               </a>
               
-              {/* YouTube Icon */}
-              <button onClick={handleYoutubeClick} className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200" aria-label="YouTube">
+              {/* YouTube Icon - Now with real link */}
+              <a href="https://www.youtube.com/channel/UCBN8lXS12rLtTE0Clp3kyYg" target="_blank" rel="noopener noreferrer" className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200" aria-label="YouTube">
                 <Youtube className="w-full h-full" />
-              </button>
+              </a>
             </div>
           </div>
           
@@ -105,26 +100,28 @@ const Footer = () => {
           </p>
           <div className="mt-2 md:mt-0 flex space-x-4">
             <button className="text-gray-500 hover:text-ogclan text-xs" onClick={() => {
-            toast({
-              title: "Privacy Policy",
-              description: "Our privacy policy is currently being updated.",
-              variant: "default"
-            });
-          }}>
+              toast({
+                title: "Privacy Policy",
+                description: "Our privacy policy is currently being updated.",
+                variant: "default"
+              });
+            }}>
               Privacy
             </button>
             <button className="text-gray-500 hover:text-ogclan text-xs" onClick={() => {
-            toast({
-              title: "Terms of Service",
-              description: "Our terms of service are currently being updated.",
-              variant: "default"
-            });
-          }}>
+              toast({
+                title: "Terms of Service",
+                description: "Our terms of service are currently being updated.",
+                variant: "default"
+              });
+            }}>
               Terms
             </button>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;
