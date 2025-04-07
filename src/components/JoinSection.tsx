@@ -38,7 +38,7 @@ const JoinSection = () => {
       // Send email using EmailJS with the provided credentials
       await emailjs.send(
         'OgClanService', // Your EmailJS service ID
-        'template_jgdc7hr', // Your EmailJS template ID
+        'template_ujcypoh', // Your EmailJS template ID
         templateParams,
         '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
       );
