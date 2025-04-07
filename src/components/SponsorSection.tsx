@@ -36,13 +36,17 @@ const SponsorSection = () => {
         message: formData.message,
       };
 
+      console.log('Sending sponsor email with parameters:', templateParams);
+
       // Send email using EmailJS with the provided credentials
-      await emailjs.send(
+      const response = await emailjs.send(
         'OgClanService', // Your EmailJS service ID
         'template_ujcypoh', // Your EmailJS template ID
         templateParams,
         '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
       );
+
+      console.log('EmailJS sponsor response:', response);
 
       toast({
         title: "Message sent!",
