@@ -15,12 +15,12 @@ const Logo = ({
   withText = true, 
   variant = 'primary' 
 }: LogoProps) => {
-  // Size classes with visual effects - increasing sizes for better visibility
+  // Size classes with more appropriate sizes
   const sizeClasses = {
-    sm: 'w-28 h-28', // Increased from w-24 h-24
-    md: 'w-40 h-40', // Increased from w-36 h-36
-    lg: 'w-52 h-52', // Increased from w-48 h-48
-    xl: 'w-72 h-72'  // Increased from w-64 h-64
+    sm: 'w-10 h-10',  // Reduced size for navigation
+    md: 'w-16 h-16',  // Standard size
+    lg: 'w-24 h-24',  // Larger presentation
+    xl: 'w-32 h-32'   // Extra large for hero sections
   };
 
   return (
@@ -33,7 +33,7 @@ const Logo = ({
         <img 
           src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
           alt="OG Clan Logo" 
-          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110 animate-pulse"
+          className="w-full h-full object-contain drop-shadow-gold z-10 scale-110"
         />
       </div>
       
