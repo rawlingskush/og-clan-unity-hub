@@ -7,12 +7,17 @@ import DesktopNav from './navbar/DesktopNav';
 import MobileNav from './navbar/MobileNav';
 import { MenuItem } from './navbar/types';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [expandedMobileItems, setExpandedMobileItems] = useState<string[]>([]);
   const isMobile = useIsMobile();
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   // List of all section IDs in the page
   const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points'];
@@ -24,17 +29,28 @@ const Navbar = () => {
   });
 
   const handleNavClick = (sectionId: string) => {
-    const success = scrollToSection(sectionId);
-    
-    if (!success) {
-      toast({
-        title: "Section not found",
-        description: `The ${sectionId} section is not available yet.`,
-        variant: "destructive",
-      });
+    // If we're on the homepage, scroll to the section
+    if (isHomePage) {
+      const success = scrollToSection(sectionId);
+      
+      if (!success) {
+        toast({
+          title: "Section not found",
+          description: `The ${sectionId} section is not available yet.`,
+          variant: "destructive",
+        });
+      }
+    } else {
+      // If we're on another page, navigate to homepage and then scroll
+      navigate(`/#${sectionId}`);
     }
     
     // Close mobile drawer if open
+    setIsDrawerOpen(false);
+  };
+
+  const handlePageNavigation = (path: string) => {
+    navigate(path);
     setIsDrawerOpen(false);
   };
 
@@ -53,7 +69,9 @@ const Navbar = () => {
     { id: 'og-battle-night', label: 'Battle Night' },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
-    { id: 'cod-points', label: 'Get CoD Points' }
+    { id: 'cod-points', label: 'Get CoD Points' },
+    // Adding the new Soldiers page link
+    { id: 'soldiers', label: 'Our Soldiers', isPage: true, path: '/soldiers' }
   ];
 
   return (
@@ -70,8 +88,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <button 
             className="flex items-center group relative z-10"
-            onClick={() => handleNavClick('home')}
-            aria-label="Go to home section"
+            onClick={() => navigate('/')}
+            aria-label="Go to home page"
           >
             <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />
           </button>
@@ -80,7 +98,9 @@ const Navbar = () => {
           <DesktopNav 
             menuItems={menuItems} 
             activeSection={activeSection} 
-            handleNavClick={handleNavClick} 
+            handleNavClick={handleNavClick}
+            handlePageNavigation={handlePageNavigation}
+            currentPath={location.pathname}
           />
           
           <div className="flex items-center">
@@ -96,10 +116,12 @@ const Navbar = () => {
               menuItems={menuItems}
               activeSection={activeSection}
               handleNavClick={handleNavClick}
+              handlePageNavigation={handlePageNavigation}
               isDrawerOpen={isDrawerOpen}
               setIsDrawerOpen={setIsDrawerOpen}
               expandedMobileItems={expandedMobileItems}
               toggleMobileSubmenu={toggleMobileSubmenu}
+              currentPath={location.pathname}
             />
           </div>
         </div>

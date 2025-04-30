@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronRight, Menu, X } from 'lucide-react';
@@ -16,20 +17,24 @@ interface MobileNavProps {
   menuItems: MenuItem[];
   activeSection: string;
   handleNavClick: (sectionId: string) => void;
+  handlePageNavigation?: (path: string) => void;
   isDrawerOpen: boolean;
   setIsDrawerOpen: (isOpen: boolean) => void;
   expandedMobileItems: string[];
   toggleMobileSubmenu: (itemId: string) => void;
+  currentPath?: string;
 }
 
 const MobileNav = ({ 
   menuItems, 
   activeSection, 
   handleNavClick, 
+  handlePageNavigation,
   isDrawerOpen, 
   setIsDrawerOpen,
   expandedMobileItems,
-  toggleMobileSubmenu
+  toggleMobileSubmenu,
+  currentPath = '/'
 }: MobileNavProps) => {
   // Lock body scroll when drawer is open (iOS fix)
   useEffect(() => {
@@ -56,12 +61,6 @@ const MobileNav = ({
       document.body.style.top = '';
     };
   }, [isDrawerOpen]);
-
-  // Custom click handler for mobile menu - no special case needed
-  const handleMobileNavClick = (sectionId: string) => {
-    handleNavClick(sectionId);
-    setIsDrawerOpen(false);
-  };
 
   return (
     <div className="md:hidden ml-4">
@@ -119,7 +118,7 @@ const MobileNav = ({
                                 ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                                 : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                             )}
-                            onClick={() => handleMobileNavClick(subItem.id)}
+                            onClick={() => handleNavClick(subItem.id)}
                           >
                             <span className="font-medium">{subItem.label}</span>
                             {subItem.description && (
@@ -129,6 +128,23 @@ const MobileNav = ({
                         ))}
                       </div>
                     </div>
+                  );
+                } else if (item.isPage && item.path) {
+                  // Handle page navigation in mobile
+                  const isActive = currentPath === item.path;
+                  return (
+                    <button 
+                      key={item.id}
+                      className={cn(
+                        "w-full px-4 py-3.5 rounded-lg font-medium text-lg transition-all duration-300",
+                        isActive
+                          ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
+                          : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
+                      )}
+                      onClick={() => handlePageNavigation && handlePageNavigation(item.path!)}
+                    >
+                      {item.label}
+                    </button>
                   );
                 } else {
                   return (
@@ -140,7 +156,7 @@ const MobileNav = ({
                           ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                           : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
-                      onClick={() => handleMobileNavClick(item.id)}
+                      onClick={() => handleNavClick(item.id)}
                     >
                       {item.label}
                     </button>
@@ -151,7 +167,7 @@ const MobileNav = ({
             <SheetFooter className="px-4 pt-2 pb-8 mt-auto">
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                onClick={() => handleMobileNavClick('join')}
+                onClick={() => handleNavClick('join')}
               >
                 Join the Crew
               </Button>

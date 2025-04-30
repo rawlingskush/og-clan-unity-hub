@@ -16,9 +16,17 @@ interface DesktopNavProps {
   menuItems: MenuItem[];
   activeSection: string;
   handleNavClick: (sectionId: string) => void;
+  handlePageNavigation?: (path: string) => void;
+  currentPath?: string;
 }
 
-const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProps) => {
+const DesktopNav = ({ 
+  menuItems, 
+  activeSection, 
+  handleNavClick,
+  handlePageNavigation,
+  currentPath = '/'
+}: DesktopNavProps) => {
   return (
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
@@ -61,6 +69,34 @@ const DesktopNav = ({ menuItems, activeSection, handleNavClick }: DesktopNavProp
                     ))}
                   </ul>
                 </NavigationMenuContent>
+              </NavigationMenuItem>
+            );
+          } else if (item.isPage && item.path) {
+            // Handle page navigation
+            const isActive = currentPath === item.path;
+            return (
+              <NavigationMenuItem key={item.id}>
+                <NavigationMenuLink
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handlePageNavigation && handlePageNavigation(item.path!);
+                  }}
+                  className={cn(
+                    "inline-flex h-10 w-max items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",
+                    "relative transition-all duration-300 text-white font-medium hover:text-black",
+                    isActive && "text-ogclan"
+                  )}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  
+                  {/* Cool hover background effect */}
+                  <span className="absolute inset-0 z-0 bg-ogclan opacity-0 transition-opacity duration-300 hover:opacity-100"></span>
+                  
+                  {/* Active indicator */}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-ogclan"></span>
+                  )}
+                </NavigationMenuLink>
               </NavigationMenuItem>
             );
           } else {
