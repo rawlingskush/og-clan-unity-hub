@@ -11,8 +11,8 @@ import { Users } from 'lucide-react';
 
 const weaponCategories = {
   shotgun: ["BY15", "KRM-262", "HS0405", "R9-0"],
-  sniper: ["XPR-50"],
-  smg: ["QQ9", "Striker"]
+  smg: ["QQ9", "Striker", "MAC-10"],
+  sniper: ["XPR-50"]
 }
 
 interface SoldiersGridProps {

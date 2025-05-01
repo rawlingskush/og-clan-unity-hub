@@ -20,7 +20,8 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
       "R9-0": "bg-green-600 hover:bg-green-700",
       "Striker": "bg-blue-600 hover:bg-blue-700",
       "QQ9": "bg-purple-600 hover:bg-purple-700",
-      "XPR-50": "bg-pink-600 hover:bg-pink-700"
+      "XPR-50": "bg-pink-600 hover:bg-pink-700",
+      "MAC-10": "bg-violet-600 hover:bg-violet-700"
     };
     
     return weaponColors[weapon] || "bg-ogclan hover:bg-ogclan-dark";
@@ -32,9 +33,9 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
   };
   
   const getRoleIcon = (role: string) => {
-    if (role.includes("Breach")) return <User className="h-4 w-4 mr-1" />;
-    if (role.includes("Defensive")) return <Shield className="h-4 w-4 mr-1" />;
-    if (role.includes("Recon") || role.includes("Precision")) return <Crosshair className="h-4 w-4 mr-1" />;
+    if (role.toLowerCase().includes("breach")) return <User className="h-4 w-4 mr-1" />;
+    if (role.toLowerCase().includes("guard") || role.toLowerCase().includes("shield")) return <Shield className="h-4 w-4 mr-1" />;
+    if (role.toLowerCase().includes("recon") || role.toLowerCase().includes("precision") || role.toLowerCase().includes("sniper")) return <Crosshair className="h-4 w-4 mr-1" />;
     return <Sword className="h-4 w-4 mr-1" />;
   };
   
@@ -52,6 +53,8 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
       "23": { winRate: "74%", favMap: "Hijacked", kd: "4.3" },
       esquare: { winRate: "67%", favMap: "Standoff", kd: "3.7" },
       pato: { winRate: "73%", favMap: "Crossfire", kd: "4.8" },
+      chambas: { winRate: "76%", favMap: "Takeoff", kd: "4.4" },
+      uncleB: { winRate: "69%", favMap: "Killhouse", kd: "4.0" },
     };
     
     // Default stats if ID not found
