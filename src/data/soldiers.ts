@@ -13,7 +13,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "exodus",
-    name: "OG EXODUS",
+    name: "ФƓゝ EXODUS",
     role: "Shield of the Squad",
     weapon: "KRM-262",
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed.",
@@ -22,7 +22,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "wizard",
-    name: "OG WIZARD",
+    name: "ФƓゝ WIZARD",
     role: "Shadow Breacher",
     weapon: "HS0405",
     bio: "Wizard moves in silence—his HS0405 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner.",
@@ -31,7 +31,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "mufasa",
-    name: "OG WICKEDNESS",
+    name: "ФƓゝ WICKEDNESS",
     role: "Guardian Sniper",
     weapon: "HS0405",
     bio: "With the calm precision of a lion surveying the savannah, Mufasa locks down long sightlines. His HS0405 blasts end close threats, while his steady hand on the scope prevents any flank from going unseen.",
@@ -40,7 +40,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "dhamer",
-    name: "OG DHAMER",
+    name: "ФƓゝ DHAMER",
     role: "Point-of-Entry Specialist",
     weapon: "XPR-50",
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his R9-0, and forces enemies into uncomfortable angles—never letting them escape his crosshairs.",
@@ -49,7 +49,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "gamehouse",
-    name: "OG GAMEHOUSE",
+    name: "ФƓゝ GAMEHOUSE",
     role: "Tactical Vanguard",
     weapon: "Striker",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a Striker or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
@@ -58,7 +58,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "damage",
-    name: "OG DAMAGE",
+    name: "ФƓゝ DAMAGE",
     role: "Suppression Heavy",
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back.",
@@ -67,7 +67,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "23",
-    name: "OG 23",
+    name: "ФƓゝ 23",
     role: "Rapid Response",
     weapon: "QQ9",
     bio: "Fast as lightning, 23 darts through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
@@ -76,7 +76,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "esquare",
-    name: "OG E-SQUARE",
+    name: "ФƓゝ E-SQUARE",
     role: "Versatile Vanguard",
     weapon: "KRM-262",
     bio: "E-Square blends raw power and strategic finesse—his KRM-262 booms in close, then he seamlessly switches roles to support from afar. He's the squad's unpredictable force.",
@@ -85,7 +85,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "pato",
-    name: "OG PATO",
+    name: "ФƓゝ PATO",
     role: "Recon & Precision",
     weapon: "HS0405",
     bio: "Pato is the silent sentinel: he scouts enemy positions, then brings the sting of his HS0405 when they least expect it. His intel and accuracy make him our eyes in the field.",
@@ -94,7 +94,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "chambas",
-    name: "OG CHAMBAS",
+    name: "ФƓゝ CHAMBAS",
     role: "Precision Breacher",
     weapon: "HS0405",
     bio: "Chambas blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
@@ -103,7 +103,7 @@ export const soldiers: Soldier[] = [
   },
   {
     id: "uncleB",
-    name: "OG UNCLE-B",
+    name: "ФƓゝ UNCLE-B",
     role: "Close-Quarters Expert",
     weapon: "MAC-10",
     bio: "Uncle-B lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
