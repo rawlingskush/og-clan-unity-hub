@@ -52,7 +52,7 @@ const Soldiers = () => {
               
               <AnimatedContent animation="fade-in" delay={600}>
                 <p className="text-lg text-ogclan-muted max-w-2xl mx-auto">
-                  Meet the twelve elite specialists who form the backbone of OG Clan Cameroon. From breach masters to precision scouts, each operator's unique loadout and combat prowess drive our CODM domination.
+                  Meet the elite specialists who form the backbone of OG Clan Cameroon. From breach masters to precision scouts, each operator's unique loadout and combat prowess drive our CODM domination.
                 </p>
               </AnimatedContent>
             </div>
