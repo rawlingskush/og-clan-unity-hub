@@ -330,4 +330,69 @@
       hyphens: auto;
     }
   }
+  
+  /* New animation utilities for cinematic effects */
+  @keyframes scanner-pulse-fast {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-scanner-pulse-fast {
+    animation: scanner-pulse-fast 2s linear infinite;
+  }
+  
+  @keyframes scanner-pulse-fast-reverse {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-scanner-pulse-fast-reverse {
+    animation: scanner-pulse-fast-reverse 2s linear infinite;
+  }
+  
+  @keyframes animate-gradient-slow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .animate-gradient-slow {
+    background-size: 200% 200%;
+    animation: animate-gradient-slow 8s ease infinite;
+  }
+  
+  @keyframes text-glow {
+    0%, 100% {
+      text-shadow: 0 0 5px rgba(212, 175, 55, 0.3);
+    }
+    50% {
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+    }
+  }
+  
+  .animate-text-glow {
+    animation: text-glow 3s ease-in-out infinite;
+  }
+  
+  /* Fixed positioning for parallax effects */
+  .parallax-bg {
+    @apply fixed inset-0 w-full h-full;
+    z-index: -1;
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
