@@ -17,14 +17,14 @@ const AchievementsSection = () => {
     title: "Tournament Success",
     description: "Consistent performance in regional and national gaming competitions, putting Cameroon on the esports map.",
     icon: <Award className="w-8 h-8 text-ogclan" />,
-    stat: "12+",
+    stat: "68+",
     label: "Tournaments Won"
   }, {
     id: 3,
     title: "Growing Influence",
     description: "Our social media presence and community impact continue to rise, creating opportunities for all members.",
     icon: <TrendingUp className="w-8 h-8 text-ogclan" />,
-    stat: "69%",
+    stat: "169%",
     label: "Annual Growth"
   }];
 
