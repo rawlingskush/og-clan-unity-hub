@@ -68,7 +68,7 @@ const Footer = () => {
               id: 'about'
             }, {
               name: 'Our Soldiers',
-              id: 'Our Soldiers'
+              id: 'soldiers'
             }, {
               name: 'Join Us',
               id: 'join'
