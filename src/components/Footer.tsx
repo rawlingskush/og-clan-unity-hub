@@ -88,7 +88,7 @@ const Footer = () => {
               <li>Cameroon</li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-1 text-ogclan" />
-                <a href="mailto:onlygreat237@gmail.com" className="hover:text-ogclan transition-colors">onlygreats237@gmail.com</a>
+                <a href="mailto:onlygreat237@gmail.com" className="hover:text-ogclan transition-colors">info@ogclancameroon.com</a>
               </li>
             </ul>
           </div>
