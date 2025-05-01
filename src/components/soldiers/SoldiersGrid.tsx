@@ -35,7 +35,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             return weaponCategories.sniper.includes(soldier.weapon);
           case "smg":
             return weaponCategories.smg.includes(soldier.weapon);
-          case "breacher":
+          case "assault":
             return soldier.role.toLowerCase().includes("breach");
           default:
             return true;
@@ -79,11 +79,11 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             All
           </button>
           <button 
-            className={filterButtonClass("breacher")}
-            onClick={() => setFilter("breacher")}
-            aria-pressed={filter === "breacher"}
+            className={filterButtonClass("assault")}
+            onClick={() => setFilter("assault")}
+            aria-pressed={filter === "assault"}
           >
-            Breachers
+            Assault Architect
           </button>
           <button 
             className={filterButtonClass("shotgun")}
