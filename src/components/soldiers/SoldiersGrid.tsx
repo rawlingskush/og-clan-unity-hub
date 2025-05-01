@@ -12,7 +12,7 @@ import AnimatedContent from '@/components/AnimatedContent';
 
 const weaponCategories = {
   shotgun: ["BY15", "KRM-262", "HS0405", "R9-0"],
-  smg: ["QQ9", "Striker", "MAC-10"],
+  smg: ["QQ9", "FENNEC", "MAC-10"],
   sniper: ["XPR-50"]
 }
 
