@@ -4,7 +4,7 @@ import { Soldier } from "@/types/soldier";
 export const soldiers: Soldier[] = [
   {
     id: "kush",
-    name: "OG KUSH",
+    name: "ФƓゝ KUSH",
     role: "Forward Breaker",
     weapon: "BY15",
     bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his BY15 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
