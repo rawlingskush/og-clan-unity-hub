@@ -3,7 +3,7 @@ import React from 'react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Soldier } from "@/types/soldier";
-import { ExternalLink, Shield, Crosshair, Helmet, Gun } from "lucide-react";
+import { ExternalLink, Shield, Crosshair, User, Sword } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
 
@@ -27,15 +27,15 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
   };
   
   const getWeaponIcon = (weapon: string) => {
-    // Using Gun icon from lucide for all weapons
-    return <Gun className="h-4 w-4 mr-1" />;
+    // Using Sword icon from lucide for all weapons
+    return <Sword className="h-4 w-4 mr-1" />;
   };
   
   const getRoleIcon = (role: string) => {
-    if (role.includes("Breach")) return <Helmet className="h-4 w-4 mr-1" />;
+    if (role.includes("Breach")) return <User className="h-4 w-4 mr-1" />;
     if (role.includes("Defensive")) return <Shield className="h-4 w-4 mr-1" />;
     if (role.includes("Recon") || role.includes("Precision")) return <Crosshair className="h-4 w-4 mr-1" />;
-    return <Gun className="h-4 w-4 mr-1" />;
+    return <Sword className="h-4 w-4 mr-1" />;
   };
   
   // Quick stats for hover card
@@ -64,15 +64,16 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
   return (
     <HoverCard>
       <HoverCardTrigger asChild>
-        <Card className={`overflow-hidden transition-all duration-300 hover:translate-y-[-5px] border-ogclan/30 hover:border-ogclan/70 hover:shadow-[0_0_15px_${accentColor.replace('bg-', 'rgba(')},0.3)] bg-black h-full`}>
+        <Card className={`overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:scale-105 border-ogclan/30 hover:border-ogclan/70 hover:shadow-[0_0_15px_${accentColor.replace('bg-', 'rgba(')},0.3)] bg-black h-full`}>
           <CardContent className="p-4">
             <div className="flex flex-col items-center">
               {/* Circular Image */}
               <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-ogclan mb-4 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
                 <img 
                   src={soldier.imageUrl} 
-                  alt={soldier.name} 
+                  alt={`${soldier.name} - ${soldier.role}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               
@@ -83,6 +84,7 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
               <Badge 
                 className="mb-3 bg-ogclan/80 text-black hover:bg-ogclan flex items-center"
                 variant="secondary"
+                aria-label={`Role: ${soldier.role}`}
               >
                 {getRoleIcon(soldier.role)}
                 {soldier.role}
@@ -91,6 +93,7 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
               {/* Weapon Badge */}
               <Badge 
                 className={cn("mb-4 flex items-center", getWeaponBadgeColor(soldier.weapon))}
+                aria-label={`Weapon: ${soldier.weapon}`}
               >
                 {getWeaponIcon(soldier.weapon)}
                 {soldier.weapon}
@@ -107,6 +110,7 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-ogclan hover:text-ogclan-light transition-colors"
+              aria-label={`Follow ${soldier.name} on TikTok`}
             >
               {/* TikTok Icon */}
               <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

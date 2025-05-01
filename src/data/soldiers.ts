@@ -91,5 +91,23 @@ export const soldiers: Soldier[] = [
     bio: "Stealth scout—precise strikes and intel gathering keep the team informed.",
     tiktokUrl: "https://www.tiktok.com/@ogpato",
     imageUrl: "/lovable-uploads/9d40ac01-6aa4-4626-aaa9-cd051a54ca6c.png"
+  },
+  {
+    id: "shadow",
+    name: "OG SHADOW",
+    role: "Night Stalker",
+    weapon: "KRM-262", 
+    bio: "Master of ambushes—uses darkness and surprise to devastate opposing teams.",
+    tiktokUrl: "https://www.tiktok.com/@ogshadow",
+    imageUrl: "/lovable-uploads/8e120043-2f3c-4f51-9713-82dc0ad7a4f2.png"
+  },
+  {
+    id: "phoenix",
+    name: "OG PHOENIX",
+    role: "Revival Specialist",
+    weapon: "BY15",
+    bio: "The ultimate comeback artist—turns losing situations into victory through tactical revivals.",
+    tiktokUrl: "https://www.tiktok.com/@ogphoenix",
+    imageUrl: "/lovable-uploads/d74ad0ce-f0a8-4d1c-9a42-186b6010c9f3.png"
   }
 ];

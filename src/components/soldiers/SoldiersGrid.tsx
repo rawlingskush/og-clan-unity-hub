@@ -33,6 +33,8 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             return weaponCategories.sniper.includes(soldier.weapon);
           case "smg":
             return weaponCategories.smg.includes(soldier.weapon);
+          case "breacher":
+            return soldier.role.toLowerCase().includes("breach");
           default:
             return true;
         }
@@ -45,6 +47,9 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
         : 'bg-black/40 text-ogclan/80 border border-ogclan/30 hover:bg-black/60 hover:border-ogclan/50'
     }`;
 
+  // Determine if we should show a grid or carousel based on screen size
+  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+
   return (
     <div>
       {/* Filter Pills */}
@@ -52,30 +57,41 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
         <button 
           className={filterButtonClass("all")}
           onClick={() => setFilter("all")}
+          aria-pressed={filter === "all"}
         >
           All
         </button>
         <button 
+          className={filterButtonClass("breacher")}
+          onClick={() => setFilter("breacher")}
+          aria-pressed={filter === "breacher"}
+        >
+          Breachers
+        </button>
+        <button 
           className={filterButtonClass("shotgun")}
           onClick={() => setFilter("shotgun")}
+          aria-pressed={filter === "shotgun"}
         >
           Shotgun Masters
         </button>
         <button 
           className={filterButtonClass("sniper")}
           onClick={() => setFilter("sniper")}
+          aria-pressed={filter === "sniper"}
         >
           Snipers
         </button>
         <button 
           className={filterButtonClass("smg")}
           onClick={() => setFilter("smg")}
+          aria-pressed={filter === "smg"}
         >
           SMG Specialists
         </button>
       </div>
       
-      {/* Desktop Grid or Mobile Carousel */}
+      {/* Desktop Grid, Tablet Grid, or Mobile Carousel */}
       {isMobile ? (
         <Carousel className="w-full">
           <CarouselContent>
@@ -92,8 +108,20 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             <CarouselNext className="relative static transform-none" />
           </div>
         </Carousel>
+      ) : isTablet ? (
+        <div className="grid grid-cols-3 gap-6 overflow-x-auto pb-4">
+          {filteredSoldiers.map((soldier) => (
+            <div 
+              key={soldier.id} 
+              id={`og-${soldier.id.toLowerCase()}`}
+              className="scroll-mt-32"
+            >
+              <SoldierCard soldier={soldier} />
+            </div>
+          ))}
+        </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {filteredSoldiers.map((soldier) => (
             <div 
               key={soldier.id} 
@@ -111,7 +139,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
         <Link to="/#join">
           <Button 
             size="lg" 
-            className="bg-ogclan text-black hover:bg-ogclan-light transition-all group px-8 py-6 text-lg"
+            className="bg-ogclan text-black hover:bg-ogclan-light transition-all group px-8 py-6 text-lg animate-pulse-slow"
           >
             <Users className="mr-2 h-5 w-5 group-hover:animate-pulse" />
             Join the Ranks
