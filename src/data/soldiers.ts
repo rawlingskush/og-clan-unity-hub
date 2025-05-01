@@ -9,7 +9,7 @@ export const soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his BY15 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
-    imageUrl: "/lovable-uploads/745bd77a-e4e3-4878-be47-30917382847b.png"
+    imageUrl: "/https://p16-sign-useast2a.tiktokcdn.com/tos-useast2a-avt-0068-euttp/e2a6116bd02b98cfbd2a2147d657447f~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=17dd8cfa&x-expires=1746234000&x-signature=0Af1RE5pbg0u98tIwpsJguGZ8sA%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a"
   },
   {
     id: "exodus",
