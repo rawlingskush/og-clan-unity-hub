@@ -17,7 +17,7 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
       "BY15": "bg-red-600 hover:bg-red-700",
       "KRM-262": "bg-orange-500 hover:bg-orange-600",
       "HS0405": "bg-yellow-600 hover:bg-yellow-700",
-      "R9-0": "bg-green-600 hover:bg-green-700",
+      "XPR-50": "bg-green-600 hover:bg-green-700",
       "Striker": "bg-blue-600 hover:bg-blue-700",
       "QQ9": "bg-purple-600 hover:bg-purple-700",
       "XPR-50": "bg-pink-600 hover:bg-pink-700",

@@ -42,7 +42,7 @@ export const soldiers: Soldier[] = [
     id: "dhamer",
     name: "OG DHAMER",
     role: "Point-of-Entry Specialist",
-    weapon: "R9-0",
+    weapon: "XPR-50",
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his R9-0, and forces enemies into uncomfortable angles—never letting them escape his crosshairs.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png"
