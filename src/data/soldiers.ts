@@ -8,7 +8,7 @@ export const soldiers: Soldier[] = [
     role: "Forward Breaker",
     weapon: "BY15",
     bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his BY15 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
-    tiktokUrl: "https://www.tiktok.com/@ogkush",
+    tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/745bd77a-e4e3-4878-be47-30917382847b.png"
   },
   {
@@ -17,7 +17,7 @@ export const soldiers: Soldier[] = [
     role: "Shield of the Squad",
     weapon: "KRM-262",
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed.",
-    tiktokUrl: "https://www.tiktok.com/@ogexodus",
+    tiktokUrl: "https://www.tiktok.com/@only_one_windsor",
     imageUrl: "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png"
   },
   {
@@ -26,16 +26,16 @@ export const soldiers: Soldier[] = [
     role: "Shadow Breacher",
     weapon: "HS0405",
     bio: "Wizard moves in silence—his HS0405 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner.",
-    tiktokUrl: "https://www.tiktok.com/@ogwizard",
+    tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/825f03cc-b2e3-4636-a959-2291c478da69.png"
   },
   {
     id: "mufasa",
-    name: "OG MUFASA",
+    name: "OG WICKEDNESS",
     role: "Guardian Sniper",
     weapon: "HS0405",
     bio: "With the calm precision of a lion surveying the savannah, Mufasa locks down long sightlines. His HS0405 blasts end close threats, while his steady hand on the scope prevents any flank from going unseen.",
-    tiktokUrl: "https://www.tiktok.com/@ogmufasa",
+    tiktokUrl: "https://www.tiktok.com/@mazi_wickednessyt",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png"
   },
   {
@@ -44,7 +44,7 @@ export const soldiers: Soldier[] = [
     role: "Point-of-Entry Specialist",
     weapon: "R9-0",
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his R9-0, and forces enemies into uncomfortable angles—never letting them escape his crosshairs.",
-    tiktokUrl: "https://www.tiktok.com/@ogdhamer",
+    tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png"
   },
   {
