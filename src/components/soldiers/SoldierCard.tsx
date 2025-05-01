@@ -1,23 +1,21 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Soldier } from "@/types/soldier";
 import { ExternalLink, Shield, Crosshair, User, Sword } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { HoverCard, HoverCardTrigger, HoverCardContent } from "@/components/ui/hover-card";
+import AnimatedContent from "@/components/AnimatedContent";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface SoldierCardProps {
   soldier: Soldier;
-  animate?: boolean;
-  delay?: number;
 }
 
-const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) => {
+const SoldierCard = ({ soldier }: SoldierCardProps) => {
   const isMobile = useIsMobile();
-  const [showQuickStats, setShowQuickStats] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [showQuickStats, setShowQuickStats] = React.useState(false);
   
   const getWeaponBadgeColor = (weapon: string) => {
     const weaponColors: Record<string, string> = {
@@ -95,33 +93,13 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
     </div>
   );
 
-  const animationStyles = {
-    opacity: animate ? 1 : 0,
-    transform: animate ? 'translateY(0)' : 'translateY(20px)',
-    transition: `opacity 0.5s ease-out ${delay}ms, transform 0.5s ease-out ${delay}ms`
-  };
-
-  const hoverStyles = isHovered ? {
-    transform: 'translateY(-8px) scale(1.02)',
-    boxShadow: `0 10px 30px -5px rgba(212,175,55,0.3)`,
-    borderColor: 'rgba(212,175,55,0.7)'
-  } : {};
-
-  // Avatar animation styles for initial load
-  const avatarStyles = {
-    transform: animate ? 'scale(1)' : 'scale(0.8)',
-    opacity: animate ? 1 : 0,
-    transition: `transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${delay + 200}ms, opacity 0.6s ease ${delay + 200}ms`
-  };
-
   return isMobile ? (
-    <div style={animationStyles}>
+    <AnimatedContent animation="fade-in-up" delay={200}>
       <Card 
-        className="overflow-hidden transition-all duration-500 border-ogclan/30 bg-black/90 h-full relative"
+        className={`overflow-hidden transition-all duration-300 border-ogclan/30 hover:border-ogclan/70 bg-black h-full relative ${
+          showQuickStats ? 'quick-stats-active' : ''
+        }`}
         onClick={toggleQuickStats}
-        style={{
-          background: "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(10,50,0,0.8) 100%)"
-        }}
       >
         <div className="relative">
           {/* Animated Scanner Line */}
@@ -130,10 +108,7 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
           <CardContent className="p-4 relative">
             <div className="flex flex-col items-center">
               {/* Circular Image with pulse animation */}
-              <div 
-                className="w-28 h-28 rounded-full overflow-hidden border-2 border-ogclan mb-4 shadow-[0_0_10px_rgba(212,175,55,0.4)] animate-pulse-slow"
-                style={avatarStyles}
-              >
+              <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-ogclan mb-4 shadow-[0_0_10px_rgba(212,175,55,0.4)] animate-pulse-slow">
                 <img 
                   src={soldier.imageUrl} 
                   alt={`${soldier.name} - ${soldier.role}`}
@@ -172,9 +147,6 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
             {showQuickStats && (
               <div 
                 className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-[fade-in_0.3s_ease-out]"
-                style={{
-                  background: "linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(10,30,0,0.9) 100%)"
-                }}
               >
                 <QuickStats />
               </div>
@@ -205,20 +177,12 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
           </div>
         </div>
       </Card>
-    </div>
+    </AnimatedContent>
   ) : (
-    <div style={animationStyles}>
-      <HoverCard>
-        <HoverCardTrigger asChild>
-          <Card
-            className="overflow-hidden transition-all duration-500 border-ogclan/30 bg-black/90 h-full cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            style={{
-              ...hoverStyles,
-              background: "linear-gradient(180deg, rgba(0,0,0,0.95) 0%, rgba(10,40,0,0.85) 100%)"
-            }}
-          >
+    <HoverCard>
+      <HoverCardTrigger asChild>
+        <AnimatedContent animation="fade-in-up" delay={200}>
+          <Card className={`overflow-hidden transition-all duration-300 hover:translate-y-[-5px] hover:scale-105 border-ogclan/30 hover:border-ogclan/70 hover:shadow-[0_0_15px_${accentColor.replace('bg-', 'rgba(')},0.3)] bg-black h-full`}>
             <div className="relative">
               {/* Animated Scanner Line */}
               <div className="scanner-line"></div>
@@ -226,24 +190,17 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
               <CardContent className="p-4">
                 <div className="flex flex-col items-center">
                   {/* Circular Image */}
-                  <div 
-                    className="w-32 h-32 rounded-full overflow-hidden border-2 border-ogclan mb-4 shadow-[0_0_10px_rgba(212,175,55,0.4)]"
-                    style={{
-                      ...avatarStyles,
-                      boxShadow: isHovered ? '0 0 20px rgba(212,175,55,0.6)' : '0 0 10px rgba(212,175,55,0.4)',
-                      transition: 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease, box-shadow 0.3s ease'
-                    }}
-                  >
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-ogclan mb-4 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
                     <img 
                       src={soldier.imageUrl} 
                       alt={`${soldier.name} - ${soldier.role}`}
-                      className={`w-full h-full object-cover transition-transform duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`}
+                      className="w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
                   
                   {/* Name with military font style */}
-                  <h3 className="text-xl font-bold text-ogclan mb-1 tracking-wider animate-text-glow">{soldier.name}</h3>
+                  <h3 className="text-xl font-bold text-ogclan mb-1 tracking-wider">{soldier.name}</h3>
                   
                   {/* Role Badge */}
                   <Badge 
@@ -267,20 +224,9 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
                   {/* Bio */}
                   <p className="text-center text-sm mb-4 text-gray-300">{soldier.bio}</p>
                 </div>
-                
-                {/* Stats overlay that slides up on hover */}
-                <div 
-                  className="absolute left-0 right-0 bottom-0 bg-black/80 backdrop-blur-sm p-4 transform transition-transform duration-300"
-                  style={{
-                    transform: isHovered ? 'translateY(0)' : 'translateY(100%)',
-                    background: "linear-gradient(0deg, rgba(0,0,0,0.9) 0%, rgba(10,30,0,0.85) 100%)"
-                  }}
-                >
-                  <QuickStats />
-                </div>
               </CardContent>
               
-              <CardFooter className="flex justify-center p-2 bg-ogclan/10 border-t border-ogclan/20 relative z-10">
+              <CardFooter className="flex justify-center p-2 bg-ogclan/10 border-t border-ogclan/20">
                 <a 
                   href={soldier.tiktokUrl} 
                   target="_blank" 
@@ -296,23 +242,15 @@ const SoldierCard = ({ soldier, animate = true, delay = 0 }: SoldierCardProps) =
                   <ExternalLink size={14} />
                 </a>
               </CardFooter>
-              
-              {/* Hover hint */}
-              <div 
-                className="absolute top-2 right-2 text-xs text-ogclan/60 bg-black/50 px-2 py-1 rounded-full transition-opacity duration-200"
-                style={{ opacity: isHovered ? 0 : 0.6 }}
-              >
-                Hover for stats
-              </div>
             </div>
           </Card>
-        </HoverCardTrigger>
-        
-        <HoverCardContent className="w-64 border-ogclan/30 bg-black/90">
-          <QuickStats />
-        </HoverCardContent>
-      </HoverCard>
-    </div>
+        </AnimatedContent>
+      </HoverCardTrigger>
+      
+      <HoverCardContent className="w-64 border-ogclan/30">
+        <QuickStats />
+      </HoverCardContent>
+    </HoverCard>
   );
 };
 

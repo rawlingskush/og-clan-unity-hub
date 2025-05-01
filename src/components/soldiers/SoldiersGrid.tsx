@@ -23,7 +23,6 @@ interface SoldiersGridProps {
 const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   const [filter, setFilter] = useState<string>("all");
   const [animateItems, setAnimateItems] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
   const isMobile = useIsMobile();
   
   const filteredSoldiers = filter === "all" 
@@ -45,18 +44,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
 
   // Initialize animation after component mounts
   useEffect(() => {
-    const timer1 = setTimeout(() => {
-      setShowFilters(true);
-    }, 800);
-    
-    const timer2 = setTimeout(() => {
-      setAnimateItems(true);
-    }, 1200);
-    
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-    };
+    setAnimateItems(true);
   }, []);
 
   // Reset and trigger animations when filter changes
@@ -69,7 +57,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   }, [filter]);
 
   const filterButtonClass = (currentFilter: string) => 
-    `rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-500 ${
+    `rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
       filter === currentFilter 
         ? 'bg-ogclan text-black shadow-sm shadow-ogclan/40'
         : 'bg-black/40 text-ogclan/80 border border-ogclan/30 hover:bg-black/60 hover:border-ogclan/50'
@@ -78,59 +66,65 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   // Determine if we should show a grid or carousel based on screen size
   const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
 
-  const filterButtons = [
-    { name: "All", filter: "all", delay: 0 },
-    { name: "Breachers", filter: "breacher", delay: 100 },
-    { name: "Shotgun Masters", filter: "shotgun", delay: 200 },
-    { name: "Snipers", filter: "sniper", delay: 300 },
-    { name: "SMG Specialists", filter: "smg", delay: 400 }
-  ];
-
   return (
     <div>
       {/* Filter Pills with Animation */}
-      <div className="mb-8 overflow-hidden">
+      <AnimatedContent animation="slide-in-right" className="mb-8">
         <div className="flex flex-wrap justify-center gap-2">
-          {filterButtons.map((btn, index) => (
-            <button 
-              key={btn.filter}
-              className={`${filterButtonClass(btn.filter)} transform transition-all duration-500 ${
-                showFilters 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-8 opacity-0'
-              }`}
-              style={{ 
-                transitionDelay: `${btn.delay}ms` 
-              }}
-              onClick={() => setFilter(btn.filter)}
-              aria-pressed={filter === btn.filter}
-            >
-              {btn.name}
-            </button>
-          ))}
+          <button 
+            className={filterButtonClass("all")}
+            onClick={() => setFilter("all")}
+            aria-pressed={filter === "all"}
+          >
+            All
+          </button>
+          <button 
+            className={filterButtonClass("breacher")}
+            onClick={() => setFilter("breacher")}
+            aria-pressed={filter === "breacher"}
+          >
+            Breachers
+          </button>
+          <button 
+            className={filterButtonClass("shotgun")}
+            onClick={() => setFilter("shotgun")}
+            aria-pressed={filter === "shotgun"}
+          >
+            Shotgun Masters
+          </button>
+          <button 
+            className={filterButtonClass("sniper")}
+            onClick={() => setFilter("sniper")}
+            aria-pressed={filter === "sniper"}
+          >
+            Snipers
+          </button>
+          <button 
+            className={filterButtonClass("smg")}
+            onClick={() => setFilter("smg")}
+            aria-pressed={filter === "smg"}
+          >
+            SMG Specialists
+          </button>
         </div>
-      </div>
+      </AnimatedContent>
       
       {/* Mobile Carousel with enhanced animations */}
       {isMobile ? (
-        <AnimatedContent animation="fade-in">
+        <AnimatedContent animation="fade-in" className="w-full">
           <Carousel className="w-full">
             <CarouselContent>
               {filteredSoldiers.map((soldier, index) => (
                 <CarouselItem key={soldier.id} className="md:basis-1/2 lg:basis-1/3">
                   <div id={`og-${soldier.id.toLowerCase()}`} className="scroll-mt-32">
-                    <SoldierCard 
-                      soldier={soldier} 
-                      animate={animateItems}
-                      delay={index * 100} 
-                    />
+                    <SoldierCard soldier={soldier} />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
             <div className="flex justify-center mt-4 gap-2">
-              <CarouselPrevious className="relative static transform-none animate-pulse-slow hover:bg-ogclan hover:text-black" />
-              <CarouselNext className="relative static transform-none animate-pulse-slow hover:bg-ogclan hover:text-black" />
+              <CarouselPrevious className="relative static transform-none animate-pulse-slow" />
+              <CarouselNext className="relative static transform-none animate-pulse-slow" />
             </div>
           </Carousel>
         </AnimatedContent>
@@ -141,12 +135,13 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
               key={soldier.id} 
               id={`og-${soldier.id.toLowerCase()}`}
               className="scroll-mt-32"
+              style={{ 
+                opacity: animateItems ? 1 : 0,
+                transform: animateItems ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
+              }}
             >
-              <SoldierCard 
-                soldier={soldier} 
-                animate={animateItems}
-                delay={index * 100} 
-              />
+              <SoldierCard soldier={soldier} />
             </div>
           ))}
         </div>
@@ -157,27 +152,26 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
               key={soldier.id} 
               id={`og-${soldier.id.toLowerCase()}`}
               className="scroll-mt-32"
+              style={{ 
+                opacity: animateItems ? 1 : 0,
+                transform: animateItems ? 'translateY(0)' : 'translateY(20px)',
+                transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
+              }}
             >
-              <SoldierCard 
-                soldier={soldier} 
-                animate={animateItems}
-                delay={index * 100} 
-              />
+              <SoldierCard soldier={soldier} />
             </div>
           ))}
         </div>
       )}
       
       {/* Join CTA with enhanced animation */}
-      <AnimatedContent animation="fade-in" className="mt-16" delay={500}>
+      <AnimatedContent animation="bounce" className="mt-16" delay={500}>
         <div className="flex justify-center">
           <Link to="/#join">
             <Button 
               size="lg" 
-              className="bg-ogclan text-black hover:bg-ogclan-light transition-all group px-8 py-6 text-lg
-                relative overflow-hidden
-                before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:-translate-x-full before:animate-none hover:before:animate-[scanner-line_1s_ease-in-out]
-                after:absolute after:inset-0 after:bg-transparent after:border-2 after:border-ogclan/0 after:opacity-0 hover:after:opacity-100 hover:after:border-ogclan/50 after:transition-all after:duration-500"
+              className="bg-ogclan text-black hover:bg-ogclan-light transition-all group px-8 py-6 text-lg animate-pulse-slow relative overflow-hidden
+                before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:-translate-x-full hover:before:animate-[scanner-line_1s_ease-in-out]"
             >
               <Users className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Join the Ranks
