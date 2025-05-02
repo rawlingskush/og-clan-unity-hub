@@ -48,7 +48,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ DHAMER",
     role: "Point-of-Entry Specialist",
     weapon: "XPR-50",
-    bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his R9-0, and forces enemies into uncomfortable angles—never letting them escape his crosshairs.",
+    bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and sniper, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3
@@ -68,7 +68,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ DAMAGE",
     role: "Suppression Heavy",
     weapon: "KRM-262",
-    bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back.",
+    bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
     tiktokUrl: "https://www.tiktok.com/@ogdamage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
@@ -78,7 +78,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ 23",
     role: "Rapid Response",
     weapon: "QQ9",
-    bio: "Fast as lightning, 23 darts through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
+    bio: "Wild Child is Fast as lightning, Mr 23 moves through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
     tiktokUrl: "https://www.tiktok.com/@og23",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
@@ -98,7 +98,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ PATO",
     role: "Recon & Precision",
     weapon: "HS0405",
-    bio: "Pato is the silent sentinel: he scouts enemy positions, then brings the sting of his HS0405 when they least expect it. His intel and accuracy make him our eyes in the field.",
+    bio: "Pato is one the finnest soldiers heart of og clan MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his HS0405 when they least expect it. His intel and accuracy make him our eyes in the field.",
     tiktokUrl: "https://www.tiktok.com/@ogpato",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 2
@@ -108,7 +108,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ CHAMBAS",
     role: "Precision Breacher",
     weapon: "HS0405",
-    bio: "Chambas blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
+    bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
     tiktokUrl: "https://www.tiktok.com/@ogchambas",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
@@ -118,7 +118,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ UNCLE-B",
     role: "Close-Quarters Expert",
     weapon: "MAC-10",
-    bio: "Uncle-B lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
+    bio: "Uncle-B that B for Bot😁 lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
     tiktokUrl: "https://www.tiktok.com/@oguncleB",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 2
@@ -140,7 +140,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ DNA",
     role: "🎯 Elite Sniper",
     weapon: "XPR-50",
-    bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves",
+    bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
     tiktokUrl: "https://www.tiktok.com/@ogdna",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
@@ -170,7 +170,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ BLACKSAVAGE",
     role: "🚀 SMG Infiltrator",
     weapon: "QQ9",
-    bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground.",
+    bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
     tiktokUrl: "https://www.tiktok.com/@ogblacksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 5
