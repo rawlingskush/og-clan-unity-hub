@@ -150,8 +150,8 @@ export const soldiers: Soldier[] = [
     role: "⚡ Rapid Response",
     weapon: "QQ9",
     bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
-    tiktokUrl: "https://www.tiktok.com/@ogded","/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png"
-    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
+    tiktokUrl: "https://www.tiktok.com/@ogded",
+    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
   },
   {
