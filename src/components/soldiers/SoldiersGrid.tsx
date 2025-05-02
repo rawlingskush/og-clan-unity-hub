@@ -11,9 +11,10 @@ import { Users } from 'lucide-react';
 import AnimatedContent from '@/components/AnimatedContent';
 
 const weaponCategories = {
-  shotgun: ["BY15", "KRM-262", "HS0405", "R9-0"],
+  shotgun: ["BY15", "KRM-262", "HS0405", "R9-0", "Striker"],
   smg: ["QQ9", "FENNEC", "MAC-10"],
-  sniper: ["XPR-50"]
+  sniper: ["XPR-50", "DLQ33"],
+  ar: ["Kilo 141", "M13", "Type 25"]
 }
 
 interface SoldiersGridProps {
@@ -23,6 +24,7 @@ interface SoldiersGridProps {
 const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   const [filter, setFilter] = useState<string>("all");
   const [animateItems, setAnimateItems] = useState(false);
+  const [filterButtonsVisible, setFilterButtonsVisible] = useState(false);
   const isMobile = useIsMobile();
   
   const filteredSoldiers = filter === "all" 
@@ -35,16 +37,28 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             return weaponCategories.sniper.includes(soldier.weapon);
           case "smg":
             return weaponCategories.smg.includes(soldier.weapon);
+          case "ar":
+            return weaponCategories.ar.includes(soldier.weapon);
           case "assault":
             return soldier.role.toLowerCase().includes("breach");
+          case "support":
+            return soldier.role.toLowerCase().includes("support") || soldier.role.includes("🛡️");
           default:
             return true;
         }
       });
 
-  // Initialize animation after component mounts
+  // Initialize animation after component mounts with staggered delays
   useEffect(() => {
-    setAnimateItems(true);
+    // First animate the filter buttons
+    setFilterButtonsVisible(true);
+    
+    // Then after a delay, animate the cards
+    const timer = setTimeout(() => {
+      setAnimateItems(true);
+    }, 600);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   // Reset and trigger animations when filter changes
@@ -68,44 +82,30 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
 
   return (
     <div>
-      {/* Filter Pills with Animation */}
+      {/* Filter Pills with Advanced Animation */}
       <AnimatedContent animation="slide-in-right" className="mb-8">
         <div className="flex flex-wrap justify-center gap-2">
-          <button 
-            className={filterButtonClass("all")}
-            onClick={() => setFilter("all")}
-            aria-pressed={filter === "all"}
-          >
-            All
-          </button>
-          <button 
-            className={filterButtonClass("assault")}
-            onClick={() => setFilter("assault")}
-            aria-pressed={filter === "assault"}
-          >
-            Assault Architect
-          </button>
-          <button 
-            className={filterButtonClass("shotgun")}
-            onClick={() => setFilter("shotgun")}
-            aria-pressed={filter === "shotgun"}
-          >
-            Shotgun Masters
-          </button>
-          <button 
-            className={filterButtonClass("sniper")}
-            onClick={() => setFilter("sniper")}
-            aria-pressed={filter === "sniper"}
-          >
-            Snipers
-          </button>
-          <button 
-            className={filterButtonClass("smg")}
-            onClick={() => setFilter("smg")}
-            aria-pressed={filter === "smg"}
-          >
-            SMG Specialists
-          </button>
+          {["all", "assault", "shotgun", "sniper", "smg", "ar", "support"].map((filterType, index) => (
+            <button 
+              key={filterType}
+              className={`${filterButtonClass(filterType)} ${filterButtonsVisible ? 'opacity-100' : 'opacity-0'}`}
+              onClick={() => setFilter(filterType)}
+              aria-pressed={filter === filterType}
+              style={{ 
+                transition: 'all 0.3s ease-out',
+                transitionDelay: `${index * 100}ms`,
+                transform: filterButtonsVisible ? 'translateY(0)' : 'translateY(20px)'
+              }}
+            >
+              {filterType === "all" && "All"}
+              {filterType === "assault" && "Assault Architect"}
+              {filterType === "shotgun" && "Shotgun Masters"}
+              {filterType === "sniper" && "Snipers"}
+              {filterType === "smg" && "SMG Specialists"}
+              {filterType === "ar" && "AR Operators"}
+              {filterType === "support" && "Support Operatives"}
+            </button>
+          ))}
         </div>
       </AnimatedContent>
       
@@ -134,7 +134,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             <div 
               key={soldier.id} 
               id={`og-${soldier.id.toLowerCase()}`}
-              className="scroll-mt-32"
+              className={`scroll-mt-32 ${soldier.spotlight ? 'col-span-3 md:col-span-1' : ''}`}
               style={{ 
                 opacity: animateItems ? 1 : 0,
                 transform: animateItems ? 'translateY(0)' : 'translateY(20px)',
@@ -146,12 +146,12 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {filteredSoldiers.map((soldier, index) => (
             <div 
               key={soldier.id} 
               id={`og-${soldier.id.toLowerCase()}`}
-              className="scroll-mt-32"
+              className={`scroll-mt-32 ${soldier.spotlight ? 'col-span-2 md:col-span-1 row-span-1' : ''}`}
               style={{ 
                 opacity: animateItems ? 1 : 0,
                 transform: animateItems ? 'translateY(0)' : 'translateY(20px)',

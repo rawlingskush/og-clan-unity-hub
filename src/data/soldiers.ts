@@ -109,5 +109,52 @@ export const soldiers: Soldier[] = [
     bio: "Uncle-B lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
     tiktokUrl: "https://www.tiktok.com/@oguncleB",
     imageUrl: "/lovable-uploads/d74ad0ce-f0a8-4d1c-9a42-186b6010c9f3.png"
+  },
+  // New soldier entries
+  {
+    id: "botgirl",
+    name: "ФƓゝ BOTGIRL",
+    role: "🛡️ Support Operative",
+    weapon: "FENNEC",
+    bio: "Botgirl is OG Clan's tactical lifeline. Her Fennec spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
+    tiktokUrl: "https://www.tiktok.com/@ogbotgirl",
+    imageUrl: "/lovable-uploads/825f03cc-b2e3-4636-a959-2291c478da69.png",
+    spotlight: true
+  },
+  {
+    id: "dna",
+    name: "ФƓゝ DNA",
+    role: "🎯 Elite Sniper",
+    weapon: "XPR-50",
+    bio: "DNA decodes every engagement. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor.",
+    tiktokUrl: "https://www.tiktok.com/@ogdna",
+    imageUrl: "/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png"
+  },
+  {
+    id: "ded",
+    name: "ФƓゝ DED",
+    role: "⚡ Rapid Response",
+    weapon: "QQ9",
+    bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
+    tiktokUrl: "https://www.tiktok.com/@ogded",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png"
+  },
+  {
+    id: "venom",
+    name: "ФƓゝ VENOM",
+    role: "🔫 Tactical Rifleman",
+    weapon: "Kilo 141",
+    bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
+    tiktokUrl: "https://www.tiktok.com/@ogvenom",
+    imageUrl: "/lovable-uploads/868831b3-078e-4cf4-b395-e9bfb9ec5c6f.png"
+  },
+  {
+    id: "blacksavage",
+    name: "ФƓゝ BLACKSAVAGE",
+    role: "🚀 SMG Infiltrator",
+    weapon: "QQ9",
+    bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground.",
+    tiktokUrl: "https://www.tiktok.com/@ogblacksavage",
+    imageUrl: "/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png"
   }
 ];

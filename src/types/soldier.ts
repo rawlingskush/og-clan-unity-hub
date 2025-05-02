@@ -7,4 +7,6 @@ export interface Soldier {
   bio: string;
   tiktokUrl: string;
   imageUrl: string;
+  spotlight?: boolean;
+  favoriteMap?: string;
 }
