@@ -75,7 +75,10 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                   animation: 'fade-in 0.8s ease-out forwards, scale-in 0.8s ease-out forwards',
                 }}
               >
-                Meet the elite specialists who form the backbone of OG Clan Cameroon. From Assault Architects to Shotgun Masters, each operator's unique loadout and combat prowess drive our CODM domination.
+                These aren’t just soldiers — they’re OG Clan Cameroon.
+Each one forged in fire, armed with a signature loadout, and hardwired for chaos.
+From close-quarters kill zones to long-range precision, they’ve been onetapping since 2019.
+Unshaken. Unmatched. Cold as hell. 🥶
               </span>
             </p>
           </AnimatedContent>
