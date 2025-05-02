@@ -7,7 +7,8 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ KUSH",
     role: "Assault Architect",
     weapon: "AK117",
-    bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his AK117 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
+    bio: "Kush doesn’t enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations, carving a path for the unit to strike. He's not just an operator — he's a shift in momentum."
+,
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
