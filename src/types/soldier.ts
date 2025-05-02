@@ -9,4 +9,5 @@ export interface Soldier {
   imageUrl: string;
   spotlight?: boolean;
   favoriteMap?: string;
+  team?: number; // Team number (1-6) based on the image
 }

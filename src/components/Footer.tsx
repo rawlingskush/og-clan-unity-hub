@@ -1,12 +1,21 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Youtube, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   
   const handleNavClick = (sectionId: string) => {
+    if (sectionId === 'soldiers') {
+      // Navigate to soldiers page
+      navigate('/soldiers');
+      return;
+    }
+    
     const element = document.getElementById(sectionId);
     if (element) {
       const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
@@ -48,7 +57,7 @@ const Footer = () => {
                 </svg>
               </a>
               
-              {/* YouTube Icon - Now with real link */}
+              {/* YouTube Icon */}
               <a href="https://www.youtube.com/channel/UCBN8lXS12rLtTE0Clp3kyYg" target="_blank" rel="noopener noreferrer" className="social-icon w-7 h-7 p-1.5 rounded-full bg-ogclan/10 hover:bg-ogclan/20 text-ogclan transition-colors duration-200" aria-label="YouTube">
                 <Youtube className="w-full h-full" />
               </a>
@@ -72,11 +81,22 @@ const Footer = () => {
             }, {
               name: 'Join Us',
               id: 'join'
-            }].map((item, index) => <li key={index}>
-                  <button className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full" onClick={() => handleNavClick(item.id)}>
-                    {item.name}
-                  </button>
-                </li>)}
+            }].map((item, index) => (
+                <li key={index}>
+                  {item.id === 'soldiers' ? (
+                    <Link to="/soldiers" className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full">
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <button 
+                      className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full" 
+                      onClick={() => handleNavClick(item.id)}
+                    >
+                      {item.name}
+                    </button>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
           

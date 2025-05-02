@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,398 +6,177 @@
 @layer base {
   :root {
     --background: 0 0% 0%;
-    --foreground: 45 76% 52%;
+    --foreground: 60 60% 98%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 45 76% 52%;
+    --card: 0 0% 3%;
+    --card-foreground: 60 60% 98%;
+ 
+    --popover: 0 0% 3%;
+    --popover-foreground: 60 60% 98%;
+ 
+    --primary: 47 100% 56%;
+    --primary-foreground: 0 0% 0%;
+ 
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 60 60% 98%;
+ 
+    --muted: 0 0% 15%;
+    --muted-foreground: 60 5% 70%;
+ 
+    --accent: 47 85% 60%;
+    --accent-foreground: 0 0% 0%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 60 60% 98%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 45 76% 52%;
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 60 60% 98%;
+    --sidebar-primary: 47 100% 56%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 47 85% 60%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 47 85% 60%;
 
-    --primary: 45 76% 52%; /* Gold */
-    --primary-foreground: 0 0% 4%;
-
-    --secondary: 0 0% 9%;
-    --secondary-foreground: 45 76% 52%;
-
-    --muted: 0 0% 9%;
-    --muted-foreground: 45 50% 40%;
-
-    --accent: 45 76% 52%;
-    --accent-foreground: 0 0% 4%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 45 30% 30%;
-    --input: 45 30% 30%;
-    --ring: 45 76% 52%;
-
-    --radius: 0.75rem;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 47 85% 60%;
+ 
+    --radius: 0.5rem;
   }
+ 
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 60 60% 98%;
+ 
+    --card: 0 0% 3%;
+    --card-foreground: 60 60% 98%;
+ 
+    --popover: 0 0% 3%;
+    --popover-foreground: 60 60% 98%;
+ 
+    --primary: 47 100% 56%;
+    --primary-foreground: 0 0% 0%;
+ 
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 60 60% 98%;
+ 
+    --muted: 0 0% 15%;
+    --muted-foreground: 60 5% 70%;
+ 
+    --accent: 47 85% 60%;
+    --accent-foreground: 0 0% 0%;
+ 
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 60 60% 98%;
 
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 60 60% 98%;
+    --sidebar-primary: 47 100% 56%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 47 85% 60%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 47 85% 60%;
+ 
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 47 85% 60%;
+  }
+}
+ 
+@layer base {
   * {
     @apply border-border;
   }
-
-  html {
-    scroll-behavior: smooth;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
-  }
-
   body {
-    @apply bg-background text-foreground antialiased font-play;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    touch-action: manipulation; /* Improves touch experience on mobile */
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron tracking-wider;
   }
 }
 
-@layer components {
-  .glass-card {
-    @apply bg-black/70 backdrop-blur-lg border border-ogclan/30 shadow-md transition-all duration-300 hover:shadow-lg hover:border-ogclan/50;
-  }
-  
-  .glass-effect {
-    @apply bg-black/50 backdrop-blur-md border border-ogclan/20 transition-all duration-300 hover:border-ogclan/40;
-  }
-  
-  .text-balance {
-    text-wrap: balance;
-  }
-  
-  .btn-primary {
-    @apply bg-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:bg-ogclan-dark hover:shadow-md hover:shadow-ogclan/30 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-ogclan/50 focus:ring-offset-2 focus:ring-offset-black;
-  }
-  
-  .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 md:py-20;
-  }
-  
-  .highlight-card {
-    @apply rounded-xl overflow-hidden bg-black/90 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] border border-ogclan/20 hover:border-ogclan/40;
-  }
-  
-  .navbar-link {
-    @apply font-medium text-ogclan hover:text-ogclan-light transition-colors relative;
-  }
-  
-  .social-icon {
-    @apply w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-full bg-secondary text-ogclan hover:bg-ogclan hover:text-black transition-all duration-300 hover:scale-110;
-  }
-  
-  .cyber-btn {
-    @apply relative overflow-hidden bg-black border border-ogclan/50 text-ogclan px-6 py-3 rounded font-medium 
-    before:content-[''] before:absolute before:w-full before:h-[2px] before:bg-ogclan-light before:top-0 before:left-0
-    after:content-[''] after:absolute after:w-full after:h-[2px] after:bg-ogclan-light after:bottom-0 after:right-0
-    hover:text-black hover:border-ogclan transition-all duration-300;
-  }
-  
-  .cyber-btn:hover::before {
-    @apply animate-[cyber-line_1s_ease-in-out_infinite];
-  }
-  
-  .cyber-box {
-    @apply relative border border-ogclan/30 bg-black/80 p-4 rounded-lg
-    before:content-[''] before:absolute before:w-2 before:h-2 before:bg-ogclan before:top-0 before:left-0 before:-translate-x-1/2 before:-translate-y-1/2
-    after:content-[''] after:absolute after:w-2 after:h-2 after:bg-ogclan after:bottom-0 after:right-0 after:translate-x-1/2 after:translate-y-1/2;
-  }
-  
-  .vision-card {
-    @apply p-4 sm:p-6 rounded-xl bg-black/80 border border-ogclan/20 shadow-md hover:shadow-[0_10px_25px_-15px_rgba(212,175,55,0.3)] transition-all duration-500 hover:-translate-y-1 h-full flex flex-col;
-  }
-  
-  .icon-container {
-    @apply w-12 h-12 sm:w-14 sm:h-14 rounded-lg bg-gradient-to-br from-ogclan/20 to-ogclan/5 flex items-center justify-center border border-ogclan/30;
-  }
-  
-  .vision-icon {
-    @apply w-6 h-6 sm:w-7 sm:h-7 text-ogclan;
-  }
-  
-  .battle-image-card {
-    @apply relative overflow-hidden cursor-pointer rounded-xl;
-  }
-  
-  .battle-image-card::after {
-    @apply content-[''] absolute inset-0 bg-ogclan/0 transition-all duration-500;
-  }
-  
-  .battle-image-card:hover::after {
-    @apply bg-ogclan/10;
-  }
-  
-  .hover-effect {
-    @apply relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] before:absolute before:content-[''] before:top-0 before:left-0 before:w-0 before:h-full before:bg-gradient-to-r before:from-ogclan/0 before:via-ogclan/10 before:to-ogclan/0 hover:before:w-full before:transition-all before:duration-700;
-  }
-  
-  .hover-glow {
-    @apply transition-all duration-300 hover:text-ogclan hover:drop-shadow-[0_0_5px_rgba(212,175,55,0.7)];
-  }
-  
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
-  }
-  
-  .hover-slide-up {
-    @apply transition-transform duration-300 hover:-translate-y-1;
-  }
-  
-  .hover-border-glow {
-    @apply transition-all duration-300 hover:border-ogclan/70 hover:shadow-[0_0_10px_rgba(212,175,55,0.3)];
-  }
-  
-  .hover-text-glow {
-    @apply transition-all duration-300 hover:text-ogclan-light hover:drop-shadow-[0_0_3px_rgba(212,175,55,0.5)];
-  }
-  
-  .image-frame {
-    @apply relative overflow-hidden rounded-xl border-2 border-ogclan/30 shadow-lg shadow-ogclan/10 transition-all duration-300 hover:border-ogclan/50 hover:shadow-[0_0_20px_rgba(212,175,55,0.2)];
-  }
-  
-  .tech-frame {
-    @apply relative overflow-hidden border-2 border-ogclan/40 rounded-md p-4
-    before:content-[''] before:absolute before:w-3 before:h-3 before:border-t-2 before:border-l-2 before:border-ogclan before:top-0 before:left-0
-    after:content-[''] after:absolute after:w-3 after:h-3 after:border-b-2 after:border-r-2 after:border-ogclan after:bottom-0 after:right-0;
-  }
-  
-  .scanner-line {
-    @apply absolute top-0 left-0 w-full h-px bg-ogclan/60 opacity-70 animate-scanner-line;
-  }
-  
-  .spotlight-card {
-    @apply relative overflow-hidden;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-  }
+/* Gold gradient text effect */
+.text-gradient-gold {
+  @apply bg-clip-text text-transparent bg-gradient-to-b from-ogclan via-ogclan-light to-ogclan-muted;
+}
 
-  .spotlight-card::before {
-    @apply content-[''] absolute -inset-1 bg-gradient-to-tr from-ogclan/0 via-ogclan/30 to-ogclan/0 rounded-xl blur-md;
-    z-index: -1;
-    animation: rotate-gradient 6s linear infinite;
-  }
+/* Animation for scanner lines in soldier cards */
+.scanner-line {
+  @apply absolute top-0 left-0 right-0 h-1 overflow-hidden;
+}
 
-  @keyframes rotate-gradient {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+.scanner-line::before {
+  content: '';
+  @apply absolute top-0 h-[1px] bg-ogclan/20 w-full;
+}
 
-  .animate-glow-pulse {
-    animation: glow-pulse 3s infinite;
-  }
+.scanner-line::after {
+  content: '';
+  @apply absolute top-0 h-[1px] bg-ogclan/60 w-1/4 animate-[scanner-line_3s_linear_infinite];
+}
 
-  @keyframes glow-pulse {
-    0% {
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    }
-    50% {
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.8), 0 0 10px rgba(255, 255, 255, 0.3);
-    }
-    100% {
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-    }
-  }
+/* Glow animation for cards/elements */
+.animate-glow {
+  animation: glow 3s ease-in-out infinite alternate;
+}
 
-  /* Character letter animation */
-  @keyframes character-reveal {
-    0% {
-      opacity: 0;
-      transform: translateY(10px) rotate(5deg);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) rotate(0);
-    }
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5), 0 0 10px rgba(212, 175, 55, 0.3);
   }
-
-  .character {
-    display: inline-block;
-    opacity: 0;
-    animation: character-reveal 0.5s forwards;
-    animation-delay: calc(var(--index) * 0.05s);
-  }
-  
-  @media (max-width: 640px) {
-    .btn-primary {
-      @apply px-4 py-2 text-sm;
-    }
-    
-    .vision-card {
-      @apply p-4;
-    }
-    
-    .glass-card {
-      @apply p-4;
-    }
-  }
-  
-  @keyframes pulse-fast {
-    0%, 100% {
-      opacity: 1;
-      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 1.0));
-    }
-    50% {
-      opacity: 0.9;
-      filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.7));
-    }
-  }
-  
-  .animate-pulse-fast {
-    animation: pulse-fast 0.6s ease-in-out infinite;
+  to {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.6), 0 0 20px rgba(212, 175, 55, 0.4);
   }
 }
 
-@layer utilities {
-  .animation-delay-300 {
-    animation-delay: 300ms;
-  }
-  
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
-  
-  .animation-delay-900 {
-    animation-delay: 900ms;
-  }
-  
-  .animation-delay-1200 {
-    animation-delay: 1200ms;
-  }
-  
-  .text-gradient-gold {
-    @apply bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent;
-  }
-  
-  @keyframes cyber-line {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
-  @keyframes scanner-line {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(1000%);
-    }
-  }
-  
-  @keyframes tech-pulse {
-    0%, 100% {
-      box-shadow: 0 0 5px rgba(212, 175, 55, 0.5), 0 0 10px rgba(212, 175, 55, 0.3);
-    }
-    50% {
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.7), 0 0 20px rgba(212, 175, 55, 0.5);
-    }
-  }
-  
-  .animate-tech-pulse {
-    animation: tech-pulse 2s infinite;
-  }
-  
-  .animate-scanner-line {
-    animation: scanner-line 2s linear infinite;
-  }
-  
-  @keyframes slide-in-up {
-    0% {
-      transform: translateY(30px);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes scale-in {
-    0% {
-      transform: scale(0.95);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  @keyframes pulse-glow {
-    0%, 100% {
-      filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
-    }
-    50% {
-      filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.7));
-    }
-  }
-  
-  .animate-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
-    }
-    50% {
-      opacity: 0.8;
-      filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.3));
-    }
-  }
-  
-  .animate-pulse {
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-  
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
-  }
-  
-  .animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
-  }
-  
-  .tap-highlight-none {
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  @media (max-width: 640px) {
-    .mobile-text-wrap {
-      overflow-wrap: break-word;
-      word-wrap: break-word;
-      hyphens: auto;
-    }
-  }
-  
-  @keyframes scanner-pulse {
-    0%, 100% {
-      opacity: 0.3;
-      width: 10%;
-    }
-    50% {
-      opacity: 0.8;
-      width: 20%;
-    }
-  }
-  
-  .animate-scanner-pulse {
-    animation: scanner-pulse 3s ease-in-out infinite;
-  }
+/* Classic OG Clan styles */
+.bg-overlay-pattern {
+  @apply bg-black bg-opacity-80;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23444' fill-opacity='0.05'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Enhanced hover effects for cards */
+.stats-active,
+.quick-stats-active {
+  @apply border-ogclan;
+}
+
+/* Spotlight card effect */
+.spotlight-card {
+  @apply relative overflow-hidden;
+}
+
+.spotlight-card::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-tr from-transparent via-ogclan/5 to-ogclan/10 opacity-0 transition-opacity duration-300;
+}
+
+.spotlight-card:hover::after {
+  @apply opacity-100;
+}
+
+/* Animated background for cards */
+.animated-card-bg {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(10, 10, 10, 0.9) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section styles */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

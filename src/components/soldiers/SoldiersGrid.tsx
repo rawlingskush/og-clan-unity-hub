@@ -4,17 +4,17 @@ import { Soldier } from '@/types/soldier';
 import SoldierCard from './SoldierCard';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
 import { Users } from 'lucide-react';
 import AnimatedContent from '@/components/AnimatedContent';
 
+// Updated weapon categories to properly match soldier weapons
 const weaponCategories = {
   shotgun: ["BY15", "KRM-262", "HS0405", "R9-0", "Striker"],
   smg: ["QQ9", "FENNEC", "MAC-10"],
   sniper: ["XPR-50", "DLQ33"],
-  ar: ["Kilo 141", "M13", "Type 25", "AK117"] // Added AK117 to AR category
+  ar: ["Kilo 141", "M13", "Type 25", "AK117"]
 }
 
 interface SoldiersGridProps {
@@ -38,11 +38,9 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
           case "smg":
             return weaponCategories.smg.includes(soldier.weapon);
           case "assault":
-            // Changed to include both assault architects and AR weapons
-            return soldier.role.toLowerCase().includes("breach") || 
-                  weaponCategories.ar.includes(soldier.weapon) || 
-                  soldier.role.toLowerCase().includes("assault") || 
-                  soldier.role.toLowerCase().includes("tactical");
+            // Match both assault architect role and AR weapons
+            return soldier.role.toLowerCase().includes("assault") || 
+                  weaponCategories.ar.includes(soldier.weapon);
           case "support":
             return soldier.role.toLowerCase().includes("support") || soldier.role.includes("🛡️");
           default:
