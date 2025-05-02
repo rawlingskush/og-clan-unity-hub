@@ -75,7 +75,7 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                   animation: 'fade-in 0.8s ease-out forwards, scale-in 0.8s ease-out forwards',
                 }}
               >
-                Meet the elite specialists who form the backbone of OG Clan Cameroon. From breach masters to precision scouts, each operator's unique loadout and combat prowess drive our CODM domination.
+                Meet the elite specialists who form the backbone of OG Clan Cameroon. From Assault Architects to Shotgun Masters, each operator's unique loadout and combat prowess drive our CODM domination.
               </span>
             </p>
           </AnimatedContent>
