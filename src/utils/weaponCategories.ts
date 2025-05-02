@@ -1,7 +1,7 @@
 
 // Updated weapon categories to properly match soldier weapons
 export const weaponCategories = {
-  shotgun: ["BY15", "KRM-262", "HS0405", "Argus", "Striker"],
+  shotgun: ["BY15", "KRM-262", "HS0405", "R9-0", "Striker"],
   smg: ["QQ9", "FENNEC", "MAC-10"],
   sniper: ["XPR-50", "DLQ33"],
   ar: ["Kilo 141", "M13", "Type 25", "AK117"]
