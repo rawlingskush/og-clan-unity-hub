@@ -6,8 +6,8 @@ export const soldiers: Soldier[] = [
     id: "kush",
     name: "ФƓゝ KUSH",
     role: "Forward Breaker",
-    weapon: "BY15",
-    bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his BY15 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
+    weapon: "AK117",
+    bio: "Kush is our storm trooper: he leads every assault with raw aggression, blasting open choke points with his AK117 and rallying teammates through the fiercest breaches. His thunderous shots turn defense into chaos.",
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png"
   },
@@ -24,8 +24,8 @@ export const soldiers: Soldier[] = [
     id: "wizard",
     name: "ФƓゝ WIZARD",
     role: "Shadow Breacher",
-    weapon: "HS0405",
-    bio: "Wizard moves in silence—his HS0405 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner.",
+    weapon: "AK117",
+    bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner.",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/825f03cc-b2e3-4636-a959-2291c478da69.png"
   },

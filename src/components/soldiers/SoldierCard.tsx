@@ -63,7 +63,8 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
       "XPR-50": "bg-green-600 hover:bg-green-700",
       
       // ARs - blue
-      "Kilo 141": "bg-blue-600 hover:bg-blue-700"
+      "Kilo 141": "bg-blue-600 hover:bg-blue-700",
+      "AK117": "bg-blue-600 hover:bg-blue-700" // Added AK117 as blue (AR)
     };
     
     return weaponColors[weapon] || "bg-ogclan hover:bg-ogclan-dark";
@@ -71,6 +72,7 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
   
   const getWeaponIcon = (weapon: string) => {
     if (weapon === "XPR-50" || weapon === "DLQ33") return <Crosshair className="h-4 w-4 mr-1" />;
+    if (weapon === "AK117" || weapon === "Kilo 141") return <Sword className="h-4 w-4 mr-1" />; // AR icon
     return <Sword className="h-4 w-4 mr-1" />;
   };
   
@@ -167,6 +169,25 @@ const SoldierCard = ({ soldier }: SoldierCardProps) => {
         } ${soldier.spotlight ? 'spotlight-card' : ''}`}
         onClick={toggleQuickStats}
         onMouseMove={generateSparkParticles}
+        onTouchMove={(e) => {
+          // Convert touch event to mouse event for sparkles
+          if (soldier.spotlight) {
+            const touch = e.touches[0];
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            
+            const newParticles = Array.from({ length: 3 }, (_, i) => ({
+              id: Date.now() + i,
+              x: x + (Math.random() * 30 - 15),
+              y: y + (Math.random() * 30 - 15),
+              size: 2 + Math.random() * 2,
+              opacity: 0.7 + Math.random() * 0.3
+            }));
+            
+            setSparkParticles(prev => [...prev, ...newParticles]);
+          }
+        }}
       >
         <div className="relative">
           {/* Animated Scanner Line */}

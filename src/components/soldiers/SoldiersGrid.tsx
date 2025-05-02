@@ -14,7 +14,7 @@ const weaponCategories = {
   shotgun: ["BY15", "KRM-262", "HS0405", "R9-0", "Striker"],
   smg: ["QQ9", "FENNEC", "MAC-10"],
   sniper: ["XPR-50", "DLQ33"],
-  ar: ["Kilo 141", "M13", "Type 25"]
+  ar: ["Kilo 141", "M13", "Type 25", "AK117"] // Added AK117 to AR category
 }
 
 interface SoldiersGridProps {
@@ -37,10 +37,12 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
             return weaponCategories.sniper.includes(soldier.weapon);
           case "smg":
             return weaponCategories.smg.includes(soldier.weapon);
-          case "ar":
-            return weaponCategories.ar.includes(soldier.weapon);
           case "assault":
-            return soldier.role.toLowerCase().includes("breach");
+            // Changed to include both assault architects and AR weapons
+            return soldier.role.toLowerCase().includes("breach") || 
+                  weaponCategories.ar.includes(soldier.weapon) || 
+                  soldier.role.toLowerCase().includes("assault") || 
+                  soldier.role.toLowerCase().includes("tactical");
           case "support":
             return soldier.role.toLowerCase().includes("support") || soldier.role.includes("🛡️");
           default:
@@ -85,7 +87,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       {/* Filter Pills with Advanced Animation */}
       <AnimatedContent animation="slide-in-right" className="mb-8">
         <div className="flex flex-wrap justify-center gap-2">
-          {["all", "assault", "shotgun", "sniper", "smg", "ar", "support"].map((filterType, index) => (
+          {["all", "assault", "shotgun", "sniper", "smg", "support"].map((filterType, index) => (
             <button 
               key={filterType}
               className={`${filterButtonClass(filterType)} ${filterButtonsVisible ? 'opacity-100' : 'opacity-0'}`}
@@ -102,7 +104,6 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
               {filterType === "shotgun" && "Shotgun Masters"}
               {filterType === "sniper" && "Snipers"}
               {filterType === "smg" && "SMG Specialists"}
-              {filterType === "ar" && "AR Operators"}
               {filterType === "support" && "Support Operatives"}
             </button>
           ))}
