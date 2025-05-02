@@ -39,7 +39,7 @@ export const soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "With the calm precision of a lion surveying the savannah, Mufasa locks down long sightlines. His HS0405 blasts end close threats, while his steady hand on the scope prevents any flank from going unseen.",
     tiktokUrl: "https://www.tiktok.com/@mazi_wickednessyt",
-    imageUrl: "/lovable-uploads/868831b3-078e-4cf4-b395-e9bfb9ec5c6f.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 2
   },
   {
@@ -49,7 +49,7 @@ export const soldiers: Soldier[] = [
     weapon: "XPR-50",
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his R9-0, and forces enemies into uncomfortable angles—never letting them escape his crosshairs.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
-    imageUrl: "/lovable-uploads/8e120043-2f3c-4f51-9713-82dc0ad7a4f2.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 3
   },
   {
@@ -59,7 +59,7 @@ export const soldiers: Soldier[] = [
     weapon: "Striker",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a Striker or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
     tiktokUrl: "https://www.tiktok.com/@oggamehouse",
-    imageUrl: "/lovable-uploads/9d40ac01-6aa4-4626-aaa9-cd051a54ca6c.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 4
   },
   {
@@ -69,7 +69,7 @@ export const soldiers: Soldier[] = [
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back.",
     tiktokUrl: "https://www.tiktok.com/@ogdamage",
-    imageUrl: "/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 1
   },
   {
@@ -89,7 +89,7 @@ export const soldiers: Soldier[] = [
     weapon: "KRM-262",
     bio: "E-Square blends raw power and strategic finesse—his KRM-262 booms in close, then he seamlessly switches roles to support from afar. He's the squad's unpredictable force.",
     tiktokUrl: "https://www.tiktok.com/@ogesquare",
-    imageUrl: "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 3
   },
   {
@@ -99,7 +99,7 @@ export const soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Pato is the silent sentinel: he scouts enemy positions, then brings the sting of his HS0405 when they least expect it. His intel and accuracy make him our eyes in the field.",
     tiktokUrl: "https://www.tiktok.com/@ogpato",
-    imageUrl: "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 2
   },
   {
@@ -109,7 +109,7 @@ export const soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Chambas blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
     tiktokUrl: "https://www.tiktok.com/@ogchambas",
-    imageUrl: "/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 1
   },
   {
@@ -119,7 +119,7 @@ export const soldiers: Soldier[] = [
     weapon: "MAC-10",
     bio: "Uncle-B lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
     tiktokUrl: "https://www.tiktok.com/@oguncleB",
-    imageUrl: "/lovable-uploads/825f03cc-b2e3-4636-a959-2291c478da69.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 2
   },
   // New soldier entries
@@ -128,9 +128,9 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ BOTGIRL",
     role: "🛡️ Support Operative",
     weapon: "FENNEC",
-    bio: "Botgirl is OG Clan's tactical lifeline. Her Fennec spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
+    bio: "Botgirl is OG Clan's Princess. Her Fennec spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@ogbotgirl",
-    imageUrl: "/lovable-uploads/f9e1e0ff-f9d3-42c1-8cff-a8cafd454eaf.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     spotlight: true,
     team: 2
   },
@@ -139,9 +139,9 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ DNA",
     role: "🎯 Elite Sniper",
     weapon: "XPR-50",
-    bio: "DNA decodes every engagement. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor.",
+    bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves",
     tiktokUrl: "https://www.tiktok.com/@ogdna",
-    imageUrl: "/lovable-uploads/ae69c923-ee2e-4b26-b170-ee5ca12bc30f.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 4
   },
   {
@@ -151,7 +151,7 @@ export const soldiers: Soldier[] = [
     weapon: "QQ9",
     bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
     tiktokUrl: "https://www.tiktok.com/@ogded",
-    imageUrl: "/lovable-uploads/745bd77a-e4e3-4878-be47-30917382847b.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 4
   },
   {
@@ -161,7 +161,7 @@ export const soldiers: Soldier[] = [
     weapon: "Kilo 141",
     bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
     tiktokUrl: "https://www.tiktok.com/@ogvenom",
-    imageUrl: "/lovable-uploads/e5378274-2a94-43fe-b1fd-30596884f957.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 1
   },
   {
@@ -171,7 +171,7 @@ export const soldiers: Soldier[] = [
     weapon: "QQ9",
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground.",
     tiktokUrl: "https://www.tiktok.com/@ogblacksavage",
-    imageUrl: "/lovable-uploads/241d467c-0a24-42c2-8c5d-05228936ef6b.png",
+    imageUrl: "/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png",
     team: 5
   }
 ];
