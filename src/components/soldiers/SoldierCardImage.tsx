@@ -20,6 +20,12 @@ const SoldierCardImage = ({ imageUrl, name, role, isSpotlight }: SoldierCardImag
         alt={`${name} - ${role}`}
         className="w-full h-full object-cover"
         loading="lazy"
+        onError={(e) => {
+          // Fallback image if the original fails to load
+          const target = e.target as HTMLImageElement;
+          target.src = "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png";
+          target.onerror = null; // Prevent infinite error loop
+        }}
       />
     </div>
   );
