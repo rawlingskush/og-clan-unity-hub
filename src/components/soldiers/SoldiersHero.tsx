@@ -76,10 +76,10 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                 }}
               >
                 These aren’t just soldiers — they’re OG Clan Cameroon.
-Forged in fire, raised on recoil, and built for war.
-Each operator moves with purpose, armed with a signature loadout and the instincts of a killer.
-From brutal close-quarters to surgical long-range takedowns — they’ve been onetapping since 2019.
---Unshaken. Unmatched. Cold as hell. 🥶--
+Forged in fire, raised in the isolated streets of Black Market, and built for war.
+Each operator moves with purpose — armed with a signature loadout and the instincts of a killer.
+From brutal close-quarters combat to surgical long-range takedowns, they’ve been onetapping since 2019.
+-Unshaken. Unmatched. Cold as hell. 🥶-
               </span>
             </p>
           </AnimatedContent>
