@@ -174,5 +174,16 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogblacksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 5
+  },
+  // Add the new soldier Slim
+  {
+    id: "slim",
+    name: "ФƓゝ SLIM",
+    role: "Close-Quarters Phantom",
+    weapon: "HS0405",
+    bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
+    tiktokUrl: "https://www.tiktok.com/@ogslim",
+    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    team: 3
   }
 ];

@@ -8,6 +8,7 @@ import AnimatedContent from '@/components/AnimatedContent';
 import SoldiersHero from '@/components/soldiers/SoldiersHero';
 import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
 import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
+import RecruitmentNote from '@/components/soldiers/RecruitmentNote'; // Add import for new component
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -68,6 +69,9 @@ const Soldiers = () => {
             <SoldiersGrid soldiers={soldiers} />
           </AnimatedContent>
         </section>
+        
+        {/* Recruitment Note Section - Added after soldiers grid */}
+        <RecruitmentNote />
         
         {/* Command Unit Section */}
         <CommandUnitSection />
