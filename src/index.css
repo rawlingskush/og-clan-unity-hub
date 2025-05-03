@@ -118,6 +118,17 @@
   @apply absolute top-0 h-[1px] bg-ogclan/60 w-1/4 animate-[scanner-line_3s_linear_infinite];
 }
 
+/* Animation keyframes */
+@keyframes scanner-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
 /* Glow animation for cards/elements */
 .animate-glow {
   animation: glow 3s ease-in-out infinite alternate;
@@ -132,7 +143,7 @@
   }
 }
 
-/* New Soft Pulse animation for featured soldier cards */
+/* Soft Pulse animation for featured soldier cards */
 .spotlight-card.active::before {
   content: '';
   position: absolute;
@@ -227,4 +238,43 @@
 /* Section styles */
 .section-container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Extra utility animations */
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Card animation on active state */
+.card.active {
+  @apply border-ogclan;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  }
+}
+
+/* Improve link and button accessibility */
+a:focus, button:focus {
+  @apply outline-none ring-2 ring-ogclan/40;
+}
+
+/* External link hover effects */
+a[rel="noopener noreferrer"]:hover svg {
+  transform: translateY(-1px) translateX(1px);
+}
+
+/* Improve tooltip styles */
+.tooltip {
+  @apply bg-black/90 border border-ogclan/40 text-xs;
 }

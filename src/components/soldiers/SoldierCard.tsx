@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Soldier } from "@/types/soldier";
@@ -32,9 +31,9 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   const [favoriteMap, setFavoriteMap] = useState<string>('');
   
   // Mark card as active if it's a spotlight soldier or explicitly set as active
-  const isActiveCard = isActive || soldier.spotlight;
+  const isActiveCard = isActive || soldier.spotlight || soldier.active;
   
-  // Generate random favorite map on component mount
+  // Generate favorite map on component mount
   useEffect(() => {
     const maps = ["ISOLATED", "BLACKOUT", "ALCATRAZ"];
     const randomMap = maps[Math.floor(Math.random() * maps.length)];
@@ -59,7 +58,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     }
   }, [sparkParticles, isActiveCard]);
   
-  // Generate random play styles
+  // Generate play styles
   const playStyles = [
     "Aggressive Pusher", 
     "Silent Eliminator", 
@@ -69,19 +68,37 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     "Precision Marksman"
   ];
   
-  // Generate random operator skills
+  // Generate operator skills
   const operatorSkills = ["Igniter", "Defender", "Smoke Bomber", "Medic", "Trickster", "Ninja"];
   
-  // Quick stats data with randomized values
-  const stats = {
-    winRate: `${65 + Math.floor(Math.random() * 15)}%`,
-    favMap: favoriteMap,
-    kd: (3 + Math.random() * 2).toFixed(1),
-    operatorSkill: operatorSkills[Math.floor(Math.random() * operatorSkills.length)],
-    mvpTitles: `${Math.floor(3 + Math.random() * 8)}x`,
-    clutchMoments: `${Math.floor(5 + Math.random() * 15)}`,
-    playStyle: playStyles[Math.floor(Math.random() * playStyles.length)]
+  // Generate deterministic but impressive stats based on soldier id
+  const generateDeterministicStats = (id: string) => {
+    // Use a simple hash function to get a consistent number based on the soldier id
+    let hash = 0;
+    for (let i = 0; i < id.length; i++) {
+      hash = ((hash << 5) - hash) + id.charCodeAt(i);
+      hash |= 0; // Convert to 32bit integer
+    }
+    
+    // Always keep win rate above 78% as requested in the QA check
+    const winRate = 78 + Math.abs(hash % 18); // 78-96%
+    
+    // Keep KD above average
+    const kdBase = 3 + Math.abs((hash >> 3) % 20) / 10; // 3.0-5.0
+    
+    // Generate other stats
+    return {
+      winRate: `${winRate}%`,
+      kd: kdBase.toFixed(1),
+      mvpTitles: `${5 + Math.abs((hash >> 6) % 10)}x`,
+      clutchMoments: `${10 + Math.abs((hash >> 9) % 20)}`,
+      playStyle: playStyles[Math.abs((hash >> 12) % playStyles.length)],
+      operatorSkill: operatorSkills[Math.abs((hash >> 15) % operatorSkills.length)]
+    };
   };
+  
+  // Get stats based on soldier id
+  const stats = generateDeterministicStats(soldier.id);
 
   // Function to toggle quick stats on mobile and desktop
   const toggleQuickStats = () => {
@@ -118,15 +135,17 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     
     // SMGs - yellow
     "QQ9": "bg-yellow-600",
-    "FENNEC": "bg-red-600",
+    "FENNEC": "bg-yellow-600",
     "MAC-10": "bg-yellow-600",
     
     // Snipers - green
+    "DLQ33": "bg-green-600",
     "XPR-50": "bg-green-600",
     
     // ARs - blue
     "Kilo 141": "bg-blue-600",
-    "AK117": "bg-blue-600"
+    "AK117": "bg-blue-600",
+    "Oden": "bg-blue-600"
   };
   
   const accentColor = weaponBadgeColors[soldier.weapon] || "bg-ogclan";
@@ -202,7 +221,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
                 >
                   <SoldierQuickStats 
                     winRate={stats.winRate} 
-                    favMap={stats.favMap} 
+                    favMap={favoriteMap} 
                     kd={stats.kd}
                     operatorSkill={stats.operatorSkill}
                     mvpTitles={stats.mvpTitles}
@@ -269,7 +288,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
                 >
                   <SoldierQuickStats 
                     winRate={stats.winRate} 
-                    favMap={stats.favMap} 
+                    favMap={favoriteMap} 
                     kd={stats.kd}
                     operatorSkill={stats.operatorSkill}
                     mvpTitles={stats.mvpTitles}
