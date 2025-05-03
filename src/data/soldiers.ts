@@ -18,7 +18,7 @@ export const soldiers: Soldier[] = [
     role: "Shield of the Squad",
     weapon: "KRM-262",
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed.",
-    tiktokUrl: "https://www.tiktok.com/@only_one_windsor",
+    tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
     imageUrl: "/lovable-uploads/5bfd821e-f0b3-4f77-8754-6df282e60305.png",
     team: 3
   },
@@ -58,7 +58,7 @@ export const soldiers: Soldier[] = [
     role: "Tactical Vanguard",
     weapon: "Striker",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a Striker or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
-    tiktokUrl: "https://www.tiktok.com/@oggamehouse",
+    tiktokUrl: "https://www.tiktok.com/@.gamehouse_yt",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
   },
@@ -68,7 +68,7 @@ export const soldiers: Soldier[] = [
     role: "Suppression Heavy",
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
-    tiktokUrl: "https://www.tiktok.com/@ogdamage",
+    tiktokUrl: "https://www.tiktok.com/@davisfrank6",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
   },
@@ -78,7 +78,7 @@ export const soldiers: Soldier[] = [
     role: "Rapid Response",
     weapon: "QQ9",
     bio: "Wild Child is Fast as lightning, Mr 23 moves through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
-    tiktokUrl: "https://www.tiktok.com/@og23",
+    tiktokUrl: "https://www.tiktok.com/@23cutz._",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
   },
@@ -88,7 +88,7 @@ export const soldiers: Soldier[] = [
     role: "Versatile Vanguard",
     weapon: "KRM-262",
     bio: "E-Square blends raw power and strategic finesse—his KRM-262 booms in close, then he seamlessly switches roles to support from afar. He's the squad's unpredictable force.",
-    tiktokUrl: "https://www.tiktok.com/@ogesquare",
+    tiktokUrl: "https://www.tiktok.com/esquare233",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3
   },
@@ -98,7 +98,7 @@ export const soldiers: Soldier[] = [
     role: "Recon & Precision",
     weapon: "HS0405",
     bio: "Pato is one the finnest soldiers heart of og clan MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his HS0405 when they least expect it. His intel and accuracy make him our eyes in the field.",
-    tiktokUrl: "https://www.tiktok.com/@ogpato",
+    tiktokUrl: "https://www.tiktok.com/@pato_codm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 2
   },
@@ -108,7 +108,7 @@ export const soldiers: Soldier[] = [
     role: "Precision Breacher",
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
-    tiktokUrl: "https://www.tiktok.com/@ogchambas",
+    tiktokUrl: "https://www.tiktok.com/@mahrezcodm0",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
   },
@@ -118,7 +118,7 @@ export const soldiers: Soldier[] = [
     role: "Close-Quarters Expert",
     weapon: "MAC-10",
     bio: "Uncle-B that B for Bot😁 lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
-    tiktokUrl: "https://www.tiktok.com/@oguncleB",
+    tiktokUrl: "https://www.tiktok.com/@st_bengs",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 2
   },
@@ -129,7 +129,7 @@ export const soldiers: Soldier[] = [
     role: "🛡️ Support Operative",
     weapon: "FENNEC",
     bio: "Botgirl is OG Clan's Princess. Her Fennec spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
-    tiktokUrl: "https://www.tiktok.com/@ogbotgirl",
+    tiktokUrl: "https://www.tiktok.com/@favbotgirl",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     spotlight: true,
     team: 2,
@@ -141,7 +141,7 @@ export const soldiers: Soldier[] = [
     role: "🎯 Elite Sniper",
     weapon: "XPR-50",
     bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
-    tiktokUrl: "https://www.tiktok.com/@ogdna",
+    tiktokUrl: "https://www.tiktok.com/@nbapanda237",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
   },
@@ -151,7 +151,7 @@ export const soldiers: Soldier[] = [
     role: "⚡ Rapid Response",
     weapon: "QQ9",
     bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
-    tiktokUrl: "https://www.tiktok.com/@ogded",
+    tiktokUrl: "https://www.tiktok.com/@elsharawy132",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4
   },
@@ -161,7 +161,7 @@ export const soldiers: Soldier[] = [
     role: "Assault Architect",
     weapon: "Kilo 141",
     bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
-    tiktokUrl: "https://www.tiktok.com/@ogvenom",
+    tiktokUrl: "https://www.tiktok.com/@razkhato1",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1
   },
@@ -171,7 +171,7 @@ export const soldiers: Soldier[] = [
     role: "🚀 SMG Infiltrator",
     weapon: "QQ9",
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
-    tiktokUrl: "https://www.tiktok.com/@ogblacksavage",
+    tiktokUrl: "https://www.tiktok.com/@ogblcksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 5
   },
@@ -182,7 +182,7 @@ export const soldiers: Soldier[] = [
     role: "Close-Quarters Phantom",
     weapon: "HS0405",
     bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
-    tiktokUrl: "https://www.tiktok.com/@ogslim",
+    tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
   }
