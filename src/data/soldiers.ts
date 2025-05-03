@@ -47,8 +47,8 @@ export const soldiers: Soldier[] = [
     id: "dhamer",
     name: "ФƓゝ DHAMER",
     role: "Point-of-Entry Specialist",
-    weapon: "XPR-50",
-    bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and sniper, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
+    weapon: "AK117",
+    bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and 117, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3
