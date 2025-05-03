@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -7,11 +6,12 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ KUSH",
     role: "Assault Architect",
     weapon: "Oden",
-    bio: "Kush doesn’t enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum."
+    bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum."
 ,
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 1
+    team: 1,
+    active: true // Mark this soldier as active
   },
   {
     id: "exodus",
@@ -133,7 +133,8 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogbotgirl",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     spotlight: true,
-    team: 2
+    team: 2,
+    active: true // Mark this soldier as active
   },
   {
     id: "dna",
@@ -184,6 +185,7 @@ export const soldiers: Soldier[] = [
     bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
     tiktokUrl: "https://www.tiktok.com/@ogslim",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 3
+    team: 3,
+    active: true // Mark this newest soldier as active
   }
 ];

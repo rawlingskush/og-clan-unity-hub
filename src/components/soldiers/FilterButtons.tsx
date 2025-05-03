@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import AnimatedContent from '@/components/AnimatedContent';
+import { motion } from 'framer-motion';
 
 interface FilterButtonsProps {
   currentFilter: string;
@@ -15,13 +16,6 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
     setFilterButtonsVisible(true);
   }, []);
 
-  const filterButtonClass = (filter: string) => 
-    `rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
-      currentFilter === filter 
-        ? 'bg-ogclan text-black shadow-sm shadow-ogclan/40'
-        : 'bg-black/40 text-ogclan/80 border border-ogclan/30 hover:bg-black/60 hover:border-ogclan/50'
-    }`;
-
   const filterOptions = [
     { id: "all", label: "All" },
     { id: "assault", label: "Assault Architect" },
@@ -35,19 +29,34 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
     <AnimatedContent animation="slide-in-right" className="mb-8">
       <div className="flex flex-wrap justify-center gap-2">
         {filterOptions.map((filterOption, index) => (
-          <button 
+          <motion.button 
             key={filterOption.id}
-            className={`${filterButtonClass(filterOption.id)} ${filterButtonsVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium filter-button ${
+              currentFilter === filterOption.id ? 'active bg-black/60 shadow-sm shadow-ogclan/20' : 
+              'bg-black/40 text-gray-300 border border-ogclan/30 hover:text-ogclan-light'
+            }`}
             onClick={() => onFilterChange(filterOption.id)}
             aria-pressed={currentFilter === filterOption.id}
-            style={{ 
-              transition: 'all 0.3s ease-out',
-              transitionDelay: `${index * 100}ms`,
-              transform: filterButtonsVisible ? 'translateY(0)' : 'translateY(20px)'
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: filterButtonsVisible ? 1 : 0,
+              y: filterButtonsVisible ? 0 : 20,
+              scale: currentFilter === filterOption.id ? 1.05 : 1
             }}
+            transition={{ 
+              duration: 0.3, 
+              delay: index * 0.1,
+              type: 'spring',
+              stiffness: 100
+            }}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.98 }}
           >
             {filterOption.label}
-          </button>
+          </motion.button>
         ))}
       </div>
     </AnimatedContent>

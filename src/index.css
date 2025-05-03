@@ -132,6 +132,45 @@
   }
 }
 
+/* New Soft Pulse animation for featured soldier cards */
+.spotlight-card.active::before {
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  border-radius: 50%;
+  background: radial-gradient(rgba(255, 215, 0, 0.15), transparent);
+  animation: pulse 2.5s infinite ease-in-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.5; }
+  70% { transform: scale(1.2); opacity: 0; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+/* Enhanced filter button animations */
+.filter-button {
+  @apply transition-all duration-300 ease-in-out relative overflow-hidden;
+}
+
+.filter-button::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-0.5 bg-ogclan transition-all duration-300;
+}
+
+.filter-button.active {
+  @apply text-ogclan font-medium;
+}
+
+.filter-button.active::after {
+  @apply w-full;
+}
+
 /* Classic OG Clan styles */
 .bg-overlay-pattern {
   @apply bg-black bg-opacity-80;
@@ -156,6 +195,15 @@
 
 .spotlight-card:hover::after {
   @apply opacity-100;
+}
+
+/* Progress bars for stats */
+.stat-progress {
+  @apply h-1.5 bg-gray-700 rounded-full overflow-hidden mt-1 mb-2;
+}
+
+.stat-progress-bar {
+  @apply h-full bg-gradient-to-r from-ogclan-dark to-ogclan transition-all duration-700 ease-out;
 }
 
 /* Animated background for cards */
