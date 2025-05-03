@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -48,7 +47,7 @@ export const soldiers: Soldier[] = [
     id: "dhamer",
     name: "ФƓゝ DHAMER",
     role: "Point-of-Entry Specialist",
-    weapon: "HS0405", // Changed from AK117 to HS0405 for consistency with bio
+    weapon: "AK117",
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and 117, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
@@ -141,8 +140,8 @@ export const soldiers: Soldier[] = [
     id: "dna",
     name: "ФƓゝ DNA",
     role: "🎯 Elite Sniper",
-    weapon: "DLQ33", // Changed from XPR-50 to DLQ33 which is a more recognizable sniper
-    bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his DLQ33 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
+    weapon: "XPR-50",
+    bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
     tiktokUrl: "https://www.tiktok.com/@ogdna",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 4

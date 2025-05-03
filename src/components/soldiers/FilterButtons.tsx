@@ -10,7 +10,6 @@ interface FilterButtonsProps {
 
 const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) => {
   const [filterButtonsVisible, setFilterButtonsVisible] = useState(false);
-  const [hoveredFilter, setHoveredFilter] = useState<string | null>(null);
 
   // Initialize animation after component mounts
   useEffect(() => {
@@ -28,53 +27,37 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
 
   return (
     <AnimatedContent animation="slide-in-right" className="mb-8">
-      <div className="flex flex-wrap justify-center gap-3">
-        {filterOptions.map((filterOption, index) => {
-          const isActive = currentFilter === filterOption.id;
-          const isHovered = hoveredFilter === filterOption.id;
-          
-          return (
-            <motion.button 
-              key={filterOption.id}
-              className={`rounded-full px-5 py-2 text-sm font-medium filter-button ${
-                isActive ? 'active bg-black/60 shadow-sm shadow-ogclan/20' : 
-                'bg-black/40 text-gray-300 border border-ogclan/30 hover:text-ogclan-light'
-              }`}
-              onClick={() => onFilterChange(filterOption.id)}
-              onMouseEnter={() => setHoveredFilter(filterOption.id)}
-              onMouseLeave={() => setHoveredFilter(null)}
-              aria-pressed={isActive}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: filterButtonsVisible ? 1 : 0,
-                y: filterButtonsVisible ? 0 : 20,
-                scale: isActive ? 1.05 : (isHovered ? 1.03 : 1)
-              }}
-              transition={{ 
-                duration: 0.3, 
-                delay: index * 0.1,
-                type: 'spring',
-                stiffness: 100
-              }}
-              whileHover={{ 
-                scale: isActive ? 1.05 : 1.03,
-                transition: { duration: 0.2 }
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              {filterOption.label}
-              {isActive && (
-                <motion.div 
-                  className="h-0.5 bg-ogclan absolute bottom-1 left-0 right-0 mx-auto" 
-                  initial={{ width: '0%' }}
-                  animate={{ width: '60%' }}
-                  transition={{ duration: 0.3 }}
-                  layoutId="activeFilterIndicator"
-                />
-              )}
-            </motion.button>
-          );
-        })}
+      <div className="flex flex-wrap justify-center gap-2">
+        {filterOptions.map((filterOption, index) => (
+          <motion.button 
+            key={filterOption.id}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium filter-button ${
+              currentFilter === filterOption.id ? 'active bg-black/60 shadow-sm shadow-ogclan/20' : 
+              'bg-black/40 text-gray-300 border border-ogclan/30 hover:text-ogclan-light'
+            }`}
+            onClick={() => onFilterChange(filterOption.id)}
+            aria-pressed={currentFilter === filterOption.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ 
+              opacity: filterButtonsVisible ? 1 : 0,
+              y: filterButtonsVisible ? 0 : 20,
+              scale: currentFilter === filterOption.id ? 1.05 : 1
+            }}
+            transition={{ 
+              duration: 0.3, 
+              delay: index * 0.1,
+              type: 'spring',
+              stiffness: 100
+            }}
+            whileHover={{ 
+              scale: 1.05,
+              transition: { duration: 0.2 }
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            {filterOption.label}
+          </motion.button>
+        ))}
       </div>
     </AnimatedContent>
   );
