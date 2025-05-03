@@ -12,7 +12,7 @@ export interface Soldier {
   team?: number; // Team number (1-6) based on the image
   rank?: string; // Optional soldier rank
   active?: boolean; // Flag to mark active/featured soldiers
-  // Additional fields that may be added
+  // Performance statistics
   winRate?: string; // Elite win rate percentage
   kd?: string; // Kill/death ratio
   operatorSkill?: string; // Preferred operator skill
