@@ -14,7 +14,7 @@ const RecruitmentNote = () => {
             <AlertDescription className="text-gray-300">
               <h4 className="font-semibold text-white mb-1">⚠️ Note to Recruits:</h4>
               <p>
-                Not seeing your profile yet? Don't worry — we're watching. Every match, every move, every moment counts.
+                Not seeing your profile yet? It means you are new to the clan but Don't worry — we're watching. Every match, every move, every moment counts.
                 Once your name echoes through the lobby, we'll make sure it lives on here too.
               </p>
               <p className="mt-2 font-medium text-ogclan">
