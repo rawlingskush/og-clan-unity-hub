@@ -11,7 +11,6 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 1,
-    active: true // Mark this soldier as active
   },
   {
     id: "exodus",
@@ -186,6 +185,5 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogslim",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
-    active: true // Mark this newest soldier as active
   }
 ];
