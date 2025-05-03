@@ -7,6 +7,7 @@ import SoldiersGrid from '@/components/soldiers/SoldiersGrid';
 import AnimatedContent from '@/components/AnimatedContent';
 import SoldiersHero from '@/components/soldiers/SoldiersHero';
 import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
+import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -67,6 +68,9 @@ const Soldiers = () => {
             <SoldiersGrid soldiers={soldiers} />
           </AnimatedContent>
         </section>
+        
+        {/* Command Unit Section */}
+        <CommandUnitSection />
       </main>
       
       <Footer />
