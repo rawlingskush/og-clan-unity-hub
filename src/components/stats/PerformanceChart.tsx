@@ -7,13 +7,13 @@ import { ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } fr
 const PerformanceChart = () => {
   // Sample data for the chart
   const data = [
-    { name: 'Jan', wins: 20, kills: 340 },
-    { name: 'Feb', wins: 25, kills: 390 },
-    { name: 'Mar', wins: 30, kills: 420 },
-    { name: 'Apr', wins: 22, kills: 400 },
-    { name: 'May', wins: 28, kills: 450 },
-    { name: 'Jun', wins: 35, kills: 500 },
-    { name: 'Jul', wins: 40, kills: 580 },
+    { name: 'Jan', wins: 40, kills: 340 },
+    { name: 'Feb', wins: 35, kills: 390 },
+    { name: 'Mar', wins: 46, kills: 420 },
+    { name: 'Apr', wins: 42, kills: 400 },
+    { name: 'May', wins: 58, kills: 450 },
+    { name: 'Jun', wins: 50, kills: 500 },
+    { name: 'Jul', wins: 55, kills: 580 },
   ];
 
   const chartConfig = {
