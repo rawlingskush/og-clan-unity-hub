@@ -74,7 +74,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   
   // Quick stats data with randomized values
   const stats = {
-    winRate: `${65 + Math.floor(Math.random() * 15)}%`,
+    winRate: `${75 + Math.floor(Math.random() * 15)}%`,
     favMap: favoriteMap,
     kd: (3 + Math.random() * 2).toFixed(1),
     operatorSkill: operatorSkills[Math.floor(Math.random() * operatorSkills.length)],
@@ -126,7 +126,8 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     
     // ARs - blue
     "Kilo 141": "bg-blue-600",
-    "AK117": "bg-blue-600"
+    "AK117": "bg-blue-600",
+    "Oden": "bg-blue-600"
   };
   
   const accentColor = weaponBadgeColors[soldier.weapon] || "bg-ogclan";
