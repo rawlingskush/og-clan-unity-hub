@@ -70,7 +70,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   ];
   
   // Generate random operator skills
-  const operatorSkills = ["Purifier", "Death Machine", "War Machine", "H.I.V.E.", "Tempest", "Gravity Spikes"];
+  const operatorSkills = ["Purifier", "Death Machine", "Shock Wave", "Medic", "Tempest", "Ninja"];
   
   // Quick stats data with randomized values
   const stats = {
