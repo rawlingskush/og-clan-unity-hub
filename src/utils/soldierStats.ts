@@ -9,15 +9,15 @@ export const generateSoldierStats = (soldierName: string) => {
   // Generate random play styles
   const playStyles = [
     "Aggressive Pusher", 
-    "Silent Eliminator", 
-    "Strategic Anchor", 
+    "Aggressive Pusher", 
+    "Strategic Player", 
     "Support Specialist", 
-    "Objective Focused", 
-    "Precision Marksman"
+    "One tap Specialist", 
+    "Silent Eliminator"
   ];
   
   // Generate random operator skills
-  const operatorSkills = ["Igniter", "Defender", "Trickster", "Medic", "Smoke Bomber", "Ninja"];
+  const operatorSkills = ["Igniter", "Defender", "Medic", "Trickster", "Smoke Bomber", "Ninja"];
   
   // Return stats object with enhanced elite values
   return {
