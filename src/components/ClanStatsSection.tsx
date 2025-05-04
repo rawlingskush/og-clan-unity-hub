@@ -43,7 +43,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={300}>
             <StatsCard 
               title="Tournaments" 
-              value="12+" 
+              value="33+" 
               icon={<Trophy className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Victories earned"
             />
