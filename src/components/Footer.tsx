@@ -1,12 +1,15 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Youtube, Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
   
   const handleNavClick = (sectionId: string) => {
     if (sectionId === 'soldiers') {
@@ -15,19 +18,25 @@ const Footer = () => {
       return;
     }
     
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
-      window.scrollTo({
-        top: offsetTop - 80,
-        behavior: 'auto'
-      });
+    // If we're already on the home page, scroll to the section
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: offsetTop - 80,
+          behavior: 'smooth'
+        });
+      } else {
+        toast({
+          title: "Section not found",
+          description: `The ${sectionId} section is not available yet.`,
+          variant: "destructive"
+        });
+      }
     } else {
-      toast({
-        title: "Section not found",
-        description: `The ${sectionId} section is not available yet.`,
-        variant: "destructive"
-      });
+      // If we're on another page, navigate to the home page with the section hash
+      navigate(`/#${sectionId}`);
     }
   };
 
@@ -82,18 +91,12 @@ const Footer = () => {
               id: 'join'
             }].map((item, index) => (
                 <li key={index}>
-                  {item.id === 'soldiers' ? (
-                    <Link to="/soldiers" className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full">
-                      {item.name}
-                    </Link>
-                  ) : (
-                    <button 
-                      className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full" 
-                      onClick={() => handleNavClick(item.id)}
-                    >
-                      {item.name}
-                    </button>
-                  )}
+                  <button 
+                    className="text-gray-400 hover:text-ogclan transition-colors block py-1 text-left w-full" 
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    {item.name}
+                  </button>
                 </li>
               ))}
             </ul>
