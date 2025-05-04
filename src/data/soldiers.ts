@@ -172,7 +172,7 @@ export const soldiers: Soldier[] = [
     role: "🚀 SMG Infiltrator",
     weapon: "QQ9",
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
-    tiktokUrl: "https://www.tiktok.com/@ogblksavage",
+    tiktokUrl: "https://www.tiktok.com/@og.blksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 5,
     active: true // Mark as active for extra visual effect
