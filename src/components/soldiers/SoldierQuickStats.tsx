@@ -29,7 +29,7 @@ const SoldierQuickStats = ({
   const kdPercent = Math.min((kdValue / 5) * 100, 100); // Max KD of 5 for 100%
   
   return (
-    <div className="space-y-3 p-1">
+    <div className="space-y-3 p-1 w-full">
       <h4 className="text-sm font-semibold text-ogclan border-b border-ogclan/30 pb-1 mb-2">Quick Stats</h4>
       
       <div className="space-y-2">

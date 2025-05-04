@@ -1,3 +1,4 @@
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -128,7 +129,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ BOTGIRL",
     role: "🛡️ Support Operative",
     weapon: "FENNEC",
-    bio: "Botgirl is OG Clan's Princess. Her Fennec spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
+    bio: "Botgirl is OG Clan's Princess. Her FENNEC spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@favbotgirl",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     spotlight: true,
@@ -173,7 +174,8 @@ export const soldiers: Soldier[] = [
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
     tiktokUrl: "https://www.tiktok.com/@ogblcksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 5
+    team: 5,
+    active: true // Mark as active for extra visual effect
   },
   // Add the new soldier Slim
   {
@@ -185,5 +187,6 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
+    active: true // Mark as active for extra visual effect
   }
 ];

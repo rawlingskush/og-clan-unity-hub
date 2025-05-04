@@ -22,23 +22,36 @@ const SoldierCardBadges = ({ role, weapon, favoriteMap }: SoldierCardBadgesProps
       
       // SMGs - yellow
       "QQ9": "bg-yellow-600 hover:bg-yellow-700",
-      "FENNEC": "bg-red-600 hover:bg-red-700",
+      "FENNEC": "bg-yellow-600 hover:bg-yellow-700",
       "MAC-10": "bg-yellow-600 hover:bg-yellow-700",
       
       // Snipers - green
       "XPR-50": "bg-green-600 hover:bg-green-700",
+      "DLQ33": "bg-green-600 hover:bg-green-700",
       
       // ARs - blue
       "Kilo 141": "bg-blue-600 hover:bg-blue-700",
-      "AK117": "bg-blue-600 hover:bg-blue-700" 
+      "AK117": "bg-blue-600 hover:bg-blue-700",
+      "Oden": "bg-blue-600 hover:bg-blue-700"
     };
     
     return weaponColors[weapon] || "bg-ogclan hover:bg-ogclan-dark";
   };
   
   const getWeaponIcon = (weapon: string) => {
-    if (weapon === "XPR-50" || weapon === "DLQ33") return <Crosshair className="h-4 w-4 mr-1" />;
-    if (weapon === "AK117" || weapon === "Kilo 141") return <Sword className="h-4 w-4 mr-1" />; 
+    // Sniper weapons
+    if (weapon === "XPR-50" || weapon === "DLQ33") 
+      return <Crosshair className="h-4 w-4 mr-1" />;
+    
+    // Assault rifles
+    if (weapon === "AK117" || weapon === "Kilo 141" || weapon === "Oden") 
+      return <Sword className="h-4 w-4 mr-1" />; 
+    
+    // SMGs
+    if (weapon === "QQ9" || weapon === "FENNEC" || weapon === "MAC-10") 
+      return <Sword className="h-4 w-4 mr-1" />; 
+    
+    // Shotguns and default
     return <Sword className="h-4 w-4 mr-1" />;
   };
   

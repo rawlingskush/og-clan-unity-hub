@@ -132,7 +132,7 @@
   }
 }
 
-/* New Soft Pulse animation for featured soldier cards */
+/* Improved Soft Pulse animation for featured soldier cards */
 .spotlight-card.active::before {
   content: '';
   position: absolute;
@@ -227,4 +227,31 @@
 /* Section styles */
 .section-container {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Scanner line animation */
+@keyframes scanner-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+/* Make sure the TikTok footer is always clickable */
+.card-footer {
+  position: relative;
+  z-index: 5;
+}
+
+/* Ensure mobile optimization */
+@media (max-width: 640px) {
+  .filter-button {
+    @apply text-xs px-2 py-1;
+  }
+}
+
+/* Ensure thumb-friendly sizes on mobile */
+@media (max-width: 480px) {
+  .filter-button {
+    min-height: 32px;
+    min-width: 80px;
+  }
 }

@@ -5,15 +5,15 @@ import ChartBase from './ChartBase';
 import { ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 
 const PerformanceChart = () => {
-  // Sample data for the chart
+  // Sample data for the chart - improved performance numbers for elite clan
   const data = [
-    { name: 'Jan', wins: 40, kills: 340 },
-    { name: 'Feb', wins: 35, kills: 390 },
-    { name: 'Mar', wins: 46, kills: 420 },
-    { name: 'Apr', wins: 42, kills: 400 },
-    { name: 'May', wins: 58, kills: 450 },
-    { name: 'Jun', wins: 50, kills: 500 },
-    { name: 'Jul', wins: 55, kills: 580 },
+    { name: 'Jan', wins: 52, kills: 440 },
+    { name: 'Feb', wins: 48, kills: 480 },
+    { name: 'Mar', wins: 56, kills: 520 },
+    { name: 'Apr', wins: 62, kills: 570 },
+    { name: 'May', wins: 68, kills: 630 },
+    { name: 'Jun', wins: 75, kills: 710 },
+    { name: 'Jul', wins: 85, kills: 780 },
   ];
 
   const chartConfig = {
