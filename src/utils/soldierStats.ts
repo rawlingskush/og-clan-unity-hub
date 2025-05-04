@@ -17,7 +17,7 @@ export const generateSoldierStats = (soldierName: string) => {
   ];
   
   // Generate random operator skills
-  const operatorSkills = ["Igniter", "Defender", "Smoke Bomber", "Medic", "Trickster", "Ninja"];
+  const operatorSkills = ["Igniter", "Defender", "Trickster", "Medic", "Smoke Bomber", "Ninja"];
   
   // Return stats object with enhanced elite values
   return {
