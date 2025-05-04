@@ -68,6 +68,10 @@ export default {
 					dark: '#B8860B',   // Dark gold
 					light: '#FFD700',  // Light gold
 					muted: '#F5DEB3'   // Wheat (muted gold)
+				},
+				tactical: {
+					DEFAULT: '#1A1F2C', // Dark tactical blue
+					accent: '#0FA0CE'    // Bright tactical blue accent
 				}
 			},
 			borderRadius: {
@@ -177,6 +181,18 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'tactical-flicker': {
+					'0%, 100%': { opacity: '0.3' },
+					'10%': { opacity: '0.2' },
+					'20%': { opacity: '0.5' },
+					'30%': { opacity: '0.2' },
+					'40%': { opacity: '0.4' },
+					'50%': { opacity: '0.3' },
+					'60%': { opacity: '0.5' },
+					'70%': { opacity: '0.2' },
+					'80%': { opacity: '0.4' },
+					'90%': { opacity: '0.3' },
 				}
 			},
 			animation: {
@@ -190,7 +206,8 @@ export default {
 				'pulse-slow': 'pulse-slow 4s infinite ease-in-out',
 				'float': 'float 6s infinite ease-in-out',
 				'glow-pulse': 'glow-pulse 3s infinite ease-in-out',
-				'scanner-line': 'scanner-line 4s linear infinite'
+				'scanner-line': 'scanner-line 4s linear infinite',
+				'tactical-flicker': 'tactical-flicker 4s infinite linear'
 			},
 			fontFamily: {
 				sans: ['Play', 'SF Pro Display', 'Inter', 'sans-serif'],

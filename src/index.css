@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -282,4 +283,79 @@
   0% { opacity: 0.7; }
   50% { opacity: 1; }
   100% { opacity: 0.7; }
+}
+
+/* New tactical flicker effect for text */
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; }
+  10% { opacity: 0.2; }
+  20% { opacity: 0.5; }
+  30% { opacity: 0.2; }
+  40% { opacity: 0.4; }
+  50% { opacity: 0.3; }
+  60% { opacity: 0.5; }
+  70% { opacity: 0.2; }
+  80% { opacity: 0.4; }
+  90% { opacity: 0.3; }
+}
+
+/* Tactical targeting crosshair animation */
+.target-crosshair::before,
+.target-crosshair::after {
+  content: '';
+  @apply absolute bg-ogclan/60;
+}
+
+.target-crosshair::before {
+  @apply w-[1px] h-full left-1/2 -translate-x-1/2;
+}
+
+.target-crosshair::after {
+  @apply h-[1px] w-full top-1/2 -translate-y-1/2;
+}
+
+/* HUD-style data display */
+.tactical-data-container {
+  @apply relative border border-ogclan/20 bg-black/40 p-2 rounded;
+}
+
+.tactical-data-row {
+  @apply flex items-center space-x-1 text-xs text-ogclan/70 mb-1;
+}
+
+.tactical-data-label {
+  @apply uppercase tracking-wider w-16 font-mono text-ogclan/60;
+}
+
+.tactical-data-value {
+  @apply font-mono;
+}
+
+/* Military dossier card style */
+.dossier-card {
+  @apply border border-ogclan/30 bg-black/70 backdrop-blur-sm;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.dossier-header {
+  @apply border-b border-ogclan/20 px-3 py-2 flex items-center justify-between;
+}
+
+.dossier-label {
+  @apply text-xs uppercase tracking-widest text-ogclan/70 font-mono;
+}
+
+/* Tactical info display */
+.info-tag {
+  @apply inline-flex items-center px-2 py-0.5 rounded bg-ogclan/10 text-ogclan/90 text-xs;
+}
+
+.tactical-badge {
+  @apply relative px-2 py-0.5 text-xs uppercase tracking-wider font-mono;
+}
+
+.tactical-badge::before {
+  content: '';
+  @apply absolute inset-0 border border-ogclan/20 bg-ogclan/5;
+  transform: skew(-10deg);
 }
