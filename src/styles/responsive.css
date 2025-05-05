@@ -1,0 +1,15 @@
+
+/* Ensure mobile optimization */
+@media (max-width: 640px) {
+  .filter-button {
+    @apply text-xs px-2 py-1;
+  }
+}
+
+/* Ensure thumb-friendly sizes on mobile */
+@media (max-width: 480px) {
+  .filter-button {
+    min-height: 32px;
+    min-width: 80px;
+  }
+}

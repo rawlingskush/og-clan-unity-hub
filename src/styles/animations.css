@@ -1,0 +1,29 @@
+
+/* New animations for soldiers hero section */
+@keyframes fadeInOut {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.15; }
+  100% { opacity: 0.05; }
+}
+
+@keyframes pulsingGlow {
+  0% { opacity: 0.03; transform: scale(1); }
+  50% { opacity: 0.08; transform: scale(1.2); }
+  100% { opacity: 0.03; transform: scale(1); }
+}
+
+@keyframes vertical-scanner {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(800%); }
+}
+
+/* Slow pulse animation for important elements */
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}

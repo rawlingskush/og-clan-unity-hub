@@ -1,0 +1,44 @@
+
+/* Progress bars for stats */
+.stat-progress {
+  @apply h-1.5 bg-gray-700 rounded-full overflow-hidden mt-1 mb-2;
+}
+
+.stat-progress-bar {
+  @apply h-full bg-gradient-to-r from-ogclan-dark to-ogclan transition-all duration-700 ease-out;
+}
+
+/* Animated background for cards */
+.animated-card-bg {
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(10, 10, 10, 0.9) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-size: 200% 100%;
+  animation: gradientShift 8s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Section styles */
+.section-container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Scanner line animation */
+@keyframes scanner-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+/* Make sure the TikTok footer is always clickable */
+.card-footer {
+  position: relative;
+  z-index: 5;
+}
