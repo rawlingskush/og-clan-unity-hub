@@ -106,7 +106,7 @@ export const keyframes = {
   'text-flicker': {
     '0%, 19%, 21%, 23%, 25%, 54%, 56%, 100%': {
       opacity: '0.99',
-      textShadow: '0 0 5px rgba(212, 175, 55, 0.5), 0 0 8px rgba(212, 175, 55, 0.3)'
+      textShadow: '0 0 5px rgba(212,175,55,0.5), 0 0 8px rgba(212,175,55,0.3)'
     },
     '20%, 24%, 55%': {
       opacity: '0.7',
