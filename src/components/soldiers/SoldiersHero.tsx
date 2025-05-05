@@ -10,6 +10,7 @@ interface SoldiersHeroProps {
 const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
   
   // Calculate opacity and transform based on scroll position
   const opacity = Math.max(0.2, 1 - scrollPosition * 0.003);
@@ -26,7 +27,16 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
     };
     
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    
+    // Animation entrance effect
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
@@ -86,14 +96,21 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
         <div className="absolute h-full w-1/2 right-0 overflow-hidden">
           <div className="absolute h-full w-[1px] bg-ogclan/40 top-0 left-2/3 animate-[vertical-scanner_12s_ease-in-out_infinite_reverse]"></div>
         </div>
+        
+        {/* New radar ping effect */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-10">
+          <div className="absolute inset-0 rounded-full border border-ogclan/60"></div>
+          <div className="absolute inset-0 rounded-full border-2 border-ogclan/40 animate-[radar-ping_4s_cubic-bezier(0,0,.2,1)_infinite]"></div>
+        </div>
       </div>
       
       <div 
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" 
         ref={headerRef}
         style={{
-          opacity,
-          transform: `scale(${scale}) translateY(${translateY}px)`
+          opacity: isVisible ? opacity : 0,
+          transform: isVisible ? `scale(${scale}) translateY(${translateY}px)` : 'scale(0.95) translateY(10px)',
+          transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
         }}
       >
         <div className="text-center">
@@ -109,7 +126,10 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                 <div className="flex-1 h-full bg-ogclan/20"></div>
               </div>
               
-              <h1 className="text-5xl font-orbitron font-bold text-gradient-gold mb-2 relative inline-block tracking-wider">
+              <h1 
+                className="text-5xl font-orbitron font-bold text-gradient-gold mb-2 relative inline-block tracking-wider"
+                style={{ animation: 'digital-glitch 8s infinite' }}
+              >
                 {/* Letter-by-letter animation */}
                 {"OUR SOLDIERS".split("").map((letter, index) => (
                   <span 
@@ -168,12 +188,19 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                 <div className="absolute top-0 left-0 h-[1px] w-full bg-ogclan/10 animate-[scanner-line_5s_linear_infinite]"></div>
               </div>
               
+              {/* NEW: Horizontal scanning line effect */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute h-[2px] w-full bg-gradient-to-r from-transparent via-ogclan/50 to-transparent animate-[tactical-scan_4s_ease-in-out_infinite_alternate]"></div>
+              </div>
+              
               <p className="text-lg text-gray-200">
                 {/* Tactical briefing text with animated intro */}
                 <span className="block mb-4 transform transition-all duration-800"
                   style={{
                     animation: 'fade-in 0.8s ease-out forwards',
                     animationDelay: '0.4s',
+                    clipPath: isVisible ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' : 'polygon(0 0, 0 0, 0 100%, 0 100%)',
+                    transition: 'clip-path 1.2s ease-out'
                   }}
                 >
                   These aren't just soldiers — they're <span className="font-bold text-gradient-gold">OG Clan Cameroon</span>.
@@ -185,6 +212,8 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                     animation: 'fade-in 0.8s ease-out forwards',
                     animationDelay: '0.8s',
                     opacity: 0,
+                    clipPath: isVisible ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' : 'polygon(0 0, 0 0, 0 100%, 0 100%)',
+                    transition: 'clip-path 1.5s ease-out 0.4s'
                   }}
                 >
                   Each operator moves with purpose — armed with a signature loadout and the instincts of a killer.
@@ -193,9 +222,9 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
                 
                 <span className="block mt-4 font-orbitron text-xl tracking-wider font-medium animate-glow"
                   style={{
-                    animation: 'fade-in 1s ease-out forwards, glow 3s infinite ease-in-out',
-                    animationDelay: '1.2s',
-                    opacity: 0,
+                    animation: 'holographic-flicker 3s infinite',
+                    opacity: isVisible ? 1 : 0,
+                    transition: 'opacity 1.2s ease-out 0.8s'
                   }}
                 >
                   <span className="text-gradient-gold">-Unshaken. Unmatched. Cold as hell. 🥶-</span>
