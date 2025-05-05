@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList, NavigationMenuTrigger, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import NavLink from './NavLink';
 import { MenuItem } from './types';
+
 interface DesktopNavProps {
   menuItems: MenuItem[];
   activeSection: string;
@@ -10,6 +12,7 @@ interface DesktopNavProps {
   handlePageNavigation?: (path: string) => void;
   currentPath?: string;
 }
+
 const DesktopNav = ({
   menuItems,
   activeSection,
@@ -50,7 +53,21 @@ const DesktopNav = ({
           // Handle page navigation
           const isActive = currentPath === item.path;
           return <NavigationMenuItem key={item.id}>
-                
+                <NavigationMenuLink
+                  href={item.path}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handlePageNavigation && handlePageNavigation(item.path!);
+                  }}
+                  className={cn(
+                    "block px-3 py-2 transition-all duration-300 font-medium",
+                    isActive ? "text-ogclan" : "text-white hover:text-black"
+                  )}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  {/* Cool hover background effect */}
+                  <span className="absolute inset-0 z-0 bg-ogclan opacity-0 transition-opacity duration-300 hover:opacity-100"></span>
+                </NavigationMenuLink>
               </NavigationMenuItem>;
         } else {
           return <NavigationMenuItem key={item.id}>
@@ -61,4 +78,5 @@ const DesktopNav = ({
       </NavigationMenuList>
     </NavigationMenu>;
 };
+
 export default DesktopNav;
