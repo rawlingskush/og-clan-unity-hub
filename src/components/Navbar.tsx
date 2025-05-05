@@ -105,6 +105,16 @@ const Navbar = () => {
           />
           
           <div className="flex items-center space-x-3">
+            {/* Our Soldiers Button - New Addition */}
+            <button 
+              className="hidden md:flex bg-black border border-ogclan text-ogclan font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
+                       hover:bg-ogclan/10 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center"
+              onClick={() => handlePageNavigation('/soldiers')}
+            >
+              <Users className="mr-2 h-4 w-4" />
+              Our Soldiers
+            </button>
+            
             {/* Join the Crew Button */}
             <button 
               className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98]"

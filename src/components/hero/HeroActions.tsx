@@ -39,7 +39,7 @@ const HeroActions = () => {
       <div className="mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="#join" 
-          className="btn-primary bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] group relative overflow-hidden mx-auto sm:mx-0"
+          className="btn-primary group relative overflow-hidden mx-auto sm:mx-0"
           onClick={(e) => handleSmoothScroll(e, 'join')}
         >
           <span className="relative z-10 flex items-center">
