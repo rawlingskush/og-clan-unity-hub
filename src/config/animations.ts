@@ -120,6 +120,87 @@ export const keyframes = {
     '100%': {
       transform: 'translateY(800%)'
     }
+  },
+  'digital-glitch': {
+    '0%, 100%': { 
+      transform: 'translate(0)', 
+      textShadow: '0 0 5px rgba(212,175,55,0.5)' 
+    },
+    '5%, 15%': { 
+      transform: 'translate(-1px, 0)', 
+      textShadow: '0 0 10px rgba(212,175,55,0.7)' 
+    },
+    '10%, 20%': { 
+      transform: 'translate(1px, 0)', 
+      textShadow: '0 0 8px rgba(212,175,55,0.6)' 
+    }
+  },
+  'radar-ping': {
+    '0%': {
+      transform: 'scale(0.5)',
+      opacity: '1'
+    },
+    '80%, 100%': {
+      transform: 'scale(2)',
+      opacity: '0'
+    }
+  },
+  'flip-3d': {
+    '0%': { 
+      transform: 'perspective(400px) rotateY(0)' 
+    },
+    '100%': { 
+      transform: 'perspective(400px) rotateY(180deg)' 
+    }
+  },
+  'spotlight': {
+    '0%, 100%': { 
+      boxShadow: '0 0 0 rgba(212,175,55,0)' 
+    },
+    '50%': { 
+      boxShadow: '0 0 30px 10px rgba(212,175,55,0.3)' 
+    }
+  },
+  'tactical-fade-in': {
+    '0%': { 
+      opacity: '0', 
+      transform: 'translateY(10px)', 
+      filter: 'blur(5px)' 
+    },
+    '60%': { 
+      opacity: '0.6', 
+      filter: 'blur(2px)' 
+    },
+    '100%': { 
+      opacity: '1', 
+      transform: 'translateY(0)', 
+      filter: 'blur(0)' 
+    }
+  },
+  'tactical-target': {
+    '0%': { 
+      transform: 'scale(1.2)', 
+      borderColor: 'rgba(212,175,55,0.3)' 
+    },
+    '50%': { 
+      transform: 'scale(1)', 
+      borderColor: 'rgba(212,175,55,0.8)' 
+    },
+    '100%': { 
+      transform: 'scale(1.2)', 
+      borderColor: 'rgba(212,175,55,0.3)' 
+    }
+  },
+  'tactical-shake': {
+    '0%, 100%': { 
+      transform: 'translateX(0)' 
+    },
+    '10%, 30%, 50%, 70%, 90%': { 
+      transform: 'translateX(-2px)' 
+    },
+    '20%, 40%, 60%, 80%': { 
+      transform: 'translateX(2px)' 
+    }
   }
 };
 
@@ -136,5 +217,12 @@ export const animations = {
   'glow-pulse': 'glow-pulse 3s infinite ease-in-out',
   'scanner-line': 'scanner-line 4s linear infinite',
   'text-flicker': 'text-flicker 3s infinite alternate',
-  'tactical-scan': 'tactical-scan 5s linear infinite'
+  'tactical-scan': 'tactical-scan 5s linear infinite',
+  'digital-glitch': 'digital-glitch 3s infinite',
+  'radar-ping': 'radar-ping 2s infinite',
+  'flip-3d': 'flip-3d 1s ease-in-out',
+  'spotlight': 'spotlight 4s infinite',
+  'tactical-fade-in': 'tactical-fade-in 0.8s ease-out',
+  'tactical-target': 'tactical-target 2s infinite ease-in-out',
+  'tactical-shake': 'tactical-shake 0.5s infinite'
 };

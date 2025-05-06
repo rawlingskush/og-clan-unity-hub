@@ -71,7 +71,7 @@ const Navbar = () => {
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
     { id: 'cod-points', label: 'Get CoD Points' },
-    // Adding the new Soldiers page link
+    // Adding the Soldiers page link in navigation only
     { id: 'soldiers', label: 'Our Soldiers', isPage: true, path: '/soldiers' }
   ];
 
@@ -105,10 +105,10 @@ const Navbar = () => {
           />
           
           <div className="flex items-center space-x-3">
-            {/* Our Soldiers Button - New Addition */}
+            {/* Our Soldiers Button - Styled like Join the Crew */}
             <button 
-              className="hidden md:flex bg-black border border-ogclan text-ogclan font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
-                       hover:bg-ogclan/10 hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center"
+              className="hidden md:flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
+                       hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center"
               onClick={() => handlePageNavigation('/soldiers')}
             >
               <Users className="mr-2 h-4 w-4" />

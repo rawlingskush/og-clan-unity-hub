@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronRight, Menu, X } from 'lucide-react';
+import { ChevronRight, Menu, Users, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -164,13 +164,22 @@ const MobileNav = ({
                 }
               })}
             </div>
-            <SheetFooter className="px-4 pt-2 pb-8 mt-auto">
+            <SheetFooter className="px-4 pt-2 pb-8 mt-auto space-y-2">
+              <Button 
+                className="w-full bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]"
+                onClick={() => handlePageNavigation && handlePageNavigation('/soldiers')}
+              >
+                <Users className="mr-2 h-5 w-5" />
+                Our Soldiers
+              </Button>
+              
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                 onClick={() => handleNavClick('join')}
               >
                 Join the Crew
               </Button>
+              
               <Button 
                 variant="outline" 
                 className="mt-2 border-ogclan/20 text-ogclan-light w-full"

@@ -54,6 +54,27 @@ export const colors = {
     black: '#121212',
     darkgray: '#1a1a1a',
     border: 'rgba(212,175,55,0.3)',
-    highlight: 'rgba(212,175,55,0.8)'
+    highlight: 'rgba(212,175,55,0.8)',
+    red: '#e74c3c',
+    blue: '#3498db',
+    green: '#2ecc71',
+    orange: '#e67e22',
+    purple: '#9b59b6',
+    darkred: '#c0392b',
+    darkblue: '#2980b9',
+    darkgreen: '#27ae60',
+    darkorange: '#d35400',
+    darkpurple: '#8e44ad',
+    gray: '#95a5a6',
+    darkgray2: '#7f8c8d'
+  },
+  tier: {
+    bronze: '#CD7F32',
+    silver: '#C0C0C0',
+    gold: '#FFD700',
+    platinum: '#E5E4E2',
+    diamond: '#B9F2FF',
+    master: '#9370DB',
+    elite: '#FF4500'
   }
 };
