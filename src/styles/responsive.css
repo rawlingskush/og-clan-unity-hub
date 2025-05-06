@@ -4,6 +4,19 @@
   .filter-button {
     @apply text-xs px-2 py-1;
   }
+  
+  /* Navbar button adjustments for very small screens */
+  .nav-buttons-container {
+    @apply space-x-1;
+  }
+  
+  .nav-button {
+    @apply text-xs px-1.5 py-1.5;
+  }
+  
+  .nav-button-icon {
+    @apply h-3 w-3;
+  }
 }
 
 /* Ensure thumb-friendly sizes on mobile */
@@ -12,4 +25,20 @@
     min-height: 32px;
     min-width: 80px;
   }
+  
+  /* Stack buttons vertically on very small screens if needed */
+  .stack-on-xs {
+    @apply flex-col items-center space-y-2 space-x-0;
+  }
+}
+
+/* Prevent overflow text in buttons */
+.nav-button-text {
+  @apply whitespace-nowrap text-ellipsis overflow-hidden;
+}
+
+/* Improve tap targets on mobile */
+.mobile-tap-target {
+  min-height: 44px;
+  min-width: 44px;
 }

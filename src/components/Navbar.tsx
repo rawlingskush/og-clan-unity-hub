@@ -103,23 +103,23 @@ const Navbar = () => {
             currentPath={location.pathname}
           />
           
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center gap-2 md:gap-3">
             {/* Our Soldiers Button - Next to Join the Crew */}
             <button 
-              className="flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
-                       hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center"
+              className="flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-2 py-2 md:px-4 md:py-2.5 rounded-lg transition-all duration-300 
+                       hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center text-xs md:text-base"
               onClick={() => handlePageNavigation('/soldiers')}
             >
-              <Users className="mr-2 h-4 w-4" />
-              Our Soldiers
+              <Users className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
+              <span className="whitespace-nowrap">Our Soldiers</span>
             </button>
             
             {/* Join the Crew Button */}
             <button 
-              className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98]"
+              className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-2 py-2 md:px-5 md:py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98] text-xs md:text-base"
               onClick={() => handleNavClick('join')}
             >
-              Join the Crew
+              <span className="whitespace-nowrap">Join the Crew</span>
             </button>
             
             {/* Mobile Navigation */}
