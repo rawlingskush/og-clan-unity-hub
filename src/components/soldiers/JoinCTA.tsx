@@ -30,7 +30,7 @@ const JoinCTA = () => {
             className="border-tactical-highlight/60 bg-black/70 text-tactical-highlight hover:bg-black/90 hover:text-tactical-highlight hover:border-tactical-highlight transition-all group px-6 py-6 text-lg"
           >
             <Users className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-            Meet Our Soldiers
+            Command Unit Below
           </Button>
         </Link>
       </div>
