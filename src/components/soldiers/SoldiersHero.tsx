@@ -43,7 +43,7 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
     <div className="relative bg-black/90 py-16 overflow-hidden border-b border-ogclan/30">
       {/* Tactical overlay background with enhanced parallax effect */}
       <div 
-        className="absolute inset-0 z-0 opacity-30 bg-[url('/lovable-uploads/380c7e90-171d-4704-9af6-45d26921ddb2.png')] bg-cover bg-center bg-no-repeat transition-transform duration-200 ease-out"
+        className="absolute inset-0 z-0 opacity-30 bg-[url('/lovable-uploads/ca8b1db8-bd70-4f24-b900-6b87f878e42b.png')] bg-cover bg-center bg-no-repeat transition-transform duration-200 ease-out"
         style={{ transform: `translate(${mousePosition.x * -0.15}px, ${mousePosition.y * -0.15}px) scale(1.1)` }}
       ></div>
       

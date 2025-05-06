@@ -17,6 +17,31 @@
   .nav-button-icon {
     @apply h-3 w-3;
   }
+  
+  /* Soldiers hero section adjustments */
+  .tactical-hero-container h1 {
+    @apply text-3xl;
+  }
+  
+  .tactical-hero-container .icon-container {
+    @apply space-x-2;
+  }
+  
+  .tactical-hero-container .tactical-line {
+    @apply w-10;
+  }
+  
+  .tactical-hero-container .tactical-icon {
+    @apply h-5 w-5;
+  }
+  
+  .tactical-briefing {
+    @apply p-4 text-sm;
+  }
+  
+  .tactical-motto {
+    @apply text-base;
+  }
 }
 
 /* Ensure thumb-friendly sizes on mobile */
@@ -29,6 +54,16 @@
   /* Stack buttons vertically on very small screens if needed */
   .stack-on-xs {
     @apply flex-col items-center space-y-2 space-x-0;
+  }
+  
+  /* Reduce HUD element sizes */
+  .tactical-hud-element {
+    @apply scale-75;
+  }
+  
+  /* Reduce text size for better mobile readability */
+  .tactical-briefing p {
+    @apply text-xs leading-relaxed;
   }
 }
 
