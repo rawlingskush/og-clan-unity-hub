@@ -70,9 +70,8 @@ const Navbar = () => {
     { id: 'og-battle-night', label: 'Battle Night' },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
-    { id: 'cod-points', label: 'Get CoD Points' },
-    // Adding the Soldiers page link in navigation only
-    { id: 'soldiers', label: 'Our Soldiers', isPage: true, path: '/soldiers' }
+    { id: 'cod-points', label: 'Get CoD Points' }
+    // Removed the Soldiers page link from navigation
   ];
 
   return (
@@ -105,9 +104,9 @@ const Navbar = () => {
           />
           
           <div className="flex items-center space-x-3">
-            {/* Our Soldiers Button - Styled like Join the Crew */}
+            {/* Our Soldiers Button - Next to Join the Crew */}
             <button 
-              className="hidden md:flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
+              className="flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-4 py-2.5 rounded-lg transition-all duration-300 
                        hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center"
               onClick={() => handlePageNavigation('/soldiers')}
             >
