@@ -1,82 +1,258 @@
 
-/* Enhanced tactical elements for soldiers page */
-.tactical-hud-element {
-  @apply absolute pointer-events-none border border-ogclan/30 opacity-40;
+/* Tactical UI elements */
+
+/* Scanner line effect */
+.scanner-line {
+  @apply absolute inset-x-0 top-0 h-px overflow-hidden opacity-60;
 }
 
-.tactical-hud-element::before {
+.scanner-line::before {
+  @apply content-[""] absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-ogclan to-transparent animate-[scanner-line_3s_linear_infinite];
+}
+
+/* Tactical grid background */
+.tactical-grid-bg {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMTIsMTc1LDU1LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=');
+}
+
+/* Tactical corners for interface elements */
+.tactical-corners {
+  position: relative;
+}
+
+.tactical-corners::before,
+.tactical-corners::after,
+.tactical-corners > span::before,
+.tactical-corners > span::after {
   content: '';
-  @apply absolute top-0 left-0 w-2 h-2 border-t border-l border-ogclan/80;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  @apply border-ogclan/60;
 }
 
-.tactical-hud-element::after {
+.tactical-corners::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+
+.tactical-corners::after {
+  top: 0;
+  right: 0;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.tactical-corners > span::before {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.tactical-corners > span::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Radar effect */
+.radar {
+  position: relative;
+}
+
+.radar::before {
   content: '';
-  @apply absolute bottom-0 right-0 w-2 h-2 border-b border-r border-ogclan/80;
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  @apply border border-ogclan/30;
 }
 
-.tactical-scanline {
+.radar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  @apply border border-ogclan/60;
+  animation: radar-ping 2s infinite;
+}
+
+/* HUD scanner line effect */
+.hud-scanner {
   position: relative;
   overflow: hidden;
 }
 
-.tactical-scanline::after {
+.hud-scanner::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6), transparent);
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.8), transparent);
+  animation: hud-scan 3s infinite ease-in-out;
+}
+
+/* Tactical frame with targeting corners */
+.tactical-frame {
+  position: relative;
+  @apply border border-ogclan/20 bg-black/50 backdrop-blur-sm;
+}
+
+.tactical-frame::before,
+.tactical-frame::after,
+.tactical-frame > .corner-bl,
+.tactical-frame > .corner-br {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  @apply border-ogclan/60;
+}
+
+.tactical-frame::before {
   top: 0;
   left: 0;
-  animation: scan 4s linear infinite;
+  border-top: 1px solid;
+  border-left: 1px solid;
 }
 
-@keyframes scan {
+.tactical-frame::after {
+  top: 0;
+  right: 0;
+  border-top: 1px solid;
+  border-right: 1px solid;
+}
+
+.tactical-frame > .corner-bl {
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+}
+
+.tactical-frame > .corner-br {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Holographic text effect */
+.holographic-text {
+  animation: text-flicker 3s infinite alternate;
+}
+
+/* Digital distortion effect */
+.digital-distortion {
+  position: relative;
+}
+
+.digital-distortion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  @apply bg-ogclan/20;
+  animation: digital-interference 5s infinite;
+}
+
+.digital-distortion::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  @apply bg-ogclan/20;
+  animation: digital-interference 5s infinite reverse;
+}
+
+/* New tactical animation for scanner line */
+@keyframes scanner-line-horizontal {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scanner-line-vertical {
   0% { transform: translateY(-100%); }
-  100% { transform: translateY(800%); }
+  100% { transform: translateY(100%); }
 }
 
-/* Text flicker animation for tactical interface */
-.text-flicker {
-  animation: textFlicker 3s infinite alternate;
+@keyframes digital-interference {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
 }
 
-@keyframes textFlicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 0.99;
-    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5), 0 0 8px rgba(212, 175, 55, 0.3);
-  }
-  20%, 24%, 55% {
-    opacity: 0.7;
-    text-shadow: none;
-  }
+/* Tactical button with hover effect */
+.tactical-button {
+  @apply relative overflow-hidden bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-6 py-3 transition-all duration-300;
 }
 
-/* Enhanced tactical interface elements */
-.tactical-info-display {
-  @apply relative border border-ogclan/30 p-4 bg-black/50 backdrop-blur-sm;
+.tactical-button:hover {
+  @apply from-ogclan to-ogclan-light shadow-[0_0_15px_rgba(212,175,55,0.4)];
 }
 
-.tactical-info-display::before {
+.tactical-button::before {
   content: '';
-  @apply absolute top-0 left-0 w-3 h-3 border-t border-l border-ogclan/80;
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full;
 }
 
-.tactical-info-display::after {
+.tactical-button:hover::before {
+  animation: scanner-line-horizontal 1s ease-out;
+}
+
+/* New targeting reticle */
+.targeting-reticle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.targeting-reticle::before,
+.targeting-reticle::after {
   content: '';
-  @apply absolute bottom-0 right-0 w-3 h-3 border-b border-r border-ogclan/80;
+  position: absolute;
+  background-color: rgba(212, 175, 55, 0.5);
 }
 
-/* Tactical ring animation */
-.tactical-ring {
-  @apply relative;
+.targeting-reticle::before {
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform: translateY(-50%);
 }
 
-.tactical-ring::before {
-  content: '';
-  @apply absolute inset-0 rounded-full border border-ogclan/20 animate-pulse-slow;
+.targeting-reticle::after {
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
 }
 
-.tactical-ring::after {
-  content: '';
-  @apply absolute inset-[15%] rounded-full border border-ogclan/40;
+.targeting-reticle .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  animation: tactical-target 2s infinite ease-in-out;
+}
+
+/* Enhanced gold glow */
+.enhanced-glow {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+  animation: glow-pulse 3s infinite ease-in-out;
 }

@@ -1,50 +1,96 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const HeroBackground = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // Handle mouse movement for parallax effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth - 0.5) * 20, // Normalized mouse position
+        y: (e.clientY / window.innerHeight - 0.5) * 20
+      });
+    };
+
+    // Handle scroll for parallax effect
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY * 0.5);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden">
-      {/* Base dark background with tech gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90"></div>
-      
-      {/* Gaming image overlay with reduced opacity */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
-      
-      {/* Logo watermark background with revised opacity and enhanced blinking effect */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-25">
-        <div className="relative w-[150%] max-w-[1200px] aspect-square">
-          <img 
-            src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
-            alt="" 
-            className="w-full h-full object-contain filter saturate-125 brightness-110 animate-glow" 
-            aria-hidden="true"
-            style={{filter: "drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))"}}
-          />
+    <>
+      {/* Main background with parallax effect */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/80"></div>
+        
+        {/* Background image with parallax effect */}
+        <div 
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat transition-transform duration-[300ms] ease-out"
+          style={{
+            backgroundImage: "url('/lovable-uploads/afb763c8-53f8-4c32-92ad-20ef2c253f23.png')",
+            transform: `translate(${mousePosition.x * -0.1}px, ${mousePosition.y * -0.1}px) scale(1.1)`
+          }}
+        ></div>
+        
+        {/* Tactical grid overlay */}
+        <div 
+          className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyMTIsMTc1LDU1LDAuMDcpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]" 
+          style={{ 
+            opacity: 0.15,
+            transform: `translateY(${scrollPosition * 0.1}px)` 
+          }}
+        ></div>
+        
+        {/* Gold glow effect */}
+        <div 
+          className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2"
+          style={{
+            background: "radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%)",
+            transform: `translate(calc(-50% + ${mousePosition.x * 0.3}px), calc(-50% + ${mousePosition.y * 0.3}px))`,
+            transition: 'transform 0.3s ease-out'
+          }}
+        ></div>
+
+        {/* Animated scanner lines */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ogclan/20 to-transparent"></div>
+          <div className="absolute top-0 left-0 h-full w-[1px] bg-ogclan/20 animate-[scanner-line_8s_ease-in-out_infinite]"></div>
+          <div className="absolute top-0 right-0 h-full w-[1px] bg-ogclan/20 animate-[scanner-line_12s_ease-in-out_infinite_reverse]"></div>
+        </div>
+
+        {/* Tactical targeting element */}
+        <div 
+          className="absolute top-1/4 right-1/4 w-40 h-40 opacity-20 transition-transform duration-700"
+          style={{
+            transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
+          }}
+        >
+          <div className="absolute inset-0 rounded-full border border-ogclan/50 animate-pulse-slow"></div>
+          <div className="absolute inset-[10px] rounded-full border border-ogclan/40"></div>
+          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-ogclan/40"></div>
+          <div className="absolute top-0 left-1/2 w-[1px] h-full bg-ogclan/40"></div>
+        </div>
+
+        {/* Dynamic particles */}
+        <div className="absolute inset-0">
+          <div className="absolute h-2 w-2 rounded-full bg-ogclan/40 top-1/4 left-1/3 animate-[float_10s_infinite_ease-in-out]"></div>
+          <div className="absolute h-3 w-3 rounded-full bg-ogclan/30 top-2/3 right-1/4 animate-[float_15s_infinite_ease-in-out_1s]"></div>
+          <div className="absolute h-1 w-1 rounded-full bg-ogclan/50 top-1/2 left-2/3 animate-[float_7s_infinite_ease-in-out_0.5s]"></div>
         </div>
       </div>
-      
-      {/* Tech circuit lines with slightly increased opacity */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-30">
-        <div className="absolute top-[10%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ogclan/70 to-transparent animate-pulse-slow"></div>
-        <div className="absolute top-[30%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ogclan/50 to-transparent animate-pulse-slow animation-delay-600"></div>
-        <div className="absolute top-[70%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ogclan/40 to-transparent animate-pulse-slow animation-delay-300"></div>
-        <div className="absolute top-[90%] left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ogclan/60 to-transparent animate-pulse-slow animation-delay-900"></div>
-        
-        <div className="absolute top-0 left-[20%] h-full w-[1px] bg-gradient-to-b from-transparent via-ogclan/30 to-transparent animate-pulse-slow"></div>
-        <div className="absolute top-0 left-[80%] h-full w-[1px] bg-gradient-to-b from-transparent via-ogclan/40 to-transparent animate-pulse-slow animation-delay-600"></div>
-      </div>
-      
-      {/* Gaming-themed overlay gradient with reduced opacity */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-transparent to-black/80 opacity-50"></div>
-      
-      {/* Neon-like tech accents with increased size and intensity */}
-      <div className="absolute top-40 -right-40 w-120 h-120 bg-blue-500/30 opacity-60 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-20 -left-40 w-120 h-120 bg-ogclan/30 opacity-50 rounded-full blur-3xl animate-pulse-slow animation-delay-600"></div>
-      <div className="absolute bottom-40 right-10 w-80 h-80 bg-red-500/20 opacity-40 rounded-full blur-3xl animate-pulse-slow animation-delay-900"></div>
-      
-      {/* Digital noise effect with reduced opacity */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=')] opacity-40 mix-blend-overlay"></div>
-    </div>
+    </>
   );
 };
 

@@ -73,6 +73,19 @@ export const tacticalKeyframes = {
     '20%, 40%, 60%, 80%': { 
       transform: 'translateX(2px)' 
     }
+  },
+  'hud-scan': {
+    '0%': {
+      transform: 'translateX(-100%)',
+      opacity: '0.5',
+    },
+    '50%': {
+      opacity: '1',
+    },
+    '100%': {
+      transform: 'translateX(100%)',
+      opacity: '0.5',
+    }
   }
 };
 
@@ -82,5 +95,6 @@ export const tacticalAnimations = {
   'radar-ping': 'radar-ping 2s infinite',
   'tactical-fade-in': 'tactical-fade-in 0.8s ease-out',
   'tactical-target': 'tactical-target 2s infinite ease-in-out',
-  'tactical-shake': 'tactical-shake 0.5s infinite'
+  'tactical-shake': 'tactical-shake 0.5s infinite',
+  'hud-scan': 'hud-scan 3s infinite ease-in-out'
 };
