@@ -40,7 +40,7 @@ const RecruitmentNote = () => {
       {/* Content */}
       <div className="max-w-4xl mx-auto px-4">
         <AnimatedContent
-          animation={isVisible ? "fade-in-up" : ""}
+          animation={isVisible ? "fade-in-up" : "fade-in"}
           className="relative border border-ogclan/20 bg-black/70 backdrop-blur-sm p-6 transition-all duration-700"
           style={{
             transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
