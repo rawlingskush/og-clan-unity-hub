@@ -29,33 +29,11 @@ export const pulseKeyframes = {
       opacity: '0.7',
       textShadow: 'none'
     }
-  },
-  'ember-glow': {
-    '0%, 100%': {
-      opacity: '0.2',
-      transform: 'scale(1)',
-      filter: 'blur(2px)'
-    },
-    '50%': {
-      opacity: '1',
-      transform: 'scale(1.05)',
-      filter: 'blur(1px)'
-    }
-  },
-  'tactical-breath': {
-    '0%, 100%': {
-      borderColor: 'rgba(212, 175, 55, 0.3)'
-    },
-    '50%': {
-      borderColor: 'rgba(212, 175, 55, 0.7)'
-    }
   }
 };
 
 export const pulseAnimations = {
   'pulse-slow': 'pulse-slow 4s infinite ease-in-out',
   'glow-pulse': 'glow-pulse 3s infinite ease-in-out',
-  'text-flicker': 'text-flicker 3s infinite alternate',
-  'ember-glow': 'ember-glow 4s infinite ease-in-out',
-  'tactical-breath': 'tactical-breath 2s infinite ease-in-out'
+  'text-flicker': 'text-flicker 3s infinite alternate'
 };
