@@ -10,7 +10,6 @@ interface AnimatedContentProps {
   className?: string;
   threshold?: number;
   once?: boolean;
-  style?: React.CSSProperties; // Add style prop support
 }
 
 const AnimatedContent = ({
@@ -20,8 +19,7 @@ const AnimatedContent = ({
   duration = 700,
   className,
   threshold = 0.1,
-  once = true,
-  style = {} // Initialize style prop with empty object
+  once = true
 }: AnimatedContentProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -80,8 +78,7 @@ const AnimatedContent = ({
       ref={ref} 
       style={{
         animationDelay: `${delay}ms`,
-        animationDuration: `${duration}ms`,
-        ...style // Merge with any additional styles passed as prop
+        animationDuration: `${duration}ms`
       }} 
       className={cn(
         getAnimationClass(),

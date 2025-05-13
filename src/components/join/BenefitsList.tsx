@@ -1,52 +1,49 @@
 
 import React from 'react';
-import { Check, Shield, Star, Users } from 'lucide-react';
-import AnimatedContent from '@/components/AnimatedContent';
+import { Check, Users, Award, Gamepad2 } from 'lucide-react';
+import AnimatedContent from '../AnimatedContent';
 
-// Benefits data
 const benefits = [
   {
-    icon: Shield,
-    title: "Elite Clan Status",
-    description: "Join a recognized team with tournament history and consistent performance"
+    icon: <Users className="w-5 h-5" />,
+    text: 'Be part of a supportive Call of Duty Mobile family'
   },
   {
-    icon: Users,
-    title: "Strong Community",
-    description: "Connect with like-minded players who share your passion for excellence"
+    icon: <Award className="w-5 h-5" />,
+    text: 'Join exclusive COD Mobile tournaments and events'
   },
   {
-    icon: Star,
-    title: "Skill Development",
-    description: "Regular training sessions and gameplay reviews to enhance your abilities"
+    icon: <Gamepad2 className="w-5 h-5" />,
+    text: 'Opportunity to grow as a competitive COD Mobile player'
   },
   {
-    icon: Check,
-    title: "Tournament Opportunities",
-    description: "Regular chances to compete in official and community tournaments"
+    icon: <Check className="w-5 h-5" />,
+    text: 'Connect with passionate Call of Duty Mobile gamers in Cameroon'
+  },
+  {
+    icon: <Check className="w-5 h-5" />,
+    text: 'Help build the future of mobile gaming in Africa'
   }
 ];
 
 const BenefitsList = () => {
   return (
-    <div className="space-y-6">
+    <ul className="space-y-4 mb-8">
       {benefits.map((benefit, index) => (
         <AnimatedContent 
-          key={index}
-          animation="fade-in-left" 
+          key={index} 
+          animation="slide-in-left"
           delay={300 + index * 150}
-          className="flex items-start"
         >
-          <div className="mr-4 p-2 bg-ogclan/10 rounded-full border border-ogclan/30">
-            <benefit.icon className="h-5 w-5 text-ogclan" />
-          </div>
-          <div>
-            <h4 className="text-lg font-semibold text-white">{benefit.title}</h4>
-            <p className="text-gray-300 mt-1">{benefit.description}</p>
-          </div>
+          <li className="flex items-center gap-3 bg-ogclan/5 p-3 rounded-lg">
+            <span className="flex-shrink-0 w-8 h-8 rounded-full bg-ogclan/10 flex items-center justify-center">
+              {benefit.icon}
+            </span>
+            <span className="text-gray-700 font-medium">{benefit.text}</span>
+          </li>
         </AnimatedContent>
       ))}
-    </div>
+    </ul>
   );
 };
 

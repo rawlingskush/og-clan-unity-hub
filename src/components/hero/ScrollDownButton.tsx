@@ -1,68 +1,43 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import AnimatedContent from '../AnimatedContent';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const ScrollDownButton = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  
-  // Hide the button when scrolling down
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsVisible(scrollPosition < 100);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isMobile = useIsMobile();
   
   const scrollToNextSection = () => {
-    const heroSection = document.getElementById('home');
-    if (heroSection) {
-      const nextSection = heroSection.nextElementSibling;
+    // Scroll to battle night timer section for more direct access
+    const timerSection = document.getElementById('battle-night-timer');
+    if (timerSection) {
+      window.scrollTo({
+        top: timerSection.offsetTop - 100, // Add some offset for better visibility
+        behavior: 'auto'
+      });
+    } else {
+      // Fallback to the section if timer isn't found
+      const nextSection = document.getElementById('og-battle-night');
       if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
+        window.scrollTo({
+          top: nextSection.offsetTop - 80,
+          behavior: 'auto'
+        });
       }
     }
   };
-  
+
   return (
-    <button
-      onClick={scrollToNextSection}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-      }`}
-      aria-label="Scroll down"
-    >
-      <div className="flex flex-col items-center">
-        <div className="text-xs text-ogclan mb-1">Scroll Down</div>
-        <div className="relative w-8 h-8 flex items-center justify-center">
-          {/* Animated pulse backdrop */}
-          <div 
-            className={`absolute w-full h-full rounded-full bg-ogclan/10 transform transition-all duration-300 ${
-              isHovered ? 'scale-150 opacity-70' : 'scale-100 opacity-30'
-            }`}
-          ></div>
-          
-          {/* Outer ring */}
-          <div 
-            className={`absolute w-full h-full rounded-full border border-ogclan/50 transform transition-all duration-300 ${
-              isHovered ? 'scale-110' : 'scale-100'
-            }`}
-          ></div>
-          
-          {/* Arrow icon with bounce animation */}
-          <ChevronDown 
-            className={`relative z-10 text-ogclan w-5 h-5 transition-transform ${
-              isHovered ? 'animate-[float_1s_infinite_ease-in-out]' : ''
-            }`} 
-          />
-        </div>
-      </div>
-    </button>
+    <AnimatedContent animation="fade-in-up" delay={1200}>
+      <button
+        onClick={scrollToNextSection}
+        aria-label="Scroll to next section"
+        className={`group relative rounded-full ${isMobile ? 'p-1.5' : 'p-2'} bg-black/40 border border-ogclan/20 
+                  hover:bg-black/70 hover:border-ogclan transition-all duration-200`}
+      >
+        <ChevronDown className={`${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'} text-ogclan group-hover:text-ogclan-light transition-all duration-200 animate-bounce`} />
+      </button>
+    </AnimatedContent>
   );
 };
 
