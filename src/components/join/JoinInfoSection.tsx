@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Users } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 import BenefitsList from './BenefitsList';
 
