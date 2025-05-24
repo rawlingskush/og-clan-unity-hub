@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,12 +10,12 @@ const TournamentResults = () => {
   const results = [
     {
       id: 1,
-      title: "Preacher Event - Tier 3 Standing",
-      date: "Day 3",
-      image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
-      position: "Top 10",
-      description: "Competed against 24 elite teams in the Preacher Event",
-      highlights: ["Strong tactical gameplay", "Consistent performance", "Elite competition level"]
+      title: "TEF Esports Scrims Group 2 - Champion",
+      date: "07/05/2025",
+      image: "/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
+      position: "1st Place",
+      description: "Dominant victory as 'ONLY GREATS CAMEROON' with 125 place points and 112 kills for 349 total points",
+      highlights: ["349 total points", "125 place points", "112 total kills", "Complete domination"]
     },
     {
       id: 2,
