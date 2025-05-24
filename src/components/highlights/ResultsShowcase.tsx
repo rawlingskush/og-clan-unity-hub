@@ -28,7 +28,7 @@ const ResultsShowcase = () => {
       tournament: "Aurora Scrims",
       position: "2nd",
       points: "232",
-      image: "",
+      image: "/lovable-uploads/44d227d7-2c81-41b1-96b0-257a195f0166.png",
       icon: <Target className="w-6 h-6 text-gray-400" />
     },
     {
