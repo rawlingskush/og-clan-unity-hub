@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy, Target, TrendingUp, Award } from 'lucide-react';
@@ -20,7 +19,7 @@ const ResultsShowcase = () => {
       tournament: "TEF Esports",
       position: "1st", 
       points: "349",
-      image: "/lovable-uploads/ff993877-0fb3-43a2-4659-a054-712c4eca7352.png",
+      image: "/lovable-uploads/43c0316d-85e8-4b3b-9dbe-1a1e796f9b1f.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
