@@ -5,21 +5,31 @@ import SoldierCard from './SoldierCard';
 
 interface TabletGridProps {
   soldiers: Soldier[];
-  animateItems: boolean;
 }
 
-const TabletGrid = ({ soldiers, animateItems }: TabletGridProps) => {
+const TabletGrid = ({ soldiers }: TabletGridProps) => {
+  console.log('TabletGrid render:', { soldiers: soldiers.length });
+  
+  if (soldiers.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <div className="text-center">
+          <p className="text-ogclan mb-4">No soldiers match the current filter</p>
+          <div className="w-8 h-8 border-2 border-ogclan border-t-transparent rounded-full animate-spin mx-auto"></div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid grid-cols-3 gap-6 overflow-x-auto pb-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4 px-4">
       {soldiers.map((soldier, index) => (
         <div 
           key={soldier.id} 
           id={`og-${soldier.id.toLowerCase()}`}
-          className={`scroll-mt-32 ${soldier.spotlight ? 'col-span-3 md:col-span-1' : ''}`}
+          className="scroll-mt-32"
           style={{ 
-            opacity: animateItems ? 1 : 0,
-            transform: animateItems ? 'translateY(0)' : 'translateY(20px)',
-            transition: `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`
+            animationDelay: `${index * 0.1}s`
           }}
         >
           <SoldierCard soldier={soldier} />

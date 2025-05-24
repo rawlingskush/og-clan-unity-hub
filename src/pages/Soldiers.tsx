@@ -12,20 +12,11 @@ import RecruitmentNote from '@/components/soldiers/RecruitmentNote';
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const isScrolled = scrollPosition > 100;
   
-  // Initialize loading state with faster timing
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 600);
-    
-    return () => clearTimeout(timer);
-  }, []);
+  console.log('Soldiers page render:', { soldiers: soldiers.length });
   
-  // Optimized scroll handling with throttling
+  // Optimized scroll handling
   useEffect(() => {
     let ticking = false;
     
@@ -41,7 +32,7 @@ const Soldiers = () => {
     
     window.addEventListener('scroll', handleScroll, { passive: true });
     
-    // Smooth scroll to soldier card if URL has a fragment identifier
+    // Handle URL fragments
     const hash = window.location.hash;
     if (hash) {
       const timer = setTimeout(() => {
@@ -53,7 +44,7 @@ const Soldiers = () => {
             inline: 'nearest'
           });
         }
-      }, 800);
+      }, 1000);
       
       return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -75,7 +66,7 @@ const Soldiers = () => {
             <p className="text-gray-400 mb-6">{error}</p>
             <button 
               onClick={() => window.location.reload()}
-              className="bg-ogclan text-black px-6 py-2 rounded-lg hover:bg-ogclan-light transition-colors mobile-tap-target"
+              className="bg-ogclan text-black px-6 py-2 rounded-lg hover:bg-ogclan-light transition-colors"
             >
               Reload Page
             </button>
@@ -91,26 +82,16 @@ const Soldiers = () => {
       <Navbar />
       
       <main className="flex-grow pt-24">
-        {/* Hero Section with enhanced animations */}
+        {/* Hero Section */}
         <ParticleCanvas />
         <SoldiersHero scrollPosition={scrollPosition} />
         
-        {/* Optimized loading overlay */}
-        {isLoading && (
-          <div className="fixed inset-0 bg-black/90 z-40 flex items-center justify-center backdrop-blur-sm">
-            <div className="text-center">
-              <div className="w-16 h-16 border-4 border-ogclan border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-ogclan text-lg animate-pulse">Loading Elite Squad...</p>
-            </div>
-          </div>
-        )}
-        
-        {/* Soldiers Grid Section with enhanced animations */}
+        {/* Soldiers Grid Section */}
         <section className="section-container py-16 relative">
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-[rgba(0,20,0,0.9)] pointer-events-none"></div>
           
-          {/* Enhanced animated scanner lines */}
+          {/* Scanner lines */}
           <div className="absolute top-0 left-0 right-0 h-1 overflow-hidden">
             <div className="h-[1px] bg-ogclan/20 w-full"></div>
             <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/80 to-transparent w-1/4 animate-[scanner-line_6s_linear_infinite]"></div>

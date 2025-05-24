@@ -2,36 +2,61 @@
 import * as React from "react";
 
 const MOBILE_BREAKPOINT = 768;
+const TABLET_BREAKPOINT = 1024;
 
 export function useIsMobile() {
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);
+  const [isMobile, setIsMobile] = React.useState<boolean>(false);
 
   React.useEffect(() => {
-    // Set initial value
-    const checkMobile = () => {
+    const checkDevice = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     };
     
     // Check on mount
-    checkMobile();
+    checkDevice();
     
-    // Setup event listener for window resize
-    const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+    // Setup event listener with throttling
+    let timeoutId: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(checkDevice, 100);
+    };
     
-    // Modern approach with addEventListener
-    const onChange = () => checkMobile();
-    mql.addEventListener("change", onChange);
+    window.addEventListener("resize", handleResize, { passive: true });
     
-    // Add window resize listener as a fallback
-    window.addEventListener("resize", checkMobile);
-    
-    // Cleanup listeners
     return () => {
-      mql.removeEventListener("change", onChange);
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
     };
   }, []);
 
-  // Default to mobile first approach if undefined during SSR
-  return isMobile === undefined ? true : isMobile;
+  return isMobile;
+}
+
+export function useIsTablet() {
+  const [isTablet, setIsTablet] = React.useState<boolean>(false);
+
+  React.useEffect(() => {
+    const checkTablet = () => {
+      const width = window.innerWidth;
+      setIsTablet(width >= MOBILE_BREAKPOINT && width < TABLET_BREAKPOINT);
+    };
+    
+    checkTablet();
+    
+    let timeoutId: NodeJS.Timeout;
+    const handleResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(checkTablet, 100);
+    };
+    
+    window.addEventListener("resize", handleResize, { passive: true });
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  return isTablet;
 }

@@ -13,7 +13,8 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-  const [autoplayEnabled, setAutoplayEnabled] = useState(true);
+
+  console.log('MobileCarousel render:', { soldiers: soldiers.length, current, count });
 
   useEffect(() => {
     if (!api || soldiers.length === 0) return;
@@ -22,7 +23,9 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
     setCurrent(api.selectedScrollSnap());
 
     const onSelect = () => {
-      setCurrent(api.selectedScrollSnap());
+      const selected = api.selectedScrollSnap();
+      setCurrent(selected);
+      console.log('Carousel selected:', selected);
     };
 
     api.on("select", onSelect);
@@ -32,36 +35,18 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
     };
   }, [api, soldiers.length]);
 
-  // Auto-advance carousel with proper cleanup
-  useEffect(() => {
-    if (!api || !autoplayEnabled || soldiers.length === 0) return;
-
-    const autoplay = setInterval(() => {
-      const nextIndex = (current + 1) % soldiers.length;
-      api.scrollTo(nextIndex);
-    }, 4000);
-
-    return () => clearInterval(autoplay);
-  }, [api, autoplayEnabled, current, soldiers.length]);
-
-  const handleInteraction = useCallback(() => {
-    setAutoplayEnabled(false);
-    const timer = setTimeout(() => setAutoplayEnabled(true), 8000);
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleDotClick = useCallback((index: number) => {
     if (api) {
+      console.log('Dot clicked:', index);
       api.scrollTo(index);
-      handleInteraction();
     }
-  }, [api, handleInteraction]);
+  }, [api]);
 
   if (soldiers.length === 0) {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-center">
-          <div className="animate-pulse text-ogclan mb-2">Loading soldiers...</div>
+          <div className="animate-pulse text-ogclan mb-2">No soldiers found</div>
           <div className="w-8 h-8 border-2 border-ogclan border-t-transparent rounded-full animate-spin mx-auto"></div>
         </div>
       </div>
@@ -69,22 +54,20 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
   }
 
   return (
-    <AnimatedContent animation="fade-in" className="w-full">
+    <AnimatedContent animation="fade-in" className="w-full px-4">
       <Carousel 
         className="w-full"
         setApi={setApi}
         opts={{
           align: "center",
-          loop: true,
+          loop: false,
           skipSnaps: false,
           dragFree: false,
         }}
-        onMouseEnter={handleInteraction}
-        onTouchStart={handleInteraction}
       >
-        <CarouselContent className="-ml-2 md:-ml-4">
+        <CarouselContent className="ml-0">
           {soldiers.map((soldier, index) => (
-            <CarouselItem key={soldier.id} className="pl-2 md:pl-4 basis-4/5 md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={soldier.id} className="pl-4 basis-4/5 sm:basis-1/2">
               <div className="h-full">
                 <SoldierCard soldier={soldier} />
               </div>
@@ -92,22 +75,21 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
           ))}
         </CarouselContent>
         
-        {/* Enhanced navigation with better mobile UX */}
+        {/* Navigation */}
         <div className="flex items-center justify-center mt-6 gap-4">
           <CarouselPrevious 
-            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 mobile-tap-target" 
-            onClick={handleInteraction}
+            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 h-10 w-10" 
           />
           
-          {/* Dot indicators with proper index calculation */}
+          {/* Dot indicators */}
           <div className="flex gap-2">
             {soldiers.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 mobile-tap-target ${
+                className={`h-2 rounded-full transition-all duration-300 ${
                   current === index 
-                    ? 'bg-ogclan w-4' 
-                    : 'bg-ogclan/30 hover:bg-ogclan/60'
+                    ? 'bg-ogclan w-6' 
+                    : 'bg-ogclan/30 hover:bg-ogclan/60 w-2'
                 }`}
                 onClick={() => handleDotClick(index)}
                 aria-label={`Go to soldier ${index + 1}`}
@@ -116,8 +98,7 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
           </div>
           
           <CarouselNext 
-            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 mobile-tap-target"
-            onClick={handleInteraction}
+            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 h-10 w-10"
           />
         </div>
 
