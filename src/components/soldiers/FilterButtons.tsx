@@ -37,12 +37,12 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
           {filterOptions.map((filterOption, index) => (
             <motion.button 
               key={filterOption.id}
-              className={`rounded-full mobile-tap-target transition-all duration-300 font-medium filter-button relative overflow-hidden ${
-                isMobile ? 'px-6 py-3 text-sm min-w-[90px]' : 'px-6 py-2 text-sm'
+              className={`rounded-lg mobile-tap-target transition-all duration-300 font-medium filter-button relative overflow-hidden ${
+                isMobile ? 'px-6 py-3 text-sm min-w-[90px]' : 'px-6 py-2.5 text-sm'
               } ${
                 currentFilter === filterOption.id ? 
-                'active bg-ogclan text-black shadow-lg shadow-ogclan/30 scale-105' : 
-                'bg-black/60 text-gray-300 border border-ogclan/30 hover:text-ogclan-light hover:border-ogclan/60 hover:bg-black/80'
+                'active bg-gradient-to-r from-ogclan-dark to-ogclan text-black shadow-lg shadow-ogclan/40 scale-105 border border-ogclan/50' : 
+                'bg-black/80 text-gray-300 border border-gray-600/50 hover:text-white hover:border-ogclan/60 hover:bg-black/90 hover:shadow-md hover:shadow-ogclan/20'
               }`}
               onClick={() => onFilterChange(filterOption.id)}
               aria-pressed={currentFilter === filterOption.id}
@@ -66,22 +66,22 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
               {/* Active background animation */}
               {currentFilter === filterOption.id && (
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-ogclan via-ogclan-light to-ogclan"
+                  className="absolute inset-0 bg-gradient-to-r from-ogclan via-ogclan-light to-ogclan opacity-90"
                   layoutId="activeFilter"
                   transition={{ type: 'spring', stiffness: 300, damping: 25 }}
                 />
               )}
               
               {/* Button text */}
-              <span className="relative z-10">
+              <span className="relative z-10 font-semibold">
                 {isMobile ? filterOption.shortLabel : filterOption.label}
               </span>
               
               {/* Enhanced ripple effect */}
               <motion.div
-                className="absolute inset-0 bg-ogclan/20 rounded-full"
+                className="absolute inset-0 bg-white/20 rounded-lg"
                 initial={{ scale: 0, opacity: 0 }}
-                whileTap={{ scale: 1.5, opacity: [0, 0.5, 0] }}
+                whileTap={{ scale: 1.5, opacity: [0, 0.3, 0] }}
                 transition={{ duration: 0.6 }}
               />
             </motion.button>
@@ -97,7 +97,7 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="text-xs text-ogclan/50 animate-pulse flex items-center gap-1">
+          <div className="text-xs text-ogclan/60 animate-pulse flex items-center gap-1">
             <span>←</span>
             <span>Swipe to see more filters</span>
             <span>→</span>
