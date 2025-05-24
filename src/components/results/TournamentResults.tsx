@@ -40,7 +40,7 @@ const TournamentResults = () => {
       id: 4,
       title: "TEF Esports Scrims - Strong Performance",
       date: "05/05/2025",
-      image: "/lovable-uploads/01a6c703-e2a2-4659-a20f-df1306635a46.png",
+      image: "blob:https://lovable.dev/89180734-3c17-40df-aad6-6968ff558972",
       position: "7th Place",
       description: "Solid showing with 46 place points and 62 kills",
       highlights: ["170 total points", "Consistent gameplay", "Tactical excellence"]
