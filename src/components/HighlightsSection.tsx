@@ -3,6 +3,7 @@ import React from 'react';
 import AchievementsSection from './highlights/AchievementsSection';
 import EventCard from './highlights/EventCard';
 import BattleImagesSection from './highlights/BattleImagesSection';
+import ResultsShowcase from './highlights/ResultsShowcase';
 
 const HighlightsSection = () => {
   const values = [{
@@ -34,7 +35,11 @@ const HighlightsSection = () => {
           <EventCard features={values} />
         </div>
 
-        <BattleImagesSection />
+        <ResultsShowcase />
+
+        <div className="mt-12">
+          <BattleImagesSection />
+        </div>
       </div>
     </div>
   );

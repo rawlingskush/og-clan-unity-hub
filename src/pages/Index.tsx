@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import BattleNightSection from '@/components/BattleNightSection';
 import ClanStatsSection from '@/components/ClanStatsSection';
+import TournamentResults from '@/components/results/TournamentResults';
 import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
@@ -35,6 +36,7 @@ const Index = () => {
         </div>
         <BattleNightSection />
         <ClanStatsSection />
+        <TournamentResults />
         <AboutSection />
         <CoDPointsSection />
         <JoinUsSection />
