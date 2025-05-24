@@ -38,12 +38,12 @@ const TournamentResults = () => {
     },
     {
       id: 4,
-      title: "TEF Esports Scrims - Strong Performance",
+      title: "Preacher Event - Elite Performance",
       date: "05/05/2025",
-      image: "blob:https://lovable.dev/89180734-3c17-40df-aad6-6968ff558972",
+      image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
       position: "7th Place",
-      description: "Solid showing with 46 place points and 62 kills",
-      highlights: ["170 total points", "Consistent gameplay", "Tactical excellence"]
+      description: "Outstanding performance in Preacher Event with strategic gameplay and solid teamwork",
+      highlights: ["Elite tactical play", "Strong team coordination", "Consistent performance"]
     },
     {
       id: 5,
