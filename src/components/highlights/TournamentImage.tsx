@@ -15,16 +15,19 @@ const TournamentImage = ({ src, alt, tournament, className = "" }: TournamentIma
   const [hasError, setHasError] = useState(false);
 
   const handleLoad = () => {
+    console.log(`Image loaded successfully: ${src} for ${tournament}`);
     setIsLoading(false);
   };
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.log(`Failed to load image: ${src}`);
+    console.log(`Failed to load image: ${src} for tournament: ${tournament}`);
+    console.log('Error details:', e);
     setIsLoading(false);
     setHasError(true);
   };
 
   if (hasError) {
+    console.log(`Showing fallback for ${tournament} - image failed to load`);
     return (
       <div className={`bg-black/30 rounded border border-ogclan/20 flex items-center justify-center ${className}`}>
         <div className="text-center p-4">
@@ -56,7 +59,7 @@ const TournamentImage = ({ src, alt, tournament, className = "" }: TournamentIma
           onLoad={handleLoad}
           onError={handleError}
           style={{
-            objectPosition: 'center 30%' // Focus on upper-center area where clan names typically appear
+            objectPosition: 'center 30%'
           }}
         />
       </AspectRatio>

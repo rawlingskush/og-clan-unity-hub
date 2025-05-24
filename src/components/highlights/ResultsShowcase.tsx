@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy, Target, TrendingUp, Award } from 'lucide-react';
@@ -39,6 +40,9 @@ const ResultsShowcase = () => {
       icon: <Award className="w-6 h-6 text-purple-400" />
     }
   ];
+
+  // Log the TEF Esports data for debugging
+  console.log('TEF Esports data:', topResults.find(result => result.tournament === "TEF Esports"));
 
   return (
     <div className="mt-8">
