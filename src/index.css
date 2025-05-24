@@ -1,6 +1,7 @@
 
 /* Main CSS file that imports all the modularized styles */
 @import './styles/base.css';
+@import './styles/enhanced-colors.css';
 @import './styles/gold-effects.css';
 @import './styles/card-effects.css';
 @import './styles/stats-elements.css';

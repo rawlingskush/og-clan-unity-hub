@@ -20,7 +20,7 @@ const ResultsShowcase = () => {
       tournament: "TEF Esports",
       position: "1st", 
       points: "349",
-      image: "https://preview--og-clan-unity-hub.lovable.app/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
+      image: "/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
@@ -64,7 +64,7 @@ const ResultsShowcase = () => {
             animation="scale-in" 
             delay={200 + index * 100}
           >
-            <Card className="glass-card group hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-all duration-300 cursor-pointer">
+            <Card className="glass-card group hover-effect cursor-pointer">
               <CardContent className="p-4">
                 <div className="text-center space-y-3">
                   <div className="flex justify-center">
@@ -76,7 +76,7 @@ const ResultsShowcase = () => {
                     <p className="text-sm text-gray-400">Tournament</p>
                   </div>
                   
-                  <div className="bg-black/50 rounded-lg p-3 border border-ogclan/20">
+                  <div className="bg-black/50 rounded-lg p-3 border border-ogclan/20 tactical-border">
                     <div className="text-2xl font-bold text-ogclan mb-1">
                       {result.position}
                     </div>

@@ -1,5 +1,6 @@
 
 import React from 'react';
+import EnhancedImage from '@/components/ui/enhanced-image';
 
 interface SoldierCardImageProps {
   imageUrl: string;
@@ -10,22 +11,18 @@ interface SoldierCardImageProps {
 
 const SoldierCardImage = ({ imageUrl, name, role, isSpotlight }: SoldierCardImageProps) => {
   return (
-    <div className={`w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 ${
+    <div className={`w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 ${
       isSpotlight 
-        ? 'border-ogclan shadow-[0_0_15px_rgba(212,175,55,0.7)] animate-glow-pulse' 
-        : 'border-ogclan shadow-[0_0_10px_rgba(212,175,55,0.4)] animate-pulse-slow'
+        ? 'border-ogclan glow-medium animate-glow-pulse' 
+        : 'border-ogclan glow-subtle animate-pulse-slow hover:glow-medium'
     }`}>
-      <img 
-        src={imageUrl} 
+      <EnhancedImage
+        src={imageUrl}
         alt={`${name} - ${role}`}
-        className="w-full h-full object-cover"
+        className="rounded-full"
+        aspectRatio="1/1"
+        objectFit="cover"
         loading="lazy"
-        onError={(e) => {
-          // Fallback image if the original fails to load
-          const target = e.target as HTMLImageElement;
-          target.src = "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png";
-          target.onerror = null; // Prevent infinite error loop
-        }}
       />
     </div>
   );

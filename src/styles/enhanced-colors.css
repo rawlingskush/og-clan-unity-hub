@@ -1,0 +1,118 @@
+
+/* Enhanced OG Clan Color System - Smooth and Professional */
+
+/* Root color variables for consistent theming */
+:root {
+  /* Core OG Clan Colors */
+  --ogclan-primary: #D4AF37;
+  --ogclan-primary-dark: #B8860B;
+  --ogclan-primary-light: #FFD700;
+  --ogclan-primary-muted: #F5DEB3;
+  
+  /* Enhanced gradients */
+  --ogclan-gradient-primary: linear-gradient(135deg, var(--ogclan-primary) 0%, var(--ogclan-primary-light) 100%);
+  --ogclan-gradient-dark: linear-gradient(135deg, var(--ogclan-primary-dark) 0%, var(--ogclan-primary) 100%);
+  --ogclan-gradient-subtle: linear-gradient(135deg, var(--ogclan-primary-muted) 0%, var(--ogclan-primary) 100%);
+  
+  /* Tactical UI colors */
+  --tactical-bg-primary: rgba(0, 0, 0, 0.95);
+  --tactical-bg-secondary: rgba(0, 0, 0, 0.80);
+  --tactical-border: rgba(212, 175, 55, 0.3);
+  --tactical-border-active: rgba(212, 175, 55, 0.6);
+  --tactical-glow: rgba(212, 175, 55, 0.2);
+}
+
+/* Enhanced glass card effect */
+.glass-card {
+  @apply bg-black/40 backdrop-blur-sm border border-ogclan/30;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(212, 175, 55, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  @apply border-ogclan/50;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.1),
+    inset 0 1px 0 rgba(212, 175, 55, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg font-semibold text-black transition-all duration-300;
+  background: var(--ogclan-gradient-primary);
+  box-shadow: 
+    0 4px 14px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--ogclan-gradient-dark);
+  box-shadow: 
+    0 6px 20px rgba(212, 175, 55, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Enhanced text gradients */
+.text-gradient-gold {
+  background: var(--ogclan-gradient-primary);
+  @apply bg-clip-text text-transparent;
+}
+
+.text-gradient-gold-subtle {
+  background: var(--ogclan-gradient-subtle);
+  @apply bg-clip-text text-transparent;
+}
+
+/* Smooth hover effects */
+.hover-effect {
+  @apply transition-all duration-300 ease-out;
+}
+
+.hover-effect:hover {
+  @apply transform -translate-y-1;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Enhanced glow effects */
+.glow-subtle {
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.glow-medium {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.glow-strong {
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Enhanced tactical elements */
+.tactical-border {
+  border: 1px solid var(--tactical-border);
+}
+
+.tactical-border:hover {
+  border-color: var(--tactical-border-active);
+}
+
+.tactical-glow {
+  box-shadow: 0 0 10px var(--tactical-glow);
+}
+
+.tactical-glow:hover {
+  box-shadow: 0 0 20px var(--tactical-glow);
+}
