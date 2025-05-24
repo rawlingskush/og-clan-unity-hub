@@ -11,12 +11,12 @@ const TournamentResults = () => {
   const results = [
     {
       id: 1,
-      title: "Preacher Event - Tier 3 Standing",
-      date: "Day 3",
-      image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
-      position: "Top 10",
-      description: "Competed against 24 elite teams in the Preacher Event",
-      highlights: ["Strong tactical gameplay", "Consistent performance", "Elite competition level"]
+      title: "TEF Esports Scrims Group 1 - Champion",
+      date: "12/05/2025",
+      image: "/lovable-uploads/afb763c8-53f8-4c32-92ad-20ef2c253f23.png",
+      position: "1st Place",
+      description: "Dominant victory in TEF Esports Scrims Group 1 with exceptional tactical gameplay",
+      highlights: ["Outstanding team coordination", "Superior strategic play", "Elite competition level"]
     },
     {
       id: 2,
