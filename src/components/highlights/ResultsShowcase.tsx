@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Trophy, Target, TrendingUp } from 'lucide-react';
+import { Trophy, Target, TrendingUp, Award } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 
 const ResultsShowcase = () => {
@@ -29,6 +29,14 @@ const ResultsShowcase = () => {
       points: "232",
       image: "/lovable-uploads/44d227d7-2c81-41b1-96b0-257a195f0166.png",
       icon: <Target className="w-6 h-6 text-gray-400" />
+    },
+    {
+      id: 4,
+      tournament: "Preacher Event",
+      position: "Top 10",
+      points: "Elite",
+      image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
+      icon: <Award className="w-6 h-6 text-purple-400" />
     }
   ];
 
@@ -45,7 +53,7 @@ const ResultsShowcase = () => {
         </div>
       </AnimatedContent>
 
-      <div className="grid md:grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {topResults.map((result, index) => (
           <AnimatedContent 
             key={result.id} 
@@ -69,15 +77,19 @@ const ResultsShowcase = () => {
                       {result.position}
                     </div>
                     <div className="text-sm text-gray-300">
-                      {result.points} points
+                      {result.points === "Elite" ? "Elite Competition" : `${result.points} points`}
                     </div>
                   </div>
                   
-                  <div className="h-24 bg-black/30 rounded border border-ogclan/20 overflow-hidden">
+                  <div className="h-32 bg-black/30 rounded border border-ogclan/20 overflow-hidden">
                     <img 
                       src={result.image} 
-                      alt={`${result.tournament} results`}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                      alt={`${result.tournament} results - OG Clan performance`}
+                      className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 filter contrast-110 brightness-110"
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${result.image}`);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   </div>
                 </div>
