@@ -8,25 +8,25 @@ const ResultsShowcase = () => {
   const topResults = [
     {
       id: 1,
-      tournament: "Aurora Scrims",
+      tournament: "TEF Esports Group 1",
       position: "1st",
-      points: "264",
-      image: "/lovable-uploads/06436fca-12a3-40d0-a190-e9958c2dfe55.png",
+      points: "Victory",
+      image: "/lovable-uploads/afb763c8-53f8-4c32-92ad-20ef2c253f23.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
       id: 2,
-      tournament: "TEF Esports",
-      position: "1st", 
-      points: "349",
+      tournament: "TEF Esports Group 2", 
+      position: "1st",
+      points: "349 pts",
       image: "/lovable-uploads/ff993877-0fb3-43a2-4659-a054-712c4eca7352.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
       id: 3,
-      tournament: "Aurora Scrims",
+      tournament: "Aurora Scrims Group 2",
       position: "2nd",
-      points: "232",
+      points: "232 pts",
       image: "/lovable-uploads/44d227d7-2c81-41b1-96b0-257a195f0166.png",
       icon: <Target className="w-6 h-6 text-gray-400" />
     }
@@ -69,15 +69,22 @@ const ResultsShowcase = () => {
                       {result.position}
                     </div>
                     <div className="text-sm text-gray-300">
-                      {result.points} points
+                      {result.points}
                     </div>
                   </div>
                   
-                  <div className="h-24 bg-black/30 rounded border border-ogclan/20 overflow-hidden">
+                  <div className="h-32 bg-black/30 rounded border border-ogclan/20 overflow-hidden group">
                     <img 
                       src={result.image} 
-                      alt={`${result.tournament} results`}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-300"
+                      alt={`OG Clan ${result.tournament} results showing team performance`}
+                      className="w-full h-full object-contain bg-black/20 opacity-80 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${result.image}`);
+                        e.currentTarget.style.display = 'none';
+                      }}
+                      onLoad={() => {
+                        console.log(`Successfully loaded image: ${result.image}`);
+                      }}
                     />
                   </div>
                 </div>
