@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 
 interface AnimatedContentProps {
   children: ReactNode;
-  animation?: 'fade-in-up' | 'fade-in' | 'scale-in' | 'slide-in-right' | 'slide-in-left' | 'bounce' | 'glow-pulse';
+  animation?: 'fade-in-up' | 'fade-in' | 'scale-in' | 'slide-in-right' | 'slide-in-left' | 'bounce' | 'glow-pulse' | 'flip-card' | 'counter-up' | 'data-reveal';
   delay?: number;
   duration?: number;
   className?: string;
@@ -68,6 +68,12 @@ const AnimatedContent = ({
         return 'animate-[fade-in_0.8s_ease-out] animate-bounce';
       case 'glow-pulse':
         return 'animate-[fade-in_0.8s_ease-out] animate-glow';
+      case 'flip-card':
+        return 'animate-[fade-in_0.8s_ease-out] animate-flip-card';
+      case 'counter-up':
+        return 'animate-counter-up';
+      case 'data-reveal':
+        return 'animate-data-reveal';
       default:
         return 'animate-[fade-in_0.8s_ease-out]';
     }
