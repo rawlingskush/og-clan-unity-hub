@@ -77,3 +77,23 @@
   min-height: 44px;
   min-width: 44px;
 }
+
+/* Hide scrollbars while maintaining functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Enhanced touch feedback */
+.touch-feedback {
+  transition: all 0.15s ease-out;
+}
+
+.touch-feedback:active {
+  transform: scale(0.98);
+  opacity: 0.8;
+}

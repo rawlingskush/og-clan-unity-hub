@@ -15,7 +15,10 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
 
   // Initialize animation after component mounts
   useEffect(() => {
-    setFilterButtonsVisible(true);
+    const timer = setTimeout(() => {
+      setFilterButtonsVisible(true);
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   const filterOptions = [
@@ -29,13 +32,13 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
 
   return (
     <AnimatedContent animation="slide-in-right" className="mb-8">
-      <div className={`${isMobile ? 'overflow-x-auto pb-2' : ''}`}>
+      <div className={`${isMobile ? 'overflow-x-auto pb-2 scrollbar-hide' : ''}`}>
         <div className={`flex ${isMobile ? 'gap-3 px-4 min-w-max' : 'flex-wrap justify-center gap-3'}`}>
           {filterOptions.map((filterOption, index) => (
             <motion.button 
               key={filterOption.id}
               className={`rounded-full mobile-tap-target transition-all duration-300 font-medium filter-button relative overflow-hidden ${
-                isMobile ? 'px-4 py-2 text-sm min-w-[80px]' : 'px-6 py-2 text-sm'
+                isMobile ? 'px-6 py-3 text-sm min-w-[90px]' : 'px-6 py-2 text-sm'
               } ${
                 currentFilter === filterOption.id ? 
                 'active bg-ogclan text-black shadow-lg shadow-ogclan/30 scale-105' : 
@@ -50,7 +53,7 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
               }}
               transition={{ 
                 duration: 0.4, 
-                delay: index * 0.1,
+                delay: index * 0.08,
                 type: 'spring',
                 stiffness: 120
               }}
@@ -58,7 +61,7 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
                 scale: currentFilter === filterOption.id ? 1.05 : 1.02,
                 transition: { duration: 0.2 }
               }}
-              whileTap={{ scale: 0.98 }}
+              whileTap={{ scale: 0.95 }}
             >
               {/* Active background animation */}
               {currentFilter === filterOption.id && (
@@ -74,25 +77,32 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
                 {isMobile ? filterOption.shortLabel : filterOption.label}
               </span>
               
-              {/* Ripple effect on tap */}
+              {/* Enhanced ripple effect */}
               <motion.div
                 className="absolute inset-0 bg-ogclan/20 rounded-full"
                 initial={{ scale: 0, opacity: 0 }}
-                whileTap={{ scale: 1.5, opacity: [0, 0.3, 0] }}
-                transition={{ duration: 0.4 }}
+                whileTap={{ scale: 1.5, opacity: [0, 0.5, 0] }}
+                transition={{ duration: 0.6 }}
               />
             </motion.button>
           ))}
         </div>
       </div>
       
-      {/* Scroll indicator for mobile */}
+      {/* Improved scroll indicator for mobile */}
       {isMobile && (
-        <div className="flex justify-center mt-2">
-          <div className="text-xs text-ogclan/50 animate-pulse">
-            ← Swipe to see more filters →
+        <motion.div 
+          className="flex justify-center mt-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <div className="text-xs text-ogclan/50 animate-pulse flex items-center gap-1">
+            <span>←</span>
+            <span>Swipe to see more filters</span>
+            <span>→</span>
           </div>
-        </div>
+        </motion.div>
       )}
     </AnimatedContent>
   );

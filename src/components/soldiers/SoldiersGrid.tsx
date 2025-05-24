@@ -28,7 +28,8 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   // Optimized tablet detection with proper cleanup
   useEffect(() => {
     const checkTablet = () => {
-      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+      const width = window.innerWidth;
+      setIsTablet(width >= 768 && width < 1024);
     };
     
     checkTablet();
@@ -36,10 +37,10 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
     let timeoutId: NodeJS.Timeout;
     const debouncedResize = () => {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(checkTablet, 100);
+      timeoutId = setTimeout(checkTablet, 150);
     };
     
-    window.addEventListener('resize', debouncedResize);
+    window.addEventListener('resize', debouncedResize, { passive: true });
     
     return () => {
       window.removeEventListener('resize', debouncedResize);
@@ -51,7 +52,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimateItems(true);
-    }, 600);
+    }, 300);
     
     return () => clearTimeout(timer);
   }, []);
@@ -62,7 +63,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       setAnimateItems(false);
       const timer = setTimeout(() => {
         setAnimateItems(true);
-      }, 100);
+      }, 50);
       return () => clearTimeout(timer);
     }
   }, [filter, animateItems]);
@@ -72,13 +73,13 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
     setFilter(newFilter);
   }, []);
 
-  // Loading state
+  // Loading state with better UX
   if (soldiers.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-ogclan border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-ogclan">Loading soldiers...</p>
+          <p className="text-ogclan">Loading Elite Squad...</p>
         </div>
       </div>
     );
@@ -91,7 +92,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
         <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
       </div>
       
-      {/* Responsive layouts with error boundaries */}
+      {/* Responsive layouts with proper device detection */}
       <div className="min-h-[400px]">
         {isMobile ? (
           <MobileCarousel soldiers={filteredSoldiers} />

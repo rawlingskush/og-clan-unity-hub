@@ -8,7 +8,7 @@ import AnimatedContent from '@/components/AnimatedContent';
 import SoldiersHero from '@/components/soldiers/SoldiersHero';
 import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
 import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
-import RecruitmentNote from '@/components/soldiers/RecruitmentNote'; // Add import for new component
+import RecruitmentNote from '@/components/soldiers/RecruitmentNote';
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -16,11 +16,11 @@ const Soldiers = () => {
   const [error, setError] = useState<string | null>(null);
   const isScrolled = scrollPosition > 100;
   
-  // Initialize loading state
+  // Initialize loading state with faster timing
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 600);
     
     return () => clearTimeout(timer);
   }, []);
@@ -32,8 +32,7 @@ const Soldiers = () => {
     const handleScroll = () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          const position = window.scrollY;
-          setScrollPosition(position);
+          setScrollPosition(window.scrollY);
           ticking = false;
         });
         ticking = true;
@@ -54,7 +53,7 @@ const Soldiers = () => {
             inline: 'nearest'
           });
         }
-      }, 1000);
+      }, 800);
       
       return () => {
         window.removeEventListener('scroll', handleScroll);
@@ -65,7 +64,7 @@ const Soldiers = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Error boundary simulation
+  // Error boundary
   if (error) {
     return (
       <div className="min-h-screen flex flex-col bg-black text-white">
@@ -76,7 +75,7 @@ const Soldiers = () => {
             <p className="text-gray-400 mb-6">{error}</p>
             <button 
               onClick={() => window.location.reload()}
-              className="bg-ogclan text-black px-6 py-2 rounded-lg hover:bg-ogclan-light transition-colors"
+              className="bg-ogclan text-black px-6 py-2 rounded-lg hover:bg-ogclan-light transition-colors mobile-tap-target"
             >
               Reload Page
             </button>
@@ -96,12 +95,12 @@ const Soldiers = () => {
         <ParticleCanvas />
         <SoldiersHero scrollPosition={scrollPosition} />
         
-        {/* Loading overlay */}
+        {/* Optimized loading overlay */}
         {isLoading && (
-          <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center">
+          <div className="fixed inset-0 bg-black/90 z-40 flex items-center justify-center backdrop-blur-sm">
             <div className="text-center">
               <div className="w-16 h-16 border-4 border-ogclan border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-ogclan text-lg">Loading Elite Squad...</p>
+              <p className="text-ogclan text-lg animate-pulse">Loading Elite Squad...</p>
             </div>
           </div>
         )}
@@ -110,9 +109,6 @@ const Soldiers = () => {
         <section className="section-container py-16 relative">
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-[rgba(0,20,0,0.9)] pointer-events-none"></div>
-          
-          {/* Add subtle camo pattern */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMDAwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiMyMjIiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=')] opacity-5 pointer-events-none"></div>
           
           {/* Enhanced animated scanner lines */}
           <div className="absolute top-0 left-0 right-0 h-1 overflow-hidden">

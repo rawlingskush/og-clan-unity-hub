@@ -15,60 +15,47 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
   const [count, setCount] = useState(0);
   const [autoplayEnabled, setAutoplayEnabled] = useState(true);
 
-  // Create extended soldiers array for infinite loop effect
-  const extendedSoldiers = React.useMemo(() => {
-    if (soldiers.length === 0) return [];
-    // Add copies at the beginning and end for seamless infinite scrolling
-    return [...soldiers.slice(-2), ...soldiers, ...soldiers.slice(0, 2)];
-  }, [soldiers]);
-
   useEffect(() => {
-    if (!api) return;
+    if (!api || soldiers.length === 0) return;
 
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
+    setCount(soldiers.length);
+    setCurrent(api.selectedScrollSnap());
 
     const onSelect = () => {
-      setCurrent(api.selectedScrollSnap() + 1);
+      setCurrent(api.selectedScrollSnap());
     };
 
     api.on("select", onSelect);
-
-    // Handle infinite loop
-    api.on("settle", () => {
-      const selected = api.selectedScrollSnap();
-      const total = api.scrollSnapList().length;
-      
-      // If we're at the duplicated items, jump to the real ones
-      if (selected === 0) {
-        api.scrollTo(soldiers.length, false);
-      } else if (selected === total - 1) {
-        api.scrollTo(soldiers.length - 1, false);
-      }
-    });
 
     return () => {
       api?.off("select", onSelect);
     };
   }, [api, soldiers.length]);
 
-  // Auto-advance carousel
+  // Auto-advance carousel with proper cleanup
   useEffect(() => {
-    if (!api || !autoplayEnabled) return;
+    if (!api || !autoplayEnabled || soldiers.length === 0) return;
 
     const autoplay = setInterval(() => {
-      api.scrollNext();
+      const nextIndex = (current + 1) % soldiers.length;
+      api.scrollTo(nextIndex);
     }, 4000);
 
     return () => clearInterval(autoplay);
-  }, [api, autoplayEnabled]);
+  }, [api, autoplayEnabled, current, soldiers.length]);
 
   const handleInteraction = useCallback(() => {
     setAutoplayEnabled(false);
-    // Re-enable autoplay after 10 seconds of inactivity
-    const timer = setTimeout(() => setAutoplayEnabled(true), 10000);
+    const timer = setTimeout(() => setAutoplayEnabled(true), 8000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleDotClick = useCallback((index: number) => {
+    if (api) {
+      api.scrollTo(index);
+      handleInteraction();
+    }
+  }, [api, handleInteraction]);
 
   if (soldiers.length === 0) {
     return (
@@ -88,16 +75,16 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
         setApi={setApi}
         opts={{
           align: "center",
-          loop: false, // We handle infinite loop manually
+          loop: true,
           skipSnaps: false,
-          dragFree: true,
+          dragFree: false,
         }}
         onMouseEnter={handleInteraction}
         onTouchStart={handleInteraction}
       >
         <CarouselContent className="-ml-2 md:-ml-4">
-          {extendedSoldiers.map((soldier, index) => (
-            <CarouselItem key={`${soldier.id}-${index}`} className="pl-2 md:pl-4 basis-4/5 md:basis-1/2 lg:basis-1/3">
+          {soldiers.map((soldier, index) => (
+            <CarouselItem key={soldier.id} className="pl-2 md:pl-4 basis-4/5 md:basis-1/2 lg:basis-1/3">
               <div className="h-full">
                 <SoldierCard soldier={soldier} />
               </div>
@@ -112,20 +99,17 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
             onClick={handleInteraction}
           />
           
-          {/* Dot indicators */}
+          {/* Dot indicators with proper index calculation */}
           <div className="flex gap-2">
             {soldiers.map((_, index) => (
               <button
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  ((current - 3 + soldiers.length) % soldiers.length) === index 
+                className={`w-2 h-2 rounded-full transition-all duration-300 mobile-tap-target ${
+                  current === index 
                     ? 'bg-ogclan w-4' 
                     : 'bg-ogclan/30 hover:bg-ogclan/60'
                 }`}
-                onClick={() => {
-                  api?.scrollTo(index + 2); // +2 to account for duplicated items at start
-                  handleInteraction();
-                }}
+                onClick={() => handleDotClick(index)}
                 aria-label={`Go to soldier ${index + 1}`}
               />
             ))}
@@ -139,7 +123,7 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
 
         {/* Progress indicator */}
         <div className="mt-4 text-center text-sm text-ogclan/60">
-          {((current - 3 + soldiers.length) % soldiers.length) + 1} of {soldiers.length}
+          {current + 1} of {soldiers.length}
         </div>
       </Carousel>
     </AnimatedContent>

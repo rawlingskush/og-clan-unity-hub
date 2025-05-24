@@ -1,7 +1,7 @@
 
 import React, { useState, useCallback } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { SparkParticle } from '@/hooks/useSoldierSparkles';
 import SoldierSparkles from './SoldierSparkles';
 import SoldierCardBody from './SoldierCardBody';
@@ -49,13 +49,16 @@ const SoldierCardMobile = ({
   stats
 }: SoldierCardMobileProps) => {
   const [isPressed, setIsPressed] = useState(false);
+  const [touchFeedback, setTouchFeedback] = useState(false);
 
   const handleTouchStart = useCallback(() => {
     setIsPressed(true);
+    setTouchFeedback(true);
   }, []);
 
   const handleTouchEnd = useCallback(() => {
     setIsPressed(false);
+    setTimeout(() => setTouchFeedback(false), 200);
   }, []);
 
   return (
@@ -117,10 +120,18 @@ const SoldierCardMobile = ({
           {/* Enhanced tap hint for mobile with better visibility */}
           <SoldierCardHint isMobile={true} />
 
-          {/* Touch feedback indicator */}
-          {isPressed && (
-            <div className="absolute inset-0 bg-ogclan/10 pointer-events-none rounded-lg transition-opacity duration-150" />
-          )}
+          {/* Enhanced touch feedback indicator */}
+          <AnimatePresence>
+            {touchFeedback && (
+              <motion.div 
+                className="absolute inset-0 bg-ogclan/10 pointer-events-none rounded-lg"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.1 }}
+                transition={{ duration: 0.2 }}
+              />
+            )}
+          </AnimatePresence>
         </div>
       </Card>
     </motion.div>
