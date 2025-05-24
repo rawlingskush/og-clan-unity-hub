@@ -3,6 +3,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Trophy, Target, TrendingUp, Award } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
+import TournamentImage from './TournamentImage';
 
 const ResultsShowcase = () => {
   const topResults = [
@@ -81,17 +82,12 @@ const ResultsShowcase = () => {
                     </div>
                   </div>
                   
-                  <div className="h-32 bg-black/30 rounded border border-ogclan/20 overflow-hidden">
-                    <img 
-                      src={result.image} 
-                      alt={`${result.tournament} results - OG Clan performance`}
-                      className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300 filter contrast-110 brightness-110"
-                      onError={(e) => {
-                        console.log(`Failed to load image: ${result.image}`);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
-                  </div>
+                  <TournamentImage
+                    src={result.image}
+                    alt={`${result.tournament} results - OG Clan performance`}
+                    tournament={result.tournament}
+                    className="h-32"
+                  />
                 </div>
               </CardContent>
             </Card>

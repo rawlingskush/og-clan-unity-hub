@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Trophy, Calendar, Users, Target } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
+import TournamentImage from '../highlights/TournamentImage';
 
 const TournamentResults = () => {
   const [selectedResult, setSelectedResult] = useState(0);
@@ -174,10 +175,11 @@ const TournamentResults = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
-                    <img 
-                      src={currentResult.image} 
-                      alt={currentResult.title}
-                      className="w-full rounded-lg shadow-lg border border-ogclan/20"
+                    <TournamentImage
+                      src={currentResult.image}
+                      alt={`${currentResult.title} - OG Clan performance`}
+                      tournament={currentResult.title}
+                      className="w-full rounded-lg shadow-lg"
                     />
                     
                     <div>

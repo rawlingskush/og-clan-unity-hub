@@ -63,3 +63,23 @@
 .spotlight-card:hover::after {
   @apply opacity-100;
 }
+
+/* Tournament image focus effects */
+.focus-clan-name {
+  transform-origin: center 30%;
+}
+
+/* Scanner line animation for tournament images */
+@keyframes scanner-line {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
