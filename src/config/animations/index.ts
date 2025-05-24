@@ -5,7 +5,6 @@ import { movementKeyframes, movementAnimations } from './movement';
 import { pulseKeyframes, pulseAnimations } from './pulse';
 import { tacticalKeyframes, tacticalAnimations } from './tactical';
 import { effectsKeyframes, effectsAnimations } from './effects';
-import { interactiveKeyframes, interactiveAnimations } from './interactive';
 
 // Combine all keyframes
 export const keyframes = {
@@ -13,8 +12,7 @@ export const keyframes = {
   ...movementKeyframes,
   ...pulseKeyframes,
   ...tacticalKeyframes,
-  ...effectsKeyframes,
-  ...interactiveKeyframes
+  ...effectsKeyframes
 };
 
 // Combine all animations
@@ -23,6 +21,5 @@ export const animations = {
   ...movementAnimations,
   ...pulseAnimations,
   ...tacticalAnimations,
-  ...effectsAnimations,
-  ...interactiveAnimations
+  ...effectsAnimations
 };
