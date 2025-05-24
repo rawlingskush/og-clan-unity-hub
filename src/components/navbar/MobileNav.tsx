@@ -62,6 +62,16 @@ const MobileNav = ({
     };
   }, [isDrawerOpen]);
 
+  const handlePageClick = (path: string) => {
+    if (handlePageNavigation) {
+      handlePageNavigation(path);
+      // Scroll to top when navigating to a new page
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <div className="md:hidden ml-4">
       <Sheet open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
@@ -141,7 +151,7 @@ const MobileNav = ({
                           ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                           : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
-                      onClick={() => handlePageNavigation && handlePageNavigation(item.path!)}
+                      onClick={() => handlePageClick(item.path!)}
                     >
                       {item.label}
                     </button>
@@ -167,7 +177,7 @@ const MobileNav = ({
             <SheetFooter className="px-4 pt-2 pb-8 mt-auto space-y-2">
               <Button 
                 className="w-full bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-                onClick={() => handlePageNavigation && handlePageNavigation('/soldiers')}
+                onClick={() => handlePageClick('/soldiers')}
               >
                 <Users className="mr-2 h-5 w-5" />
                 Our Soldiers

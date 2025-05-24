@@ -27,6 +27,16 @@ const DesktopNav = ({
   handlePageNavigation,
   currentPath = '/'
 }: DesktopNavProps) => {
+  const handlePageClick = (path: string) => {
+    if (handlePageNavigation) {
+      handlePageNavigation(path);
+      // Scroll to top when navigating to a new page
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
   return (
     <NavigationMenu className="hidden md:flex">
       <NavigationMenuList>
@@ -79,7 +89,7 @@ const DesktopNav = ({
                 <NavigationMenuLink
                   onClick={(e) => {
                     e.preventDefault();
-                    handlePageNavigation && handlePageNavigation(item.path!);
+                    handlePageClick(item.path!);
                   }}
                   className={cn(
                     "inline-flex h-10 w-max items-center justify-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50",

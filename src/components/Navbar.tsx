@@ -53,6 +53,13 @@ const Navbar = () => {
   const handlePageNavigation = (path: string) => {
     navigate(path);
     setIsDrawerOpen(false);
+    
+    // Ensure scroll to top when navigating to soldiers page
+    if (path === '/soldiers') {
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const toggleMobileSubmenu = (itemId: string) => {
@@ -88,7 +95,12 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <button 
             className="flex items-center group relative z-10"
-            onClick={() => navigate('/')}
+            onClick={() => {
+              navigate('/');
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 100);
+            }}
             aria-label="Go to home page"
           >
             <Logo withText={false} size="sm" className="transform transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-gold-lg" />

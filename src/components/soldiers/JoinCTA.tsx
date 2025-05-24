@@ -9,6 +9,10 @@ import { useIsMobile } from '@/hooks/use-mobile';
 const JoinCTA = () => {
   const isMobile = useIsMobile();
   
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  
   return (
     <AnimatedContent animation="fade-in-up" className="mt-16" delay={500}>
       <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -23,16 +27,15 @@ const JoinCTA = () => {
           </Button>
         </Link>
         
-        <Link to="/soldiers">
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-tactical-highlight/60 bg-black/70 text-tactical-highlight hover:bg-black/90 hover:text-tactical-highlight hover:border-tactical-highlight transition-all group px-6 py-6 text-lg"
-          >
-            <Users className="mr-2 h-5 w-5 group-hover:animate-pulse" />
-            Command Unit Below
-          </Button>
-        </Link>
+        <Button 
+          size="lg" 
+          variant="outline"
+          className="border-tactical-highlight/60 bg-black/70 text-tactical-highlight hover:bg-black/90 hover:text-tactical-highlight hover:border-tactical-highlight transition-all group px-6 py-6 text-lg"
+          onClick={handleScrollToTop}
+        >
+          <Users className="mr-2 h-5 w-5 group-hover:animate-pulse" />
+          Command Unit Below
+        </Button>
       </div>
     </AnimatedContent>
   );

@@ -13,8 +13,11 @@ const Footer = () => {
   
   const handleNavClick = (sectionId: string) => {
     if (sectionId === 'soldiers') {
-      // Navigate to soldiers page
+      // Navigate to soldiers page and scroll to top
       navigate('/soldiers');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
       return;
     }
     
