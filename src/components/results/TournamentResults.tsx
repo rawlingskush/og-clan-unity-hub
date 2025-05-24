@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -40,7 +41,7 @@ const TournamentResults = () => {
       id: 4,
       title: "Preacher Event - Elite Performance",
       date: "05/05/2025",
-      image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
+      image: "/lovable-uploads/c7feb0dd-635c-493e-919e-5382ae2a0388.png",
       position: "7th Place",
       description: "Outstanding performance in Preacher Event with strategic gameplay and solid teamwork",
       highlights: ["Elite tactical play", "Strong team coordination", "Consistent performance"]
