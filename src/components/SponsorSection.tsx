@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, TrendingUp, Users, Medal, Award } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
 import { useToast } from '@/components/ui/use-toast';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { Textarea } from './ui/textarea';
 
 const SponsorSection = () => {
@@ -34,6 +33,7 @@ const SponsorSection = () => {
         from_email: formData.email,
         company: formData.company,
         message: formData.message,
+        subject: 'Sponsorship Request from ' + formData.company,
       };
 
       console.log('Sending sponsor email with parameters:', templateParams);
