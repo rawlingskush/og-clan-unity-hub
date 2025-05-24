@@ -41,7 +41,7 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
                 isMobile ? 'px-6 py-3 text-sm min-w-[90px]' : 'px-6 py-2.5 text-sm'
               } ${
                 currentFilter === filterOption.id ? 
-                'active bg-gradient-to-r from-ogclan-dark to-ogclan text-black shadow-lg shadow-ogclan/40 scale-105 border border-ogclan/50' : 
+                'active bg-ogclan text-black shadow-lg shadow-ogclan/40 scale-105 border border-ogclan/50' : 
                 'bg-black/80 text-gray-300 border border-gray-600/50 hover:text-white hover:border-ogclan/60 hover:bg-black/90 hover:shadow-md hover:shadow-ogclan/20'
               }`}
               onClick={() => onFilterChange(filterOption.id)}
@@ -63,17 +63,10 @@ const FilterButtons = ({ currentFilter, onFilterChange }: FilterButtonsProps) =>
               }}
               whileTap={{ scale: 0.95 }}
             >
-              {/* Active background animation */}
-              {currentFilter === filterOption.id && (
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-ogclan via-ogclan-light to-ogclan opacity-90"
-                  layoutId="activeFilter"
-                  transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-                />
-              )}
-              
-              {/* Button text */}
-              <span className="relative z-10 font-semibold">
+              {/* Button text with solid color for better visibility */}
+              <span className={`relative z-10 font-bold ${
+                currentFilter === filterOption.id ? 'text-black' : 'text-gray-300'
+              }`}>
                 {isMobile ? filterOption.shortLabel : filterOption.label}
               </span>
               
