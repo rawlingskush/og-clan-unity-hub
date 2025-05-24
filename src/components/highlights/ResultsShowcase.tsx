@@ -20,7 +20,7 @@ const ResultsShowcase = () => {
       tournament: "TEF Esports",
       position: "1st", 
       points: "349",
-      image: "https://preview--og-clan-unity-hub.lovable.app/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
+      image: "/lovable-uploads/44d227d7-2c81-41b1-96b0-257a195f0166.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
@@ -28,7 +28,7 @@ const ResultsShowcase = () => {
       tournament: "Aurora Scrims",
       position: "2nd",
       points: "232",
-      image: "/lovable-uploads/44d227d7-2c81-41b1-96b0-257a195f0166.png",
+      image: "",
       icon: <Target className="w-6 h-6 text-gray-400" />
     },
     {
