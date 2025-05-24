@@ -20,7 +20,7 @@ const ResultsShowcase = () => {
       tournament: "TEF Esports",
       position: "1st", 
       points: "349",
-      image: "/lovable-uploads/43c0316d-85e8-4b3b-9dbe-1a1e796f9b1f.png",
+      image: "https://preview--og-clan-unity-hub.lovable.app/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
     {
