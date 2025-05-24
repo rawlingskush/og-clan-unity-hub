@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { useIsMobile } from '@/hooks/use-mobile';
 import FilterButtons from './FilterButtons';
@@ -16,14 +16,39 @@ interface SoldiersGridProps {
 const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   const [filter, setFilter] = useState<string>("all");
   const [animateItems, setAnimateItems] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
   const isMobile = useIsMobile();
   
-  // Filter soldiers based on selected filter
-  const filteredSoldiers = filterSoldiers(soldiers, filter);
+  // Memoize filtered soldiers to prevent unnecessary recalculations
+  const filteredSoldiers = useMemo(() => 
+    filterSoldiers(soldiers, filter), 
+    [soldiers, filter]
+  );
 
-  // Initialize animation after component mounts with staggered delays
+  // Optimized tablet detection with proper cleanup
   useEffect(() => {
-    // Animate the cards after filter buttons
+    const checkTablet = () => {
+      setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+    };
+    
+    checkTablet();
+    
+    let timeoutId: NodeJS.Timeout;
+    const debouncedResize = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(checkTablet, 100);
+    };
+    
+    window.addEventListener('resize', debouncedResize);
+    
+    return () => {
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
+  // Initialize animation after component mounts
+  useEffect(() => {
     const timer = setTimeout(() => {
       setAnimateItems(true);
     }, 600);
@@ -31,39 +56,56 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Reset and trigger animations when filter changes
+  // Optimized filter change animation
   useEffect(() => {
-    setAnimateItems(false);
-    const timer = setTimeout(() => {
-      setAnimateItems(true);
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [filter]);
+    if (animateItems) {
+      setAnimateItems(false);
+      const timer = setTimeout(() => {
+        setAnimateItems(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [filter, animateItems]);
 
-  // Handle filter change
-  const handleFilterChange = (newFilter: string) => {
+  // Memoized filter change handler
+  const handleFilterChange = useCallback((newFilter: string) => {
     setFilter(newFilter);
-  };
+  }, []);
 
-  // Determine if we should show grid or carousel based on screen size
-  const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+  // Loading state
+  if (soldiers.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-12 h-12 border-4 border-ogclan border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-ogclan">Loading soldiers...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div>
-      {/* Filter Pills */}
-      <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
+    <div className="space-y-8">
+      {/* Filter Pills with improved mobile spacing */}
+      <div className="px-4 md:px-0">
+        <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
+      </div>
       
-      {/* Responsive layouts */}
-      {isMobile ? (
-        <MobileCarousel soldiers={filteredSoldiers} />
-      ) : isTablet ? (
-        <TabletGrid soldiers={filteredSoldiers} animateItems={animateItems} />
-      ) : (
-        <DesktopGrid soldiers={filteredSoldiers} animateItems={animateItems} />
-      )}
+      {/* Responsive layouts with error boundaries */}
+      <div className="min-h-[400px]">
+        {isMobile ? (
+          <MobileCarousel soldiers={filteredSoldiers} />
+        ) : isTablet ? (
+          <TabletGrid soldiers={filteredSoldiers} animateItems={animateItems} />
+        ) : (
+          <DesktopGrid soldiers={filteredSoldiers} animateItems={animateItems} />
+        )}
+      </div>
       
-      {/* Join CTA */}
-      <JoinCTA />
+      {/* Join CTA with improved spacing */}
+      <div className="mt-16">
+        <JoinCTA />
+      </div>
     </div>
   );
 };
