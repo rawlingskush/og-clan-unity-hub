@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Soldier } from "@/types/soldier";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useSoldierSparkles } from "@/hooks/useSoldierSparkles";
+import { usePrincessSparkles } from "@/hooks/usePrincessSparkles";
 import { generateSoldierStats } from "@/utils/soldierStats";
 import SoldierCardMobile from './SoldierCardMobile';
 import SoldierCardDesktop from './SoldierCardDesktop';
@@ -20,9 +21,11 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   
   // Mark card as active if it's a spotlight soldier or explicitly set as active
   const isActiveCard = isActive || soldier.spotlight;
+  const isPrincessCard = soldier.princess;
   
-  // Use the custom hook for sparkle effects
+  // Use the sparkle hooks
   const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard);
+  const { princessParticles, generatePrincessParticles } = usePrincessSparkles(isPrincessCard);
   
   // Generate random favorite map on component mount
   useEffect(() => {
@@ -50,9 +53,9 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     "R9-0": "bg-red-600",
     "Striker": "bg-red-600",
     
-    // SMGs - yellow
+    // SMGs - yellow/pink for princess
     "QQ9": "bg-yellow-600",
-    "FENNEC": "bg-yellow-600",
+    "FENNEC": isPrincessCard ? "bg-pink-600" : "bg-yellow-600",
     "MAC-10": "bg-yellow-600",
     
     // Snipers - green
@@ -67,10 +70,22 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   
   const accentColor = weaponBadgeColors[soldier.weapon] || "bg-ogclan";
 
-  // Handle touch move for mobile sparkles
+  // Handle touch move for mobile effects
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!isActiveCard) return;
-    generateSparkParticles(e);
+    if (isPrincessCard) {
+      generatePrincessParticles(e);
+    } else if (isActiveCard) {
+      generateSparkParticles(e);
+    }
+  };
+
+  // Handle mouse move for desktop effects
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (isPrincessCard) {
+      generatePrincessParticles(e);
+    } else if (isActiveCard) {
+      generateSparkParticles(e);
+    }
   };
 
   return isMobile ? (
@@ -83,9 +98,11 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       tiktokUrl={soldier.tiktokUrl}
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
+      isPrincessCard={isPrincessCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
       sparkParticles={sparkParticles}
+      princessParticles={princessParticles}
       onTouchMove={handleTouchMove}
       stats={stats}
     />
@@ -99,10 +116,12 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       tiktokUrl={soldier.tiktokUrl}
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
+      isPrincessCard={isPrincessCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
-      generateSparkParticles={generateSparkParticles}
+      generateSparkParticles={handleMouseMove}
       sparkParticles={sparkParticles}
+      princessParticles={princessParticles}
       accentColor={accentColor}
       stats={stats}
     />

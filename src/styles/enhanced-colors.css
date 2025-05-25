@@ -9,10 +9,21 @@
   --ogclan-primary-light: #FFD700;
   --ogclan-primary-muted: #F5DEB3;
   
+  /* Princess Theme Colors */
+  --princess-primary: #ff69b4;
+  --princess-secondary: #ff1493;
+  --princess-light: #ffb6c1;
+  --princess-muted: #dda0dd;
+  
   /* Enhanced gradients */
   --ogclan-gradient-primary: linear-gradient(135deg, var(--ogclan-primary) 0%, var(--ogclan-primary-light) 100%);
   --ogclan-gradient-dark: linear-gradient(135deg, var(--ogclan-primary-dark) 0%, var(--ogclan-primary) 100%);
   --ogclan-gradient-subtle: linear-gradient(135deg, var(--ogclan-primary-muted) 0%, var(--ogclan-primary) 100%);
+  
+  /* Princess gradients */
+  --princess-gradient-primary: linear-gradient(135deg, var(--princess-primary) 0%, var(--princess-secondary) 100%);
+  --princess-gradient-light: linear-gradient(135deg, var(--princess-light) 0%, var(--princess-primary) 100%);
+  --princess-gradient-subtle: linear-gradient(135deg, var(--princess-muted) 0%, var(--princess-primary) 100%);
   
   /* Tactical UI colors */
   --tactical-bg-primary: rgba(0, 0, 0, 0.95);
@@ -70,6 +81,17 @@
   @apply bg-clip-text text-transparent;
 }
 
+/* Princess text gradients */
+.text-gradient-princess {
+  background: var(--princess-gradient-primary);
+  @apply bg-clip-text text-transparent;
+}
+
+.text-gradient-princess-light {
+  background: var(--princess-gradient-light);
+  @apply bg-clip-text text-transparent;
+}
+
 /* Smooth hover effects */
 .hover-effect {
   @apply transition-all duration-300 ease-out;
@@ -91,6 +113,47 @@
 
 .glow-strong {
   box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+}
+
+/* Princess glow effects */
+.glow-princess {
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+.glow-princess-medium {
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+}
+
+.glow-princess-strong {
+  box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
+}
+
+/* Princess card effects */
+.princess-card {
+  @apply relative overflow-hidden;
+}
+
+.princess-card::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-tr from-transparent via-pink-500/5 to-pink-500/10 opacity-0 transition-opacity duration-300;
+}
+
+.princess-card:hover::after {
+  @apply opacity-100;
+}
+
+/* Princess pulse animation */
+@keyframes glow-princess {
+  from {
+    text-shadow: 0 0 5px rgba(255, 105, 180, 0.5), 0 0 10px rgba(255, 105, 180, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(255, 105, 180, 0.6), 0 0 20px rgba(255, 105, 180, 0.4);
+  }
+}
+
+.animate-glow-princess {
+  animation: glow-princess 3s ease-in-out infinite alternate;
 }
 
 /* Smooth transitions for all interactive elements */

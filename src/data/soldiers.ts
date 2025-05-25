@@ -1,3 +1,4 @@
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -131,9 +132,8 @@ export const soldiers: Soldier[] = [
     bio: "Botgirl is OG Clan's Princess. Her FENNEC spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@favbotgirl",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    spotlight: true,
-    team: 2,
-    active: true // Mark this soldier as active
+    princess: true, // New princess theme instead of spotlight
+    team: 2
   },
   {
     id: "dna",

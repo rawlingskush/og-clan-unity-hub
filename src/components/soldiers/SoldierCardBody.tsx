@@ -10,6 +10,7 @@ interface SoldierCardBodyProps {
   weapon: string;
   bio: string;
   isSpotlight: boolean;
+  isPrincess?: boolean;
   favoriteMap: string;
 }
 
@@ -20,23 +21,38 @@ const SoldierCardBody = ({
   weapon, 
   bio, 
   isSpotlight,
+  isPrincess = false,
   favoriteMap
 }: SoldierCardBodyProps) => {
+  const getNameClasses = () => {
+    if (isPrincess) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-princess animate-glow-princess';
+    } else if (isSpotlight) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold animate-glow';
+    } else {
+      return 'text-xl font-bold mb-1 tracking-wider text-ogclan';
+    }
+  };
+
   return (
     <div className="flex flex-col items-center">
       <SoldierCardImage 
         imageUrl={imageUrl} 
         name={name} 
         role={role} 
-        isSpotlight={isSpotlight} 
+        isSpotlight={isSpotlight}
+        isPrincess={isPrincess}
       />
       
-      {/* Name with military font style */}
-      <h3 className={`text-xl font-bold mb-1 tracking-wider ${
-        isSpotlight ? 'text-gradient-gold animate-glow' : 'text-ogclan'
-      }`}>{name}</h3>
+      {/* Name with theme-specific styling */}
+      <h3 className={getNameClasses()}>{name}</h3>
       
-      <SoldierCardBadges role={role} weapon={weapon} favoriteMap={favoriteMap} />
+      <SoldierCardBadges 
+        role={role} 
+        weapon={weapon} 
+        favoriteMap={favoriteMap}
+        isPrincess={isPrincess}
+      />
       
       {/* Bio */}
       <p className="text-center text-sm mb-4 text-gray-300">{bio}</p>
