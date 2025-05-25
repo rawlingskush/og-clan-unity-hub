@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -8,9 +7,10 @@ interface SoldierCardBadgesProps {
   role: string;
   weapon: string;
   favoriteMap: string;
+  isPrincess?: boolean;
 }
 
-const SoldierCardBadges = ({ role, weapon, favoriteMap }: SoldierCardBadgesProps) => {
+const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false }: SoldierCardBadgesProps) => {
   const getWeaponBadgeColor = (weapon: string) => {
     const weaponColors: Record<string, string> = {
       // Shotguns - red
