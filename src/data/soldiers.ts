@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -20,7 +19,7 @@ export const soldiers: Soldier[] = [
     weapon: "KRM-262",
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
     tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
-    imageUrl: "blob:https://lovable.dev/d2ccd604-5d87-4f09-92fa-44b531a008a5",
+    imageUrl: "/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png",
     team: 3
   },
   {
@@ -30,7 +29,7 @@ export const soldiers: Soldier[] = [
     weapon: "AK117",
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
-    imageUrl: "blob:https://lovable.dev/f1f77904-81b0-4155-8eea-eb945d10fd3d",
+    imageUrl: "/lovable-uploads/f5cef528-3bca-46bc-89c4-f19c805c0968.png",
     team: 1
   },
   {
