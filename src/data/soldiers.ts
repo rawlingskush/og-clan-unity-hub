@@ -29,7 +29,7 @@ export const soldiers: Soldier[] = [
     weapon: "AK117",
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
-    imageUrl: "/lovable-uploads/f5cef528-3bca-46bc-89c4-f19c805c0968.png",
+    imageUrl: "/lovable-uploads/89cd5d54-df7e-4e67-b639-4a9cf03b253c.png",
     team: 1
   },
   {
