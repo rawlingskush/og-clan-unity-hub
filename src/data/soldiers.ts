@@ -9,7 +9,7 @@ export const soldiers: Soldier[] = [
     bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum."
 ,
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/c4b280fd-ce29-419b-b041-29712bd93d6a.png",
     team: 1,
   },
   {
@@ -59,7 +59,7 @@ export const soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a BY15 or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
     tiktokUrl: "https://www.tiktok.com/@.gamehouse_yt",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/b1792805-6284-42f8-bdda-38ddddf384e5.png",
     team: 4
   },
   {
@@ -69,7 +69,7 @@ export const soldiers: Soldier[] = [
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
     tiktokUrl: "https://www.tiktok.com/@davisfrank6",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/2f636e7c-eee5-4028-9f7b-ef987e714375.png",
     team: 1
   },
   {
