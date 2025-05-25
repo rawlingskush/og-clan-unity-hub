@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Heart, Star, Crown } from 'lucide-react';
 
 interface PrincessParticle {
@@ -17,34 +17,30 @@ interface PrincessSparklesProps {
 }
 
 const PrincessSparkles = ({ particles }: PrincessSparklesProps) => {
-  if (particles.length === 0) return null;
+  // Memoize icon components for better performance
+  const iconComponents = useMemo(() => ({
+    heart: Heart,
+    star: Star,
+    crown: Crown
+  }), []);
   
-  const getIcon = (type: string) => {
-    switch (type) {
-      case 'heart':
-        return Heart;
-      case 'star':
-        return Star;
-      case 'crown':
-        return Crown;
-      default:
-        return Heart;
-    }
-  };
+  if (particles.length === 0) return null;
   
   return (
     <>
       {particles.map(particle => {
-        const IconComponent = getIcon(particle.type);
+        const IconComponent = iconComponents[particle.type];
         return (
           <div 
             key={particle.id}
-            className="absolute z-10 pointer-events-none"
+            className="absolute z-10 pointer-events-none will-change-transform"
             style={{
               left: `${particle.x}px`,
               top: `${particle.y}px`,
               opacity: particle.opacity,
-              transform: `scale(${particle.size / 4})`
+              transform: `scale(${particle.size / 4})`,
+              // Use transform3d for hardware acceleration
+              transform: `translate3d(${particle.x}px, ${particle.y}px, 0) scale(${particle.size / 4})`
             }}
           >
             <IconComponent 
@@ -59,4 +55,4 @@ const PrincessSparkles = ({ particles }: PrincessSparklesProps) => {
   );
 };
 
-export default PrincessSparkles;
+export default React.memo(PrincessSparkles);

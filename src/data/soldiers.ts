@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -30,7 +29,7 @@ export const soldiers: Soldier[] = [
     weapon: "AK117",
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
-    imageUrl: "/lovable-uploads/89cd5d54-df7e-4e67-b639-4a9cf03b253c.png",
+    imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png",
     team: 1
   },
   {
