@@ -20,7 +20,7 @@ export const soldiers: Soldier[] = [
     weapon: "KRM-262",
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
     tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
-    imageUrl: "/lovable-uploads/5bfd821e-f0b3-4f77-8754-6df282e60305.png",
+    imageUrl: "blob:https://lovable.dev/d2ccd604-5d87-4f09-92fa-44b531a008a5",
     team: 3
   },
   {
@@ -30,7 +30,7 @@ export const soldiers: Soldier[] = [
     weapon: "AK117",
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "blob:https://lovable.dev/f1f77904-81b0-4155-8eea-eb945d10fd3d",
     team: 1
   },
   {
