@@ -38,9 +38,8 @@ const PrincessSparkles = ({ particles }: PrincessSparklesProps) => {
               left: `${particle.x}px`,
               top: `${particle.y}px`,
               opacity: particle.opacity,
-              transform: `scale(${particle.size / 4})`,
-              // Use transform3d for hardware acceleration
-              transform: `translate3d(${particle.x}px, ${particle.y}px, 0) scale(${particle.size / 4})`
+              // Use transform3d for hardware acceleration with combined transform
+              transform: `translate3d(0, 0, 0) scale(${particle.size / 4})`
             }}
           >
             <IconComponent 
