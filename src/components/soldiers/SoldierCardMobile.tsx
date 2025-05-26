@@ -21,7 +21,6 @@ interface SoldierCardMobileProps {
   favoriteMap: string;
   isActiveCard: boolean;
   isPrincessCard?: boolean;
-  isProCard?: boolean;
   showQuickStats: boolean;
   toggleQuickStats: (e: React.MouseEvent<HTMLDivElement>) => void;
   sparkParticles: SparkParticle[];
@@ -48,7 +47,6 @@ const SoldierCardMobile = ({
   favoriteMap,
   isActiveCard,
   isPrincessCard = false,
-  isProCard = false,
   showQuickStats,
   toggleQuickStats,
   sparkParticles,
@@ -76,15 +74,7 @@ const SoldierCardMobile = ({
       isPressed ? 'shadow-lg shadow-ogclan/20 scale-[0.98]' : ''
     }`;
     
-    if (isProCard) {
-      classes += ` pro-card border-yellow-500/40 hover:border-yellow-500/80`;
-      if (showQuickStats) {
-        classes = classes.replace('ring-ogclan/50', 'ring-yellow-500/50');
-      }
-      if (isPressed) {
-        classes = classes.replace('shadow-ogclan/20', 'shadow-yellow-500/20');
-      }
-    } else if (isPrincessCard) {
+    if (isPrincessCard) {
       classes += ` princess-card border-pink-500/30 hover:border-pink-500/70`;
       if (showQuickStats) {
         classes = classes.replace('ring-ogclan/50', 'ring-pink-500/50');
@@ -123,9 +113,7 @@ const SoldierCardMobile = ({
         <div className="relative">
           {/* Enhanced Scanner Line with theme-specific styling */}
           <div className="scanner-line">
-            {isProCard ? (
-              <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/70 to-transparent w-full animate-[scanner-line_3s_linear_infinite]"></div>
-            ) : isPrincessCard ? (
+            {isPrincessCard ? (
               <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-pink-500/60 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
             ) : (
               <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/60 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
@@ -148,7 +136,6 @@ const SoldierCardMobile = ({
               bio={bio}
               isSpotlight={isActiveCard}
               isPrincess={isPrincessCard}
-              isPro={isProCard}
               favoriteMap={favoriteMap}
             />
           </CardContent>
@@ -173,7 +160,7 @@ const SoldierCardMobile = ({
             {touchFeedback && (
               <motion.div 
                 className={`absolute inset-0 pointer-events-none rounded-lg ${
-                  isProCard ? 'bg-yellow-500/10' : isPrincessCard ? 'bg-pink-500/10' : 'bg-ogclan/10'
+                  isPrincessCard ? 'bg-pink-500/10' : 'bg-ogclan/10'
                 }`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

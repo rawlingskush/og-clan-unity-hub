@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -9,10 +8,9 @@ interface SoldierCardBadgesProps {
   weapon: string;
   favoriteMap: string;
   isPrincess?: boolean;
-  isPro?: boolean;
 }
 
-const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false, isPro = false }: SoldierCardBadgesProps) => {
+const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false }: SoldierCardBadgesProps) => {
   const getWeaponBadgeColor = (weapon: string) => {
     const weaponColors: Record<string, string> = {
       // Shotguns - red
@@ -36,11 +34,6 @@ const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false, isPr
       "AK117": "bg-blue-600 hover:bg-blue-700",
       "Oden": "bg-blue-600 hover:bg-blue-700"
     };
-    
-    // Pro players get golden weapon badges
-    if (isPro) {
-      return "bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-400 hover:to-orange-400 border border-yellow-400";
-    }
     
     return weaponColors[weapon] || "bg-ogclan hover:bg-ogclan-dark";
   };
@@ -75,18 +68,11 @@ const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false, isPr
     return <Sword className="h-4 w-4 mr-1" />;
   };
 
-  const getRoleBadgeClasses = () => {
-    if (isPro) {
-      return "mb-3 bg-gradient-to-r from-yellow-500/80 to-orange-500/80 text-black hover:from-yellow-400/80 hover:to-orange-400/80 border border-yellow-400/50 flex items-center";
-    }
-    return "mb-3 bg-ogclan/80 text-black hover:bg-ogclan flex items-center";
-  };
-
   return (
     <>
       {/* Role Badge */}
       <Badge 
-        className={getRoleBadgeClasses()}
+        className="mb-3 bg-ogclan/80 text-black hover:bg-ogclan flex items-center"
         variant="secondary"
         aria-label={`Role: ${role}`}
       >
@@ -105,12 +91,7 @@ const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false, isPr
       
       {/* Favorite Map Badge */}
       <Badge 
-        className={cn(
-          "mb-2 flex items-center gap-1",
-          isPro 
-            ? "bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-400 border border-yellow-400/30" 
-            : "bg-black/60 text-ogclan border border-ogclan/30"
-        )}
+        className="mb-2 bg-black/60 text-ogclan border border-ogclan/30 flex items-center gap-1"
         variant="outline"
       >
         <Map className="h-3 w-3" />

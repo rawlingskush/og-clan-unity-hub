@@ -22,10 +22,9 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   // Mark card as active if it's a spotlight soldier or explicitly set as active
   const isActiveCard = isActive || soldier.spotlight;
   const isPrincessCard = soldier.princess;
-  const isProCard = soldier.pro;
   
   // Use the sparkle hooks
-  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard || isProCard);
+  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard);
   const { princessParticles, generatePrincessParticles } = usePrincessSparkles(isPrincessCard);
   
   // Generate random favorite map on component mount
@@ -54,10 +53,10 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     "R9-0": "bg-red-600",
     "Striker": "bg-red-600",
     
-    // SMGs - yellow/pink for princess/gold for pro
-    "QQ9": isProCard ? "bg-yellow-500" : "bg-yellow-600",
-    "FENNEC": isPrincessCard ? "bg-pink-600" : isProCard ? "bg-yellow-500" : "bg-yellow-600",
-    "MAC-10": isProCard ? "bg-yellow-500" : "bg-yellow-600",
+    // SMGs - yellow/pink for princess
+    "QQ9": "bg-yellow-600",
+    "FENNEC": isPrincessCard ? "bg-pink-600" : "bg-yellow-600",
+    "MAC-10": "bg-yellow-600",
     
     // Snipers - green
     "XPR-50": "bg-green-600",
@@ -75,7 +74,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard || isProCard) {
+    } else if (isActiveCard) {
       generateSparkParticles(e);
     }
   };
@@ -84,7 +83,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard || isProCard) {
+    } else if (isActiveCard) {
       generateSparkParticles(e);
     }
   };
@@ -100,7 +99,6 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
       isPrincessCard={isPrincessCard}
-      isProCard={isProCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
       sparkParticles={sparkParticles}
@@ -119,7 +117,6 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
       isPrincessCard={isPrincessCard}
-      isProCard={isProCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
       generateSparkParticles={handleMouseMove}
