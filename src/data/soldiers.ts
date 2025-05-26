@@ -199,7 +199,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ ƧWƗƵƵY",
     role: "⚡ Tactical Strategist",
     weapon: "BY15",
-    bio: "SWIZZY combines quick reflexes with sharp instincts, bringing strategic thinking and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
+    bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
     tiktokUrl: "https://www.tiktok.com/@swizzy_og",
     imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
     team: 1,
