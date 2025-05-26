@@ -1,4 +1,5 @@
 
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -12,6 +13,17 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/c4b280fd-ce29-419b-b041-29712bd93d6a.png",
     team: 1,
+  },
+  {
+    id: "rex",
+    name: "ФƓゝ REX",
+    role: "⚡ Strategic Commander",
+    weapon: "Kilo 141",
+    bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
+    tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
+    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
+    team: 1,
+    active: true // Mark as active for extra visual effect
   },
   {
     id: "exodus",
