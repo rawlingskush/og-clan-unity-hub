@@ -21,6 +21,7 @@ interface SoldierCardDesktopProps {
   favoriteMap: string;
   isActiveCard: boolean;
   isPrincessCard?: boolean;
+  isProCard?: boolean;
   showQuickStats: boolean;
   toggleQuickStats: (e: React.MouseEvent<HTMLDivElement>) => void;
   generateSparkParticles: (e: React.MouseEvent<HTMLDivElement>) => void;
@@ -48,6 +49,7 @@ const SoldierCardDesktop = ({
   favoriteMap,
   isActiveCard,
   isPrincessCard = false,
+  isProCard = false,
   showQuickStats,
   toggleQuickStats,
   generateSparkParticles,
@@ -61,7 +63,9 @@ const SoldierCardDesktop = ({
       showQuickStats ? 'stats-active' : ''
     }`;
     
-    if (isPrincessCard) {
+    if (isProCard) {
+      classes += ` pro-card border-yellow-500/30 hover:border-yellow-500/70 hover:shadow-[0_0_15px_rgba(255,215,0,0.4)]`;
+    } else if (isPrincessCard) {
       classes += ` princess-card border-pink-500/30 hover:border-pink-500/70 hover:shadow-[0_0_15px_rgba(255,105,180,0.3)]`;
     } else if (isActiveCard) {
       classes += ` spotlight-card active hover:shadow-[0_0_15px_${accentColor.replace('bg-', 'rgba(')},0.3)]`;
@@ -83,9 +87,11 @@ const SoldierCardDesktop = ({
         onMouseMove={generateSparkParticles}
       >
         <div className="relative">
-          {/* Scanner Line - different for princess */}
-          <div className={`scanner-line ${isPrincessCard ? 'princess-scanner' : ''}`}>
-            {isPrincessCard ? (
+          {/* Scanner Line - different for pro and princess */}
+          <div className={`scanner-line ${isProCard ? 'pro-scanner' : isPrincessCard ? 'princess-scanner' : ''}`}>
+            {isProCard ? (
+              <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/60 to-transparent w-full animate-[scanner-line_3s_linear_infinite]"></div>
+            ) : isPrincessCard ? (
               <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-pink-500/60 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
             ) : (
               <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/60 to-transparent w-full animate-[scanner-line_3s_linear_infinite]"></div>
@@ -108,6 +114,7 @@ const SoldierCardDesktop = ({
               bio={bio}
               isSpotlight={isActiveCard}
               isPrincess={isPrincessCard}
+              isPro={isProCard}
               favoriteMap={favoriteMap}
             />
           </CardContent>

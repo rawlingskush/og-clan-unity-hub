@@ -22,9 +22,10 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   // Mark card as active if it's a spotlight soldier or explicitly set as active
   const isActiveCard = isActive || soldier.spotlight;
   const isPrincessCard = soldier.princess;
+  const isProCard = soldier.pro;
   
   // Use the sparkle hooks
-  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard);
+  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard || isProCard);
   const { princessParticles, generatePrincessParticles } = usePrincessSparkles(isPrincessCard);
   
   // Generate random favorite map on component mount
@@ -68,13 +69,13 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     "Oden": "bg-blue-600"
   };
   
-  const accentColor = weaponBadgeColors[soldier.weapon] || "bg-ogclan";
+  const accentColor = isProCard ? "bg-yellow-500" : weaponBadgeColors[soldier.weapon] || "bg-ogclan";
 
   // Handle touch move for mobile effects
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard) {
+    } else if (isActiveCard || isProCard) {
       generateSparkParticles(e);
     }
   };
@@ -83,7 +84,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard) {
+    } else if (isActiveCard || isProCard) {
       generateSparkParticles(e);
     }
   };
@@ -99,6 +100,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
       isPrincessCard={isPrincessCard}
+      isProCard={isProCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
       sparkParticles={sparkParticles}
@@ -117,6 +119,7 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       favoriteMap={favoriteMap}
       isActiveCard={isActiveCard}
       isPrincessCard={isPrincessCard}
+      isProCard={isProCard}
       showQuickStats={showQuickStats}
       toggleQuickStats={toggleQuickStats}
       generateSparkParticles={handleMouseMove}

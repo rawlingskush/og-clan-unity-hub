@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -8,9 +9,10 @@ interface SoldierCardBadgesProps {
   weapon: string;
   favoriteMap: string;
   isPrincess?: boolean;
+  isPro?: boolean;
 }
 
-const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false }: SoldierCardBadgesProps) => {
+const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false, isPro = false }: SoldierCardBadgesProps) => {
   const getWeaponBadgeColor = (weapon: string) => {
     const weaponColors: Record<string, string> = {
       // Shotguns - red
@@ -68,11 +70,19 @@ const SoldierCardBadges = ({ role, weapon, favoriteMap, isPrincess = false }: So
     return <Sword className="h-4 w-4 mr-1" />;
   };
 
+  const getRoleBadgeClasses = () => {
+    if (isPro) {
+      return "mb-3 bg-gradient-to-r from-yellow-400 to-yellow-600 text-black hover:from-yellow-500 hover:to-yellow-700 flex items-center font-semibold";
+    } else {
+      return "mb-3 bg-ogclan/80 text-black hover:bg-ogclan flex items-center";
+    }
+  };
+
   return (
     <>
       {/* Role Badge */}
       <Badge 
-        className="mb-3 bg-ogclan/80 text-black hover:bg-ogclan flex items-center"
+        className={getRoleBadgeClasses()}
         variant="secondary"
         aria-label={`Role: ${role}`}
       >

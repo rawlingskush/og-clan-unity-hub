@@ -2,6 +2,7 @@
 import React from 'react';
 import SoldierCardImage from './SoldierCardImage';
 import SoldierCardBadges from './SoldierCardBadges';
+import ProBadge from './ProBadge';
 
 interface SoldierCardBodyProps {
   imageUrl: string;
@@ -11,6 +12,7 @@ interface SoldierCardBodyProps {
   bio: string;
   isSpotlight: boolean;
   isPrincess?: boolean;
+  isPro?: boolean;
   favoriteMap: string;
 }
 
@@ -22,10 +24,13 @@ const SoldierCardBody = ({
   bio, 
   isSpotlight,
   isPrincess = false,
+  isPro = false,
   favoriteMap
 }: SoldierCardBodyProps) => {
   const getNameClasses = () => {
-    if (isPrincess) {
+    if (isPro) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold animate-glow';
+    } else if (isPrincess) {
       return 'text-xl font-bold mb-1 tracking-wider text-gradient-princess animate-glow-princess';
     } else if (isSpotlight) {
       return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold animate-glow';
@@ -35,13 +40,17 @@ const SoldierCardBody = ({
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center relative">
+      {/* PRO Badge */}
+      {isPro && <ProBadge />}
+      
       <SoldierCardImage 
         imageUrl={imageUrl} 
         name={name} 
         role={role} 
         isSpotlight={isSpotlight}
         isPrincess={isPrincess}
+        isPro={isPro}
       />
       
       {/* Name with theme-specific styling */}
@@ -52,6 +61,7 @@ const SoldierCardBody = ({
         weapon={weapon} 
         favoriteMap={favoriteMap}
         isPrincess={isPrincess}
+        isPro={isPro}
       />
       
       {/* Bio */}
