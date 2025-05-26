@@ -15,17 +15,6 @@ export const soldiers: Soldier[] = [
     team: 1,
   },
   {
-    id: "rex",
-    name: "ФƓゝ REX",
-    role: "⚡ Strategic Commander",
-    weapon: "Kilo 141",
-    bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
-    tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
-    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
-    team: 1,
-    active: true // Mark as active for extra visual effect
-  },
-  {
     id: "exodus",
     name: "ФƓゝ EXODUS",
     role: "Shield of the Squad",
@@ -46,6 +35,17 @@ export const soldiers: Soldier[] = [
     team: 1
   },
   {
+    id: "slim",
+    name: "ФƓゝ SLIM",
+    role: "Close-Quarters Phantom",
+    weapon: "HS0405",
+    bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
+    tiktokUrl: "https://www.tiktok.com/@slim_06",
+    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    team: 3,
+    active: true // Mark as active for extra visual effect
+  },
+  {
     id: "dhamer",
     name: "ФƓゝ DHAMER",
     role: "Point-of-Entry Specialist",
@@ -62,7 +62,7 @@ export const soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a BY15 or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
     tiktokUrl: "https://www.tiktok.com/@.gamehouse_yt",
-    imageUrl: "/lovable-uploads/b1792805-6284-42f8-bdda-38ddddf384e5.png",
+    imageUrl: "/lovable-uploads/16423716-0397-4587-bb36-da75513b2ba4.png",
     team: 4
   },
   {
@@ -133,7 +133,7 @@ export const soldiers: Soldier[] = [
     weapon: "FENNEC",
     bio: "Botgirl is OG Clan's Princess. Her FENNEC spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@favbotgirl",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/b895cd47-bbb9-4840-acf9-777a0d626979.png",
     princess: true, // New princess theme instead of spotlight
     team: 2
   },
@@ -178,16 +178,16 @@ export const soldiers: Soldier[] = [
     team: 5,
     active: true // Mark as active for extra visual effect
   },
-  // Add the new soldier Slim
+  // NEZ soldiers moved to the end
   {
-    id: "slim",
-    name: "ФƓゝ SLIM",
-    role: "Close-Quarters Phantom",
-    weapon: "HS0405",
-    bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
-    tiktokUrl: "https://www.tiktok.com/@slim_06",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 3,
+    id: "rex",
+    name: "ФƓゝ REX",
+    role: "⚡ Strategic Commander",
+    weapon: "Kilo 141",
+    bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
+    tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
+    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
+    team: 1,
     active: true // Mark as active for extra visual effect
   }
 ];
