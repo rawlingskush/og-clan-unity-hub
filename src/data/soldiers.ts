@@ -1,6 +1,3 @@
-
-
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -9,11 +6,11 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ KUSH",
     role: "Assault Architect",
     weapon: "Oden",
-    bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum."
-,
+    bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum.",
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/c4b280fd-ce29-419b-b041-29712bd93d6a.png",
     team: 1,
+    pro: true
   },
   {
     id: "exodus",
@@ -23,7 +20,8 @@ export const soldiers: Soldier[] = [
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
     tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
     imageUrl: "/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png",
-    team: 3
+    team: 3,
+    pro: true
   },
   {
     id: "wizard",
@@ -44,18 +42,8 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
-    active: true // Mark as active for extra visual effect
-  },
-  {
-    id: "swizzy",
-    name: "ФƓゝ ƧWƗƵƵY",
-    role: "⚡ Tactical Strategist",
-    weapon: "BY15",
-    bio: "SWIZZY combines quick reflexes with sharp instincts, bringing strategic thinking and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
-    tiktokUrl: "https://www.tiktok.com/@swizzy_og",
-    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
-    team: 1,
-    active: true // Mark as active for extra visual effect
+    active: true,
+    pro: true
   },
   {
     id: "dhamer",
@@ -95,7 +83,8 @@ export const soldiers: Soldier[] = [
     bio: "Wild Child is Fast as lightning, Mr 23 moves through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
     tiktokUrl: "https://www.tiktok.com/@23cutz._",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 4
+    team: 4,
+    pro: true
   },
   {
     id: "esquare",
@@ -137,7 +126,6 @@ export const soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 2
   },
-  // New soldier entries
   {
     id: "botgirl",
     name: "ФƓゝ BOTGIRL",
@@ -146,7 +134,7 @@ export const soldiers: Soldier[] = [
     bio: "Botgirl is OG Clan's Princess. Her FENNEC spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@favbotgirl",
     imageUrl: "/lovable-uploads/b895cd47-bbb9-4840-acf9-777a0d626979.png",
-    princess: true, // New princess theme instead of spotlight
+    princess: true,
     team: 2
   },
   {
@@ -188,9 +176,19 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@og.blksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 5,
-    active: true // Mark as active for extra visual effect
+    active: true
   },
-  // NEZ soldiers moved to the end
+  {
+    id: "swizzy",
+    name: "ФƓゝ ƧWƗƵƵY",
+    role: "⚡ Tactical Strategist",
+    weapon: "BY15",
+    bio: "SWIZZY combines quick reflexes with sharp instincts, bringing strategic thinking and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
+    tiktokUrl: "https://www.tiktok.com/@swizzy_og",
+    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
+    team: 1,
+    active: true
+  },
   {
     id: "rex",
     name: "ФƓゝ REX",
@@ -200,7 +198,6 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
     imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
     team: 1,
-    active: true // Mark as active for extra visual effect
+    active: true
   }
 ];
-

@@ -15,6 +15,12 @@
   --princess-light: #ffb6c1;
   --princess-muted: #dda0dd;
   
+  /* Pro Theme Colors */
+  --pro-primary: #FFD700;
+  --pro-secondary: #FFA500;
+  --pro-accent: #FF8C00;
+  --pro-light: #FFFF99;
+  
   /* Enhanced gradients */
   --ogclan-gradient-primary: linear-gradient(135deg, var(--ogclan-primary) 0%, var(--ogclan-primary-light) 100%);
   --ogclan-gradient-dark: linear-gradient(135deg, var(--ogclan-primary-dark) 0%, var(--ogclan-primary) 100%);
@@ -24,6 +30,11 @@
   --princess-gradient-primary: linear-gradient(135deg, var(--princess-primary) 0%, var(--princess-secondary) 100%);
   --princess-gradient-light: linear-gradient(135deg, var(--princess-light) 0%, var(--princess-primary) 100%);
   --princess-gradient-subtle: linear-gradient(135deg, var(--princess-muted) 0%, var(--princess-primary) 100%);
+  
+  /* Pro gradients */
+  --pro-gradient-primary: linear-gradient(135deg, var(--pro-primary) 0%, var(--pro-secondary) 100%);
+  --pro-gradient-accent: linear-gradient(135deg, var(--pro-secondary) 0%, var(--pro-accent) 100%);
+  --pro-gradient-light: linear-gradient(135deg, var(--pro-light) 0%, var(--pro-primary) 100%);
   
   /* Tactical UI colors */
   --tactical-bg-primary: rgba(0, 0, 0, 0.95);
@@ -92,6 +103,17 @@
   @apply bg-clip-text text-transparent;
 }
 
+/* Pro text gradients */
+.text-gradient-pro {
+  background: var(--pro-gradient-primary);
+  @apply bg-clip-text text-transparent;
+}
+
+.text-gradient-pro-accent {
+  background: var(--pro-gradient-accent);
+  @apply bg-clip-text text-transparent;
+}
+
 /* Smooth hover effects */
 .hover-effect {
   @apply transition-all duration-300 ease-out;
@@ -128,6 +150,19 @@
   box-shadow: 0 0 40px rgba(255, 105, 180, 0.6);
 }
 
+/* Pro glow effects */
+.glow-pro {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.glow-pro-medium {
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.glow-pro-strong {
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+}
+
 /* Princess card effects */
 .princess-card {
   @apply relative overflow-hidden;
@@ -142,6 +177,27 @@
   @apply opacity-100;
 }
 
+/* Pro card effects */
+.pro-card {
+  @apply relative overflow-hidden;
+}
+
+.pro-card::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-tr from-transparent via-yellow-500/5 to-yellow-500/10 opacity-0 transition-opacity duration-300;
+}
+
+.pro-card:hover::after {
+  @apply opacity-100;
+}
+
+/* Border gradient for pro image */
+.border-gradient-pro {
+  border: 4px solid;
+  border-image: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FFD700) 1;
+  border-radius: 50%;
+}
+
 /* Princess pulse animation */
 @keyframes glow-princess {
   from {
@@ -154,6 +210,20 @@
 
 .animate-glow-princess {
   animation: glow-princess 3s ease-in-out infinite alternate;
+}
+
+/* Pro pulse animation */
+@keyframes glow-pro {
+  from {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+  }
+}
+
+.animate-glow-pro {
+  animation: glow-pro 3s ease-in-out infinite alternate;
 }
 
 /* Smooth transitions for all interactive elements */

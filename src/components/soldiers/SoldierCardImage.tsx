@@ -1,36 +1,59 @@
 
 import React from 'react';
-import EnhancedImage from '@/components/ui/enhanced-image';
 
 interface SoldierCardImageProps {
   imageUrl: string;
   name: string;
   role: string;
-  isSpotlight: boolean;
+  isSpotlight?: boolean;
   isPrincess?: boolean;
+  isPro?: boolean;
 }
 
-const SoldierCardImage = ({ imageUrl, name, role, isSpotlight, isPrincess = false }: SoldierCardImageProps) => {
+const SoldierCardImage = ({ 
+  imageUrl, 
+  name, 
+  role, 
+  isSpotlight = false, 
+  isPrincess = false,
+  isPro = false 
+}: SoldierCardImageProps) => {
   const getImageClasses = () => {
-    if (isPrincess) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-pink-500 glow-princess animate-glow-princess';
+    let classes = "w-24 h-24 mx-auto mb-4 rounded-full object-cover border-4 transition-all duration-300";
+    
+    if (isPro) {
+      classes += " border-gradient-pro shadow-lg shadow-yellow-500/50 hover:shadow-yellow-500/70";
+    } else if (isPrincess) {
+      classes += " border-pink-400 shadow-lg shadow-pink-500/50 hover:shadow-pink-500/70";
     } else if (isSpotlight) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan glow-medium animate-glow-pulse';
+      classes += " border-ogclan shadow-lg shadow-ogclan/50 hover:shadow-ogclan/70";
     } else {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan glow-subtle animate-pulse-slow hover:glow-medium';
+      classes += " border-ogclan/50 hover:border-ogclan";
     }
+    
+    return classes;
+  };
+
+  const getContainerClasses = () => {
+    if (isPro) {
+      return "relative group hover:scale-105 transition-transform duration-300";
+    }
+    return "relative group";
   };
 
   return (
-    <div className={getImageClasses()}>
-      <EnhancedImage
-        src={imageUrl}
+    <div className={getContainerClasses()}>
+      <img 
+        src={imageUrl} 
         alt={`${name} - ${role}`}
-        className="rounded-full"
-        aspectRatio="1/1"
-        objectFit="cover"
+        className={getImageClasses()}
         loading="lazy"
       />
+      
+      {/* Pro glow effect */}
+      {isPro && (
+        <div className="absolute inset-0 w-24 h-24 mx-auto rounded-full bg-gradient-to-r from-yellow-400/20 to-orange-500/20 blur-sm group-hover:blur-md transition-all duration-300 pointer-events-none" />
+      )}
     </div>
   );
 };
