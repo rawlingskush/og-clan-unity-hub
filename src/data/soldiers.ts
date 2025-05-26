@@ -1,3 +1,4 @@
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -31,16 +32,6 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png",
     team: 1
-  },
-  {
-    id: "mufasa",
-    name: "ФƓゝ WICKEDNESS",
-    role: "Guardian Sniper",
-    weapon: "HS0405",
-    bio: "With the calm precision of a lion surveying the savannah, Mufasa locks down long sightlines. His HS0405 blasts end close threats, while his steady hand on the scope prevents any flank from going unseen. He is HIM",
-    tiktokUrl: "https://www.tiktok.com/@mazi_wickednessyt",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 2
   },
   {
     id: "dhamer",
