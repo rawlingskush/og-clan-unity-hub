@@ -11,18 +11,18 @@ const ProBadge = ({ className = "" }: ProBadgeProps) => {
   return (
     <Badge 
       className={`
-        absolute top-2 right-2 z-10
+        absolute top-1 right-1 z-10
         bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600
-        text-black font-bold text-xs px-2 py-1
+        text-black font-semibold text-[10px] px-1.5 py-0.5
         border border-yellow-300
-        shadow-lg shadow-yellow-500/20
-        flex items-center gap-1
+        shadow-md shadow-yellow-500/15
+        flex items-center gap-0.5
         transition-all duration-300
-        hover:shadow-xl hover:shadow-yellow-500/30
+        hover:shadow-lg hover:shadow-yellow-500/25
         ${className}
       `}
     >
-      <Crown className="h-3 w-3" />
+      <Crown className="h-2.5 w-2.5" />
       PRO
     </Badge>
   );
