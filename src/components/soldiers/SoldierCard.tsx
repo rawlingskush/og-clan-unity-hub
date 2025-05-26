@@ -24,8 +24,8 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   const isPrincessCard = soldier.princess;
   const isProCard = soldier.pro;
   
-  // Use the sparkle hooks
-  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard || isProCard);
+  // Use sparkle hooks only for non-PRO cards
+  const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard && !isProCard);
   const { princessParticles, generatePrincessParticles } = usePrincessSparkles(isPrincessCard);
   
   // Generate random favorite map on component mount
@@ -71,20 +71,20 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
   
   const accentColor = isProCard ? "bg-yellow-500" : weaponBadgeColors[soldier.weapon] || "bg-ogclan";
 
-  // Handle touch move for mobile effects
+  // Handle touch move for mobile effects (only for non-PRO cards)
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard || isProCard) {
+    } else if (isActiveCard && !isProCard) {
       generateSparkParticles(e);
     }
   };
 
-  // Handle mouse move for desktop effects
+  // Handle mouse move for desktop effects (only for non-PRO cards)
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
-    } else if (isActiveCard || isProCard) {
+    } else if (isActiveCard && !isProCard) {
       generateSparkParticles(e);
     }
   };

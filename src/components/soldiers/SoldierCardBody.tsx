@@ -29,7 +29,7 @@ const SoldierCardBody = ({
 }: SoldierCardBodyProps) => {
   const getNameClasses = () => {
     if (isPro) {
-      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold animate-glow';
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold transition-all duration-300';
     } else if (isPrincess) {
       return 'text-xl font-bold mb-1 tracking-wider text-gradient-princess animate-glow-princess';
     } else if (isSpotlight) {

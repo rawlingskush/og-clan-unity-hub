@@ -14,7 +14,7 @@ interface SoldierCardImageProps {
 const SoldierCardImage = ({ imageUrl, name, role, isSpotlight, isPrincess = false, isPro = false }: SoldierCardImageProps) => {
   const getImageClasses = () => {
     if (isPro) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-yellow-500 shadow-lg shadow-yellow-500/30 animate-pulse';
+      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-yellow-500 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40';
     } else if (isPrincess) {
       return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-pink-500 glow-princess animate-glow-princess';
     } else if (isSpotlight) {

@@ -15,9 +15,10 @@ const ProBadge = ({ className = "" }: ProBadgeProps) => {
         bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600
         text-black font-bold text-xs px-2 py-1
         border border-yellow-300
-        shadow-lg shadow-yellow-500/30
-        animate-pulse
+        shadow-lg shadow-yellow-500/20
         flex items-center gap-1
+        transition-all duration-300
+        hover:shadow-xl hover:shadow-yellow-500/30
         ${className}
       `}
     >
