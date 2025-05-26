@@ -1,5 +1,5 @@
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, memo } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from 'framer-motion';
 import { SparkParticle } from '@/hooks/useSoldierSparkles';
@@ -38,7 +38,7 @@ interface SoldierCardMobileProps {
   };
 }
 
-const SoldierCardMobile = ({
+const SoldierCardMobile = memo(({
   imageUrl,
   name,
   role,
@@ -56,24 +56,19 @@ const SoldierCardMobile = ({
   onTouchMove,
   stats
 }: SoldierCardMobileProps) => {
-  const [isPressed, setIsPressed] = useState(false);
   const [touchFeedback, setTouchFeedback] = useState(false);
 
   const handleTouchStart = useCallback(() => {
-    setIsPressed(true);
     setTouchFeedback(true);
   }, []);
 
   const handleTouchEnd = useCallback(() => {
-    setIsPressed(false);
-    setTimeout(() => setTouchFeedback(false), 200);
+    setTimeout(() => setTouchFeedback(false), 150);
   }, []);
 
-  const getCardClasses = () => {
-    let classes = `overflow-hidden transition-all duration-300 border-ogclan/30 hover:border-ogclan/70 bg-black h-full relative ${
+  const getCardClasses = useCallback(() => {
+    let classes = `overflow-hidden transition-all duration-200 border-ogclan/30 hover:border-ogclan/70 bg-black h-full relative will-change-transform ${
       showQuickStats ? 'quick-stats-active ring-2 ring-ogclan/50' : ''
-    } ${
-      isPressed ? 'shadow-lg shadow-ogclan/20 scale-[0.98]' : ''
     }`;
     
     if (isProCard) {
@@ -81,16 +76,10 @@ const SoldierCardMobile = ({
       if (showQuickStats) {
         classes = classes.replace('ring-ogclan/50', 'ring-yellow-500/50');
       }
-      if (isPressed) {
-        classes = classes.replace('shadow-ogclan/20', 'shadow-yellow-500/20');
-      }
     } else if (isPrincessCard) {
       classes += ` princess-card border-pink-500/30 hover:border-pink-500/70`;
       if (showQuickStats) {
         classes = classes.replace('ring-ogclan/50', 'ring-pink-500/50');
-      }
-      if (isPressed) {
-        classes = classes.replace('shadow-ogclan/20', 'shadow-pink-500/20');
       }
     } else if (isActiveCard) {
       classes += ` spotlight-card active`;
@@ -99,19 +88,18 @@ const SoldierCardMobile = ({
     }
     
     return classes;
-  };
+  }, [showQuickStats, isProCard, isPrincessCard, isActiveCard]);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ 
-        type: 'spring', 
-        stiffness: 260, 
-        damping: 20,
-        duration: 0.6 
+        type: 'tween', 
+        duration: 0.3,
+        ease: 'easeOut'
       }}
-      whileTap={{ scale: 0.98 }}
+      style={{ willChange: 'transform' }}
     >
       <Card 
         className={getCardClasses()}
@@ -119,16 +107,17 @@ const SoldierCardMobile = ({
         onTouchMove={onTouchMove}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        style={{ touchAction: 'manipulation' }}
       >
         <div className="relative">
-          {/* Enhanced Scanner Line with theme-specific styling */}
+          {/* Optimized Scanner Line */}
           <div className="scanner-line">
             {isProCard ? (
-              <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/60 to-transparent w-full animate-[scanner-line_3s_linear_infinite]"></div>
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
             ) : isPrincessCard ? (
-              <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-pink-500/60 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent w-full animate-[scanner-line_5s_linear_infinite]"></div>
             ) : (
-              <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/60 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-ogclan/50 to-transparent w-full animate-[scanner-line_5s_linear_infinite]"></div>
             )}
           </div>
 
@@ -155,7 +144,7 @@ const SoldierCardMobile = ({
           
           <SoldierCardFooter tiktokUrl={tiktokUrl} name={name} />
 
-          {/* Enhanced Quick Stats Overlay with mobile gestures */}
+          {/* Quick Stats Overlay */}
           <SoldierStatsOverlay 
             isVisible={showQuickStats}
             onClose={(e) => {
@@ -165,20 +154,20 @@ const SoldierCardMobile = ({
             stats={stats}
           />
 
-          {/* Enhanced tap hint for mobile with better visibility */}
+          {/* Tap hint */}
           <SoldierCardHint isMobile={true} />
 
-          {/* Enhanced touch feedback indicator with theme colors */}
+          {/* Touch feedback */}
           <AnimatePresence>
             {touchFeedback && (
               <motion.div 
                 className={`absolute inset-0 pointer-events-none rounded-lg ${
-                  isProCard ? 'bg-yellow-500/10' : isPrincessCard ? 'bg-pink-500/10' : 'bg-ogclan/10'
+                  isProCard ? 'bg-yellow-500/5' : isPrincessCard ? 'bg-pink-500/5' : 'bg-ogclan/5'
                 }`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.1 }}
-                transition={{ duration: 0.2 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
               />
             )}
           </AnimatePresence>
@@ -186,6 +175,8 @@ const SoldierCardMobile = ({
       </Card>
     </motion.div>
   );
-};
+});
+
+SoldierCardMobile.displayName = 'SoldierCardMobile';
 
 export default SoldierCardMobile;

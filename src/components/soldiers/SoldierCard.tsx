@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo, useMemo, useCallback } from 'react';
 import { Soldier } from "@/types/soldier";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useSoldierSparkles } from "@/hooks/useSoldierSparkles";
@@ -13,29 +13,30 @@ interface SoldierCardProps {
   isActive?: boolean;
 }
 
-const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
+const SoldierCard = memo(({ soldier, isActive = false }: SoldierCardProps) => {
   const isMobile = useIsMobile();
   const [showQuickStats, setShowQuickStats] = useState(false);
   const [favoriteMap, setFavoriteMap] = useState<string>('');
-  const [stats, setStats] = useState(generateSoldierStats(soldier.name));
   
-  // Mark card as active if it's a spotlight soldier or explicitly set as active
+  // Memoize stats to prevent regeneration on every render
+  const stats = useMemo(() => generateSoldierStats(soldier.name), [soldier.name]);
+  
+  // Mark card properties
   const isActiveCard = isActive || soldier.spotlight;
   const isPrincessCard = soldier.princess;
   const isProCard = soldier.pro;
   
-  // Use sparkle hooks only for non-PRO cards
+  // Use sparkle hooks only when needed
   const { sparkParticles, generateSparkParticles } = useSoldierSparkles(isActiveCard && !isProCard);
   const { princessParticles, generatePrincessParticles } = usePrincessSparkles(isPrincessCard);
   
-  // Generate random favorite map on component mount
+  // Memoize favorite map
   useEffect(() => {
     setFavoriteMap(soldier.favoriteMap || stats.favMap);
   }, [soldier.favoriteMap, stats.favMap]);
 
-  // Function to toggle quick stats
-  const toggleQuickStats = (e: React.MouseEvent<HTMLDivElement>) => {
-    // Don't toggle stats if clicking the footer (TikTok link area)
+  // Optimized toggle function
+  const toggleQuickStats = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.target as HTMLElement;
     const isFooter = target.closest('.card-footer') !== null;
     const isLink = target.closest('a') !== null;
@@ -43,51 +44,43 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
     if (!isFooter && !isLink) {
       setShowQuickStats(prev => !prev);
     }
-  };
+  }, []);
 
-  // Get base color for card styling
-  const weaponBadgeColors: Record<string, string> = {
-    // Shotguns - red
+  // Memoize weapon badge colors
+  const weaponBadgeColors: Record<string, string> = useMemo(() => ({
     "BY15": "bg-red-600",
     "KRM-262": "bg-red-600",
     "HS0405": "bg-red-600",
     "R9-0": "bg-red-600",
     "Striker": "bg-red-600",
-    
-    // SMGs - yellow/pink for princess
     "QQ9": "bg-yellow-600",
     "FENNEC": isPrincessCard ? "bg-pink-600" : "bg-yellow-600",
     "MAC-10": "bg-yellow-600",
-    
-    // Snipers - green
     "XPR-50": "bg-green-600",
     "DLQ33": "bg-green-600",
-    
-    // ARs - blue
     "Kilo 141": "bg-blue-600",
     "AK117": "bg-blue-600",
     "Oden": "bg-blue-600"
-  };
+  }), [isPrincessCard]);
   
   const accentColor = isProCard ? "bg-yellow-500" : weaponBadgeColors[soldier.weapon] || "bg-ogclan";
 
-  // Handle touch move for mobile effects (only for non-PRO cards)
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+  // Optimized touch handlers
+  const handleTouchMove = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
     } else if (isActiveCard && !isProCard) {
       generateSparkParticles(e);
     }
-  };
+  }, [isPrincessCard, isActiveCard, isProCard, generatePrincessParticles, generateSparkParticles]);
 
-  // Handle mouse move for desktop effects (only for non-PRO cards)
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (isPrincessCard) {
       generatePrincessParticles(e);
     } else if (isActiveCard && !isProCard) {
       generateSparkParticles(e);
     }
-  };
+  }, [isPrincessCard, isActiveCard, isProCard, generatePrincessParticles, generateSparkParticles]);
 
   return isMobile ? (
     <SoldierCardMobile
@@ -129,6 +122,8 @@ const SoldierCard = ({ soldier, isActive = false }: SoldierCardProps) => {
       stats={stats}
     />
   );
-};
+});
+
+SoldierCard.displayName = 'SoldierCard';
 
 export default SoldierCard;

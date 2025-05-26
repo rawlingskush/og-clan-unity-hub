@@ -1,5 +1,5 @@
 
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselApi } from "@/components/ui/carousel";
 import SoldierCard from './SoldierCard';
 import AnimatedContent from '@/components/AnimatedContent';
@@ -14,18 +14,18 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
 
-  console.log('MobileCarousel render:', { soldiers: soldiers.length, current, count });
+  // Memoize soldiers to prevent unnecessary re-renders
+  const memoizedSoldiers = useMemo(() => soldiers, [soldiers]);
 
   useEffect(() => {
-    if (!api || soldiers.length === 0) return;
+    if (!api || memoizedSoldiers.length === 0) return;
 
-    setCount(soldiers.length);
+    setCount(memoizedSoldiers.length);
     setCurrent(api.selectedScrollSnap());
 
     const onSelect = () => {
       const selected = api.selectedScrollSnap();
       setCurrent(selected);
-      console.log('Carousel selected:', selected);
     };
 
     api.on("select", onSelect);
@@ -33,16 +33,15 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
     return () => {
       api?.off("select", onSelect);
     };
-  }, [api, soldiers.length]);
+  }, [api, memoizedSoldiers.length]);
 
   const handleDotClick = useCallback((index: number) => {
     if (api) {
-      console.log('Dot clicked:', index);
       api.scrollTo(index);
     }
   }, [api]);
 
-  if (soldiers.length === 0) {
+  if (memoizedSoldiers.length === 0) {
     return (
       <div className="flex items-center justify-center h-96">
         <div className="text-center">
@@ -63,10 +62,12 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
           loop: false,
           skipSnaps: false,
           dragFree: false,
+          containScroll: "trimSnaps",
+          slidesToScroll: 1,
         }}
       >
-        <CarouselContent className="ml-0">
-          {soldiers.map((soldier, index) => (
+        <CarouselContent className="ml-0 -webkit-overflow-scrolling-touch">
+          {memoizedSoldiers.map((soldier, index) => (
             <CarouselItem key={soldier.id} className="pl-4 basis-4/5 sm:basis-1/2">
               <div className="h-full">
                 <SoldierCard soldier={soldier} />
@@ -75,21 +76,21 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
           ))}
         </CarouselContent>
         
-        {/* Navigation */}
+        {/* Optimized Navigation */}
         <div className="flex items-center justify-center mt-6 gap-4">
           <CarouselPrevious 
-            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 h-10 w-10" 
+            className="relative static transform-none bg-black/70 border-ogclan/40 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-200 h-10 w-10 touch-manipulation" 
           />
           
-          {/* Dot indicators */}
-          <div className="flex gap-2">
-            {soldiers.map((_, index) => (
+          {/* Optimized dot indicators with better touch targets */}
+          <div className="flex gap-3 max-w-xs overflow-x-auto scrollbar-hide px-2">
+            {memoizedSoldiers.map((_, index) => (
               <button
                 key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`h-3 rounded-full transition-all duration-200 touch-manipulation min-w-[12px] ${
                   current === index 
-                    ? 'bg-ogclan w-6' 
-                    : 'bg-ogclan/30 hover:bg-ogclan/60 w-2'
+                    ? 'bg-ogclan w-8 shadow-sm shadow-ogclan/30' 
+                    : 'bg-ogclan/30 hover:bg-ogclan/60 w-3'
                 }`}
                 onClick={() => handleDotClick(index)}
                 aria-label={`Go to soldier ${index + 1}`}
@@ -98,17 +99,17 @@ const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
           </div>
           
           <CarouselNext 
-            className="relative static transform-none bg-black/60 border-ogclan/30 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-300 h-10 w-10"
+            className="relative static transform-none bg-black/70 border-ogclan/40 hover:bg-ogclan/20 hover:border-ogclan transition-all duration-200 h-10 w-10 touch-manipulation"
           />
         </div>
 
-        {/* Progress indicator */}
-        <div className="mt-4 text-center text-sm text-ogclan/60">
-          {current + 1} of {soldiers.length}
+        {/* Simplified progress indicator */}
+        <div className="mt-3 text-center text-sm text-ogclan/70">
+          {current + 1} of {memoizedSoldiers.length}
         </div>
       </Carousel>
     </AnimatedContent>
   );
 };
 
-export default MobileCarousel;
+export default React.memo(MobileCarousel);
