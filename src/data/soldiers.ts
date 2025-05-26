@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -32,7 +31,8 @@ export const soldiers: Soldier[] = [
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png",
-    team: 1
+    team: 1,
+    pro: true
   },
   {
     id: "slim",
@@ -54,7 +54,8 @@ export const soldiers: Soldier[] = [
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and 117, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 3
+    team: 3,
+    pro: true
   },
   {
     id: "gamehouse",
