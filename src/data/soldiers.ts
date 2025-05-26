@@ -1,5 +1,6 @@
 
 
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -43,6 +44,17 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
+    active: true // Mark as active for extra visual effect
+  },
+  {
+    id: "swizzy",
+    name: "ФƓゝ ƧWƗƵƵY",
+    role: "⚡ Tactical Strategist",
+    weapon: "BY15",
+    bio: "SWIZZY combines quick reflexes with sharp instincts, bringing strategic thinking and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
+    tiktokUrl: "https://www.tiktok.com/@swizzy_og",
+    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
+    team: 1,
     active: true // Mark as active for extra visual effect
   },
   {
@@ -191,3 +203,4 @@ export const soldiers: Soldier[] = [
     active: true // Mark as active for extra visual effect
   }
 ];
+
