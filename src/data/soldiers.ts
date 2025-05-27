@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -188,6 +187,6 @@ export const soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "White is the merchant of destruction. His shotgun mastery is legendary, turning every engagement into a showcase of raw power and precision. When White enters with his BY15, enemies know they're facing a shotgun specialist.",
     tiktokUrl: "https://www.tiktok.com/@coordinator237?_t=ZM-8whqFZG4HmK&_r=1",
-    imageUrl: "blob:https://lovable.dev/d241dd26-0ed4-400e-b126-343f3d7cacfc"
+    imageUrl: "/lovable-uploads/26b43350-55a1-4b84-b842-92f107c4ed4c.png"
   }
 ];
