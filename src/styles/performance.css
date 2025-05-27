@@ -1,0 +1,39 @@
+
+/* Performance optimizations */
+.mobile-optimized {
+  -webkit-overflow-scrolling: touch;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized scanner animations */
+@keyframes scanner-line {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .scanner-line div {
+    animation: none;
+  }
+  
+  .filter-button {
+    transition: none;
+  }
+  
+  .touch-feedback {
+    transition: none;
+  }
+  
+  .carousel-item {
+    scroll-behavior: auto;
+  }
+}

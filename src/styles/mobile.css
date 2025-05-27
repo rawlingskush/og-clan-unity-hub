@@ -1,0 +1,101 @@
+
+/* Mobile-first responsive optimizations */
+@media (max-width: 640px) {
+  .filter-button {
+    @apply text-xs px-3 py-2;
+    min-height: 44px;
+    min-width: 85px;
+  }
+  
+  /* Navbar optimizations */
+  .nav-buttons-container {
+    @apply space-x-1;
+  }
+  
+  .nav-button {
+    @apply text-xs px-2 py-2;
+    min-height: 44px;
+  }
+  
+  .nav-button-icon {
+    @apply h-3 w-3;
+  }
+  
+  /* Soldiers hero section optimizations */
+  .tactical-hero-container h1 {
+    @apply text-3xl;
+  }
+  
+  .tactical-hero-container .icon-container {
+    @apply space-x-2;
+  }
+  
+  .tactical-hero-container .tactical-line {
+    @apply w-10;
+  }
+  
+  .tactical-hero-container .tactical-icon {
+    @apply h-5 w-5;
+  }
+  
+  .tactical-briefing {
+    @apply p-4 text-sm;
+  }
+  
+  .tactical-motto {
+    @apply text-base;
+  }
+  
+  /* Soldier card optimizations */
+  .soldier-card {
+    will-change: transform;
+    transform: translateZ(0);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Mobile carousel optimizations */
+  .mobile-carousel {
+    @apply w-full overflow-hidden;
+  }
+  
+  .mobile-carousel .carousel-item {
+    @apply px-2;
+    min-height: 400px;
+  }
+  
+  /* Ensure carousel cards fill container properly */
+  .mobile-carousel .soldier-card {
+    @apply h-full;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .filter-button {
+    min-height: 40px;
+    min-width: 80px;
+    @apply text-xs px-2.5 py-2;
+  }
+  
+  /* Stack buttons vertically on very small screens if needed */
+  .stack-on-xs {
+    @apply flex-col items-center space-y-2 space-x-0;
+  }
+  
+  /* Reduce HUD element sizes */
+  .tactical-hud-element {
+    @apply scale-75;
+  }
+  
+  /* Reduce text size for better mobile readability */
+  .tactical-briefing p {
+    @apply text-xs leading-relaxed;
+  }
+  
+  /* Mobile carousel item sizing */
+  .mobile-carousel .carousel-item {
+    @apply px-1;
+    min-height: 380px;
+  }
+}

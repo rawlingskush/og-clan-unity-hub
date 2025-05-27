@@ -1,0 +1,11 @@
+
+/* Tablet optimizations */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .tablet-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+  }
+  
+  .tablet-card {
+    @apply w-full;
+  }
+}
