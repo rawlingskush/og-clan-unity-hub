@@ -1,4 +1,5 @@
 
+
 export interface CommandMember {
   id: string;
   name: string;
@@ -18,6 +19,7 @@ export const commandUnit: CommandMember[] = [
     id: "hacks",
     name: "ФƓゝ HACKS",
     title: "Team Manager 📋",
-    bio: "Hacks is the logistical mind behind the machine — aligning events, managing operations, and keeping every strike sharp and synchronized. When OG Clan moves, it's because Hacks paved the way."
+    bio: "Hacks is the logistical mind behind the machine — aligning events, managing operations, and keeping every strike sharp and synchronized. When OG Clan moves, it's because Hacks paved the way.",
+    imageUrl: "/lovable-uploads/5828ba27-9eba-4d33-b24f-d71491993fdc.png"
   }
 ];
