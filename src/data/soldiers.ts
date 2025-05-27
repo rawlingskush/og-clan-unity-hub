@@ -106,7 +106,7 @@ export const soldiers: Soldier[] = [
     weapon: "DLQ33",
     bio: "Pato is one the finnest soldiers heart of og clan MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his DLQ33 when they least expect it. His intel and accuracy make him our eyes in the field.",
     tiktokUrl: "https://www.tiktok.com/@pato_codm",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/661aadf3-ba37-40df-b54f-ac697df8e7ce.png",
     team: 2
   },
   {
@@ -149,7 +149,7 @@ export const soldiers: Soldier[] = [
     weapon: "XPR-50",
     bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
     tiktokUrl: "https://www.tiktok.com/@nbapanda237",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/31c01899-6f23-4a90-836b-393f64ab1a04.png",
     team: 4
   },
   {
