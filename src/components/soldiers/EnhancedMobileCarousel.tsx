@@ -39,7 +39,9 @@ const EnhancedMobileCarousel = ({ soldiers }: EnhancedMobileCarouselProps) => {
     };
 
     api.on("select", onSelect);
-    return () => api.off("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
   }, [api]);
 
   const scrollTo = useCallback((index: number) => {
@@ -67,7 +69,9 @@ const EnhancedMobileCarousel = ({ soldiers }: EnhancedMobileCarouselProps) => {
     };
 
     document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
   }, [canScrollPrev, canScrollNext, scrollPrev, scrollNext]);
 
   if (soldiers.length === 0) {
