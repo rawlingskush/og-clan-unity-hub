@@ -214,7 +214,7 @@ export const soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Whiteএ is the merchant of destruction. His shotgun mastery is top, turning every engagement into a showcase of raw power and precision. When White enters with his BY15, enemies know they're facing a shotgun specialist.",
     tiktokUrl: "https://www.tiktok.com/@coordinator237?_t=ZM-8whqFZG4HmK&_r=1",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/38e7cb00-bcc7-436c-baa3-1d1073b72d2a.png",
     team: 2,
     active: true
   }

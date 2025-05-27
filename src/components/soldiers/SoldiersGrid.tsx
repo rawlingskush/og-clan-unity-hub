@@ -83,7 +83,9 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       {/* Responsive layouts */}
       <div className="min-h-[400px]">
         {isMobile ? (
-          <MobileCarousel soldiers={filteredSoldiers} />
+          <div className="px-2">
+            <MobileCarousel soldiers={filteredSoldiers} />
+          </div>
         ) : isTablet ? (
           <TabletGrid soldiers={filteredSoldiers} />
         ) : (

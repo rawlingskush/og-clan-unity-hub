@@ -50,6 +50,18 @@
   .soldier-card {
     will-change: transform;
     transform: translateZ(0);
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Mobile grid fixes */
+  .mobile-grid {
+    @apply grid grid-cols-1 gap-4 px-2;
+    max-width: 100vw;
+  }
+  
+  .mobile-card {
+    @apply w-full max-w-sm mx-auto;
   }
 }
 
@@ -79,6 +91,25 @@
   /* Carousel optimizations */
   .carousel-item {
     padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  /* Mobile card container */
+  .mobile-card-container {
+    @apply px-4 py-2;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 640px) and (max-width: 1024px) {
+  .tablet-grid {
+    @apply grid grid-cols-2 md:grid-cols-3 gap-4;
+  }
+  
+  .tablet-card {
+    @apply w-full;
   }
 }
 
@@ -135,6 +166,38 @@
 @keyframes scanner-line {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(200%); }
+}
+
+/* Mobile card layout fixes */
+@media (max-width: 768px) {
+  .soldiers-grid-container {
+    @apply px-2;
+  }
+  
+  .mobile-soldier-card {
+    @apply w-full max-w-sm mx-auto mb-4;
+    min-height: 400px;
+  }
+  
+  .card-content-mobile {
+    @apply p-4;
+  }
+  
+  .card-image-mobile {
+    @apply w-24 h-24 mx-auto mb-3;
+  }
+  
+  .card-title-mobile {
+    @apply text-lg font-bold text-center mb-2;
+  }
+  
+  .card-badges-mobile {
+    @apply flex flex-wrap justify-center gap-2 mb-3;
+  }
+  
+  .card-bio-mobile {
+    @apply text-sm text-center text-gray-300 mb-4;
+  }
 }
 
 /* Reduce motion for users who prefer it */
