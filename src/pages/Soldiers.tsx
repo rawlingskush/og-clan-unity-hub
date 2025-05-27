@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { soldiers } from '@/data/soldiers';
@@ -10,27 +9,27 @@ import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
 import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
 import RecruitmentNote from '@/components/soldiers/RecruitmentNote';
 
-const Soldiers = () => {
+const Soldiers = React.memo(() => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [error, setError] = useState<string | null>(null);
   
-  console.log('Soldiers page render:', { soldiers: soldiers.length });
-  
-  // Optimized scroll handling
+  // Optimized scroll handling with throttling
+  const handleScroll = useCallback(() => {
+    setScrollPosition(window.scrollY);
+  }, []);
+
   useEffect(() => {
-    let ticking = false;
+    let rafId: number;
     
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          setScrollPosition(window.scrollY);
-          ticking = false;
-        });
-        ticking = true;
-      }
+    const throttledScroll = () => {
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        handleScroll();
+        rafId = 0;
+      });
     };
     
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', throttledScroll, { passive: true });
     
     // Handle URL fragments
     const hash = window.location.hash;
@@ -47,13 +46,17 @@ const Soldiers = () => {
       }, 1000);
       
       return () => {
-        window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', throttledScroll);
         clearTimeout(timer);
+        if (rafId) cancelAnimationFrame(rafId);
       };
     }
     
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', throttledScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [handleScroll]);
 
   // Error boundary
   if (error) {
@@ -88,18 +91,13 @@ const Soldiers = () => {
         
         {/* Soldiers Grid Section */}
         <section className="section-container py-16 relative">
-          {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-[rgba(0,20,0,0.9)] pointer-events-none"></div>
+          {/* Simplified background gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-[rgba(0,20,0,0.9)] pointer-events-none" />
           
-          {/* Scanner lines */}
-          <div className="absolute top-0 left-0 right-0 h-1 overflow-hidden">
-            <div className="h-[1px] bg-ogclan/20 w-full"></div>
-            <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/80 to-transparent w-1/4 animate-[scanner-line_6s_linear_infinite]"></div>
-          </div>
-          
-          <div className="absolute bottom-0 left-0 right-0 h-1 overflow-hidden">
-            <div className="h-[1px] bg-ogclan/20 w-full"></div>
-            <div className="absolute bottom-0 h-[2px] bg-gradient-to-r from-transparent via-ogclan/80 to-transparent w-1/3 animate-[scanner-line_8s_linear_infinite_reverse]"></div>
+          {/* Optimized scanner lines */}
+          <div className="absolute top-0 left-0 right-0 h-px overflow-hidden">
+            <div className="h-px bg-ogclan/20 w-full" />
+            <div className="absolute top-0 h-px bg-gradient-to-r from-transparent via-ogclan/80 to-transparent w-1/4 animate-scanner-line" />
           </div>
           
           <AnimatedContent animation="fade-in" className="relative z-10">
@@ -107,16 +105,16 @@ const Soldiers = () => {
           </AnimatedContent>
         </section>
         
-        {/* Recruitment Note Section */}
+        {/* Other sections */}
         <RecruitmentNote />
-        
-        {/* Command Unit Section */}
         <CommandUnitSection />
       </main>
       
       <Footer />
     </div>
   );
-};
+});
+
+Soldiers.displayName = 'Soldiers';
 
 export default Soldiers;
