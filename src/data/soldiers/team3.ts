@@ -3,17 +3,6 @@ import { Soldier } from "@/types/soldier";
 
 export const team3Soldiers: Soldier[] = [
   {
-    id: "exodus",
-    name: "ФƓゝ EXODUS",
-    role: "Shield of the Squad",
-    weapon: "KRM-262",
-    bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
-    tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
-    imageUrl: "/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png",
-    team: 3,
-    pro: true
-  },
-  {
     id: "slim",
     name: "ФƓゝ SLIM",
     role: "Close-Quarters Phantom",

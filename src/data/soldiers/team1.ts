@@ -14,6 +14,17 @@ export const team1Soldiers: Soldier[] = [
     pro: true
   },
   {
+    id: "exodus",
+    name: "ФƓゝ EXODUS",
+    role: "Shield of the Squad",
+    weapon: "KRM-262",
+    bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
+    tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
+    imageUrl: "/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png",
+    team: 1,
+    pro: true
+  },
+  {
     id: "wizard",
     name: "ФƓゝ WIZARD",
     role: "Assault Architect",
@@ -63,17 +74,6 @@ export const team1Soldiers: Soldier[] = [
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
     tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
     imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
-    team: 1,
-    active: true
-  },
-  {
-    id: "swizzy",
-    name: "ФƓゝ ƧWƗƵƵY",
-    role: "⚡ Tactical Strategist",
-    weapon: "BY15",
-    bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
-    tiktokUrl: "https://www.tiktok.com/@little.swizzy",
-    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
     team: 1,
     active: true
   }
