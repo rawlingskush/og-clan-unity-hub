@@ -1,0 +1,25 @@
+
+import { Soldier } from "@/types/soldier";
+import { team1Soldiers } from "./team1";
+import { team2Soldiers } from "./team2";
+import { team3Soldiers } from "./team3";
+import { team4Soldiers } from "./team4";
+import { team5Soldiers } from "./team5";
+
+// Combine all soldiers from different teams
+export const soldiers: Soldier[] = [
+  ...team1Soldiers,
+  ...team2Soldiers,
+  ...team3Soldiers,
+  ...team4Soldiers,
+  ...team5Soldiers
+];
+
+// Export team-specific arrays for potential future use
+export {
+  team1Soldiers,
+  team2Soldiers,
+  team3Soldiers,
+  team4Soldiers,
+  team5Soldiers
+};
