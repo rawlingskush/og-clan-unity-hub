@@ -34,7 +34,7 @@ const OptimizedSoldierCard = memo(({ soldier, isActive = false }: OptimizedSoldi
   }, []);
 
   // Optimize touch/mouse handlers
-  const handleInteraction = useCallback((e: React.MouseEvent | React.TouchEvent) => {
+  const handleInteraction = useCallback((e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
     if (isSparkleActive) {
       const particleType = soldier.princess ? 'princess' : 'spark';
       generateParticles(e, particleType);
