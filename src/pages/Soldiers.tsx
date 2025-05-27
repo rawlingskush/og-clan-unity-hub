@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { soldiers } from '@/data/soldiers/index';
+import { soldiers } from '@/data/soldiers';
 import SoldiersGrid from '@/components/soldiers/SoldiersGrid';
 import AnimatedContent from '@/components/AnimatedContent';
 import SoldiersHero from '@/components/soldiers/SoldiersHero';
