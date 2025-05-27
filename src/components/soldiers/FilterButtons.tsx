@@ -31,13 +31,13 @@ const FilterButtons = memo(({ currentFilter, onFilterChange }: FilterButtonsProp
 
   return (
     <AnimatedContent animation="slide-in-right" className="mb-8">
-      <div className={`${isMobile ? 'overflow-x-auto pb-2 scrollbar-hide px-4' : ''}`}>
-        <div className={`flex ${isMobile ? 'gap-2 min-w-max' : 'flex-wrap justify-center gap-3'}`}>
+      <div className={`${isMobile ? 'overflow-x-auto pb-2 scrollbar-hide' : ''}`}>
+        <div className={`flex ${isMobile ? 'gap-3 px-4 min-w-max' : 'flex-wrap justify-center gap-3'}`}>
           {filterOptions.map((filterOption, index) => (
             <motion.button 
               key={filterOption.id}
               className={`rounded-lg transition-all duration-200 font-medium filter-button relative overflow-hidden touch-manipulation ${
-                isMobile ? 'px-4 py-2.5 text-sm min-w-[80px] flex-shrink-0' : 'px-6 py-2.5 text-sm'
+                isMobile ? 'px-5 py-3 text-sm min-w-[85px]' : 'px-6 py-2.5 text-sm'
               } ${
                 currentFilter === filterOption.id ? 
                 'active bg-ogclan text-black shadow-md shadow-ogclan/30 scale-[1.02] border border-ogclan/40' : 
