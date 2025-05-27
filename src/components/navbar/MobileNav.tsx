@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronRight, Menu, Users, X } from 'lucide-react';
+import { ChevronRight, Menu, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -39,37 +39,36 @@ const MobileNav = ({
   // Lock body scroll when drawer is open (iOS fix)
   useEffect(() => {
     if (isDrawerOpen) {
+      const scrollY = window.scrollY;
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
-      document.body.style.top = `-${window.scrollY}px`;
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-      if (scrollY) {
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      }
+      document.body.style.top = `-${scrollY}px`;
+      
+      return () => {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.top = '';
+        window.scrollTo(0, scrollY);
+      };
     }
-    
-    return () => {
-      document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.width = '';
-      document.body.style.top = '';
-    };
   }, [isDrawerOpen]);
 
   const handlePageClick = (path: string) => {
     if (handlePageNavigation) {
       handlePageNavigation(path);
+      setIsDrawerOpen(false);
       // Scroll to top when navigating to a new page
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
     }
+  };
+
+  const handleSectionClick = (sectionId: string) => {
+    handleNavClick(sectionId);
+    setIsDrawerOpen(false);
   };
 
   return (
@@ -80,6 +79,7 @@ const MobileNav = ({
             variant="ghost"
             size="icon"
             className="text-ogclan hover:bg-ogclan/10 relative z-20"
+            aria-label="Open navigation menu"
           >
             <Menu className="h-6 w-6" />
           </Button>
@@ -93,7 +93,7 @@ const MobileNav = ({
             </SheetHeader>
             <div className="flex-1 flex flex-col space-y-2 px-4 overflow-y-auto pb-4">
               {menuItems.map(item => {
-                if (item.subItems) {
+                if (item.subItems && item.subItems.length > 0) {
                   const isExpanded = expandedMobileItems.includes(item.id);
                   return (
                     <div key={item.id} className="w-full">
@@ -128,7 +128,7 @@ const MobileNav = ({
                                 ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                                 : "text-ogclan-light/80 hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                             )}
-                            onClick={() => handleNavClick(subItem.id)}
+                            onClick={() => handleSectionClick(subItem.id)}
                           >
                             <span className="font-medium">{subItem.label}</span>
                             {subItem.description && (
@@ -140,7 +140,6 @@ const MobileNav = ({
                     </div>
                   );
                 } else if (item.isPage && item.path) {
-                  // Handle page navigation in mobile
                   const isActive = currentPath === item.path;
                   return (
                     <button 
@@ -166,7 +165,7 @@ const MobileNav = ({
                           ? "bg-ogclan/20 text-ogclan border-l-2 border-ogclan" 
                           : "text-ogclan-light hover:bg-ogclan/10 hover:text-ogclan-light hover:border-l-2 hover:border-ogclan/50"
                       )}
-                      onClick={() => handleNavClick(item.id)}
+                      onClick={() => handleSectionClick(item.id)}
                     >
                       {item.label}
                     </button>
@@ -185,17 +184,9 @@ const MobileNav = ({
               
               <Button 
                 className="w-full bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium py-6 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)]"
-                onClick={() => handleNavClick('join')}
+                onClick={() => handleSectionClick('join')}
               >
                 Join the Crew
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                className="mt-2 border-ogclan/20 text-ogclan-light w-full"
-                onClick={() => setIsDrawerOpen(false)}
-              >
-                Close Menu
               </Button>
             </SheetFooter>
           </div>
