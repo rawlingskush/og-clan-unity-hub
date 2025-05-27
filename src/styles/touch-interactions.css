@@ -1,7 +1,7 @@
 
 /* Enhanced touch feedback with hardware acceleration */
 .touch-feedback {
-  transition: transform 0.15s ease-out;
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
 }
 
@@ -13,6 +13,9 @@
 .touch-manipulation {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* Prevent text selection on touch elements */
@@ -23,19 +26,93 @@
   user-select: none;
 }
 
-/* Carousel specific optimizations */
+/* Enhanced carousel specific optimizations */
 .carousel-item {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
-/* Smooth scrolling optimizations */
+/* Smooth momentum scrolling optimizations */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Enhanced swipe gestures */
+.swipe-container {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+}
+
+/* Carousel navigation enhancements */
+.carousel-nav-button {
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  will-change: transform, opacity;
+}
+
+.carousel-nav-button:active {
+  transform: scale(0.95) translateZ(0);
+}
+
+.carousel-nav-button:disabled {
+  opacity: 0.3;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* Smooth dot indicators */
+.carousel-dot {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform, background-color;
+}
+
+.carousel-dot:active {
+  transform: scale(1.2);
+}
+
+/* Progress bar smooth animation */
+.carousel-progress {
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: width;
+}
+
+/* Edge resistance effect */
+.carousel-edge-resistance {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Haptic-style feedback animations */
+@keyframes haptic-tap {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.haptic-feedback:active {
+  animation: haptic-tap 0.15s ease-out;
+}
+
+/* Enhanced card focus states */
+.carousel-card-focused {
+  transform: scale(1.02) translateZ(0);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth slide transitions */
+.carousel-slide-transition {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }

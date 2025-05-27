@@ -46,15 +46,16 @@
     @apply text-base;
   }
   
-  /* Soldier card optimizations */
+  /* Enhanced soldier card optimizations */
   .soldier-card {
     will-change: transform;
     transform: translateZ(0);
     max-width: 100%;
     margin: 0 auto;
+    transition: transform 0.2s ease-out;
   }
   
-  /* Mobile carousel optimizations */
+  /* Enhanced mobile carousel optimizations */
   .mobile-carousel {
     @apply w-full overflow-hidden;
   }
@@ -62,11 +63,46 @@
   .mobile-carousel .carousel-item {
     @apply px-2;
     min-height: 400px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  
+  /* Carousel item smooth transitions */
+  .carousel-item {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  /* Enhanced touch feedback */
+  .carousel-item:active {
+    transform: scale(0.98);
   }
   
   /* Ensure carousel cards fill container properly */
   .mobile-carousel .soldier-card {
     @apply h-full;
+  }
+  
+  /* Smooth carousel navigation */
+  .carousel-navigation-button {
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .carousel-navigation-button:active {
+    transform: scale(0.95);
+  }
+  
+  /* Progress indicators */
+  .carousel-dot {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backdrop-filter: blur(4px);
+  }
+  
+  .carousel-progress-bar {
+    backdrop-filter: blur(4px);
   }
 }
 
@@ -93,9 +129,29 @@
     @apply text-xs leading-relaxed;
   }
   
-  /* Mobile carousel item sizing */
+  /* Mobile carousel item sizing for small screens */
   .mobile-carousel .carousel-item {
     @apply px-1;
     min-height: 380px;
+  }
+  
+  /* Smaller navigation buttons on very small screens */
+  .carousel-navigation-button {
+    @apply h-10 w-10;
+  }
+  
+  .carousel-navigation-button svg {
+    @apply h-5 w-5;
+  }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-carousel .carousel-item {
+    min-height: 320px;
+  }
+  
+  .tactical-hero-container h1 {
+    @apply text-2xl;
   }
 }

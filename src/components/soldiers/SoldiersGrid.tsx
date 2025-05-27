@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { useIsMobile, useIsTablet } from '@/hooks/use-mobile';
 import FilterButtons from './FilterButtons';
-import MobileCarousel from './MobileCarousel';
+import EnhancedMobileCarousel from './EnhancedMobileCarousel';
 import TabletGrid from './TabletGrid';
 import DesktopGrid from './DesktopGrid';
 import JoinCTA from './JoinCTA';
@@ -82,7 +82,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       {/* Responsive layouts */}
       <div className="min-h-[400px]">
         {isMobile ? (
-          <MobileCarousel soldiers={filteredSoldiers} />
+          <EnhancedMobileCarousel soldiers={filteredSoldiers} />
         ) : isTablet ? (
           <TabletGrid soldiers={filteredSoldiers} />
         ) : (
