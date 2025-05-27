@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -180,8 +179,7 @@ export const soldiers: Soldier[] = [
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
     tiktokUrl: "https://www.tiktok.com/@og.blksavage",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 5,
-    active: true // Mark as active for extra visual effect
+    team: 5
   },
   // NEZ soldiers moved to the end
   {
@@ -192,8 +190,7 @@ export const soldiers: Soldier[] = [
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
     tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
     imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
-    team: 1,
-    active: true // Mark as active for extra visual effect
+    team: 1
   },
   // SWIZZY moved to the bottom
   {
@@ -204,8 +201,7 @@ export const soldiers: Soldier[] = [
     bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
     tiktokUrl: "https://www.tiktok.com/@little.swizzy",
     imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
-    team: 1,
-    active: true // Mark as active for extra visual effect
+    team: 1
   },
   {
     id: "ogwhite",
@@ -215,7 +211,6 @@ export const soldiers: Soldier[] = [
     bio: "White is the merchant of destruction. His shotgun mastery is legendary, turning every engagement into a showcase of raw power and precision. When White enters with his BY15, enemies know they're facing a shotgun specialist.",
     tiktokUrl: "https://www.tiktok.com/@ogwhite",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    team: 2,
-    active: true
+    team: 2
   }
 ];
