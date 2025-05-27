@@ -11,6 +11,7 @@ export interface Soldier {
   princess?: boolean; // New princess theme flag
   pro?: boolean; // New pro player flag
   favoriteMap?: string;
+  team?: number; // Team number (1-6) based on the image
   rank?: string; // Optional soldier rank
   active?: boolean; // Optional flag to mark active/featured soldiers
   stats?: {
