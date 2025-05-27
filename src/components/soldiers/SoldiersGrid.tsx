@@ -3,7 +3,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { useIsMobile, useIsTablet } from '@/hooks/use-mobile';
 import FilterButtons from './FilterButtons';
-import OptimizedSoldierCard from './OptimizedSoldierCard';
+import SoldierCard from './SoldierCard';
 import JoinCTA from './JoinCTA';
 import { filterSoldiers } from '@/utils/weaponCategories';
 
@@ -36,7 +36,7 @@ const SoldiersGrid = React.memo(({ soldiers }: SoldiersGridProps) => {
     setFilter(newFilter);
   }, []);
 
-  // Optimized grid rendering
+  // Optimized grid rendering with proper mobile layout
   const renderGrid = useCallback(() => {
     if (filteredSoldiers.length === 0) {
       return (
@@ -49,24 +49,29 @@ const SoldiersGrid = React.memo(({ soldiers }: SoldiersGridProps) => {
       );
     }
 
-    const gridClasses = isMobile 
-      ? "grid grid-cols-1 gap-4 px-4"
-      : isTablet 
-      ? "grid grid-cols-2 md:grid-cols-3 gap-6 px-4"
-      : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4 md:px-0";
+    // Improved responsive grid classes for better mobile display
+    const getGridClasses = () => {
+      if (isMobile) {
+        return "grid grid-cols-1 gap-4 px-4 max-w-sm mx-auto";
+      } else if (isTablet) {
+        return "grid grid-cols-2 gap-4 px-4 max-w-4xl mx-auto";
+      } else {
+        return "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 px-4 md:px-0";
+      }
+    };
 
     return (
-      <div className={gridClasses}>
+      <div className={getGridClasses()}>
         {filteredSoldiers.map((soldier, index) => (
           <div 
             key={soldier.id} 
             id={`og-${soldier.id.toLowerCase()}`}
             className="scroll-mt-32 gpu-accelerated"
             style={{ 
-              animationDelay: `${index * 0.05}s` // Reduced delay for better performance
+              animationDelay: `${index * 0.05}s`
             }}
           >
-            <OptimizedSoldierCard 
+            <SoldierCard 
               soldier={soldier} 
               isActive={soldier.active || soldier.spotlight}
             />
@@ -91,11 +96,11 @@ const SoldiersGrid = React.memo(({ soldiers }: SoldiersGridProps) => {
   return (
     <div className="space-y-8">
       {/* Filter Pills */}
-      <div className="px-4 md:px-0">
+      <div className={isMobile ? "px-0" : "px-4 md:px-0"}>
         <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
       </div>
       
-      {/* Optimized Grid */}
+      {/* Grid */}
       <div className="min-h-[400px]">
         {renderGrid()}
       </div>

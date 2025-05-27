@@ -7,6 +7,20 @@
     min-width: 85px;
   }
   
+  /* Improved soldier card layout for mobile */
+  .soldier-card {
+    will-change: transform;
+    transform: translateZ(0);
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  /* Better mobile grid spacing */
+  .soldiers-grid-mobile {
+    padding: 0 16px;
+    gap: 16px;
+  }
+  
   /* Navbar optimizations */
   .nav-buttons-container {
     @apply space-x-1;
@@ -46,10 +60,24 @@
     @apply text-base;
   }
   
-  /* Soldier card optimizations */
-  .soldier-card {
-    will-change: transform;
-    transform: translateZ(0);
+  /* Mobile card content optimizations */
+  .soldier-card-content {
+    padding: 12px;
+  }
+  
+  .soldier-card-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .soldier-card-bio {
+    font-size: 14px;
+    line-height: 1.4;
+    max-height: 84px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 }
 
@@ -79,6 +107,21 @@
   /* Carousel optimizations */
   .carousel-item {
     padding-left: 12px;
+  }
+  
+  /* Extra small card optimizations */
+  .soldier-card-content {
+    padding: 10px;
+  }
+  
+  .soldier-card-image {
+    height: 180px;
+  }
+  
+  .soldier-card-bio {
+    font-size: 13px;
+    max-height: 72px;
+    -webkit-line-clamp: 3;
   }
 }
 
@@ -137,6 +180,24 @@
   100% { transform: translateX(200%); }
 }
 
+/* Mobile-specific card animations */
+@media (max-width: 640px) {
+  .soldier-card {
+    animation: mobile-card-enter 0.3s ease-out;
+  }
+  
+  @keyframes mobile-card-enter {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
+
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .scanner-line div {
@@ -149,5 +210,9 @@
   
   .touch-feedback {
     transition: none;
+  }
+  
+  .soldier-card {
+    animation: none;
   }
 }

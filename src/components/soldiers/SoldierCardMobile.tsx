@@ -2,7 +2,6 @@
 import React, { useState, useCallback, memo } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from 'framer-motion';
-import { generateSoldierStats } from '@/utils/soldierStats';
 import SoldierCardBody from './SoldierCardBody';
 import SoldierCardFooter from './SoldierCardFooter';
 import SoldierCardHint from './SoldierCardHint';
@@ -66,16 +65,18 @@ const SoldierCardMobile = memo(({
 }: SoldierCardMobileProps) => {
   const [touchFeedback, setTouchFeedback] = useState(false);
 
-  const handleTouchStart = useCallback(() => {
+  const handleTouchStart = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setTouchFeedback(true);
   }, []);
 
-  const handleTouchEnd = useCallback(() => {
+  const handleTouchEnd = useCallback((e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setTimeout(() => setTouchFeedback(false), 150);
   }, []);
 
   const getCardClasses = useCallback(() => {
-    let classes = `overflow-hidden transition-all duration-200 border-ogclan/30 hover:border-ogclan/70 bg-black h-full relative will-change-transform ${
+    let classes = `overflow-hidden transition-all duration-200 border-ogclan/30 hover:border-ogclan/70 bg-black h-full relative will-change-transform soldier-card touch-manipulation ${
       showQuickStats ? 'quick-stats-active ring-2 ring-ogclan/50' : ''
     }`;
     
@@ -98,11 +99,14 @@ const SoldierCardMobile = memo(({
     return classes;
   }, [showQuickStats, isProCard, isPrincessCard, isActiveCard]);
 
-  // Render particles with fallback
-  const renderParticles = () => {
+  // Render particles with performance optimization
+  const renderParticles = useCallback(() => {
     const allParticles = [...sparkParticles, ...princessParticles];
     
-    return allParticles.map(particle => (
+    // Limit particles on mobile for better performance
+    const limitedParticles = allParticles.slice(0, 10);
+    
+    return limitedParticles.map(particle => (
       <div 
         key={particle.id}
         className="absolute z-10 pointer-events-none gpu-accelerated"
@@ -127,7 +131,7 @@ const SoldierCardMobile = memo(({
         )}
       </div>
     ));
-  };
+  }, [sparkParticles, princessParticles]);
 
   return (
     <motion.div
@@ -146,7 +150,11 @@ const SoldierCardMobile = memo(({
         onTouchMove={onTouchMove}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        style={{ touchAction: 'manipulation' }}
+        style={{ 
+          touchAction: 'manipulation',
+          minHeight: '400px',
+          maxWidth: '100%'
+        }}
       >
         <div className="relative">
           {/* Optimized Scanner Line */}
@@ -161,7 +169,7 @@ const SoldierCardMobile = memo(({
           {/* Render particles */}
           {renderParticles()}
 
-          <CardContent className="p-4 relative">
+          <CardContent className="p-3 relative soldier-card-content">
             <SoldierCardBody 
               imageUrl={imageUrl}
               name={name}
