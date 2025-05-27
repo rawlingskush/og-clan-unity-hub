@@ -43,6 +43,7 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
     team: 3,
+    active: true,
     pro: true
   },
   {
