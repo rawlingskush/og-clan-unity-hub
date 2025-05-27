@@ -1,7 +1,8 @@
 
 import React from 'react';
-import EnhancedImage from '@/components/ui/enhanced-image';
+import SoldierCardImage from './SoldierCardImage';
 import SoldierCardBadges from './SoldierCardBadges';
+import ProBadge from './ProBadge';
 
 interface SoldierCardBodyProps {
   imageUrl: string;
@@ -9,63 +10,62 @@ interface SoldierCardBodyProps {
   role: string;
   weapon: string;
   bio: string;
-  isSpotlight?: boolean;
+  isSpotlight: boolean;
   isPrincess?: boolean;
   isPro?: boolean;
   favoriteMap: string;
 }
 
-const SoldierCardBody = ({
-  imageUrl,
-  name,
-  role,
-  weapon,
-  bio,
-  isSpotlight = false,
+const SoldierCardBody = ({ 
+  imageUrl, 
+  name, 
+  role, 
+  weapon, 
+  bio, 
+  isSpotlight,
   isPrincess = false,
   isPro = false,
   favoriteMap
 }: SoldierCardBodyProps) => {
+  const getNameClasses = () => {
+    if (isPro) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold transition-all duration-300';
+    } else if (isPrincess) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-princess animate-glow-princess';
+    } else if (isSpotlight) {
+      return 'text-xl font-bold mb-1 tracking-wider text-gradient-gold animate-glow';
+    } else {
+      return 'text-xl font-bold mb-1 tracking-wider text-ogclan';
+    }
+  };
+
   return (
-    <div className="space-y-3">
-      {/* Image */}
-      <div className="relative">
-        <EnhancedImage
-          src={imageUrl}
-          alt={`${name} - OG Clan Soldier`}
-          className="w-full h-48 rounded-lg"
-          aspectRatio="16/10"
-          objectFit="cover"
-        />
-        <div className="absolute top-2 right-2">
-          <SoldierCardBadges 
-            weapon={weapon}
-            isPro={isPro}
-            isPrincess={isPrincess}
-            isSpotlight={isSpotlight}
-          />
-        </div>
-      </div>
-
-      {/* Name and Role */}
-      <div className="space-y-1">
-        <h3 className={`text-lg font-bold ${
-          isPro ? 'text-yellow-400' : 
-          isPrincess ? 'text-pink-400' : 
-          isSpotlight ? 'text-ogclan' : 'text-white'
-        }`}>
-          {name}
-        </h3>
-        <p className="text-sm text-gray-400">{role}</p>
-      </div>
-
+    <div className="flex flex-col items-center relative">
+      {/* PRO Badge */}
+      {isPro && <ProBadge />}
+      
+      <SoldierCardImage 
+        imageUrl={imageUrl} 
+        name={name} 
+        role={role} 
+        isSpotlight={isSpotlight}
+        isPrincess={isPrincess}
+        isPro={isPro}
+      />
+      
+      {/* Name with theme-specific styling */}
+      <h3 className={getNameClasses()}>{name}</h3>
+      
+      <SoldierCardBadges 
+        role={role} 
+        weapon={weapon} 
+        favoriteMap={favoriteMap}
+        isPrincess={isPrincess}
+        isPro={isPro}
+      />
+      
       {/* Bio */}
-      <p className="text-sm text-gray-300 line-clamp-3">{bio}</p>
-
-      {/* Favorite Map */}
-      <div className="text-xs text-gray-500">
-        <span className="opacity-70">Favorite Map:</span> {favoriteMap}
-      </div>
+      <p className="text-center text-sm mb-4 text-gray-300">{bio}</p>
     </div>
   );
 };
