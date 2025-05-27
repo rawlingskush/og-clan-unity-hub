@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { useIsMobile, useIsTablet } from '@/hooks/use-mobile';
@@ -83,9 +82,7 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       {/* Responsive layouts */}
       <div className="min-h-[400px]">
         {isMobile ? (
-          <div className="px-2">
-            <MobileCarousel soldiers={filteredSoldiers} />
-          </div>
+          <MobileCarousel soldiers={filteredSoldiers} />
         ) : isTablet ? (
           <TabletGrid soldiers={filteredSoldiers} />
         ) : (
