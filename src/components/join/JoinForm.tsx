@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 import emailjs from '@emailjs/browser';
 import AnimatedContent from '../AnimatedContent';
 
@@ -31,6 +31,7 @@ const JoinForm = () => {
     setIsSubmitting(true);
 
     try {
+      // Prepare template parameters for EmailJS
       const templateParams = {
         to_email: 'onlygreat237@gmail.com',
         from_name: formData.name,
@@ -41,11 +42,12 @@ const JoinForm = () => {
 
       console.log('Sending email with parameters:', templateParams);
 
+      // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
-        'OgClanService',
-        'template_ujcypoh',
+        'OgClanService', // Your EmailJS service ID
+        'template_ujcypoh', // Your EmailJS template ID
         templateParams,
-        '5Oxgqe5hCq9cHN1yy'
+        '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
       );
 
       console.log('EmailJS response:', response);
@@ -56,6 +58,7 @@ const JoinForm = () => {
         variant: "default",
       });
 
+      // Reset form after successful submission
       setFormData({
         name: '',
         email: '',
@@ -76,11 +79,11 @@ const JoinForm = () => {
 
   return (
     <AnimatedContent animation="scale-in" delay={300}>
-      <div className="bg-white rounded-2xl p-6 md:p-8 shadow-lg border border-gray-100">
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6">
+      <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">
           Join the OG Clan Family
         </h3>
-        <form className="space-y-3 md:space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
               Your Name
@@ -90,7 +93,7 @@ const JoinForm = () => {
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all text-base"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
               placeholder="Enter your name"
               required
             />
@@ -104,7 +107,7 @@ const JoinForm = () => {
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all text-base"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
               placeholder="you@example.com"
               required
             />
@@ -118,7 +121,7 @@ const JoinForm = () => {
               id="gamerTag"
               value={formData.gamerTag}
               onChange={handleChange}
-              className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all text-base"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
               placeholder="Your gamer tag"
               required
             />
@@ -132,7 +135,7 @@ const JoinForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={3}
-              className="w-full px-3 py-2 md:px-4 md:py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all text-base resize-none"
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
               placeholder="Tell us a bit about yourself..."
               required
             ></textarea>
@@ -140,7 +143,7 @@ const JoinForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full btn-primary py-3 md:py-4 text-base md:text-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
+            className="w-full btn-primary py-4"
           >
             {isSubmitting ? 'Sending...' : 'Sign Up Now'}
           </button>

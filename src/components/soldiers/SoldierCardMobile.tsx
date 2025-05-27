@@ -2,22 +2,14 @@
 import React, { useState, useCallback, memo } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { motion, AnimatePresence } from 'framer-motion';
-import { generateSoldierStats } from '@/utils/soldierStats';
+import { SparkParticle } from '@/hooks/useSoldierSparkles';
+import { PrincessParticle } from '@/hooks/usePrincessSparkles';
+import SoldierSparkles from './SoldierSparkles';
+import PrincessSparkles from './PrincessSparkles';
 import SoldierCardBody from './SoldierCardBody';
 import SoldierCardFooter from './SoldierCardFooter';
 import SoldierCardHint from './SoldierCardHint';
 import SoldierStatsOverlay from './SoldierStatsOverlay';
-
-interface OptimizedParticle {
-  id: number;
-  x: number;
-  y: number;
-  size: number;
-  opacity: number;
-  velocity?: { x: number; y: number };
-  type?: 'spark' | 'heart' | 'star' | 'crown';
-  color?: string;
-}
 
 interface SoldierCardMobileProps {
   imageUrl: string;
@@ -32,8 +24,8 @@ interface SoldierCardMobileProps {
   isProCard?: boolean;
   showQuickStats: boolean;
   toggleQuickStats: (e: React.MouseEvent<HTMLDivElement>) => void;
-  sparkParticles: OptimizedParticle[];
-  princessParticles?: OptimizedParticle[];
+  sparkParticles: SparkParticle[];
+  princessParticles?: PrincessParticle[];
   onTouchMove: (e: React.TouchEvent<HTMLDivElement>) => void;
   stats: {
     winRate: string;
@@ -98,37 +90,6 @@ const SoldierCardMobile = memo(({
     return classes;
   }, [showQuickStats, isProCard, isPrincessCard, isActiveCard]);
 
-  // Render particles with fallback
-  const renderParticles = () => {
-    const allParticles = [...sparkParticles, ...princessParticles];
-    
-    return allParticles.map(particle => (
-      <div 
-        key={particle.id}
-        className="absolute z-10 pointer-events-none gpu-accelerated"
-        style={{
-          left: `${particle.x}px`,
-          top: `${particle.y}px`,
-          opacity: particle.opacity,
-          transform: `scale(${particle.size / 4})`,
-          color: particle.color || '#D4AF37'
-        }}
-      >
-        {particle.type === 'spark' ? (
-          <div className="w-2 h-2 rounded-full bg-current" />
-        ) : particle.type === 'heart' ? (
-          '💖'
-        ) : particle.type === 'star' ? (
-          '⭐'
-        ) : particle.type === 'crown' ? (
-          '👑'
-        ) : (
-          <div className="w-2 h-2 rounded-full bg-current" />
-        )}
-      </div>
-    ));
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -150,16 +111,22 @@ const SoldierCardMobile = memo(({
       >
         <div className="relative">
           {/* Optimized Scanner Line */}
-          <div className="absolute top-0 left-0 w-full h-px overflow-hidden">
-            <div className={`absolute top-0 h-px w-full ${
-              isProCard ? 'bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent' :
-              isPrincessCard ? 'bg-gradient-to-r from-transparent via-pink-500/50 to-transparent' :
-              'bg-gradient-to-r from-transparent via-ogclan/50 to-transparent'
-            } animate-scanner-line`} />
+          <div className="scanner-line">
+            {isProCard ? (
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
+            ) : isPrincessCard ? (
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-pink-500/50 to-transparent w-full animate-[scanner-line_5s_linear_infinite]"></div>
+            ) : (
+              <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-ogclan/50 to-transparent w-full animate-[scanner-line_5s_linear_infinite]"></div>
+            )}
           </div>
 
-          {/* Render particles */}
-          {renderParticles()}
+          {/* Particle effects */}
+          {isPrincessCard ? (
+            <PrincessSparkles particles={princessParticles} />
+          ) : (
+            <SoldierSparkles particles={sparkParticles} />
+          )}
 
           <CardContent className="p-4 relative">
             <SoldierCardBody 
@@ -177,6 +144,7 @@ const SoldierCardMobile = memo(({
           
           <SoldierCardFooter tiktokUrl={tiktokUrl} name={name} />
 
+          {/* Quick Stats Overlay */}
           <SoldierStatsOverlay 
             isVisible={showQuickStats}
             onClose={(e) => {
@@ -186,6 +154,7 @@ const SoldierCardMobile = memo(({
             stats={stats}
           />
 
+          {/* Tap hint */}
           <SoldierCardHint isMobile={true} />
 
           {/* Touch feedback */}
