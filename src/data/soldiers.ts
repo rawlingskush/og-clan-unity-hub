@@ -1,3 +1,4 @@
+
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -114,8 +115,8 @@ export const soldiers: Soldier[] = [
     role: "Precision Breacher",
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
-    tiktokUrl: "https://www.tiktok.com/@mahrezcodm0",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    tiktokUrl: "https://www.tiktok.com/@chambas237",
+    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png",
     team: 1,
     pro: true
   },
@@ -201,7 +202,7 @@ export const soldiers: Soldier[] = [
     role: "⚡ Tactical Strategist",
     weapon: "BY15",
     bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
-    tiktokUrl: "https://www.tiktok.com/@swizzy_og",
+    tiktokUrl: "https://www.tiktok.com/@little.swizzy",
     imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
     team: 1,
     active: true // Mark as active for extra visual effect
