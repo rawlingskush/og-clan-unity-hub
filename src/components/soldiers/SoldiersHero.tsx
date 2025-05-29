@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import AnimatedContent from '@/components/AnimatedContent';
 import { Shield, Target, Crosshair } from 'lucide-react';
@@ -41,11 +40,17 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
 
   return (
     <div className="relative bg-black/90 py-16 overflow-hidden border-b border-ogclan/30">
-      {/* Tactical overlay background with enhanced parallax effect */}
+      {/* Enhanced tactical overlay background with CODM characters */}
       <div 
-        className="absolute inset-0 z-0 opacity-30 bg-[url('/lovable-uploads/ca8b1db8-bd70-4f24-b900-6b87f878e42b.png')] bg-cover bg-center bg-no-repeat transition-transform duration-200 ease-out"
+        className="absolute inset-0 z-0 opacity-25 bg-[url('/lovable-uploads/ca8b1db8-bd70-4f24-b900-6b87f878e42b.png')] bg-cover bg-center bg-no-repeat transition-transform duration-200 ease-out"
         style={{ transform: `translate(${mousePosition.x * -0.15}px, ${mousePosition.y * -0.15}px) scale(1.1)` }}
       ></div>
+      
+      {/* Tactical operative overlay - mobile optimized */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[url('/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png')] bg-no-repeat bg-right-top opacity-8 mix-blend-overlay transform scale-75 lg:scale-50 hidden md:block"></div>
+      
+      {/* Female operative silhouette for dynamic feel */}
+      <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[url('/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png')] bg-no-repeat bg-bottom-left opacity-10 mix-blend-overlay hidden lg:block"></div>
       
       {/* Enhanced tactical overlay with grid patterns */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/70">
