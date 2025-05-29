@@ -13,6 +13,12 @@ const HeroBackground = () => {
       {/* Secondary character overlay for depth - mobile responsive */}
       <div className="absolute top-0 right-0 w-full h-full bg-[url('/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png')] bg-no-repeat bg-right-top opacity-8 mix-blend-overlay transform scale-75 lg:scale-50 rotate-12"></div>
       
+      {/* NEW: Epic battle scene background using first uploaded image */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/9d279531-6784-4d25-830d-c46c99f72074.png')] bg-cover bg-center opacity-12 mix-blend-overlay"></div>
+      
+      {/* NEW: Blonde warrior character overlay */}
+      <div className="absolute bottom-0 right-0 w-2/3 md:w-1/2 h-full bg-[url('/lovable-uploads/661aadf3-ba37-40df-b54f-ac697df8e7ce.png')] bg-no-repeat bg-bottom-right opacity-10 mix-blend-overlay"></div>
+      
       {/* Logo watermark background with revised opacity and enhanced blinking effect */}
       <div className="absolute inset-0 flex items-center justify-center opacity-25">
         <div className="relative w-[150%] max-w-[1200px] aspect-square">

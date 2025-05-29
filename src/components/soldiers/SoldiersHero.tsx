@@ -46,11 +46,20 @@ const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
         style={{ transform: `translate(${mousePosition.x * -0.15}px, ${mousePosition.y * -0.15}px) scale(1.1)` }}
       ></div>
       
+      {/* NEW: Epic battle scene background */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/9d279531-6784-4d25-830d-c46c99f72074.png')] bg-cover bg-center opacity-15 mix-blend-overlay"></div>
+      
+      {/* NEW: Tactical squad formation */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('/lovable-uploads/38e7cb00-bcc7-436c-baa3-1d1073b72d2a.png')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+      
       {/* Tactical operative overlay - mobile optimized */}
       <div className="absolute top-0 right-0 w-full h-full bg-[url('/lovable-uploads/97c32e21-04e1-42e3-9242-8e8a9f83ae10.png')] bg-no-repeat bg-right-top opacity-8 mix-blend-overlay transform scale-75 lg:scale-50 hidden md:block"></div>
       
       {/* Female operative silhouette for dynamic feel */}
       <div className="absolute bottom-0 left-0 w-1/2 h-full bg-[url('/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png')] bg-no-repeat bg-bottom-left opacity-10 mix-blend-overlay hidden lg:block"></div>
+      
+      {/* NEW: Additional character overlays */}
+      <div className="absolute bottom-0 right-0 w-1/2 h-full bg-[url('/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png')] bg-no-repeat bg-bottom-right opacity-8 mix-blend-overlay hidden lg:block"></div>
       
       {/* Enhanced tactical overlay with grid patterns */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-black/70">

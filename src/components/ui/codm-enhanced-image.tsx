@@ -56,6 +56,11 @@ const CODMEnhancedImage = ({
     onError?.(e);
   };
 
+  // Add debugging for image visibility
+  React.useEffect(() => {
+    console.log(`CODM Image component mounted with src: ${src}`);
+  }, [src]);
+
   return (
     <div 
       className={cn(

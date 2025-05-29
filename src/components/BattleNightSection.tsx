@@ -13,6 +13,12 @@ const BattleNightSection = () => {
         {/* Squad formation background - mobile optimized */}
         <div className="absolute inset-0 bg-[url('/lovable-uploads/ca8b1db8-bd70-4f24-b900-6b87f878e42b.png')] bg-cover bg-center opacity-8 mix-blend-overlay"></div>
         
+        {/* NEW: Dark tactical operative background */}
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/2f636e7c-eee5-4028-9f7b-ef987e714375.png')] bg-cover bg-center opacity-12 mix-blend-overlay"></div>
+        
+        {/* NEW: Female operative for dynamic feel */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png')] bg-no-repeat bg-left-top opacity-8 mix-blend-overlay transform scale-75 lg:scale-50 hidden md:block"></div>
+        
         {/* Day of the Dead character for special tournaments */}
         <div className="absolute top-0 right-0 w-full h-full bg-[url('/lovable-uploads/d6ecd812-9e2f-485f-98f5-46289d46c027.png')] bg-no-repeat bg-right-top opacity-6 mix-blend-overlay transform scale-75 lg:scale-50 rotate-12 hidden md:block"></div>
         
