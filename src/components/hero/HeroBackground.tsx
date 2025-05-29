@@ -7,17 +7,8 @@ const HeroBackground = () => {
       {/* Base dark background with tech gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90"></div>
       
-      {/* Enhanced CODM battle scene overlay - optimized for mobile */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('/lovable-uploads/ca8b1db8-bd70-4f24-b900-6b87f878e42b.png')] bg-cover bg-center opacity-15 mix-blend-overlay"></div>
-      
-      {/* Secondary character overlay for depth - mobile responsive */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[url('/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png')] bg-no-repeat bg-right-top opacity-8 mix-blend-overlay transform scale-75 lg:scale-50 rotate-12"></div>
-      
-      {/* NEW: Epic battle scene background using first uploaded image */}
-      <div className="absolute inset-0 bg-[url('/lovable-uploads/9d279531-6784-4d25-830d-c46c99f72074.png')] bg-cover bg-center opacity-12 mix-blend-overlay"></div>
-      
-      {/* NEW: Blonde warrior character overlay */}
-      <div className="absolute bottom-0 right-0 w-2/3 md:w-1/2 h-full bg-[url('/lovable-uploads/661aadf3-ba37-40df-b54f-ac697df8e7ce.png')] bg-no-repeat bg-bottom-right opacity-10 mix-blend-overlay"></div>
+      {/* Gaming image overlay with reduced opacity */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
       
       {/* Logo watermark background with revised opacity and enhanced blinking effect */}
       <div className="absolute inset-0 flex items-center justify-center opacity-25">
@@ -31,9 +22,6 @@ const HeroBackground = () => {
           />
         </div>
       </div>
-      
-      {/* Tactical operative silhouette - mobile optimized */}
-      <div className="absolute bottom-0 left-0 w-1/3 h-full bg-[url('/lovable-uploads/6c05815f-b567-49f6-94d3-be587bc340e9.png')] bg-no-repeat bg-bottom-left opacity-6 mix-blend-overlay hidden md:block"></div>
       
       {/* Tech circuit lines with slightly increased opacity */}
       <div className="absolute top-0 left-0 w-full h-full opacity-30">

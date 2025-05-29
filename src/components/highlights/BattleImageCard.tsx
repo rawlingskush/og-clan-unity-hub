@@ -19,11 +19,6 @@ const BattleImageCard = ({
   animation = 'fade-in-up',
   delay = 0
 }: BattleImageCardProps) => {
-  // Add debugging for image loading
-  React.useEffect(() => {
-    console.log(`BattleImageCard loading image: ${imageSrc} for ${title}`);
-  }, [imageSrc, title]);
-
   return (
     <AnimatedContent animation={animation} delay={delay}>
       <div className="battle-image-card relative group overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)]">
@@ -31,8 +26,6 @@ const BattleImageCard = ({
           src={imageSrc} 
           alt={title} 
           className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-          onLoad={() => console.log(`Battle image loaded successfully: ${imageSrc}`)}
-          onError={(e) => console.log(`Battle image failed to load: ${imageSrc}`, e)}
         />
         
         {/* Overlay with glassmorphism effect */}
