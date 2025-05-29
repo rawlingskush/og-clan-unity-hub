@@ -6,28 +6,28 @@ const BattleImagesSection = () => {
   const battleImages = [
     {
       id: 1,
-      imageSrc: "/lovable-uploads/a15dcbad-a5da-4907-9f61-2bb0814ccf9a.png",
-      title: "Elite Squad: Clan Warriors",
+      imageSrc: "/lovable-uploads/4ec7719d-df84-4f0a-a8a5-4ad80acc8ff3.png",
+      title: "Elite Squad: OG Clan Warriors",
       shortTitle: "Elite Squad",
-      description: "Our top members form the elite squad, representing OG Clan in the most competitive tournaments.",
+      description: "Our top operatives form the elite squad, representing OG Clan in the most competitive CODM tournaments.",
       animation: "slide-in-left" as const,
       delay: 0
     },
     {
       id: 2,
-      imageSrc: "/lovable-uploads/abd25e00-c7ac-47cf-8f29-d3a09b17097a.png",
-      title: "Battle Squad: Perfect Coordination",
-      shortTitle: "Battle Squad",
-      description: "When the OG Battle Squad enters the field, opponents know they're in for a real challenge.",
+      imageSrc: "/lovable-uploads/1cb31bbb-4233-43e5-81db-f5f2fabe0ac5.png",
+      title: "Tactical Operative: Precision & Style",
+      shortTitle: "Tactical Operative",
+      description: "When precision meets style, our operatives deliver flawless execution in every mission.",
       animation: "fade-in-up" as const,
       delay: 200
     },
     {
       id: 3,
-      imageSrc: "/lovable-uploads/e5378274-2a94-43fe-b1fd-30596884f957.png",
-      title: "The Champion: Commander",
-      shortTitle: "The Champion",
-      description: "Our clan leader stands among the fallen, a testament to OG Clan's dominance in every battle.",
+      imageSrc: "/lovable-uploads/4aff45e6-a800-4a02-8a26-f5cc53f2c562.png",
+      title: "Special Forces: Day of the Dead",
+      shortTitle: "Special Forces",
+      description: "Our special forces unit brings fear to the battlefield with their legendary Day of the Dead tactics.",
       animation: "slide-in-right" as const,
       delay: 400
     }

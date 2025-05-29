@@ -7,8 +7,11 @@ const HeroBackground = () => {
       {/* Base dark background with tech gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-black/90"></div>
       
+      {/* CODM Squad Formation - Primary background */}
+      <div className="absolute inset-0 bg-[url('/lovable-uploads/4ec7719d-df84-4f0a-a8a5-4ad80acc8ff3.png')] bg-cover bg-center opacity-20 mix-blend-overlay scale-110 hover:scale-105 transition-transform duration-700"></div>
+      
       {/* Gaming image overlay with reduced opacity */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10 mix-blend-overlay"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
       
       {/* Logo watermark background with revised opacity and enhanced blinking effect */}
       <div className="absolute inset-0 flex items-center justify-center opacity-25">
@@ -21,6 +24,12 @@ const HeroBackground = () => {
             style={{filter: "drop-shadow(0 0 12px rgba(212, 175, 55, 0.5))"}}
           />
         </div>
+      </div>
+      
+      {/* Female Operative - Right side accent */}
+      <div className="absolute top-0 right-0 w-1/3 h-full opacity-15 mix-blend-overlay">
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/1cb31bbb-4233-43e5-81db-f5f2fabe0ac5.png')] bg-cover bg-center bg-no-repeat transform scale-110 hover:scale-105 transition-transform duration-700"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-black/30 to-black/80"></div>
       </div>
       
       {/* Tech circuit lines with slightly increased opacity */}
