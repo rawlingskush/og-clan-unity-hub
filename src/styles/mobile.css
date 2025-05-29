@@ -104,38 +104,6 @@
   .carousel-progress-bar {
     backdrop-filter: blur(4px);
   }
-  
-  /* CODM Character Image Optimizations */
-  .codm-character-bg {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    will-change: transform;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .codm-character-bg:hover {
-    transform: scale(1.02);
-  }
-  
-  /* Battle Image Card mobile optimizations - increased height for more image visibility */
-  .battle-image-card {
-    @apply h-96;
-    min-height: 384px;
-  }
-  
-  .battle-image-card img {
-    object-position: center;
-    image-rendering: optimizeQuality;
-  }
-  
-  /* Hero background CODM character optimizations */
-  .hero-codm-bg {
-    background-attachment: scroll;
-    background-size: cover;
-    background-position: center top;
-    will-change: transform;
-  }
 }
 
 /* Extra small devices */
@@ -175,18 +143,6 @@
   .carousel-navigation-button svg {
     @apply h-5 w-5;
   }
-  
-  /* CODM Character mobile optimizations for very small screens - increased height */
-  .battle-image-card {
-    @apply h-80;
-    min-height: 320px;
-  }
-  
-  .codm-enhanced-mobile {
-    background-attachment: scroll;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
 }
 
 /* Landscape mobile optimization */
@@ -198,30 +154,4 @@
   .tactical-hero-container h1 {
     @apply text-2xl;
   }
-  
-  .battle-image-card {
-    @apply h-72;
-    min-height: 288px;
-  }
-  
-  .hero-codm-bg {
-    background-size: cover;
-    background-position: center;
-  }
-}
-
-/* Touch optimizations for CODM character elements */
-.codm-touch-optimized {
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Performance optimizations for character images */
-.codm-performance-optimized {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-  will-change: transform;
 }
