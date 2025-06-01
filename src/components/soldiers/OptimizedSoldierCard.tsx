@@ -22,13 +22,13 @@ const OptimizedSoldierCard = memo(({ soldier, priority = false }: OptimizedSoldi
   const cardClasses = cn(
     "soldier-card relative bg-gradient-to-b from-black/90 to-black/95 rounded-2xl border-2 transition-all duration-500 group overflow-hidden h-full flex flex-col",
     soldier.spotlight ? "border-ogclan glow-medium animate-glow-pulse" : "border-ogclan/30 hover:border-ogclan/60",
-    soldier.isPrincess && "border-pink-500 glow-princess animate-glow-princess",
-    soldier.isPro && "border-yellow-500 shadow-lg shadow-yellow-500/20",
+    soldier.princess && "border-pink-500 glow-princess animate-glow-princess",
+    soldier.pro && "border-yellow-500 shadow-lg shadow-yellow-500/20",
     "hover:shadow-[0_10px_40px_rgba(212,175,55,0.3)] hover:scale-105 transform-gpu will-change-transform"
   );
 
   return (
-    <div ref={ref} className={cardClasses}>
+    <div ref={ref as React.RefObject<HTMLDivElement>} className={cardClasses}>
       {/* Only render content when in view or high priority */}
       {(isIntersecting || priority) && (
         <>
@@ -37,7 +37,13 @@ const OptimizedSoldierCard = memo(({ soldier, priority = false }: OptimizedSoldi
           
           <div className="p-4 md:p-6 text-center flex-grow flex flex-col">
             {/* Badges */}
-            <SoldierCardBadges soldier={soldier} />
+            <SoldierCardBadges 
+              role={soldier.role}
+              weapon={soldier.weapon}
+              favoriteMap={soldier.favoriteMap || 'Unknown'}
+              isPrincess={soldier.princess}
+              isPro={soldier.pro}
+            />
             
             {/* Profile Image */}
             <SoldierCardImage
@@ -45,17 +51,30 @@ const OptimizedSoldierCard = memo(({ soldier, priority = false }: OptimizedSoldi
               name={soldier.name}
               role={soldier.role}
               isSpotlight={soldier.spotlight}
-              isPrincess={soldier.isPrincess}
-              isPro={soldier.isPro}
+              isPrincess={soldier.princess}
+              isPro={soldier.pro}
             />
             
             {/* Card Body */}
             <div className="flex-grow">
-              <SoldierCardBody soldier={soldier} />
+              <SoldierCardBody 
+                imageUrl={soldier.imageUrl}
+                name={soldier.name}
+                role={soldier.role}
+                weapon={soldier.weapon}
+                bio={soldier.bio}
+                isSpotlight={soldier.spotlight}
+                isPrincess={soldier.princess}
+                isPro={soldier.pro}
+                favoriteMap={soldier.favoriteMap || 'Unknown'}
+              />
             </div>
             
             {/* Card Footer */}
-            <SoldierCardFooter soldier={soldier} />
+            <SoldierCardFooter 
+              tiktokUrl={soldier.tiktokUrl}
+              name={soldier.name}
+            />
           </div>
         </>
       )}

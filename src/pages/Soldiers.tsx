@@ -18,7 +18,7 @@ const Soldiers = () => {
   // Preload critical images
   useEffect(() => {
     const criticalImages = soldiers
-      .filter(soldier => soldier.spotlight || soldier.isPro)
+      .filter(soldier => soldier.spotlight || soldier.pro)
       .map(soldier => soldier.imageUrl)
       .slice(0, 5); // Preload first 5 important soldiers
     

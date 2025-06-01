@@ -21,9 +21,9 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
     if (filter === 'all') return soldiers;
     
     const filterMap = {
-      active: (soldier: Soldier) => soldier.status === 'active',
+      active: (soldier: Soldier) => soldier.active === true,
       legend: (soldier: Soldier) => soldier.spotlight || soldier.role.toLowerCase().includes('commander'),
-      pro: (soldier: Soldier) => soldier.isPro || soldier.role.toLowerCase().includes('pro')
+      pro: (soldier: Soldier) => soldier.pro || soldier.role.toLowerCase().includes('pro')
     };
 
     return soldiers.filter(filterMap[filter] || (() => true));
@@ -58,13 +58,13 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       </AnimatedContent>
 
       <FilterButtons 
-        activeFilter={filter} 
+        filter={filter} 
         onFilterChange={handleFilterChange}
         soldierCounts={{
           all: soldiers.length,
-          active: soldiers.filter(s => s.status === 'active').length,
+          active: soldiers.filter(s => s.active === true).length,
           legend: soldiers.filter(s => s.spotlight || s.role.toLowerCase().includes('commander')).length,
-          pro: soldiers.filter(s => s.isPro || s.role.toLowerCase().includes('pro')).length
+          pro: soldiers.filter(s => s.pro || s.role.toLowerCase().includes('pro')).length
         }}
       />
 
