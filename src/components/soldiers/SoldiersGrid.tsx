@@ -58,14 +58,8 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
       </AnimatedContent>
 
       <FilterButtons 
-        filter={filter} 
+        currentFilter={filter} 
         onFilterChange={handleFilterChange}
-        soldierCounts={{
-          all: soldiers.length,
-          active: soldiers.filter(s => s.active === true).length,
-          legend: soldiers.filter(s => s.spotlight || s.role.toLowerCase().includes('commander')).length,
-          pro: soldiers.filter(s => s.pro || s.role.toLowerCase().includes('pro')).length
-        }}
       />
 
       <div className="mt-8">
