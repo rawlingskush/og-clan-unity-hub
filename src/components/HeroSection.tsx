@@ -5,13 +5,15 @@ import HeroContent from './hero/HeroContent';
 import HeroActions from './hero/HeroActions';
 import ScrollDownButton from './hero/ScrollDownButton';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useScrollSpy } from '@/hooks/use-scroll-spy';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
+  const { scrollPosition } = useScrollSpy({ sectionIds: ['home'] });
 
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-      <HeroBackground />
+      <HeroBackground scrollPosition={scrollPosition} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:px-8 w-full relative z-10">
         <HeroContent />
