@@ -11,57 +11,48 @@ const HeroContent = () => {
     <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
         <div className="relative">
-          {/* Tactical header with enhanced styling */}
-          <div className="flex items-center justify-center space-x-4 mb-4">
-            <div className="w-12 h-px bg-gradient-to-r from-transparent to-ogclan"></div>
-            <div className="flex space-x-3">
-              <Zap className="h-5 w-5 text-ogclan animate-pulse" />
-              <div className="w-2 h-2 bg-ogclan/60 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-              <Zap className="h-5 w-5 text-ogclan animate-pulse" style={{ animationDelay: '1s' }} />
+          {/* Minimal tactical header */}
+          <div className="flex items-center justify-center space-x-4 mb-6">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-ogclan/60"></div>
+            <div className="flex space-x-2">
+              <Zap className="h-4 w-4 text-ogclan/80 animate-pulse" />
+              <div className="w-1 h-1 bg-ogclan/40 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              <Zap className="h-4 w-4 text-ogclan/80 animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
-            <div className="w-12 h-px bg-gradient-to-l from-transparent to-ogclan"></div>
+            <div className="w-8 h-px bg-gradient-to-l from-transparent to-ogclan/60"></div>
           </div>
 
-          <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-4 relative ${isMobile ? 'px-3' : ''}`}>
-            <span className="font-orbitron tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light relative">
+          <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-4 md:mb-6 relative ${isMobile ? 'px-3' : ''}`}>
+            <span className="font-orbitron tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light relative animate-[fade-in_1s_ease-out]">
               WELCOME TO OG CLAN
-              {/* Tactical glow effect */}
-              <div className="absolute inset-0 text-ogclan/20 blur-sm -z-10 font-orbitron tracking-wider">
-                WELCOME TO OG CLAN
-              </div>
             </span>
             
-            {/* Enhanced underline with animation */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-ogclan to-transparent mt-2">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-ogclan/80 to-transparent animate-pulse"></div>
-            </div>
+            {/* Simple animated underline */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-ogclan to-transparent mt-2 animate-[scale-in_0.8s_ease-out_0.5s_both]"></div>
           </h1>
         </div>
         
-        <AnimatedContent animation="fade-in-up" delay={500}>
+        <AnimatedContent animation="fade-in-up" delay={600}>
           <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-2 mt-6">
-            <span>Loyalty. Unity. Victory.</span> 
+            <span className="animate-[fade-in_1s_ease-out_0.7s_both]">Loyalty. Unity. Victory.</span> 
             <Flame className="inline-block h-5 w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
           </p>
         </AnimatedContent>
       </AnimatedContent>
 
-      <AnimatedContent animation="fade-in-up" delay={600}>
-        <div className="flex items-center justify-center mt-4 mb-6">
-          <Gamepad2 className="h-6 w-6 text-ogclan mr-2 animate-pulse" style={{ animationDelay: '0.3s' }} />
-          <span className="text-xl md:text-2xl font-orbitron text-ogclan">
+      <AnimatedContent animation="fade-in-up" delay={800}>
+        <div className="flex items-center justify-center mt-6 mb-8">
+          <Gamepad2 className="h-5 w-5 text-ogclan mr-2 animate-[bounce_2s_infinite]" />
+          <span className="text-xl md:text-2xl font-orbitron text-ogclan animate-[fade-in_1s_ease-out_1s_both]">
             CALL OF DUTY MOBILE
           </span>
         </div>
         
-        {/* Enhanced tactical info display */}
-        <div className="relative mt-4 md:mt-6 max-w-4xl mx-auto">
-          <div className="bg-black/30 backdrop-blur-sm border border-ogclan/30 rounded-lg p-6 relative">
-            {/* Corner indicators */}
-            <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-ogclan/60"></div>
-            <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-ogclan/60"></div>
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-ogclan/60"></div>
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-ogclan/60"></div>
+        {/* Clean info section */}
+        <div className="relative mt-6 md:mt-8 max-w-4xl mx-auto">
+          <div className="bg-black/20 backdrop-blur-sm border border-ogclan/20 rounded-lg p-6 relative overflow-hidden animate-[fade-in_1s_ease-out_1.2s_both]">
+            {/* Subtle animated scanning line */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ogclan/30 to-transparent animate-[scanner-line_4s_linear_infinite]"></div>
             
             <p className="text-base sm:text-lg md:text-xl leading-relaxed px-4 sm:px-6">
               <span className="text-gray-200 font-medium">
