@@ -1,6 +1,6 @@
 
 import React from 'react';
-import TacticalAccent from '@/components/ui/tactical-accent';
+import Logo from '@/components/Logo';
 
 interface HeroBackgroundProps {
   scrollPosition: number;
@@ -14,23 +14,12 @@ const HeroBackground = ({ scrollPosition }: HeroBackgroundProps) => {
       {/* Base gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
       
-      {/* Tactical accent images */}
+      {/* Logo background element */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 flex items-center justify-center opacity-10"
         style={{ transform: `translateY(${parallaxOffset}px)` }}
       >
-        <TacticalAccent 
-          variant="red" 
-          position="top-right" 
-          opacity={0.12}
-          className="hidden lg:block"
-        />
-        <TacticalAccent 
-          variant="duo" 
-          position="bottom-left" 
-          opacity={0.08}
-          className="hidden xl:block"
-        />
+        <Logo size="xl" withText={false} />
       </div>
 
       {/* Tactical grid overlay */}
