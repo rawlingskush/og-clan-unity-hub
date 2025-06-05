@@ -51,9 +51,23 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
           <h2 className="text-4xl md:text-5xl font-bold text-gradient-gold mb-4">
             Meet Our Elite Squad
           </h2>
-          <p className="text-xl text-ogclan-light max-w-3xl mx-auto">
+          <p className="text-xl text-ogclan-light max-w-3xl mx-auto mb-6">
             Battle-tested warriors ready to dominate any battlefield
           </p>
+          
+          {/* Enhanced description */}
+          <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-ogclan/30 rounded-lg p-6 mb-8">
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
+              These aren't just soldiers — they're <span className="text-ogclan font-bold">OG Clan Cameroon</span>. 
+              Forged in fire, raised in the isolated streets of <span className="text-red-400 font-semibold">Black Market</span>, 
+              and built for war.
+            </p>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed">
+              Each operator moves with purpose — armed with a signature loadout and the instincts of a killer. 
+              From brutal close-quarters combat to surgical long-range takedowns, they've been 
+              <span className="text-ogclan font-bold"> onetapping since 2019</span>.
+            </p>
+          </div>
         </div>
       </AnimatedContent>
 
