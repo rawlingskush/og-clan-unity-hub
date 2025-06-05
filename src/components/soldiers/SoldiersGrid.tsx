@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import FilterButtons from './FilterButtons';
@@ -6,15 +7,18 @@ import TabletGrid from './TabletGrid';
 import EnhancedMobileCarousel from './EnhancedMobileCarousel';
 import { useIsMobile, useIsTablet } from '@/hooks/use-mobile';
 import AnimatedContent from '../AnimatedContent';
+
 interface SoldiersGridProps {
   soldiers: Soldier[];
 }
+
 const SoldiersGrid = ({
   soldiers
 }: SoldiersGridProps) => {
   const [filter, setFilter] = useState<'all' | 'active' | 'legend' | 'pro'>('all');
   const isMobile = useIsMobile();
   const isTablet = useIsTablet();
+
   const filteredSoldiers = useMemo(() => {
     if (filter === 'all') return soldiers;
     const filterMap = {
@@ -24,9 +28,11 @@ const SoldiersGrid = ({
     };
     return soldiers.filter(filterMap[filter] || (() => true));
   }, [soldiers, filter]);
+
   const handleFilterChange = useCallback((newFilter: typeof filter) => {
     setFilter(newFilter);
   }, []);
+
   if (!soldiers || soldiers.length === 0) {
     return <div className="flex items-center justify-center h-96">
         <div className="text-center">
@@ -35,12 +41,17 @@ const SoldiersGrid = ({
         </div>
       </div>;
   }
+
   return <section className="py-8">
-      <AnimatedContent animation="fade-in-up">
-        <div className="text-center mb-8">
-          
-          
-          
+      <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
+
+      <div className="mt-8">
+        {isMobile ? <EnhancedMobileCarousel soldiers={filteredSoldiers} /> : isTablet ? <TabletGrid soldiers={filteredSoldiers} /> : <DesktopGrid soldiers={filteredSoldiers} />}
+      </div>
+
+      {/* Moved description section to appear after soldiers cards */}
+      <AnimatedContent animation="fade-in-up" delay={600}>
+        <div className="text-center mt-12">
           {/* Enhanced description */}
           <div className="max-w-4xl mx-auto bg-black/40 backdrop-blur-sm border border-ogclan/30 rounded-lg p-6 mb-8">
             <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-4">
@@ -56,12 +67,7 @@ const SoldiersGrid = ({
           </div>
         </div>
       </AnimatedContent>
-
-      <FilterButtons currentFilter={filter} onFilterChange={handleFilterChange} />
-
-      <div className="mt-8">
-        {isMobile ? <EnhancedMobileCarousel soldiers={filteredSoldiers} /> : isTablet ? <TabletGrid soldiers={filteredSoldiers} /> : <DesktopGrid soldiers={filteredSoldiers} />}
-      </div>
     </section>;
 };
+
 export default SoldiersGrid;
