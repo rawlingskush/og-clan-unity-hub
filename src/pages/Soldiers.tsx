@@ -9,21 +9,12 @@ import SoldiersHero from '@/components/soldiers/SoldiersHero';
 import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
 import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
 import RecruitmentNote from '@/components/soldiers/RecruitmentNote';
-import PageWrapper from '@/components/layout/PageWrapper';
-import { preloadImages } from '@/utils/performance';
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [error, setError] = useState<string | null>(null);
   
-  // Preload critical images
-  useEffect(() => {
-    const criticalImages = soldiers
-      .filter(soldier => soldier.spotlight || soldier.pro)
-      .map(soldier => soldier.imageUrl)
-      .slice(0, 5); // Preload first 5 important soldiers
-    
-    preloadImages(criticalImages);
-  }, []);
+  console.log('Soldiers page render:', { soldiers: soldiers.length });
   
   // Optimized scroll handling
   useEffect(() => {
@@ -64,11 +55,30 @@ const Soldiers = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Error boundary
+  if (error) {
+    return (
+      <div className="min-h-screen flex flex-col bg-black text-white">
+        <Navbar />
+        <main className="flex-grow pt-24 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl text-ogclan mb-4">Something went wrong</h1>
+            <p className="text-gray-400 mb-6">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="bg-ogclan text-black px-6 py-2 rounded-lg hover:bg-ogclan-light transition-colors"
+            >
+              Reload Page
+            </button>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   return (
-    <PageWrapper
-      title="Our Elite Squad - OG Clan Soldiers"
-      description="Meet the elite soldiers of OG Clan. Battle-tested warriors, legendary commanders, and rising stars ready to dominate any Call of Duty Mobile battlefield."
-    >
+    <div className="min-h-screen flex flex-col bg-black text-white">
       <Navbar />
       
       <main className="flex-grow pt-24">
@@ -105,7 +115,7 @@ const Soldiers = () => {
       </main>
       
       <Footer />
-    </PageWrapper>
+    </div>
   );
 };
 

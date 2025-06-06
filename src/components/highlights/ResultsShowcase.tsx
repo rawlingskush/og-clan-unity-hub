@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Trophy, Target, Award } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
+import { Trophy, Target, TrendingUp, Award } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 import TournamentImage from './TournamentImage';
 
@@ -9,7 +10,7 @@ const ResultsShowcase = () => {
     {
       id: 1,
       tournament: "Aurora Scrims",
-      position: "1st", 
+      position: "1st",
       points: "264",
       image: "/lovable-uploads/06436fca-12a3-40d0-a190-e9958c2dfe55.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
@@ -17,8 +18,8 @@ const ResultsShowcase = () => {
     {
       id: 2,
       tournament: "TEF Esports",
-      position: "1st",
-      points: "349", 
+      position: "1st", 
+      points: "349",
       image: "/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png",
       icon: <Trophy className="w-6 h-6 text-ogclan" />
     },
@@ -32,13 +33,16 @@ const ResultsShowcase = () => {
     },
     {
       id: 4,
-      tournament: "Preacher Event", 
+      tournament: "Preacher Event",
       position: "Top 10",
       points: "Elite",
       image: "/lovable-uploads/d4e42496-3767-4526-b7f9-9a3cd143b1b4.png",
       icon: <Award className="w-6 h-6 text-purple-400" />
     }
   ];
+
+  // Log the TEF Esports data for debugging
+  console.log('TEF Esports data:', topResults.find(result => result.tournament === "TEF Esports"));
 
   return (
     <div className="mt-8">
@@ -53,37 +57,43 @@ const ResultsShowcase = () => {
         </div>
       </AnimatedContent>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {topResults.map((result, index) => (
           <AnimatedContent 
             key={result.id} 
-            animation="fade-in-up" 
-            delay={index * 100}
+            animation="scale-in" 
+            delay={200 + index * 100}
           >
-            <div className="bg-black/30 rounded-lg border border-ogclan/20 p-4 hover:border-ogclan/40 transition-all duration-300 group">
-              <TournamentImage 
-                src={result.image}
-                alt={`${result.tournament} tournament result`}
-                tournament={result.tournament}
-                className="mb-3"
-              />
-              
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center space-x-2">
-                  {result.icon}
-                  <span className="font-semibold text-white text-sm">
-                    {result.position}
-                  </span>
+            <Card className="glass-card group hover-effect cursor-pointer">
+              <CardContent className="p-4">
+                <div className="text-center space-y-3">
+                  <div className="flex justify-center">
+                    {result.icon}
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-white">{result.tournament}</h4>
+                    <p className="text-sm text-gray-400">Tournament</p>
+                  </div>
+                  
+                  <div className="bg-black/50 rounded-lg p-3 border border-ogclan/20 tactical-border">
+                    <div className="text-2xl font-bold text-ogclan mb-1">
+                      {result.position}
+                    </div>
+                    <div className="text-sm text-gray-300">
+                      {result.points === "Elite" ? "Elite Competition" : `${result.points} points`}
+                    </div>
+                  </div>
+                  
+                  <TournamentImage
+                    src={result.image}
+                    alt={`${result.tournament} results - OG Clan performance`}
+                    tournament={result.tournament}
+                    className="h-32"
+                  />
                 </div>
-                <span className="text-ogclan font-bold text-sm">
-                  {result.points}
-                </span>
-              </div>
-              
-              <h4 className="text-white font-medium text-sm group-hover:text-ogclan transition-colors">
-                {result.tournament}
-              </h4>
-            </div>
+              </CardContent>
+            </Card>
           </AnimatedContent>
         ))}
       </div>

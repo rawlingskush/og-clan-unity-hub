@@ -10,7 +10,6 @@ import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
 import CoDPointsSection from '@/components/CoDPointsSection';
 import Footer from '@/components/Footer';
-import PageWrapper from '@/components/layout/PageWrapper';
 import { useToast } from '@/components/ui/use-toast';
 
 const Index = () => {
@@ -18,22 +17,17 @@ const Index = () => {
   
   useEffect(() => {
     // Welcome toast
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       toast({
         title: "Welcome to OG Clan",
         description: "Explore our site and discover what makes us unique.",
         duration: 5000
       });
     }, 1500);
-
-    return () => clearTimeout(timer);
   }, [toast]);
   
   return (
-    <PageWrapper 
-      title="OG Clan - Elite Call of Duty Mobile Gaming Community"
-      description="Join OG Clan, Cameroon's premier Call of Duty Mobile gaming community. Compete in tournaments, master Battle Royale, and dominate multiplayer battles."
-    >
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       
       <main>
@@ -50,7 +44,7 @@ const Index = () => {
       </main>
       
       <Footer />
-    </PageWrapper>
+    </div>
   );
 };
 
