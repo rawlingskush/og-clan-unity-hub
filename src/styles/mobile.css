@@ -118,10 +118,10 @@
     transform: scale(1.02);
   }
   
-  /* Battle Image Card mobile optimizations - increased height for more image visibility */
+  /* Battle Image Card mobile optimizations */
   .battle-image-card {
-    @apply h-96;
-    min-height: 384px;
+    @apply h-80;
+    min-height: 320px;
   }
   
   .battle-image-card img {
@@ -176,10 +176,10 @@
     @apply h-5 w-5;
   }
   
-  /* CODM Character mobile optimizations for very small screens - increased height */
+  /* CODM Character mobile optimizations for very small screens */
   .battle-image-card {
-    @apply h-80;
-    min-height: 320px;
+    @apply h-72;
+    min-height: 280px;
   }
   
   .codm-enhanced-mobile {
@@ -200,8 +200,8 @@
   }
   
   .battle-image-card {
-    @apply h-72;
-    min-height: 288px;
+    @apply h-64;
+    min-height: 256px;
   }
   
   .hero-codm-bg {

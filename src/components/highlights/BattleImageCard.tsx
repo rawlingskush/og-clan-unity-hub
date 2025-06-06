@@ -25,7 +25,7 @@ const BattleImageCard = ({
         <img 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-[420px] object-cover object-center transition-transform duration-700 group-hover:scale-105"
+          className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
         />
         
