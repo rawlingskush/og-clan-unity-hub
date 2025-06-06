@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Shield, Target, Crosshair, Users, Zap, Radar, Scope } from 'lucide-react';
+import { Shield, Target, Crosshair, Users, Zap, Radar } from 'lucide-react';
 import AnimatedContent from '@/components/AnimatedContent';
 
 const TacticalIcons = () => {
