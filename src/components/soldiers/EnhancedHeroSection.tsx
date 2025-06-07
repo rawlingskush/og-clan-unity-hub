@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Shield, Target, Crosshair, Zap, Users, Activity, Radar, Eye } from 'lucide-react';
+import { Shield, Target, Zap, Users, Activity, Radar, Eye } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 interface EnhancedHeroSectionProps {
@@ -193,7 +193,7 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
                     <Icon className="text-ogclan h-5 w-5 md:h-8 md:w-8" />
                   </motion.div>
                 ))}
-              </div>
+              </motion.div>
               
               <motion.h1 
                 className="text-display-1 text-gradient-enhanced text-glow-tactical mb-4 text-glitch"
