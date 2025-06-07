@@ -10,8 +10,7 @@ export const soldiers: Soldier[] = [
     bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum.",
     tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
     imageUrl: "/lovable-uploads/c4b280fd-ce29-419b-b041-29712bd93d6a.png",
-    team: 1,
-    pro: true
+    team: 1
   },
   {
     id: "exodus",
@@ -21,8 +20,7 @@ export const soldiers: Soldier[] = [
     bio: "Exodus plants himself at the tip of every push, his KRM-262 barrage forming a living barrier that shields allies. He reads the battlefield like a grandmaster, creating safe corridors where none existed. He's WILD.",
     tiktokUrl: "https://www.tiktok.com/@exodus.eu.com",
     imageUrl: "/lovable-uploads/bf526ad4-9c9b-4af1-ada0-4e60faba51b0.png",
-    team: 3,
-    pro: true
+    team: 3
   },
   {
     id: "wizard",
@@ -32,8 +30,7 @@ export const soldiers: Soldier[] = [
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png",
-    team: 1,
-    pro: true
+    team: 1
   },
   {
     id: "slim",
@@ -55,8 +52,7 @@ export const soldiers: Soldier[] = [
     bio: "Dhamer's world is up close and personal. He kicks down doors, pushes straight into the heart of the fight with his Shotgun and 117, and forces enemies into uncomfortable angles—never letting them escape his crosshairs. The team loves him.",
     tiktokUrl: "https://www.tiktok.com/@jeffreydhamercodm",
     imageUrl: "/lovable-uploads/007ec0dc-9440-4994-a907-f582b29c4d16.png",
-    team: 3,
-    pro: true
+    team: 3
   },
   {
     id: "gamehouse",
@@ -117,8 +113,7 @@ export const soldiers: Soldier[] = [
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
     tiktokUrl: "https://www.tiktok.com/@chambas237",
     imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png",
-    team: 1,
-    pro: true
+    team: 1
   },
   {
     id: "uncleB",
