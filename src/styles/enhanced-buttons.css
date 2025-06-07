@@ -1,0 +1,66 @@
+
+/* Enhanced Button System */
+.btn-primary {
+  @apply relative inline-flex items-center justify-center px-6 py-3 bg-ogclan text-black font-orbitron font-semibold tracking-wide border border-ogclan transition-all duration-300 overflow-hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full transition-transform duration-700;
+}
+
+.btn-primary:hover::before {
+  @apply translate-x-full;
+}
+
+.btn-primary:hover {
+  @apply bg-ogclan-light shadow-lg shadow-ogclan/30 transform -translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply relative inline-flex items-center justify-center px-6 py-3 bg-transparent text-ogclan font-orbitron font-semibold tracking-wide border border-ogclan/50 transition-all duration-300 hover:border-ogclan hover:bg-ogclan/10 hover:shadow-md hover:shadow-ogclan/20;
+}
+
+.btn-ghost {
+  @apply relative inline-flex items-center justify-center px-4 py-2 bg-transparent text-gray-300 font-orbitron tracking-wide transition-all duration-300 hover:text-ogclan hover:bg-ogclan/5;
+}
+
+.btn-tactical {
+  @apply relative inline-flex items-center justify-center px-6 py-3 bg-black border border-ogclan/40 text-ogclan font-orbitron font-medium tracking-wide transition-all duration-300;
+}
+
+.btn-tactical::after {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-ogclan to-transparent opacity-0 transition-opacity duration-300;
+}
+
+.btn-tactical:hover::after {
+  @apply opacity-100;
+}
+
+.btn-tactical:hover {
+  @apply bg-ogclan/5 border-ogclan shadow-md shadow-ogclan/20;
+}
+
+/* Loading states */
+.btn-loading {
+  @apply pointer-events-none opacity-70;
+}
+
+.btn-loading::after {
+  content: '';
+  @apply absolute inset-0 bg-gradient-to-r from-transparent via-ogclan/20 to-transparent animate-pulse;
+}
+
+/* Size variants */
+.btn-sm {
+  @apply px-4 py-2 text-sm;
+}
+
+.btn-lg {
+  @apply px-8 py-4 text-lg;
+}
+
+.btn-xl {
+  @apply px-10 py-5 text-xl;
+}

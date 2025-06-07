@@ -1,0 +1,93 @@
+
+/* Enhanced Typography System */
+.text-display-1 {
+  @apply text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold tracking-wider;
+}
+
+.text-display-2 {
+  @apply text-3xl md:text-5xl lg:text-6xl font-orbitron font-bold tracking-wide;
+}
+
+.text-heading-1 {
+  @apply text-2xl md:text-4xl lg:text-5xl font-orbitron font-semibold tracking-wide;
+}
+
+.text-heading-2 {
+  @apply text-xl md:text-3xl lg:text-4xl font-orbitron font-semibold;
+}
+
+.text-heading-3 {
+  @apply text-lg md:text-2xl lg:text-3xl font-orbitron font-medium;
+}
+
+.text-heading-4 {
+  @apply text-base md:text-xl lg:text-2xl font-orbitron font-medium;
+}
+
+.text-body-large {
+  @apply text-base md:text-lg font-medium;
+}
+
+.text-body {
+  @apply text-sm md:text-base;
+}
+
+.text-body-small {
+  @apply text-xs md:text-sm;
+}
+
+.text-caption {
+  @apply text-xs font-mono tracking-wide uppercase;
+}
+
+/* Enhanced text effects */
+.text-glow-tactical {
+  text-shadow: 
+    0 0 5px rgba(212, 175, 55, 0.5),
+    0 0 10px rgba(212, 175, 55, 0.3),
+    0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.text-glitch {
+  position: relative;
+  animation: glitch-text 3s infinite;
+}
+
+@keyframes glitch-text {
+  0%, 90%, 100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, 1px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(-2px, -1px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(1px, 2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(1px, -1px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(-1px, 2px);
+    filter: hue-rotate(0deg);
+  }
+  60% {
+    transform: translate(-2px, 1px);
+    filter: hue-rotate(90deg);
+  }
+  70% {
+    transform: translate(2px, 1px);
+    filter: hue-rotate(180deg);
+  }
+  80% {
+    transform: translate(-1px, -1px);
+    filter: hue-rotate(270deg);
+  }
+}

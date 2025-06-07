@@ -1,0 +1,192 @@
+
+/* Advanced Animation System */
+
+/* Counter animations */
+@keyframes countUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.8); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.counter-animate {
+  animation: countUp 0.6s ease-out forwards;
+}
+
+/* Staggered entrance animations */
+.stagger-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.stagger-fade-in:nth-child(1) { animation-delay: 0.1s; }
+.stagger-fade-in:nth-child(2) { animation-delay: 0.2s; }
+.stagger-fade-in:nth-child(3) { animation-delay: 0.3s; }
+.stagger-fade-in:nth-child(4) { animation-delay: 0.4s; }
+.stagger-fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D perspective effects */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+
+.card-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(2deg) translateZ(10px);
+}
+
+/* Advanced scanner effects */
+.multi-scanner {
+  position: relative;
+  overflow: hidden;
+}
+
+.multi-scanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
+  animation: scanHorizontal 3s linear infinite;
+}
+
+.multi-scanner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(212,175,55,0.6), transparent);
+  animation: scanVertical 4s linear infinite;
+}
+
+@keyframes scanHorizontal {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+
+@keyframes scanVertical {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Glitch effects */
+.glitch-box {
+  position: relative;
+}
+
+.glitch-box::before,
+.glitch-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.glitch-box::before {
+  animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-box::after {
+  animation: glitch-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+  0% { clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%); }
+  10% { clip-path: polygon(0 15%, 100% 15%, 100% 25%, 0 25%); }
+  20% { clip-path: polygon(0 35%, 100% 35%, 100% 45%, 0 45%); }
+  30% { clip-path: polygon(0 55%, 100% 55%, 100% 65%, 0 65%); }
+  40% { clip-path: polygon(0 75%, 100% 75%, 100% 85%, 0 85%); }
+  50% { clip-path: polygon(0 95%, 100% 95%, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%); }
+}
+
+@keyframes glitch-2 {
+  0% { transform: translate(-2px, 0); filter: hue-rotate(0deg); }
+  10% { transform: translate(2px, 0); filter: hue-rotate(90deg); }
+  20% { transform: translate(-1px, 0); filter: hue-rotate(180deg); }
+  30% { transform: translate(1px, 0); filter: hue-rotate(270deg); }
+  40% { transform: translate(-2px, 0); filter: hue-rotate(360deg); }
+  50% { transform: translate(2px, 0); filter: hue-rotate(0deg); }
+  100% { transform: translate(0, 0); filter: hue-rotate(0deg); }
+}
+
+/* Particle system enhancements */
+.particle-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(212, 175, 55, 0.6);
+  border-radius: 50%;
+  animation: particleFloat 6s infinite ease-in-out;
+}
+
+@keyframes particleFloat {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+/* Hover feedback animations */
+.hover-lift {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease-out;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
+
+/* Loading skeleton animations */
+.skeleton {
+  background: linear-gradient(90deg, rgba(212,175,55,0.1) 25%, rgba(212,175,55,0.2) 50%, rgba(212,175,55,0.1) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

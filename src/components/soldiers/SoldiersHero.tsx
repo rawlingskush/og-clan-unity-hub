@@ -1,13 +1,13 @@
 
-import React, { useRef, useEffect, useState } from 'react';
-import EnhancedSoldiersHero from './EnhancedSoldiersHero';
+import React from 'react';
+import EnhancedHeroSection from './EnhancedHeroSection';
 
 interface SoldiersHeroProps {
   scrollPosition: number;
 }
 
 const SoldiersHero = ({ scrollPosition }: SoldiersHeroProps) => {
-  return <EnhancedSoldiersHero scrollPosition={scrollPosition} />;
+  return <EnhancedHeroSection scrollPosition={scrollPosition} />;
 };
 
 export default SoldiersHero;
