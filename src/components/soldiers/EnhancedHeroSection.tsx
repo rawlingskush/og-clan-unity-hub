@@ -74,7 +74,7 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
     <motion.div 
       ref={containerRef}
       style={{ opacity, scale, y }}
-      className="relative bg-black/95 py-8 md:py-16 overflow-hidden border-b border-ogclan/30 min-h-[90vh] md:min-h-[80vh]"
+      className="relative bg-black/95 py-4 sm:py-8 md:py-16 overflow-hidden border-b border-ogclan/30 min-h-[85vh] sm:min-h-[90vh] md:min-h-[80vh]"
     >
       {/* Enhanced tactical background with parallax */}
       <motion.div 
@@ -104,20 +104,20 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
           animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
-          {/* Elite Squad Command Center */}
-          <div className="relative mb-8 md:mb-12 p-6 md:p-8 border border-ogclan/50 bg-black/70 backdrop-blur-md card-3d hover-glow">
-            {/* Advanced corner decorations */}
-            <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 border-t-2 border-l-2 border-ogclan" />
-            <div className="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 border-t-2 border-r-2 border-ogclan" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 border-b-2 border-l-2 border-ogclan" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-ogclan" />
+          {/* Elite Squad Command Center - Enhanced mobile responsiveness */}
+          <div className="relative mb-6 sm:mb-8 md:mb-12 p-4 sm:p-6 md:p-8 border border-ogclan/50 bg-black/70 backdrop-blur-md card-3d hover-glow">
+            {/* Advanced corner decorations - Responsive sizing */}
+            <div className="absolute top-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-t-2 border-l-2 border-ogclan" />
+            <div className="absolute top-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-t-2 border-r-2 border-ogclan" />
+            <div className="absolute bottom-0 left-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-b-2 border-l-2 border-ogclan" />
+            <div className="absolute bottom-0 right-0 w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-ogclan" />
             
             <TacticalStatusBar />
             
-            {/* Main tactical display */}
-            <div className="text-center mb-8">
+            {/* Main tactical display - Enhanced mobile layout */}
+            <div className="text-center mb-6 sm:mb-8">
               <motion.div 
-                className="flex items-center justify-center space-x-4 md:space-x-8 mb-6"
+                className="flex items-center justify-center space-x-2 sm:space-x-4 md:space-x-8 mb-4 sm:mb-6 flex-wrap gap-2"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8 }}
@@ -126,15 +126,17 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.2, rotate: 180 }}
+                    whileTap={{ scale: 1.1 }}
                     transition={{ type: "spring", stiffness: 300 }}
+                    className="touch-manipulation"
                   >
-                    <Icon className="text-ogclan h-5 w-5 md:h-8 md:w-8" />
+                    <Icon className="text-ogclan h-4 w-4 sm:h-5 sm:w-5 md:h-8 md:w-8 filter drop-shadow-sm" />
                   </motion.div>
                 ))}
               </motion.div>
               
               <motion.h1 
-                className="text-display-1 text-gradient-enhanced text-glow-tactical mb-4 text-glitch"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-gradient-enhanced text-glow-tactical mb-3 sm:mb-4 text-glitch font-bold leading-tight"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 1 }}
@@ -143,24 +145,24 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
               </motion.h1>
               
               <motion.div 
-                className="flex items-center justify-center space-x-4 mb-6"
+                className="flex items-center justify-center space-x-2 sm:space-x-4 mb-4 sm:mb-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1, duration: 0.8 }}
               >
                 <motion.div 
-                  className="h-px bg-gradient-to-r from-transparent via-ogclan to-transparent flex-1"
+                  className="h-px bg-gradient-to-r from-transparent via-ogclan to-transparent flex-1 max-w-8 sm:max-w-16 md:max-w-none"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 1.2, duration: 1 }}
                 />
-                <Zap className="text-ogclan h-4 w-4 md:h-6 md:w-6" />
-                <span className="text-heading-4 tracking-wider text-ogclan font-medium px-4">
+                <Zap className="text-ogclan h-3 w-3 sm:h-4 sm:w-4 md:h-6 md:w-6 flex-shrink-0" />
+                <span className="text-xs sm:text-sm md:text-base lg:text-lg tracking-wider text-ogclan font-medium px-2 sm:px-4 whitespace-nowrap">
                   BATTLE-HARDENED OPERATORS
                 </span>
-                <Zap className="text-ogclan h-4 w-4 md:h-6 md:w-6" />
+                <Zap className="text-ogclan h-3 w-3 sm:h-4 sm:w-4 md:h-6 md:w-6 flex-shrink-0" />
                 <motion.div 
-                  className="h-px bg-gradient-to-r from-transparent via-ogclan to-transparent flex-1"
+                  className="h-px bg-gradient-to-r from-transparent via-ogclan to-transparent flex-1 max-w-8 sm:max-w-16 md:max-w-none"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 1.2, duration: 1 }}
@@ -168,14 +170,16 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
               </motion.div>
               
               <motion.div 
-                className="text-body font-mono text-gray-300 tracking-wide"
+                className="text-xs sm:text-sm md:text-base font-mono text-gray-300 tracking-wide space-y-1 sm:space-y-0 sm:space-x-2 flex flex-col sm:flex-row items-center justify-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.4, duration: 0.8 }}
               >
-                [ MISSION STATUS: <span className="text-green-400 font-semibold">ACTIVE</span> ] 
-                [ SQUAD READINESS: <span className="text-ogclan font-semibold">MAXIMUM</span> ] 
-                [ THREAT LEVEL: <span className="text-red-400 font-semibold">ENGAGED</span> ]
+                <span>[ MISSION STATUS: <span className="text-green-400 font-semibold">ACTIVE</span> ]</span>
+                <span className="hidden sm:inline">|</span>
+                <span>[ SQUAD READINESS: <span className="text-ogclan font-semibold">MAXIMUM</span> ]</span>
+                <span className="hidden sm:inline">|</span>
+                <span>[ THREAT LEVEL: <span className="text-red-400 font-semibold">ENGAGED</span> ]</span>
               </motion.div>
             </div>
           </div>
