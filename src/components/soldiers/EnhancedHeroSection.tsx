@@ -1,7 +1,13 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Shield, Target, Zap, Users, Activity, Radar, Eye } from 'lucide-react';
+import { Shield, Target, Zap, Users, Radar, Eye } from 'lucide-react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import TacticalHUD from './TacticalHUD';
+import ParticleSystem from './ParticleSystem';
+import TacticalStatusBar from './TacticalStatusBar';
+import TacticalStatsGrid from './TacticalStatsGrid';
+import RadarDisplay from './RadarDisplay';
+import TacticalIndicators from './TacticalIndicators';
 
 interface EnhancedHeroSectionProps {
   scrollPosition: number;
@@ -83,57 +89,11 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
       <div className="absolute inset-0 multi-scanner" />
       
       {/* Dynamic particle system */}
-      <div className="particle-container">
-        {particles.map((particle) => (
-          <motion.div
-            key={particle.id}
-            className="particle"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ 
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-              x: `${particle.x + mousePosition.x * 20}%`,
-              y: `${particle.y + mousePosition.y * 20}%`
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              delay: particle.delay,
-              ease: "easeInOut"
-            }}
-          />
-        ))}
-      </div>
+      <ParticleSystem particles={particles} mousePosition={mousePosition} />
       
       {/* Enhanced tactical overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/85 to-black/75">
-        {/* 3D HUD corners */}
-        {[
-          { position: 'top-4 right-4 md:top-8 md:right-8', rotate: '0deg' },
-          { position: 'top-4 left-4 md:top-8 md:left-8', rotate: '90deg' },
-          { position: 'bottom-4 right-4 md:bottom-8 md:right-8', rotate: '270deg' },
-          { position: 'bottom-4 left-4 md:bottom-8 md:left-8', rotate: '180deg' }
-        ].map((corner, index) => (
-          <motion.div
-            key={index}
-            className={`absolute ${corner.position} w-20 h-20 md:w-28 md:h-28 border border-ogclan/40 glitch-box`}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ delay: index * 0.2, duration: 0.8 }}
-            style={{ rotate: corner.rotate }}
-          >
-            <div className="absolute inset-2 border border-ogclan/60" />
-            <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-ogclan" />
-            <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-ogclan" />
-            <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-ogclan" />
-            <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-ogclan" />
-            <motion.div 
-              className="absolute inset-0 bg-ogclan/10"
-              animate={{ opacity: [0, 0.3, 0] }}
-              transition={{ duration: 2, repeat: Infinity, delay: index * 0.5 }}
-            />
-          </motion.div>
-        ))}
+        <TacticalHUD />
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center min-h-[80vh]">
@@ -152,29 +112,7 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
             <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 border-b-2 border-l-2 border-ogclan" />
             <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 border-b-2 border-r-2 border-ogclan" />
             
-            {/* Tactical status bar */}
-            <div className="flex items-center justify-between mb-6 text-caption text-ogclan">
-              <div className="flex items-center space-x-4">
-                <motion.div 
-                  className="flex items-center space-x-2"
-                  animate={{ opacity: [0.6, 1, 0.6] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <Activity className="w-3 h-3" />
-                  <span>LIVE</span>
-                </motion.div>
-                <span>SECTOR: ALPHA-7</span>
-                <span>TIME: {new Date().toLocaleTimeString()}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <span>STATUS: OPERATIONAL</span>
-                <motion.div 
-                  className="w-2 h-2 bg-green-400 rounded-full"
-                  animate={{ scale: [1, 1.2, 1] }}
-                  transition={{ duration: 1, repeat: Infinity }}
-                />
-              </div>
-            </div>
+            <TacticalStatusBar />
             
             {/* Main tactical display */}
             <div className="text-center mb-8">
@@ -242,116 +180,12 @@ const EnhancedHeroSection = ({ scrollPosition }: EnhancedHeroSectionProps) => {
             </div>
           </div>
           
-          {/* Enhanced tactical grid */}
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.6, duration: 0.8 }}
-          >
-            {[
-              { label: 'SQUAD STATUS', value: 'ACTIVE', subtext: '100% OPERATIONAL', color: 'text-green-400', icon: Shield },
-              { label: 'MISSION', value: 'DOMINATION', subtext: 'IN PROGRESS', color: 'text-yellow-400', icon: Target },
-              { label: 'OPERATORS', value: '21 ACTIVE', subtext: 'FULL STRENGTH', color: 'text-blue-400', icon: Users },
-              { label: 'COMBAT READY', value: 'MAXIMUM', subtext: 'WEAPONS HOT', color: 'text-red-400', icon: Zap }
-            ].map((stat, index) => (
-              <motion.div
-                key={index}
-                className="bg-black/80 border border-ogclan/40 p-4 md:p-6 text-center backdrop-blur-sm hover-lift card-3d stagger-fade-in"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <div className="flex items-center justify-center mb-3">
-                  <stat.icon className="w-5 h-5 md:w-6 md:h-6 text-ogclan" />
-                </div>
-                <div className="text-caption text-ogclan mb-2 tracking-wider">{stat.label}</div>
-                <motion.div 
-                  className={`text-heading-4 font-bold ${stat.color} mb-1`}
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 2 + index * 0.1, type: "spring" }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-body-small text-gray-400">{stat.subtext}</div>
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          {/* Real-time tactical indicators */}
-          <motion.div 
-            className="flex flex-wrap items-center justify-center space-x-6 md:space-x-10 text-body-small font-mono"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.5, duration: 0.8 }}
-          >
-            {[
-              { label: 'COMMS ACTIVE', color: 'bg-green-400' },
-              { label: 'GPS LOCKED', color: 'bg-yellow-400' },
-              { label: 'THERMAL ONLINE', color: 'bg-blue-400' },
-              { label: 'WEAPONS HOT', color: 'bg-red-400' }
-            ].map((indicator, index) => (
-              <motion.div 
-                key={index}
-                className="flex items-center space-x-2"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 2.7 + index * 0.1 }}
-              >
-                <motion.div 
-                  className={`w-3 h-3 ${indicator.color} rounded-full`}
-                  animate={{ scale: [1, 1.3, 1] }}
-                  transition={{ duration: 1.5, repeat: Infinity, delay: index * 0.3 }}
-                />
-                <span className="text-gray-300">{indicator.label}</span>
-              </motion.div>
-            ))}
-          </motion.div>
+          <TacticalStatsGrid />
+          <TacticalIndicators />
         </motion.div>
       </div>
       
-      {/* Advanced radar display */}
-      <motion.div 
-        className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-32 h-32 md:w-40 md:h-40 opacity-40"
-        initial={{ scale: 0, rotate: -90 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ delay: 2, duration: 1, type: "spring" }}
-      >
-        <div className="absolute inset-0 rounded-full border border-ogclan/60" />
-        <div className="absolute inset-[15%] rounded-full border border-ogclan/50" />
-        <div className="absolute inset-[30%] rounded-full border border-ogclan/40" />
-        <div className="absolute top-1/2 left-0 w-full h-px bg-ogclan/50" />
-        <div className="absolute top-0 left-1/2 w-px h-full bg-ogclan/50" />
-        
-        {/* Rotating sweep */}
-        <motion.div 
-          className="absolute inset-0 rounded-full border-2 border-transparent border-t-ogclan/80"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-        />
-        
-        {/* Radar blips */}
-        {[
-          { x: '30%', y: '40%', delay: 0 },
-          { x: '70%', y: '60%', delay: 1 },
-          { x: '50%', y: '25%', delay: 2 }
-        ].map((blip, index) => (
-          <motion.div
-            key={index}
-            className="absolute w-1 h-1 bg-ogclan rounded-full"
-            style={{ left: blip.x, top: blip.y }}
-            animate={{ 
-              opacity: [0, 1, 0],
-              scale: [0.5, 1.5, 0.5]
-            }}
-            transition={{ 
-              duration: 2, 
-              repeat: Infinity, 
-              delay: blip.delay 
-            }}
-          />
-        ))}
-      </motion.div>
+      <RadarDisplay />
     </motion.div>
   );
 };
