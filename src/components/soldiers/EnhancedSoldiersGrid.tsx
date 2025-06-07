@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { useIsMobile, useIsTablet } from '@/hooks/use-mobile';
@@ -18,7 +17,6 @@ interface EnhancedSoldiersGridProps {
 const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState<'name' | 'role' | 'weapon'>('name');
   const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [isReady, setIsReady] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -35,7 +33,7 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
     isReady 
   });
   
-  // Enhanced filtered and sorted soldiers
+  // Enhanced filtered soldiers - maintain original order
   const processedSoldiers = useMemo(() => {
     let filtered = filterSoldiers(soldiers, filter);
     
@@ -49,23 +47,10 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
       );
     }
     
-    // Apply sorting
-    filtered.sort((a, b) => {
-      switch (sortBy) {
-        case 'name':
-          return a.name.localeCompare(b.name);
-        case 'role':
-          return a.role.localeCompare(b.role);
-        case 'weapon':
-          return a.weapon.localeCompare(b.weapon);
-        default:
-          return 0;
-      }
-    });
-    
+    // Keep original order from soldiers data - no sorting
     console.log('Processed soldiers:', filtered.length);
     return filtered;
-  }, [soldiers, filter, searchTerm, sortBy]);
+  }, [soldiers, filter, searchTerm]);
 
   // Initialize component ready state
   useEffect(() => {
@@ -84,10 +69,6 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
 
   const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value);
-  }, []);
-
-  const handleSortChange = useCallback((newSort: 'name' | 'role' | 'weapon') => {
-    setSortBy(newSort);
   }, []);
 
   const toggleFavorite = useCallback((soldierId: string) => {
@@ -193,26 +174,6 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
                       ×
                     </motion.button>
                   )}
-                </div>
-
-                {/* Sort Controls */}
-                <div className="flex items-center space-x-2 text-body-small">
-                  <SortAsc className="w-4 h-4 text-ogclan" />
-                  <span className="text-gray-400">Sort by:</span>
-                  {['name', 'role', 'weapon'].map((sort) => (
-                    <motion.button
-                      key={sort}
-                      className={`px-3 py-1 rounded-full transition-colors ${
-                        sortBy === sort 
-                          ? 'bg-ogclan text-black' 
-                          : 'bg-ogclan/20 text-ogclan hover:bg-ogclan/30'
-                      }`}
-                      onClick={() => handleSortChange(sort as any)}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {sort.charAt(0).toUpperCase() + sort.slice(1)}
-                    </motion.button>
-                  ))}
                 </div>
 
                 {/* Filter Pills */}
