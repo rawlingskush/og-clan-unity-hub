@@ -127,7 +127,7 @@ export const soldiers: Soldier[] = [
     weapon: "MAC-10",
     bio: "Uncle-B that B for Bot😁 lives in the fight's tightest spaces. With his MAC-10's blistering fire rate, he overwhelms opponents before they can react, turning hallways into kill zones and giving no quarter in CQB.",
     tiktokUrl: "https://www.tiktok.com/@st_bengs",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/57fc5e72-b510-4c82-a9a2-00016751da67.png",
     team: 2
   },
   // New soldier entries
@@ -159,7 +159,7 @@ export const soldiers: Soldier[] = [
     weapon: "QQ9",
     bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
     tiktokUrl: "https://www.tiktok.com/@elsharawy132",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/4d6bc52a-7f3a-4b7a-95a2-22455afd5d79.png",
     team: 4
   },
   {
@@ -169,7 +169,7 @@ export const soldiers: Soldier[] = [
     weapon: "Kilo 141",
     bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
     tiktokUrl: "https://www.tiktok.com/@razkhato1",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/229f6b94-869b-4b77-a3e2-3ab364bc9edf.png",
     team: 1
   },
   {
