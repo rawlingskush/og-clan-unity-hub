@@ -132,8 +132,8 @@ export const soldiers: Soldier[] = [
     weapon: "FENNEC",
     bio: "Botgirl is OG Clan's Princess. Her FENNEC spits rapid-fire precision, carving safe lanes while she deploys support drones and heals under fire. Everywhere she moves, teammates rally—and every breach becomes an opportunity.",
     tiktokUrl: "https://www.tiktok.com/@favbotgirl",
-    imageUrl: "/lovable-uploads/b895cd47-bbb9-4840-acf9-777a0d626979.png",
-    princess: true, // New princess theme instead of spotlight
+    imageUrl: "/lovable-uploads/b9734fc2-8b35-4ace-88f2-3cdd8f7bb629.png",
+    princess: true,
     team: 2
   },
   {
@@ -175,9 +175,8 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@og.blksavage",
     imageUrl: "/lovable-uploads/b5404828-afad-4aea-bfff-19dc4a0c3668.png",
     team: 5,
-    active: true // Mark as active for extra visual effect
+    active: true
   },
-  // NEZ soldiers moved to the end
   {
     id: "rex",
     name: "ФƓゝ REX",
@@ -187,9 +186,8 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
     imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
     team: 1,
-    active: true // Mark as active for extra visual effect
+    active: true
   },
-  // SWIZZY moved to the bottom
   {
     id: "swizzy",
     name: "ФƓゝ ƧWƗƵƵY",
@@ -199,7 +197,7 @@ export const soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@little.swizzy",
     imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
     team: 1,
-    active: true // Mark as active for extra visual effect
+    active: true
   },
   {
     id: "ogwhite",
