@@ -99,7 +99,7 @@ export const soldiers: Soldier[] = [
     name: "ФƓゝ PATO",
     role: "Recon & Precision",
     weapon: "DLQ33",
-    bio: "Pato is one the finnest soldiers heart of og clan MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his DLQ33 when they least expect it. His intel and accuracy make him our eyes in the field.",
+    bio: "Pato is one the finnest soldiers heart of og clan's MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his DLQ33 when they least expect it. His intel and accuracy make him our eyes in the field.",
     tiktokUrl: "https://www.tiktok.com/@pato_codm",
     imageUrl: "/lovable-uploads/07bd8a65-ec11-43be-9de5-36b06bfdc430.png",
     team: 2
