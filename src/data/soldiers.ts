@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const soldiers: Soldier[] = [
@@ -39,7 +38,7 @@ export const soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
     tiktokUrl: "https://www.tiktok.com/@slim_06",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
+    imageUrl: "/lovable-uploads/e6d757ea-8213-4afe-a4bb-a246521e7c1b.png",
     team: 3,
     active: true,
     pro: true
@@ -102,7 +101,7 @@ export const soldiers: Soldier[] = [
     weapon: "DLQ33",
     bio: "Pato is one the finnest soldiers heart of og clan MP growth, the silent sentinel: he scouts enemy positions, then brings the sting of his DLQ33 when they least expect it. His intel and accuracy make him our eyes in the field.",
     tiktokUrl: "https://www.tiktok.com/@pato_codm",
-    imageUrl: "/lovable-uploads/661aadf3-ba37-40df-b54f-ac697df8e7ce.png",
+    imageUrl: "/lovable-uploads/07bd8a65-ec11-43be-9de5-36b06bfdc430.png",
     team: 2
   },
   {
