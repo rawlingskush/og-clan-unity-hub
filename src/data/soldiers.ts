@@ -209,5 +209,17 @@ export const soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/38e7cb00-bcc7-436c-baa3-1d1073b72d2a.png",
     team: 2,
     active: true
+  },
+  // New addition - Lil Nasty
+  {
+    id: "lilnasty",
+    name: "ФƓゝ LIL NASTY",
+    role: "🔥 Street Phantom",
+    weapon: "FENNEC",
+    bio: "Lil Nasty brings the underground heat to every battlefield. His FENNEC unleashes rapid-fire chaos that shreds through enemy lines like a street storm. Born from the concrete jungle, he turns every corner into a danger zone. When Nasty rolls up, the block gets cleared.",
+    tiktokUrl: "https://www.tiktok.com/@lilnasty354?_t=ZM-8x3fRSjZSsA&_r=1",
+    imageUrl: "/lovable-uploads/95933862-9fe5-47e4-ae6a-9c095005b0d1.png",
+    team: 5,
+    active: true
   }
 ];
