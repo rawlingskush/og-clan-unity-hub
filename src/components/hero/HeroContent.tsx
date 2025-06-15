@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
@@ -9,19 +8,26 @@ const HeroContent = () => {
   return (
     <div className="text-center relative z-10">
       <AnimatedContent animation="fade-in-up" delay={300}>
-        <h1 className={`text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold`}>
+        <h1
+          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
+          style={{
+            backgroundSize: "200% 200%",
+            animation: "gradientShift 4s ease-in-out infinite, glow-pulse 2.2s infinite"
+          }}
+        >
           WELCOME TO OG CLAN
+          {/* Blinking HUD dots left/right */}
+          <span className="absolute -left-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan shadow-[0_0_12px_gold] animate-pulse-slow"></span>
+          <span className="absolute -right-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan-light shadow-[0_0_12px_gold] animate-pulse-slow animation-delay-300"></span>
         </h1>
         <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-2 relative">
           <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ogclan/50 after:transform-gpu animate-fade-in">
             Loyalty. Unity. Victory.
           </span>
           <Flame className="inline-block h-5 w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
-          <span className="absolute -right-4 top-1/2 h-[4px] w-[4px] rounded-full bg-red-500 shadow-[0_0_12px_red] animate-pulse-slow"></span>
-          <span className="absolute -left-4 top-1/2 h-[4px] w-[4px] rounded-full bg-blue-500 shadow-[0_0_12px_blue] animate-pulse-slow animation-delay-600"></span>
         </p>
       </AnimatedContent>
-      <AnimatedContent animation="fade-in-up" delay={600}>
+      <AnimatedContent animation="fade-in-up" delay={700}>
         <div className="flex items-center justify-center mt-3 mb-5">
           <Gamepad2 className="h-6 w-6 text-ogclan mr-2" />
           <span className="text-xl md:text-2xl font-orbitron text-ogclan animate-pulse-slow">
