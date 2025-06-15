@@ -1,3 +1,4 @@
+
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
@@ -20,6 +21,17 @@ const HeroContent = () => {
           <span className="absolute -left-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan shadow-[0_0_12px_gold] animate-pulse-slow"></span>
           <span className="absolute -right-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan-light shadow-[0_0_12px_gold] animate-pulse-slow animation-delay-300"></span>
         </h1>
+        {/* SLOGAN: One Tapping Since 2020 */}
+        <div 
+          className="inline-block px-5 py-2 rounded-lg border border-ogclan/30 bg-black/40 shadow-[0_0_24px_3px_rgba(212,175,55,0.06)] my-2 mb-3
+            text-gradient-gold font-orbitron text-lg sm:text-xl md:text-2xl tracking-wide
+            animate-pulse-slow transition-all 
+            hover:text-glitch hover:drop-shadow-gold"
+        >
+          <span className="glitch-box" style={{fontFamily: 'Orbitron, sans-serif', letterSpacing: '0.13em'}}>
+            ONE TAPPING SINCE 2020
+          </span>
+        </div>
         <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-2 relative">
           <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ogclan/50 after:transform-gpu animate-fade-in">
             Loyalty. Unity. Victory.
@@ -46,3 +58,4 @@ const HeroContent = () => {
 };
 
 export default HeroContent;
+
