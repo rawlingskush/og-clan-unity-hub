@@ -1,6 +1,8 @@
 
 import React from 'react';
-import HeroBackground from './hero/HeroBackground';
+import TacticalBackground from './hero/TacticalBackground';
+import TacticalIconsRow from './hero/TacticalIconsRow';
+import TacticalStatusBar from './hero/TacticalStatusBar';
 import HeroContent from './hero/HeroContent';
 import HeroActions from './hero/HeroActions';
 import ScrollDownButton from './hero/ScrollDownButton';
@@ -10,11 +12,15 @@ const HeroSection = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20">
-      <HeroBackground />
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16 md:pt-20 bg-black">
+      <TacticalBackground />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:px-8 w-full relative z-10">
-        <HeroContent />
+        <div className="relative mx-auto max-w-4xl shadow-glow-gold rounded-xl bg-black/70 backdrop-blur-md border border-ogclan/40 px-4 sm:px-8 py-6 sm:py-10 overflow-hidden">
+          <TacticalIconsRow />
+          <HeroContent />
+          <TacticalStatusBar />
+        </div>
         <HeroActions />
       </div>
       
