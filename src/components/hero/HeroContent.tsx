@@ -33,14 +33,29 @@ const HeroContent = () => {
           <span className="absolute -left-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan shadow-[0_0_12px_gold] animate-pulse-slow"></span>
           <span className="absolute -right-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan-light shadow-[0_0_12px_gold] animate-pulse-slow animation-delay-300"></span>
         </h1>
-        {/* SLOGAN: One Tapping Since 2020 */}
+        {/* SLOGAN: One Tapping Since 2020 (improved visibility) */}
         <div 
-          className="inline-block px-4 py-1 sm:px-5 sm:py-2 rounded-lg border border-ogclan/30 bg-black/40 shadow-[0_0_24px_3px_rgba(212,175,55,0.09)] my-1 sm:my-2 mb-2 sm:mb-3
+          className="
+            inline-block
+            px-4 py-1 sm:px-5 sm:py-2
+            rounded-lg border border-ogclan/30 bg-black/60 shadow-[0_0_24px_3px_rgba(212,175,55,0.14)] my-1 sm:my-2 mb-2 sm:mb-3
             text-gradient-gold font-orbitron text-base xs:text-lg sm:text-xl md:text-2xl tracking-wide
-            animate-pulse-slow transition-all 
-            hover:text-glitch hover:drop-shadow-gold"
+            animate-pulse-slow transition-all
+            hover:text-glitch hover:drop-shadow-gold
+          "
+          style={{
+            background: "linear-gradient(90deg, #D4AF37, #FFD700 70%, #F5DEB3)",
+            color: "#FFD700",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            textShadow:
+              "0 0 6px #D4AF37cc, 0 1px 8px #FFD700bb, 0 0 2px #222, 0 2px 12px #fff2",
+            fontFamily: 'Orbitron, sans-serif',
+            letterSpacing: "0.13em"
+          }}
         >
-          <span className="glitch-box" style={{fontFamily: 'Orbitron, sans-serif', letterSpacing: '0.13em'}}>
+          <span className="glitch-box">
             ONE TAPPING SINCE 2020
           </span>
         </div>
