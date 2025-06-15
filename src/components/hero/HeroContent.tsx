@@ -3,14 +3,26 @@ import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import Logo from '../Logo';
 
 const HeroContent = () => {
   const isMobile = useIsMobile();
   return (
-    <div className="text-center relative z-10">
+    <div className="text-center relative z-10 px-1 sm:px-0">
+      {/* Animated Logo on Mobile */}
+      {isMobile && (
+        <div className="flex justify-center items-center mb-1 animate-hero-logo-reveal">
+          <Logo
+            size="sm"
+            className="mx-auto drop-shadow-gold animate-hero-logo-glow"
+            withText={false}
+            variant="primary"
+          />
+        </div>
+      )}
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
+          className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
           style={{
             backgroundSize: "200% 200%",
             animation: "gradientShift 4s ease-in-out infinite, glow-pulse 2.2s infinite"
@@ -23,8 +35,8 @@ const HeroContent = () => {
         </h1>
         {/* SLOGAN: One Tapping Since 2020 */}
         <div 
-          className="inline-block px-5 py-2 rounded-lg border border-ogclan/30 bg-black/40 shadow-[0_0_24px_3px_rgba(212,175,55,0.06)] my-2 mb-3
-            text-gradient-gold font-orbitron text-lg sm:text-xl md:text-2xl tracking-wide
+          className="inline-block px-4 py-1 sm:px-5 sm:py-2 rounded-lg border border-ogclan/30 bg-black/40 shadow-[0_0_24px_3px_rgba(212,175,55,0.09)] my-1 sm:my-2 mb-2 sm:mb-3
+            text-gradient-gold font-orbitron text-base xs:text-lg sm:text-xl md:text-2xl tracking-wide
             animate-pulse-slow transition-all 
             hover:text-glitch hover:drop-shadow-gold"
         >
@@ -32,23 +44,25 @@ const HeroContent = () => {
             ONE TAPPING SINCE 2020
           </span>
         </div>
-        <p className="text-xl sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-2 relative">
+        <p className="text-base xs:text-lg sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-1 sm:gap-2 relative">
           <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ogclan/50 after:transform-gpu animate-fade-in">
             Loyalty. Unity. Victory.
           </span>
-          <Flame className="inline-block h-5 w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
+          <Flame className="inline-block h-4 w-4 xs:h-5 xs:w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
         </p>
       </AnimatedContent>
       <AnimatedContent animation="fade-in-up" delay={700}>
-        <div className="flex items-center justify-center mt-3 mb-5">
-          <Gamepad2 className="h-6 w-6 text-ogclan mr-2" />
-          <span className="text-xl md:text-2xl font-orbitron text-ogclan animate-pulse-slow">
+        <div className="flex items-center justify-center mt-2 sm:mt-3 mb-2 sm:mb-5">
+          <Gamepad2 className="h-5 w-5 sm:h-6 sm:w-6 text-ogclan mr-1 sm:mr-2" />
+          <span className="text-base xs:text-lg md:text-2xl font-orbitron text-ogclan animate-pulse-slow">
             CALL OF DUTY MOBILE
           </span>
         </div>
-        <p className="mt-2 md:mt-4 text-base sm:text-lg md:text-xl max-w-6xl mx-auto leading-relaxed px-4 sm:px-6 relative">
-          <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier Call of Duty Mobile squad since 2020. We're 50+ hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you.</span>
-          <span className="text-balance inline-block bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-2 drop-shadow">
+        <p className="mt-2 md:mt-4 text-xs xs:text-sm sm:text-lg md:text-xl max-w-3xl sm:max-w-6xl mx-auto leading-relaxed px-1 xs:px-2 sm:px-4 relative">
+          <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">
+            Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier Call of Duty Mobile squad since 2020. We're 50+ hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you.
+          </span>
+          <span className="block text-balance bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-0.5 sm:mt-2 drop-shadow">
             Join Us, level up your game, and help write our epic legacy. Let's own this together!
           </span>
         </p>
@@ -58,4 +72,3 @@ const HeroContent = () => {
 };
 
 export default HeroContent;
-

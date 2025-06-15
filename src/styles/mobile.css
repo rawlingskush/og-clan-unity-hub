@@ -1,4 +1,3 @@
-
 /* Mobile-first responsive optimizations */
 @media (max-width: 640px) {
   .filter-button {
@@ -135,6 +134,50 @@
     background-size: cover;
     background-position: center top;
     will-change: transform;
+  }
+  
+  /* --- Add custom mobile hero logo animation styles at the bottom --- */
+  .animate-hero-logo-reveal {
+    animation: hero-logo-reveal 0.8s cubic-bezier(0.32,1.2,0.5,1.02) both;
+  }
+  .animate-hero-logo-glow {
+    animation: hero-logo-glow 2.4s cubic-bezier(.55,0,.1,1) infinite alternate;
+  }
+}
+@keyframes hero-logo-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.66) rotate(-18deg);
+    filter: blur(5px) brightness(0.65);
+  }
+  65% {
+    opacity: 1;
+    filter: blur(0.5px) brightness(1.03);
+    transform: scale(1.09) rotate(6deg);
+  }
+  95% {
+    opacity: 1;
+    filter: blur(0.2px) brightness(1.07);
+    transform: scale(0.97) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0) brightness(1);
+  }
+}
+@keyframes hero-logo-glow {
+  0% {
+    filter: drop-shadow(0 0 0px #dac457) brightness(1);
+  }
+  60% {
+    filter: drop-shadow(0 0 12px #dac457aa) brightness(1.09);
+  }
+  95% {
+    filter: drop-shadow(0 0 6px #ffd700bb) brightness(1.08);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px #dac457) brightness(1);
   }
 }
 
