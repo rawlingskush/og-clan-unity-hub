@@ -3,23 +3,11 @@ import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
-import Logo from '../Logo';
 
 const HeroContent = () => {
   const isMobile = useIsMobile();
   return (
     <div className="text-center relative z-10 px-1 sm:px-0">
-      {/* Animated Logo on Mobile */}
-      {isMobile && (
-        <div className="flex justify-center items-center mb-1 animate-hero-logo-reveal">
-          <Logo
-            size="sm"
-            className="mx-auto drop-shadow-gold animate-hero-logo-glow"
-            withText={false}
-            variant="primary"
-          />
-        </div>
-      )}
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1
           className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
