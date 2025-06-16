@@ -1,6 +1,7 @@
 
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
+import LazyImage from '../ui/lazy-image';
 
 interface BattleImageCardProps {
   imageSrc: string;
@@ -22,11 +23,12 @@ const BattleImageCard = ({
   return (
     <AnimatedContent animation={animation} delay={delay}>
       <div className="battle-image-card relative group overflow-hidden rounded-2xl border border-ogclan/20 transform transition-all duration-500 hover:shadow-[0_5px_30px_rgba(212,175,55,0.3)]">
-        <img 
+        <LazyImage 
           src={imageSrc} 
           alt={title} 
-          className="w-full h-[350px] object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
+          className="h-[350px] rounded-2xl"
+          objectFit="cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         
         {/* Character overlay enhancement */}

@@ -4,53 +4,55 @@ import { useLazyLoading } from '@/hooks/use-lazy-loading';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
 
-interface EnhancedImageProps {
+interface LazyImageProps {
   src: string;
   alt: string;
   className?: string;
   fallbackSrc?: string;
   aspectRatio?: string;
-  loading?: 'lazy' | 'eager';
   objectFit?: 'cover' | 'contain' | 'fill' | 'scale-down' | 'none';
   objectPosition?: string;
   onLoad?: () => void;
   onError?: (error: React.SyntheticEvent<HTMLImageElement>) => void;
-  priority?: boolean;
+  priority?: boolean; // Skip lazy loading for above-the-fold images
+  sizes?: string; // Responsive image sizes
+  quality?: number; // Image quality hint
 }
 
-const EnhancedImage = ({
+const LazyImage = ({
   src,
   alt,
   className = "",
   fallbackSrc = "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png",
   aspectRatio = "16/10",
-  loading = "lazy",
   objectFit = "cover",
   objectPosition = "center",
   onLoad,
   onError,
-  priority = false
-}: EnhancedImageProps) => {
+  priority = false,
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
+  quality = 75
+}: LazyImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(src);
   
   const { elementRef, isVisible } = useLazyLoading({
     threshold: 0.1,
-    rootMargin: '50px'
+    rootMargin: '100px' // Load images 100px before they come into view
   });
 
-  // Use eager loading for priority images or when loading prop is eager
-  const shouldLoad = priority || loading === 'eager' || isVisible;
+  // Skip lazy loading for priority images (above the fold)
+  const shouldLoad = priority || isVisible;
 
   const handleLoad = () => {
-    console.log(`Enhanced image loaded successfully: ${currentSrc}`);
+    console.log(`Lazy image loaded successfully: ${currentSrc}`);
     setIsLoading(false);
     onLoad?.();
   };
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.log(`Enhanced image failed to load: ${currentSrc}, switching to fallback`);
+    console.log(`Lazy image failed to load: ${currentSrc}, switching to fallback`);
     setIsLoading(false);
     setHasError(true);
     
@@ -69,17 +71,24 @@ const EnhancedImage = ({
       className={cn("relative overflow-hidden bg-black/20 border border-ogclan/20", className)}
       style={{ aspectRatio }}
     >
+      {/* Loading skeleton */}
       {(isLoading || !shouldLoad) && (
         <div className="absolute inset-0 z-10">
-          <Skeleton className="w-full h-full bg-gray-700/50" />
+          <Skeleton className="w-full h-full bg-gray-700/50 animate-pulse" />
+          {!shouldLoad && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-ogclan/50 text-xs">Loading...</div>
+            </div>
+          )}
         </div>
       )}
       
+      {/* Actual image - only render when should load */}
       {shouldLoad && (
         <img 
           src={currentSrc}
           alt={alt}
-          loading={loading}
+          loading={priority ? "eager" : "lazy"}
           decoding="async"
           className={cn(
             "w-full h-full transition-all duration-500 ease-in-out",
@@ -89,12 +98,13 @@ const EnhancedImage = ({
             isLoading ? "opacity-0" : "opacity-100"
           )}
           style={{ objectPosition }}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          sizes={sizes}
           onLoad={handleLoad}
           onError={handleError}
         />
       )}
       
+      {/* Error fallback */}
       {hasError && currentSrc === fallbackSrc && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
           <div className="text-center p-4">
@@ -107,4 +117,4 @@ const EnhancedImage = ({
   );
 };
 
-export default EnhancedImage;
+export default LazyImage;

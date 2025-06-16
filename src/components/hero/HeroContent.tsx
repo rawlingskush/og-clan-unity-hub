@@ -19,6 +19,9 @@ const HeroContent = () => {
               filter: "drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)) brightness(1.1) saturate(1.25)"
             }}
             loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            sizes="(max-width: 640px) 100vw, 800px"
             aria-hidden="true"
           />
         </div>
@@ -37,9 +40,9 @@ const HeroContent = () => {
           <span className="absolute -left-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan shadow-[0_0_12px_gold] animate-pulse-slow"></span>
           <span className="absolute -right-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan-light shadow-[0_0_12px_gold] animate-pulse-slow animation-delay-300"></span>
         </h1>
-        {/* SLOGAN: One Tapping Since 2020 (cleaner, smaller, more readable) */}
-        <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded border border-ogclan/50 bg-black/80 backdrop-blur-sm my-2 mb-3">
-          <span className="text-ogclan font-orbitron font-semibold text-sm xs:text-base sm:text-lg tracking-wider uppercase">
+        {/* SLOGAN: One Tapping Since 2020 - Enhanced visibility */}
+        <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded border border-ogclan/60 bg-black/90 backdrop-blur-sm my-2 mb-3 shadow-lg">
+          <span className="text-ogclan-light font-orbitron font-bold text-sm xs:text-base sm:text-lg tracking-wider uppercase drop-shadow-sm">
             ONE TAPPING SINCE 2020
           </span>
         </div>
