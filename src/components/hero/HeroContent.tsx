@@ -8,6 +8,22 @@ const HeroContent = () => {
   const isMobile = useIsMobile();
   return (
     <div className="text-center relative z-10 px-1 sm:px-0">
+      {/* OG Clan Logo Background */}
+      <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-10 pointer-events-none">
+        <div className="relative w-full max-w-[800px] aspect-square">
+          <img 
+            src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
+            alt="" 
+            className="w-full h-full object-contain filter brightness-110 saturate-125"
+            style={{
+              filter: "drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)) brightness(1.1) saturate(1.25)"
+            }}
+            loading="eager"
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+
       <AnimatedContent animation="fade-in-up" delay={300}>
         <h1
           className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
