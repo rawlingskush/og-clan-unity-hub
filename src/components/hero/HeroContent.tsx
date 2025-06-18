@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AnimatedContent from '../AnimatedContent';
 import { Flame, Gamepad2 } from 'lucide-react';
@@ -20,7 +19,7 @@ const HeroContent = () => {
             }}
             loading="eager"
             decoding="async"
-            fetchpriority="high"
+            fetchPriority="high"
             sizes="(max-width: 640px) 100vw, 800px"
             aria-hidden="true"
           />
@@ -42,7 +41,7 @@ const HeroContent = () => {
         </h1>
         {/* SLOGAN: One Tapping Since 2020 - Enhanced visibility */}
         <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded border border-ogclan/60 bg-black/90 backdrop-blur-sm my-2 mb-3 shadow-lg">
-          <span className="text-ogclan-light font-orbitron font-bold text-sm xs:text-base sm:text-lg tracking-wider uppercase drop-shadow-sm">
+          <span className="text-ogclan-light font-orbitron font-bold text-xs sm:text-sm tracking-wider uppercase">
             ONE TAPPING SINCE 2020
           </span>
         </div>
