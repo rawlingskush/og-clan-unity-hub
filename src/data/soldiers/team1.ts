@@ -1,99 +1,77 @@
+
 import { Soldier } from "@/types/soldier";
 
 export const team1Soldiers: Soldier[] = [
   {
     id: "kush",
-    name: "OG Kush",
-    role: "Assault Architect 🔥",
-    weapon: "BY15",
-    bio: "The legendary founder and tactical mastermind behind OG Clan. Kush's strategic brilliance and unmatched leadership have guided the clan to countless victories since 2020. His shotgun skills are the stuff of legends.",
-    tiktokUrl: "https://www.tiktok.com/@og_kush_codm",
-    imageUrl: "/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png",
-    spotlight: true,
-    team: 1,
-    favoriteMap: "Nuketown",
-    stats: {
-      winRate: "89%",
-      kd: "3.2",
-      favMap: "Nuketown",
-      operatorSkill: "War Machine",
-      mvpTitles: "47",
-      clutchMoments: "23",
-      playStyle: "Aggressive Leader"
-    }
+    name: "ФƓゝ KUSH",
+    role: "Assault Architect",
+    weapon: "Oden",
+    bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum.",
+    tiktokUrl: "https://www.tiktok.com/@ogkushcodm",
+    imageUrl: "/lovable-uploads/c4b280fd-ce29-419b-b041-29712bd93d6a.png",
+    team: 1
   },
   {
     id: "wizard",
-    name: "OG Wizard",
-    role: "Sniper Elite 🎯",
-    weapon: "XPR-50",
-    bio: "Master of long-range elimination and tactical positioning. Wizard's precision shots have turned the tide of countless matches. His ability to control the battlefield from distance makes him an invaluable asset to the team.",
-    tiktokUrl: "https://www.tiktok.com/@og_wizard_snipes",
-    imageUrl: "/lovable-uploads/4173fde6-af6e-4572-9e29-450aabf69ecf.png",
-    spotlight: true,
-    team: 1,
-    favoriteMap: "Crossfire",
-    stats: {
-      winRate: "85%",
-      kd: "2.8",
-      favMap: "Crossfire",
-      operatorSkill: "Tempest",
-      mvpTitles: "34",
-      clutchMoments: "19",
-      playStyle: "Tactical Sniper"
-    }
+    name: "ФƓゝ WIZARD",
+    role: "Assault Architect",
+    weapon: "AK117",
+    bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
+    tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
+    imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png",
+    team: 1
   },
   {
-    id: "21",
-    name: "OG 21",
-    role: "Support Specialist 🛡️",
-    weapon: "MX9",
-    bio: "The backbone of battlefield support, OG 21 brings tactical reinforcement and reliable firepower to every engagement. With the MX9 as their weapon of choice, they excel at providing cover fire and securing key positions. A true team player who ensures no soldier fights alone.",
-    tiktokUrl: "",
-    imageUrl: "/lovable-uploads/25b0b30a-3357-4fa2-8db5-dfc1c6e81e56.png",
-    team: 1,
-    favoriteMap: "Terminal",
-    stats: {
-      winRate: "82%",
-      kd: "2.4",
-      favMap: "Terminal",
-      operatorSkill: "Shield Turret",
-      mvpTitles: "28",
-      clutchMoments: "15",
-      playStyle: "Support Anchor"
-    }
+    id: "damage",
+    name: "ФƓゝ DAMAGE",
+    role: "Suppression Heavy",
+    weapon: "KRM-262",
+    bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
+    tiktokUrl: "https://www.tiktok.com/@davisfrank6",
+    imageUrl: "/lovable-uploads/2f636e7c-eee5-4028-9f7b-ef987e714375.png",
+    team: 1
   },
   {
-    id: "toxic",
-    name: "OG Toxic",
-    role: "Aggressive Rusher 💥",
-    weapon: "QQ9",
-    bio: "Lightning-fast reflexes and aggressive playstyle make Toxic a formidable close-quarters combatant. Always first to breach and clear, bringing chaos to enemy lines.",
-    tiktokUrl: "https://www.tiktok.com/@og_toxic_rush",
-    imageUrl: "/lovable-uploads/4aff45e6-a800-4a02-8a26-f5cc53f2c562.png",
-    team: 1,
-    favoriteMap: "Shipment"
-  },
-  {
-    id: "ghost",
-    name: "OG Ghost",
-    role: "Stealth Operator 👻",
-    weapon: "Kilo 141",
-    bio: "Master of stealth and reconnaissance. Ghost moves through the battlefield unseen, gathering intel and striking from the shadows when least expected.",
-    tiktokUrl: "https://www.tiktok.com/@og_ghost_stealth",
-    imageUrl: "/lovable-uploads/07bd8a65-ec11-43be-9de5-36b06bfdc430.png",
-    team: 1,
-    favoriteMap: "Crash"
+    id: "chambas",
+    name: "ФƓゝ CHAMBAS",
+    role: "Precision Breacher",
+    weapon: "HS0405",
+    bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
+    tiktokUrl: "https://www.tiktok.com/@chambas237",
+    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png",
+    team: 1
   },
   {
     id: "venom",
-    name: "OG Venom",
-    role: "Area Denial 🐍",
-    weapon: "Oden",
-    bio: "Specializes in controlling territory and denying enemy movement. Venom's tactical awareness and powerful rifle make them a key strategic asset.",
-    tiktokUrl: "https://www.tiktok.com/@og_venom_control",
-    imageUrl: "/lovable-uploads/17e3bb79-3e72-4502-9527-d3ddbcaf50b7.png",
+    name: "ФƓゝ VENOM",
+    role: "Assault Architect",
+    weapon: "Kilo 141",
+    bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
+    tiktokUrl: "https://www.tiktok.com/@razkhato1",
+    imageUrl: "/lovable-uploads/229f6b94-869b-4b77-a3e2-3ab364bc9edf.png",
+    team: 1
+  },
+  {
+    id: "rex",
+    name: "ФƓゝ REX",
+    role: "⚡ Strategic Commander",
+    weapon: "Kilo 141",
+    bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
+    tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
+    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
     team: 1,
-    favoriteMap: "Standoff"
+    active: true
+  },
+  {
+    id: "swizzy",
+    name: "ФƓゝ ƧWƗƵƵY",
+    role: "⚡ Tactical Strategist",
+    weapon: "BY15",
+    bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
+    tiktokUrl: "https://www.tiktok.com/@little.swizzy",
+    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
+    team: 1,
+    active: true
   }
 ];
