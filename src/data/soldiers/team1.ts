@@ -73,5 +73,15 @@ export const team1Soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
     team: 1,
     active: true
+  },
+  {
+    id: "21",
+    name: "ФƓゝ 21",
+    role: "🛡️ Battlefield Support",
+    weapon: "MX9",
+    bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates and controlling key positions makes him an invaluable asset to OG Clan's dominance.",
+    tiktokUrl: "",
+    imageUrl: "/lovable-uploads/d42c1ce9-cbcb-4da4-a96f-2ea17c701726.png",
+    team: 1
   }
 ];
