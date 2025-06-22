@@ -72,7 +72,7 @@ export const team1Soldiers: Soldier[] = [
     name: "ФƓゝ 21",
     role: "🐉 Survival Strategist",
     weapon: "MX9",
-    bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates makes him an invaluable asset to OG Clan's dominance.",
+    bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates and controlling key positions makes him an invaluable asset to OG Clan's dominance.",
     tiktokUrl: "",
     imageUrl: "/lovable-uploads/d42c1ce9-cbcb-4da4-a96f-2ea17c701726.png"
   },
@@ -81,7 +81,7 @@ export const team1Soldiers: Soldier[] = [
     name: "ФƓゝ SHADY",
     role: "🛡️ Clan Support",
     weapon: "BP50",
-    bio: "Shady brings unwavering support to the clan with his lethal BP50. A master of backup tactics and strategic positioning, he ensures no teammate fights alone. His dedication to the clan's success and ability to turn the tide in crucial moments.",
+    bio: "Shady brings unwavering support to the clan with his lethal BP50. A master of backup tactics and strategic positioning, he ensures no teammate fights alone. His dedication to the clan's success and ability to turn the tide in crucial moments makes him an essential pillar of OG Clan's strength.",
     tiktokUrl: "https://www.tiktok.com/@slimshady01231?_t=ZM-8xMpLMHbg62&_r=1",
     imageUrl: "/lovable-uploads/d733e82e-354c-426c-b087-93bd1bf24b6f.png"
   },
@@ -90,7 +90,7 @@ export const team1Soldiers: Soldier[] = [
     name: "ФƓゝ LAMENACE",
     role: "🐉 Survival Strategist",
     weapon: "AK117",
-    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision & survival instincts. His strategic mind keeps the squad alive to stay fighting.",
+    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts. His strategic mind keeps the squad alive to stay fighting.",
     tiktokUrl: "https://www.tiktok.com/@zidanguimdo1?_t=ZM-8xMn0mOZNnM&_r=1",
     imageUrl: "/lovable-uploads/4b7393f0-e571-4e74-943a-6a4f862a45ad.png"
   }
