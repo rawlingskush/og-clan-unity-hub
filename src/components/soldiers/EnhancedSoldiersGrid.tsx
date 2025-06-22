@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,50 +12,37 @@ interface EnhancedSoldiersGridProps {
   soldiers: Soldier[];
 }
 
-const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
+const EnhancedSoldiersGrid = React.memo(({ soldiers }: EnhancedSoldiersGridProps) => {
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
-  const [favorites, setFavorites] = useState<Set<string>>(new Set());
   const [isReady, setIsReady] = useState(false);
   
-  console.log('EnhancedSoldiersGrid render:', { 
-    soldiers: soldiers.length, 
-    filter, 
-    searchTerm,
-    isReady 
-  });
-  
-  // Enhanced filtered soldiers - maintain original order
+  // Enhanced filtered soldiers - maintain original order and memoize properly
   const processedSoldiers = useMemo(() => {
     let filtered = filterSoldiers(soldiers, filter);
     
     // Apply search filter
-    if (searchTerm) {
+    if (searchTerm.trim()) {
+      const searchLower = searchTerm.toLowerCase().trim();
       filtered = filtered.filter(soldier => 
-        soldier.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        soldier.role.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        soldier.weapon.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        soldier.bio.toLowerCase().includes(searchTerm.toLowerCase())
+        soldier.name.toLowerCase().includes(searchLower) ||
+        soldier.role.toLowerCase().includes(searchLower) ||
+        soldier.weapon.toLowerCase().includes(searchLower) ||
+        soldier.bio.toLowerCase().includes(searchLower)
       );
     }
     
-    // Keep original order from soldiers data - no sorting
-    console.log('Processed soldiers:', filtered.length);
     return filtered;
   }, [soldiers, filter, searchTerm]);
 
   // Initialize component ready state
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, 100);
-    
+    const timer = setTimeout(() => setIsReady(true), 50);
     return () => clearTimeout(timer);
   }, []);
 
   // Memoized handlers
   const handleFilterChange = useCallback((newFilter: string) => {
-    console.log('Filter changed to:', newFilter);
     setFilter(newFilter);
   }, []);
 
@@ -65,18 +53,6 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
   const handleClearFilters = useCallback(() => {
     setSearchTerm("");
     setFilter("all");
-  }, []);
-
-  const toggleFavorite = useCallback((soldierId: string) => {
-    setFavorites(prev => {
-      const newFavorites = new Set(prev);
-      if (newFavorites.has(soldierId)) {
-        newFavorites.delete(soldierId);
-      } else {
-        newFavorites.add(soldierId);
-      }
-      return newFavorites;
-    });
   }, []);
 
   // Loading states
@@ -106,11 +82,10 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
   return (
     <motion.div 
       className="space-y-8"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
     >
-      {/* Control Panel */}
       <SoldiersControlPanel
         totalSoldiers={soldiers.length}
         filteredCount={processedSoldiers.length}
@@ -120,11 +95,10 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
         onFilterChange={handleFilterChange}
       />
       
-      {/* Results Display */}
       <motion.div 
         className="min-h-[400px]"
         layout
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.2 }}
       >
         <AnimatePresence mode="wait">
           {processedSoldiers.length === 0 ? (
@@ -135,17 +109,18 @@ const EnhancedSoldiersGrid = ({ soldiers }: EnhancedSoldiersGridProps) => {
         </AnimatePresence>
       </motion.div>
       
-      {/* Enhanced Join CTA */}
       <motion.div 
         className="mt-16"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
       >
         <JoinCTA />
       </motion.div>
     </motion.div>
   );
-};
+});
+
+EnhancedSoldiersGrid.displayName = 'EnhancedSoldiersGrid';
 
 export default EnhancedSoldiersGrid;

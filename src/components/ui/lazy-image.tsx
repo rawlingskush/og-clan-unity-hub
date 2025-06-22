@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useLazyLoading } from '@/hooks/use-lazy-loading';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
@@ -14,12 +14,11 @@ interface LazyImageProps {
   objectPosition?: string;
   onLoad?: () => void;
   onError?: (error: React.SyntheticEvent<HTMLImageElement>) => void;
-  priority?: boolean; // Skip lazy loading for above-the-fold images
-  sizes?: string; // Responsive image sizes
-  quality?: number; // Image quality hint
+  priority?: boolean;
+  sizes?: string;
 }
 
-const LazyImage = ({
+const LazyImage = React.memo(({
   src,
   alt,
   className = "",
@@ -30,8 +29,7 @@ const LazyImage = ({
   onLoad,
   onError,
   priority = false,
-  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw",
-  quality = 75
+  sizes = "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
 }: LazyImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
@@ -39,20 +37,17 @@ const LazyImage = ({
   
   const { elementRef, isVisible } = useLazyLoading({
     threshold: 0.1,
-    rootMargin: '100px' // Load images 100px before they come into view
+    rootMargin: '50px'
   });
 
-  // Skip lazy loading for priority images (above the fold)
   const shouldLoad = priority || isVisible;
 
-  const handleLoad = () => {
-    console.log(`Lazy image loaded successfully: ${currentSrc}`);
+  const handleLoad = useCallback(() => {
     setIsLoading(false);
     onLoad?.();
-  };
+  }, [onLoad]);
 
-  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.log(`Lazy image failed to load: ${currentSrc}, switching to fallback`);
+  const handleError = useCallback((e: React.SyntheticEvent<HTMLImageElement>) => {
     setIsLoading(false);
     setHasError(true);
     
@@ -63,7 +58,7 @@ const LazyImage = ({
     }
     
     onError?.(e);
-  };
+  }, [currentSrc, fallbackSrc, onError]);
 
   return (
     <div 
@@ -71,19 +66,12 @@ const LazyImage = ({
       className={cn("relative overflow-hidden bg-black/20 border border-ogclan/20", className)}
       style={{ aspectRatio }}
     >
-      {/* Loading skeleton */}
       {(isLoading || !shouldLoad) && (
         <div className="absolute inset-0 z-10">
           <Skeleton className="w-full h-full bg-gray-700/50 animate-pulse" />
-          {!shouldLoad && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-ogclan/50 text-xs">Loading...</div>
-            </div>
-          )}
         </div>
       )}
       
-      {/* Actual image - only render when should load */}
       {shouldLoad && (
         <img 
           src={currentSrc}
@@ -91,7 +79,7 @@ const LazyImage = ({
           loading={priority ? "eager" : "lazy"}
           decoding="async"
           className={cn(
-            "w-full h-full transition-all duration-500 ease-in-out",
+            "w-full h-full transition-opacity duration-300 ease-in-out",
             objectFit === 'cover' && "object-cover",
             objectFit === 'contain' && "object-contain",
             objectFit === 'fill' && "object-fill",
@@ -104,7 +92,6 @@ const LazyImage = ({
         />
       )}
       
-      {/* Error fallback */}
       {hasError && currentSrc === fallbackSrc && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/40">
           <div className="text-center p-4">
@@ -115,6 +102,8 @@ const LazyImage = ({
       )}
     </div>
   );
-};
+});
+
+LazyImage.displayName = 'LazyImage';
 
 export default LazyImage;

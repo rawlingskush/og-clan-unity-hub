@@ -29,12 +29,12 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "rex")!, // Rex
   team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
   team1Soldiers.find(s => s.id === "venom")!, // Venom
+  team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty - moved up beside Venom
   team1Soldiers.find(s => s.id === "21")!, // 21
   team1Soldiers.find(s => s.id === "shady")!, // Shady
   team1Soldiers.find(s => s.id === "lamenace")!, // Lamenace
   team4Soldiers.find(s => s.id === "dna")!, // DNA
-  team4Soldiers.find(s => s.id === "ded")!, // Ded
-  team5Soldiers.find(s => s.id === "lilnasty")! // Lil Nasty
+  team4Soldiers.find(s => s.id === "ded")! // Ded
 ];
 
 // Export team-specific arrays for potential future use
