@@ -6,29 +6,34 @@ import { team3Soldiers } from "./team3";
 import { team4Soldiers } from "./team4";
 import { team5Soldiers } from "./team5";
 
-// Original order: Kush first, then Exodus, then Wizard, etc.
+// Official order format: Kush, Exodus, Wizard, Damage, 23, Dhamar, Slim, Botgirl, Esquare, Blacksavage, Gamehouse, Pato, Uncle B, White
+// Additional soldiers come after the core sequence
 export const soldiers: Soldier[] = [
-  // Start with OG Kush (team 1)
-  team1Soldiers.find(s => s.id === "kush")!,
+  // Core sequence - official format
+  team1Soldiers.find(s => s.id === "kush")!, // Kush
+  team3Soldiers.find(s => s.id === "exodus")!, // Exodus
+  team1Soldiers.find(s => s.id === "wizard")!, // Wizard
+  team1Soldiers.find(s => s.id === "damage")!, // Damage
+  team4Soldiers.find(s => s.id === "23")!, // 23
+  team3Soldiers.find(s => s.id === "dhamer")!, // Dhamar
+  team3Soldiers.find(s => s.id === "slim")!, // Slim
+  team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
+  team3Soldiers.find(s => s.id === "esquare")!, // Esquare
+  team5Soldiers.find(s => s.id === "blacksavage")!, // Blacksavage
+  team4Soldiers.find(s => s.id === "gamehouse")!, // Gamehouse
+  team2Soldiers.find(s => s.id === "pato")!, // Pato
+  team2Soldiers.find(s => s.id === "uncleB")!, // Uncle B
+  team2Soldiers.find(s => s.id === "ogwhite")!, // White
   
-  // Then Exodus (team 3)
-  team3Soldiers.find(s => s.id === "exodus")!,
-  
-  // Then Wizard (team 1)
-  team1Soldiers.find(s => s.id === "wizard")!,
-  
-  // Continue with rest of team 1
-  ...team1Soldiers.filter(s => s.id !== "kush" && s.id !== "wizard"),
-  
-  // Then team 2
-  ...team2Soldiers,
-  
-  // Then rest of team 3
-  ...team3Soldiers.filter(s => s.id !== "exodus"),
-  
-  // Then remaining teams
-  ...team4Soldiers,
-  ...team5Soldiers
+  // Additional soldiers after core sequence
+  team1Soldiers.find(s => s.id === "rex")!, // Rex
+  team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
+  team1Soldiers.find(s => s.id === "venom")!, // Venom
+  team1Soldiers.find(s => s.id === "21")!, // 21
+  team1Soldiers.find(s => s.id === "shady")!, // Shady
+  team4Soldiers.find(s => s.id === "dna")!, // DNA
+  team4Soldiers.find(s => s.id === "ded")!, // Ded
+  team5Soldiers.find(s => s.id === "lilnasty")! // Lil Nasty
 ];
 
 // Export team-specific arrays for potential future use
