@@ -1,4 +1,4 @@
-p
+
 import { Soldier } from "@/types/soldier";
 
 export const team1Soldiers: Soldier[] = [
@@ -70,7 +70,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "21",
     name: "ФƓゝ 21",
-    role: "🐉 Survival Strategist",
+    role: "🛡️ Battlefield Support",
     weapon: "MX9",
     bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates and controlling key positions makes him an invaluable asset to OG Clan's dominance.",
     tiktokUrl: "",
@@ -90,7 +90,7 @@ export const team1Soldiers: Soldier[] = [
     name: "ФƓゝ LAMENACE",
     role: "🐉 Survival Strategist",
     weapon: "AK117",
-    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts. His strategic mind keeps the squad alive to stay fighting.",
+    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts, he ensures OG Clan stays competitive and makes the most of every engagement. His strategic mind and risk assessment abilities keep the squad alive to fight another day.",
     tiktokUrl: "https://www.tiktok.com/@zidanguimdo1?_t=ZM-8xMn0mOZNnM&_r=1",
     imageUrl: "/lovable-uploads/4b7393f0-e571-4e74-943a-6a4f862a45ad.png"
   }
