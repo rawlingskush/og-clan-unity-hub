@@ -1,4 +1,4 @@
-
+p
 import { Soldier } from "@/types/soldier";
 
 export const team1Soldiers: Soldier[] = [
@@ -90,7 +90,7 @@ export const team1Soldiers: Soldier[] = [
     name: "ФƓゝ LAMENACE",
     role: "🐉 Survival Strategist",
     weapon: "AK117",
-    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts. His strategic mind and risk assessment abilities keep the squad alive to fight another day.",
+    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts. His strategic mind keeps the squad alive to stay fighting.",
     tiktokUrl: "https://www.tiktok.com/@zidanguimdo1?_t=ZM-8xMn0mOZNnM&_r=1",
     imageUrl: "/lovable-uploads/4b7393f0-e571-4e74-943a-6a4f862a45ad.png"
   }
