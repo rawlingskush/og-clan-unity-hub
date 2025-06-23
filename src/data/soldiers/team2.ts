@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const team2Soldiers: Soldier[] = [
@@ -9,7 +8,7 @@ export const team2Soldiers: Soldier[] = [
     weapon: "XPR-50",
     bio: "Botgirl is the clan's sharpshooter extraordinaire. With her XPR-50, she delivers precision shots that can turn the tide of any battle. Her tactical awareness and sniper skills make her a formidable opponent at long range.",
     tiktokUrl: "https://www.tiktok.com/@og_botgirl",
-    imageUrl: "/lovable-uploads/3c74a6d9-cfdb-42ff-84b1-92012d2f731a.png"
+    imageUrl: "/lovable-uploads/26b319b2-7cce-435d-a241-ae90fa799575.png"
   },
   {
     id: "pato",

@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const team1Soldiers: Soldier[] = [
@@ -83,7 +82,7 @@ export const team1Soldiers: Soldier[] = [
     weapon: "BP50",
     bio: "Shady brings unwavering support to the clan with his lethal BP50. A master of backup tactics and strategic positioning, he ensures no teammate fights alone. His dedication to the clan's success and ability to turn the tide in crucial moments makes him an essential pillar of OG Clan's strength.",
     tiktokUrl: "https://www.tiktok.com/@slimshady01231?_t=ZM-8xMpLMHbg62&_r=1",
-    imageUrl: "/lovable-uploads/d733e82e-354c-426c-b087-93bd1bf24b6f.png"
+    imageUrl: "/lovable-uploads/a7649e20-066b-4c10-a31f-65d7bd8c3e9c.png"
   },
   {
     id: "lamenace",
