@@ -36,6 +36,6 @@ export const team2Soldiers: Soldier[] = [
     weapon: "MAC-10",
     bio: "White strikes with lightning speed and precision. His MAC-10 and quick reflexes make him perfect for fast-paced engagements and surprise attacks. He's known for his aggressive push tactics and clutch plays.",
     tiktokUrl: "https://www.tiktok.com/@whiteogclan",
-    imageUrl: "/lovable-uploads/4c615377-1ca3-481a-8613-9a759e0b5517.png"
+    imageUrl: "/lovable-uploads/4e8b4372-397a-4644-980f-abf7a711c969.png"
   }
 ];

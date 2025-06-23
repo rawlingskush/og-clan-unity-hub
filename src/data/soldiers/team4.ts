@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const team4Soldiers: Soldier[] = [
@@ -9,7 +8,7 @@ export const team4Soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Gamehouse adapts on the fly—whether it's charging forward with a BY15 or anchoring a hallway with his RUS-79U, he always reads enemy patterns and positions himself where he can tip the scales.",
     tiktokUrl: "https://www.tiktok.com/@.gamehouse_yt",
-    imageUrl: "/lovable-uploads/16423716-0397-4587-bb36-da75513b2ba4.png"
+    imageUrl: "/lovable-uploads/febe321d-15df-4f7d-a072-8b4c068b3ad8.png"
   },
   {
     id: "23",
