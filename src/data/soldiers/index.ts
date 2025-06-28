@@ -30,6 +30,7 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
   team1Soldiers.find(s => s.id === "venom")!, // Venom
   team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty - moved up beside Venom
+  team1Soldiers.find(s => s.id === "chambas")!, // Chambas - restored to lineup
   team1Soldiers.find(s => s.id === "21")!, // 21
   team1Soldiers.find(s => s.id === "shady")!, // Shady
   team1Soldiers.find(s => s.id === "lamenace")!, // Lamenace
