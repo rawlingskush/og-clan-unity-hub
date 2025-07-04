@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import { useToast } from '@/components/ui/use-toast';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 import emailjs from '@emailjs/browser';
 import AnimatedContent from '../AnimatedContent';
 
@@ -85,60 +87,60 @@ const JoinForm = () => {
         </h3>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
               Your Name
             </label>
-            <input
+            <Input
               type="text"
               id="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+              className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
               placeholder="Enter your name"
               required
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email Address
             </label>
-            <input
+            <Input
               type="email"
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+              className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
               placeholder="you@example.com"
               required
             />
           </div>
           <div>
-            <label htmlFor="gamerTag" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="gamerTag" className="block text-sm font-medium text-gray-700 mb-2">
               Gamer Tag
             </label>
-            <input
+            <Input
               type="text"
               id="gamerTag"
               value={formData.gamerTag}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+              className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
               placeholder="Your gamer tag"
               required
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
               Why do you want to join?
             </label>
-            <textarea
+            <Textarea
               id="message"
               value={formData.message}
               onChange={handleChange}
               rows={3}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-ogclan focus:border-transparent outline-none transition-all"
+              className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan resize-none"
               placeholder="Tell us a bit about yourself..."
               required
-            ></textarea>
+            />
           </div>
           <button
             type="submit"
