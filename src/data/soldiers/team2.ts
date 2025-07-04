@@ -1,4 +1,3 @@
-
 import { Soldier } from "@/types/soldier";
 
 export const team2Soldiers: Soldier[] = [
