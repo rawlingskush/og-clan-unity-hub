@@ -5,10 +5,11 @@ export const team2Soldiers: Soldier[] = [
     id: "botgirl",
     name: "ФƓゝ BOTGIRL",
     role: "🎯 Tactical Sniper",
-    weapon: "XPR-50",
-    bio: "Botgirl is the clan's sharpshooter extraordinaire. With her XPR-50, she delivers precision shots that can turn the tide of any battle. Her tactical awareness and sniper skills make her a formidable opponent at long range.",
+    weapon: "FENNEC",
+    bio: "Meet the clan's princess - BOTGIRL. With her beloved FENNEC, she combines elegance with deadly precision. Her royal presence on the battlefield is matched only by her fierce loyalty to the clan and her ability to dominate with style.",
     tiktokUrl: "https://www.tiktok.com/@og_botgirl",
-    imageUrl: "/lovable-uploads/26b319b2-7cce-435d-a241-ae90fa799575.png"
+    imageUrl: "/lovable-uploads/26b319b2-7cce-435d-a241-ae90fa799575.png",
+    princess: true
   },
   {
     id: "pato",
