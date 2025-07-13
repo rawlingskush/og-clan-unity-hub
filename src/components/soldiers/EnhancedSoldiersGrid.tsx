@@ -1,11 +1,14 @@
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Soldier } from '@/types/soldier';
+import { ViewMode } from '@/types/tier';
 import { motion, AnimatePresence } from 'framer-motion';
 import SoldiersControlPanel from './SoldiersControlPanel';
 import SoldiersDisplay from './SoldiersDisplay';
 import NoSoldiersFound from './NoSoldiersFound';
 import JoinCTA from './JoinCTA';
+import ViewToggle from './ViewToggle';
+import TierRosterSection from './TierRosterSection';
 import { filterSoldiers } from '@/utils/weaponCategories';
 
 interface EnhancedSoldiersGridProps {
@@ -16,6 +19,7 @@ const EnhancedSoldiersGrid = React.memo(({ soldiers }: EnhancedSoldiersGridProps
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [isReady, setIsReady] = useState(false);
+  const [viewMode, setViewMode] = useState<ViewMode>('gallery');
   
   // Enhanced filtered soldiers - maintain original order and memoize properly
   const processedSoldiers = useMemo(() => {
@@ -86,28 +90,37 @@ const EnhancedSoldiersGrid = React.memo(({ soldiers }: EnhancedSoldiersGridProps
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
     >
-      <SoldiersControlPanel
-        totalSoldiers={soldiers.length}
-        filteredCount={processedSoldiers.length}
-        searchTerm={searchTerm}
-        onSearchChange={handleSearchChange}
-        filter={filter}
-        onFilterChange={handleFilterChange}
-      />
+      {/* View Toggle */}
+      <ViewToggle currentView={viewMode} onViewChange={setViewMode} />
       
-      <motion.div 
-        className="min-h-[400px]"
-        layout
-        transition={{ duration: 0.2 }}
-      >
-        <AnimatePresence mode="wait">
-          {processedSoldiers.length === 0 ? (
-            <NoSoldiersFound onClearFilters={handleClearFilters} />
-          ) : (
-            <SoldiersDisplay soldiers={processedSoldiers} />
-          )}
-        </AnimatePresence>
-      </motion.div>
+      {viewMode === 'gallery' ? (
+        <>
+          <SoldiersControlPanel
+            totalSoldiers={soldiers.length}
+            filteredCount={processedSoldiers.length}
+            searchTerm={searchTerm}
+            onSearchChange={handleSearchChange}
+            filter={filter}
+            onFilterChange={handleFilterChange}
+          />
+          
+          <motion.div 
+            className="min-h-[400px]"
+            layout
+            transition={{ duration: 0.2 }}
+          >
+            <AnimatePresence mode="wait">
+              {processedSoldiers.length === 0 ? (
+                <NoSoldiersFound onClearFilters={handleClearFilters} />
+              ) : (
+                <SoldiersDisplay soldiers={processedSoldiers} />
+              )}
+            </AnimatePresence>
+          </motion.div>
+        </>
+      ) : (
+        <TierRosterSection />
+      )}
       
       <motion.div 
         className="mt-16"
