@@ -92,5 +92,14 @@ export const team1Soldiers: Soldier[] = [
     bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts, he ensures OG Clan stays competitive and makes the most of every engagement. His strategic mind and risk assessment abilities keep the squad alive to fight another day.",
     tiktokUrl: "https://www.tiktok.com/@zidanguimdo1?_t=ZM-8xMn0mOZNnM&_r=1",
     imageUrl: "/lovable-uploads/4b7393f0-e571-4e74-943a-6a4f862a45ad.png"
+  },
+  {
+    id: "johnwick",
+    name: "ФƓゝJOHN~WICK",
+    role: "🎯 Close-Quarters Specialist",
+    weapon: "KRM",
+    bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
+    tiktokUrl: "",
+    imageUrl: "/lovable-uploads/2dd54b8a-fb91-4217-ac97-e496c43e46a4.png"
   }
 ];
