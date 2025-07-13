@@ -74,7 +74,7 @@ export const tierData: TierData[] = [
       { name: "ФƓゝMAFIA", fullName: "mafia", emoji: "❤️", status: "Shows heart, impact to come" },
       { name: "ФƓゝMULLER", fullName: "muller", emoji: "🔁", status: "Active, needs more squad play" },
       { name: "ФƓゝDURANT", fullName: "durant", emoji: "🎯", status: "Accuracy-focused" },
-      { name: "ФƓゝVENOM", fullName: "venom", emoji: "📆", status: "Getting better every match", hasProfile: true, profileId: "venom" },
+      
       { name: "ФƓゝSHINOBI", fullName: "shinobi", emoji: "🎯", status: "Tier 2 potential showing" }
     ]
   },

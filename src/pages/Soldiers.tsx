@@ -14,7 +14,7 @@ const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [error, setError] = useState<string | null>(null);
   
-  console.log('Enhanced Soldiers page render:', { soldiers: soldiers.length });
+  // Performance monitoring removed to prevent excessive logging
   
   // Optimized scroll handling with throttling
   useEffect(() => {
