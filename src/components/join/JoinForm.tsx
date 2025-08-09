@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useToast } from '@/components/ui/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -23,6 +23,11 @@ const JoinForm = () => {
     message: ''
   });
 
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('5Oxgqe5hCq9cHN1yy');
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
@@ -30,6 +35,17 @@ const JoinForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    if (!formData.name.trim() || !formData.email.trim() || !formData.gamerTag.trim() || !formData.message.trim()) {
+      toast({
+        title: "Please fill in all fields",
+        description: "All fields are required to submit your application.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -40,38 +56,49 @@ const JoinForm = () => {
         from_email: formData.email,
         gamer_tag: formData.gamerTag,
         message: formData.message,
+        reply_to: formData.email
       };
 
-      console.log('Sending email with parameters:', templateParams);
+      console.log('Sending email with EmailJS...');
 
       // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
-        'OgClanService', // Your EmailJS service ID
-        'template_ujcypoh', // Your EmailJS template ID
-        templateParams,
-        '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
+        'OgClanService',
+        'template_ujcypoh',
+        templateParams
       );
 
-      console.log('EmailJS response:', response);
+      if (response.status === 200) {
+        toast({
+          title: "Application sent successfully!",
+          description: "Your request to join OG Clan has been received. We'll be in touch soon!",
+          variant: "default",
+        });
 
-      toast({
-        title: "Application sent!",
-        description: "Your request to join OG Clan has been received. We'll be in touch soon!",
-        variant: "default",
-      });
-
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        gamerTag: '',
-        message: ''
-      });
-    } catch (error) {
+        // Reset form after successful submission
+        setFormData({
+          name: '',
+          email: '',
+          gamerTag: '',
+          message: ''
+        });
+      } else {
+        throw new Error(`EmailJS returned status: ${response.status}`);
+      }
+    } catch (error: any) {
       console.error('Error sending email:', error);
+      
+      let errorMessage = "Please try again or contact us directly at onlygreat237@gmail.com";
+      
+      if (error.text) {
+        errorMessage = `Failed to send: ${error.text}`;
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+      
       toast({
-        title: "Something went wrong",
-        description: "Please try again or contact us directly at onlygreat237@gmail.com",
+        title: "Failed to send application",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
