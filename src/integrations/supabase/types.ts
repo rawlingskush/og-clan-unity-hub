@@ -14,6 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
+      contact_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          gamer_tag: string
+          id: string
+          message: string
+          name: string
+          processed: boolean | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          gamer_tag: string
+          id?: string
+          message: string
+          name: string
+          processed?: boolean | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          gamer_tag?: string
+          id?: string
+          message?: string
+          name?: string
+          processed?: boolean | null
+        }
+        Relationships: []
+      }
       "Og Clan": {
         Row: {
           created_at: string
