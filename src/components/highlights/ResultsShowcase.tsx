@@ -41,9 +41,6 @@ const ResultsShowcase = () => {
     }
   ];
 
-  // Log the TEF Esports data for debugging
-  console.log('TEF Esports data:', topResults.find(result => result.tournament === "TEF Esports"));
-
   return (
     <div className="mt-8">
       <AnimatedContent animation="fade-in-up">

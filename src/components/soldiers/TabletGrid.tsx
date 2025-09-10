@@ -7,9 +7,7 @@ interface TabletGridProps {
   soldiers: Soldier[];
 }
 
-const TabletGrid = ({ soldiers }: TabletGridProps) => {
-  console.log('TabletGrid render:', { soldiers: soldiers.length });
-  
+const TabletGrid = ({ soldiers }: TabletGridProps) => {  
   if (soldiers.length === 0) {
     return (
       <div className="flex items-center justify-center h-96">

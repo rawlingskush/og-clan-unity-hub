@@ -10,10 +10,13 @@ import JoinUsSection from '@/components/JoinUsSection';
 import PartnersSection from '@/components/PartnersSection';
 import CoDPointsSection from '@/components/CoDPointsSection';
 import Footer from '@/components/Footer';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
+import { usePerformanceOptimization } from '@/hooks/usePerformanceOptimization';
 
 const Index = () => {
   const { toast } = useToast();
+  
+  usePerformanceOptimization();
   
   useEffect(() => {
     // Welcome toast

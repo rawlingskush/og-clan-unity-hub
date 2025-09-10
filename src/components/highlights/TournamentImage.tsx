@@ -11,13 +11,8 @@ interface TournamentImageProps {
 }
 
 const TournamentImage = ({ src, alt, tournament, className = "" }: TournamentImageProps) => {
-  const handleLoad = () => {
-    console.log(`Tournament image loaded successfully: ${src} for ${tournament}`);
-  };
-
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.log(`Tournament image failed to load: ${src} for tournament: ${tournament}`);
-    console.log('Error details:', e);
+    // Image failed to load - error handling could be added here if needed
   };
 
   return (
@@ -30,7 +25,6 @@ const TournamentImage = ({ src, alt, tournament, className = "" }: TournamentIma
                      filter contrast-125 brightness-110 saturate-110
                      group-hover:contrast-150"
           objectPosition="center 30%"
-          onLoad={handleLoad}
           onError={handleError}
         />
       </AspectRatio>

@@ -14,9 +14,7 @@ interface MobileCarouselProps {
   soldiers: Soldier[];
 }
 
-const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {
-  console.log('MobileCarousel render:', { soldiers: soldiers.length });
-  
+const MobileCarousel = ({ soldiers }: MobileCarouselProps) => {  
   if (soldiers.length === 0) {
     return (
       <div className="flex items-center justify-center h-96 px-4">

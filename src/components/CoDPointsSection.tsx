@@ -2,7 +2,7 @@
 import React from 'react';
 import { ArrowRight, Gift, CreditCard, Zap } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 
 const CoDPointsSection = () => {
   const { toast } = useToast();

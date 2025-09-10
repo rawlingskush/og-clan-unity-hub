@@ -7,9 +7,7 @@ interface DesktopGridProps {
   soldiers: Soldier[];
 }
 
-const DesktopGrid = ({ soldiers }: DesktopGridProps) => {
-  console.log('DesktopGrid render:', { soldiers: soldiers.length });
-  
+const DesktopGrid = ({ soldiers }: DesktopGridProps) => {  
   if (soldiers.length === 0) {
     return (
       <div className="flex items-center justify-center h-96">

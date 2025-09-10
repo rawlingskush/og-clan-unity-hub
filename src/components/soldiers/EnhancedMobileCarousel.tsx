@@ -22,8 +22,6 @@ const EnhancedMobileCarousel = ({ soldiers }: EnhancedMobileCarouselProps) => {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  console.log('EnhancedMobileCarousel render:', { soldiers: soldiers.length, current });
-
   useEffect(() => {
     if (!api) return;
 

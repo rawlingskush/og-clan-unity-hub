@@ -30,13 +30,11 @@ const CODMEnhancedImage = ({
   const [hasError, setHasError] = useState(false);
 
   const handleLoad = () => {
-    console.log(`CODM Enhanced image loaded: ${src}`);
     setIsLoading(false);
     onLoad?.();
   };
 
   const handleError = () => {
-    console.log(`CODM Enhanced image failed to load: ${src}`);
     setIsLoading(false);
     setHasError(true);
   };

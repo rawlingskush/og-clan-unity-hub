@@ -18,18 +18,9 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
   const isMobile = useIsMobile();
   const isTablet = useIsTablet();
   
-  console.log('SoldiersGrid render:', { 
-    soldiers: soldiers.length, 
-    filter, 
-    isMobile, 
-    isTablet,
-    isReady 
-  });
-  
   // Memoize filtered soldiers
   const filteredSoldiers = useMemo(() => {
     const filtered = filterSoldiers(soldiers, filter);
-    console.log('Filtered soldiers:', filtered.length);
     return filtered;
   }, [soldiers, filter]);
 
@@ -44,7 +35,6 @@ const SoldiersGrid = ({ soldiers }: SoldiersGridProps) => {
 
   // Memoized filter change handler
   const handleFilterChange = useCallback((newFilter: string) => {
-    console.log('Filter changed to:', newFilter);
     setFilter(newFilter);
   }, []);
 

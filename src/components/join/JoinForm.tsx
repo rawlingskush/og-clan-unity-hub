@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import emailjs from '@emailjs/browser';
@@ -59,8 +59,6 @@ const JoinForm = () => {
         reply_to: formData.email
       };
 
-      console.log('Sending email with EmailJS...');
-
       // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
         'OgClanService',
@@ -85,9 +83,7 @@ const JoinForm = () => {
       } else {
         throw new Error(`EmailJS returned status: ${response.status}`);
       }
-    } catch (error: any) {
-      console.error('Error sending email:', error);
-      
+    } catch (error: any) {      
       let errorMessage = "Please try again or contact us directly at onlygreat237@gmail.com";
       
       if (error.text) {

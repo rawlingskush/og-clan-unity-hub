@@ -44,13 +44,11 @@ const EnhancedImage = ({
   const shouldLoad = priority || loading === 'eager' || isVisible;
 
   const handleLoad = () => {
-    console.log(`Enhanced image loaded successfully: ${currentSrc}`);
     setIsLoading(false);
     onLoad?.();
   };
 
   const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    console.log(`Enhanced image failed to load: ${currentSrc}, switching to fallback`);
     setIsLoading(false);
     setHasError(true);
     

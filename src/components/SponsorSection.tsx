@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRight, TrendingUp, Users, Medal, Award } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 import { Textarea } from './ui/textarea';
 
@@ -36,8 +36,6 @@ const SponsorSection = () => {
         subject: 'Sponsorship Request from ' + formData.company,
       };
 
-      console.log('Sending sponsor email with parameters:', templateParams);
-
       // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
         'OgClanService', // Your EmailJS service ID
@@ -45,8 +43,6 @@ const SponsorSection = () => {
         templateParams,
         '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
       );
-
-      console.log('EmailJS sponsor response:', response);
 
       toast({
         title: "Message sent!",
@@ -62,7 +58,6 @@ const SponsorSection = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Error sending email:', error);
       toast({
         title: "Something went wrong",
         description: "Please try again or contact us directly at onlygreat237@gmail.com",
@@ -197,6 +192,7 @@ const SponsorSection = () => {
           </AnimatedContent>
         </div>
       </div>
-    </section>;
+    </section>
 };
+
 export default SponsorSection;
