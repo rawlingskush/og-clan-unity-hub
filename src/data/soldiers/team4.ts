@@ -11,16 +11,6 @@ export const team4Soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/febe321d-15df-4f7d-a072-8b4c068b3ad8.png"
   },
   {
-    id: "23",
-    name: "ФƓゝ 23",
-    role: "Rapid Response",
-    weapon: "QQ9",
-    bio: "Wild Child is Fast as lightning, Mr 23 moves through smoke and chaos with his QQ9, exploiting every small gap in enemy defenses. He's the spark that ignites counter-attacks and the ghost that haunts their weak points.",
-    tiktokUrl: "https://www.tiktok.com/@23cutz._",
-    imageUrl: "/lovable-uploads/4173fde6-af6e-4572-9e29-450aabf69ecf.png",
-    pro: true
-  },
-  {
     id: "dna",
     name: "ФƓゝ DNA",
     role: "🎯 Elite Sniper",

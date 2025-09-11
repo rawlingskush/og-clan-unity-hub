@@ -14,7 +14,7 @@ export const soldiers: Soldier[] = [
   team3Soldiers.find(s => s.id === "exodus")!, // Exodus
   team1Soldiers.find(s => s.id === "wizard")!, // Wizard
   team1Soldiers.find(s => s.id === "damage")!, // Damage
-  team4Soldiers.find(s => s.id === "23")!, // 23
+  team5Soldiers.find(s => s.id === "starlight")!, // Starlight
   team3Soldiers.find(s => s.id === "dhamer")!, // Dhamar
   team3Soldiers.find(s => s.id === "slim")!, // Slim
   team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
@@ -36,7 +36,8 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "lamenace")!, // Lamenace
   team4Soldiers.find(s => s.id === "dna")!, // DNA
   team4Soldiers.find(s => s.id === "ded")!, // Ded
-  team1Soldiers.find(s => s.id === "johnwick")! // John Wick
+  team1Soldiers.find(s => s.id === "johnwick")!, // John Wick
+  team5Soldiers.find(s => s.id === "shinobi")! // Shinobi
 ];
 
 // Export team-specific arrays for potential future use
