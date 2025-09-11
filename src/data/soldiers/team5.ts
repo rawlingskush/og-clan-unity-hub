@@ -29,8 +29,7 @@ export const team5Soldiers: Soldier[] = [
     weapon: "AK-47",
     bio: "Starlight is the beacon in OG Clan's darkest moments. With his AK-47, he transforms impossible situations into clutch victories. When the pressure is highest and all seems lost, Starlight's instincts ignite, turning the tide of battle with surgical precision and unshakeable composure.",
     tiktokUrl: "https://www.tiktok.com/@ogstarlight",
-    imageUrl: "/lovable-uploads/007ec0dc-9440-4994-a907-f582b29c4d16.png",
-    active: true
+    imageUrl: "/lovable-uploads/007ec0dc-9440-4994-a907-f582b29c4d16.png"
   },
   {
     id: "shinobi",
