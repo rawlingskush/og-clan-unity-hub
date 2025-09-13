@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useToast } from '@/hooks/use-toast';
+import { useAuth } from '@/contexts/AuthContext';
 import DesktopNav from './navbar/DesktopNav';
 import MobileNav from './navbar/MobileNav';
 import { MenuItem } from './navbar/types';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { Users } from 'lucide-react';
+import { Users, Shield, LogOut } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -19,6 +21,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { user, signOut } = useAuth();
 
   // List of all section IDs in the page
   const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points'];
@@ -126,13 +129,48 @@ const Navbar = () => {
               <span className="whitespace-nowrap">Our Soldiers</span>
             </button>
             
-            {/* Join the Crew Button */}
-            <button 
-              className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-2 py-2 md:px-5 md:py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98] text-xs md:text-base"
-              onClick={() => handleNavClick('join')}
-            >
-              <span className="whitespace-nowrap">Join the Crew</span>
-            </button>
+            {user ? (
+              <div className="flex items-center gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/admin')}
+                  className="flex items-center gap-1 text-xs md:text-sm px-2 md:px-3"
+                >
+                  <Shield className="h-3 w-3 md:h-4 md:w-4" />
+                  <span className="hidden md:inline">Admin</span>
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={signOut}
+                  className="flex items-center gap-1 text-xs md:text-sm px-2 md:px-3"
+                >
+                  <LogOut className="h-3 w-3 md:h-4 md:w-4" />
+                  <span className="hidden md:inline">Sign Out</span>
+                </Button>
+              </div>
+            ) : (
+              <>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate('/auth')}
+                  className="flex items-center gap-1 text-xs md:text-sm px-2 md:px-3"
+                >
+                  <Shield className="h-3 w-3 md:h-4 md:w-4" />
+                  <span className="hidden md:inline">Admin</span>
+                </Button>
+                
+                {/* Join the Crew Button */}
+                <button 
+                  className="bg-gradient-to-r from-ogclan-dark to-ogclan text-black font-medium px-2 py-2 md:px-5 md:py-2.5 rounded-lg transition-all duration-300 hover:from-ogclan hover:to-ogclan-light hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] active:scale-[0.98] text-xs md:text-base"
+                  onClick={() => handleNavClick('join')}
+                >
+                  <span className="whitespace-nowrap">Join the Crew</span>
+                </button>
+              </>
+            )}
             
             {/* Mobile Navigation */}
             <MobileNav 

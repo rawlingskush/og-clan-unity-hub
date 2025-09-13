@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { supabase } from '@/integrations/supabase/client';
 import emailjs from '@emailjs/browser';
 import AnimatedContent from '../AnimatedContent';
 
@@ -49,41 +50,55 @@ const JoinForm = () => {
     setIsSubmitting(true);
 
     try {
-      // Prepare template parameters for EmailJS
-      const templateParams = {
-        to_email: 'onlygreat237@gmail.com',
-        from_name: formData.name,
-        from_email: formData.email,
-        gamer_tag: formData.gamerTag,
-        message: formData.message,
-        reply_to: formData.email
-      };
-
-      // Send email using EmailJS with the provided credentials
-      const response = await emailjs.send(
-        'OgClanService',
-        'template_ujcypoh',
-        templateParams
-      );
-
-      if (response.status === 200) {
-        toast({
-          title: "Application sent successfully!",
-          description: "Your request to join OG Clan has been received. We'll be in touch soon!",
-          variant: "default",
+      // Save to Supabase database
+      const { error: dbError } = await supabase
+        .from('contact_submissions')
+        .insert({
+          name: formData.name,
+          email: formData.email,
+          gamer_tag: formData.gamerTag,
+          message: formData.message
         });
 
-        // Reset form after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          gamerTag: '',
-          message: ''
-        });
-      } else {
-        throw new Error(`EmailJS returned status: ${response.status}`);
+      if (dbError) {
+        throw dbError;
       }
-    } catch (error: any) {      
+
+      // Also send email using EmailJS as backup notification
+      try {
+        const templateParams = {
+          to_email: 'onlygreat237@gmail.com',
+          from_name: formData.name,
+          from_email: formData.email,
+          gamer_tag: formData.gamerTag,
+          message: formData.message,
+          reply_to: formData.email
+        };
+
+        await emailjs.send(
+          'OgClanService',
+          'template_ujcypoh',
+          templateParams
+        );
+      } catch (emailError) {
+        // Email is secondary, don't fail the entire submission
+        console.warn('Email notification failed:', emailError);
+      }
+
+      toast({
+        title: "Application sent successfully!",
+        description: "Your request to join OG Clan has been received. We'll be in touch soon!",
+        variant: "default",
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        gamerTag: '',
+        message: ''
+      });
+    } catch (error: any) {
       let errorMessage = "Please try again or contact us directly at onlygreat237@gmail.com";
       
       if (error.text) {
