@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, TrendingUp, Users, Medal, Award } from 'lucide-react';
 import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
@@ -15,6 +15,11 @@ const SponsorSection = () => {
     company: '',
     message: ''
   });
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init('5Oxgqe5hCq9cHN1yy');
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -38,10 +43,9 @@ const SponsorSection = () => {
 
       // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
-        'OgClanService', // Your EmailJS service ID
-        'template_ujcypoh', // Your EmailJS template ID
-        templateParams,
-        '5Oxgqe5hCq9cHN1yy' // Your EmailJS user ID
+        'OgClanService',
+        'template_ujcypoh',
+        templateParams
       );
 
       toast({
