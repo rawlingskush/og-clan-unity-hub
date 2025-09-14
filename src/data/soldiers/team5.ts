@@ -35,10 +35,10 @@ export const team5Soldiers: Soldier[] = [
     id: "shinobi",
     name: "ФƓゝ SHINOBI",
     role: "🎯 Shadow Operative",
-    weapon: "M4A1",
-    bio: "Shinobi moves like his namesake - silent, deadly, and always one step ahead. His M4A1 speaks volumes in the heat of battle, delivering precise eliminations from unexpected angles. Rising through the ranks with Tier 2 potential, he embodies the perfect balance of stealth and aggression.",
-    tiktokUrl: "https://www.tiktok.com/@ogshinobi",
-    imageUrl: "/lovable-uploads/57fc5e72-b510-4c82-a9a2-00016751da67.png",
+    weapon: "AK117",
+    bio: "Shinobi moves like his namesake - silent, deadly, and always one step ahead. His AK117 speaks volumes in the heat of battle, delivering precise eliminations from unexpected angles. Rising through the ranks with Tier 2 potential, he embodies the perfect balance of stealth and aggression.",
+    tiktokUrl: "https://www.tiktok.com/@ogshinobi9?_t=ZS-8zhTyc7VlL6&_r=1",
+    imageUrl: "/lovable-uploads/shinobi-new-pfp.jpg",
     active: true
   }
 ];

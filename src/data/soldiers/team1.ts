@@ -95,11 +95,11 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "johnwick",
-    name: "ФƓゝJOHN~WICK",
+    name: "ФƓゝCOD~MIKKI",
     role: "🎯 Close-Quarters Specialist",
     weapon: "KRM",
     bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
     tiktokUrl: "",
-    imageUrl: "/lovable-uploads/2dd54b8a-fb91-4217-ac97-e496c43e46a4.png"
+    imageUrl: "/lovable-uploads/mikki-new-pfp.jpg"
   }
 ];
