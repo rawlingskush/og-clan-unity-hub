@@ -40,5 +40,25 @@ export const team5Soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ogshinobi9?_t=ZS-8zhTyc7VlL6&_r=1",
     imageUrl: "/lovable-uploads/shinobi-new-pfp.jpg",
     active: true
+  },
+  {
+    id: "maddog",
+    name: "ФƓゝ MAD DOG",
+    role: "🔥 Relentless Hunter",
+    weapon: "Type 25",
+    bio: "Mad Dog is the unstoppable force that never backs down from a fight. With his Type 25 blazing through enemy lines, he brings raw aggression and unmatched determination to every battle. When the heat gets intense and others retreat, Mad Dog charges forward, turning chaos into victory with his relentless pursuit of dominance.",
+    tiktokUrl: "https://www.tiktok.com/@mad_dog58?_t=ZM-8zhK26oLyis&_r=1",
+    imageUrl: "/lovable-uploads/mad-dog-pfp.jpg",
+    active: true
+  },
+  {
+    id: "muller",
+    name: "ФƓゝ MULLER",
+    role: "💥 Tactical Enforcer", 
+    weapon: "BY15",
+    bio: "Muller is the tactical powerhouse who dominates close-quarters combat with devastating efficiency. His BY15 delivers crushing blows that clear rooms and eliminate threats with surgical precision. A master of positioning and timing, Muller turns every engagement into a tactical advantage for OG Clan.",
+    tiktokUrl: "https://www.tiktok.com/@ogmullercodm",
+    imageUrl: "/lovable-uploads/muller-pfp.png",
+    active: true
   }
 ];
