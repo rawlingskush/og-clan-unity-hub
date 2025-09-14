@@ -4,7 +4,7 @@ export const weaponCategories = {
   shotgun: ["BY15", "KRM-262", "HS0405", "Argus", "Striker"],
   smg: ["QQ9", "FENNEC", "MAC-10", "MX9", "BP50"],
   sniper: ["XPR-50", "DLQ33"],
-  ar: ["Kilo 141", "M13", "Type 25", "AK117", "Oden"]
+  ar: ["Kilo 141", "M13", "Type 25", "AK117", "Oden", "Grau"]
 };
 
 export const filterSoldiers = (soldiers: any[], filter: string) => {

@@ -50,9 +50,9 @@ export const team1Soldiers: Soldier[] = [
     id: "rex",
     name: "ФƓゝ REX",
     role: "⚡ Strategic Commander",
-    weapon: "Kilo 141",
+    weapon: "Grau",
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
-    tiktokUrl: "https://www.tiktok.com/@ogrex_codm",
+    tiktokUrl: "https://www.tiktok.com/@og_rex20?_t=ZM-8zhkeIUXNcG&_r=1",
     imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
     active: true
   },
