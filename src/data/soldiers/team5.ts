@@ -70,5 +70,15 @@ export const team5Soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@tt_hated?_t=ZM-8ziTy4Lt9hI&_r=1",
     imageUrl: "/lovable-uploads/hated-pfp.png",
     active: true
+  },
+  {
+    id: "tiger",
+    name: "ФƓゝ TIGER",
+    role: "🔥 Rising Fighter",
+    weapon: "BY15",
+    bio: "Tiger is the fierce upcoming fighter who brings raw intensity and untamed aggression to every battle. With his BY15 thundering through enemy lines, he's ready to prove himself in the competitive arena. His fighting spirit burns bright as he climbs the ranks, showing the world that OG Clan breeds true warriors.",
+    tiktokUrl: "https://www.tiktok.com/@og_tiger",
+    imageUrl: "/lovable-uploads/og-tiger-pfp.jpg",
+    active: true
   }
 ];
