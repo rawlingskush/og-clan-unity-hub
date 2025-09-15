@@ -43,7 +43,7 @@ const SponsorSection = () => {
 
       // Send email using EmailJS with the provided credentials
       const response = await emailjs.send(
-        'OgClanService',
+        'service_hbt4m3b',
         'template_ujcypoh',
         templateParams
       );

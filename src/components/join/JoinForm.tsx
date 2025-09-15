@@ -76,7 +76,7 @@ const JoinForm = () => {
         };
 
         await emailjs.send(
-          'OgClanService',
+          'service_hbt4m3b',
           'template_ujcypoh',
           templateParams
         );
