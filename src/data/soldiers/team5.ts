@@ -45,8 +45,8 @@ export const team5Soldiers: Soldier[] = [
     id: "maddog",
     name: "ФƓゝ MAD DOG",
     role: "🔥 Relentless Hunter",
-    weapon: "Type 25",
-    bio: "Mad Dog is the unstoppable force that never backs down from a fight. With his Type 25 blazing through enemy lines, he brings raw aggression and unmatched determination to every battle. When the heat gets intense and others retreat, Mad Dog charges forward, turning chaos into victory with his relentless pursuit of dominance.",
+    weapon: "Type 19",
+    bio: "Mad Dog is the unstoppable force that never backs down from a fight. With his Type 19 blazing through enemy lines, he brings raw aggression and unmatched determination to every battle. When the heat gets intense and others retreat, Mad Dog charges forward, turning chaos into victory with his relentless pursuit of dominance.",
     tiktokUrl: "https://www.tiktok.com/@mad_dog58?_t=ZM-8zhK26oLyis&_r=1",
     imageUrl: "/lovable-uploads/mad-dog-pfp.jpg",
     active: true
