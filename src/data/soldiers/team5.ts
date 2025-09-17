@@ -100,5 +100,16 @@ export const team5Soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@ov3rkillcodmtt?_t=ZS-8zm5cZkiDBA&_r=1",
     imageUrl: "/lovable-uploads/overkill-pfp.jpg",
     active: true
+  },
+  {
+    id: "pinky",
+    name: "ФƓゝ PINKY",
+    role: "💖 Clan Angel",
+    weapon: "AK117",
+    bio: "Pinky is the heart and soul of OG Clan - a fierce warrior princess who's ready to stand with the boys in battle and support them from the sidelines. Her AK117 speaks with deadly precision while her unwavering loyalty and spirit lift the entire team. She's not just special to the clan, she IS the clan's guiding light.",
+    tiktokUrl: "https://www.tiktok.com/@piratess77?lang=en-GB",
+    imageUrl: "/lovable-uploads/og-pinky-pfp.png",
+    princess: true,
+    active: true
   }
 ];
