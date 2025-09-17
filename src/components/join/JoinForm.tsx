@@ -12,7 +12,6 @@ interface FormData {
   email: string;
   gamerTag: string;
   uid: string;
-  currentGameName: string;
   formerClan: string;
   whatsappNumber: string;
   message: string;
@@ -26,7 +25,6 @@ const JoinForm = () => {
     email: '',
     gamerTag: '',
     uid: '',
-    currentGameName: '',
     formerClan: '',
     whatsappNumber: '',
     message: ''
@@ -47,8 +45,7 @@ const JoinForm = () => {
     
     // Validate form data
     if (!formData.name.trim() || !formData.email.trim() || !formData.gamerTag.trim() || 
-        !formData.uid.trim() || !formData.currentGameName.trim() || !formData.whatsappNumber.trim() || 
-        !formData.message.trim()) {
+        !formData.uid.trim() || !formData.whatsappNumber.trim() || !formData.message.trim()) {
       toast({
         title: "Please fill in all fields",
         description: "All fields are required to submit your application.",
@@ -67,11 +64,7 @@ const JoinForm = () => {
           name: formData.name,
           email: formData.email,
           gamer_tag: formData.gamerTag,
-          uid: formData.uid,
-          current_game_name: formData.currentGameName,
-          former_clan: formData.formerClan,
-          whatsapp_number: formData.whatsappNumber,
-          message: formData.message
+          message: `UID: ${formData.uid}\nFormer Clan: ${formData.formerClan || 'None'}\nWhatsApp: ${formData.whatsappNumber}\n\n${formData.message}`
         });
 
       if (dbError) {
@@ -86,7 +79,6 @@ const JoinForm = () => {
           from_email: formData.email,
           gamer_tag: formData.gamerTag,
           uid: formData.uid,
-          current_game_name: formData.currentGameName,
           former_clan: formData.formerClan || 'None',
           whatsapp_number: formData.whatsappNumber,
           message: formData.message,
@@ -115,7 +107,6 @@ const JoinForm = () => {
         email: '',
         gamerTag: '',
         uid: '',
-        currentGameName: '',
         formerClan: '',
         whatsappNumber: '',
         message: ''
@@ -153,7 +144,7 @@ const JoinForm = () => {
           </h4>
           <ul className="text-sm text-gray-700 space-y-1">
             <li>• Your UID (Player ID)</li>
-            <li>• Current game name in Call of Duty Mobile</li>
+            <li>• Current game tag in Call of Duty Mobile</li>
             <li>• Former clan (if you had one)</li>
             <li>• WhatsApp number for communication</li>
             <li>• Complete all form fields below</li>
@@ -191,7 +182,7 @@ const JoinForm = () => {
           </div>
           <div>
             <label htmlFor="gamerTag" className="block text-sm font-medium text-gray-700 mb-2">
-              Gamer Tag *
+              Current Game Tag *
             </label>
             <Input
               type="text"
@@ -199,7 +190,7 @@ const JoinForm = () => {
               value={formData.gamerTag}
               onChange={handleChange}
               className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
-              placeholder="Your current gamer tag"
+              placeholder="Your current game tag in CODM"
               required
             />
           </div>
@@ -214,20 +205,6 @@ const JoinForm = () => {
               onChange={handleChange}
               className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
               placeholder="Your CODM UID"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="currentGameName" className="block text-sm font-medium text-gray-700 mb-2">
-              Current Game Name *
-            </label>
-            <Input
-              type="text"
-              id="currentGameName"
-              value={formData.currentGameName}
-              onChange={handleChange}
-              className="w-full text-gray-900 bg-white border-gray-300 focus:border-ogclan focus:ring-ogclan"
-              placeholder="Your in-game name in Call of Duty Mobile"
               required
             />
           </div>
