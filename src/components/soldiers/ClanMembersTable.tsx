@@ -82,7 +82,6 @@ const clanMembers: ClanMember[] = [
   { name: 'ФƓゝWHITEএ', status: 'ACTIVE' },
   { name: 'ФƓゝWIZ', status: 'NO CLAN ACTIVITY' },
   { name: 'ФƓゝWIɀƛRÐ', status: 'ACTIVE' },
-  { name: 'ФƓゝƊHƛMӠR', status: 'ACTIVE' },
   { name: 'ФƓゝҜภเﻮђ', status: 'ACTIVE' },
   { name: 'ФƓゝꪜꪮꪀ', status: 'ACTIVE' },
 ];
