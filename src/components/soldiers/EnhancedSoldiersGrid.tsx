@@ -9,6 +9,7 @@ import NoSoldiersFound from './NoSoldiersFound';
 import JoinCTA from './JoinCTA';
 import ViewToggle from './ViewToggle';
 import TierRosterSection from './TierRosterSection';
+import ClanMembersTable from './ClanMembersTable';
 import { filterSoldiers } from '@/utils/weaponCategories';
 
 interface EnhancedSoldiersGridProps {
@@ -118,8 +119,10 @@ const EnhancedSoldiersGrid = React.memo(({ soldiers }: EnhancedSoldiersGridProps
             </AnimatePresence>
           </motion.div>
         </>
-      ) : (
+      ) : viewMode === 'tactical' ? (
         <TierRosterSection />
+      ) : (
+        <ClanMembersTable />
       )}
       
       <motion.div 

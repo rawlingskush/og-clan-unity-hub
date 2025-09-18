@@ -9,6 +9,19 @@ interface ViewToggleProps {
 }
 
 const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
+  const getButtonPosition = () => {
+    switch (currentView) {
+      case 'gallery':
+        return '4px';
+      case 'tactical':
+        return 'calc(33.333% + 2px)';
+      case 'members':
+        return 'calc(66.666% + 2px)';
+      default:
+        return '4px';
+    }
+  };
+
   return (
     <div className="flex items-center justify-center mb-8">
       <div className="relative flex bg-black/50 border border-white/10 rounded-lg p-1">
@@ -17,8 +30,8 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
           className="absolute top-1 bottom-1 bg-ogclan/20 border border-ogclan/40 rounded"
           initial={false}
           animate={{
-            left: currentView === 'gallery' ? '4px' : '50%',
-            width: currentView === 'gallery' ? 'calc(50% - 4px)' : 'calc(50% - 4px)'
+            left: getButtonPosition(),
+            width: 'calc(33.333% - 4px)'
           }}
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
         />
@@ -26,27 +39,40 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
         {/* Gallery Button */}
         <button
           onClick={() => onViewChange('gallery')}
-          className={`relative z-10 flex items-center gap-2 px-6 py-2 rounded transition-colors ${
+          className={`relative z-10 flex items-center gap-2 px-4 py-2 rounded transition-colors text-sm ${
             currentView === 'gallery'
               ? 'text-ogclan font-medium'
               : 'text-gray-400 hover:text-white'
           }`}
         >
-          <Grid3X3 size={16} />
-          <span>Gallery View</span>
+          <Grid3X3 size={14} />
+          <span className="hidden sm:inline">Gallery</span>
         </button>
 
         {/* Tactical Button */}
         <button
           onClick={() => onViewChange('tactical')}
-          className={`relative z-10 flex items-center gap-2 px-6 py-2 rounded transition-colors ${
+          className={`relative z-10 flex items-center gap-2 px-4 py-2 rounded transition-colors text-sm ${
             currentView === 'tactical'
               ? 'text-ogclan font-medium'
               : 'text-gray-400 hover:text-white'
           }`}
         >
-          <Users size={16} />
-          <span>Tactical Roster</span>
+          <Users size={14} />
+          <span className="hidden sm:inline">Tactical</span>
+        </button>
+
+        {/* Members Button */}
+        <button
+          onClick={() => onViewChange('members')}
+          className={`relative z-10 flex items-center gap-2 px-4 py-2 rounded transition-colors text-sm ${
+            currentView === 'members'
+              ? 'text-ogclan font-medium'
+              : 'text-gray-400 hover:text-white'
+          }`}
+        >
+          <Users size={14} />
+          <span className="hidden sm:inline">Members</span>
         </button>
       </div>
     </div>

@@ -21,4 +21,4 @@ export interface TierSoldier {
   profileId?: string;
 }
 
-export type ViewMode = 'gallery' | 'tactical';
+export type ViewMode = 'gallery' | 'tactical' | 'members';
