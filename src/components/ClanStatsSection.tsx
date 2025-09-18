@@ -91,6 +91,19 @@ const ClanStatsSection = () => {
             </Card>
           </AnimatedContent>
         </div>
+        
+        {/* View Clan Members Button */}
+        <AnimatedContent animation="fade-in-up" delay={750}>
+          <div className="flex justify-center mt-8">
+            <button 
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-medium rounded-lg transition-all duration-300 hover:from-emerald-500 hover:to-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-lg"
+              onClick={() => window.open('/soldiers?view=members', '_self')}
+            >
+              <Users className="mr-2 h-6 w-6" />
+              <span>View All Clan Members</span>
+            </button>
+          </div>
+        </AnimatedContent>
       </div>
     </section>
   );

@@ -49,7 +49,7 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
           <span className="hidden sm:inline">Gallery</span>
         </button>
 
-        {/* Tactical Button */}
+        {/* Player Tracker Button */}
         <button
           onClick={() => onViewChange('tactical')}
           className={`relative z-10 flex items-center gap-2 px-4 py-2 rounded transition-colors text-sm ${
@@ -59,7 +59,7 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
           }`}
         >
           <Users size={14} />
-          <span className="hidden sm:inline">Tactical</span>
+          <span className="hidden sm:inline">Player Tracker</span>
         </button>
 
         {/* Members Button */}

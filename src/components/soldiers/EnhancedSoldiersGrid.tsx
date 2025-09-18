@@ -20,7 +20,18 @@ const EnhancedSoldiersGrid = React.memo(({ soldiers }: EnhancedSoldiersGridProps
   const [filter, setFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [isReady, setIsReady] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>('gallery');
+  
+  // Check URL parameters for initial view mode
+  const getInitialViewMode = (): ViewMode => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get('view');
+    if (viewParam === 'members' || viewParam === 'tactical') {
+      return viewParam as ViewMode;
+    }
+    return 'gallery';
+  };
+  
+  const [viewMode, setViewMode] = useState<ViewMode>(getInitialViewMode);
   
   // Enhanced filtered soldiers - maintain original order and memoize properly
   const processedSoldiers = useMemo(() => {
