@@ -46,7 +46,7 @@ const ViewToggle = ({ currentView, onViewChange }: ViewToggleProps) => {
           }`}
         >
           <Grid3X3 size={14} />
-          <span className="hidden sm:inline">Gallery</span>
+          <span className="hidden sm:inline">Elite Squad</span>
         </button>
 
         {/* Player Tracker Button */}
