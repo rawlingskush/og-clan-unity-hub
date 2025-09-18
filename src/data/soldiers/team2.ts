@@ -14,6 +14,7 @@ export const team2Soldiers: Soldier[] = [
   {
     id: "pato",
     name: "ФƓゝ PATO",
+    clanName: "ФƓǝƤÅTФ",
     role: "🔥 Explosive Specialist",
     weapon: "QQ9",
     bio: "Pato brings the heat with explosive tactics and his trusty QQ9. Known for his aggressive playstyle and ability to clear rooms with devastating efficiency, he's the go-to operator for high-pressure situations.",

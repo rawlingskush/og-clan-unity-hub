@@ -2,6 +2,7 @@
 export interface Soldier {
   id: string;
   name: string;
+  clanName?: string; // Official clan name (may have special characters)
   role: string;
   weapon: string;
   bio: string;

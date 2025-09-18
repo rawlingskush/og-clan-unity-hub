@@ -15,8 +15,9 @@ export const team5Soldiers: Soldier[] = [
   {
     id: "lilnasty",
     name: "ФƓゝ LIL NASTY",
+    clanName: "ФƓゝLILNASTY",
     role: "🔥 Street Phantom",
-    weapon: "FENNEC",
+    weapon: "FENNEC", 
     bio: "Lil Nasty brings the underground heat to every battlefield. His FENNEC unleashes rapid-fire chaos that shreds through enemy lines like a street storm. Born from the concrete jungle, he turns every corner into a danger zone. When Nasty rolls up, the block gets cleared.",
     tiktokUrl: "https://www.tiktok.com/@lilnasty354?_t=ZM-8x3fRSjZSsA&_r=1",
     imageUrl: "/lovable-uploads/95933862-9fe5-47e4-ae6a-9c095005b0d1.png",
@@ -25,8 +26,9 @@ export const team5Soldiers: Soldier[] = [
   {
     id: "starlight",
     name: "ФƓゝ STARLIGHT",
+    clanName: "ФƓゝSTARL1GHT",
     role: "🌀 Clutch Master",
-    weapon: "AK-47",
+    weapon: "AK-47", 
     bio: "Starlight is the beacon in OG Clan's darkest moments. With his AK-47, he transforms impossible situations into clutch victories. When the pressure is highest and all seems lost, Starlight's instincts ignite, turning the tide of battle with surgical precision and unshakeable composure.",
     tiktokUrl: "https://www.tiktok.com/@ogstarlight",
     imageUrl: "/lovable-uploads/007ec0dc-9440-4994-a907-f582b29c4d16.png"
@@ -34,7 +36,8 @@ export const team5Soldiers: Soldier[] = [
   {
     id: "shinobi",
     name: "ФƓゝ SHINOBI",
-    role: "🎯 Shadow Operative",
+    clanName: "ФƓゝSHINØBI",
+    role: "🎯 Shadow Operative", 
     weapon: "AK117",
     bio: "Shinobi moves like his namesake - silent, deadly, and always one step ahead. His AK117 speaks volumes in the heat of battle, delivering precise eliminations from unexpected angles. Rising through the ranks with Tier 2 potential, he embodies the perfect balance of stealth and aggression.",
     tiktokUrl: "https://www.tiktok.com/@ogshinobi9?_t=ZS-8zhTyc7VlL6&_r=1",
@@ -42,8 +45,9 @@ export const team5Soldiers: Soldier[] = [
     active: true
   },
   {
-    id: "maddog",
-    name: "ФƓゝ MAD DOG",
+    id: "maddog", 
+    name: "ФƓǝ MAD DOG",
+    clanName: "ФƓǝMÄÐÐŌĠ",
     role: "🔥 Relentless Hunter",
     weapon: "Type 19",
     bio: "Mad Dog is the unstoppable force that never backs down from a fight. With his Type 19 blazing through enemy lines, he brings raw aggression and unmatched determination to every battle. When the heat gets intense and others retreat, Mad Dog charges forward, turning chaos into victory with his relentless pursuit of dominance.",

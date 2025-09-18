@@ -13,8 +13,9 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "wizard",
     name: "ФƓゝ WIZARD",
+    clanName: "ФƓゝWIɀƛRÐ",
     role: "Assault Architect",
-    weapon: "AK117",
+    weapon: "AK117", 
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
     tiktokUrl: "https://www.tiktok.com/@therealog_wizard",
     imageUrl: "/lovable-uploads/f0ba0a92-ec7d-4f85-8303-dc5d3235dc22.png"
@@ -49,6 +50,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "rex",
     name: "ФƓゝ REX",
+    clanName: "ФƓゝREXO",
     role: "⚡ Strategic Commander",
     weapon: "Grau",
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
@@ -96,6 +98,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "johnwick",
     name: "ФƓゝCOD~MIKKI",
+    clanName: "ФƓゝC0D~MIKKI",
     role: "🎯 Close-Quarters Specialist",
     weapon: "KRM",
     bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",

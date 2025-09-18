@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Users } from 'lucide-react';
+import { Users, Search, ExternalLink, Star } from 'lucide-react';
+import { getSoldierByName, hasEliteProfile, getSoldierAnchor } from '@/utils/soldierMapping';
 
 interface ClanMember {
   name: string;
@@ -113,10 +114,22 @@ const getStatusBadge = (status: ClanMember['status']): string => {
 };
 
 const ClanMembersTable = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  // Filter members based on search term
+  const filteredMembers = useMemo(() => {
+    if (!searchTerm.trim()) return clanMembers;
+    
+    return clanMembers.filter(member =>
+      member.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm]);
+
   const totalMembers = clanMembers.length;
   const activeMembers = clanMembers.filter(m => m.status === 'ACTIVE').length;
   const inactiveMembers = clanMembers.filter(m => m.status === 'INACTIVE (PERSONAL)').length;
   const noClanActivityMembers = clanMembers.filter(m => m.status === 'NO CLAN ACTIVITY').length;
+  const eliteSquadMembers = clanMembers.filter(m => hasEliteProfile(m.name)).length;
 
   return (
     <motion.div
@@ -131,8 +144,27 @@ const ClanMembersTable = () => {
         <h2 className="text-heading-2 text-gradient-enhanced font-bold">📜 OG Clan Members</h2>
       </div>
 
+      {/* Search Bar */}
+      <div className="mb-6">
+        <div className="relative max-w-md mx-auto">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+          <input
+            type="text"
+            placeholder="Search clan members..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-3 bg-black/40 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-ogclan/50 focus:bg-black/60 transition-all"
+          />
+        </div>
+        {searchTerm && (
+          <div className="text-center mt-2 text-sm text-gray-400">
+            Showing {filteredMembers.length} of {totalMembers} members
+          </div>
+        )}
+      </div>
+
       {/* Stats Summary */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
         <div className="bg-black/60 border border-white/10 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-white">{totalMembers}</div>
           <div className="text-sm text-gray-400">Total Members</div>
@@ -149,6 +181,10 @@ const ClanMembersTable = () => {
           <div className="text-2xl font-bold text-red-400">{noClanActivityMembers}</div>
           <div className="text-sm text-gray-400">No Activity</div>
         </div>
+        <div className="bg-black/60 border border-ogclan/20 rounded-lg p-4 text-center">
+          <div className="text-2xl font-bold text-ogclan">{eliteSquadMembers}</div>
+          <div className="text-sm text-gray-400">Elite Squad</div>
+        </div>
       </div>
 
       {/* Members Table */}
@@ -164,35 +200,62 @@ const ClanMembersTable = () => {
                   <th className="px-6 py-4 text-left text-sm font-semibold text-ogclan uppercase tracking-wider">
                     Status
                   </th>
+                  <th className="px-6 py-4 text-center text-sm font-semibold text-ogclan uppercase tracking-wider">
+                    Profile
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
-                {clanMembers.map((member, index) => (
-                  <motion.tr
-                    key={member.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ 
-                      duration: 0.3,
-                      delay: Math.min(index * 0.02, 1) // Cap the delay to prevent too long animations
-                    }}
-                    className="hover:bg-white/5 transition-colors group"
-                  >
-                    <td className="px-6 py-3">
-                      <div className="font-bold text-white group-hover:text-ogclan group-hover:text-shadow-[0_0_8px_rgba(212,175,55,0.4)] transition-all duration-300">
-                        {member.name}
-                      </div>
-                    </td>
-                    <td className="px-6 py-3">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">{getStatusBadge(member.status)}</span>
-                        <span className={`font-medium text-sm ${getStatusColor(member.status)}`}>
-                          {member.status}
-                        </span>
-                      </div>
-                    </td>
-                  </motion.tr>
-                ))}
+                {filteredMembers.map((member, index) => {
+                  const soldier = getSoldierByName(member.name);
+                  const hasProfile = hasEliteProfile(member.name);
+                  
+                  return (
+                    <motion.tr
+                      key={member.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ 
+                        duration: 0.3,
+                        delay: Math.min(index * 0.02, 1) // Cap the delay to prevent too long animations
+                      }}
+                      className="hover:bg-white/5 transition-colors group"
+                    >
+                      <td className="px-6 py-3">
+                        <div className="flex items-center gap-2">
+                          <div className="font-bold text-white group-hover:text-ogclan group-hover:text-shadow-[0_0_8px_rgba(212,175,55,0.4)] transition-all duration-300">
+                            {member.name}
+                          </div>
+                          {hasProfile && (
+                            <Star className="text-ogclan" size={16} />
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-6 py-3">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm">{getStatusBadge(member.status)}</span>
+                          <span className={`font-medium text-sm ${getStatusColor(member.status)}`}>
+                            {member.status}
+                          </span>
+                        </div>
+                      </td>
+                      <td className="px-6 py-3 text-center">
+                        {hasProfile && soldier ? (
+                          <a
+                            href={`/soldiers?view=gallery#${getSoldierAnchor(soldier)}`}
+                            className="inline-flex items-center gap-1 text-ogclan hover:text-ogclan/80 transition-colors group/link"
+                            title="View Elite Squad Profile"
+                          >
+                            <ExternalLink size={14} />
+                            <span className="text-xs">Profile</span>
+                          </a>
+                        ) : (
+                          <span className="text-xs text-gray-500">-</span>
+                        )}
+                      </td>
+                    </motion.tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
