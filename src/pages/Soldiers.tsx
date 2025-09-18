@@ -2,8 +2,13 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { soldiers } from '@/data/soldiers';
+import EnhancedSoldiersGrid from '@/components/soldiers/EnhancedSoldiersGrid';
 import AnimatedContent from '@/components/AnimatedContent';
-import ClanMembersTable from '@/components/ClanMembersTable';
+import SoldiersHero from '@/components/soldiers/SoldiersHero';
+import ParticleCanvas from '@/components/soldiers/ParticleCanvas';
+import CommandUnitSection from '@/components/soldiers/CommandUnitSection';
+import RecruitmentNote from '@/components/soldiers/RecruitmentNote';
 
 const Soldiers = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -79,7 +84,11 @@ const Soldiers = () => {
       <Navbar />
       
       <main className="flex-grow pt-24">
-        {/* Clan Members Section */}
+        {/* Enhanced Hero Section */}
+        <ParticleCanvas />
+        <SoldiersHero scrollPosition={scrollPosition} />
+        
+        {/* Enhanced Soldiers Grid Section */}
         <section className="section-container py-16 md:py-24 relative">
           {/* Enhanced background effects */}
           <div className="absolute inset-0 bg-gradient-to-b from-black via-black/98 to-black pointer-events-none"></div>
@@ -108,9 +117,19 @@ const Soldiers = () => {
           </div>
           
           <AnimatedContent animation="fade-in" className="relative z-10">
-            <ClanMembersTable />
+            <EnhancedSoldiersGrid soldiers={soldiers} />
           </AnimatedContent>
         </section>
+        
+        {/* Enhanced Recruitment Note Section */}
+        <AnimatedContent animation="fade-in">
+          <RecruitmentNote />
+        </AnimatedContent>
+        
+        {/* Enhanced Command Unit Section */}
+        <AnimatedContent animation="fade-in">
+          <CommandUnitSection />
+        </AnimatedContent>
       </main>
       
       <Footer />
