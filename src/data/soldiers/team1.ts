@@ -4,6 +4,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "kush",
     name: "ФƓゝ KUSH",
+    clanName: "ФƓゝKUSH",
     role: "Assault Architect",
     weapon: "Oden",
     bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum.",
@@ -23,6 +24,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "damage",
     name: "ФƓゝ DAMAGE",
+    clanName: "ФƓゝDAMAGE",
     role: "Suppression Heavy",
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
@@ -32,6 +34,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "chambas",
     name: "ФƓゝ CHAMBAS",
+    clanName: "ФƓゝCHAMBAS",
     role: "Precision Breacher",
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
@@ -41,6 +44,7 @@ export const team1Soldiers: Soldier[] = [
   {
     id: "venom",
     name: "ФƓゝ VENOM",
+    clanName: "ФƓゝVENOM",
     role: "Assault Architect",
     weapon: "Kilo 141",
     bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",

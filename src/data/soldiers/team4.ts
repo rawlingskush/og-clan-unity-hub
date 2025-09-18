@@ -22,6 +22,7 @@ export const team4Soldiers: Soldier[] = [
   {
     id: "ded",
     name: "ФƓゝ DED",
+    clanName: "ФƓゝDED",
     role: "⚡ Rapid Response",
     weapon: "QQ9",
     bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
