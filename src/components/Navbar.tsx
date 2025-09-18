@@ -9,7 +9,7 @@ import { MenuItem } from './navbar/types';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { Users, Activity } from 'lucide-react';
+import { Users } from 'lucide-react';
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -116,7 +116,7 @@ const Navbar = () => {
           />
           
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Our Soldiers Button */}
+            {/* Our Soldiers Button - Next to Join the Crew */}
             <button 
               className="flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-2 py-2 md:px-4 md:py-2.5 rounded-lg transition-all duration-300 
                        hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center text-xs md:text-base"
@@ -124,16 +124,6 @@ const Navbar = () => {
             >
               <Users className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
               <span className="whitespace-nowrap">Our Soldiers</span>
-            </button>
-            
-            {/* Clan Tracker Button */}
-            <button 
-              className="flex bg-gradient-to-r from-gray-700 to-gray-600 text-white font-medium px-2 py-2 md:px-4 md:py-2.5 rounded-lg transition-all duration-300 
-                       hover:from-gray-600 hover:to-gray-500 hover:shadow-[0_0_15px_rgba(128,128,128,0.3)] active:scale-[0.98] items-center text-xs md:text-base"
-              onClick={() => handlePageNavigation('/clan-tracker')}
-            >
-              <Activity className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
-              <span className="whitespace-nowrap">Clan Tracker</span>
             </button>
             
             {/* Join the Crew Button */}
