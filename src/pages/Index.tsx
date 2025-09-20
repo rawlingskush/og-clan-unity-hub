@@ -2,7 +2,10 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import BattleNightSection from '@/components/BattleNightSection';
+import WarriorsSpotlight from '@/components/WarriorsSpotlight';
+import EnhancedBattleNight from '@/components/EnhancedBattleNight';
+import LiveActivityFeed from '@/components/LiveActivityFeed';
+import GamingArsenal from '@/components/GamingArsenal';
 import ClanStatsSection from '@/components/ClanStatsSection';
 import TournamentResults from '@/components/results/TournamentResults';
 import AboutSection from '@/components/AboutSection';
@@ -37,7 +40,10 @@ const Index = () => {
         <div id="home">
           <HeroSection />
         </div>
-        <BattleNightSection />
+        <WarriorsSpotlight />
+        <EnhancedBattleNight />
+        <LiveActivityFeed />
+        <GamingArsenal />
         <ClanStatsSection />
         <TournamentResults />
         <AboutSection />
