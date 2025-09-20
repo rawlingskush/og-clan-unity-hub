@@ -39,8 +39,7 @@ export const team1Soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
     tiktokUrl: "https://www.tiktok.com/@chambas237",
-    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png",
-    spotlight: true
+    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png"
   },
   {
     id: "venom",
