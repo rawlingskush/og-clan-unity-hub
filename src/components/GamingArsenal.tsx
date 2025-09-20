@@ -15,7 +15,7 @@ const GamingArsenal = () => {
         mobility: 65,
         accuracy: 82
       },
-      users: ['STARLIGHT', 'GAMEHOUSE'],
+      users: ['KUSH'],
       color: 'from-orange-500/20 to-red-500/20',
       borderColor: 'border-orange-500/30'
     },
@@ -31,7 +31,7 @@ const GamingArsenal = () => {
         mobility: 75,
         accuracy: 85
       },
-      users: ['UNCLE B', 'DNA'],
+      users: ['WIZARD', 'LAMENACE', 'SHINOBI', 'DHAMER', 'PINKY'],
       color: 'from-blue-500/20 to-cyan-500/20',
       borderColor: 'border-blue-500/30'
     },
@@ -47,7 +47,7 @@ const GamingArsenal = () => {
         mobility: 70,
         accuracy: 65
       },
-      users: ['GAMEHOUSE', 'PATO'],
+      users: ['DAMAGE', 'EXODUS', 'MIKKI'],
       color: 'from-purple-500/20 to-pink-500/20',
       borderColor: 'border-purple-500/30'
     },
@@ -63,7 +63,7 @@ const GamingArsenal = () => {
         mobility: 92,
         accuracy: 75
       },
-      users: ['DED', 'WHITE', 'PATO'],
+      users: ['PATO', 'DED', 'BLACKSAVAGE'],
       color: 'from-green-500/20 to-emerald-500/20',
       borderColor: 'border-green-500/30'
     },
@@ -79,7 +79,7 @@ const GamingArsenal = () => {
         mobility: 45,
         accuracy: 95
       },
-      users: ['DNA', 'STARLIGHT'],
+      users: ['DNA'],
       color: 'from-yellow-500/20 to-amber-500/20',
       borderColor: 'border-yellow-500/30'
     },
@@ -95,9 +95,41 @@ const GamingArsenal = () => {
         mobility: 88,
         accuracy: 80
       },
-      users: ['BOTGIRL'],
+      users: ['BOTGIRL', 'LIL NASTY'],
       color: 'from-pink-500/20 to-rose-500/20',
       borderColor: 'border-pink-500/30'
+    },
+    {
+      id: 'by15',
+      name: 'BY15',
+      category: 'Shotgun',
+      description: 'Tactical shotgun for close-quarters domination',
+      icon: <Shield className="w-8 h-8" />,
+      stats: {
+        damage: 92,
+        range: 48,
+        mobility: 78,
+        accuracy: 70
+      },
+      users: ['GAMEHOUSE', 'SWIZZY', 'E-SQUARE', 'MULLER', 'HATED', 'TIGER'],
+      color: 'from-cyan-500/20 to-blue-500/20',
+      borderColor: 'border-cyan-500/30'
+    },
+    {
+      id: 'hs0405',
+      name: 'HS0405',
+      category: 'Shotgun',
+      description: 'Close-quarters phantom weapon for stealth elimination',
+      icon: <Target className="w-8 h-8" />,
+      stats: {
+        damage: 96,
+        range: 42,
+        mobility: 75,
+        accuracy: 68
+      },
+      users: ['CHAMBAS', 'SLIM'],
+      color: 'from-violet-500/20 to-purple-500/20',
+      borderColor: 'border-violet-500/30'
     }
   ];
 

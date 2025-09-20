@@ -5,7 +5,7 @@ import { generateSoldierStats } from '@/utils/soldierStats';
 
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const featuredSoldiers = soldiers.filter(s => s.spotlight || s.pro || s.princess).slice(0, 6);
+  const featuredSoldiers = soldiers.filter(s => s.spotlight || s.pro || s.princess || s.active).slice(0, 8);
 
   useEffect(() => {
     const interval = setInterval(() => {
