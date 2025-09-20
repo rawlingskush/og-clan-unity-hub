@@ -62,7 +62,7 @@ const HeroContent = () => {
         </div>
         <p className="mt-2 md:mt-4 text-xs xs:text-sm sm:text-lg md:text-xl max-w-3xl sm:max-w-6xl mx-auto leading-relaxed px-1 xs:px-2 sm:px-4 relative">
           <span className="text-balance inline-block bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200 bg-clip-text text-transparent font-medium drop-shadow-sm">
-            Gear up, gamer! You've just landed at OG Clan, Cameroon's top-tier Call of Duty Mobile squad since 2020. We're 50+ hardcore players strong, fueled by loyalty, growth, and dominating every lobby. Whether you're here to frag out or vibe with the crew, there's a spot for you.
+            Since 2020, OG Clan has stood as Cameroon's strongest CODM squad, uniting 50+ loyal players under one banner. We're about more than wins — we're about growth, teamwork, and building a family that dominates together.
           </span>
           <span className="block text-balance bg-gradient-to-r from-ogclan-light/90 via-ogclan/80 to-ogclan-light/90 bg-clip-text text-transparent font-semibold mt-0.5 sm:mt-2 drop-shadow">
             Join Us, level up your game, and help write our epic legacy. Let's own this together!
