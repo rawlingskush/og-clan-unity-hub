@@ -7,20 +7,20 @@ const HeroContent = () => {
   const isMobile = useIsMobile();
   return (
     <div className="text-center relative z-10 px-1 sm:px-0">
-      {/* OG Clan Logo Background */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-10 pointer-events-none">
-        <div className="relative w-full max-w-[800px] aspect-square">
+      {/* Enhanced OG Clan Logo Background - Bigger & Brighter */}
+      <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-20 pointer-events-none animate-pulse-slow">
+        <div className="relative w-full max-w-[1000px] aspect-square">
           <img 
             src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
             alt="" 
-            className="w-full h-full object-contain filter brightness-110 saturate-125"
+            className="w-full h-full object-contain filter brightness-150 saturate-150 contrast-110"
             style={{
-              filter: "drop-shadow(0 0 20px rgba(212, 175, 55, 0.3)) brightness(1.1) saturate(1.25)"
+              filter: "drop-shadow(0 0 30px rgba(212, 175, 55, 0.4)) drop-shadow(0 0 60px rgba(212, 175, 55, 0.2)) brightness(1.5) saturate(1.5) contrast(1.1)"
             }}
             loading="eager"
             decoding="async"
             fetchPriority="high"
-            sizes="(max-width: 640px) 100vw, 800px"
+            sizes="(max-width: 640px) 100vw, 1000px"
             aria-hidden="true"
           />
         </div>
@@ -31,13 +31,14 @@ const HeroContent = () => {
           className="text-3xl xs:text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-2 md:mb-3 relative font-orbitron bg-gradient-to-r from-ogclan-dark via-ogclan to-ogclan-light bg-clip-text text-transparent drop-shadow-gold animate-gradient-blink"
           style={{
             backgroundSize: "200% 200%",
-            animation: "gradientShift 4s ease-in-out infinite, glow-pulse 2.2s infinite"
+            animation: "gradientShift 4s ease-in-out infinite, glow-pulse 2.2s infinite",
+            textShadow: "0 0 20px rgba(212, 175, 55, 0.6), 0 0 40px rgba(212, 175, 55, 0.3)"
           }}
         >
           WELCOME TO OG CLAN
-          {/* Blinking HUD dots left/right */}
-          <span className="absolute -left-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan shadow-[0_0_12px_gold] animate-pulse-slow"></span>
-          <span className="absolute -right-4 top-1/2 h-[5px] w-[5px] rounded-full bg-ogclan-light shadow-[0_0_12px_gold] animate-pulse-slow animation-delay-300"></span>
+          {/* Enhanced HUD dots with stronger glow */}
+          <span className="absolute -left-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan shadow-[0_0_20px_gold,0_0_40px_rgba(212,175,55,0.5)] animate-pulse-slow"></span>
+          <span className="absolute -right-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan-light shadow-[0_0_20px_gold,0_0_40px_rgba(212,175,55,0.5)] animate-pulse-slow animation-delay-300"></span>
         </h1>
         {/* SLOGAN: One Tapping Since 2020 - Enhanced visibility */}
         <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded border border-ogclan/60 bg-black/90 backdrop-blur-sm my-2 mb-3 shadow-lg">
@@ -46,10 +47,10 @@ const HeroContent = () => {
           </span>
         </div>
         <p className="text-base xs:text-lg sm:text-2xl md:text-3xl text-ogclan-light font-semibold flex items-center justify-center gap-1 sm:gap-2 relative">
-          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-ogclan/50 after:transform-gpu animate-fade-in">
+          <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-ogclan after:to-transparent after:transform-gpu animate-fade-in drop-shadow-sm">
             Loyalty. Unity. Victory.
           </span>
-          <Flame className="inline-block h-4 w-4 xs:h-5 xs:w-5 md:h-6 md:w-6 text-red-500 animate-pulse" />
+          <Flame className="inline-block h-4 w-4 xs:h-5 xs:w-5 md:h-6 md:w-6 text-red-500 animate-pulse drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
         </p>
       </AnimatedContent>
       <AnimatedContent animation="fade-in-up" delay={700}>
