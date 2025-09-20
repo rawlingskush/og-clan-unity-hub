@@ -102,41 +102,6 @@ const ClanLegacySection = () => {
           </AnimatedContent>
         </div>
 
-        {/* Impact Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mb-16">
-          <AnimatedContent animation="fade-in-up" delay={600}>
-            <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300">
-              <Trophy className="h-12 w-12 text-blue-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold text-white mb-2">1ST</div>
-              <div className="text-sm text-gray-400">Clan to reach International level</div>
-            </div>
-          </AnimatedContent>
-
-          <AnimatedContent animation="fade-in-up" delay={750}>
-            <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(239,68,68,0.2)] transition-all duration-300">
-              <Users className="h-12 w-12 text-red-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold text-white mb-2">15+</div>
-              <div className="text-sm text-gray-400">Clans We've Mentored</div>
-            </div>
-          </AnimatedContent>
-
-          <AnimatedContent animation="fade-in-up" delay={900}>
-            <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-300">
-              <Shield className="h-12 w-12 text-ogclan mx-auto mb-4" />
-              <div className="text-3xl font-bold text-white mb-2">5YRS</div>
-              <div className="text-sm text-gray-400">Growing Together</div>
-            </div>
-          </AnimatedContent>
-
-          <AnimatedContent animation="fade-in-up" delay={1050}>
-            <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-300">
-              <Star className="h-12 w-12 text-emerald-400 mx-auto mb-4" />
-              <div className="text-3xl font-bold text-white mb-2">100%</div>
-              <div className="text-sm text-gray-400">Community Focused</div>
-            </div>
-          </AnimatedContent>
-        </div>
-
         {/* Call to Action */}
         <AnimatedContent animation="fade-in-up" delay={1200}>
           <div className="text-center bg-gradient-to-r from-blue-600/10 via-black/50 to-red-600/10 rounded-2xl p-8 border border-ogclan/20">
