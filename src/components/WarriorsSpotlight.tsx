@@ -175,7 +175,7 @@ const WarriorsSpotlight = () => {
         <div className="text-center mt-12">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <button 
-              onClick={() => window.open('/soldiers', '_self')}
+              onClick={() => window.open('/clan-members', '_self')}
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/30 hover:border-primary/50 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(var(--primary),0.3)] group"
             >
               <Users className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
