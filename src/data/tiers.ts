@@ -16,14 +16,13 @@ export const tierData: TierData[] = [
       { name: "ФƓゝKUSH", fullName: "kush", emoji: "⚡", status: "OG flame, leader's fire", hasProfile: true, profileId: "kush" },
       { name: "ФƓゝEXODUSKI", fullName: "exodus", emoji: "🛡️", status: "Deadly instinct, clan shield. OG Legend", hasProfile: true, profileId: "exodus" },
       { name: "ФƓゝDHAMER", fullName: "dhamer", emoji: "⚔️", status: "Razor-sharp under pressure", hasProfile: true, profileId: "dhamer" },
-      { name: "ФƓゝCHAMBAS", fullName: "chambas", emoji: "🦁", status: "Fearless OG pillar, reliable team captain", hasProfile: true, profileId: "chambas" },
-      { name: "ФƓゝSL1M", fullName: "slim", emoji: "🏅", status: "Veteran consistency, heart of OG comps", hasProfile: true, profileId: "slim" },
-      { name: "ФƓゝSTARL1GHT", fullName: "starlight", emoji: "🌀", status: "Clan clutch machine, rising leader", hasProfile: true, profileId: "starlight" },
-      { name: "ФƓゝSAMMY", fullName: "sammy", emoji: "🧨", status: "NEW, aggressive with leadership energy" },
-      { name: "ФƓゝOVERKILL", fullName: "overkill", emoji: "🚀", status: "Big-game presence, BattleNight lacking", hasProfile: true, profileId: "overkill" },
-      { name: "ФƓゝSUSREX", fullName: "susrex", emoji: "⚡", status: "NEW, explosive plays, raw power, lately inconsistent" },
-      { name: "ФƓゝTIGER", fullName: "tiger", emoji: "🐯", status: "Team spirit, reliable fighter", hasProfile: true, profileId: "tiger" },
-      { name: "ФƓゝREXO", fullName: "rex", emoji: "👑", status: "Strategic commander, reliable leader", hasProfile: true, profileId: "rex" }
+      { name: "ФƓǝCHAMBAS", fullName: "chambas", emoji: "🦁", status: "Fearless OG pillar, reliable team captain", hasProfile: true, profileId: "chambas" },
+      { name: "ФƓǝSL1M", fullName: "slim", emoji: "🏅", status: "Veteran consistency, heart of OG comps", hasProfile: true, profileId: "slim" },
+      { name: "ФƓǝSTARL1GHT", fullName: "starlight", emoji: "🌀", status: "Clan clutch machine, rising leader", hasProfile: true, profileId: "starlight" },
+      { name: "ФƓǝSAMMY", fullName: "sammy", emoji: "🧨", status: "NEW, aggressive with leadership energy" },
+      { name: "ФƓǝOVERKILL", fullName: "overkill", emoji: "🚀", status: "Big-game presence, BattleNight lacking", hasProfile: true, profileId: "overkill" },
+      { name: "ФƓǝSUSREX", fullName: "susrex", emoji: "⚡", status: "NEW, explosive plays, raw power, lately inconsistent" },
+      { name: "ФƓǝTIGER", fullName: "tiger", emoji: "🐯", status: "Team spirit, reliable fighter", hasProfile: true, profileId: "tiger" }
     ]
   },
   {
@@ -82,7 +81,7 @@ export const tierData: TierData[] = [
       { name: "ФƓゝSLOW", fullName: "slow", emoji: "🐢", status: "Steady grind, underrated. Needs more BattleNights" },
       { name: "ФƓゝNOVAX", fullName: "novax", emoji: "⚡", status: "Showing promise. Needs more BattleNights" },
       { name: "ФƓゝCНÃKRÃ", fullName: "chakra", emoji: "⚔️", status: "Solid player, waiting for breakout" },
-      { name: "ФƓゝREXO", fullName: "rexo", emoji: "💥", status: "Consistent activity. Keep it up" },
+      { name: "ФƓゝREXO", fullName: "rex", emoji: "💥", status: "Recent consistent activity. Keep it up", hasProfile: true, profileId: "rex" },
       { name: "ФƓゝSHADY", fullName: "shady", emoji: "🗣️", status: "Loyal, confidence growing big", hasProfile: true, profileId: "shady" },
       { name: "ФƓゝSUSPECT", fullName: "suspect", emoji: "🎯", status: "Multiplayer beast. BattleNight lacking", hasProfile: true, profileId: "suspect" },
       { name: "ФƓゝBLACKSAVAGE", fullName: "blacksavage", emoji: "💀", status: "Strong but inconsistent. Needs scrim time", hasProfile: true, profileId: "blacksavage" },
