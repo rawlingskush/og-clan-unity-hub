@@ -9,8 +9,7 @@ export const team5Soldiers: Soldier[] = [
     weapon: "QQ9",
     bio: "BlackSavage is a phantom in the smoke. With his QQ9 at the ready, he slips behind lines and turns enemy strongholds into his playground. He's a Big G",
     tiktokUrl: "https://www.tiktok.com/@og.blksavage",
-    imageUrl: "/lovable-uploads/b5404828-afad-4aea-bfff-19dc4a0c3668.png",
-    active: true
+    imageUrl: "/lovable-uploads/b5404828-afad-4aea-bfff-19dc4a0c3668.png"
   },
   {
     id: "lilnasty",

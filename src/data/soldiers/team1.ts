@@ -39,7 +39,9 @@ export const team1Soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
     tiktokUrl: "https://www.tiktok.com/@chambas237",
-    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png"
+    imageUrl: "/lovable-uploads/0d637ef1-4528-4acc-a5fd-620af8e3c485.png",
+    spotlight: true,
+    active: true
   },
   {
     id: "venom",
@@ -59,8 +61,7 @@ export const team1Soldiers: Soldier[] = [
     weapon: "Grau",
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
     tiktokUrl: "https://www.tiktok.com/@og_rex20?_t=ZM-8zhkeIUXNcG&_r=1",
-    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png",
-    active: true
+    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png"
   },
   {
     id: "swizzy",
@@ -107,6 +108,8 @@ export const team1Soldiers: Soldier[] = [
     weapon: "KRM",
     bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
     tiktokUrl: "",
-    imageUrl: "/lovable-uploads/mikki-new-pfp.jpg"
+    imageUrl: "/lovable-uploads/mikki-new-pfp.jpg",
+    spotlight: true,
+    pro: true
   }
 ];

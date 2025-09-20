@@ -8,8 +8,7 @@ export const team2Soldiers: Soldier[] = [
     weapon: "FENNEC",
     bio: "Meet the clan's princess - BOTGIRL. With her beloved FENNEC, she combines elegance with deadly precision. Her royal presence on the battlefield is matched only by her fierce loyalty to the clan and her ability to dominate with style.",
     tiktokUrl: "https://www.tiktok.com/@og_botgirl",
-    imageUrl: "/lovable-uploads/26b319b2-7cce-435d-a241-ae90fa799575.png",
-    princess: true
+    imageUrl: "/lovable-uploads/26b319b2-7cce-435d-a241-ae90fa799575.png"
   },
   {
     id: "pato",
