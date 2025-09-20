@@ -37,31 +37,6 @@ const BattlefieldDominance = () => {
       borderColor: 'border-blue-500/30'
     },
     {
-      id: 'hso405',
-      name: 'HSO405 - Songstress',
-      category: 'Sniper Rifle',
-      description: 'Precision long-range eliminations with devastating one-shot potential',
-      icon: <Target className="w-8 h-8" />,
-      attachments: [
-        'Choke',
-        'RTC Extended Light Barrel',
-        'No Stock',
-        'MIP Laser 5mW',
-        'Stippled Grip Tape'
-      ],
-      stats: {
-        damage: 84, // Representing 28x15 as 84 for display
-        range: 48,
-        mobility: 84,
-        accuracy: 47,
-        fireRate: 27,
-        control: 34
-      },
-      users: ['SNIPER_ELITE', 'GHOST_SHOT'],
-      color: 'from-orange-500/20 to-red-500/20',
-      borderColor: 'border-orange-500/30'
-    },
-    {
       id: 'krm262',
       name: 'KRM-262 - Glorious Blaze',
       category: 'Shotgun',
@@ -112,6 +87,31 @@ const BattlefieldDominance = () => {
       borderColor: 'border-pink-500/30'
     },
     {
+      id: 'hso405',
+      name: 'HSO405 - Songstress',
+      category: 'Sniper Rifle',
+      description: 'Precision long-range eliminations with devastating one-shot potential',
+      icon: <Target className="w-8 h-8" />,
+      attachments: [
+        'Choke',
+        'RTC Extended Light Barrel',
+        'No Stock',
+        'MIP Laser 5mW',
+        'Stippled Grip Tape'
+      ],
+      stats: {
+        damage: 84, // Representing 28x15 as 84 for display
+        range: 48,
+        mobility: 84,
+        accuracy: 47,
+        fireRate: 27,
+        control: 34
+      },
+      users: ['CHAMBAS', 'SLIM'],
+      color: 'from-orange-500/20 to-red-500/20',
+      borderColor: 'border-orange-500/30'
+    },
+    {
       id: 'by15',
       name: 'BY15 - Boba Blaster',
       category: 'Shotgun',
@@ -132,7 +132,7 @@ const BattlefieldDominance = () => {
         fireRate: 29,
         control: 46
       },
-      users: ['RAPID_FIRE', 'BLAZE_RUNNER'],
+      users: ['SWIZZY', 'ESQUARE', 'GAMEHOUSE', 'MULLER', 'TIGER'],
       color: 'from-cyan-500/20 to-blue-500/20',
       borderColor: 'border-cyan-500/30'
     }
