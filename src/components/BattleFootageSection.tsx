@@ -14,7 +14,7 @@ const BattleFootageSection = () => {
 
   const handleVideoClick = () => {
     // Open the TikTok clan highlights video in a new tab
-    window.open('https://www.tiktok.com/@ogclancameroon/video/7548786351215234326?is_from_webapp=1&sender_device=pc', '_blank');
+    window.open('https://www.tiktok.com/@ogclancameroon/video/7544029346097368322?is_from_webapp=1&sender_device=pc', '_blank');
   };
 
   return (
