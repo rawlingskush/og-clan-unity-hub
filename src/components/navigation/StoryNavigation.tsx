@@ -20,8 +20,8 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
     },
     {
       id: 2,
-      title: "Tier System",
-      description: "Explore our strategic organization and member rankings",
+      title: "Player Tracker",
+      description: "Track our warriors through the tier system and rankings",
       icon: Target,
       variant: 'secondary' as const,
       onClick: () => window.open('/soldiers?view=members', '_self')
