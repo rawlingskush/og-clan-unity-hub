@@ -193,7 +193,7 @@ const WarriorsSpotlight = () => {
             </button>
           </div>
           <p className="text-muted-foreground mt-4 max-w-lg mx-auto">
-            Discover all {soldiers.length}+ warriors and track them through our tier system
+            Discover all {soldiers.length}+ warriors and view our tier progression system
           </p>
         </div>
       </div>

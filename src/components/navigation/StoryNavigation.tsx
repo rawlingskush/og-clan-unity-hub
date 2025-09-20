@@ -20,14 +20,22 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
     },
     {
       id: 2,
-      title: "Player Tracker",
-      description: "Track our warriors through the tier system and rankings",
+      title: "Tier Progression",
+      description: "View our strategic tier system and warrior rankings",
       icon: Target,
       variant: 'secondary' as const,
-      onClick: () => window.open('/player-tracker', '_self')
+      onClick: () => window.open('/tier-tracker', '_self')
     },
     {
       id: 3,
+      title: "Player Tracker",
+      description: "Track individual player activity and member status",
+      icon: Users,
+      variant: 'accent' as const,
+      onClick: () => window.open('/player-tracker', '_self')
+    },
+    {
+      id: 4,
       title: "Clan Statistics",
       description: "Dive into our performance metrics and achievements",
       icon: TrendingUp,
@@ -43,7 +51,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
 
   const containerClass = layout === 'horizontal' 
     ? 'flex flex-col sm:flex-row gap-6' 
-    : 'grid grid-cols-1 md:grid-cols-3 gap-6';
+    : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6';
 
   return (
     <div className={`${className}`}>
