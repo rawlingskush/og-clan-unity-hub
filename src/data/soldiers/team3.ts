@@ -18,7 +18,7 @@ export const team3Soldiers: Soldier[] = [
     clanName: "ФƓゝSL1M", 
     role: "Close-Quarters Phantom",
     weapon: "HS0405",
-    bio: "Slim strikes like a whisper and hits like thunder. With the HS0405 in hand, he ghosts through corridors and crash points, dropping enemies before they know he's there. Unseen. Unheard. Unforgiving.",
+    bio: "Slim is the underrated mastermind at the heart of OG Clan's competitive scene. While others get the spotlight, he's quietly dominating scrims and comps with skills that few truly recognize. His HS0405 speaks volumes in clutch moments, and his tactical awareness keeps the team sharp when it matters most. Don't sleep on Slim - he's the secret weapon every comp team wishes they had.",
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/e6d757ea-8213-4afe-a4bb-a246521e7c1b.png",
     active: true,
