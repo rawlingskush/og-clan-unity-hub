@@ -9,26 +9,6 @@
   transform: scale(0.98) translateZ(0);
 }
 
-/* Prevent scaling issues on mobile */
-@media (max-width: 768px) {
-  .hover\:scale-105:hover,
-  .hover\:md\:scale-105:hover {
-    transform: none !important;
-  }
-  
-  /* Better mobile button interaction */
-  button, .cursor-pointer, [role="button"] {
-    -webkit-tap-highlight-color: rgba(212, 175, 55, 0.2);
-    touch-action: manipulation;
-    transform: translateZ(0);
-  }
-  
-  button:active, .cursor-pointer:active, [role="button"]:active {
-    transform: scale(0.98) translateZ(0);
-    transition: transform 0.1s ease;
-  }
-}
-
 /* Touch manipulation for better touch response */
 .touch-manipulation {
   touch-action: manipulation;

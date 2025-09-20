@@ -64,7 +64,7 @@ const CoDPointsSection = () => {
               
               <button 
                 onClick={handleAffiliateClick}
-                className="group relative overflow-hidden px-6 py-3 rounded-lg text-white font-bold transition-all duration-300 hover:md:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.5)] touch-manipulation"
+                className="group relative overflow-hidden px-6 py-3 rounded-lg text-white font-bold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(59,130,246,0.5)]"
                 style={{
                   background: "linear-gradient(135deg, #e11d48 0%, #4f46e5 100%)",
                   boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)"
