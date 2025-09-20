@@ -34,7 +34,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={150}>
             <StatsCard 
               title="Members" 
-              value="66+" 
+              value="85+" 
               icon={<Users className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Active players"
             />
@@ -43,7 +43,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={300}>
             <StatsCard 
               title="Tournaments" 
-              value="33+" 
+              value="47+" 
               icon={<Trophy className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Victories earned"
             />
@@ -52,7 +52,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={450}>
             <StatsCard 
               title="Rating" 
-              value="4.8" 
+              value="4.9" 
               icon={<Star className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Average member rating"
             />
@@ -61,7 +61,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={600}>
             <StatsCard 
               title="Growth" 
-              value="69%" 
+              value="127%" 
               icon={<TrendingUp className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Annual expansion"
             />

@@ -46,8 +46,8 @@ export const team5Soldiers: Soldier[] = [
   },
   {
     id: "maddog", 
-    name: "ФƓǝ MAD DOG",
-    clanName: "ФƓǝMÄÐÐŌĠ",
+    name: "ФƓゝ MAD DOG",
+    clanName: "ФƓゝ MAD DOG",
     role: "🔥 Relentless Hunter",
     weapon: "Type 19",
     bio: "Mad Dog is the unstoppable force that never backs down from a fight. With his Type 19 blazing through enemy lines, he brings raw aggression and unmatched determination to every battle. When the heat gets intense and others retreat, Mad Dog charges forward, turning chaos into victory with his relentless pursuit of dominance.",

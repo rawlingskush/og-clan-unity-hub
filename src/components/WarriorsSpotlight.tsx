@@ -78,10 +78,6 @@ const WarriorsSpotlight = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  {/* Rank Badge */}
-                  <div className="absolute -top-4 -right-4 bg-primary/90 text-background px-4 py-2 rounded-full font-bold text-lg">
-                    #{currentIndex + 1}
-                  </div>
                 </div>
               </div>
 
