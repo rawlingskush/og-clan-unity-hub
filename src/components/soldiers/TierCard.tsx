@@ -26,8 +26,8 @@ const TierCard = ({ tier, index, onSoldierClick }: TierCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="border border-white/10 rounded-lg bg-black/50 backdrop-blur-sm overflow-hidden"
-      style={{ backgroundColor: tier.theme.bg }}
+      className="border border-white/10 rounded-xl bg-black/50 backdrop-blur-sm overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300"
+      style={{ background: tier.theme.bg }}
     >
       {/* Tier Header */}
       <div
@@ -73,8 +73,8 @@ const TierCard = ({ tier, index, onSoldierClick }: TierCardProps) => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: soldierIndex * 0.05 }}
-                  className={`p-3 rounded border border-white/10 bg-black/30 hover:bg-black/50 transition-all group ${
-                    soldier.hasProfile ? 'cursor-pointer hover:border-ogclan/50' : ''
+                  className={`p-4 rounded-lg border border-white/10 bg-black/40 hover:bg-black/60 hover:scale-[1.02] transition-all duration-300 group shadow-lg hover:shadow-xl ${
+                    soldier.hasProfile ? 'cursor-pointer hover:border-ogclan/50 hover:bg-gradient-to-br hover:from-ogclan/10 hover:to-black/60' : ''
                   }`}
                   onClick={() => handleSoldierClick(soldier)}
                 >
