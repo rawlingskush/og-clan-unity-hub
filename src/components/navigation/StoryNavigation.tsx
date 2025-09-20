@@ -24,7 +24,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Track our warriors through the tier system and rankings",
       icon: Target,
       variant: 'secondary' as const,
-      onClick: () => window.open('/clan-members', '_self')
+      onClick: () => window.open('/player-tracker', '_self')
     },
     {
       id: 3,

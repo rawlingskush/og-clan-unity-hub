@@ -130,7 +130,7 @@ const AboutSection = () => {
                   <Button 
                     variant="outline" 
                     className="text-emerald-400 hover:text-emerald-300 border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-400/10 transition-all group"
-                    onClick={() => window.open('/clan-members', '_self')}
+                    onClick={() => window.open('/player-tracker', '_self')}
                   >
                     Player Tracker
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

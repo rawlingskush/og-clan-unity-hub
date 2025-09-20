@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import Soldiers from "./pages/Soldiers";
 import TierTracker from "./pages/TierTracker";
 import ClanMembers from "./pages/ClanMembers";
+import PlayerTracker from "./pages/PlayerTracker";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/soldiers" element={<Soldiers />} />
             <Route path="/tier-tracker" element={<TierTracker />} />
             <Route path="/clan-members" element={<ClanMembers />} />
+            <Route path="/player-tracker" element={<PlayerTracker />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

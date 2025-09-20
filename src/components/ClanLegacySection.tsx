@@ -141,7 +141,7 @@ const ClanLegacySection = () => {
               <Button 
                 variant="outline"
                 className="border-ogclan/50 text-ogclan hover:bg-ogclan/10 hover:border-ogclan px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.open('/clan-members', '_self')}
+                onClick={() => window.open('/player-tracker', '_self')}
               >
                 <Target className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Player Tracker

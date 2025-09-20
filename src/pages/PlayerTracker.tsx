@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import ClanMembersTable from '@/components/soldiers/ClanMembersTable';
 import { Users, TrendingUp, Target, Award } from 'lucide-react';
 
-const ClanMembers = () => {
+const PlayerTracker = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800">
         <Navbar />
@@ -24,12 +24,12 @@ const ClanMembers = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-gradient-enhanced">OG CLAN</span>
+                <span className="text-gradient-enhanced">PLAYER</span>
                 <br />
-                <span className="text-white">MEMBERS</span>
+                <span className="text-white">TRACKER</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Complete roster of our elite Call of Duty Mobile warriors with tier progression tracking
+                Track our elite Call of Duty Mobile warriors with detailed tier progression and activity status
               </p>
             </motion.div>
 
@@ -82,4 +82,4 @@ const ClanMembers = () => {
   );
 };
 
-export default ClanMembers;
+export default PlayerTracker;

@@ -184,7 +184,7 @@ const WarriorsSpotlight = () => {
             </button>
             
             <button 
-              onClick={() => window.open('/clan-members', '_self')}
+              onClick={() => window.open('/player-tracker', '_self')}
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-emerald-600/20 to-emerald-500/20 hover:from-emerald-600/30 hover:to-emerald-500/30 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] group"
             >
               <Target className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
