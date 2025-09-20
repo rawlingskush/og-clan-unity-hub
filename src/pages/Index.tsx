@@ -1,14 +1,14 @@
 
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import HeroSection from '@/components/HeroSection';
-import BattleNightSection from '@/components/BattleNightSection';
-import ClanStatsSection from '@/components/ClanStatsSection';
-import TournamentResults from '@/components/results/TournamentResults';
-import AboutSection from '@/components/AboutSection';
-import JoinUsSection from '@/components/JoinUsSection';
+import EnhancedHeroSection from '@/components/modern/EnhancedHeroSection';
+import ClanLegacyHub from '@/components/modern/ClanLegacyHub';
+import BattleCommandCenter from '@/components/modern/BattleCommandCenter';
+import EnhancedTierShowcase from '@/components/modern/EnhancedTierShowcase';
+import CallOfDutyArena from '@/components/modern/CallOfDutyArena';
+import CommunityNewsHub from '@/components/modern/CommunityNewsHub';
+import EnhancedRecruitmentPortal from '@/components/modern/EnhancedRecruitmentPortal';
 import PartnersSection from '@/components/PartnersSection';
-import CoDPointsSection from '@/components/CoDPointsSection';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 import { usePerformanceOptimization } from '@/hooks/usePerformanceOptimization';
@@ -35,14 +35,14 @@ const Index = () => {
       
       <main>
         <div id="home">
-          <HeroSection />
+          <EnhancedHeroSection />
         </div>
-        <BattleNightSection />
-        <ClanStatsSection />
-        <TournamentResults />
-        <AboutSection />
-        <CoDPointsSection />
-        <JoinUsSection />
+        <ClanLegacyHub />
+        <BattleCommandCenter />
+        <EnhancedTierShowcase />
+        <CallOfDutyArena />
+        <CommunityNewsHub />
+        <EnhancedRecruitmentPortal />
         <PartnersSection />
       </main>
       
