@@ -111,6 +111,7 @@ export const team5Soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@piratess77?lang=en-GB",
     imageUrl: "/lovable-uploads/og-pinky-pfp.png",
     princess: true,
+    spotlight: true,
     active: true
   }
 ];
