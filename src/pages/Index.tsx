@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import WarriorsSpotlight from '@/components/WarriorsSpotlight';
+import ClanLegacySection from '@/components/ClanLegacySection';
 import BattleNightSection from '@/components/BattleNightSection';
 import ClanStatsSection from '@/components/ClanStatsSection';
 import GamingArsenal from '@/components/GamingArsenal';
@@ -40,6 +41,7 @@ const Index = () => {
           <HeroSection />
         </div>
         <WarriorsSpotlight />
+        <ClanLegacySection />
         <BattleNightSection />
         <ClanStatsSection />
         <GamingArsenal />
