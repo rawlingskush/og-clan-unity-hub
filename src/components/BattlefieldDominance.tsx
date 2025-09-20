@@ -14,7 +14,7 @@ const BattlefieldDominance = () => {
   const signatureLoadouts = [
     {
       id: 'ak117',
-      name: 'AK117 - Grim Ending',
+      name: 'AK117',
       category: 'Assault Rifle', 
       description: 'Master-tier configuration with optimal range and precision. Features OWC attachments for superior battlefield performance.',
       icon: <Crosshair className="w-8 h-8" />,
@@ -40,7 +40,7 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'krm262',
-      name: 'KRM-262 - Glorious Blaze',
+      name: 'KRM-262',
       category: 'Shotgun',
       description: 'Close-quarters devastation with superior range and control',
       icon: <Shield className="w-8 h-8" />,
@@ -65,7 +65,7 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'fennec',
-      name: 'FENNEC - Zakhaev\'s Executioner',
+      name: 'FENNEC',
       category: 'SMG',
       description: 'Elite princess weapon with devastating close-range power and incredible fire rate',
       icon: <Crosshair className="w-8 h-8" />,
@@ -90,7 +90,7 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'hso405',
-      name: 'HSO405 - Songstress',
+      name: 'HS0405',
       category: 'Sniper Rifle',
       description: 'Precision long-range eliminations with devastating one-shot potential',
       icon: <Target className="w-8 h-8" />,
@@ -115,7 +115,7 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'by15',
-      name: 'BY15 - Boba Blaster',
+      name: 'BY15',
       category: 'Shotgun',
       description: 'High-mobility shotgun for aggressive close-quarter combat',
       icon: <Zap className="w-8 h-8" />,
@@ -228,7 +228,7 @@ const BattlefieldDominance = () => {
                         </div>
                         <div>
                           <h4 className="text-2xl font-orbitron font-bold text-gradient-gold">
-                            AK117 - Grim Ending
+                            AK117
                           </h4>
                           <p className="text-muted-foreground">Assault Rifle</p>
                         </div>

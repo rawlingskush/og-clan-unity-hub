@@ -22,7 +22,7 @@ const GamingArsenal = () => {
     },
     {
       id: 'ak117',
-      name: 'AK117 - Grim Ending',
+      name: 'AK117',
       category: 'Assault Rifle', 
       description: 'Master-tier configuration with optimal range and precision. Features OWC attachments for superior battlefield performance.',
       icon: <Crosshair className="w-8 h-8" />,
