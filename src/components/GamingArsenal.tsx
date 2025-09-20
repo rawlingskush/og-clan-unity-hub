@@ -1,5 +1,6 @@
 import React from 'react';
 import { Target, Crosshair, Shield, Zap } from 'lucide-react';
+import ak117GrimEnding from '../assets/ak117-grim-ending.png';
 
 const GamingArsenal = () => {
   const signatureLoadouts = [
@@ -21,15 +22,24 @@ const GamingArsenal = () => {
     },
     {
       id: 'ak117',
-      name: 'AK117',
+      name: 'AK117 - Grim Ending',
       category: 'Assault Rifle', 
-      description: 'Balanced assault rifle for tactical precision strikes',
+      description: 'Master-tier configuration with optimal range and precision. Features OWC attachments for superior battlefield performance.',
       icon: <Crosshair className="w-8 h-8" />,
+      weaponImage: ak117GrimEnding,
+      attachments: [
+        'OWC Light Compensator',
+        'OWC Marksman', 
+        'Tactical Foregrip A',
+        '40 Round Extended Mag'
+      ],
       stats: {
-        damage: 78,
-        range: 82,
-        mobility: 75,
-        accuracy: 85
+        damage: 76,
+        range: 58,
+        mobility: 70,
+        accuracy: 69,
+        fireRate: 76,
+        control: 54
       },
       users: ['WIZARD', 'LAMENACE', 'SHINOBI', 'DHAMER', 'PINKY'],
       color: 'from-blue-500/20 to-cyan-500/20',
@@ -195,6 +205,34 @@ const GamingArsenal = () => {
                 </div>
               </div>
 
+              {/* Weapon Image - Special for AK117 */}
+              {weapon.weaponImage && (
+                <div className="mb-4 flex justify-center">
+                  <img 
+                    src={weapon.weaponImage} 
+                    alt={weapon.name}
+                    className="max-w-full h-20 object-contain opacity-80 hover:opacity-100 transition-opacity"
+                  />
+                </div>
+              )}
+
+              {/* Attachments - Special for detailed loadouts */}
+              {weapon.attachments && (
+                <div className="mb-4">
+                  <p className="text-xs text-muted-foreground mb-2">Loadout:</p>
+                  <div className="grid grid-cols-2 gap-1">
+                    {weapon.attachments.map((attachment, index) => (
+                      <span
+                        key={index}
+                        className="text-xs bg-muted/50 text-foreground px-2 py-1 rounded font-medium"
+                      >
+                        {attachment}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Description */}
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
                 {weapon.description}
@@ -206,6 +244,12 @@ const GamingArsenal = () => {
                 <StatBar label="RNG" value={weapon.stats.range} color="from-blue-500 to-cyan-500" />
                 <StatBar label="MOB" value={weapon.stats.mobility} color="from-green-500 to-emerald-500" />
                 <StatBar label="ACC" value={weapon.stats.accuracy} color="from-purple-500 to-pink-500" />
+                {weapon.stats.fireRate && (
+                  <StatBar label="FR" value={weapon.stats.fireRate} color="from-yellow-500 to-orange-500" />
+                )}
+                {weapon.stats.control && (
+                  <StatBar label="CTL" value={weapon.stats.control} color="from-indigo-500 to-purple-500" />
+                )}
               </div>
 
               {/* Users */}
