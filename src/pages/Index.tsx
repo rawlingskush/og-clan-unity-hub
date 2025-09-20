@@ -2,8 +2,10 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
+import WarriorsSpotlight from '@/components/WarriorsSpotlight';
 import BattleNightSection from '@/components/BattleNightSection';
 import ClanStatsSection from '@/components/ClanStatsSection';
+import GamingArsenal from '@/components/GamingArsenal';
 import TournamentResults from '@/components/results/TournamentResults';
 import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
@@ -37,8 +39,10 @@ const Index = () => {
         <div id="home">
           <HeroSection />
         </div>
+        <WarriorsSpotlight />
         <BattleNightSection />
         <ClanStatsSection />
+        <GamingArsenal />
         <TournamentResults />
         <AboutSection />
         <CoDPointsSection />
