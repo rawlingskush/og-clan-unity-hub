@@ -186,7 +186,7 @@ const GamingArsenal = () => {
           {signatureLoadouts.map((weapon) => (
             <div
               key={weapon.id}
-              className={`group relative bg-gradient-to-br ${weapon.color} backdrop-blur-lg border ${weapon.borderColor} rounded-xl p-6 hover:scale-105 transition-all duration-300 overflow-hidden`}
+              className={`group relative bg-gradient-to-br ${weapon.color} backdrop-blur-lg border ${weapon.borderColor} rounded-xl p-6 hover:md:scale-105 transition-all duration-300 overflow-hidden touch-manipulation`}
             >
               {/* Decorative Elements */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />

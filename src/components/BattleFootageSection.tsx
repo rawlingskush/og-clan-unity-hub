@@ -56,7 +56,7 @@ const BattleFootageSection = () => {
                   </p>
                   <button
                     onClick={handleVideoClick}
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/25 group"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:md:scale-105 shadow-lg hover:shadow-primary/25 group touch-manipulation"
                   >
                     <Play className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     Watch Highlights

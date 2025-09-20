@@ -273,7 +273,7 @@ const BattlefieldDominance = () => {
               {signatureLoadouts.slice(1).map((weapon) => (
                 <Card
                   key={weapon.id}
-                  className={`group bg-gradient-to-br ${weapon.color} backdrop-blur-lg border ${weapon.borderColor} hover:scale-105 transition-all duration-300`}
+                  className={`group bg-gradient-to-br ${weapon.color} backdrop-blur-lg border ${weapon.borderColor} hover:md:scale-105 transition-all duration-300 touch-manipulation`}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
@@ -362,7 +362,7 @@ const BattlefieldDominance = () => {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
               <button 
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/25"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:md:scale-105 shadow-lg hover:shadow-primary/25 touch-manipulation"
                 onClick={() => navigateToPage('/soldiers')}
               >
                 <Users className="mr-2 h-5 w-5" />
@@ -370,7 +370,7 @@ const BattlefieldDominance = () => {
               </button>
               
               <button 
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-card/30 to-card/60 hover:from-card/50 hover:to-card/80 border border-primary/30 hover:border-primary/50 text-foreground font-medium rounded-lg transition-all duration-300 hover:scale-105 backdrop-blur-lg"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-card/30 to-card/60 hover:from-card/50 hover:to-card/80 border border-primary/30 hover:border-primary/50 text-foreground font-medium rounded-lg transition-all duration-300 hover:md:scale-105 backdrop-blur-lg touch-manipulation"
                 onClick={() => setActiveTab('loadouts')}
               >
                 <Target className="mr-2 h-5 w-5" />
