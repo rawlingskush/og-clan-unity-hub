@@ -13,8 +13,8 @@ const BattleFootageSection = () => {
   ];
 
   const handleVideoClick = () => {
-    // Open the Facebook video in a new tab
-    window.open('https://www.facebook.com/reel/770380590778395/?s=single_unit&__cft__[0]=AZUWPXa-DnPoA6bVZxsGhbhRpAMTgkHUagD3RAAlpjzo1N7XSyaYFUp7hNmTuk_SHjXUBod81xbHP2noHwT80JZkDF_qveo3Pe-d4GiMzwC8_9VO_ap0_TE-dYK5x0xcdj3SAYfpBK6sBBHZS-V6YcpoJRY_u1kph0KVfwhpNGMHpw&__tn__=H-R', '_blank');
+    // Open the TikTok clan highlights video in a new tab
+    window.open('https://www.tiktok.com/@ogclancameroon/video/7548786351215234326?is_from_webapp=1&sender_device=pc', '_blank');
   };
 
   return (
@@ -64,10 +64,10 @@ const BattleFootageSection = () => {
                     <Play className="w-12 h-12 text-primary" />
                   </div>
                   <h3 className="text-2xl font-orbitron font-bold text-gradient-gold mb-3">
-                    OG CLAN HIGHLIGHTS
+                    OG CLAN CAMEROON HIGHLIGHTS
                   </h3>
                   <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-                    Watch our elite warriors in action as they dominate the battlefield with precision and teamwork
+                    Watch our elite Cameroonian warriors dominate the battlefield with legendary skill and tactical precision
                   </p>
                   <button
                     onClick={handleVideoClick}
@@ -95,8 +95,8 @@ const BattleFootageSection = () => {
                 <div className="bg-card/60 backdrop-blur-lg border border-primary/20 rounded-lg p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h4 className="font-orbitron font-semibold text-gradient-gold">Elite Squadron Combat</h4>
-                      <p className="text-xs text-muted-foreground">Tactical dominance in action</p>
+                      <h4 className="font-orbitron font-semibold text-gradient-gold">OG Clan Cameroon</h4>
+                      <p className="text-xs text-muted-foreground">Elite highlights reel</p>
                     </div>
                     <div className="text-right">
                       <div className="text-sm font-medium text-primary">OG CLAN</div>
