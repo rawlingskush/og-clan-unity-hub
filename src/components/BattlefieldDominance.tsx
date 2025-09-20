@@ -19,12 +19,13 @@ const BattlefieldDominance = () => {
       weaponImage: ak117GrimEnding,
       attachments: [
         'OWC Light Compensator',
-        'OWC Marksman', 
+        'OWC Marksman',
+        'No Stock',
         'Tactical Foregrip A',
         '40 Round Extended Mag'
       ],
       stats: {
-        damage: 76,
+        damage: 25,
         range: 58,
         mobility: 70,
         accuracy: 69,
@@ -36,32 +37,50 @@ const BattlefieldDominance = () => {
       borderColor: 'border-blue-500/30'
     },
     {
-      id: 'oden',
-      name: 'Oden',
-      category: 'Assault Rifle',
-      description: 'Heavy-hitting assault rifle perfect for breaking enemy lines',
+      id: 'hso405',
+      name: 'HSO405 - Songstress',
+      category: 'Sniper Rifle',
+      description: 'Precision long-range eliminations with devastating one-shot potential',
       icon: <Target className="w-8 h-8" />,
+      attachments: [
+        'Choke',
+        'RTC Extended Light Barrel',
+        'No Stock',
+        'MIP Laser 5mW',
+        'Stippled Grip Tape'
+      ],
       stats: {
-        damage: 95,
-        range: 88,
-        mobility: 65,
-        accuracy: 82
+        damage: 84, // Representing 28x15 as 84 for display
+        range: 48,
+        mobility: 84,
+        accuracy: 47,
+        fireRate: 27,
+        control: 34
       },
-      users: ['KUSH'],
+      users: ['SNIPER_ELITE', 'GHOST_SHOT'],
       color: 'from-orange-500/20 to-red-500/20',
       borderColor: 'border-orange-500/30'
     },
     {
       id: 'krm262',
-      name: 'KRM-262',
+      name: 'KRM-262 - Glorious Blaze',
       category: 'Shotgun',
-      description: 'Close-quarters devastation for room clearing',
+      description: 'Close-quarters devastation with superior range and control',
       icon: <Shield className="w-8 h-8" />,
+      attachments: [
+        'Marauder Suppressor',
+        'RTC Light Extended Barrel',
+        'RTC Steady Stock',
+        'Strike Foregrip',
+        'Stippled Grip Tape'
+      ],
       stats: {
-        damage: 98,
-        range: 45,
-        mobility: 70,
-        accuracy: 65
+        damage: 72, // Representing 24x12 as 72 for display
+        range: 53,
+        mobility: 66,
+        accuracy: 62,
+        fireRate: 28,
+        control: 44
       },
       users: ['DAMAGE', 'EXODUS', 'MIKKI'],
       color: 'from-purple-500/20 to-pink-500/20',
@@ -69,19 +88,53 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'fennec',
-      name: 'FENNEC',
+      name: 'FENNEC - Zakhaev\'s Executioner',
       category: 'SMG',
-      description: 'Elite princess weapon with devastating close-range power',
+      description: 'Elite princess weapon with devastating close-range power and incredible fire rate',
       icon: <Crosshair className="w-8 h-8" />,
+      attachments: [
+        'Monolithic Suppressor',
+        'MIP Extended Light Barrel',
+        'Sleight of Hand',
+        'MIP Laser 5mW',
+        'Light Mag'
+      ],
       stats: {
-        damage: 85,
-        range: 58,
-        mobility: 88,
-        accuracy: 80
+        damage: 23,
+        range: 52,
+        mobility: 100, // Capped at 100 for display (was 108)
+        accuracy: 32,
+        fireRate: 100, // Capped at 100 for display (was 111)
+        control: 24
       },
       users: ['BOTGIRL', 'LIL NASTY'],
       color: 'from-pink-500/20 to-rose-500/20',
       borderColor: 'border-pink-500/30'
+    },
+    {
+      id: 'by15',
+      name: 'BY15 - Boba Blaster',
+      category: 'Shotgun',
+      description: 'High-mobility shotgun for aggressive close-quarter combat',
+      icon: <Zap className="w-8 h-8" />,
+      attachments: [
+        'Marauder Suppressor',
+        'RTC Extended Barrel',
+        'RTC Steady Stock',
+        'MIP Laser 5mW',
+        'Strike Foregrip'
+      ],
+      stats: {
+        damage: 72, // Representing 24x12 as 72 for display
+        range: 54,
+        mobility: 63,
+        accuracy: 65,
+        fireRate: 29,
+        control: 46
+      },
+      users: ['RAPID_FIRE', 'BLAZE_RUNNER'],
+      color: 'from-cyan-500/20 to-blue-500/20',
+      borderColor: 'border-cyan-500/30'
     }
   ];
 
@@ -237,11 +290,24 @@ const BattlefieldDominance = () => {
                       {weapon.description}
                     </p>
 
+                    {/* Attachments Display */}
+                    {weapon.attachments && (
+                      <div className="grid grid-cols-1 gap-1 mb-4">
+                        {weapon.attachments.map((attachment, index) => (
+                          <Badge key={index} variant="secondary" className="text-xs justify-center">
+                            {attachment}
+                          </Badge>
+                        ))}
+                      </div>
+                    )}
+
                     <div className="space-y-2 mb-4">
                       <StatBar label="DMG" value={weapon.stats.damage} color="from-red-500 to-orange-500" />
                       <StatBar label="RNG" value={weapon.stats.range} color="from-blue-500 to-cyan-500" />
                       <StatBar label="MOB" value={weapon.stats.mobility} color="from-green-500 to-emerald-500" />
                       <StatBar label="ACC" value={weapon.stats.accuracy} color="from-purple-500 to-pink-500" />
+                      {weapon.stats.fireRate && <StatBar label="FR" value={weapon.stats.fireRate} color="from-yellow-500 to-orange-500" />}
+                      {weapon.stats.control && <StatBar label="CTL" value={weapon.stats.control} color="from-indigo-500 to-purple-500" />}
                     </div>
 
                     <div className="flex flex-wrap gap-1">
