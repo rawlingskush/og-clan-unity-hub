@@ -6,6 +6,10 @@ import { generateSoldierStats } from '@/utils/soldierStats';
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const featuredSoldiers = soldiers.filter(s => s.spotlight || s.pro || s.princess || s.active).slice(0, 8);
+  
+  // Debug log to check if Pinky is included
+  console.log('Featured soldiers:', featuredSoldiers.map(s => s.name));
+  console.log('Pinky in data:', soldiers.find(s => s.name.includes('PINKY')));
 
   useEffect(() => {
     const interval = setInterval(() => {
