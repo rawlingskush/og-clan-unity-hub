@@ -34,7 +34,7 @@ const ClanStatsSection = () => {
           <AnimatedContent animation="fade-in-up" delay={150}>
             <StatsCard 
               title="Members" 
-              value="85+" 
+              value="88+" 
               icon={<Users className="w-6 h-6 md:w-8 md:h-8 text-ogclan" />}
               description="Active players"
             />
