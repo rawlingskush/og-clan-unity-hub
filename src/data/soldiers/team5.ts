@@ -61,8 +61,7 @@ export const team5Soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Muller is the tactical powerhouse who dominates close-quarters combat with devastating efficiency. His BY15 delivers crushing blows that clear rooms and eliminate threats with surgical precision. A master of positioning and timing, Muller turns every engagement into a tactical advantage for OG Clan.",
     tiktokUrl: "https://www.tiktok.com/@ogmullercodm",
-    imageUrl: "/lovable-uploads/muller-pfp.png",
-    active: true
+    imageUrl: "/lovable-uploads/muller-pfp.png"
   },
   {
     id: "hated",

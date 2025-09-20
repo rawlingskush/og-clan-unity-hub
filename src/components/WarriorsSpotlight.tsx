@@ -41,7 +41,7 @@ const WarriorsSpotlight = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Meet the legends who define our legacy on the battlefield
+            This week's featured soldiers - Meet the legends who define our legacy on the battlefield
           </p>
         </div>
 
