@@ -205,17 +205,6 @@ const GamingArsenal = () => {
                 </div>
               </div>
 
-              {/* Weapon Image - Special for AK117 */}
-              {weapon.weaponImage && (
-                <div className="mb-4 flex justify-center">
-                  <img 
-                    src={weapon.weaponImage} 
-                    alt={weapon.name}
-                    className="max-w-full h-20 object-contain opacity-80 hover:opacity-100 transition-opacity"
-                  />
-                </div>
-              )}
-
               {/* Attachments - Special for detailed loadouts */}
               {weapon.attachments && (
                 <div className="mb-4">
