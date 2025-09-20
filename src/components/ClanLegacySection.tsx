@@ -21,13 +21,13 @@ const ClanLegacySection = () => {
               Our Legacy
             </span>
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient-gold">DOMINATING</span>{' '}
+              <span className="text-gradient-gold">PROUD TO REPRESENT</span>{' '}
               <span className="text-white">CAMEROON</span>
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-ogclan to-red-500 mx-auto rounded-full mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Since our rise, <span className="font-bold text-ogclan">OG Clan has completely revolutionized</span> the Battle Royale scene in Cameroon, 
-              creating a new standard that others aspire to reach.
+              Since our foundation, <span className="font-bold text-ogclan">OG Clan has been honored to contribute</span> to the growth of Battle Royale gaming in Cameroon, 
+              working alongside the community to elevate the scene together.
             </p>
           </AnimatedContent>
         </div>
@@ -66,24 +66,24 @@ const ClanLegacySection = () => {
               <div className="glass-card p-6 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <Crown className="h-8 w-8 text-ogclan" />
-                  <h3 className="text-2xl font-bold text-white">Battle Royale Dominance</h3>
+                  <h3 className="text-2xl font-bold text-white">Battle Royale Excellence</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  We didn't just play Battle Royale - <span className="font-bold text-blue-400">we redefined it</span>. 
-                  Our tactical supremacy in Alcatraz, Isolated, and Blackout has set the gold standard 
-                  that every clan in Cameroon now follows.
+                  We're passionate about Battle Royale gaming - <span className="font-bold text-blue-400">constantly improving and learning</span>. 
+                  Our dedication to tactical gameplay in Alcatraz, Isolated, and Blackout has helped us earn respect 
+                  within the Cameroonian gaming community.
                 </p>
               </div>
 
               <div className="glass-card p-6 rounded-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-300">
                 <div className="flex items-center gap-4 mb-4">
                   <Globe className="h-8 w-8 text-red-400" />
-                  <h3 className="text-2xl font-bold text-white">Community Revolution</h3>
+                  <h3 className="text-2xl font-bold text-white">Community Building</h3>
                 </div>
                 <p className="text-gray-300 leading-relaxed">
-                  <span className="font-bold text-red-400">We changed how people see clans.</span> No longer just gaming groups, 
-                  but professional esports organizations. Our success inspired a generation of 
-                  gamers to dream bigger and aim higher.
+                  <span className="font-bold text-red-400">We believe in collaborative growth.</span> By working together with the gaming community, 
+                  we've been fortunate to inspire fellow gamers and help foster a positive environment 
+                  where everyone can pursue their esports dreams.
                 </p>
               </div>
 
@@ -108,7 +108,7 @@ const ClanLegacySection = () => {
             <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300">
               <Trophy className="h-12 w-12 text-blue-400 mx-auto mb-4" />
               <div className="text-3xl font-bold text-white mb-2">1ST</div>
-              <div className="text-sm text-gray-400">Clan to go International</div>
+              <div className="text-sm text-gray-400">Clan to reach International level</div>
             </div>
           </AnimatedContent>
 
@@ -124,7 +124,7 @@ const ClanLegacySection = () => {
             <div className="glass-card p-6 rounded-xl text-center hover:shadow-[0_0_30px_rgba(212,175,55,0.2)] transition-all duration-300">
               <Shield className="h-12 w-12 text-ogclan mx-auto mb-4" />
               <div className="text-3xl font-bold text-white mb-2">5YRS</div>
-              <div className="text-sm text-gray-400">Leading the Scene</div>
+              <div className="text-sm text-gray-400">Growing Together</div>
             </div>
           </AnimatedContent>
 
