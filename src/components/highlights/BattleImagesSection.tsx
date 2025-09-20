@@ -34,18 +34,8 @@ const BattleImagesSection = () => {
   ];
 
   return (
-    <div className="grid md:grid-cols-3 gap-6">
-      {battleImages.map((image) => (
-        <BattleImageCard
-          key={image.id}
-          imageSrc={image.imageSrc}
-          title={image.title}
-          shortTitle={image.shortTitle}
-          description={image.description}
-          animation={image.animation}
-          delay={image.delay}
-        />
-      ))}
+    <div>
+      {/* Battle images section removed */}
     </div>
   );
 };
