@@ -1,0 +1,63 @@
+/* Performance-optimized styles for Tier Tracker */
+
+/* Hardware acceleration for smooth animations */
+.tier-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized hover effects using transforms */
+.soldier-card-hover {
+  will-change: transform, box-shadow;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.soldier-card-hover:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Reduce paint operations */
+.tier-header {
+  contain: layout style paint;
+}
+
+/* Optimize text rendering */
+.tier-title {
+  text-rendering: optimizeLegibility;
+  font-display: swap;
+}
+
+/* Smooth scrolling optimization */
+.tier-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Reduce layout thrashing */
+.soldier-grid {
+  contain: layout;
+}
+
+/* GPU acceleration for backgrounds */
+.tier-background {
+  transform: translateZ(0);
+  will-change: background-color;
+}
+
+/* Optimize animations for 60fps */
+@media (prefers-reduced-motion: no-preference) {
+  .tier-animate {
+    animation-duration: 0.3s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: both;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .tier-animate {
+    animation: none;
+    transition: none;
+  }
+}

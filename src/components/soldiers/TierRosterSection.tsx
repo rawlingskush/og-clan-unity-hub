@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Shield, TrendingUp } from 'lucide-react';
 import { tierData } from '@/data/tiers';
@@ -8,8 +8,12 @@ interface TierRosterSectionProps {
   onSoldierClick?: (soldier: any) => void;
 }
 
-const TierRosterSection = ({ onSoldierClick }: TierRosterSectionProps) => {
-  const totalSoldiers = tierData.reduce((acc, tier) => acc + tier.soldiers.length, 0);
+const TierRosterSection = memo(({ onSoldierClick }: TierRosterSectionProps) => {
+  // Memoize expensive calculations
+  const totalSoldiers = useMemo(() => 
+    tierData.reduce((acc, tier) => acc + tier.soldiers.length, 0), 
+    []
+  );
 
   return (
     <motion.div
@@ -17,66 +21,45 @@ const TierRosterSection = ({ onSoldierClick }: TierRosterSectionProps) => {
       animate={{ opacity: 1 }}
       className="space-y-6"
     >
-      {/* Enhanced Header */}
+      {/* Optimized Header */}
       <div className="text-center space-y-6 mb-8">
-        {/* Main Title with Glow Effect */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="relative"
-        >
+        {/* Main Title with Simplified Animation */}
+        <div className="relative">
           <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-br from-ogclan/30 to-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
+            <div className="p-3 rounded-xl bg-ogclan/20 border border-ogclan/30">
               <Shield className="text-ogclan" size={28} />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-ogclan via-white to-ogclan bg-clip-text text-transparent tracking-wide">
               PROGRESS TRACKER
             </h2>
-            <div className="p-3 rounded-xl bg-gradient-to-br from-ogclan/30 to-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
+            <div className="p-3 rounded-xl bg-ogclan/20 border border-ogclan/30">
               <TrendingUp className="text-ogclan" size={28} />
             </div>
           </div>
           
-          {/* Subtitle */}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
-          >
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Strategic hierarchy displaying our <span className="text-ogclan font-semibold">OG Clan warriors</span> by performance tier
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
         
-        {/* Stats Bar */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap items-center justify-center gap-6 text-sm"
-        >
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
-            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-ogclan to-ogclan-glow animate-pulse" />
+        {/* Simplified Stats Bar */}
+        <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ogclan/10 border border-ogclan/20">
+            <div className="w-3 h-3 rounded-full bg-ogclan" />
             <span className="text-ogclan font-medium">Has Profile</span>
           </div>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
             <span className="text-white font-medium">Total Warriors:</span>
             <span className="text-ogclan font-bold text-lg">{totalSoldiers}</span>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Instruction */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="text-sm text-gray-400 font-medium"
-        >
+        <p className="text-sm text-gray-400 font-medium">
           💡 Click on warriors with profiles to view detailed stats
-        </motion.p>
+        </p>
       </div>
 
-      {/* Tiers */}
+      {/* Optimized Tiers */}
       <div className="space-y-4">
         {tierData.map((tier, index) => (
           <TierCard
@@ -186,6 +169,8 @@ const TierRosterSection = ({ onSoldierClick }: TierRosterSectionProps) => {
       </motion.div>
     </motion.div>
   );
-};
+});
+
+TierRosterSection.displayName = 'TierRosterSection';
 
 export default TierRosterSection;
