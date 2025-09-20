@@ -54,12 +54,10 @@ const Navbar = () => {
     navigate(path);
     setIsDrawerOpen(false);
     
-    // Ensure scroll to top when navigating to soldiers or clan members page
-    if (path === '/soldiers' || path === '/clan-members') {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 100);
-    }
+    // Ensure scroll to top for ALL page navigations
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   const toggleMobileSubmenu = (itemId: string) => {

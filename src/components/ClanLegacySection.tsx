@@ -4,8 +4,10 @@ import { Button } from './ui/button';
 import { Crown, Trophy, Users, Globe, Star, Shield, Target, Heart } from 'lucide-react';
 import ogEsportsLogo from '@/assets/og-clan-esports-logo.jpg';
 import cameroonFlag from '@/assets/cameroon-flag.png';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 
 const ClanLegacySection = () => {
+  const { navigateToPage } = useAppNavigation();
   return (
     <section id="clan-legacy" className="py-20 bg-gradient-to-b from-black via-black/95 to-black overflow-hidden relative">
       {/* Background Effects */}
@@ -132,7 +134,7 @@ const ClanLegacySection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.open('/soldiers', '_self')}
+                onClick={() => navigateToPage('/soldiers')}
               >
                 <Users className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Meet Our Champions
@@ -141,7 +143,7 @@ const ClanLegacySection = () => {
               <Button 
                 variant="outline"
                 className="border-ogclan/50 text-ogclan hover:bg-ogclan/10 hover:border-ogclan px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.open('/player-tracker', '_self')}
+                onClick={() => navigateToPage('/player-tracker')}
               >
                 <Target className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Player Tracker

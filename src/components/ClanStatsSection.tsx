@@ -8,9 +8,11 @@ import ActivityChart from './stats/ActivityChart';
 import PerformanceChart from './stats/PerformanceChart';
 import { Trophy, Users, Star, TrendingUp } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 
 const ClanStatsSection = () => {
   const isMobile = useIsMobile();
+  const { navigateToPage } = useAppNavigation();
   
   return (
     <section id="clan-stats" className="py-12 md:py-16 relative overflow-hidden">
@@ -97,7 +99,7 @@ const ClanStatsSection = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
             <button 
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-medium rounded-lg transition-all duration-300 hover:from-emerald-500 hover:to-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] active:scale-[0.98] text-lg"
-              onClick={() => window.open('/player-tracker', '_self')}
+              onClick={() => navigateToPage('/player-tracker')}
             >
               <Users className="mr-2 h-6 w-6" />
               <span>Player Tracker</span>
@@ -105,7 +107,7 @@ const ClanStatsSection = () => {
             
             <button 
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/30 hover:border-primary/50 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-[0.98] text-lg"
-              onClick={() => window.open('/soldiers', '_self')}
+              onClick={() => navigateToPage('/soldiers')}
             >
               <Trophy className="mr-2 h-6 w-6" />
               <span>Browse Elite Warriors</span>

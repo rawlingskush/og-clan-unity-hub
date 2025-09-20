@@ -3,7 +3,9 @@ import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
 import { ArrowRight, Users, Trophy, Target, Globe, Calendar, Star, Shield } from 'lucide-react';
 import codmBattleRoyaleEpic from '@/assets/codm-battle-royale-epic.png';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 const AboutSection = () => {
+  const { navigateToPage } = useAppNavigation();
   return <section id="about" className="py-16 bg-gradient-to-b from-black/95 to-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Background elements */}
@@ -121,7 +123,7 @@ const AboutSection = () => {
                   <Button 
                     variant="outline" 
                     className="text-ogclan hover:text-ogclan-light border-ogclan/50 hover:border-ogclan hover:bg-ogclan/10 transition-all group"
-                    onClick={() => window.open('/soldiers', '_self')}
+                    onClick={() => navigateToPage('/soldiers')}
                   >
                     Meet Our Warriors
                     <Users className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
@@ -130,7 +132,7 @@ const AboutSection = () => {
                   <Button 
                     variant="outline" 
                     className="text-emerald-400 hover:text-emerald-300 border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-400/10 transition-all group"
-                    onClick={() => window.open('/player-tracker', '_self')}
+                    onClick={() => navigateToPage('/player-tracker')}
                   >
                     Player Tracker
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Users, Trophy, Target, TrendingUp, Shield, Award } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 import QuickNavCard from './QuickNavCard';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 
 interface StoryNavigationProps {
   className?: string;
@@ -9,6 +10,7 @@ interface StoryNavigationProps {
 }
 
 const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationProps) => {
+  const { navigateToPage, navigateToSection } = useAppNavigation();
   const navigationItems = [
     {
       id: 1,
@@ -16,7 +18,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Meet our legendary fighters and their battle stories",
       icon: Shield,
       variant: 'primary' as const,
-      onClick: () => window.open('/soldiers', '_self')
+      onClick: () => navigateToPage('/soldiers')
     },
     {
       id: 2,
@@ -24,7 +26,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "View our strategic tier system and warrior rankings",
       icon: Target,
       variant: 'secondary' as const,
-      onClick: () => window.open('/tier-tracker', '_self')
+      onClick: () => navigateToPage('/tier-tracker')
     },
     {
       id: 3,
@@ -32,7 +34,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Track individual player activity and member status",
       icon: Users,
       variant: 'accent' as const,
-      onClick: () => window.open('/player-tracker', '_self')
+      onClick: () => navigateToPage('/player-tracker')
     },
     {
       id: 4,
@@ -40,12 +42,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Dive into our performance metrics and achievements",
       icon: TrendingUp,
       variant: 'accent' as const,
-      onClick: () => {
-        const statsSection = document.getElementById('clan-stats');
-        if (statsSection) {
-          statsSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
+      onClick: () => navigateToSection('clan-stats')
     }
   ];
 

@@ -5,9 +5,11 @@ import { Badge } from '@/components/ui/badge';
 import StatsCard from './stats/StatsCard';
 import PerformanceChart from './stats/PerformanceChart';
 import ak117GrimEnding from '../assets/ak117-grim-ending.png';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 
 const BattlefieldDominance = () => {
   const [activeTab, setActiveTab] = useState('loadouts');
+  const { navigateToPage } = useAppNavigation();
 
   const signatureLoadouts = [
     {
@@ -361,7 +363,7 @@ const BattlefieldDominance = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-12">
               <button 
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/25"
-                onClick={() => window.open('/soldiers', '_self')}
+                onClick={() => navigateToPage('/soldiers')}
               >
                 <Users className="mr-2 h-5 w-5" />
                 View All Warriors

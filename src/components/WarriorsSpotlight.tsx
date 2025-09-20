@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Target, Zap, Shield, Users } from 'lucide-react';
 import { soldiers } from '@/data/soldiers';
 import { generateSoldierStats } from '@/utils/soldierStats';
+import { useAppNavigation } from '@/hooks/useAppNavigation';
 
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { navigateToPage } = useAppNavigation();
   const priorityIds = new Set(['pinky', 'johnwick', 'chambas']);
   const candidates = soldiers.filter(s => s.spotlight || s.princess || s.pro || s.active);
   const prioritized = [
@@ -175,7 +177,7 @@ const WarriorsSpotlight = () => {
         <div className="text-center mt-12">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <button 
-              onClick={() => window.open('/clan-members', '_self')}
+              onClick={() => navigateToPage('/clan-members')}
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/30 hover:border-primary/50 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(var(--primary),0.3)] group"
             >
               <Users className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
@@ -184,7 +186,7 @@ const WarriorsSpotlight = () => {
             </button>
             
             <button 
-              onClick={() => window.open('/tier-tracker', '_self')}
+              onClick={() => navigateToPage('/tier-tracker')}
               className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-emerald-600/20 to-emerald-500/20 hover:from-emerald-600/30 hover:to-emerald-500/30 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(16,185,129,0.3)] group"
             >
               <Target className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
