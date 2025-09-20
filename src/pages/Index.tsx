@@ -6,6 +6,7 @@ import WarriorsSpotlight from '@/components/WarriorsSpotlight';
 import ClanLegacySection from '@/components/ClanLegacySection';
 import BattleNightSection from '@/components/BattleNightSection';
 import BattlefieldDominance from '@/components/BattlefieldDominance';
+import BattleFootageSection from '@/components/BattleFootageSection';
 import TournamentResults from '@/components/results/TournamentResults';
 import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
@@ -43,6 +44,7 @@ const Index = () => {
         <ClanLegacySection />
         <BattleNightSection />
         <BattlefieldDominance />
+        <BattleFootageSection />
         <TournamentResults />
         <AboutSection />
         <CoDPointsSection />
