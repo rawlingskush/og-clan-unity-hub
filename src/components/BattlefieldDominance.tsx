@@ -19,12 +19,13 @@ const BattlefieldDominance = () => {
       weaponImage: ak117GrimEnding,
       attachments: [
         'OWC Light Compensator',
-        'OWC Marksman', 
+        'OWC Marksman',
+        'No Stock',
         'Tactical Foregrip A',
         '40 Round Extended Mag'
       ],
       stats: {
-        damage: 76,
+        damage: 25,
         range: 58,
         mobility: 70,
         accuracy: 69,
@@ -32,36 +33,54 @@ const BattlefieldDominance = () => {
         control: 54
       },
       users: ['WIZARD', 'LAMENACE', 'SHINOBI', 'DHAMER', 'PINKY'],
-      color: 'from-blue-500/20 to-cyan-500/20',
-      borderColor: 'border-blue-500/30'
+      color: 'from-red-500/20 to-orange-500/20',
+      borderColor: 'border-red-500/30'
     },
     {
-      id: 'oden',
-      name: 'Oden',
-      category: 'Assault Rifle',
-      description: 'Heavy-hitting assault rifle perfect for breaking enemy lines',
+      id: 'hso405',
+      name: 'HSO405 - Songstress',
+      category: 'Sniper Rifle',
+      description: 'Elite sniper configuration with extended range and precision targeting',
       icon: <Target className="w-8 h-8" />,
+      attachments: [
+        'Choke',
+        'RTC Extended Light Barrel',
+        'No Stock',
+        'MIP Laser 5mW',
+        'Stippled Grip Tape'
+      ],
       stats: {
-        damage: 95,
-        range: 88,
-        mobility: 65,
-        accuracy: 82
+        damage: 28,
+        range: 48,
+        mobility: 84,
+        accuracy: 47,
+        fireRate: 27,
+        control: 34
       },
-      users: ['KUSH'],
-      color: 'from-orange-500/20 to-red-500/20',
-      borderColor: 'border-orange-500/30'
+      users: ['SNIPER ELITE', 'LONGSHOT'],
+      color: 'from-yellow-500/20 to-orange-500/20',
+      borderColor: 'border-yellow-500/30'
     },
     {
       id: 'krm262',
-      name: 'KRM-262',
+      name: 'KRM-262 - Glorious Blaze',
       category: 'Shotgun',
-      description: 'Close-quarters devastation for room clearing',
+      description: 'Close-quarters devastation with enhanced mobility and control',
       icon: <Shield className="w-8 h-8" />,
+      attachments: [
+        'Marauder Suppressor',
+        'RTC Light Extended Barrel',
+        'RTC Steady Stock',
+        'Strike Foregrip',
+        'Stippled Grip Tape'
+      ],
       stats: {
-        damage: 98,
-        range: 45,
-        mobility: 70,
-        accuracy: 65
+        damage: 24,
+        range: 53,
+        mobility: 66,
+        accuracy: 62,
+        fireRate: 28,
+        control: 44
       },
       users: ['DAMAGE', 'EXODUS', 'MIKKI'],
       color: 'from-purple-500/20 to-pink-500/20',
@@ -69,19 +88,53 @@ const BattlefieldDominance = () => {
     },
     {
       id: 'fennec',
-      name: 'FENNEC',
+      name: 'FENNEC - Zakhaev\'s Executioner',
       category: 'SMG',
-      description: 'Elite princess weapon with devastating close-range power',
-      icon: <Crosshair className="w-8 h-8" />,
+      description: 'Elite princess weapon with devastating close-range power and superior mobility',
+      icon: <Zap className="w-8 h-8" />,
+      attachments: [
+        'Monolithic Suppressor',
+        'MIP Extended Light Barrel',
+        'Sleight of Hand',
+        'MIP Laser 5mW',
+        'Light Mag'
+      ],
       stats: {
-        damage: 85,
-        range: 58,
-        mobility: 88,
-        accuracy: 80
+        damage: 23,
+        range: 52,
+        mobility: 108,
+        accuracy: 32,
+        fireRate: 111,
+        control: 24
       },
       users: ['BOTGIRL', 'LIL NASTY'],
       color: 'from-pink-500/20 to-rose-500/20',
       borderColor: 'border-pink-500/30'
+    },
+    {
+      id: 'by15',
+      name: 'BY15 - Boba Blaster',
+      category: 'Shotgun',
+      description: 'Precision shotgun with enhanced accuracy and range for tactical superiority',
+      icon: <Shield className="w-8 h-8" />,
+      attachments: [
+        'Marauder Suppressor',
+        'RTC Extended Light Barrel',
+        'RTC Steady Stock',
+        'MIP Laser 5mW',
+        'Strike Foregrip'
+      ],
+      stats: {
+        damage: 24,
+        range: 54,
+        mobility: 63,
+        accuracy: 65,
+        fireRate: 29,
+        control: 46
+      },
+      users: ['TACTICAL STRIKER', 'CLOSE COMBAT'],
+      color: 'from-blue-500/20 to-purple-500/20',
+      borderColor: 'border-blue-500/30'
     }
   ];
 
