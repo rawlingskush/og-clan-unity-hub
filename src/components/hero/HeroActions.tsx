@@ -61,7 +61,7 @@ const HeroActions = () => {
           
           <button 
             className="inline-flex items-center justify-center px-4 sm:px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-500 text-white font-medium rounded-lg transition-all duration-300 hover:from-purple-500 hover:to-purple-400 hover:shadow-[0_0_15px_rgba(147,51,234,0.3)] active:scale-[0.98]"
-            onClick={() => navigate('/soldiers?view=tiers')}
+            onClick={() => navigate('/tier-tracker')}
           >
             <Target className="mr-2 h-5 w-5" />
             <span className="text-sm sm:text-base">Tier Tracker</span>

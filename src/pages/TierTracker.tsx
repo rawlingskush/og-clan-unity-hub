@@ -1,0 +1,121 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Trophy, Target, Users, Crown, Star, Shield } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import TierRosterSection from '@/components/soldiers/TierRosterSection';
+import { tierData } from '@/data/tiers';
+import { cn } from '@/lib/utils';
+
+const TierTracker = () => {
+  const totalSoldiers = tierData.reduce((acc, tier) => acc + tier.soldiers.length, 0);
+  
+  const stats = [
+    { icon: Users, label: 'Total Warriors', value: totalSoldiers, color: 'text-blue-400' },
+    { icon: Trophy, label: 'Active Tiers', value: tierData.length, color: 'text-yellow-400' },
+    { icon: Crown, label: 'Tier 1 Elites', value: tierData[0]?.soldiers.length || 0, color: 'text-purple-400' },
+    { icon: Star, label: 'Rising Stars', value: tierData[3]?.soldiers.length || 0, color: 'text-green-400' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative pt-20 pb-16 overflow-hidden"
+      >
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-tactical-dark via-black to-black opacity-90" />
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-ogclan/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Header Badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-ogclan/20 to-tactical-highlight/20 rounded-full border border-ogclan/30 mb-6"
+          >
+            <Target className="h-5 w-5 text-ogclan" />
+            <span className="text-ogclan font-medium text-sm uppercase tracking-wider">Tier Progress System</span>
+          </motion.div>
+
+          {/* Main Title */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+          >
+            <span className="text-gradient-gold">TIER</span>{' '}
+            <span className="text-white">TRACKER</span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="text-xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed"
+          >
+            Monitor player progression through our hierarchical tier system. Track performance, 
+            advancement opportunities, and clan ranking status in real-time.
+          </motion.p>
+
+          {/* Stats Grid */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16"
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8 + index * 0.1, duration: 0.5 }}
+                className="bg-tactical-dark/50 backdrop-blur-sm border border-ogclan/20 rounded-xl p-6 text-center hover:border-ogclan/40 transition-all duration-300 group"
+              >
+                <div className={cn("mx-auto mb-3 p-3 rounded-full bg-gradient-to-r from-black/50 to-tactical-dark/50 w-fit group-hover:scale-110 transition-transform duration-300", stat.color)}>
+                  <stat.icon className="h-6 w-6" />
+                </div>
+                <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Decorative Elements */}
+          <div className="absolute top-20 left-10 opacity-20">
+            <Shield className="h-8 w-8 text-ogclan animate-pulse" />
+          </div>
+          <div className="absolute bottom-20 right-10 opacity-20">
+            <Trophy className="h-8 w-8 text-ogclan animate-pulse" style={{ animationDelay: '1s' }} />
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Tier Roster Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="relative"
+      >
+        <TierRosterSection />
+      </motion.section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default TierTracker;
