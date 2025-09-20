@@ -116,10 +116,25 @@ const AboutSection = () => {
                   </li>
                 </ul>
                 
-                <Button variant="outline" className="mt-auto text-ogclan hover:text-ogclan-light border-ogclan/50 hover:border-ogclan hover:bg-ogclan/10 transition-all group self-start">
-                  Join our legacy
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-3 mt-auto">
+                  <Button 
+                    variant="outline" 
+                    className="text-ogclan hover:text-ogclan-light border-ogclan/50 hover:border-ogclan hover:bg-ogclan/10 transition-all group"
+                    onClick={() => window.open('/soldiers?view=gallery', '_self')}
+                  >
+                    Meet Our Warriors
+                    <Users className="ml-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    className="text-emerald-400 hover:text-emerald-300 border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-400/10 transition-all group"
+                    onClick={() => window.open('/soldiers?view=members', '_self')}
+                  >
+                    View Tier System
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </div>
               </div>
             </div>
           </AnimatedContent>

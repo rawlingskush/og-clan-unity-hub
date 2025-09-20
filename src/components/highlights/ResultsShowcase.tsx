@@ -61,7 +61,15 @@ const ResultsShowcase = () => {
             animation="scale-in" 
             delay={200 + index * 100}
           >
-            <Card className="glass-card group hover-effect cursor-pointer">
+            <Card 
+              className="glass-card group hover-effect cursor-pointer"
+              onClick={() => {
+                const statsSection = document.getElementById('clan-stats');
+                if (statsSection) {
+                  statsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <CardContent className="p-4">
                 <div className="text-center space-y-3">
                   <div className="flex justify-center">
@@ -93,6 +101,22 @@ const ResultsShowcase = () => {
             </Card>
           </AnimatedContent>
         ))}
+      </div>
+      
+      {/* View More Stats CTA */}
+      <div className="text-center mt-8">
+        <button 
+          onClick={() => {
+            const statsSection = document.getElementById('clan-stats');
+            if (statsSection) {
+              statsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary/20 to-accent/20 hover:from-primary/30 hover:to-accent/30 border border-primary/30 hover:border-primary/50 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 group"
+        >
+          <TrendingUp className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+          <span>View Detailed Statistics</span>
+        </button>
       </div>
     </div>
   );

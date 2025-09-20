@@ -28,6 +28,25 @@ const AchievementsSection = () => {
     label: "Annual Growth"
   }];
 
+  const handleAchievementClick = (achievementId: number) => {
+    if (achievementId === 1) {
+      // Community Growth -> View all members
+      window.open('/soldiers?view=members', '_self');
+    } else if (achievementId === 2) {
+      // Tournament Success -> View statistics
+      const statsSection = document.getElementById('clan-stats');
+      if (statsSection) {
+        statsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Growing Influence -> View statistics
+      const statsSection = document.getElementById('clan-stats');
+      if (statsSection) {
+        statsSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <div className="grid md:grid-cols-3 gap-6 mb-12">
       {achievements.map((achievement, index) => (
@@ -36,13 +55,18 @@ const AchievementsSection = () => {
           animation="fade-in-up" 
           delay={300 + index * 150}
         >
-          <AchievementCard
-            icon={achievement.icon}
-            stat={achievement.stat}
-            label={achievement.label}
-            title={achievement.title}
-            description={achievement.description}
-          />
+          <div 
+            onClick={() => handleAchievementClick(achievement.id)}
+            className="cursor-pointer transition-transform duration-300 hover:scale-105"
+          >
+            <AchievementCard
+              icon={achievement.icon}
+              stat={achievement.stat}
+              label={achievement.label}
+              title={achievement.title}
+              description={achievement.description}
+            />
+          </div>
         </AnimatedContent>
       ))}
     </div>

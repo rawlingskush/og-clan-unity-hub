@@ -4,6 +4,7 @@ import AchievementsSection from './highlights/AchievementsSection';
 import EventCard from './highlights/EventCard';
 import BattleImagesSection from './highlights/BattleImagesSection';
 import ResultsShowcase from './highlights/ResultsShowcase';
+import StoryNavigation from './navigation/StoryNavigation';
 
 const HighlightsSection = () => {
   const values = [{
@@ -39,6 +40,11 @@ const HighlightsSection = () => {
 
         <div className="mt-12">
           <BattleImagesSection />
+        </div>
+
+        {/* Story Navigation Integration */}
+        <div className="mt-16">
+          <StoryNavigation />
         </div>
       </div>
     </div>
