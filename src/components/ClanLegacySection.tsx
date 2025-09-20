@@ -3,6 +3,7 @@ import AnimatedContent from './AnimatedContent';
 import { Button } from './ui/button';
 import { Crown, Trophy, Users, Globe, Star, Shield, Target, Heart } from 'lucide-react';
 import ogEsportsLogo from '@/assets/og-clan-esports-logo.jpg';
+import cameroonFlag from '@/assets/cameroon-flag.png';
 
 const ClanLegacySection = () => {
   return (
@@ -20,10 +21,25 @@ const ClanLegacySection = () => {
             <span className="inline-block px-6 py-2 bg-gradient-to-r from-blue-500/10 to-red-500/10 rounded-full text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-400 text-sm font-bold tracking-wider uppercase mb-4 border border-blue-500/20">
               Our Legacy
             </span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-gradient-gold">PROUD TO REPRESENT</span>{' '}
-              <span className="text-white">CAMEROON</span>
-            </h2>
+            
+            {/* Cameroon Flag and Title */}
+            <div className="flex items-center justify-center gap-6 mb-6 flex-wrap">
+              <img 
+                src={cameroonFlag} 
+                alt="Flag of Cameroon" 
+                className="w-16 h-12 md:w-20 md:h-15 object-cover rounded shadow-lg hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]" 
+              />
+              <h2 className="text-4xl md:text-6xl font-bold text-center">
+                <span className="text-gradient-gold">PROUD TO REPRESENT</span>{' '}
+                <span className="text-white">CAMEROON</span>
+              </h2>
+              <img 
+                src={cameroonFlag} 
+                alt="Flag of Cameroon" 
+                className="w-16 h-12 md:w-20 md:h-15 object-cover rounded shadow-lg hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_20px_rgba(212,175,55,0.3)]" 
+              />
+            </div>
+            
             <div className="w-32 h-1 bg-gradient-to-r from-blue-500 via-ogclan to-red-500 mx-auto rounded-full mb-8"></div>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Since our foundation, <span className="font-bold text-ogclan">OG Clan has been honored to contribute</span> to the growth of Battle Royale gaming in Cameroon, 
