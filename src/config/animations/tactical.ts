@@ -73,6 +73,62 @@ export const tacticalKeyframes = {
     '20%, 40%, 60%, 80%': { 
       transform: 'translateX(2px)' 
     }
+  },
+  'float': {
+    '0%, 100%': { 
+      transform: 'translateY(0) translateX(0)',
+      opacity: '0.6'
+    },
+    '33%': { 
+      transform: 'translateY(-10px) translateX(5px)',
+      opacity: '1'
+    },
+    '66%': { 
+      transform: 'translateY(5px) translateX(-3px)',
+      opacity: '0.8'
+    }
+  },
+  'pulse-slow': {
+    '0%, 100%': { 
+      opacity: '0.4',
+      boxShadow: '0 0 0 0 rgba(212,175,55,0.4)'
+    },
+    '50%': { 
+      opacity: '1',
+      boxShadow: '0 0 0 4px rgba(212,175,55,0.1)'
+    }
+  },
+  'scan-horizontal': {
+    '0%': {
+      transform: 'translateX(-100%)',
+      opacity: '0'
+    },
+    '50%': {
+      opacity: '1'
+    },
+    '100%': {
+      transform: 'translateX(100%)',
+      opacity: '0'
+    }
+  },
+  'data-flow': {
+    '0%': {
+      transform: 'translateX(-100%)',
+      opacity: '0'
+    },
+    '10%': {
+      opacity: '0.3'
+    },
+    '50%': {
+      opacity: '0.8'
+    },
+    '90%': {
+      opacity: '0.3'
+    },
+    '100%': {
+      transform: 'translateX(100%)',
+      opacity: '0'
+    }
   }
 };
 
@@ -82,5 +138,9 @@ export const tacticalAnimations = {
   'radar-ping': 'radar-ping 2s infinite',
   'tactical-fade-in': 'tactical-fade-in 0.8s ease-out',
   'tactical-target': 'tactical-target 2s infinite ease-in-out',
-  'tactical-shake': 'tactical-shake 0.5s infinite'
+  'tactical-shake': 'tactical-shake 0.5s infinite',
+  'float': 'float 4s ease-in-out infinite',
+  'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+  'scan-horizontal': 'scan-horizontal 4s linear infinite',
+  'data-flow': 'data-flow 6s linear infinite'
 };
