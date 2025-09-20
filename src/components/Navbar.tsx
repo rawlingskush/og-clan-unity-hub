@@ -54,8 +54,8 @@ const Navbar = () => {
     navigate(path);
     setIsDrawerOpen(false);
     
-    // Ensure scroll to top when navigating to soldiers page
-    if (path === '/soldiers') {
+    // Ensure scroll to top when navigating to soldiers or clan members page
+    if (path === '/soldiers' || path === '/clan-members') {
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
@@ -116,7 +116,7 @@ const Navbar = () => {
           />
           
           <div className="flex items-center gap-2 md:gap-3">
-            {/* Our Soldiers Button - Next to Join the Crew */}
+            {/* Our Soldiers Button */}
             <button 
               className="flex bg-gradient-to-r from-tactical-highlight to-tactical-highlight/80 text-black font-medium px-2 py-2 md:px-4 md:py-2.5 rounded-lg transition-all duration-300 
                        hover:from-tactical-highlight/90 hover:to-tactical-highlight hover:shadow-[0_0_15px_rgba(212,175,55,0.3)] active:scale-[0.98] items-center text-xs md:text-base"
@@ -124,6 +124,16 @@ const Navbar = () => {
             >
               <Users className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
               <span className="whitespace-nowrap">Our Soldiers</span>
+            </button>
+            
+            {/* Clan Members Button */}
+            <button 
+              className="flex bg-gradient-to-r from-purple-600 to-purple-500 text-white font-medium px-2 py-2 md:px-4 md:py-2.5 rounded-lg transition-all duration-300 
+                       hover:from-purple-500 hover:to-purple-400 hover:shadow-[0_0_15px_rgba(147,51,234,0.3)] active:scale-[0.98] items-center text-xs md:text-base"
+              onClick={() => handlePageNavigation('/clan-members')}
+            >
+              <Users className="mr-1 md:mr-2 h-3 w-3 md:h-4 md:w-4" />
+              <span className="whitespace-nowrap">Clan Members</span>
             </button>
             
             {/* Join the Crew Button */}

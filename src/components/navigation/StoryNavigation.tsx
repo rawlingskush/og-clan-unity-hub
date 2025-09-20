@@ -16,7 +16,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Meet our legendary fighters and their battle stories",
       icon: Shield,
       variant: 'primary' as const,
-      onClick: () => window.open('/soldiers?view=gallery', '_self')
+      onClick: () => window.open('/soldiers', '_self')
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const StoryNavigation = ({ className = '', layout = 'grid' }: StoryNavigationPro
       description: "Track our warriors through the tier system and rankings",
       icon: Target,
       variant: 'secondary' as const,
-      onClick: () => window.open('/soldiers?view=members', '_self')
+      onClick: () => window.open('/clan-members', '_self')
     },
     {
       id: 3,

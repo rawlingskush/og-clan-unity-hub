@@ -31,7 +31,7 @@ const AchievementsSection = () => {
   const handleAchievementClick = (achievementId: number) => {
     if (achievementId === 1) {
       // Community Growth -> View all members
-      window.open('/soldiers?view=members', '_self');
+      window.open('/clan-members', '_self');
     } else if (achievementId === 2) {
       // Tournament Success -> View statistics
       const statsSection = document.getElementById('clan-stats');

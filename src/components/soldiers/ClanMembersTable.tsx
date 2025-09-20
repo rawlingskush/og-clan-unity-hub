@@ -241,7 +241,7 @@ const ClanMembersTable = () => {
                       <td className="px-6 py-3 text-center">
                         {hasProfile && soldier ? (
                           <a
-                            href={`/soldiers?view=gallery#${getSoldierAnchor(soldier)}`}
+                            href={`/soldiers#${getSoldierAnchor(soldier)}`}
                             className="inline-flex items-center gap-1 text-ogclan hover:text-ogclan/80 transition-colors group/link"
                             title="View Elite Squad Profile"
                           >

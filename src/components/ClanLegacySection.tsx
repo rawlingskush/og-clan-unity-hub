@@ -132,7 +132,7 @@ const ClanLegacySection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.open('/soldiers?view=gallery', '_self')}
+                onClick={() => window.open('/soldiers', '_self')}
               >
                 <Users className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Meet Our Champions
@@ -141,7 +141,7 @@ const ClanLegacySection = () => {
               <Button 
                 variant="outline"
                 className="border-ogclan/50 text-ogclan hover:bg-ogclan/10 hover:border-ogclan px-8 py-4 text-lg font-semibold group"
-                onClick={() => window.open('/soldiers?view=members', '_self')}
+                onClick={() => window.open('/clan-members', '_self')}
               >
                 <Target className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Player Tracker

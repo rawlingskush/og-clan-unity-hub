@@ -8,6 +8,7 @@ import ErrorBoundary from "./components/ui/ErrorBoundary";
 import Index from "./pages/Index";
 import Soldiers from "./pages/Soldiers";
 import TierTracker from "./pages/TierTracker";
+import ClanMembers from "./pages/ClanMembers";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/soldiers" element={<Soldiers />} />
             <Route path="/tier-tracker" element={<TierTracker />} />
+            <Route path="/clan-members" element={<ClanMembers />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
