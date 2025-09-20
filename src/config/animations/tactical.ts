@@ -129,6 +129,22 @@ export const tacticalKeyframes = {
       transform: 'translateX(100%)',
       opacity: '0'
     }
+  },
+  'glow': {
+    '0%, 100%': {
+      filter: 'brightness(1.5) saturate(1.8) drop-shadow(0 0 40px rgba(212, 175, 55, 0.6))'
+    },
+    '50%': {
+      filter: 'brightness(2) saturate(2.2) drop-shadow(0 0 60px rgba(212, 175, 55, 0.9))'
+    }
+  },
+  'textGlow': {
+    '0%, 100%': {
+      textShadow: '0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.4)'
+    },
+    '50%': {
+      textShadow: '0 0 30px rgba(212, 175, 55, 1), 0 0 60px rgba(212, 175, 55, 0.6), 0 0 80px rgba(255, 215, 0, 0.3)'
+    }
   }
 };
 
@@ -142,5 +158,7 @@ export const tacticalAnimations = {
   'float': 'float 4s ease-in-out infinite',
   'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
   'scan-horizontal': 'scan-horizontal 4s linear infinite',
-  'data-flow': 'data-flow 6s linear infinite'
+  'data-flow': 'data-flow 6s linear infinite',
+  'glow': 'glow 4s ease-in-out infinite',
+  'textGlow': 'textGlow 3s ease-in-out infinite'
 };
