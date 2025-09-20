@@ -70,8 +70,7 @@ export const team5Soldiers: Soldier[] = [
     weapon: "BY15",
     bio: "Hated is the youngest soldier in OG Clan, but don't let his age fool you. His infectious laughter and eagerness to learn from every teammate makes him the heart of the squad. With his BY15 ready for action, he brings pure joy and surprising skill to every match. Everyone loves this funny kid who's hungry to prove himself.",
     tiktokUrl: "https://www.tiktok.com/@tt_hated?_t=ZM-8ziTy4Lt9hI&_r=1",
-    imageUrl: "/lovable-uploads/hated-pfp.png",
-    active: true
+    imageUrl: "/lovable-uploads/hated-pfp.png"
   },
   {
     id: "tiger",
