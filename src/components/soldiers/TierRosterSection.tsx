@@ -17,28 +17,63 @@ const TierRosterSection = ({ onSoldierClick }: TierRosterSectionProps) => {
       animate={{ opacity: 1 }}
       className="space-y-6"
     >
-      {/* Header */}
-      <div className="text-center space-y-4">
-        <div className="flex items-center justify-center gap-3">
-          <Shield className="text-ogclan" size={24} />
-          <h2 className="text-3xl font-bold text-white">TACTICAL ROSTER</h2>
-          <TrendingUp className="text-ogclan" size={24} />
-        </div>
-        
-        <p className="text-gray-400 max-w-2xl mx-auto">
-          Strategic hierarchy displaying our soldiers by performance tier. 
-          Click on soldiers with profiles to view their detailed stats.
-        </p>
-        
-        <div className="flex items-center justify-center gap-6 text-sm">
-          <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-ogclan" />
-            <span className="text-gray-300">Has Profile</span>
+      {/* Enhanced Header */}
+      <div className="text-center space-y-6 mb-8">
+        {/* Main Title with Glow Effect */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="relative"
+        >
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-br from-ogclan/30 to-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
+              <Shield className="text-ogclan" size={28} />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-ogclan via-white to-ogclan bg-clip-text text-transparent tracking-wide">
+              PROGRESS TRACKER
+            </h2>
+            <div className="p-3 rounded-xl bg-gradient-to-br from-ogclan/30 to-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
+              <TrendingUp className="text-ogclan" size={28} />
+            </div>
           </div>
-          <div className="text-gray-400">
-            Total: {totalSoldiers} Soldiers
+          
+          {/* Subtitle */}
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            Strategic hierarchy displaying our <span className="text-ogclan font-semibold">OG Clan warriors</span> by performance tier
+          </motion.p>
+        </motion.div>
+        
+        {/* Stats Bar */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-wrap items-center justify-center gap-6 text-sm"
+        >
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-ogclan/10 border border-ogclan/20 backdrop-blur-sm">
+            <div className="w-3 h-3 rounded-full bg-gradient-to-r from-ogclan to-ogclan-glow animate-pulse" />
+            <span className="text-ogclan font-medium">Has Profile</span>
           </div>
-        </div>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm">
+            <span className="text-white font-medium">Total Warriors:</span>
+            <span className="text-ogclan font-bold text-lg">{totalSoldiers}</span>
+          </div>
+        </motion.div>
+
+        {/* Instruction */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-sm text-gray-400 font-medium"
+        >
+          💡 Click on warriors with profiles to view detailed stats
+        </motion.p>
       </div>
 
       {/* Tiers */}
