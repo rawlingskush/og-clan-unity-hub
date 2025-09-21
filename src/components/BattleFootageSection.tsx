@@ -42,17 +42,8 @@ const BattleFootageSection = () => {
         <Card className="max-w-3xl mx-auto bg-gradient-to-br from-card/20 to-card/40 backdrop-blur-lg border border-primary/30 overflow-hidden">
           <CardContent className="p-0">
             <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20">
-              {/* Epic CODM Background */}
-              <div className="absolute inset-0">
-                <img 
-                  src="/lovable-uploads/codm-twilight-heist.png" 
-                  alt="CODM Twilight Heist Battle" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-background/70 to-background/50 backdrop-blur-[1px]" />
-              </div>
               {/* Video Thumbnail/Placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background/80 to-background/60 backdrop-blur-sm">
                 <div className="text-center">
                   <div className="mb-4 p-4 bg-primary/20 rounded-full inline-block">
                     <Play className="w-8 h-8 text-primary" />
@@ -65,7 +56,7 @@ const BattleFootageSection = () => {
                   </p>
                   <button
                     onClick={handleVideoClick}
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-primary/25 group"
+                    className="inline-flex items-center justify-center px-4 py-3 md:px-6 md:py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-medium rounded-lg transition-all duration-300 hover:md:scale-105 shadow-lg hover:shadow-primary/25 group w-full sm:w-auto touch-manipulation"
                   >
                     <Play className="mr-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     Watch Highlights
