@@ -20,7 +20,7 @@ export const team3Soldiers: Soldier[] = [
     weapon: "HS0405",
     bio: "Slim is the underrated mastermind at the heart of OG Clan's competitive scene. While others get the spotlight, he's quietly dominating scrims and comps with skills that few truly recognize. His HS0405 speaks volumes in clutch moments, and his tactical awareness keeps the team sharp when it matters most. Don't sleep on Slim.",
     tiktokUrl: "https://www.tiktok.com/@slim_06",
-    imageUrl: "/lovable-uploads/e6d757ea-8213-4afe-a4bb-a246521e7c1b.png",
+    imageUrl: "/lovable-uploads/slim-new-pfp.jpg",
     active: true,
     pro: true
   },
