@@ -26,6 +26,33 @@ const BattleImagesSection = () => {
     animation: "slide-in-right" as const,
     delay: 400
   }];
-  return;
+  return (
+    <div className="relative py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Battle Highlights
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Witness our greatest moments and tactical victories in Call of Duty Mobile
+          </p>
+        </div>
+        
+        <div className="mobile-grid-center">
+          {battleImages.map((image) => (
+            <BattleImageCard
+              key={image.id}
+              imageSrc={image.imageSrc}
+              title={image.title}
+              shortTitle={image.shortTitle}
+              description={image.description}
+              animation={image.animation}
+              delay={image.delay}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 export default BattleImagesSection;
