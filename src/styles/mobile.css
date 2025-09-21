@@ -119,37 +119,13 @@
   
   /* Battle Image Card mobile optimizations */
   .battle-image-card {
-    @apply h-80 mx-auto;
+    @apply h-80;
     min-height: 320px;
-    max-width: 100%;
   }
-
+  
   .battle-image-card img {
     object-position: center;
     image-rendering: optimizeQuality;
-  }
-  
-  /* Mobile grid centering fixes */
-  .mobile-grid-center {
-    @apply flex flex-col items-center justify-center space-y-6;
-  }
-  
-  .mobile-grid-center > * {
-    @apply w-full max-w-sm mx-auto;
-  }
-  
-  /* Tournament results mobile centering */
-  .tournament-results-mobile {
-    @apply grid grid-cols-1 gap-4 max-w-sm mx-auto;
-  }
-  
-  /* Battle showcase mobile centering */
-  .battle-showcase-mobile {
-    @apply flex flex-col items-center space-y-6;
-  }
-  
-  .battle-showcase-mobile .battle-image-card {
-    @apply w-full max-w-sm;
   }
   
   /* Hero background CODM character optimizations */
@@ -245,18 +221,8 @@
   
   /* CODM Character mobile optimizations for very small screens */
   .battle-image-card {
-    @apply h-72 mx-auto;
+    @apply h-72;
     min-height: 280px;
-    max-width: 100%;
-  }
-  
-  /* Extra small mobile grid adjustments */
-  .mobile-grid-center > * {
-    @apply max-w-xs;
-  }
-  
-  .tournament-results-mobile {
-    @apply max-w-xs mx-auto;
   }
   
   .codm-enhanced-mobile {
