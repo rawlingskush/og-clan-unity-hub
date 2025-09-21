@@ -54,7 +54,7 @@ const ResultsShowcase = () => {
         </div>
       </AnimatedContent>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="tournament-results-mobile md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-4 md:max-w-none">
         {topResults.map((result, index) => (
           <AnimatedContent 
             key={result.id} 

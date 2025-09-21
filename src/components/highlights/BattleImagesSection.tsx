@@ -51,7 +51,7 @@ const BattleImagesSection = () => {
         </div>
 
         {/* Battle Images Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="battle-showcase-mobile md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 max-w-6xl mx-auto">
           {battleImages.map((image, index) => (
             <BattleImageCard
               key={image.id}
