@@ -140,7 +140,14 @@
   
   /* Tournament results mobile centering */
   .tournament-results-mobile {
-    @apply grid grid-cols-1 gap-4 max-w-sm mx-auto;
+    @apply flex flex-col items-center justify-center gap-4 w-full;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+  
+  .tournament-results-mobile > * {
+    @apply w-full max-w-sm mx-auto;
+    flex-shrink: 0;
   }
   
   /* Battle showcase mobile centering */
@@ -256,7 +263,11 @@
   }
   
   .tournament-results-mobile {
-    @apply max-w-xs mx-auto;
+    @apply max-w-xs mx-auto px-4;
+  }
+  
+  .tournament-results-mobile > * {
+    @apply max-w-xs;
   }
   
   .codm-enhanced-mobile {
