@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Target, Zap, Shield, Users } from 'lucide-re
 import { soldiers } from '@/data/soldiers';
 import { generateSoldierStats } from '@/utils/soldierStats';
 import { useAppNavigation } from '@/hooks/useAppNavigation';
+import EnhancedImage from '@/components/ui/enhanced-image';
 
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -80,10 +81,13 @@ const WarriorsSpotlight = () => {
                 <div className="relative w-80 h-80 mx-auto">
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 via-transparent to-accent/20 animate-pulse" />
                   <div className="absolute inset-2 rounded-full overflow-hidden border-4 border-primary/30">
-                    <img 
+                    <EnhancedImage 
                       src={currentSoldier.imageUrl} 
                       alt={currentSoldier.name}
                       className="w-full h-full object-cover"
+                      aspectRatio="1/1"
+                      objectFit="cover"
+                      priority={true}
                     />
                   </div>
                 </div>
@@ -158,10 +162,13 @@ const WarriorsSpotlight = () => {
                   : 'hover:scale-105 opacity-60 hover:opacity-100'
               }`}
             >
-              <img 
+              <EnhancedImage 
                 src={soldier.imageUrl} 
                 alt={soldier.name}
                 className="w-full aspect-square object-cover"
+                aspectRatio="1/1"
+                objectFit="cover"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               <div className="absolute bottom-2 left-2 right-2">

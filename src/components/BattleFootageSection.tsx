@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Play, Trophy, Target, Users, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import EnhancedImage from '@/components/ui/enhanced-image';
 
 const BattleFootageSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -44,10 +45,13 @@ const BattleFootageSection = () => {
             <div className="relative aspect-video bg-gradient-to-br from-primary/20 to-accent/20">
               {/* Epic CODM Background */}
               <div className="absolute inset-0">
-                <img 
+                <EnhancedImage 
                   src="/lovable-uploads/codm-twilight-heist.png" 
                   alt="CODM Twilight Heist Battle" 
                   className="w-full h-full object-cover"
+                  aspectRatio="16/9"
+                  objectFit="cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-background/70 to-background/50 backdrop-blur-[1px]" />
               </div>

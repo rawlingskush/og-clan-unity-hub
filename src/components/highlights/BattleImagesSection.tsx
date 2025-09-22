@@ -34,8 +34,30 @@ const BattleImagesSection = () => {
   ];
 
   return (
-    <div>
-      {/* Battle images section removed */}
+    <div className="space-y-8 mobile-grid-center">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-gradient-gold mb-4">
+          BATTLE SHOWCASE
+        </h2>
+        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-4" />
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Elite warriors and tactical operations from our legendary battles
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 battle-showcase-mobile">
+        {battleImages.map((image) => (
+          <BattleImageCard
+            key={image.id}
+            imageSrc={image.imageSrc}
+            title={image.title}
+            shortTitle={image.shortTitle}
+            description={image.description}
+            animation={image.animation}
+            delay={image.delay}
+          />
+        ))}
+      </div>
     </div>
   );
 };
