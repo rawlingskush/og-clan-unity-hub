@@ -1,14 +1,17 @@
 
-/* Main CSS file that imports all the modularized styles */
+/* Critical CSS - Above the fold styles only */
 @import './styles/base.css';
 @import './styles/enhanced-colors.css';
 @import './styles/enhanced-typography.css';
-@import './styles/enhanced-buttons.css';
-@import './styles/advanced-animations.css';
-@import './styles/gold-effects.css';
-@import './styles/card-effects.css';
-@import './styles/stats-elements.css';
-@import './styles/tier-performance.css';
-@import './styles/responsive.css';
-@import './styles/animations.css';
-@import './styles/tactical-elements.css';
+@import './styles/ultra-performance.css';
+
+/* Non-critical styles - loaded with lower priority */
+@import './styles/enhanced-buttons.css' layer(components);
+@import './styles/advanced-animations.css' layer(animations);
+@import './styles/gold-effects.css' layer(effects);
+@import './styles/card-effects.css' layer(effects);
+@import './styles/stats-elements.css' layer(components);
+@import './styles/tier-performance.css' layer(performance);
+@import './styles/responsive.css' layer(layout);
+@import './styles/animations.css' layer(animations);
+@import './styles/tactical-elements.css' layer(effects);

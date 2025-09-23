@@ -1,0 +1,67 @@
+/* Critical CSS - Above the fold styles only */
+
+/* Essential typography */
+.font-orbitron { font-family: 'Orbitron', monospace; }
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Essential layout */
+.container { 
+  width: 100%; 
+  margin-left: auto; 
+  margin-right: auto; 
+  padding-left: 1rem; 
+  padding-right: 1rem; 
+}
+
+/* Hero section critical styles */
+.hero-background {
+  background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.3) 0%, transparent 70%),
+              linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--background) / 0.8) 100%);
+}
+
+/* Critical button styles */
+.btn-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 100%);
+  color: hsl(var(--primary-foreground));
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px hsl(var(--primary) / 0.3);
+}
+
+/* Essential responsive utilities */
+@media (max-width: 640px) {
+  .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .text-6xl { font-size: 3rem; }
+  .text-4xl { font-size: 2rem; }
+}
+
+/* Critical loading states */
+.skeleton {
+  background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted) / 0.5) 50%, hsl(var(--muted)) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Performance optimizations */
+.will-change-transform { will-change: transform; }
+.gpu-accelerated { 
+  transform: translateZ(0); 
+  backface-visibility: hidden; 
+  perspective: 1000px; 
+}

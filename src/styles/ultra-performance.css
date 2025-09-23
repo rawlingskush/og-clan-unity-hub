@@ -1,0 +1,72 @@
+/* Ultra performance optimizations */
+
+/* Hardware acceleration */
+.will-change-transform { will-change: transform; }
+.will-change-opacity { will-change: opacity; }
+.will-change-auto { will-change: auto; }
+
+/* GPU acceleration */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimized animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Critical resource hints */
+.preload-critical {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
+}
+
+/* Optimize text rendering */
+.optimize-text {
+  text-rendering: optimizeSpeed;
+  font-display: swap;
+}
+
+/* Container queries for better responsiveness */
+@container (max-width: 640px) {
+  .mobile-optimized {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Layer promotion for smooth scrolling */
+.scroll-layer {
+  transform: translateZ(0);
+  overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optimize images */
+.optimized-image {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+}
+
+/* Efficient grid layouts */
+.efficient-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  contain: layout style;
+}

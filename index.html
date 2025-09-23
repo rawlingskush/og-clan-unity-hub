@@ -47,6 +47,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Critical CSS inlined for faster loading -->
+    <style>
+      /* Critical above-the-fold styles */
+      .font-orbitron{font-family:'Orbitron',monospace}
+      .text-gradient-gold{background:linear-gradient(135deg,#FFD700 0%,#FFA500 50%,#FF8C00 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+      .container{width:100%;margin:0 auto;padding:0 1rem}
+      .hero-background{background:radial-gradient(ellipse at center,hsl(var(--primary)/0.3) 0%,transparent 70%),linear-gradient(135deg,hsl(var(--background)) 0%,hsl(var(--background)/0.8) 100%)}
+      .skeleton{background:linear-gradient(90deg,#374151 25%,#4b5563 50%,#374151 75%);background-size:200% 100%;animation:skeleton-loading 1.5s infinite}
+      @keyframes skeleton-loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
+      .gpu-accelerated{transform:translateZ(0);backface-visibility:hidden;perspective:1000px}
+      @media(max-width:640px){.container{padding:0 0.5rem}.text-6xl{font-size:3rem}.text-4xl{font-size:2rem}}
+    </style>
+    
+    <!-- Preload critical images -->
+    <link rel="preload" as="image" href="/lovable-uploads/4173fde6-af6e-4572-9e29-450aabf69ecf.png" fetchpriority="high">
+    <link rel="preload" as="image" href="/src/assets/og-clan-esports-logo.jpg">
   </head>
   <body>
     <div id="root"></div>
