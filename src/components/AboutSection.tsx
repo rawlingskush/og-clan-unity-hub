@@ -144,9 +144,9 @@ const AboutSection = () => {
           
           <AnimatedContent animation="slide-in-left" delay={300} className="md:col-span-2 order-1 md:order-2">
             <div className="relative group">
-              <div className="absolute -top-8 -left-8 w-16 h-16 bg-blue-500/20 rounded-full animate-pulse-slow"></div>
-              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-red-500/20 rounded-full animate-pulse-slow animation-delay-600"></div>
-              <div className="absolute -bottom-8 left-1/2 w-16 h-16 bg-ogclan/20 rounded-full animate-pulse-slow animation-delay-900"></div>
+              <div className="absolute -top-8 -left-8 w-16 h-16 bg-blue-500/20 rounded-full opacity-60"></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-red-500/20 rounded-full opacity-60" style={{ animationDelay: '0.6s' }}></div>
+              <div className="absolute -bottom-8 left-1/2 w-16 h-16 bg-ogclan/20 rounded-full opacity-60" style={{ animationDelay: '0.9s' }}></div>
               
               <div className="glass-card p-0 rounded-2xl relative overflow-hidden hover-border-glow transition-all duration-500 aspect-video">
                 {/* Epic Battle Royale Background */}
@@ -178,7 +178,7 @@ const AboutSection = () => {
                     </div>
                     
                     <div className="flex gap-2">
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                       <span className="text-xs text-green-400 font-medium">ACTIVE</span>
                     </div>
                   </div>

@@ -96,15 +96,15 @@
   50% { background-position: 100% 50%; }
 }
 
-/* Pulse animation enhancements */
+/* Smooth glow animation enhancements */
 .animate-pulse-slow {
-  animation: pulse-enhanced 3s infinite ease-in-out;
+  animation: smooth-enhanced 3s infinite ease-in-out;
 }
 
-@keyframes pulse-enhanced {
-  0% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
-  100% { opacity: 0.6; transform: scale(1); }
+@keyframes smooth-enhanced {
+  0% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.01); }
+  100% { opacity: 0.7; transform: scale(1); }
 }
 
 /* Tactical glow effects */

@@ -35,10 +35,10 @@ const HeroSection = () => {
         <div className="absolute inset-5 sm:inset-12 border-2 border-ogclan/30 rounded-2xl animate-[spotlight_3s_infinite] shadow-glow-ogclan" />
         
         {/* Enhanced corner elements with pulse */}
-        <div className="absolute top-0 left-0 w-12 h-12 border-l-2 border-t-2 border-ogclan/40 rounded-tl-2xl animate-pulse-slow" />
-        <div className="absolute top-0 right-0 w-12 h-12 border-r-2 border-t-2 border-ogclan/40 rounded-tr-2xl animate-pulse-slow" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-0 left-0 w-12 h-12 border-l-2 border-b-2 border-ogclan/40 rounded-bl-2xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-0 right-0 w-12 h-12 border-r-2 border-b-2 border-ogclan/40 rounded-br-2xl animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute top-0 left-0 w-12 h-12 border-l-2 border-t-2 border-ogclan/40 rounded-tl-2xl opacity-80" />
+        <div className="absolute top-0 right-0 w-12 h-12 border-r-2 border-t-2 border-ogclan/40 rounded-tr-2xl opacity-80" />
+        <div className="absolute bottom-0 left-0 w-12 h-12 border-l-2 border-b-2 border-ogclan/40 rounded-bl-2xl opacity-80" />
+        <div className="absolute bottom-0 right-0 w-12 h-12 border-r-2 border-b-2 border-ogclan/40 rounded-br-2xl opacity-80" />
         
         {/* Scanning lines */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-ogclan/60 to-transparent animate-[scan-horizontal_4s_infinite]" />

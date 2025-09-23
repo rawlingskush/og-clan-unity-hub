@@ -9,7 +9,7 @@ const HeroContent = () => {
   return (
     <div className="text-center relative z-10 px-1 sm:px-0 transition-all duration-1000 ease-out hero-smooth">
       {/* Enhanced OG Clan Logo Background - Bigger & Brighter */}
-      <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-20 pointer-events-none animate-[pulse_4s_ease-in-out_infinite]">
+      <div className="absolute inset-0 -z-10 flex items-center justify-center opacity-20 pointer-events-none">
         <div className="relative w-full max-w-[1000px] aspect-square transition-all duration-2000 ease-out">
           <img 
             src="/lovable-uploads/121c8bf6-df5d-4619-8e8d-6ade33a6f709.png" 
@@ -39,8 +39,8 @@ const HeroContent = () => {
         >
           WELCOME TO OG CLAN
           {/* Enhanced HUD dots with stronger glow and smooth animations */}
-          <span className="absolute -left-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan shadow-[0_0_25px_gold,0_0_50px_rgba(212,175,55,0.6)] animate-[pulse_2s_ease-in-out_infinite] transition-all duration-500"></span>
-          <span className="absolute -right-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan-light shadow-[0_0_25px_gold,0_0_50px_rgba(212,175,55,0.6)] animate-[pulse_2s_ease-in-out_infinite] transition-all duration-500" style={{ animationDelay: "1s" }}></span>
+          <span className="absolute -left-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan shadow-[0_0_25px_gold,0_0_50px_rgba(212,175,55,0.6)] transition-all duration-500"></span>
+          <span className="absolute -right-4 top-1/2 h-[6px] w-[6px] rounded-full bg-ogclan-light shadow-[0_0_25px_gold,0_0_50px_rgba(212,175,55,0.6)] transition-all duration-500 opacity-90"></span>
         </h1>
         {/* SLOGAN: One Tapping Since 2020 - Enhanced visibility */}
         <div className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 rounded border border-ogclan/60 bg-black/90 backdrop-blur-sm my-2 mb-3 shadow-lg transition-all duration-700 ease-out hover:border-ogclan hover:shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:bg-black/95">
@@ -52,13 +52,13 @@ const HeroContent = () => {
           <span className="relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gradient-to-r after:from-transparent after:via-ogclan after:to-transparent after:transform-gpu animate-fade-in drop-shadow-sm transition-all duration-800 hover:after:h-[2px] hover:after:shadow-[0_0_10px_rgba(212,175,55,0.5)]">
             Loyalty. Unity. Victory.
           </span>
-          <Flame className="inline-block h-4 w-4 xs:h-5 xs:w-5 md:h-6 md:w-6 text-red-500 animate-[pulse_1.5s_ease-in-out_infinite] drop-shadow-[0_0_12px_rgba(239,68,68,1)] transition-all duration-500 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(239,68,68,1)]" />
+          <Flame className="inline-block h-4 w-4 xs:h-5 xs:w-5 md:h-6 md:w-6 text-red-500 drop-shadow-[0_0_12px_rgba(239,68,68,1)] transition-all duration-500 hover:scale-110 hover:drop-shadow-[0_0_20px_rgba(239,68,68,1)]" />
         </p>
       </AnimatedContent>
       <AnimatedContent animation="fade-in-up" delay={700}>
         <div className="flex items-center justify-center mt-2 sm:mt-3 mb-2 sm:mb-5 transition-all duration-1000 ease-out hover:scale-105">
           <Gamepad2 className="h-5 w-5 sm:h-6 sm:w-6 text-ogclan mr-1 sm:mr-2 transition-all duration-500 hover:rotate-12 hover:text-ogclan-light" />
-          <span className="text-base xs:text-lg md:text-2xl font-orbitron text-ogclan animate-[pulse_3s_ease-in-out_infinite] transition-all duration-700 hover:text-ogclan-light hover:tracking-widest">
+          <span className="text-base xs:text-lg md:text-2xl font-orbitron text-ogclan transition-all duration-700 hover:text-ogclan-light hover:tracking-widest">
             CALL OF DUTY MOBILE
           </span>
         </div>

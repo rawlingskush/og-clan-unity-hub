@@ -73,7 +73,14 @@
 
 .tactical-ring::before {
   content: '';
-  @apply absolute inset-0 rounded-full border border-ogclan/20 animate-pulse-slow;
+  @apply absolute inset-0 rounded-full border border-ogclan/20;
+  animation: subtle-glow 4s infinite ease-in-out;
+}
+
+@keyframes subtle-glow {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+  100% { opacity: 0.4; }
 }
 
 .tactical-ring::after {

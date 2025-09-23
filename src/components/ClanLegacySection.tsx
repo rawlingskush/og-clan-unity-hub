@@ -12,9 +12,9 @@ const ClanLegacySection = () => {
     <section id="clan-legacy" className="py-20 bg-gradient-to-b from-black via-black/95 to-black overflow-hidden relative">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/10 via-transparent to-red-900/10"></div>
-      <div className="absolute -top-40 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-pulse-slow animation-delay-600"></div>
-      <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-ogclan/5 rounded-full blur-3xl animate-pulse-slow animation-delay-900"></div>
+      <div className="absolute -top-40 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute top-1/2 -right-40 w-96 h-96 bg-red-500/5 rounded-full blur-3xl opacity-40"></div>
+      <div className="absolute -bottom-40 left-1/2 w-96 h-96 bg-ogclan/5 rounded-full blur-3xl opacity-40"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -54,8 +54,8 @@ const ClanLegacySection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <AnimatedContent animation="slide-in-left" delay={200}>
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-500/30 rounded-full animate-pulse"></div>
-              <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-red-500/30 rounded-full animate-pulse animation-delay-300"></div>
+               <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-500/30 rounded-full opacity-60"></div>
+               <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-red-500/30 rounded-full opacity-60"></div>
               
               <div className="glass-card p-8 rounded-2xl relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-red-500/5"></div>

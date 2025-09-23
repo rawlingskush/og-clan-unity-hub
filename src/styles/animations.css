@@ -16,15 +16,15 @@
   100% { transform: translateY(800%); }
 }
 
-/* Slow pulse animation for important elements */
+/* Slow smooth animation for important elements */
 .animate-pulse-slow {
-  animation: pulse 3s infinite ease-in-out;
+  animation: smooth-glow 3s infinite ease-in-out;
 }
 
-@keyframes pulse {
-  0% { opacity: 0.7; }
+@keyframes smooth-glow {
+  0% { opacity: 0.8; }
   50% { opacity: 1; }
-  100% { opacity: 0.7; }
+  100% { opacity: 0.8; }
 }
 
 /* Tactical HUD scan line animation */
