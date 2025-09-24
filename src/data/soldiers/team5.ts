@@ -93,16 +93,6 @@ export const team5Soldiers: Soldier[] = [
     active: true
   },
   {
-    id: "overkill",
-    name: "ФƓゝ OVERKILL",
-    role: "⚡ Assault Dominator",
-    weapon: "M13",
-    bio: "Overkill brings devastating firepower that lives up to his name. His M13 unleashes relentless assault waves that overwhelm any opposition. With aggressive tactics and unstoppable momentum, he turns every engagement into a complete domination showcase for OG Clan.",
-    tiktokUrl: "https://www.tiktok.com/@ov3rkillcodmtt?_t=ZS-8zm5cZkiDBA&_r=1",
-    imageUrl: "/lovable-uploads/overkill-pfp.jpg",
-    active: true
-  },
-  {
     id: "pinky",
     name: "ФƓゝ PINKY",
     role: "💖 Clan Angel",

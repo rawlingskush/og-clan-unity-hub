@@ -43,7 +43,6 @@ const clanNameMappings: Record<string, string> = {
   "ФƓゝHATED": "hated",
   "ФƓゝTIGER": "tiger",
   "ФƓゝSUSPECT": "suspect",
-  "ФƓゝOVERKILL": "overkill",
   "ФƓゝPINKY": "pinky",
   
   // Additional soldiers that might exist
@@ -79,7 +78,6 @@ const clanNameMappings: Record<string, string> = {
   "ФƓǝHATED": "hated",
   "ФƓǝTIGER": "tiger",
   "ФƓǝSUSPECT": "suspect",
-  "ФƓǝOVERKILL": "overkill",
   "ФƓǝPINKY": "pinky"
 };
 

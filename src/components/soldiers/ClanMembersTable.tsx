@@ -55,7 +55,6 @@ const clanMembers: ClanMember[] = [
   { name: 'ФƓゝÑØØB»', status: 'INACTIVE (PERSONAL)' },
   { name: 'ФƓゝNOVAX', status: 'ACTIVE' },
   { name: 'ФƓゝOWNER', status: 'ACTIVE' },
-  { name: 'ФƓゝOVERKILL', status: 'ACTIVE' },
   { name: 'ФƓゝƤÅTФ', status: 'ACTIVE' },
   { name: 'ФƓゝPINKY', status: 'ACTIVE' },
   { name: 'ФƓゝPUNISHER', status: 'ACTIVE' },

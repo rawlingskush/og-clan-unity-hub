@@ -43,7 +43,6 @@ export const soldiers: Soldier[] = [
   team5Soldiers.find(s => s.id === "hated")!, // Hated
   team5Soldiers.find(s => s.id === "tiger")!, // Tiger
   team5Soldiers.find(s => s.id === "suspect")!, // Suspect
-  team5Soldiers.find(s => s.id === "overkill")!, // Overkill
   team5Soldiers.find(s => s.id === "pinky")! // Pinky
 ];
 

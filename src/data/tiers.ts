@@ -20,7 +20,6 @@ export const tierData: TierData[] = [
       { name: "ФƓゝSL1M", fullName: "slim", emoji: "🏅", status: "Veteran consistency, heart of OG comps", hasProfile: true, profileId: "slim" },
       { name: "ФƓゝSTARL1GHT", fullName: "starlight", emoji: "🌀", status: "Clan clutch machine, rising leader", hasProfile: true, profileId: "starlight" },
       { name: "ФƓゝSAMMY", fullName: "sammy", emoji: "🧨", status: "NEW, aggressive with leadership energy" },
-      { name: "ФƓゝOVERKILL", fullName: "overkill", emoji: "🚀", status: "Big-game presence, BattleNight lacking", hasProfile: true, profileId: "overkill" },
       { name: "ФƓゝSUSREX", fullName: "susrex", emoji: "⚡", status: "NEW, explosive plays, raw power, lately inconsistent" },
       { name: "ФƓゝTIGER", fullName: "tiger", emoji: "🐯", status: "Team spirit, reliable fighter", hasProfile: true, profileId: "tiger" }
     ]
