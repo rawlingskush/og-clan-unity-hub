@@ -16,14 +16,14 @@ interface EventCardProps {
 }
 
 const EventCard = ({ features }: EventCardProps) => {
-  // Calculate next Saturday at 10:00 PM WAT (UTC+1)
-  const getNextSaturday = () => {
+  // Calculate next Sunday at 10:00 PM WAT (UTC+1)
+  const getNextSunday = () => {
     const now = new Date();
-    const daysUntilSaturday = (6 - now.getDay() + 7) % 7 || 7;
-    const nextSaturday = new Date(now);
-    nextSaturday.setDate(now.getDate() + daysUntilSaturday);
-    nextSaturday.setHours(22, 0, 0, 0); // 10:00 PM
-    return nextSaturday;
+    const daysUntilNextSunday = 7 - now.getDay();
+    const nextSunday = new Date(now);
+    nextSunday.setDate(now.getDate() + (daysUntilNextSunday === 0 ? 7 : daysUntilNextSunday));
+    nextSunday.setHours(22, 0, 0, 0); // 10:00 PM
+    return nextSunday;
   };
 
   return (
@@ -36,7 +36,7 @@ const EventCard = ({ features }: EventCardProps) => {
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-4">
           <div className="flex items-center">
             <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
-            <span className="text-sm sm:text-base text-gray-300">Every Saturday</span>
+            <span className="text-sm sm:text-base text-gray-300">Every Sunday</span>
           </div>
           <div className="flex items-center">
             <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
@@ -44,19 +44,16 @@ const EventCard = ({ features }: EventCardProps) => {
           </div>
           <div className="flex items-center">
             <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
-            <span className="text-sm sm:text-base text-gray-300">MP & BR Battle Night</span>
+            <span className="text-sm sm:text-base text-gray-300">Clan Challenge Event</span>
           </div>
         </div>
         
         <div id="battle-night-timer" className="py-2">
-          <CountdownTimer targetDate={getNextSaturday()} />
+          <CountdownTimer targetDate={getNextSunday()} />
         </div>
         
         <p className="text-ogclan-light text-lg sm:text-xl">
-          MP: Hard-Point • Search and Destroy • Domination 🔥
-        </p>
-        <p className="text-ogclan-light text-base sm:text-lg mt-2">
-          BR: Alcatraz • Isolated • Blackout • Krai 🏆
+          Clan Wars: Prove Your Worth! 🔥
         </p>
       </div>
       

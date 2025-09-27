@@ -9,8 +9,8 @@ import StoryNavigation from './navigation/StoryNavigation';
 const HighlightsSection = () => {
   const values = [{
     id: 1,
-    title: "Saturday Battle Night",
-    description: "Join our intense Saturday night sessions featuring multiplayer grinding (Hard-Point, S&D, Domination) and Battle Royale dominance while strengthening OG Clan bonds."
+    title: "Celebrate Loyalty",
+    description: "Join us for epic Call of Duty Mobile tournaments where OG Clan members honor our Cameroon roots while strengthening clan bonds."
   }, {
     id: 2,
     title: "Everyone Belongs",
