@@ -9,8 +9,8 @@ import StoryNavigation from './navigation/StoryNavigation';
 const HighlightsSection = () => {
   const values = [{
     id: 1,
-    title: "Saturday MP Grind",
-    description: "Join our intense Saturday night multiplayer sessions grinding Hard-Point, Search and Destroy, and Domination while strengthening OG Clan bonds."
+    title: "Saturday Battle Night",
+    description: "Join our intense Saturday night sessions featuring multiplayer grinding (Hard-Point, S&D, Domination) and Battle Royale dominance while strengthening OG Clan bonds."
   }, {
     id: 2,
     title: "Everyone Belongs",

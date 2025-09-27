@@ -30,7 +30,7 @@ const EventCard = ({ features }: EventCardProps) => {
     <div className="glass-card p-4 sm:p-6 md:p-6 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
       <div className="text-center mb-5 md:mb-6">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-gold mb-3" id="battle-night-event-heading">
-          Next OG MP Battle Night
+          Next OG Battle Night Event
         </h3>
         
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-4">
@@ -44,7 +44,7 @@ const EventCard = ({ features }: EventCardProps) => {
           </div>
           <div className="flex items-center">
             <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
-            <span className="text-sm sm:text-base text-gray-300">MP Battle Night</span>
+            <span className="text-sm sm:text-base text-gray-300">MP & BR Battle Night</span>
           </div>
         </div>
         
@@ -53,7 +53,10 @@ const EventCard = ({ features }: EventCardProps) => {
         </div>
         
         <p className="text-ogclan-light text-lg sm:text-xl">
-          Hard-Point • Search and Destroy • Domination 🔥
+          MP: Hard-Point • Search and Destroy • Domination 🔥
+        </p>
+        <p className="text-ogclan-light text-base sm:text-lg mt-2">
+          BR: Alcatraz • Isolated • Blackout • Krai 🏆
         </p>
       </div>
       
