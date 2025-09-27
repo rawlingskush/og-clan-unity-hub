@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import WarriorsSpotlight from '@/components/WarriorsSpotlight';
 import ClanLegacySection from '@/components/ClanLegacySection';
 import BattleNightSection from '@/components/BattleNightSection';
+import MPBattleNightSection from '@/components/MPBattleNightSection';
 import BattlefieldDominance from '@/components/BattlefieldDominance';
 import BattleFootageSection from '@/components/BattleFootageSection';
 import TournamentResults from '@/components/results/TournamentResults';
@@ -46,6 +47,7 @@ const Index = () => {
         <WarriorsSpotlight />
         <ClanLegacySection />
         <BattleNightSection />
+        <MPBattleNightSection />
         <BattlefieldDominance />
         <BattleFootageSection />
         <TournamentResults />
