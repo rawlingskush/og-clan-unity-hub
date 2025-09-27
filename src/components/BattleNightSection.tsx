@@ -31,10 +31,10 @@ const BattleNightSection = () => {
               Weekly Call of Duty Mobile tournaments where legends are born and necks are being pressed.
             </p>
             <p className="text-lg md:text-xl text-ogclan-light max-w-3xl mx-auto mt-4">
-              Our Battle Nights are all about multiplayer chaos and Battle Royale glory, dropping into maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>. Hot drops like <span className="font-semibold">Black Market</span>? We own them.
+              Our Battle Nights feature intense <span className="font-semibold">Saturday MP sessions</span> grinding modes like <span className="font-semibold">Hard-Point</span>, <span className="font-semibold">Search and Destroy</span>, and <span className="font-semibold">Domination</span>. We also dominate Battle Royale maps like <span className="font-semibold">Alcatraz</span>, <span className="font-semibold">Isolated</span>, <span className="font-semibold">Blackout</span>, and <span className="font-semibold">Krai</span>.
             </p>
             <p className="text-lg md:text-xl text-ogclan-light max-w-3xl mx-auto mt-4">
-              Join <span className="font-semibold">OG Clan for Call of Duty multiplayer in Cameroon</span> and dominate <span className="font-semibold">Battle Royale on Blackout</span> with our expert <span className="font-semibold">Black Market hot drop strategies</span>.
+              Join <span className="font-semibold">OG Clan for multiplayer grinding every Saturday</span> and experience our tactical dominance in both <span className="font-semibold">MP competitive modes</span> and <span className="font-semibold">Battle Royale hot drops</span> like <span className="font-semibold">Black Market</span>.
             </p>
           </AnimatedContent>
         </div>

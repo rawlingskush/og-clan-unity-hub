@@ -9,8 +9,8 @@ import StoryNavigation from './navigation/StoryNavigation';
 const HighlightsSection = () => {
   const values = [{
     id: 1,
-    title: "Celebrate Loyalty",
-    description: "Join us for epic Call of Duty Mobile tournaments where OG Clan members honor our Cameroon roots while strengthening clan bonds."
+    title: "Saturday MP Grind",
+    description: "Join our intense Saturday night multiplayer sessions grinding Hard-Point, Search and Destroy, and Domination while strengthening OG Clan bonds."
   }, {
     id: 2,
     title: "Everyone Belongs",

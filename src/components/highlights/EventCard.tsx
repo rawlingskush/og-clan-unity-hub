@@ -16,27 +16,27 @@ interface EventCardProps {
 }
 
 const EventCard = ({ features }: EventCardProps) => {
-  // Calculate next Sunday at 10:00 PM WAT (UTC+1)
-  const getNextSunday = () => {
+  // Calculate next Saturday at 10:00 PM WAT (UTC+1)
+  const getNextSaturday = () => {
     const now = new Date();
-    const daysUntilNextSunday = 7 - now.getDay();
-    const nextSunday = new Date(now);
-    nextSunday.setDate(now.getDate() + (daysUntilNextSunday === 0 ? 7 : daysUntilNextSunday));
-    nextSunday.setHours(22, 0, 0, 0); // 10:00 PM
-    return nextSunday;
+    const daysUntilSaturday = (6 - now.getDay() + 7) % 7 || 7;
+    const nextSaturday = new Date(now);
+    nextSaturday.setDate(now.getDate() + daysUntilSaturday);
+    nextSaturday.setHours(22, 0, 0, 0); // 10:00 PM
+    return nextSaturday;
   };
 
   return (
     <div className="glass-card p-4 sm:p-6 md:p-6 rounded-2xl relative shadow-[0_0_30px_rgba(0,0,0,0.5)] border-ogclan/40">
       <div className="text-center mb-5 md:mb-6">
         <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gradient-gold mb-3" id="battle-night-event-heading">
-          Next OG Battle Night Event
+          Next OG MP Battle Night
         </h3>
         
         <div className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-4">
           <div className="flex items-center">
             <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
-            <span className="text-sm sm:text-base text-gray-300">Every Sunday</span>
+            <span className="text-sm sm:text-base text-gray-300">Every Saturday</span>
           </div>
           <div className="flex items-center">
             <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
@@ -44,16 +44,16 @@ const EventCard = ({ features }: EventCardProps) => {
           </div>
           <div className="flex items-center">
             <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-ogclan mr-2" />
-            <span className="text-sm sm:text-base text-gray-300">Clan Challenge Event</span>
+            <span className="text-sm sm:text-base text-gray-300">MP Battle Night</span>
           </div>
         </div>
         
         <div id="battle-night-timer" className="py-2">
-          <CountdownTimer targetDate={getNextSunday()} />
+          <CountdownTimer targetDate={getNextSaturday()} />
         </div>
         
         <p className="text-ogclan-light text-lg sm:text-xl">
-          Clan Wars: Prove Your Worth! 🔥
+          Hard-Point • Search and Destroy • Domination 🔥
         </p>
       </div>
       
