@@ -8,14 +8,15 @@ import EnhancedImage from '@/components/ui/enhanced-image';
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { navigateToPage } = useAppNavigation();
-  // Featured soldiers for Warriors Spotlight - mix of leaders, rising stars, and active members
-  const priorityIds = new Set(['kush', 'chambas', 'slim', 'damage', 'shinobi', 'lilnasty', 'botgirl', 'swizzy']);
-  const candidates = soldiers.filter(s => s.spotlight || s.princess || s.pro || s.active || priorityIds.has(s.id));
-  const prioritized = [
-    ...candidates.filter(s => priorityIds.has(s.id)),
-    ...candidates.filter(s => !priorityIds.has(s.id))
-  ];
-  const featuredSoldiers = prioritized.slice(0, 8);
+  
+  // Get soldiers with unique images for spotlight - ensure each has a different image
+  const spotlightSoldiers = soldiers.filter(s => {
+    // Only include soldiers with actual unique profile images (not placeholder)
+    const uniqueImageSoldiers = ['kush', 'chambas', 'damage', 'swizzy', 'pato', 'johnwick', 'slim', 'shinobi'];
+    return uniqueImageSoldiers.includes(s.id);
+  });
+  
+  const featuredSoldiers = spotlightSoldiers.slice(0, 8);
 
   useEffect(() => {
     const interval = setInterval(() => {
