@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLazyLoading } from '@/hooks/use-lazy-loading';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
@@ -42,6 +42,13 @@ const EnhancedImage = ({
 
   // Use eager loading for priority images or when loading prop is eager
   const shouldLoad = priority || loading === 'eager' || isVisible;
+
+  // IMPORTANT: keep internal src in sync with prop changes (e.g. carousels)
+  useEffect(() => {
+    setCurrentSrc(src);
+    setIsLoading(true);
+    setHasError(false);
+  }, [src]);
 
   const handleLoad = () => {
     setIsLoading(false);
