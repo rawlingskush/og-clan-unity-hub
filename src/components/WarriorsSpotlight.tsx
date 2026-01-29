@@ -8,8 +8,9 @@ import EnhancedImage from '@/components/ui/enhanced-image';
 const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { navigateToPage } = useAppNavigation();
-  const priorityIds = new Set(['pinky', 'johnwick', 'chambas']);
-  const candidates = soldiers.filter(s => s.spotlight || s.princess || s.pro || s.active);
+  // Featured soldiers for Warriors Spotlight - mix of leaders, rising stars, and active members
+  const priorityIds = new Set(['kush', 'chambas', 'slim', 'damage', 'shinobi', 'lilnasty', 'botgirl', 'swizzy']);
+  const candidates = soldiers.filter(s => s.spotlight || s.princess || s.pro || s.active || priorityIds.has(s.id));
   const prioritized = [
     ...candidates.filter(s => priorityIds.has(s.id)),
     ...candidates.filter(s => !priorityIds.has(s.id))
