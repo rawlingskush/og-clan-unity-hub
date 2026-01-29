@@ -6,45 +6,45 @@ import { team3Soldiers } from "./team3";
 import { team4Soldiers } from "./team4";
 import { team5Soldiers } from "./team5";
 
-// Official order format: Kush, Exodus, Wizard, Damage, 23, Dhamar, Slim, Botgirl, Esquare, Blacksavage, Gamehouse, Pato, Uncle B, White
-// Additional soldiers come after the core sequence
+// Only include soldiers who are still in the clan based on the updated roster
+// Core members with profiles: Kush, Chambas, Slim, Starlight, Dhamer, Damage, Botgirl, Swizzy, Pato, Shinobi, Mikki, LilNasty, Esquare, Uncle B, Gamehouse, Blacksavage, Shady, Venom, Rex, Hated, Maddog, Muller, Pinky, Suspect
+
 export const soldiers: Soldier[] = [
-  // Core sequence - official format
+  // TIER 1 - OG CORE
   team1Soldiers.find(s => s.id === "kush")!, // Kush
-  team3Soldiers.find(s => s.id === "exodus")!, // Exodus
-  team1Soldiers.find(s => s.id === "wizard")!, // Wizard
-  team1Soldiers.find(s => s.id === "damage")!, // Damage
-  team5Soldiers.find(s => s.id === "starlight")!, // Starlight
-  team3Soldiers.find(s => s.id === "dhamer")!, // Dhamar
+  team1Soldiers.find(s => s.id === "chambas")!, // Chambas
   team3Soldiers.find(s => s.id === "slim")!, // Slim
-  team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
-  team3Soldiers.find(s => s.id === "esquare")!, // Esquare
-  team5Soldiers.find(s => s.id === "blacksavage")!, // Blacksavage
-  team4Soldiers.find(s => s.id === "gamehouse")!, // Gamehouse
-  team2Soldiers.find(s => s.id === "pato")!, // Pato
-  team2Soldiers.find(s => s.id === "uncleB")!, // Uncle B
-  team2Soldiers.find(s => s.id === "ogwhite")!, // White
+  team5Soldiers.find(s => s.id === "starlight")!, // Starlight
+  team3Soldiers.find(s => s.id === "dhamer")!, // Dhamer
   
-  // Additional soldiers after core sequence
-  team1Soldiers.find(s => s.id === "rex")!, // Rex
+  // TIER 2 - RISING FLAMES
+  team1Soldiers.find(s => s.id === "damage")!, // Damage
+  team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
   team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
-  team1Soldiers.find(s => s.id === "venom")!, // Venom
-  team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty - moved up beside Venom
-  team1Soldiers.find(s => s.id === "chambas")!, // Chambas - restored to lineup
-  team1Soldiers.find(s => s.id === "21")!, // 21
-  team1Soldiers.find(s => s.id === "shady")!, // Shady
-  team1Soldiers.find(s => s.id === "lamenace")!, // Lamenace
-  team4Soldiers.find(s => s.id === "dna")!, // DNA
-  team4Soldiers.find(s => s.id === "ded")!, // Ded
-  team1Soldiers.find(s => s.id === "johnwick")!, // John Wick
+  team2Soldiers.find(s => s.id === "pato")!, // Pato
+  team1Soldiers.find(s => s.id === "johnwick")!, // COD~MIKKI
   team5Soldiers.find(s => s.id === "shinobi")!, // Shinobi
-  team5Soldiers.find(s => s.id === "maddog")!, // Mad Dog
-  team5Soldiers.find(s => s.id === "muller")!, // Muller
+  team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty
+  team3Soldiers.find(s => s.id === "esquare")!, // Esquare
+  team1Soldiers.find(s => s.id === "lamenace")!, // Menace
+  team1Soldiers.find(s => s.id === "21")!, // 21
+  
+  // TIER 3 - STEADY SOLDIERS  
+  team2Soldiers.find(s => s.id === "uncleB")!, // Uncle B
+  team4Soldiers.find(s => s.id === "gamehouse")!, // Gamehouse
+  team5Soldiers.find(s => s.id === "blacksavage")!, // Blacksavage
+  team1Soldiers.find(s => s.id === "shady")!, // Slim Shady
+  team1Soldiers.find(s => s.id === "venom")!, // Venom
+  team1Soldiers.find(s => s.id === "rex")!, // Rexo
   team5Soldiers.find(s => s.id === "hated")!, // Hated
-  team5Soldiers.find(s => s.id === "tiger")!, // Tiger
+  team5Soldiers.find(s => s.id === "maddog")!, // Maddog
+  team5Soldiers.find(s => s.id === "muller")!, // Muller
+  
+  // TIER 4 - NEEDS IMPROVEMENT / CASUAL
+  team5Soldiers.find(s => s.id === "pinky")!, // Pinky
   team5Soldiers.find(s => s.id === "suspect")!, // Suspect
-  team5Soldiers.find(s => s.id === "pinky")! // Pinky
-];
+  team4Soldiers.find(s => s.id === "ded")!, // Ded
+].filter(Boolean); // Filter out any undefined entries
 
 // Export team-specific arrays for potential future use
 export {
