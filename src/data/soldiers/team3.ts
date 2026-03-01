@@ -21,8 +21,7 @@ export const team3Soldiers: Soldier[] = [
     bio: "Slim is the underrated mastermind at the heart of OG Clan's competitive scene. While others get the spotlight, he's quietly dominating scrims and comps with skills that few truly recognize. His HS0405 speaks volumes in clutch moments, and his tactical awareness keeps the team sharp when it matters most. Don't sleep on Slim.",
     tiktokUrl: "https://www.tiktok.com/@slim_06",
     imageUrl: "/lovable-uploads/slim-new-pfp.jpg",
-    active: true,
-    pro: true
+    active: true
   },
   {
     id: "dhamer",

@@ -107,7 +107,6 @@ export const team1Soldiers: Soldier[] = [
     bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
     tiktokUrl: "",
     imageUrl: "/lovable-uploads/mikki-new-pfp.jpg",
-    spotlight: true,
-    pro: true
+    spotlight: true
   }
 ];

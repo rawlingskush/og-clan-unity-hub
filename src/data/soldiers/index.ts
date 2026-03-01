@@ -44,6 +44,7 @@ export const soldiers: Soldier[] = [
   team5Soldiers.find(s => s.id === "pinky")!, // Pinky
   team5Soldiers.find(s => s.id === "suspect")!, // Suspect
   team4Soldiers.find(s => s.id === "ded")!, // Ded
+  team2Soldiers.find(s => s.id === "ogwhite")!, // OG White
 ].filter(Boolean); // Filter out any undefined entries
 
 // Export team-specific arrays for potential future use
