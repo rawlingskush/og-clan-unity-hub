@@ -13,14 +13,12 @@ interface SoldierCardImageProps {
 
 const SoldierCardImage = ({ imageUrl, name, role, isSpotlight, isPrincess = false, isPro = false }: SoldierCardImageProps) => {
   const getImageClasses = () => {
-    if (isPro) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-yellow-500 shadow-lg shadow-yellow-500/20 hover:shadow-yellow-500/40';
-    } else if (isPrincess) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-pink-500 glow-princess animate-glow-princess';
+    if (isPrincess) {
+      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-pink-500 shadow-lg shadow-pink-500/20 hover:shadow-pink-500/40';
     } else if (isSpotlight) {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan glow-medium animate-glow-pulse';
+      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan shadow-lg shadow-ogclan/20 hover:shadow-ogclan/40';
     } else {
-      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan glow-subtle animate-pulse-slow hover:glow-medium';
+      return 'w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 mb-4 transition-all duration-300 border-ogclan shadow-md hover:shadow-lg hover:shadow-ogclan/30';
     }
   };
 

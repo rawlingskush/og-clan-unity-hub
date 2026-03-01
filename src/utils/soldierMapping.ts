@@ -21,6 +21,7 @@ const clanNameMappings: Record<string, string> = {
   "ФƓゝBOT-GIRL": "botgirl",
   "ФƓゝUNCLE B": "uncleB",
   "ФƓゝWHITEএ": "ogwhite",
+  "ФƓゝWHITE": "ogwhite",
   "ФƓゝƤÅTФ": "pato",
   
   // Team 3
