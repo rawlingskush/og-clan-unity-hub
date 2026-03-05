@@ -16,8 +16,8 @@ export const tierData: TierData[] = [
       { name: "ФƓゝKUSH", fullName: "kush", emoji: "⚡", status: "OG flame, leader's fire", hasProfile: true, profileId: "kush" },
       { name: "ФƓゝCHAMBAS", fullName: "chambas", emoji: "🦁", status: "Fearless OG pillar, reliable team captain", hasProfile: true, profileId: "chambas" },
       { name: "ФƓゝSL1M", fullName: "slim", emoji: "🏅", status: "Veteran consistency, heart of OG comps", hasProfile: true, profileId: "slim" },
-      { name: "ФƓゝSTARL1GHT", fullName: "starlight", emoji: "🌀", status: "Clan clutch machine, rising leader", hasProfile: true, profileId: "starlight" },
-      { name: "ФƓゝDAHMER", fullName: "dhamer", emoji: "⚔️", status: "Razor-sharp under pressure", hasProfile: true, profileId: "dhamer" }
+      { name: "ФƓゝDAHMER", fullName: "dhamer", emoji: "⚔️", status: "Razor-sharp under pressure", hasProfile: true, profileId: "dhamer" },
+      { name: "ФƓゝEXODUS", fullName: "exodus", emoji: "🛡️", status: "Shield of the Squad, WILD energy", hasProfile: true, profileId: "exodus" }
     ]
   },
   {

@@ -76,7 +76,7 @@ const clanMembers: ClanMember[] = [
   { name: 'ФƓゝSMOKE', status: 'ACTIVE' },
   { name: 'ФƓゝSNAKESEYES', status: 'INACTIVE (PERSONAL)' },
   { name: 'ФƓゝSPARK', status: 'ACTIVE' },
-  { name: 'ФƓゝSTARL1GHT', status: 'ACTIVE' },
+  
   { name: 'ФƓゝSTAIN', status: 'INACTIVE (PERSONAL)' },
   { name: 'ФƓゝSUSPECT', status: 'ACTIVE' },
   { name: 'ФƓゝSWIZZY', status: 'ACTIVE' },
