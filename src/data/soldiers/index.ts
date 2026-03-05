@@ -12,9 +12,9 @@ import { team5Soldiers } from "./team5";
 export const soldiers: Soldier[] = [
   // TIER 1 - OG CORE
   team1Soldiers.find(s => s.id === "kush")!, // Kush
+  team3Soldiers.find(s => s.id === "exodus")!, // Exodus
   team1Soldiers.find(s => s.id === "chambas")!, // Chambas
   team3Soldiers.find(s => s.id === "slim")!, // Slim
-  team5Soldiers.find(s => s.id === "starlight")!, // Starlight
   team3Soldiers.find(s => s.id === "dhamer")!, // Dhamer
   
   // TIER 2 - RISING FLAMES

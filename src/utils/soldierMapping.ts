@@ -37,7 +37,7 @@ const clanNameMappings: Record<string, string> = {
   
   // Team 5
   "ФƓゝLILNASTY": "lilnasty",
-  "ФƓゝSTARL1GHT": "starlight",
+  
   "ФƓゝSHINØBI": "shinobi",
   "ФƓゝMÄÐÐŌĠ": "maddog",
   "ФƓゝMULLER": "muller",
@@ -72,7 +72,7 @@ const clanNameMappings: Record<string, string> = {
   "ФƓǝDNA": "dna",
   "ФƓǝDED": "ded",
   "ФƓǝLILNASTY": "lilnasty",
-  "ФƓǝSTARL1GHT": "starlight",
+  
   "ФƓǝSHINØBI": "shinobi",
   "ФƓǝMÄÐÐŌĠ": "maddog",
   "ФƓǝMULLER": "muller",
