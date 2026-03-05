@@ -2,84 +2,98 @@ import { soldiers } from '@/data/soldiers';
 import { Soldier } from '@/types/soldier';
 
 // Comprehensive clan name mapping that handles all variations
-// Using the exact characters from the clan members list (ゝ not ǝ)
 const clanNameMappings: Record<string, string> = {
   // Team 1
-  "ФƓゝ21": "21",
-  "ФƓゝSWIZZY": "swizzy", 
-  "ФƓゝSHADY": "shady",
-  "ФƓゝLAMENACE": "lamenace",
-  "ФƓゝDAMAGE": "damage",
-  "ФƓゝKUSH": "kush",
-  "ФƓゝCHAMBAS": "chambas",
-  "ФƓゝVENOM": "venom",
-  "ФƓゝC0D~MIKKI": "johnwick",
-  "ФƓゝREXO": "rex",
-  "ФƓゝWIɀƛRÐ": "wizard",
+  "ѲǤゝ21": "21",
+  "ѲǤゝSWIZZY": "swizzy", 
+  "ѲǤゝSHADY": "shady",
+  "ѲǤゝLAMENACE": "lamenace",
+  "ѲǤゝDAMAGE": "damage",
+  "ѲǤゝKUSH": "kush",
+  "ѲǤゝCHAMBAS": "chambas",
+  "ѲǤゝVENOM": "venom",
+  "ѲǤゝC0D~MIKKI": "johnwick",
+  "ѲǤゝCOD~MIKKI": "johnwick",
+  "ѲǤゝREXO": "rex",
+  "ѲǤゝWIɀƛRÐ": "wizard",
   
   // Team 2
-  "ФƓゝBOT-GIRL": "botgirl",
-  "ФƓゝUNCLE B": "uncleB",
-  "ФƓゝWHITEএ": "ogwhite",
-  "ФƓゝWHITE": "ogwhite",
-  "ФƓゝƤÅTФ": "pato",
+  "ѲǤゝBOT-GIRL": "botgirl",
+  "ѲǤゝBOTGIRL": "botgirl",
+  "ѲǤゝUNCLE B": "uncleB",
+  "ѲǤゝWHITEএ": "ogwhite",
+  "ѲǤゝWHITE": "ogwhite",
+  "ѲǤゝƤÅTФ": "pato",
+  "ѲǤゝPATO": "pato",
+  "ѲǤゝFAVORITE": "favorite",
+  "ѲǤゝNOOB": "noob",
   
   // Team 3
+  "ѲǤゝEXODUSKI": "exodus",
+  "ѲǤゝEXODUSK": "exodus",
+  "ѲǤゝSL1M": "slim",
+  "ѲǤゝDHAMER": "dhamer",
+  "ѲǤゝDAHMER": "dhamer",
+  "ѲǤゝESQUARE": "esquare",
+  
+  // Team 4
+  "ѲǤゝGAMEHOUSE": "gamehouse",
+  "ѲǤゝDNA": "dna",
+  "ѲǤゝDED": "ded",
+  
+  // Team 5
+  "ѲǤゝLILNASTY": "lilnasty",
+  "ѲǤゝSHINØBI": "shinobi",
+  "ѲǤゝMÄÐÐŌĠ": "maddog",
+  "ѲǤゝMADDOG": "maddog",
+  "ѲǤゝMULLER": "muller",
+  "ѲǤゝMULLERYT": "muller",
+  "ѲǤゝHATED": "hated",
+  "ѲǤゝTIGER": "tiger",
+  "ѲǤゝSUSPECT": "suspect",
+  "ѲǤゝPINKY": "pinky",
+  "ѲǤゝBLACKSAVAGE": "blacksavage",
+  "ѲǤゝSLIM SHADY": "shady",
+  
+  // Legacy mappings with old clan tag (for backwards compatibility)
+  "ФƓゝKUSH": "kush",
+  "ФƓゝCHAMBAS": "chambas",
+  "ФƓゝSWIZZY": "swizzy",
+  "ФƓゝDAMAGE": "damage",
+  "ФƓゝVENOM": "venom",
+  "ФƓゝREXO": "rex",
+  "ФƓゝBOTGIRL": "botgirl",
+  "ФƓゝBOT-GIRL": "botgirl",
+  "ФƓゝUNCLE B": "uncleB",
+  "ФƓゝWHITE": "ogwhite",
+  "ФƓゝWHITEএ": "ogwhite",
+  "ФƓǝGAMEHOUSE": "gamehouse",
+  "ФƓゝFAVORITE": "favorite",
+  "ФƓゝNOOB": "noob",
   "ФƓゝEXODUSKI": "exodus",
   "ФƓゝSL1M": "slim",
   "ФƓゝDHAMER": "dhamer",
+  "ФƓゝDAHMER": "dhamer",
   "ФƓゝESQUARE": "esquare",
-  
-  // Team 4
-  "ФƓǝGAMEHOUSE": "gamehouse", // This one actually uses ǝ in the data
-  "ФƓゝDNA": "dna",
-  "ФƓゝDED": "ded",
-  
-  // Team 5
   "ФƓゝLILNASTY": "lilnasty",
-  
   "ФƓゝSHINØBI": "shinobi",
   "ФƓゝMÄÐÐŌĠ": "maddog",
+  "ФƓゝMADDOG": "maddog",
   "ФƓゝMULLER": "muller",
   "ФƓゝHATED": "hated",
-  "ФƓゝTIGER": "tiger",
   "ФƓゝSUSPECT": "suspect",
   "ФƓゝPINKY": "pinky",
-  
-  // Additional soldiers that might exist
+  "ФƓゝC0D~MIKKI": "johnwick",
+  "ФƓゝCOD~MIKKI": "johnwick",
+  "ФƓゝ21": "21",
+  "ФƓゝSHADY": "shady",
+  "ФƓゝLAMENACE": "lamenace",
   "ФƓゝBLACKSAVAGE": "blacksavage",
-  
-  // Fallback mappings with both character variations
-  "ФƓǝ21": "21",
-  "ФƓǝSWIZZY": "swizzy", 
-  "ФƓǝSHADY": "shady",
-  "ФƓǝLAMENACE": "lamenace",
-  "ФƓǝDAMAGE": "damage",
-  "ФƓǝKUSH": "kush",
-  "ФƓǝCHAMBAS": "chambas",
-  "ФƓǝVENOM": "venom",
-  "ФƓǝC0D~MIKKI": "johnwick",
-  "ФƓǝREXO": "rex",
-  "ФƓǝWIɀƛRÐ": "wizard",
-  "ФƓǝBOT-GIRL": "botgirl",
-  "ФƓǝUNCLE B": "uncleB",
-  "ФƓǝWHITEএ": "ogwhite",
-  "ФƓǝƤÅTФ": "pato",
-  "ФƓǝEXODUSKI": "exodus",
-  "ФƓǝSL1M": "slim",
-  "ФƓǝDHAMER": "dhamer",
-  "ФƓǝESQUARE": "esquare",
-  "ФƓǝDNA": "dna",
-  "ФƓǝDED": "ded",
-  "ФƓǝLILNASTY": "lilnasty",
-  
-  "ФƓǝSHINØBI": "shinobi",
-  "ФƓǝMÄÐÐŌĠ": "maddog",
-  "ФƓǝMULLER": "muller",
-  "ФƓǝHATED": "hated",
-  "ФƓǝTIGER": "tiger",
-  "ФƓǝSUSPECT": "suspect",
-  "ФƓǝPINKY": "pinky"
+  "ФƓゝDED": "ded",
+  "ФƓゝDNA": "dna",
+  "ФƓゝMULLERYT": "muller",
+  "ФƓゝSLIM SHADY": "shady",
+  "ФƓゝTIGER": "tiger"
 };
 
 // Create mapping from clan names to soldier profiles
@@ -87,13 +101,11 @@ export const createSoldierMapping = () => {
   const mapping = new Map<string, Soldier>();
   
   soldiers.forEach(soldier => {
-    // Map both regular name and clan name (if different) to the soldier
     mapping.set(soldier.name, soldier);
     if (soldier.clanName && soldier.clanName !== soldier.name) {
       mapping.set(soldier.clanName, soldier);
     }
     
-    // Also check our comprehensive mapping
     const soldierIdFromClanName = Object.entries(clanNameMappings).find(
       ([clanName, soldierId]) => soldierId === soldier.id
     );
@@ -109,11 +121,9 @@ export const createSoldierMapping = () => {
 export const getSoldierByName = (clanName: string): Soldier | undefined => {
   const mapping = createSoldierMapping();
   
-  // First try direct mapping
   let soldier = mapping.get(clanName);
   if (soldier) return soldier;
   
-  // Try with comprehensive mapping
   const soldierId = clanNameMappings[clanName];
   if (soldierId) {
     return soldiers.find(s => s.id === soldierId);
@@ -121,7 +131,7 @@ export const getSoldierByName = (clanName: string): Soldier | undefined => {
   
   // Try case-insensitive search as fallback
   for (const [mappedName, mappedSoldier] of mapping.entries()) {
-    if (mappedName.toLowerCase().includes(clanName.toLowerCase().replace(/ф/gi, '').replace(/ɠ/gi, '').replace(/ǝ/gi, ''))) {
+    if (mappedName.toLowerCase().includes(clanName.toLowerCase().replace(/ф/gi, '').replace(/ɠ/gi, '').replace(/ǝ/gi, '').replace(/ѳ/gi, '').replace(/ǥ/gi, ''))) {
       return mappedSoldier;
     }
   }

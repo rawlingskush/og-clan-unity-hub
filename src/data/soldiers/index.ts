@@ -6,9 +6,6 @@ import { team3Soldiers } from "./team3";
 import { team4Soldiers } from "./team4";
 import { team5Soldiers } from "./team5";
 
-// Only include soldiers who are still in the clan based on the updated roster
-// Core members with profiles: Kush, Chambas, Slim, Starlight, Dhamer, Damage, Botgirl, Swizzy, Pato, Shinobi, Mikki, LilNasty, Esquare, Uncle B, Gamehouse, Blacksavage, Shady, Venom, Rex, Hated, Maddog, Muller, Pinky, Suspect
-
 export const soldiers: Soldier[] = [
   // TIER 1 - OG CORE
   team1Soldiers.find(s => s.id === "kush")!, // Kush
@@ -20,6 +17,7 @@ export const soldiers: Soldier[] = [
   // TIER 2 - RISING FLAMES
   team1Soldiers.find(s => s.id === "damage")!, // Damage
   team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
+  team2Soldiers.find(s => s.id === "favorite")!, // Favorite
   team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
   team2Soldiers.find(s => s.id === "pato")!, // Pato
   team1Soldiers.find(s => s.id === "johnwick")!, // COD~MIKKI
@@ -39,15 +37,15 @@ export const soldiers: Soldier[] = [
   team5Soldiers.find(s => s.id === "hated")!, // Hated
   team5Soldiers.find(s => s.id === "maddog")!, // Maddog
   team5Soldiers.find(s => s.id === "muller")!, // Muller
+  team2Soldiers.find(s => s.id === "noob")!, // Noob
   
   // TIER 4 - NEEDS IMPROVEMENT / CASUAL
   team5Soldiers.find(s => s.id === "pinky")!, // Pinky
   team5Soldiers.find(s => s.id === "suspect")!, // Suspect
   team4Soldiers.find(s => s.id === "ded")!, // Ded
   team2Soldiers.find(s => s.id === "ogwhite")!, // OG White
-].filter(Boolean); // Filter out any undefined entries
+].filter(Boolean);
 
-// Export team-specific arrays for potential future use
 export {
   team1Soldiers,
   team2Soldiers,

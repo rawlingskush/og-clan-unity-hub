@@ -175,7 +175,7 @@ const WarriorsSpotlight = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
               <div className="absolute bottom-2 left-2 right-2">
                 <p className="text-xs font-semibold text-white truncate">
-                  {soldier.name.replace('ФƓゝ ', '')}
+                  {soldier.name.replace('ѲǤゝ ', '')}
                 </p>
               </div>
             </button>

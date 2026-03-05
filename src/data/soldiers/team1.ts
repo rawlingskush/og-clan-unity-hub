@@ -3,8 +3,8 @@ import { Soldier } from "@/types/soldier";
 export const team1Soldiers: Soldier[] = [
   {
     id: "kush",
-    name: "ФƓゝ KUSH",
-    clanName: "ФƓゝKUSH",
+    name: "ѲǤゝ KUSH",
+    clanName: "ѲǤゝKUSH",
     role: "Assault Architect",
     weapon: "Oden",
     bio: "Kush doesn't enter — he invades. — the first in, the last out. His Oden is a shock weapon, clearing rooms and breaking lines with brutal precision. He destabilizes enemy formations. He's not just an operator — he's a shift in momentum.",
@@ -13,8 +13,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "wizard",
-    name: "ФƓゝ WIZARD",
-    clanName: "ФƓゝWIɀƛRÐ",
+    name: "ѲǤゝ WIZARD",
+    clanName: "ѲǤゝWIɀƛRÐ",
     role: "Assault Architect",
     weapon: "AK117", 
     bio: "Wizard moves in silence—his AK117 a ghostly whisper in the dark. He slips through enemy lines, clears rooms without warning, then vanishes again, leaving opponents second-guessing every corner. The real defination of an Og",
@@ -23,8 +23,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "damage",
-    name: "ФƓゝ DAMAGE",
-    clanName: "ФƓゝDAMAGE",
+    name: "ѲǤゝ DAMAGE",
+    clanName: "ѲǤゝDAMAGE",
     role: "Suppression Heavy",
     weapon: "KRM-262",
     bio: "Damage brings the unrelenting firepower: his KRM-262 spray keeps foes pinned and fractured. When he opens up, his wall of lead gives OG Clan the breathing room to regroup—and the momentum to crush back. Og's most loyal soldier",
@@ -33,8 +33,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "chambas",
-    name: "ФƓゝ CHAMBAS",
-    clanName: "ФƓゝCHAMBAS",
+    name: "ѲǤゝ CHAMBAS",
+    clanName: "ѲǤゝCHAMBAS",
     role: "Precision Breacher",
     weapon: "HS0405",
     bio: "Chambas is a beast better run if you encounter him, he blends brute force and finesse—his HS0405 blasts break cover, then his precise follow-up shots clear any surviving threat. He's the perimeter's nightmare and the squad's secret weapon.",
@@ -43,8 +43,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "venom",
-    name: "ФƓゝ VENOM",
-    clanName: "ФƓゝVENOM",
+    name: "ѲǤゝ VENOM",
+    clanName: "ѲǤゝVENOM",
     role: "Assault Architect",
     weapon: "Kilo 141",
     bio: "Venom adapts mid-battle—his Kilo 141 tears through mid-range fights, laying down suppressive fire that chokes off enemy flanks.",
@@ -53,8 +53,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "rex",
-    name: "ФƓゝ REX",
-    clanName: "ФƓゝREXO",
+    name: "ѲǤゝ REX",
+    clanName: "ѲǤゝREXO",
     role: "⚡ Strategic Commander",
     weapon: "Grau",
     bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
@@ -63,7 +63,7 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "swizzy",
-    name: "ФƓゝ ƧWƗƵƵY",
+    name: "ѲǤゝ ƧWƗƵƵY",
     role: "⚡ Tactical Strategist",
     weapon: "BY15",
     bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
@@ -73,7 +73,7 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "21",
-    name: "ФƓゝ 21",
+    name: "ѲǤゝ 21",
     role: "🛡️ Battlefield Support",
     weapon: "MX9",
     bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates and controlling key positions makes him an invaluable asset to OG Clan's dominance.",
@@ -82,7 +82,7 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "shady",
-    name: "ФƓゝ SHADY",
+    name: "ѲǤゝ SHADY",
     role: "🛡️ Clan Support",
     weapon: "BP50",
     bio: "Shady brings unwavering support to the clan with his lethal BP50. A master of backup tactics and strategic positioning, he ensures no teammate fights alone. His dedication to the clan's success and ability to turn the tide in crucial moments makes him an essential pillar of OG Clan's strength.",
@@ -91,7 +91,7 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "lamenace",
-    name: "ФƓゝ LAMENACE",
+    name: "ѲǤゝ LAMENACE",
     role: "🐉 Survival Strategist",
     weapon: "AK117",
     bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts, he ensures OG Clan stays competitive and makes the most of every engagement. His strategic mind and risk assessment abilities keep the squad alive to fight another day.",
@@ -100,8 +100,8 @@ export const team1Soldiers: Soldier[] = [
   },
   {
     id: "johnwick",
-    name: "ФƓゝCOD~MIKKI",
-    clanName: "ФƓゝC0D~MIKKI",
+    name: "ѲǤゝCOD~MIKKI",
+    clanName: "ѲǤゝC0D~MIKKI",
     role: "🎯 Close-Quarters Specialist",
     weapon: "KRM",
     bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
