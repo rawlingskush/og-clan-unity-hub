@@ -16,7 +16,7 @@ export function useIsMobile() {
     checkDevice();
     
     // Setup event listener with throttling
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const handleResize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(checkDevice, 100);
@@ -44,7 +44,7 @@ export function useIsTablet() {
     
     checkTablet();
     
-    let timeoutId: NodeJS.Timeout;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const handleResize = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(checkTablet, 100);

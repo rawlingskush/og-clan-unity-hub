@@ -38,7 +38,7 @@ export const usePerformanceOptimization = () => {
       for (const entry of list.getEntries()) {
         if (entry.entryType === 'largest-contentful-paint') {
           // Track LCP in production
-          if (process.env.NODE_ENV === 'production') {
+          if (import.meta.env.PROD) {
             // TODO: Send to analytics service
           }
         }

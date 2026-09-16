@@ -5,7 +5,7 @@ import { Shield } from 'lucide-react';
 
 const barVariants = {
   hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 12, delay: 0.4 } }
+  show: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 12, delay: 0.4 } }
 };
 
 const TacticalStatusBar = () => {
