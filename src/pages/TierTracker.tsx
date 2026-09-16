@@ -49,7 +49,14 @@ const TierTracker = () => {
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         </div>
 
-        
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <h1 className="font-orbitron text-4xl md:text-6xl font-bold text-gradient-gold mb-4">
+            TIER TRACKER
+          </h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Live tier progression for all {totalSoldiers} OG warriors.
+          </p>
+        </div>
       </motion.section>
 
       {/* Tier Roster Section */}

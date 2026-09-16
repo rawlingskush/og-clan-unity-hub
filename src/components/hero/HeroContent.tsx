@@ -21,7 +21,7 @@ const HeroContent = () => {
             }}
             loading="eager"
             decoding="async"
-            fetchPriority="high"
+            {...{ fetchpriority: "high" }}
             sizes="(max-width: 640px) 100vw, 1000px"
             aria-hidden="true"
           />
