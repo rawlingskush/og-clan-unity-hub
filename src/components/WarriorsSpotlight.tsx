@@ -9,11 +9,18 @@ const WarriorsSpotlight = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { navigateToPage } = useAppNavigation();
   
-  // Get soldiers with unique images for spotlight - ensure each has a different image
+  // Only rotate soldiers who still have their own unique profile image
+  const uniqueImageSoldiers = [
+    'kush', 'exodus', 'chambas', 'dhamer',
+    'damage', 'favorite', 'pato', 'lilnasty', 'esquare', '21',
+    'uncleB', 'gamehouse', 'blacksavage', 'venom', 'hated', 'maddog',
+  ];
+  const seenImages = new Set<string>();
   const spotlightSoldiers = soldiers.filter(s => {
-    // Only include soldiers with actual unique profile images (not placeholder)
-    const uniqueImageSoldiers = ['kush', 'chambas', 'damage', 'pato'];
-    return uniqueImageSoldiers.includes(s.id);
+    if (!uniqueImageSoldiers.includes(s.id)) return false;
+    if (!s.imageUrl || seenImages.has(s.imageUrl)) return false;
+    seenImages.add(s.imageUrl);
+    return true;
   });
   
   const featuredSoldiers = spotlightSoldiers.slice(0, 8);
