@@ -12,7 +12,7 @@ const WarriorsSpotlight = () => {
   // Get soldiers with unique images for spotlight - ensure each has a different image
   const spotlightSoldiers = soldiers.filter(s => {
     // Only include soldiers with actual unique profile images (not placeholder)
-    const uniqueImageSoldiers = ['kush', 'chambas', 'damage', 'swizzy', 'pato', 'johnwick', 'slim', 'shinobi'];
+    const uniqueImageSoldiers = ['kush', 'chambas', 'damage', 'pato'];
     return uniqueImageSoldiers.includes(s.id);
   });
   

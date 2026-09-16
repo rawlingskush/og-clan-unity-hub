@@ -18,15 +18,5 @@ export const team4Soldiers: Soldier[] = [
     bio: "DNA an elite OG Member decodes every engagement with swag. From distant perches, his XPR-50 strikes are surgical—each shot reshapes the battlefield in our favor. When he moves the team moves, he is one of OG Clan's Finnest ",
     tiktokUrl: "https://www.tiktok.com/@nbapanda237",
     imageUrl: "/lovable-uploads/31c01899-6f23-4a90-836b-393f64ab1a04.png"
-  },
-  {
-    id: "ded",
-    name: "ѲǤゝ DED",
-    clanName: "ѲǤゝDED",
-    role: "⚡ Rapid Response",
-    weapon: "QQ9",
-    bio: "Ded is OG Clan's firestarter: he slips into the fray with his QQ9, unleashing blistering close-quarter assaults before anyone can react.",
-    tiktokUrl: "https://www.tiktok.com/@elsharawy132",
-    imageUrl: "/lovable-uploads/4d6bc52a-7f3a-4b7a-95a2-22455afd5d79.png"
   }
 ];

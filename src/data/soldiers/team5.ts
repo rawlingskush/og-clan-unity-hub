@@ -23,17 +23,6 @@ export const team5Soldiers: Soldier[] = [
     active: true
   },
   {
-    id: "shinobi",
-    name: "ѲǤゝ SHINOBI",
-    clanName: "ѲǤゝSHINØBI",
-    role: "🎯 Shadow Operative", 
-    weapon: "AK117",
-    bio: "Shinobi moves like his namesake - silent, deadly, and always one step ahead. His AK117 speaks volumes in the heat of battle, delivering precise eliminations from unexpected angles. Rising through the ranks with Tier 2 potential, he embodies the perfect balance of stealth and aggression.",
-    tiktokUrl: "https://www.tiktok.com/@ogshinobi9?_t=ZS-8zhTyc7VlL6&_r=1",
-    imageUrl: "/lovable-uploads/shinobi-new-pfp.jpg",
-    active: true
-  },
-  {
     id: "maddog", 
     name: "ѲǤゝ MAD DOG",
     clanName: "ѲǤゝ MAD DOG",
@@ -43,15 +32,6 @@ export const team5Soldiers: Soldier[] = [
     tiktokUrl: "https://www.tiktok.com/@mad_dog58?_t=ZM-8zhK26oLyis&_r=1",
     imageUrl: "/lovable-uploads/mad-dog-pfp.jpg",
     active: true
-  },
-  {
-    id: "muller",
-    name: "ѲǤゝ MULLER",
-    role: "💥 Tactical Enforcer", 
-    weapon: "BY15",
-    bio: "Muller is the tactical powerhouse who dominates close-quarters combat with devastating efficiency. His BY15 delivers crushing blows that clear rooms and eliminate threats with surgical precision. A master of positioning and timing, Muller turns every engagement into a tactical advantage for OG Clan.",
-    tiktokUrl: "https://www.tiktok.com/@ogmullercodm",
-    imageUrl: "/lovable-uploads/muller-pfp.png"
   },
   {
     id: "hated",
@@ -70,16 +50,6 @@ export const team5Soldiers: Soldier[] = [
     bio: "Tiger is the fierce upcoming fighter who brings raw intensity and untamed aggression to every battle. With his BY15 thundering through enemy lines, he's ready to prove himself in the competitive arena. His fighting spirit burns bright as he climbs the ranks, showing the world that OG Clan breeds true warriors.",
     tiktokUrl: "https://www.tiktok.com/@og_tiger",
     imageUrl: "/lovable-uploads/og-tiger-pfp.jpg",
-    active: true
-  },
-  {
-    id: "suspect",
-    name: "ѲǤゝ SUSPECT",
-    role: "🎯 Tactical Hunter",
-    weapon: "USS-9",
-    bio: "Suspect is the enigmatic tactical hunter who strikes from the shadows with precision and mystery. His USS-9 delivers swift justice to enemies who never see him coming. Operating with calculated moves and strategic thinking, he's the soldier you never suspect until it's too late.",
-    tiktokUrl: "https://www.tiktok.com/@8suspect?_t=ZM-8zmRUsvUGes&_r=1",
-    imageUrl: "/lovable-uploads/og-suspect-pfp.jpg",
     active: true
   },
   {
