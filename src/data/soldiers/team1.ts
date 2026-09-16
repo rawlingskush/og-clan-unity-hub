@@ -52,26 +52,6 @@ export const team1Soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/229f6b94-869b-4b77-a3e2-3ab364bc9edf.png"
   },
   {
-    id: "rex",
-    name: "ѲǤゝ REX",
-    clanName: "ѲǤゝREXO",
-    role: "⚡ Strategic Commander",
-    weapon: "Grau",
-    bio: "OG Rex is a strategic genius, relentlessly dedicated to the clan's success. His drive to improve and mastery of high-pressure plays make him the ultimate asset in critical matches.",
-    tiktokUrl: "https://www.tiktok.com/@og_rex20?_t=ZM-8zhkeIUXNcG&_r=1",
-    imageUrl: "/lovable-uploads/6b9b6edc-e898-4c6a-b591-aefa14e2026f.png"
-  },
-  {
-    id: "swizzy",
-    name: "ѲǤゝ ƧWƗƵƵY",
-    role: "⚡ Tactical Strategist",
-    weapon: "BY15",
-    bio: "SWIZZY combines quick reflexes with sharp instincts and problem-solving to every engagement. His adaptability and ability to learn from mistakes, paired with exceptional teamwork and communication skills, make him a formidable force with his BY15.",
-    tiktokUrl: "https://www.tiktok.com/@little.swizzy",
-    imageUrl: "/lovable-uploads/d033c1b3-d317-485f-8629-6397ddaec56c.png",
-    active: true
-  },
-  {
     id: "21",
     name: "ѲǤゝ 21",
     role: "🛡️ Battlefield Support",
@@ -79,34 +59,5 @@ export const team1Soldiers: Soldier[] = [
     bio: "21 brings unmatched support to the clan and battlefield. With his MX9 in hand, he provides crucial backup and tactical assistance when the squad needs it most. His dedication to supporting teammates and controlling key positions makes him an invaluable asset to OG Clan's dominance.",
     tiktokUrl: "",
     imageUrl: "/lovable-uploads/d42c1ce9-cbcb-4da4-a96f-2ea17c701726.png"
-  },
-  {
-    id: "shady",
-    name: "ѲǤゝ SHADY",
-    role: "🛡️ Clan Support",
-    weapon: "BP50",
-    bio: "Shady brings unwavering support to the clan with his lethal BP50. A master of backup tactics and strategic positioning, he ensures no teammate fights alone. His dedication to the clan's success and ability to turn the tide in crucial moments makes him an essential pillar of OG Clan's strength.",
-    tiktokUrl: "https://www.tiktok.com/@slimshady01231?_t=ZM-8xMpLMHbg62&_r=1",
-    imageUrl: "/lovable-uploads/a7649e20-066b-4c10-a31f-65d7bd8c3e9c.png"
-  },
-  {
-    id: "lamenace",
-    name: "ѲǤゝ LAMENACE",
-    role: "🐉 Survival Strategist",
-    weapon: "AK117",
-    bio: "Lamenace is the dragon-hearted tactician who prioritizes strategies and decisions that maximize the team's survival rate. With his AK117 precision and survival instincts, he ensures OG Clan stays competitive and makes the most of every engagement. His strategic mind and risk assessment abilities keep the squad alive to fight another day.",
-    tiktokUrl: "https://www.tiktok.com/@zidanguimdo1?_t=ZM-8xMn0mOZNnM&_r=1",
-    imageUrl: "/lovable-uploads/4b7393f0-e571-4e74-943a-6a4f862a45ad.png"
-  },
-  {
-    id: "johnwick",
-    name: "ѲǤゝCOD~MIKKI",
-    clanName: "ѲǤゝC0D~MIKKI",
-    role: "🎯 Close-Quarters Specialist",
-    weapon: "KRM",
-    bio: "A reliable close-quarters specialist, this soldier brings sharp instincts, strong communication, and steady performance to every match. Always evolving, always aligned with the squad's strategy — a key asset in our push for domination.",
-    tiktokUrl: "",
-    imageUrl: "/lovable-uploads/johnwick-pfp.png",
-    spotlight: true
   }
 ];

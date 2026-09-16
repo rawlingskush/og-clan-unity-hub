@@ -34,7 +34,7 @@ const BattlefieldDominance = () => {
         fireRate: 76,
         control: 54
       },
-      users: ['WIZARD', 'LAMENACE', 'SHINOBI', 'DHAMER', 'PINKY'],
+      users: ['WIZARD', 'DHAMER', 'PINKY'],
       color: 'from-blue-500/20 to-cyan-500/20',
       borderColor: 'border-blue-500/30'
     },
@@ -59,7 +59,7 @@ const BattlefieldDominance = () => {
         fireRate: 28,
         control: 44
       },
-      users: ['DAMAGE', 'EXODUS', 'MIKKI'],
+      users: ['DAMAGE', 'EXODUS'],
       color: 'from-purple-500/20 to-pink-500/20',
       borderColor: 'border-purple-500/30'
     },
@@ -84,7 +84,7 @@ const BattlefieldDominance = () => {
         fireRate: 100, // Capped at 100 for display (was 111)
         control: 24
       },
-      users: ['BOTGIRL', 'LIL NASTY'],
+      users: ['LIL NASTY'],
       color: 'from-pink-500/20 to-rose-500/20',
       borderColor: 'border-pink-500/30'
     },
@@ -109,7 +109,7 @@ const BattlefieldDominance = () => {
         fireRate: 27,
         control: 34
       },
-      users: ['CHAMBAS', 'SLIM'],
+      users: ['CHAMBAS'],
       color: 'from-orange-500/20 to-red-500/20',
       borderColor: 'border-orange-500/30'
     },
@@ -134,7 +134,7 @@ const BattlefieldDominance = () => {
         fireRate: 29,
         control: 46
       },
-      users: ['SWIZZY', 'ESQUARE', 'GAMEHOUSE', 'MULLER', 'TIGER'],
+      users: ['ESQUARE', 'GAMEHOUSE', 'TIGER'],
       color: 'from-cyan-500/20 to-blue-500/20',
       borderColor: 'border-cyan-500/30'
     }

@@ -11,38 +11,26 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "kush")!, // Kush
   team3Soldiers.find(s => s.id === "exodus")!, // Exodus
   team1Soldiers.find(s => s.id === "chambas")!, // Chambas
-  team3Soldiers.find(s => s.id === "slim")!, // Slim
   team3Soldiers.find(s => s.id === "dhamer")!, // Dhamer
   
   // TIER 2 - RISING FLAMES
   team1Soldiers.find(s => s.id === "damage")!, // Damage
-  team2Soldiers.find(s => s.id === "botgirl")!, // Botgirl
   team2Soldiers.find(s => s.id === "favorite")!, // Favorite
-  team1Soldiers.find(s => s.id === "swizzy")!, // Swizzy
   team2Soldiers.find(s => s.id === "pato")!, // Pato
-  team1Soldiers.find(s => s.id === "johnwick")!, // COD~MIKKI
-  team5Soldiers.find(s => s.id === "shinobi")!, // Shinobi
   team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty
   team3Soldiers.find(s => s.id === "esquare")!, // Esquare
-  team1Soldiers.find(s => s.id === "lamenace")!, // Menace
   team1Soldiers.find(s => s.id === "21")!, // 21
   
   // TIER 3 - STEADY SOLDIERS  
   team2Soldiers.find(s => s.id === "uncleB")!, // Uncle B
   team4Soldiers.find(s => s.id === "gamehouse")!, // Gamehouse
   team5Soldiers.find(s => s.id === "blacksavage")!, // Blacksavage
-  team1Soldiers.find(s => s.id === "shady")!, // Slim Shady
   team1Soldiers.find(s => s.id === "venom")!, // Venom
-  team1Soldiers.find(s => s.id === "rex")!, // Rexo
   team5Soldiers.find(s => s.id === "hated")!, // Hated
   team5Soldiers.find(s => s.id === "maddog")!, // Maddog
-  team5Soldiers.find(s => s.id === "muller")!, // Muller
-  team2Soldiers.find(s => s.id === "noob")!, // Noob
   
   // TIER 4 - NEEDS IMPROVEMENT / CASUAL
   team5Soldiers.find(s => s.id === "pinky")!, // Pinky
-  team5Soldiers.find(s => s.id === "suspect")!, // Suspect
-  team4Soldiers.find(s => s.id === "ded")!, // Ded
   team2Soldiers.find(s => s.id === "ogwhite")!, // OG White
 ].filter(Boolean);
 

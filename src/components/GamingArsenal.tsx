@@ -41,7 +41,7 @@ const GamingArsenal = () => {
         fireRate: 76,
         control: 54
       },
-      users: ['WIZARD', 'LAMENACE', 'SHINOBI', 'DHAMER', 'PINKY'],
+      users: ['WIZARD', 'DHAMER', 'PINKY'],
       color: 'from-blue-500/20 to-cyan-500/20',
       borderColor: 'border-blue-500/30'
     },
@@ -57,7 +57,7 @@ const GamingArsenal = () => {
         mobility: 70,
         accuracy: 65
       },
-      users: ['DAMAGE', 'EXODUS', 'MIKKI'],
+      users: ['DAMAGE', 'EXODUS'],
       color: 'from-purple-500/20 to-pink-500/20',
       borderColor: 'border-purple-500/30'
     },
@@ -73,7 +73,7 @@ const GamingArsenal = () => {
         mobility: 92,
         accuracy: 75
       },
-      users: ['PATO', 'DED', 'BLACKSAVAGE'],
+      users: ['PATO', 'BLACKSAVAGE'],
       color: 'from-green-500/20 to-emerald-500/20',
       borderColor: 'border-green-500/30'
     },
@@ -105,7 +105,7 @@ const GamingArsenal = () => {
         mobility: 88,
         accuracy: 80
       },
-      users: ['BOTGIRL', 'LIL NASTY'],
+      users: ['LIL NASTY'],
       color: 'from-pink-500/20 to-rose-500/20',
       borderColor: 'border-pink-500/30'
     },
@@ -121,7 +121,7 @@ const GamingArsenal = () => {
         mobility: 78,
         accuracy: 70
       },
-      users: ['GAMEHOUSE', 'SWIZZY', 'E-SQUARE', 'MULLER', 'HATED', 'TIGER'],
+      users: ['GAMEHOUSE', 'E-SQUARE', 'HATED', 'TIGER'],
       color: 'from-cyan-500/20 to-blue-500/20',
       borderColor: 'border-cyan-500/30'
     },
@@ -137,7 +137,7 @@ const GamingArsenal = () => {
         mobility: 75,
         accuracy: 68
       },
-      users: ['CHAMBAS', 'SLIM'],
+      users: ['CHAMBAS'],
       color: 'from-violet-500/20 to-purple-500/20',
       borderColor: 'border-violet-500/30'
     }
