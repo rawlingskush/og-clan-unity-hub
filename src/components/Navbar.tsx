@@ -21,7 +21,7 @@ const Navbar = () => {
   const isHomePage = location.pathname === '/';
 
   // List of all section IDs in the page
-  const sectionIds = ['home', 'about', 'og-battle-night', 'highlights', 'sponsors', 'join', 'cod-points'];
+  const sectionIds = ['home', 'about', 'sponsors', 'join', 'cod-points'];
   
   // Use our custom scroll spy hook
   const { scrollPosition, activeSection, scrollToSection, isScrolled } = useScrollSpy({
@@ -72,7 +72,6 @@ const Navbar = () => {
   const menuItems: MenuItem[] = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'og-battle-night', label: 'Battle Night' },
     { id: 'sponsors', label: 'Sponsors' },
     { id: 'join', label: 'Join Us' },
     { id: 'cod-points', label: 'Get CoD Points' }

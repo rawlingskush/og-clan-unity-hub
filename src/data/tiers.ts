@@ -107,7 +107,7 @@ export const tierData: TierData[] = [
       { name: "ѲǤゝLIL OP", fullName: "lilop", emoji: "🔥", status: "Developing fighter" },
       { name: "ѲǤゝLUCIFER", fullName: "lucifer", emoji: "😈", status: "Developing, needs consistency" },
       { name: "ѲǤゝMŪŁŁER", fullName: "muller2", emoji: "🎯", status: "Steady contributor" },
-      { name: "ѲǤゝNOVAX", fullName: "novax", emoji: "⚡", status: "Showing promise, needs more BattleNights" },
+      { name: "ѲǤゝNOVAX", fullName: "novax", emoji: "⚡", status: "Showing promise, needs more activity" },
       { name: "ѲǤゝPINKY", fullName: "pinky", emoji: "💖", status: "Steady support, needs more experience", hasProfile: true, profileId: "pinky" },
       { name: "ѲǤゝPUNISHER", fullName: "punisher", emoji: "🥋", status: "Fighter, showing signs" },
       { name: "ѲǤゝSMOKE", fullName: "smoke", emoji: "💨", status: "Needs more activity" },
