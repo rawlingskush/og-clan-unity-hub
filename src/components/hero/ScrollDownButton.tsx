@@ -3,40 +3,33 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 import AnimatedContent from '../AnimatedContent';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { Button } from '@/components/ui/button';
 
 const ScrollDownButton = () => {
   const isMobile = useIsMobile();
   
   const scrollToNextSection = () => {
-    // Scroll to battle night timer section for more direct access
-    const timerSection = document.getElementById('battle-night-timer');
-    if (timerSection) {
+    const nextSection = document.getElementById('warriors-spotlight');
+    if (nextSection) {
       window.scrollTo({
-        top: timerSection.offsetTop - 100, // Add some offset for better visibility
+        top: nextSection.getBoundingClientRect().top + window.scrollY - 80,
         behavior: 'auto'
       });
-    } else {
-      // Fallback to the section if timer isn't found
-      const nextSection = document.getElementById('og-battle-night');
-      if (nextSection) {
-        window.scrollTo({
-          top: nextSection.offsetTop - 80,
-          behavior: 'auto'
-        });
-      }
     }
   };
 
   return (
     <AnimatedContent animation="fade-in-up" delay={1200}>
-      <button
+      <Button
+        variant="outline"
+        size="icon"
         onClick={scrollToNextSection}
         aria-label="Scroll to next section"
         className={`group relative rounded-full ${isMobile ? 'p-1.5' : 'p-2'} bg-black/40 border border-ogclan/20 
                   hover:bg-black/70 hover:border-ogclan transition-all duration-200`}
       >
         <ChevronDown className={`${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'} text-ogclan group-hover:text-ogclan-light transition-all duration-200 animate-bounce`} />
-      </button>
+      </Button>
     </AnimatedContent>
   );
 };

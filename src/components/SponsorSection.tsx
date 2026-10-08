@@ -101,7 +101,7 @@ const SponsorSection = () => {
                   <Users className="w-6 h-6 text-ogclan mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-ogclan-light">Growing Community</h3>
-                    <p className="text-gray-400">With 50+ active members, 1K+ TikTok followers, and regular events like OG Battle Night pulling in 100+ participants, we're building a movement.</p>
+                    <p className="text-gray-400">Our members and supporters are building a dedicated Call of Duty Mobile community in Cameroon.</p>
                   </div>
                 </div>
                 
@@ -109,7 +109,7 @@ const SponsorSection = () => {
                   <Award className="w-6 h-6 text-ogclan mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-ogclan-light">Partner Benefits</h3>
-                    <p className="text-gray-400">Sponsors get shoutouts on our socials, logo placements at events, and a chance to connect with Cameroon's most dedicated gamers.</p>
+                    <p className="text-gray-400">Sponsors get shoutouts on our socials and a chance to connect with Cameroon's most dedicated gamers.</p>
                   </div>
                 </div>
                 

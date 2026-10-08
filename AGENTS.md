@@ -1,0 +1,2 @@
+# Project architecture
+- Keep the homepage composed of the hero, Warriors Spotlight, About, CoD Points, recruitment, and sponsorship sections; dedicated member and tracker pages retain detailed clan views to avoid duplicate homepage content.

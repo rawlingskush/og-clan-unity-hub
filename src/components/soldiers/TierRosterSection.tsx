@@ -152,7 +152,7 @@ const TierRosterSection = memo(({ onSoldierClick }: TierRosterSectionProps) => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-purple-300 mb-1">Regular Updates</h4>
-                    <p className="text-sm leading-relaxed">Tracker updates monthly after scrims, comps, battle nights & commitment assessment.</p>
+                    <p className="text-sm leading-relaxed">Tracker updates monthly after scrims, competitions & commitment assessment.</p>
                   </div>
                 </div>
               </div>

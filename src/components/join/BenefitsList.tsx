@@ -11,7 +11,7 @@ const benefits = [
   },
   {
     icon: <Award className="w-5 h-5" />,
-    text: 'Join exclusive COD Mobile tournaments and events',
+    text: 'Build teamwork with dedicated COD Mobile squadmates',
     color: 'from-ogclan/20 to-ogclan-light/10'
   },
   {

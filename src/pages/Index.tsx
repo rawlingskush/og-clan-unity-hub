@@ -3,15 +3,9 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import WarriorsSpotlight from '@/components/WarriorsSpotlight';
-import ClanLegacySection from '@/components/ClanLegacySection';
-import BattleNightSection from '@/components/BattleNightSection';
-import MPBattleNightSection from '@/components/MPBattleNightSection';
-import BattlefieldDominance from '@/components/BattlefieldDominance';
-import BattleFootageSection from '@/components/BattleFootageSection';
-import TournamentResults from '@/components/results/TournamentResults';
 import AboutSection from '@/components/AboutSection';
 import JoinUsSection from '@/components/JoinUsSection';
-import PartnersSection from '@/components/PartnersSection';
+import SponsorSection from '@/components/SponsorSection';
 import CoDPointsSection from '@/components/CoDPointsSection';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
@@ -45,16 +39,10 @@ const Index = () => {
           <HeroSection />
         </div>
         <WarriorsSpotlight />
-        <ClanLegacySection />
-        <BattleNightSection />
-        <MPBattleNightSection />
-        <BattlefieldDominance />
-        <BattleFootageSection />
-        <TournamentResults />
         <AboutSection />
         <CoDPointsSection />
         <JoinUsSection />
-        <PartnersSection />
+        <SponsorSection />
       </main>
       
       <Footer />
