@@ -46,7 +46,7 @@ const WarriorsSpotlight = () => {
   const stats = generateSoldierStats(currentSoldier.name);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
+    <section id="warriors-spotlight" className="py-20 bg-gradient-to-b from-background to-background/90 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,hsl(var(--primary))_0%,transparent_50%)] opacity-10" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,hsl(var(--accent))_0%,transparent_50%)] opacity-10" />
