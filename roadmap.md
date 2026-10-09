@@ -4,6 +4,6 @@
 - [x] Verify remaining pages and mobile navigation.
 
 # Player cards
-- [ ] Add PNG downloads to each soldier profile.
-- [ ] Match Favorite's pink effects to Pinky, with reduced-motion support.
-- [ ] Verify downloaded images and mobile controls.
+- [x] Add PNG downloads to each soldier profile.
+- [x] Match Favorite's pink effects to Pinky, with reduced-motion support.
+- [x] Verify downloaded images and mobile controls.
