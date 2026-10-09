@@ -38,7 +38,7 @@ export async function downloadPlayerCard(card: HTMLElement, name: string) {
     pixelRatio: 2,
     cacheBust: false,
     filter: node => !(node instanceof HTMLElement && node.hasAttribute('data-export-exclude')),
-    style: { transform: 'none', animation: 'none' },
+    style: { position: 'relative', left: '0', top: '0', transform: 'none', animation: 'none', opacity: '1' },
   });
   const link = document.createElement('a');
   link.download = `OG-${name.replace(/ѲǤゝ/g, '').trim().replace(/[^\p{L}\p{N}-]+/gu, '-')}-player-card.png`;
