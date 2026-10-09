@@ -8,6 +8,19 @@ export async function downloadPlayerCard(card: HTMLElement, name: string) {
     await image.decode();
   }));
   const clone = card.cloneNode(true) as HTMLElement;
+  const originals = [card, ...Array.from(card.querySelectorAll<HTMLElement>('*'))];
+  const copies = [clone, ...Array.from(clone.querySelectorAll<HTMLElement>('*'))];
+  originals.forEach((original, index) => {
+    const copy = copies[index];
+    if (!copy) return;
+    const computed = getComputedStyle(original);
+    for (const property of Array.from(computed)) {
+      copy.style.setProperty(property, computed.getPropertyValue(property));
+    }
+    copy.style.setProperty('content-visibility', 'visible', 'important');
+    copy.style.setProperty('animation', 'none', 'important');
+    copy.style.setProperty('transition', 'none', 'important');
+  });
   clone.style.width = `${card.offsetWidth}px`;
   clone.style.height = 'auto';
   clone.style.position = 'fixed';
