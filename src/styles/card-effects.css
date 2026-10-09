@@ -58,6 +58,7 @@
 .spotlight-card::after {
   content: '';
   @apply absolute inset-0 bg-gradient-to-tr from-transparent via-ogclan/5 to-ogclan/10 opacity-0 transition-opacity duration-300;
+  pointer-events: none;
 }
 
 .spotlight-card:hover::after {

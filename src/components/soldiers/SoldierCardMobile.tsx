@@ -102,6 +102,7 @@ const SoldierCardMobile = memo(({
       style={{ willChange: 'transform' }}
     >
       <Card 
+        data-player-card
         className={getCardClasses()}
         onClick={toggleQuickStats}
         onTouchMove={onTouchMove}
@@ -111,7 +112,7 @@ const SoldierCardMobile = memo(({
       >
         <div className="relative">
           {/* Optimized Scanner Line */}
-          <div className="scanner-line">
+          <div data-export-exclude className="scanner-line">
             {isProCard ? (
               <div className="absolute top-0 h-[1px] bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent w-full animate-[scanner-line_4s_linear_infinite]"></div>
             ) : isPrincessCard ? (

@@ -1,2 +1,3 @@
 # Project architecture
 - Keep the homepage composed of the hero, Warriors Spotlight, About, CoD Points, recruitment, and sponsorship sections; dedicated member and tracker pages retain detailed clan views to avoid duplicate homepage content.
+- Export player cards client-side from the shared mobile/desktop profile card using html-to-image; omit interactive controls, overlays, and transient effects so downloads preserve the player's actual picture and profile details.

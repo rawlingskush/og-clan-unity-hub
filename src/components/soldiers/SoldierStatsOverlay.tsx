@@ -21,6 +21,7 @@ const SoldierStatsOverlay = ({ isVisible, onClose, stats }: SoldierStatsOverlayP
   
   return (
     <div 
+      data-export-exclude
       className="absolute inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-[fade-in_0.3s_ease-out] z-10"
       onClick={onClose}
     >

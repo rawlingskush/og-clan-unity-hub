@@ -82,13 +82,14 @@ const SoldierCardDesktop = ({
       transition={{ type: 'spring', stiffness: 300, damping: 15 }}
     >
       <Card 
+        data-player-card
         className={getCardClasses()}
         onClick={toggleQuickStats}
         onMouseMove={generateSparkParticles}
       >
         <div className="relative">
           {/* Scanner Line - different for pro and princess */}
-          <div className={`scanner-line ${isProCard ? 'pro-scanner' : isPrincessCard ? 'princess-scanner' : ''}`}>
+          <div data-export-exclude className={`scanner-line ${isProCard ? 'pro-scanner' : isPrincessCard ? 'princess-scanner' : ''}`}>
             {isProCard ? (
               <div className="absolute top-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-500/60 to-transparent w-full animate-[scanner-line_3s_linear_infinite]"></div>
             ) : isPrincessCard ? (

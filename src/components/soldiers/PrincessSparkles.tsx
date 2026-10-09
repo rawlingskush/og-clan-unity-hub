@@ -32,6 +32,7 @@ const PrincessSparkles = ({ particles }: PrincessSparklesProps) => {
         const IconComponent = iconComponents[particle.type];
         return (
           <div 
+            data-export-exclude
             key={particle.id}
             className="absolute z-10 pointer-events-none will-change-transform"
             style={{

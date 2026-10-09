@@ -38,6 +38,7 @@ export const team2Soldiers: Soldier[] = [
     bio: "Favorite is OG Clan's beautiful warrior queen — graceful, fierce, and absolutely lethal. Her AK117 speaks with surgical precision at range, but get too close and her BY15 will send you back to the lobby before you can blink. She's the definition of beauty and beast — a soldier who turns heads on and off the battlefield. Don't let the looks fool you, she's here to dominate.",
     tiktokUrl: "",
     imageUrl: "/lovable-uploads/favorite-pfp.jpg",
+    princess: true,
     spotlight: true,
     active: true
   }
