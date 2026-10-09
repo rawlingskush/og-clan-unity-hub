@@ -1,4 +1,4 @@
-import { toPng } from 'html-to-image';
+import { toCanvas } from 'html-to-image';
 
 export async function downloadPlayerCard(card: HTMLElement, name: string) {
   await document.fonts.ready;
@@ -21,12 +21,32 @@ export async function downloadPlayerCard(card: HTMLElement, name: string) {
       image.style.transition = 'none';
       await image.decode();
     }));
-    const dataUrl = await toPng(card, {
+    const canvas = await toCanvas(card, {
       pixelRatio: 2,
       cacheBust: false,
       filter: node => !(node instanceof HTMLElement && node.hasAttribute('data-export-exclude')),
       style: { transform: 'none', animation: 'none' },
     });
+    const context = canvas.getContext('2d');
+    if (!context) throw new Error('Image export unavailable');
+    const cardRect = card.getBoundingClientRect();
+    const scaleX = canvas.width / cardRect.width;
+    const scaleY = canvas.height / cardRect.height;
+    images.forEach(image => {
+      const rect = image.getBoundingClientRect();
+      const x = (rect.left - cardRect.left) * scaleX;
+      const y = (rect.top - cardRect.top) * scaleY;
+      const width = rect.width * scaleX;
+      const height = rect.height * scaleY;
+      const cropSize = Math.min(image.naturalWidth, image.naturalHeight);
+      context.save();
+      context.beginPath();
+      context.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);
+      context.clip();
+      context.drawImage(image, (image.naturalWidth - cropSize) / 2, (image.naturalHeight - cropSize) / 2, cropSize, cropSize, x, y, width, height);
+      context.restore();
+    });
+    const dataUrl = canvas.toDataURL('image/png');
     const link = document.createElement('a');
     link.download = `OG-${name.replace(/ѲǤゝ/g, '').trim().replace(/[^\p{L}\p{N}-]+/gu, '-')}-player-card.png`;
     link.href = dataUrl;
