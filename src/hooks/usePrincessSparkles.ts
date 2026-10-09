@@ -1,5 +1,6 @@
 
 import { useState, useEffect, useRef } from 'react';
+import { useReducedMotion } from 'framer-motion';
 
 export interface PrincessParticle {
   id: number;
@@ -13,13 +14,14 @@ export interface PrincessParticle {
 }
 
 export function usePrincessSparkles(isPrincessCard: boolean) {
+  const reducedMotion = useReducedMotion();
   const [princessParticles, setPrincessParticles] = useState<PrincessParticle[]>([]);
   const animationFrameRef = useRef<number>();
   const lastUpdateRef = useRef<number>(0);
 
   // Enhanced particle animation with RAF for better mobile performance
   useEffect(() => {
-    if (isPrincessCard && princessParticles.length > 0) {
+    if (isPrincessCard && !reducedMotion && princessParticles.length > 0) {
       const animate = (timestamp: number) => {
         // Throttle updates to 30fps for better mobile performance
         if (timestamp - lastUpdateRef.current >= 33) {
@@ -48,16 +50,17 @@ export function usePrincessSparkles(isPrincessCard: boolean) {
         }
       };
     }
-  }, [princessParticles.length, isPrincessCard]);
+  }, [princessParticles.length, isPrincessCard, reducedMotion]);
 
   // Optimized particle generation for mobile
   const generatePrincessParticles = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
-    if (!isPrincessCard) return;
+    if (!isPrincessCard || reducedMotion) return;
     
     let x: number, y: number;
     
     if ('touches' in e) {
       const touch = e.touches[0];
+      if (!touch) return;
       const rect = e.currentTarget.getBoundingClientRect();
       x = touch.clientX - rect.left;
       y = touch.clientY - rect.top;
@@ -69,7 +72,7 @@ export function usePrincessSparkles(isPrincessCard: boolean) {
     
     // Reduce particle count for better mobile performance
     const particleCount = 'touches' in e ? 1 : 2;
-    const colors = ['#ff69b4', '#ff1493', '#dda0dd', '#da70d6'];
+    const colors = ['var(--princess-primary)', 'var(--princess-secondary)', 'var(--princess-muted)', 'var(--princess-light)'];
     const types: ('heart' | 'star' | 'crown')[] = ['heart', 'star', 'crown'];
     
     const newParticles = Array.from({ length: particleCount }, (_, i) => ({

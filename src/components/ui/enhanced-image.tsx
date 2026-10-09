@@ -75,7 +75,7 @@ const EnhancedImage = ({
       style={{ aspectRatio }}
     >
       {(isLoading || !shouldLoad) && (
-        <div className="absolute inset-0 z-10">
+        <div data-export-exclude className="absolute inset-0 z-10">
           <Skeleton className="w-full h-full bg-gray-700/50" />
         </div>
       )}

@@ -1,7 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { CardFooter } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
+import { Download, ExternalLink, Loader2 } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
+import { downloadPlayerCard } from '@/utils/downloadPlayerCard';
 
 interface SoldierCardFooterProps {
   tiktokUrl: string;
@@ -9,9 +12,28 @@ interface SoldierCardFooterProps {
 }
 
 const SoldierCardFooter = ({ tiktokUrl, name }: SoldierCardFooterProps) => {
+  const [isDownloading, setIsDownloading] = useState(false);
+  const { toast } = useToast();
+  const handleDownload = async (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    const card = event.currentTarget.closest<HTMLElement>('[data-player-card]');
+    if (!card || isDownloading) return;
+    setIsDownloading(true);
+    try {
+      await downloadPlayerCard(card, name);
+    } catch {
+      toast({ title: 'Card could not be saved', description: 'Please try again once the profile picture has loaded.', variant: 'destructive' });
+    } finally {
+      setIsDownloading(false);
+    }
+  };
   return (
-    <CardFooter className="flex justify-center p-2 bg-ogclan/10 border-t border-ogclan/20 card-footer z-20 relative">
-      <a 
+    <CardFooter data-export-exclude className="flex flex-wrap justify-center gap-2 p-2 bg-ogclan/10 border-t border-ogclan/20 card-footer z-20 relative">
+      <Button variant="outline" size="sm" className="min-h-11 gap-2" disabled={isDownloading} onClick={handleDownload} aria-label={`Download ${name} player card`}>
+        {isDownloading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Download className="h-4 w-4" />}
+        {isDownloading ? 'Saving…' : 'Download card'}
+      </Button>
+      {tiktokUrl && <a 
         href={tiktokUrl} 
         target="_blank" 
         rel="noopener noreferrer"
@@ -25,7 +47,7 @@ const SoldierCardFooter = ({ tiktokUrl, name }: SoldierCardFooterProps) => {
         </svg>
         <span>Follow on TikTok</span>
         <ExternalLink size={14} />
-      </a>
+      </a>}
     </CardFooter>
   );
 };

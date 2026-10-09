@@ -27,10 +27,10 @@ const SoldierCardImage = ({ imageUrl, name, role, isSpotlight, isPrincess = fals
       <EnhancedImage
         src={imageUrl}
         alt={`${name} - ${role}`}
-        className="rounded-full"
+        className="w-full h-full rounded-full"
         aspectRatio="1/1"
         objectFit="cover"
-        loading="lazy"
+        loading="eager"
       />
     </div>
   );
