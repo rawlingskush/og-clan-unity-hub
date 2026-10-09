@@ -16,6 +16,7 @@ export const soldiers: Soldier[] = [
   // TIER 2 - RISING FLAMES
   team1Soldiers.find(s => s.id === "damage")!, // Damage
   team2Soldiers.find(s => s.id === "favorite")!, // Favorite
+  ...team2Soldiers.filter(s => s.id === "beauty-icon"), // Beauty Icon
   team2Soldiers.find(s => s.id === "pato")!, // Pato
   team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty
   team3Soldiers.find(s => s.id === "esquare")!, // Esquare

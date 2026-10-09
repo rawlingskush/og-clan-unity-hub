@@ -1,4 +1,5 @@
 import { Soldier } from "@/types/soldier";
+import beautyIconImage from "@/assets/beauty-icon.png.asset.json";
 
 export const team2Soldiers: Soldier[] = [
   {
@@ -40,6 +41,18 @@ export const team2Soldiers: Soldier[] = [
     imageUrl: "/lovable-uploads/favorite-pfp.jpg",
     princess: true,
     spotlight: true,
+    active: true
+  },
+  {
+    id: "beauty-icon",
+    name: "ѲǤゝ BEAUTY ICON",
+    clanName: "ѲǤゝBeauty Icon",
+    role: "Grace & Precision",
+    weapon: "AK117",
+    bio: "Beauty Icon brings elegance and firepower to OG Clan. With her favorite AK117 in hand, she pairs a calm presence with a fierce fighting spirit — proudly standing alongside the squad, ready for the next challenge.",
+    tiktokUrl: "",
+    imageUrl: beautyIconImage.url,
+    princess: true,
     active: true
   }
 ];
