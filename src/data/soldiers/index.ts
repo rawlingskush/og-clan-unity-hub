@@ -5,6 +5,7 @@ import { team2Soldiers } from "./team2";
 import { team3Soldiers } from "./team3";
 import { team4Soldiers } from "./team4";
 import { team5Soldiers } from "./team5";
+import { newMemberSoldiers } from "./newMembers";
 
 export const soldiers: Soldier[] = [
   // TIER 1 - OG CORE
@@ -17,6 +18,7 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "damage")!, // Damage
   team2Soldiers.find(s => s.id === "favorite")!, // Favorite
   ...team2Soldiers.filter(s => s.id === "beauty-icon"), // Beauty Icon
+  ...newMemberSoldiers.filter(s => s.id === "sadia"),
   team2Soldiers.find(s => s.id === "pato")!, // Pato
   team5Soldiers.find(s => s.id === "lilnasty")!, // Lil Nasty
   team3Soldiers.find(s => s.id === "esquare")!, // Esquare
@@ -29,6 +31,7 @@ export const soldiers: Soldier[] = [
   team1Soldiers.find(s => s.id === "venom")!, // Venom
   team5Soldiers.find(s => s.id === "hated")!, // Hated
   team5Soldiers.find(s => s.id === "maddog")!, // Maddog
+  ...newMemberSoldiers.filter(s => s.id !== "sadia"),
   
   // TIER 4 - NEEDS IMPROVEMENT / CASUAL
   team5Soldiers.find(s => s.id === "pinky")!, // Pinky
