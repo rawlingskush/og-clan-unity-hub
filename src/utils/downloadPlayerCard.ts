@@ -40,7 +40,8 @@ export async function downloadPlayerCard(card: HTMLElement, name: string) {
       const height = rect.height * scaleY;
       const cropSize = Math.min(image.naturalWidth, image.naturalHeight);
       const position = getComputedStyle(image).objectPosition;
-      const cropY = position.includes('0%') || position.includes('top') ? 0 : (image.naturalHeight - cropSize) / 2;
+      const verticalPosition = position.split(' ')[1];
+      const cropY = verticalPosition === '0%' || verticalPosition === 'top' ? 0 : (image.naturalHeight - cropSize) / 2;
       context.save();
       context.beginPath();
       context.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);
