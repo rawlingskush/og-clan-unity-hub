@@ -9,6 +9,6 @@
 - [x] Verify downloaded images and mobile controls.
 
 # New soldier profiles
-- [ ] Add eight profiles with the seven supplied pictures, keeping Lamar and Harris separate.
-- [ ] Connect existing members to their profiles and add new members without changing existing tiers.
-- [ ] Verify weapons, pictures, downloads, and Sadia's pink styling.
+- [x] Add eight profiles with the seven supplied pictures, keeping Lamar and Harris separate.
+- [x] Connect existing members to their profiles and add new members without changing existing tiers. New members await rating in the existing Not Rated tier.
+- [x] Verify weapons, pictures, downloads, and Sadia's pink styling. Local picture checks use original uploads because asset delivery is provided by the hosted preview.
