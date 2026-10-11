@@ -39,11 +39,13 @@ export async function downloadPlayerCard(card: HTMLElement, name: string) {
       const width = rect.width * scaleX;
       const height = rect.height * scaleY;
       const cropSize = Math.min(image.naturalWidth, image.naturalHeight);
+      const position = getComputedStyle(image).objectPosition;
+      const cropY = position.includes('0%') || position.includes('top') ? 0 : (image.naturalHeight - cropSize) / 2;
       context.save();
       context.beginPath();
       context.ellipse(x + width / 2, y + height / 2, width / 2, height / 2, 0, 0, Math.PI * 2);
       context.clip();
-      context.drawImage(image, (image.naturalWidth - cropSize) / 2, (image.naturalHeight - cropSize) / 2, cropSize, cropSize, x, y, width, height);
+      context.drawImage(image, (image.naturalWidth - cropSize) / 2, cropY, cropSize, cropSize, x, y, width, height);
       context.restore();
     });
     const dataUrl = canvas.toDataURL('image/png');
